@@ -88,7 +88,7 @@ Fragment中的返回在Fragment中经常用到自定义标题栏，而返回按�
 <meta property="og:site_name" content="Cafeting">
 <meta property="og:description" content="知识背景Fragment在当前的Android开发中，有两种引用方式，一个是 Android 3.0 时加入的，一个是supportV4包中的。这里简称为Fragment3.0和FragmentV4。
 Fragment中的返回在Fragment中经常用到自定义标题栏，而返回按钮的点击事件一般设置为：getActivity().onBackPressed();，这样可以使得点击返回按钮和点击手机上的">
-<meta property="og:updated_time" content="2016-04-20T16:27:51.000Z">
+<meta property="og:updated_time" content="2016-04-20T17:06:48.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android项目开发填坑记-Fragmen的onBackPressed">
 <meta name="twitter:description" content="知识背景Fragment在当前的Android开发中，有两种引用方式，一个是 Android 3.0 时加入的，一个是supportV4包中的。这里简称为Fragment3.0和FragmentV4。
@@ -271,6 +271,7 @@ Fragment中的返回在Fragment中经常用到自定义标题栏，而返回按�
       
         <h2 id="知识背景"><a href="#知识背景" class="headerlink" title="知识背景"></a>知识背景</h2><p><code>Fragment</code>在当前的Android开发中，有两种引用方式，一个是 Android 3.0 时加入的，一个是supportV4包中的。这里简称为<code>Fragment3.0</code>和<code>FragmentV4</code>。</p>
 <h2 id="Fragment中的返回"><a href="#Fragment中的返回" class="headerlink" title="Fragment中的返回"></a>Fragment中的返回</h2><p>在Fragment中经常用到自定义标题栏，而<strong>返回按钮</strong>的点击事件一般设置为：<code>getActivity().onBackPressed();</code>，这样可以使得点击返回按钮和点击手机上的返回键的效果一致，即调用所在Activity的<code>onBackPressed();</code>。</p>
+<a id="more"></a>
 <p>那么可能会造成一个问题：</p>
 <p>本来你是想点击返回按钮让当前的<code>Fragment</code>出栈，显示上一个<code>Fragment</code>，但是却关闭了整个<code>Fragment</code>所在的<code>Activity</code>。</p>
 <p>即 启动Activity–&gt;显示FragmentA–&gt;显示FragmentB–&gt;用户点击返回按钮或者手机上的返回键–&gt;退出了Activity。</p>
