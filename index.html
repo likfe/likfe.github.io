@@ -229,6 +229,119 @@
             
               
                 
+                <a class="post-title-link" href="/2016/04/22/greenDao-session/" itemprop="url">
+                  Android必知必会--GreenDao缓存
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-04-22T14:03:39+08:00" content="2016-04-22">
+              2016-04-22
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <ul>
+<li><a href="">Github版</a></li>
+<li><a href="http://blog.csdn.net/ys743276112/article/details/50479917" target="_blank" rel="external">CSDN版</a></li>
+</ul>
+<p>本篇文章不是介绍GreenDao的配置和基础使用，记录一下GreenDao缓存的问题，帮助遇到同样问题的朋友找到原因和方法，下面是示例：</p>
+<h3 id="场景重现"><a href="#场景重现" class="headerlink" title="场景重现"></a>场景重现</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//第一次查询</span></span><br><span class="line">List chats = daoSession.getChatSessionDao()</span><br><span class="line">	.queryBuilder()</span><br><span class="line">	.orderDesc(ChatSessionDao.Properties.Updatetime)</span><br><span class="line">	.list();</span><br><span class="line"></span><br><span class="line"><span class="comment">//对数据库中的一条数据进行更新：</span></span><br><span class="line">ChatSession cs = chats.get(<span class="number">0</span>);</span><br><span class="line">Log.d(<span class="string">"body"</span>,cs.getBody());</span><br><span class="line">cs.setBody(cs.getBody() + <span class="string">"new"</span>);</span><br><span class="line">daoSession.getChatSessionDao().update(cs);</span><br><span class="line"></span><br><span class="line"><span class="comment">//第二次查询</span></span><br><span class="line">List chats = daoSession.getChatSessionDao()</span><br><span class="line">	.queryBuilder()</span><br><span class="line">	.orderDesc(ChatSessionDao.Properties.Updatetime)</span><br><span class="line">	.list();</span><br><span class="line">	</span><br><span class="line">Log.d(<span class="string">"body"</span>,chats.get(<span class="number">0</span>).getBody());</span><br></pre></td></tr></table></figure>
+<p>结果发现两次的<code>body</code>的值是一样的，使用工具查看Sqlite数据库，发现<code>body</code>的值已经变化了，也就是说，我们第二次查询并没有真正执行，返回的是第一次查询的结果。如果要解决缓存问题，这里就要用到<code>DaoSession</code>的一个方法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DaoSession.clear();</span><br></pre></td></tr></table></figure>
+<p>在示例代码中应该写在第二次查询前面<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">daoSession.clear();</span><br><span class="line"><span class="comment">//第二次查询</span></span><br><span class="line">......</span><br></pre></td></tr></table></figure></p>
+<p>PS:这个清理缓存的方法，会清除所有表的缓存，目前没有发现可以清除单个表或者某个查询的缓存的方法。</p>
+<h3 id="GreenDao配置与使用"><a href="#GreenDao配置与使用" class="headerlink" title="GreenDao配置与使用"></a>GreenDao配置与使用</h3><p>GreenDao详细的配置和Demo可以参考：</p>
+<blockquote>
+<ol>
+<li><a href="http://www.jcodecraeer.com/a/anzhuokaifa/androidkaifa/2015/0727/3223.html" target="_blank" rel="external">ORM 框架之 greenDAO 使用心得</a></li>
+<li><a href="http://wiki.xby1993.net/doku.php?id=greendao" target="_blank" rel="external">GreenDao</a></li>
+</ol>
+</blockquote>
+<p>PS:</p>
+<blockquote>
+<p>你可以关注的我<a href="https://github.com/likfe" target="_blank" rel="external">Github</a>、<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="external">CSDN</a>和<a href="http://weibo.com/zyansen" target="_blank" rel="external">微博</a></p>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/04/20/fragmen-onBackPressed/" itemprop="url">
                   Android项目开发填坑记-Fragmen的onBackPressed
                 </a>
@@ -737,7 +850,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">5</span>
+              <span class="site-state-item-count">6</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -747,7 +860,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
