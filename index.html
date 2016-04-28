@@ -229,6 +229,144 @@
             
               
                 
+                <a class="post-title-link" href="/2016/04/28/9patchAttention/" itemprop="url">
+                  Android项目开发填坑记-Android项目开发填坑记-9patchPng报错
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-04-28T19:30:09+08:00" content="2016-04-28">
+              2016-04-28
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/04/28/9patchAttention/" class="leancloud_visitors" data-flag-title="Android项目开发填坑记-Android项目开发填坑记-9patchPng报错">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>之前写了一篇文章<a href="http://blog.csdn.net/ys743276112/article/details/45794809" target="_blank" rel="external">Android必知必会–NinePatch图片制作</a>详细介绍了Android 9Patch图片的制作和一些Demo展示，这次说明一下9Patch图片的制作的注意事项和遇到相关报错的解决方案。</p>
+<h3 id="一、注意事项"><a href="#一、注意事项" class="headerlink" title="一、注意事项"></a>一、注意事项</h3><p>9Patch图片的<strong>左边框</strong>和<strong>上边框</strong>至少<strong>有一个描点</strong>，<strong>右边框</strong>和<strong>下边框</strong>则<strong>有且只有一段描点</strong>。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">边框</th>
+<th style="text-align:center">描点数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">左边框</td>
+<td style="text-align:center">>=1</td>
+</tr>
+<tr>
+<td style="text-align:center">上边框</td>
+<td style="text-align:center">>=1</td>
+</tr>
+<tr>
+<td style="text-align:center">右边框</td>
+<td style="text-align:center">非0，仅仅可为1</td>
+</tr>
+<tr>
+<td style="text-align:center">下边框</td>
+<td style="text-align:center">非0，仅仅可为1</td>
+</tr>
+</tbody>
+</table>
+<p><strong>左边框</strong>和<strong>上边框</strong>留白的地方，即告诉系统那里不进行处理，保持原样。</p>
+<h3 id="二、No-marked-region-found-along-edge"><a href="#二、No-marked-region-found-along-edge" class="headerlink" title="二、No marked region found along edge"></a>二、No marked region found along edge</h3><p>与<code>No marked region found along edge</code>类似和相关的，意思是某条边框或者全部的边框没有进行描点。</p>
+<p><strong>解决方法</strong>：检查一下报错的那个9Patch的四条边是否都进行了描点。</p>
+<h3 id="三、Can’t-have-more-than-one-marked-region-along-edge"><a href="#三、Can’t-have-more-than-one-marked-region-along-edge" class="headerlink" title="三、Can’t have more than one marked region along edge."></a>三、Can’t have more than one marked region along edge.</h3><p>与<code>Can&#39;t have more than one marked region along edge.</code>类似和相关的，意思是右边框或者下边框有一个或两边框的描点<strong>超过了一个</strong>，从【注意事项】里我们了解到这两条边框的描点数只能为1。</p>
+<p><strong>解决方法</strong>：检查一下报错的那个9Patch的右边框和下边框是否描点数超过1，有可能只是描点描了一个像素，所以检查的时候建议放大多倍进行检查。</p>
+<p>PS:</p>
+<blockquote>
+<p>你可以关注的我<a href="https://github.com/likfe" target="_blank" rel="external">Github</a>、<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="external">CSDN</a>和<a href="http://weibo.com/zyansen" target="_blank" rel="external">微博</a></p>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/04/22/greenDao-session/" itemprop="url">
                   Android必知必会--GreenDao缓存
                 </a>
@@ -890,7 +1028,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">6</span>
+              <span class="site-state-item-count">7</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
