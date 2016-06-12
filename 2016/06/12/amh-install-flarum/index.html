@@ -1,0 +1,781 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="AMH," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="知识背景AMHAMH 是国内首个开源的主机面板，AMH 支持用户自由弹性组建运行环境与切换环境，您可以下载安装不同版本的WEB服务器、数据库、脚本软件自由组合创建您需要的运行环境。
+我使用的是AMH5.X的付费版本，4.X的免费版本也可以参考本教程。
+目前服务器环境是LNMP：
+
+CentOS-6.6 64位
+lnmp-2.5
+mysql-generic-5.5.40
+nginx-generic-">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AMH 5.X下安装 Flarum">
+<meta property="og:url" content="http://yoursite.com/2016/06/12/amh-install-flarum/index.html">
+<meta property="og:site_name" content="Cafeting">
+<meta property="og:description" content="知识背景AMHAMH 是国内首个开源的主机面板，AMH 支持用户自由弹性组建运行环境与切换环境，您可以下载安装不同版本的WEB服务器、数据库、脚本软件自由组合创建您需要的运行环境。
+我使用的是AMH5.X的付费版本，4.X的免费版本也可以参考本教程。
+目前服务器环境是LNMP：
+
+CentOS-6.6 64位
+lnmp-2.5
+mysql-generic-5.5.40
+nginx-generic-">
+<meta property="og:updated_time" content="2016-06-12T10:51:57.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="AMH 5.X下安装 Flarum">
+<meta name="twitter:description" content="知识背景AMHAMH 是国内首个开源的主机面板，AMH 支持用户自由弹性组建运行环境与切换环境，您可以下载安装不同版本的WEB服务器、数据库、脚本软件自由组合创建您需要的运行环境。
+我使用的是AMH5.X的付费版本，4.X的免费版本也可以参考本教程。
+目前服务器环境是LNMP：
+
+CentOS-6.6 64位
+lnmp-2.5
+mysql-generic-5.5.40
+nginx-generic-">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> AMH 5.X下安装 Flarum | Cafeting </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Cafeting</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">一个人的行走范围，就是他的世界。</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                AMH 5.X下安装 Flarum
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-06-12T16:16:00+08:00" content="2016-06-12">
+              2016-06-12
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/06/12/amh-install-flarum/" class="leancloud_visitors" data-flag-title="AMH 5.X下安装 Flarum">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="知识背景"><a href="#知识背景" class="headerlink" title="知识背景"></a>知识背景</h2><h3 id="AMH"><a href="#AMH" class="headerlink" title="AMH"></a>AMH</h3><p><a href="https://amh.sh" target="_blank" rel="external">AMH</a> 是国内首个开源的主机面板，AMH 支持用户自由弹性组建运行环境与切换环境，您可以下载安装不同版本的WEB服务器、数据库、脚本软件自由组合创建您需要的运行环境。</p>
+<p>我使用的是<code>AMH5.X</code>的付费版本，<code>4.X</code>的免费版本也可以参考本教程。</p>
+<p>目前服务器环境是LNMP：</p>
+<blockquote>
+<p>CentOS-6.6 64位</p>
+<p>lnmp-2.5</p>
+<p>mysql-generic-5.5.40</p>
+<p>nginx-generic-1.6.0</p>
+<p>php-7.0</p>
+</blockquote>
+<h3 id="Flarum"><a href="#Flarum" class="headerlink" title="Flarum"></a>Flarum</h3><p>Flarum 是一款优雅简洁论坛软件，让在线交流变得更加轻松愉快。</p>
+<ul>
+<li><a href="https://discuss.flarum.org" target="_blank" rel="external">官网</a></li>
+<li><a href="http://www.flarum.org.cn" target="_blank" rel="external">中文站</a></li>
+</ul>
+<h3 id="Composer"><a href="#Composer" class="headerlink" title="Composer"></a>Composer</h3><p>Composer是 PHP 用来管理依赖（dependency）关系的工具。你可以在自己的项目中声明所依赖的外部工具库（libraries），Composer 会帮你安装这些依赖的库文件。</p>
+<ul>
+<li><a href="https://getcomposer.org" target="_blank" rel="external">官网</a></li>
+<li><a href="http://www.phpcomposer.com" target="_blank" rel="external">中文站</a></li>
+</ul>
+<p>Composer是安装Flarum的必要工具。</p>
+<h2 id="安装PHP扩展"><a href="#安装PHP扩展" class="headerlink" title="安装PHP扩展"></a>安装PHP扩展</h2><p>这里需要安装Flarum所需要的必要的PHP扩展，先看下系统需求：</p>
+<blockquote>
+<p>Flarum 系统需求</p>
+<p>服务器： Apache (需要支持 mod_rewrite)、Nginx、Lighttpd<br>PHP 5.5+，需要开启的扩展：mbstring, pdo_mysql, openssl, json, gd, dom, fileinfo<br>MySQL 5.5+</p>
+</blockquote>
+<p><strong>特别注意：</strong>PHP是5.5+、MySQL 5.5+，如果版本过低可以使用AMH安装更高版本，AMH支持多版本PHP和MySQL。</p>
+<h3 id="流程："><a href="#流程：" class="headerlink" title="流程："></a>流程：</h3><ol>
+<li>登录到AMH的管理面板</li>
+<li>软件下载 &gt; fileinfo-1.0 &gt; 下载并安装到对应的环境</li>
+<li>软件下载 &gt; mcrypt-1.0 &gt; 下载并安装到对应的环境</li>
+<li>软件下载 &gt; pdo_mysql-1.0 &gt; 下载并安装到对应的环境</li>
+</ol>
+<h2 id="安装Composer"><a href="#安装Composer" class="headerlink" title="安装Composer"></a>安装Composer</h2><p>Flarum官网的文档要求使用Composer命令行的方式进行安装，所以需要先安装Composer：</p>
+<p>使用SSH方式登录服务器之后：执行</p>
+<p><code>curl -sS https://getcomposer.org/installer | php</code></p>
+<blockquote>
+<p>注意： 如果上述方法由于某些原因失败了，你还可以通过 php &gt;下载安装器：</p>
+</blockquote>
+<p><code>php -r &quot;readfile(&#39;https://getcomposer.org/installer&#39;);&quot; | php</code></p>
+<p>这里你可能会遇到 <code>-bash php command not found</code>的错误提示，请参考下文的<strong>问题集锦</strong> 。</p>
+<p>PS：<a href="http://docs.phpcomposer.com/00-intro.html" target="_blank" rel="external">安装Composer文档</a></p>
+<h2 id="安装Flarum"><a href="#安装Flarum" class="headerlink" title="安装Flarum"></a>安装Flarum</h2><p>环境搭建好了，这里讲解安装Flarum的过程</p>
+<blockquote>
+<p><a href="http://flarum.org/docs/installation/" target="_blank" rel="external">官方安装文档</a></p>
+</blockquote>
+<ol>
+<li>在AMH控制面板下创建好一个站点（这里指定为<code>A站点</code>），并做好域名解析，确认可以正常访问</li>
+<li>删除<code>A站点</code>下的所有文件</li>
+<li>创建好一个Flarum使用的MySQL数据库和对应的用户</li>
+<li>SSH下进入<code>A站点</code>根目录（<code>cd /home/wwwroot/环境/domain/主域名/web/</code>）</li>
+<li>执行安装命令：<code>composer create-project flarum/flarum . --stability=beta</code></li>
+<li>配置<code>A站点的Nginx</code>配置文件（<code>/home/wwwroot/环境/vhost/主域名.conf</code>）：参见<a href="http://flarum.org/docs/installation/" target="_blank" rel="external">官方安装文档</a>。特别注意：<code>location ~* \.php$</code>下的参数以自动生成的为准，还需要删除自动生成的ErrorPage的配置信息。</li>
+<li>重载Nginx并访问<code>A站点</code>，填写相关安装信息。（遇到文件读写权限问题，查看下文问题集锦）</li>
+</ol>
+<h3 id="安装Flarum中文语言包"><a href="#安装Flarum中文语言包" class="headerlink" title="安装Flarum中文语言包"></a>安装Flarum中文语言包</h3><p>为了便于操作，我们安装中文语言包来进行默认语言的切换。</p>
+<p>尝试了几种安装方式，这里推荐使用命令行安装：</p>
+<ol>
+<li>SSH下进入<code>A站点</code>根目录</li>
+<li>执行<code>composer require jsthon/flarum-ext-simplified-chinese</code>即可</li>
+<li>访问<code>A站点</code>，进入后台修改勾选中文扩展，并修改默认语言。</li>
+</ol>
+<blockquote>
+<p>其他语言和扩展：<a href="https://discuss.flarum.org/d/1534-extension-list" target="_blank" rel="external">https://discuss.flarum.org/d/1534-extension-list</a></p>
+</blockquote>
+<h2 id="问题集锦"><a href="#问题集锦" class="headerlink" title="问题集锦"></a>问题集锦</h2><p>可能遇到的问题：</p>
+<h3 id="bash-php-command-not-found"><a href="#bash-php-command-not-found" class="headerlink" title="-bash php command not found"></a>-bash php command not found</h3><p>Composer的安装和使用是使用的php-cli的方式，AMH支持多版本的PHP，环境变量里并未指定php-cli的版本，这里需要我们把指定版本的<a href="http://blog.csdn.net/ys743276112/article/details/51648243" target="_blank" rel="external">PHP加入到环境变量</a>里。</p>
+<p>在<code>~/.bash_profile</code>里加入：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">PATH=<span class="variable">$PATH</span>:/usr/<span class="built_in">local</span>/php-版本/bin</span><br><span class="line"><span class="built_in">export</span> PATH</span><br></pre></td></tr></table></figure>
+<p>保存修改后执行<code>source ~/.bash_profile</code>使得修改生效。</p>
+<p>PS：如果你使用的是其他发行版的Linux，请自行搜索如何设置<code>PHP加入到环境变量</code> 。</p>
+<h3 id="requires-ext-fileinfo-或者-request-for-intervention-image"><a href="#requires-ext-fileinfo-或者-request-for-intervention-image" class="headerlink" title="requires ext-fileinfo * 或者 request for intervention/image"></a>requires ext-fileinfo * 或者 request for intervention/image</h3><blockquote>
+<p>参见：</p>
+<ul>
+<li><a href="http://stackoverflow.com/questions/24850136/i-have-ext-fileinfo-but-composer-says-it-is-missing" target="_blank" rel="external">http://stackoverflow.com/questions/24850136/i-have-ext-fileinfo-but-composer-says-it-is-missing</a></li>
+<li><a href="http://amh.sh/bbs/post-6149-1-1.htm" target="_blank" rel="external">http://amh.sh/bbs/post-6149-1-1.htm</a></li>
+</ul>
+</blockquote>
+<p>简单来说，就是咱们在AMH里安装的PHP扩展并没有影响到<code>php-cli</code>方式运行PHP的配置，需要我们手动同步一下配置：</p>
+<p><code>cp /home/wwwroot/环境/etc/amh-php.ini /usr/local/php-版本/etc/php.ini</code></p>
+<p>重载Nginx即可生效。</p>
+<h3 id="Please-chmod-this-directory-to-0775"><a href="#Please-chmod-this-directory-to-0775" class="headerlink" title="Please chmod this directory to 0775"></a>Please chmod this directory to 0775</h3><p>当你访问通过composer安装好的<code>A站点</code>时，遇到里类似的权限读写问题，对于AMH环境，我们需要执行：</p>
+<p><code>sudo chown www:www -R  /home/wwwroot/环境/domain/主域名/web</code></p>
+<p>这里有一些讨论：</p>
+<ul>
+<li><a href="https://discuss.flarum.org/d/823-directorys-are-not-writable/46" target="_blank" rel="external">https://discuss.flarum.org/d/823-directorys-are-not-writable/46</a></li>
+<li><a href="https://discuss.flarum.org/d/2209-directory-not-writable/3" target="_blank" rel="external">https://discuss.flarum.org/d/2209-directory-not-writable/3</a></li>
+</ul>
+<p>上面的讨论使用的用户组和AMH的不一样，AMH网站的用户组是<code>www</code>，结合实际情况才能真正解决问题。</p>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><blockquote>
+<p><a href="http://flarum.org/docs/" target="_blank" rel="external">官方文档</a> 适应最新版的Flarum，推荐<br><a href="https://www.gitbook.com/book/justjavac/flarum" target="_blank" rel="external">中文文档</a> 较旧，有一定参考意义</p>
+</blockquote>
+<p>AMH集成环境相对于通常的直接安装环境有很多的区别，使用的时候务必要考虑到。</p>
+<p>如果有什么问题，可以在博客下留言或者通过下面的方式联系我:</p>
+<blockquote>
+<p>你可以关注的我<a href="https://github.com/likfe" target="_blank" rel="external">Github</a>、<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="external">CSDN</a>和<a href="http://weibo.com/zyansen" target="_blank" rel="external">微博</a></p>
+</blockquote>
+
+      
+    </div>
+    
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/AMH/" rel="tag">#AMH</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/05/30/mapPoiSearch/" rel="next" title="Android必知必会-带列表的地图POI周边搜索">
+                <i class="fa fa-chevron-left"></i> Android必知必会-带列表的地图POI周边搜索
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://7d9l9j.com1.z0.glb.clouddn.com/avatar.jpeg"
+               alt="Zhang YanSen" />
+          <p class="site-author-name" itemprop="name">Zhang YanSen</p>
+          <p class="site-description motion-element" itemprop="description">我的代码空间</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">11</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/likfe" target="_blank">
+                  
+                    <i class="fa fa-globe"></i>
+                  
+                  github
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/zyansen" target="_blank">
+                  
+                    <i class="fa fa-globe"></i>
+                  
+                  weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        <div class="links-of-blogroll motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#知识背景"><span class="nav-number">1.</span> <span class="nav-text">知识背景</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#AMH"><span class="nav-number">1.1.</span> <span class="nav-text">AMH</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Flarum"><span class="nav-number">1.2.</span> <span class="nav-text">Flarum</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Composer"><span class="nav-number">1.3.</span> <span class="nav-text">Composer</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装PHP扩展"><span class="nav-number">2.</span> <span class="nav-text">安装PHP扩展</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#流程："><span class="nav-number">2.1.</span> <span class="nav-text">流程：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装Composer"><span class="nav-number">3.</span> <span class="nav-text">安装Composer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装Flarum"><span class="nav-number">4.</span> <span class="nav-text">安装Flarum</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Flarum中文语言包"><span class="nav-number">4.1.</span> <span class="nav-text">安装Flarum中文语言包</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#问题集锦"><span class="nav-number">5.</span> <span class="nav-text">问题集锦</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#bash-php-command-not-found"><span class="nav-number">5.1.</span> <span class="nav-text">-bash php command not found</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#requires-ext-fileinfo-或者-request-for-intervention-image"><span class="nav-number">5.2.</span> <span class="nav-text">requires ext-fileinfo * 或者 request for intervention/image</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Please-chmod-this-directory-to-0775"><span class="nav-number">5.3.</span> <span class="nav-text">Please chmod this directory to 0775</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他"><span class="nav-number">6.</span> <span class="nav-text">其他</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Zhang YanSen</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+  
+  
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("2nXIpjWLUKkYRIXj2zESyxbJ-gzGzoHsz", "GhYJy4g50Rt6nwyP6MslqpnX");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+</body>
+</html>

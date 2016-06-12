@@ -229,6 +229,204 @@
             
               
                 
+                <a class="post-title-link" href="/2016/06/12/amh-install-flarum/" itemprop="url">
+                  AMH 5.X下安装 Flarum
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-06-12T16:16:00+08:00" content="2016-06-12">
+              2016-06-12
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/06/12/amh-install-flarum/" class="leancloud_visitors" data-flag-title="AMH 5.X下安装 Flarum">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="知识背景"><a href="#知识背景" class="headerlink" title="知识背景"></a>知识背景</h2><h3 id="AMH"><a href="#AMH" class="headerlink" title="AMH"></a>AMH</h3><p><a href="https://amh.sh" target="_blank" rel="external">AMH</a> 是国内首个开源的主机面板，AMH 支持用户自由弹性组建运行环境与切换环境，您可以下载安装不同版本的WEB服务器、数据库、脚本软件自由组合创建您需要的运行环境。</p>
+<p>我使用的是<code>AMH5.X</code>的付费版本，<code>4.X</code>的免费版本也可以参考本教程。</p>
+<p>目前服务器环境是LNMP：</p>
+<blockquote>
+<p>CentOS-6.6 64位</p>
+<p>lnmp-2.5</p>
+<p>mysql-generic-5.5.40</p>
+<p>nginx-generic-1.6.0</p>
+<p>php-7.0</p>
+</blockquote>
+<h3 id="Flarum"><a href="#Flarum" class="headerlink" title="Flarum"></a>Flarum</h3><p>Flarum 是一款优雅简洁论坛软件，让在线交流变得更加轻松愉快。</p>
+<ul>
+<li><a href="https://discuss.flarum.org" target="_blank" rel="external">官网</a></li>
+<li><a href="http://www.flarum.org.cn" target="_blank" rel="external">中文站</a></li>
+</ul>
+<h3 id="Composer"><a href="#Composer" class="headerlink" title="Composer"></a>Composer</h3><p>Composer是 PHP 用来管理依赖（dependency）关系的工具。你可以在自己的项目中声明所依赖的外部工具库（libraries），Composer 会帮你安装这些依赖的库文件。</p>
+<ul>
+<li><a href="https://getcomposer.org" target="_blank" rel="external">官网</a></li>
+<li><a href="http://www.phpcomposer.com" target="_blank" rel="external">中文站</a></li>
+</ul>
+<p>Composer是安装Flarum的必要工具。</p>
+<h2 id="安装PHP扩展"><a href="#安装PHP扩展" class="headerlink" title="安装PHP扩展"></a>安装PHP扩展</h2><p>这里需要安装Flarum所需要的必要的PHP扩展，先看下系统需求：</p>
+<blockquote>
+<p>Flarum 系统需求</p>
+<p>服务器： Apache (需要支持 mod_rewrite)、Nginx、Lighttpd<br>PHP 5.5+，需要开启的扩展：mbstring, pdo_mysql, openssl, json, gd, dom, fileinfo<br>MySQL 5.5+</p>
+</blockquote>
+<p><strong>特别注意：</strong>PHP是5.5+、MySQL 5.5+，如果版本过低可以使用AMH安装更高版本，AMH支持多版本PHP和MySQL。</p>
+<h3 id="流程："><a href="#流程：" class="headerlink" title="流程："></a>流程：</h3><ol>
+<li>登录到AMH的管理面板</li>
+<li>软件下载 &gt; fileinfo-1.0 &gt; 下载并安装到对应的环境</li>
+<li>软件下载 &gt; mcrypt-1.0 &gt; 下载并安装到对应的环境</li>
+<li>软件下载 &gt; pdo_mysql-1.0 &gt; 下载并安装到对应的环境</li>
+</ol>
+<h2 id="安装Composer"><a href="#安装Composer" class="headerlink" title="安装Composer"></a>安装Composer</h2><p>Flarum官网的文档要求使用Composer命令行的方式进行安装，所以需要先安装Composer：</p>
+<p>使用SSH方式登录服务器之后：执行</p>
+<p><code>curl -sS https://getcomposer.org/installer | php</code></p>
+<blockquote>
+<p>注意： 如果上述方法由于某些原因失败了，你还可以通过 php &gt;下载安装器：</p>
+</blockquote>
+<p><code>php -r &quot;readfile(&#39;https://getcomposer.org/installer&#39;);&quot; | php</code></p>
+<p>这里你可能会遇到 <code>-bash php command not found</code>的错误提示，请参考下文的<strong>问题集锦</strong> 。</p>
+<p>PS：<a href="http://docs.phpcomposer.com/00-intro.html" target="_blank" rel="external">安装Composer文档</a></p>
+<h2 id="安装Flarum"><a href="#安装Flarum" class="headerlink" title="安装Flarum"></a>安装Flarum</h2><p>环境搭建好了，这里讲解安装Flarum的过程</p>
+<blockquote>
+<p><a href="http://flarum.org/docs/installation/" target="_blank" rel="external">官方安装文档</a></p>
+</blockquote>
+<ol>
+<li>在AMH控制面板下创建好一个站点（这里指定为<code>A站点</code>），并做好域名解析，确认可以正常访问</li>
+<li>删除<code>A站点</code>下的所有文件</li>
+<li>创建好一个Flarum使用的MySQL数据库和对应的用户</li>
+<li>SSH下进入<code>A站点</code>根目录（<code>cd /home/wwwroot/环境/domain/主域名/web/</code>）</li>
+<li>执行安装命令：<code>composer create-project flarum/flarum . --stability=beta</code></li>
+<li>配置<code>A站点的Nginx</code>配置文件（<code>/home/wwwroot/环境/vhost/主域名.conf</code>）：参见<a href="http://flarum.org/docs/installation/" target="_blank" rel="external">官方安装文档</a>。特别注意：<code>location ~* \.php$</code>下的参数以自动生成的为准，还需要删除自动生成的ErrorPage的配置信息。</li>
+<li>重载Nginx并访问<code>A站点</code>，填写相关安装信息。（遇到文件读写权限问题，查看下文问题集锦）</li>
+</ol>
+<h3 id="安装Flarum中文语言包"><a href="#安装Flarum中文语言包" class="headerlink" title="安装Flarum中文语言包"></a>安装Flarum中文语言包</h3><p>为了便于操作，我们安装中文语言包来进行默认语言的切换。</p>
+<p>尝试了几种安装方式，这里推荐使用命令行安装：</p>
+<ol>
+<li>SSH下进入<code>A站点</code>根目录</li>
+<li>执行<code>composer require jsthon/flarum-ext-simplified-chinese</code>即可</li>
+<li>访问<code>A站点</code>，进入后台修改勾选中文扩展，并修改默认语言。</li>
+</ol>
+<blockquote>
+<p>其他语言和扩展：<a href="https://discuss.flarum.org/d/1534-extension-list" target="_blank" rel="external">https://discuss.flarum.org/d/1534-extension-list</a></p>
+</blockquote>
+<h2 id="问题集锦"><a href="#问题集锦" class="headerlink" title="问题集锦"></a>问题集锦</h2><p>可能遇到的问题：</p>
+<h3 id="bash-php-command-not-found"><a href="#bash-php-command-not-found" class="headerlink" title="-bash php command not found"></a>-bash php command not found</h3><p>Composer的安装和使用是使用的php-cli的方式，AMH支持多版本的PHP，环境变量里并未指定php-cli的版本，这里需要我们把指定版本的<a href="http://blog.csdn.net/ys743276112/article/details/51648243" target="_blank" rel="external">PHP加入到环境变量</a>里。</p>
+<p>在<code>~/.bash_profile</code>里加入：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">PATH=<span class="variable">$PATH</span>:/usr/<span class="built_in">local</span>/php-版本/bin</span><br><span class="line"><span class="built_in">export</span> PATH</span><br></pre></td></tr></table></figure>
+<p>保存修改后执行<code>source ~/.bash_profile</code>使得修改生效。</p>
+<p>PS：如果你使用的是其他发行版的Linux，请自行搜索如何设置<code>PHP加入到环境变量</code> 。</p>
+<h3 id="requires-ext-fileinfo-或者-request-for-intervention-image"><a href="#requires-ext-fileinfo-或者-request-for-intervention-image" class="headerlink" title="requires ext-fileinfo * 或者 request for intervention/image"></a>requires ext-fileinfo * 或者 request for intervention/image</h3><blockquote>
+<p>参见：</p>
+<ul>
+<li><a href="http://stackoverflow.com/questions/24850136/i-have-ext-fileinfo-but-composer-says-it-is-missing" target="_blank" rel="external">http://stackoverflow.com/questions/24850136/i-have-ext-fileinfo-but-composer-says-it-is-missing</a></li>
+<li><a href="http://amh.sh/bbs/post-6149-1-1.htm" target="_blank" rel="external">http://amh.sh/bbs/post-6149-1-1.htm</a></li>
+</ul>
+</blockquote>
+<p>简单来说，就是咱们在AMH里安装的PHP扩展并没有影响到<code>php-cli</code>方式运行PHP的配置，需要我们手动同步一下配置：</p>
+<p><code>cp /home/wwwroot/环境/etc/amh-php.ini /usr/local/php-版本/etc/php.ini</code></p>
+<p>重载Nginx即可生效。</p>
+<h3 id="Please-chmod-this-directory-to-0775"><a href="#Please-chmod-this-directory-to-0775" class="headerlink" title="Please chmod this directory to 0775"></a>Please chmod this directory to 0775</h3><p>当你访问通过composer安装好的<code>A站点</code>时，遇到里类似的权限读写问题，对于AMH环境，我们需要执行：</p>
+<p><code>sudo chown www:www -R  /home/wwwroot/环境/domain/主域名/web</code></p>
+<p>这里有一些讨论：</p>
+<ul>
+<li><a href="https://discuss.flarum.org/d/823-directorys-are-not-writable/46" target="_blank" rel="external">https://discuss.flarum.org/d/823-directorys-are-not-writable/46</a></li>
+<li><a href="https://discuss.flarum.org/d/2209-directory-not-writable/3" target="_blank" rel="external">https://discuss.flarum.org/d/2209-directory-not-writable/3</a></li>
+</ul>
+<p>上面的讨论使用的用户组和AMH的不一样，AMH网站的用户组是<code>www</code>，结合实际情况才能真正解决问题。</p>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><blockquote>
+<p><a href="http://flarum.org/docs/" target="_blank" rel="external">官方文档</a> 适应最新版的Flarum，推荐<br><a href="https://www.gitbook.com/book/justjavac/flarum" target="_blank" rel="external">中文文档</a> 较旧，有一定参考意义</p>
+</blockquote>
+<p>AMH集成环境相对于通常的直接安装环境有很多的区别，使用的时候务必要考虑到。</p>
+<p>如果有什么问题，可以在博客下留言或者通过下面的方式联系我:</p>
+<blockquote>
+<p>你可以关注的我<a href="https://github.com/likfe" target="_blank" rel="external">Github</a>、<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="external">CSDN</a>和<a href="http://weibo.com/zyansen" target="_blank" rel="external">微博</a></p>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/05/30/mapPoiSearch/" itemprop="url">
                   Android必知必会-带列表的地图POI周边搜索
                 </a>
@@ -1158,119 +1356,13 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/04/09/hello-world/" itemprop="url">
-                  Hello World
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-09T00:06:59+08:00" content="2016-04-09">
-              2016-04-09
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/04/09/hello-world/" class="leancloud_visitors" data-flag-title="Hello World">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-          
-        
-      
-    </div>
-    
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
 
 
           </div>
@@ -1309,7 +1401,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">10</span>
+              <span class="site-state-item-count">11</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1319,7 +1411,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
