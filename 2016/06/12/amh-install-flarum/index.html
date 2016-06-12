@@ -80,19 +80,22 @@
 
 
 
-<meta name="description" content="知识背景AMHAMH 是国内首个开源的主机面板，AMH 支持用户自由弹性组建运行环境与切换环境，您可以下载安装不同版本的WEB服务器、数据库、脚本软件自由组合创建您需要的运行环境。
-我使用的是AMH5.X的付费版本，4.X的免费版本也可以参考本教程。">
+<meta name="description" content="最近无意间发现几个开源软件的Bug反馈系统使用的是Flarum，Flarum是一款优雅简洁论坛软件，看起来还是相当不错的，一时抑制不住想要尝试一下。
+由于服务器使用的是AMH集成环境，它相对于通常的直接安装环境有很多的区别，这导致安装过程中产生里不少问题。这里做个总结。
+知识背景FlarumFlarum 是一款优雅简洁论坛软件，让在线交流变得更加轻松愉快。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="AMH 5.X下安装 Flarum">
 <meta property="og:url" content="http://yoursite.com/2016/06/12/amh-install-flarum/index.html">
 <meta property="og:site_name" content="Cafeting">
-<meta property="og:description" content="知识背景AMHAMH 是国内首个开源的主机面板，AMH 支持用户自由弹性组建运行环境与切换环境，您可以下载安装不同版本的WEB服务器、数据库、脚本软件自由组合创建您需要的运行环境。
-我使用的是AMH5.X的付费版本，4.X的免费版本也可以参考本教程。">
-<meta property="og:updated_time" content="2016-06-12T10:58:18.000Z">
+<meta property="og:description" content="最近无意间发现几个开源软件的Bug反馈系统使用的是Flarum，Flarum是一款优雅简洁论坛软件，看起来还是相当不错的，一时抑制不住想要尝试一下。
+由于服务器使用的是AMH集成环境，它相对于通常的直接安装环境有很多的区别，这导致安装过程中产生里不少问题。这里做个总结。
+知识背景FlarumFlarum 是一款优雅简洁论坛软件，让在线交流变得更加轻松愉快。">
+<meta property="og:updated_time" content="2016-06-12T11:03:40.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="AMH 5.X下安装 Flarum">
-<meta name="twitter:description" content="知识背景AMHAMH 是国内首个开源的主机面板，AMH 支持用户自由弹性组建运行环境与切换环境，您可以下载安装不同版本的WEB服务器、数据库、脚本软件自由组合创建您需要的运行环境。
-我使用的是AMH5.X的付费版本，4.X的免费版本也可以参考本教程。">
+<meta name="twitter:description" content="最近无意间发现几个开源软件的Bug反馈系统使用的是Flarum，Flarum是一款优雅简洁论坛软件，看起来还是相当不错的，一时抑制不住想要尝试一下。
+由于服务器使用的是AMH集成环境，它相对于通常的直接安装环境有很多的区别，这导致安装过程中产生里不少问题。这里做个总结。
+知识背景FlarumFlarum 是一款优雅简洁论坛软件，让在线交流变得更加轻松愉快。">
 
 
 
@@ -278,9 +281,16 @@
       
 
       
-        <h2 id="知识背景"><a href="#知识背景" class="headerlink" title="知识背景"></a>知识背景</h2><h3 id="AMH"><a href="#AMH" class="headerlink" title="AMH"></a>AMH</h3><p><a href="https://amh.sh" target="_blank" rel="external">AMH</a> 是国内首个开源的主机面板，AMH 支持用户自由弹性组建运行环境与切换环境，您可以下载安装不同版本的WEB服务器、数据库、脚本软件自由组合创建您需要的运行环境。</p>
-<p>我使用的是<code>AMH5.X</code>的付费版本，<code>4.X</code>的免费版本也可以参考本教程。</p>
+        <p>最近无意间发现几个开源软件的<code>Bug反馈系统</code>使用的是<strong>Flarum</strong>，Flarum是一款优雅简洁论坛软件，看起来还是相当不错的，一时抑制不住想要尝试一下。</p>
+<p>由于服务器使用的是AMH集成环境，它相对于通常的直接安装环境有很多的区别，这导致安装过程中产生里不少问题。这里做个总结。</p>
+<h2 id="知识背景"><a href="#知识背景" class="headerlink" title="知识背景"></a>知识背景</h2><h3 id="Flarum"><a href="#Flarum" class="headerlink" title="Flarum"></a>Flarum</h3><p>Flarum 是一款优雅简洁论坛软件，让在线交流变得更加轻松愉快。</p>
 <a id="more"></a>
+<ul>
+<li><a href="https://discuss.flarum.org" target="_blank" rel="external">官网</a></li>
+<li><a href="http://www.flarum.org.cn" target="_blank" rel="external">中文站</a></li>
+</ul>
+<h3 id="AMH"><a href="#AMH" class="headerlink" title="AMH"></a>AMH</h3><p><a href="https://amh.sh" target="_blank" rel="external">AMH</a> 是国内首个开源的主机面板，AMH 支持用户自由弹性组建运行环境与切换环境，您可以下载安装不同版本的WEB服务器、数据库、脚本软件自由组合创建您需要的运行环境。</p>
+<p>我使用的是<code>AMH5.X</code>的付费版本，<code>4.X</code>的免费版本也可以参考本教程。</p>
 <p>目前服务器环境是LNMP：</p>
 <blockquote>
 <p>CentOS-6.6 64位</p>
@@ -289,11 +299,6 @@
 <p>nginx-generic-1.6.0</p>
 <p>php-7.0</p>
 </blockquote>
-<h3 id="Flarum"><a href="#Flarum" class="headerlink" title="Flarum"></a>Flarum</h3><p>Flarum 是一款优雅简洁论坛软件，让在线交流变得更加轻松愉快。</p>
-<ul>
-<li><a href="https://discuss.flarum.org" target="_blank" rel="external">官网</a></li>
-<li><a href="http://www.flarum.org.cn" target="_blank" rel="external">中文站</a></li>
-</ul>
 <h3 id="Composer"><a href="#Composer" class="headerlink" title="Composer"></a>Composer</h3><p>Composer是 PHP 用来管理依赖（dependency）关系的工具。你可以在自己的项目中声明所依赖的外部工具库（libraries），Composer 会帮你安装这些依赖的库文件。</p>
 <ul>
 <li><a href="https://getcomposer.org" target="_blank" rel="external">官网</a></li>
@@ -541,7 +546,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#知识背景"><span class="nav-number">1.</span> <span class="nav-text">知识背景</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#AMH"><span class="nav-number">1.1.</span> <span class="nav-text">AMH</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Flarum"><span class="nav-number">1.2.</span> <span class="nav-text">Flarum</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Composer"><span class="nav-number">1.3.</span> <span class="nav-text">Composer</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装PHP扩展"><span class="nav-number">2.</span> <span class="nav-text">安装PHP扩展</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#流程："><span class="nav-number">2.1.</span> <span class="nav-text">流程：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装Composer"><span class="nav-number">3.</span> <span class="nav-text">安装Composer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装Flarum"><span class="nav-number">4.</span> <span class="nav-text">安装Flarum</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Flarum中文语言包"><span class="nav-number">4.1.</span> <span class="nav-text">安装Flarum中文语言包</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#问题集锦"><span class="nav-number">5.</span> <span class="nav-text">问题集锦</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#bash-php-command-not-found"><span class="nav-number">5.1.</span> <span class="nav-text">-bash php command not found</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#requires-ext-fileinfo-或者-request-for-intervention-image"><span class="nav-number">5.2.</span> <span class="nav-text">requires ext-fileinfo * 或者 request for intervention/image</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Please-chmod-this-directory-to-0775"><span class="nav-number">5.3.</span> <span class="nav-text">Please chmod this directory to 0775</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他"><span class="nav-number">6.</span> <span class="nav-text">其他</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#知识背景"><span class="nav-number">1.</span> <span class="nav-text">知识背景</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Flarum"><span class="nav-number">1.1.</span> <span class="nav-text">Flarum</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AMH"><span class="nav-number">1.2.</span> <span class="nav-text">AMH</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Composer"><span class="nav-number">1.3.</span> <span class="nav-text">Composer</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装PHP扩展"><span class="nav-number">2.</span> <span class="nav-text">安装PHP扩展</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#流程："><span class="nav-number">2.1.</span> <span class="nav-text">流程：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装Composer"><span class="nav-number">3.</span> <span class="nav-text">安装Composer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装Flarum"><span class="nav-number">4.</span> <span class="nav-text">安装Flarum</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Flarum中文语言包"><span class="nav-number">4.1.</span> <span class="nav-text">安装Flarum中文语言包</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#问题集锦"><span class="nav-number">5.</span> <span class="nav-text">问题集锦</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#bash-php-command-not-found"><span class="nav-number">5.1.</span> <span class="nav-text">-bash php command not found</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#requires-ext-fileinfo-或者-request-for-intervention-image"><span class="nav-number">5.2.</span> <span class="nav-text">requires ext-fileinfo * 或者 request for intervention/image</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Please-chmod-this-directory-to-0775"><span class="nav-number">5.3.</span> <span class="nav-text">Please chmod this directory to 0775</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他"><span class="nav-number">6.</span> <span class="nav-text">其他</span></a></li></ol></div>
             
           </div>
         </section>
