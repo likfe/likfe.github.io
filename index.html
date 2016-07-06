@@ -229,6 +229,508 @@
             
               
                 
+                <a class="post-title-link" href="/2016/07/06/android-longpress-back/" itemprop="url">
+                  Android必知必会-长按返回健退出
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-07-06T14:31:23+08:00" content="2016-07-06">
+              2016-07-06
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/07/06/android-longpress-back/" class="leancloud_visitors" data-flag-title="Android必知必会-长按返回健退出">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>平常比较常见的都是一定时间间隔内按两次返回键来退出应用，并且第一次点击会有相应的提示，网上资料比较多，这里写一下，长按返回键退出。</p>
+<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><p>实现的方案常用的有两个：</p>
+<ul>
+<li>重写<code>dispatchKeyEvent(KeyEvent event)</code>方法</li>
+<li>重写<code>onKeyDown(int keyCode, KeyEvent event)</code>方法</li>
+</ul>
+<h3 id="方案一"><a href="#方案一" class="headerlink" title="方案一"></a>方案一</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">dispatchKeyEvent</span><span class="params">(KeyEvent event)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (event.getKeyCode() == KeyEvent.KEYCODE_BACK &amp;&amp; event.isLongPress()) &#123;</span><br><span class="line">        <span class="comment">//do something else</span></span><br><span class="line">        System.exit(<span class="number">0</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>代码很简单，如果按下了返回键且是长按，则退出。</p>
+<h3 id="方案二"><a href="#方案二" class="headerlink" title="方案二"></a>方案二</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">onKeyDown</span><span class="params">(<span class="keyword">int</span> keyCode, KeyEvent event)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (keyCode == KeyEvent.KEYCODE_BACK &amp;&amp; event.getRepeatCount() == <span class="number">0</span>) &#123;</span><br><span class="line">        Toast.makeText(<span class="keyword">this</span>, <span class="string">"长按返回键退出"</span>, Toast.LENGTH_SHORT).show();</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (keyCode == KeyEvent.KEYCODE_BACK &amp;&amp; event.getRepeatCount() == <span class="number">2</span>) &#123;</span><br><span class="line">        <span class="comment">//do something else</span></span><br><span class="line">        System.exit(<span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>推荐本方案，可以修改<code>else if</code>中<code>event.getRepeatCount()==</code>的次数来修改长按的时间，<code>event.getRepeatCount()</code> 为<strong>0</strong>时代表单击了一次，当次数<code>&gt;=1</code>时就代表长按了,值越大，说明按的时间越长。<br>之所以推荐本方案，因为可以在第一次点击返回键的时候提醒用户。</p>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>本来准备多整理些资料一起发出来，掘金刚刚在内测发布工具，这里就手写一篇试试感觉如何，体验还是很棒的。以下是个人意见：</p>
+<p>优点：</p>
+<ul>
+<li>配色漂亮</li>
+<li>界面干净，写作比较专注，适合有经验的老手</li>
+<li>响应快，对<code>MarkDown</code>语法的细节处理的不错</li>
+</ul>
+<p>缺点：</p>
+<ul>
+<li>界面没有引导，新手会蒙圈吧</li>
+<li>左边的写作区的配色是暗色，没有可选性（难道根据时间换白色和黑色主题？）</li>
+<li>不支持流程图等高级功能</li>
+</ul>
+<p>总的来说，基本功能都是有的，界面比较干净，这个是优点也是缺点了，相对而言，更适合把<code>MarkDown</code>语法熟记于心的人。</p>
+<p>最后，来个配图看看写作界面：</p>
+<p><img src="http://ac-mhke0kuv.clouddn.com/bcb599449a6de0393bcc.png" alt=""></p>
+<p>PS:</p>
+<blockquote>
+<p>你可以关注的我<a href="https://github.com/likfe" target="_blank" rel="external">Github</a>、<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="external">CSDN</a>和<a href="http://weibo.com/zyansen" target="_blank" rel="external">微博</a></p>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/07/06/android-setting-lamdba/" itemprop="url">
+                  Android必知必会-Android Studio下配置和使用Lambda
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-07-06T14:29:25+08:00" content="2016-07-06">
+              2016-07-06
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/07/06/android-setting-lamdba/" class="leancloud_visitors" data-flag-title="Android必知必会-Android Studio下配置和使用Lambda">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>和朋友讨论 <code>JAVA8</code> 的新特性，聊到<code>Lambda</code>，正好在掘金上看到一篇相关的文章，结合资料，作一个总结，特别是记录下实际使用中遇到的问题。</p>
+<h3 id="什么是Lambda表达式"><a href="#什么是Lambda表达式" class="headerlink" title="什么是Lambda表达式"></a>什么是Lambda表达式</h3><blockquote>
+<p>lambda表达式，它将允许我们将行为传到函数里。在Java 8之前，如果想将行为传入函数，仅有的选择就是匿名类，需要6行代码。而定义行为最重要的那行代码，却混在中间不够突出。Lambda表达式取代了匿名类，取消了模板，允许用函数式风格编写代码。这样有时可读性更好，表达更清晰。</p>
+<p>— Java8 lambda表达式10个示例</p>
+</blockquote>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/07/06/android-setting-lamdba/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+    
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/06/28/androidTutorials-0/" itemprop="url">
+                  Android 开发指南-0
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-06-28T12:35:08+08:00" content="2016-06-28">
+              2016-06-28
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/06/28/androidTutorials-0/" class="leancloud_visitors" data-flag-title="Android 开发指南-0">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>无意间发现一个网站，主打IOS方面的教程，然而作为一个Android开发者，我就找了下网站里有没有Android的教程，还真有，这里就翻译一下。</p>
+<blockquote>
+<p>翻译目标教程：<a href="https://www.raywenderlich.com/category/android" target="_blank" rel="external">https://www.raywenderlich.com/category/android</a></p>
+</blockquote>
+<h2 id="Android-开发指南"><a href="#Android-开发指南" class="headerlink" title="Android 开发指南"></a>Android 开发指南</h2><p>想用 <code>Java</code> 来开发 <code>Android APP</code> 吗？<br>看看我们收集的超过15免费安卓开发教程，用覆盖所有你知道的知识来开始!</p>
+<blockquote>
+<p>注意:网站所有的Android教程使用Java。如果您是初次接触Java，一定要先读一本Java主题的书。</p>
+</blockquote>
+<h3 id="Getting-Started-开始"><a href="#Getting-Started-开始" class="headerlink" title="Getting Started 开始"></a>Getting Started 开始</h3><p>开始的最好方法是通过学习我们的<a href="https://www.raywenderlich.com/120177/beginning-android-development-tutorial-installing-android-studio" target="_blank" rel="external">开始Android开发</a>系列教程。<br>如果你需要快速学习Java，看看我们的 <a href="https://www.raywenderlich.com/110452/java-for-android" target="_blank" rel="external">Java For Android 教程</a>和<a href="https://www.raywenderlich.com/119175/java-for-android-cheat-sheet-and-quick-reference" target="_blank" rel="external">cheat sheet 备忘录</a>。</p>
+<ul>
+<li><a href="https://www.raywenderlich.com/110452/java-for-android" target="_blank" rel="external">Java For Android</a></li>
+</ul>
+<ul>
+<li><a href="https://www.raywenderlich.com/119175/java-for-android-cheat-sheet-and-quick-reference" target="_blank" rel="external">Java for Android 备忘录和速记</a></li>
+</ul>
+<ul>
+<li><a href="https://www.raywenderlich.com/120177/beginning-android-development-tutorial-installing-android-studio" target="_blank" rel="external">开始Android开发教程: 安装 Android Studio</a></li>
+</ul>
+<ul>
+<li><a href="https://www.raywenderlich.com/120508/beginning-android-development-tutorial-android-studio" target="_blank" rel="external">开始Android开发教程:介绍 Android Studio</a></li>
+</ul>
+<h3 id="Core-Concepts-核心概念"><a href="#Core-Concepts-核心概念" class="headerlink" title="Core Concepts 核心概念"></a>Core Concepts 核心概念</h3><p>一旦你已经学习了基础知识，你应该了解Android开发所需要知道的一些核心概念，如<code>activities</code>（活动）、<code>fragments</code> （片段）,<code>intents</code> （意图）,一些重要的设计模式。</p>
+<ul>
+<li><a href="https://www.raywenderlich.com/103044/android-intents-tutorial" target="_blank" rel="external">Android: Intents 教程</a></li>
+</ul>
+<ul>
+<li><a href="https://www.raywenderlich.com/109843/common-design-patterns-for-android" target="_blank" rel="external">Android 常见的设计模式</a></li>
+</ul>
+<ul>
+<li><a href="https://www.raywenderlich.com/116580/introduction-to-android-activities-tutorial" target="_blank" rel="external">介绍 Android Activities 的教程</a></li>
+</ul>
+<ul>
+<li><a href="https://www.raywenderlich.com/117838/introduction-to-android-fragments-tutorial" target="_blank" rel="external">介绍 Android Fragments 的教程</a></li>
+</ul>
+<h3 id="User-Interface-用户界面"><a href="#User-Interface-用户界面" class="headerlink" title="User Interface 用户界面"></a>User Interface 用户界面</h3><p>创建一个Android应用的一个重要组成部分是创建一个用户界面。在本节中,您将学习如何创建用户界面外观和了解各种屏幕尺寸。</p>
+<ul>
+<li><a href="https://www.raywenderlich.com/103367/material-design" target="_blank" rel="external">Android: Material Design 介绍</a></li>
+</ul>
+<ul>
+<li><a href="https://www.raywenderlich.com/114066/adaptive-ui-android-tutorial" target="_blank" rel="external">Adaptive UI in Android Tutorial 自适应界面</a></li>
+</ul>
+<ul>
+<li><a href="https://www.raywenderlich.com/124438/android-listview-tutorial" target="_blank" rel="external">Android ListView 教程</a></li>
+</ul>
+<ul>
+<li><a href="https://www.raywenderlich.com/126528/android-recyclerview-tutorial" target="_blank" rel="external">Android RecyclerView 教程</a></li>
+</ul>
+<h3 id="其他-Android-教程"><a href="#其他-Android-教程" class="headerlink" title="其他 Android 教程"></a>其他 Android 教程</h3><p>别急，还有更多！在本节中,您将学习如何使用不同的Android SDK版本，如何分发你的应用程序到Android应用程序商店,等等。</p>
+<ul>
+<li><a href="https://www.raywenderlich.com/103540/geofences-googleapiclient" target="_blank" rel="external">Geofences on Android with GoogleApiClient</a></li>
+</ul>
+<ul>
+<li><a href="https://www.raywenderlich.com/118966/android-sdk-versions-tutorial" target="_blank" rel="external">Android SDK 版本教程</a></li>
+</ul>
+<ul>
+<li><a href="https://www.raywenderlich.com/122114/android-app-distribution-tutorial-zero-google-play-store" target="_blank" rel="external">Android App 分发教程: 从零到 Google Play Store</a></li>
+</ul>
+<ul>
+<li><a href="https://www.raywenderlich.com/124936/whats-new-android-studio-2-0" target="_blank" rel="external">Android Studio 2.0 有什么新东西？</a></li>
+</ul>
+<p>后续内容翻译中…</p>
+
+          
+        
+      
+    </div>
+    
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/06/28/android-multiDex/" itemprop="url">
+                  Android项目开发填坑记--使用MultiDex
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-06-28T12:15:12+08:00" content="2016-06-28">
+              2016-06-28
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/06/28/android-multiDex/" class="leancloud_visitors" data-flag-title="Android项目开发填坑记--使用MultiDex">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="背景知识"><a href="#背景知识" class="headerlink" title="背景知识"></a>背景知识</h2>
+          
+        
+      
+    </div>
+    
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/06/15/android-studio-rename-package/" itemprop="url">
                   Android必知必会-Android Studio修改包名
                 </a>
@@ -836,429 +1338,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/04/28/9patchAttention/" itemprop="url">
-                  Android项目开发填坑记-9patchPng报错
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-28T19:30:09+08:00" content="2016-04-28">
-              2016-04-28
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/04/28/9patchAttention/" class="leancloud_visitors" data-flag-title="Android项目开发填坑记-9patchPng报错">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>之前写了一篇文章<a href="http://blog.csdn.net/ys743276112/article/details/45794809">Android必知必会–NinePatch图片制作</a>详细介绍了Android 9Patch图片的制作和一些Demo展示，这次说明一下9Patch图片的制作的注意事项和遇到相关报错的解决方案。</p>
-<h3 id="一、注意事项"><a href="#一、注意事项" class="headerlink" title="一、注意事项"></a>一、注意事项</h3><p>9Patch图片的<strong>左边框</strong>和<strong>上边框</strong>至少<strong>有一个描点</strong>，<strong>右边框</strong>和<strong>下边框</strong>则<strong>有且只有一段描点</strong>。</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/04/28/9patchAttention/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-    
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/04/22/greenDao-session/" itemprop="url">
-                  Android必知必会--GreenDao缓存
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-22T14:03:39+08:00" content="2016-04-22">
-              2016-04-22
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/04/22/greenDao-session/" class="leancloud_visitors" data-flag-title="Android必知必会--GreenDao缓存">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <ul>
-<li><a href="http://likfe.github.io/2016/04/22/greenDao-session/">Github版</a></li>
-<li><a href="http://blog.csdn.net/ys743276112/article/details/50479917">CSDN版</a></li>
-</ul>
-<p>本篇文章不是介绍GreenDao的配置和基础使用，记录一下GreenDao缓存的问题，帮助遇到同样问题的朋友找到原因和方法，下面是示例：<br>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/04/22/greenDao-session/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-    
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/04/20/fragmen-onBackPressed/" itemprop="url">
-                  Android项目开发填坑记-Fragmen的onBackPressed
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-20T23:38:42+08:00" content="2016-04-20">
-              2016-04-20
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/04/20/fragmen-onBackPressed/" class="leancloud_visitors" data-flag-title="Android项目开发填坑记-Fragmen的onBackPressed">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="知识背景"><a href="#知识背景" class="headerlink" title="知识背景"></a>知识背景</h2><p><code>Fragment</code>在当前的Android开发中，有两种引用方式，一个是 Android 3.0 时加入的，一个是supportV4包中的。这里简称为<code>Fragment3.0</code>和<code>FragmentV4</code>。</p>
-<h2 id="Fragment中的返回"><a href="#Fragment中的返回" class="headerlink" title="Fragment中的返回"></a>Fragment中的返回</h2><p>在Fragment中经常用到自定义标题栏，而<strong>返回按钮</strong>的点击事件一般设置为：<code>getActivity().onBackPressed();</code>，这样可以使得点击返回按钮和点击手机上的返回键的效果一致，即调用所在Activity的<code>onBackPressed();</code>。</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/04/20/fragmen-onBackPressed/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-    
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/04/20/fragmen-onAttach/" itemprop="url">
-                  Android项目开发填坑记-Fragmen的onAttach方法
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-20T23:34:09+08:00" content="2016-04-20">
-              2016-04-20
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/04/20/fragmen-onAttach/" class="leancloud_visitors" data-flag-title="Android项目开发填坑记-Fragmen的onAttach方法">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>现在Android开发多使用一个Activity管理多个Fragment进行开发，不免需要两者相互传递数据，一般是给Fragment添加回调接口，让Activity继承并实现。</p>
-<p>回调接口一般都写在Fragment的<code>onAttach()</code>方法中，Fragment 3.0 的<code>onAttach()</code>方法有2个重载，其中一个被废弃，所以通常是：</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/04/20/fragmen-onAttach/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-    
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1304,7 +1383,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">13</span>
+              <span class="site-state-item-count">17</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1314,7 +1393,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

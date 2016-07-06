@@ -80,18 +80,28 @@
 
 
 
-<meta name="description" content="背景公司做相似产品较多，一般都是以某个产品为基础修改，逐步替换设计图的切图。这个就会导致需要经常为Copy的项目修改包名。这里是参考一些网上的说法，结合自身实战经验加以完善，特此分享给同行们，避免不必要的弯路。">
+<meta name="description" content="无意间发现一个网站，主打IOS方面的教程，然而作为一个Android开发者，我就找了下网站里有没有Android的教程，还真有，这里就翻译一下。
+
+翻译目标教程：https://www.raywenderlich.com/category/android
+
+Android 开发指南想用 Java 来开发 Android APP 吗？看看我们收集的超过15免费安卓开发教程，用覆盖所有你知道的知识来开">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Android必知必会-Android Studio修改包名">
-<meta property="og:url" content="http://yoursite.com/2016/06/15/android-studio-rename-package/index.html">
+<meta property="og:title" content="Android 开发指南-0">
+<meta property="og:url" content="http://yoursite.com/2016/06/28/androidTutorials-0/index.html">
 <meta property="og:site_name" content="Cafeting">
-<meta property="og:description" content="背景公司做相似产品较多，一般都是以某个产品为基础修改，逐步替换设计图的切图。这个就会导致需要经常为Copy的项目修改包名。这里是参考一些网上的说法，结合自身实战经验加以完善，特此分享给同行们，避免不必要的弯路。">
-<meta property="og:image" content="http://img.blog.csdn.net/20160615174836929">
-<meta property="og:updated_time" content="2016-06-15T10:09:20.000Z">
+<meta property="og:description" content="无意间发现一个网站，主打IOS方面的教程，然而作为一个Android开发者，我就找了下网站里有没有Android的教程，还真有，这里就翻译一下。
+
+翻译目标教程：https://www.raywenderlich.com/category/android
+
+Android 开发指南想用 Java 来开发 Android APP 吗？看看我们收集的超过15免费安卓开发教程，用覆盖所有你知道的知识来开">
+<meta property="og:updated_time" content="2016-06-28T04:36:25.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Android必知必会-Android Studio修改包名">
-<meta name="twitter:description" content="背景公司做相似产品较多，一般都是以某个产品为基础修改，逐步替换设计图的切图。这个就会导致需要经常为Copy的项目修改包名。这里是参考一些网上的说法，结合自身实战经验加以完善，特此分享给同行们，避免不必要的弯路。">
-<meta name="twitter:image" content="http://img.blog.csdn.net/20160615174836929">
+<meta name="twitter:title" content="Android 开发指南-0">
+<meta name="twitter:description" content="无意间发现一个网站，主打IOS方面的教程，然而作为一个Android开发者，我就找了下网站里有没有Android的教程，还真有，这里就翻译一下。
+
+翻译目标教程：https://www.raywenderlich.com/category/android
+
+Android 开发指南想用 Java 来开发 Android APP 吗？看看我们收集的超过15免费安卓开发教程，用覆盖所有你知道的知识来开">
 
 
 
@@ -109,7 +119,7 @@
   };
 </script>
 
-  <title> Android必知必会-Android Studio修改包名 | Cafeting </title>
+  <title> Android 开发指南-0 | Cafeting </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -229,7 +239,7 @@
             
             
               
-                Android必知必会-Android Studio修改包名
+                Android 开发指南-0
               
             
           </h1>
@@ -241,8 +251,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-06-15T18:06:47+08:00" content="2016-06-15">
-              2016-06-15
+            <time itemprop="dateCreated" datetime="2016-06-28T12:35:08+08:00" content="2016-06-28">
+              2016-06-28
             </time>
           </span>
 
@@ -256,7 +266,7 @@
 
           
           
-             <span id="/2016/06/15/android-studio-rename-package/" class="leancloud_visitors" data-flag-title="Android必知必会-Android Studio修改包名">
+             <span id="/2016/06/28/androidTutorials-0/" class="leancloud_visitors" data-flag-title="Android 开发指南-0">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -277,27 +287,67 @@
       
 
       
-        <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>公司做相似产品较多，一般都是以某个产品为基础修改，逐步替换设计图的切图。这个就会导致需要经常为Copy的项目修改包名。<br>这里是参考一些网上的说法，结合自身实战经验加以完善，特此分享给同行们，避免不必要的弯路。</p>
-<a id="more"></a>
-<h2 id="Android-Studio修改包名"><a href="#Android-Studio修改包名" class="headerlink" title="Android Studio修改包名"></a>Android Studio修改包名</h2><h3 id="1-修改包显示方式"><a href="#1-修改包显示方式" class="headerlink" title="1.修改包显示方式"></a>1.修改包显示方式</h3><p>如下图所示：<br><img src="http://img.blog.csdn.net/20160615174836929" alt="这里写图片描述"></p>
-<p>通过修改包显示方式，我们可以更方便的修改包名。</p>
-<h3 id="2-修改包名"><a href="#2-修改包名" class="headerlink" title="2.修改包名"></a>2.修改包名</h3><p>经过1中的操作，我们可以随意修改包的某个节点</p>
-<ul>
-<li>选中所要修改包的节点</li>
-<li>右键后选中-&gt;<code>Refactor</code>-&gt;<code>Rename</code></li>
-<li>在弹窗里输入要修改成什么名字，确认</li>
-<li>在弹窗里选择 修改<code>package</code></li>
-</ul>
-<h3 id="3-后续操作"><a href="#3-后续操作" class="headerlink" title="3.后续操作"></a>3.后续操作</h3><ol>
-<li>修改当前<code>Module</code>的<code>build.gradle</code>文件中的<code>applicationId</code>,改为跟你的包名一致；</li>
-<li>修改当前<code>Module</code>的<code>AndroidManifest.xml</code>文件中的<code>manifest</code>节点里的<code>package</code>属性值，改为跟你的包名一致。</li>
-</ol>
-<p>以上两个后续操作缺一不可，否则会造成很多奇特的Bug，比如<code>Id</code>没有错误且存在的情况下，提示找不到<code>id</code>；还有找不到资源、某些<code>Activity</code> 无法启动等等的Bug。</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>以上「3.后续操作」里的第二操作是很多人都容易忽略的地方，不修改的话一时间也不会出现问题，如果忽略里，以后遇到无法解决的Bug后可能需要很久才会意识到<code>AndroidManifest.xml</code> 包名的问题。</p>
-<p>PS:</p>
+        <p>无意间发现一个网站，主打IOS方面的教程，然而作为一个Android开发者，我就找了下网站里有没有Android的教程，还真有，这里就翻译一下。</p>
 <blockquote>
-<p>你可以关注的我<a href="https://github.com/likfe" target="_blank" rel="external">Github</a>、<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="external">CSDN</a>和<a href="http://weibo.com/zyansen" target="_blank" rel="external">微博</a></p>
+<p>翻译目标教程：<a href="https://www.raywenderlich.com/category/android" target="_blank" rel="external">https://www.raywenderlich.com/category/android</a></p>
 </blockquote>
+<h2 id="Android-开发指南"><a href="#Android-开发指南" class="headerlink" title="Android 开发指南"></a>Android 开发指南</h2><p>想用 <code>Java</code> 来开发 <code>Android APP</code> 吗？<br>看看我们收集的超过15免费安卓开发教程，用覆盖所有你知道的知识来开始!</p>
+<blockquote>
+<p>注意:网站所有的Android教程使用Java。如果您是初次接触Java，一定要先读一本Java主题的书。</p>
+</blockquote>
+<h3 id="Getting-Started-开始"><a href="#Getting-Started-开始" class="headerlink" title="Getting Started 开始"></a>Getting Started 开始</h3><p>开始的最好方法是通过学习我们的<a href="https://www.raywenderlich.com/120177/beginning-android-development-tutorial-installing-android-studio" target="_blank" rel="external">开始Android开发</a>系列教程。<br>如果你需要快速学习Java，看看我们的 <a href="https://www.raywenderlich.com/110452/java-for-android" target="_blank" rel="external">Java For Android 教程</a>和<a href="https://www.raywenderlich.com/119175/java-for-android-cheat-sheet-and-quick-reference" target="_blank" rel="external">cheat sheet 备忘录</a>。</p>
+<ul>
+<li><a href="https://www.raywenderlich.com/110452/java-for-android" target="_blank" rel="external">Java For Android</a></li>
+</ul>
+<ul>
+<li><a href="https://www.raywenderlich.com/119175/java-for-android-cheat-sheet-and-quick-reference" target="_blank" rel="external">Java for Android 备忘录和速记</a></li>
+</ul>
+<ul>
+<li><a href="https://www.raywenderlich.com/120177/beginning-android-development-tutorial-installing-android-studio" target="_blank" rel="external">开始Android开发教程: 安装 Android Studio</a></li>
+</ul>
+<ul>
+<li><a href="https://www.raywenderlich.com/120508/beginning-android-development-tutorial-android-studio" target="_blank" rel="external">开始Android开发教程:介绍 Android Studio</a></li>
+</ul>
+<h3 id="Core-Concepts-核心概念"><a href="#Core-Concepts-核心概念" class="headerlink" title="Core Concepts 核心概念"></a>Core Concepts 核心概念</h3><p>一旦你已经学习了基础知识，你应该了解Android开发所需要知道的一些核心概念，如<code>activities</code>（活动）、<code>fragments</code> （片段）,<code>intents</code> （意图）,一些重要的设计模式。</p>
+<ul>
+<li><a href="https://www.raywenderlich.com/103044/android-intents-tutorial" target="_blank" rel="external">Android: Intents 教程</a></li>
+</ul>
+<ul>
+<li><a href="https://www.raywenderlich.com/109843/common-design-patterns-for-android" target="_blank" rel="external">Android 常见的设计模式</a></li>
+</ul>
+<ul>
+<li><a href="https://www.raywenderlich.com/116580/introduction-to-android-activities-tutorial" target="_blank" rel="external">介绍 Android Activities 的教程</a></li>
+</ul>
+<ul>
+<li><a href="https://www.raywenderlich.com/117838/introduction-to-android-fragments-tutorial" target="_blank" rel="external">介绍 Android Fragments 的教程</a></li>
+</ul>
+<h3 id="User-Interface-用户界面"><a href="#User-Interface-用户界面" class="headerlink" title="User Interface 用户界面"></a>User Interface 用户界面</h3><p>创建一个Android应用的一个重要组成部分是创建一个用户界面。在本节中,您将学习如何创建用户界面外观和了解各种屏幕尺寸。</p>
+<ul>
+<li><a href="https://www.raywenderlich.com/103367/material-design" target="_blank" rel="external">Android: Material Design 介绍</a></li>
+</ul>
+<ul>
+<li><a href="https://www.raywenderlich.com/114066/adaptive-ui-android-tutorial" target="_blank" rel="external">Adaptive UI in Android Tutorial 自适应界面</a></li>
+</ul>
+<ul>
+<li><a href="https://www.raywenderlich.com/124438/android-listview-tutorial" target="_blank" rel="external">Android ListView 教程</a></li>
+</ul>
+<ul>
+<li><a href="https://www.raywenderlich.com/126528/android-recyclerview-tutorial" target="_blank" rel="external">Android RecyclerView 教程</a></li>
+</ul>
+<h3 id="其他-Android-教程"><a href="#其他-Android-教程" class="headerlink" title="其他 Android 教程"></a>其他 Android 教程</h3><p>别急，还有更多！在本节中,您将学习如何使用不同的Android SDK版本，如何分发你的应用程序到Android应用程序商店,等等。</p>
+<ul>
+<li><a href="https://www.raywenderlich.com/103540/geofences-googleapiclient" target="_blank" rel="external">Geofences on Android with GoogleApiClient</a></li>
+</ul>
+<ul>
+<li><a href="https://www.raywenderlich.com/118966/android-sdk-versions-tutorial" target="_blank" rel="external">Android SDK 版本教程</a></li>
+</ul>
+<ul>
+<li><a href="https://www.raywenderlich.com/122114/android-app-distribution-tutorial-zero-google-play-store" target="_blank" rel="external">Android App 分发教程: 从零到 Google Play Store</a></li>
+</ul>
+<ul>
+<li><a href="https://www.raywenderlich.com/124936/whats-new-android-studio-2-0" target="_blank" rel="external">Android Studio 2.0 有什么新东西？</a></li>
+</ul>
+<p>后续内容翻译中…</p>
 
       
     </div>
@@ -327,16 +377,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/06/14/mamp-list-file/" rel="next" title="MAMP显示文件列表">
-                <i class="fa fa-chevron-left"></i> MAMP显示文件列表
+              <a href="/2016/06/28/android-multiDex/" rel="next" title="Android项目开发填坑记--使用MultiDex">
+                <i class="fa fa-chevron-left"></i> Android项目开发填坑记--使用MultiDex
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/06/28/android-multiDex/" rel="prev" title="Android项目开发填坑记--使用MultiDex">
-                Android项目开发填坑记--使用MultiDex <i class="fa fa-chevron-right"></i>
+              <a href="/2016/07/06/android-setting-lamdba/" rel="prev" title="Android必知必会-Android Studio下配置和使用Lambda">
+                Android必知必会-Android Studio下配置和使用Lambda <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -466,7 +516,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#背景"><span class="nav-number">1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Android-Studio修改包名"><span class="nav-number">2.</span> <span class="nav-text">Android Studio修改包名</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-修改包显示方式"><span class="nav-number">2.1.</span> <span class="nav-text">1.修改包显示方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-修改包名"><span class="nav-number">2.2.</span> <span class="nav-text">2.修改包名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-后续操作"><span class="nav-number">2.3.</span> <span class="nav-text">3.后续操作</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">3.</span> <span class="nav-text">总结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Android-开发指南"><span class="nav-number">1.</span> <span class="nav-text">Android 开发指南</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Getting-Started-开始"><span class="nav-number">1.1.</span> <span class="nav-text">Getting Started 开始</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Core-Concepts-核心概念"><span class="nav-number">1.2.</span> <span class="nav-text">Core Concepts 核心概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#User-Interface-用户界面"><span class="nav-number">1.3.</span> <span class="nav-text">User Interface 用户界面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他-Android-教程"><span class="nav-number">1.4.</span> <span class="nav-text">其他 Android 教程</span></a></li></ol></li></ol></div>
             
           </div>
         </section>
