@@ -94,7 +94,7 @@
 这里介绍下一些参数的意义：
 
 /local.properties：这个文件里默认写的有本">
-<meta property="og:updated_time" content="2016-07-17T11:07:33.000Z">
+<meta property="og:updated_time" content="2016-07-17T11:11:03.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android必知必会-发布开源Android项目注意事项">
 <meta name="twitter:description" content="1. 合理配置.gitignore文件配置.gitignore可以排除一些非必要文件和保护保密信息，下面是在项目根目录下.gitignore的配置：
@@ -295,6 +295,7 @@
 <li><code>/gradle.properties</code>：一般写有gradle的jvm、代理和打包签名文件Key的一些信息，根据需要进行处理，一般情况下需要排除，其他情况见下文。</li>
 <li><code>/build</code>和<code>/*/build/</code>：排除build项目生成的文件，文件较大，且IDE可以自动生成，无特殊需求，<strong>必须排除</strong>。</li>
 </ul>
+<a id="more"></a>
 <h2 id="2-签名文件"><a href="#2-签名文件" class="headerlink" title="2. 签名文件"></a>2. 签名文件</h2><p>在使用了一些需要配置<code>appkey</code>的第三方的SDK时，比如XX地图SDK、XX播放器SDK，这些都需要在对应的开发者中心里配置<strong>包名</strong>和<strong>Android签名</strong>信息，这些和签名文件直接相关，所以需要在项目里提前放置好一个编译用的签名文件，可以在<code>gradle.properties</code>里写上相应的变量。</p>
 <p>签名文件目前有两种格式：<code>.keystore</code>和<code>.jsk</code>，这里以<code>debug.jks</code>为例，<strong>此文件存放在项目根目录</strong>，如果目录有变化，加上相应的路径即可。</p>
 <p>根据是否在<code>gradle.properties</code>里写上相应的变量有两种使用方法：</p>
