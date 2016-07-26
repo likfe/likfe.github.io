@@ -80,18 +80,39 @@
 
 
 
-<meta name="description" content="背景公司做相似产品较多，一般都是以某个产品为基础修改，逐步替换设计图的切图。这个就会导致需要经常为Copy的项目修改包名。这里是参考一些网上的说法，结合自身实战经验加以完善，特此分享给同行们，避免不必要的弯路。">
+<meta name="description" content="内容持续更新中，更新日期：2016-07-26
+1. 程序启动图标（icon launcher）放在mipmap-*dpi下，文件名为ic_launcher.png
+
+LDPI (Low Density Screen，120 DPI)，其图标大小为 36 x 36 px。
+
+MDPI (Medium Density Screen, 160 DPI)，其图标大小为 48 x 48 px。
+
+HDPI">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Android必知必会-Android Studio修改包名">
-<meta property="og:url" content="http://yoursite.com/2016/06/15/android-studio-rename-package/index.html">
+<meta property="og:title" content="Android必知必会-App 常用图标尺寸规范汇总">
+<meta property="og:url" content="http://yoursite.com/2016/07/26/android-size-set/index.html">
 <meta property="og:site_name" content="Cafeting">
-<meta property="og:description" content="背景公司做相似产品较多，一般都是以某个产品为基础修改，逐步替换设计图的切图。这个就会导致需要经常为Copy的项目修改包名。这里是参考一些网上的说法，结合自身实战经验加以完善，特此分享给同行们，避免不必要的弯路。">
-<meta property="og:image" content="http://img.blog.csdn.net/20160615174836929">
-<meta property="og:updated_time" content="2016-06-15T10:09:20.000Z">
+<meta property="og:description" content="内容持续更新中，更新日期：2016-07-26
+1. 程序启动图标（icon launcher）放在mipmap-*dpi下，文件名为ic_launcher.png
+
+LDPI (Low Density Screen，120 DPI)，其图标大小为 36 x 36 px。
+
+MDPI (Medium Density Screen, 160 DPI)，其图标大小为 48 x 48 px。
+
+HDPI">
+<meta property="og:image" content="http://img.blog.csdn.net/20160721152503652">
+<meta property="og:updated_time" content="2016-07-26T02:59:53.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Android必知必会-Android Studio修改包名">
-<meta name="twitter:description" content="背景公司做相似产品较多，一般都是以某个产品为基础修改，逐步替换设计图的切图。这个就会导致需要经常为Copy的项目修改包名。这里是参考一些网上的说法，结合自身实战经验加以完善，特此分享给同行们，避免不必要的弯路。">
-<meta name="twitter:image" content="http://img.blog.csdn.net/20160615174836929">
+<meta name="twitter:title" content="Android必知必会-App 常用图标尺寸规范汇总">
+<meta name="twitter:description" content="内容持续更新中，更新日期：2016-07-26
+1. 程序启动图标（icon launcher）放在mipmap-*dpi下，文件名为ic_launcher.png
+
+LDPI (Low Density Screen，120 DPI)，其图标大小为 36 x 36 px。
+
+MDPI (Medium Density Screen, 160 DPI)，其图标大小为 48 x 48 px。
+
+HDPI">
+<meta name="twitter:image" content="http://img.blog.csdn.net/20160721152503652">
 
 
 
@@ -109,7 +130,7 @@
   };
 </script>
 
-  <title> Android必知必会-Android Studio修改包名 | Cafeting </title>
+  <title> Android必知必会-App 常用图标尺寸规范汇总 | Cafeting </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -229,7 +250,7 @@
             
             
               
-                Android必知必会-Android Studio修改包名
+                Android必知必会-App 常用图标尺寸规范汇总
               
             
           </h1>
@@ -241,8 +262,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-06-15T18:06:47+08:00" content="2016-06-15">
-              2016-06-15
+            <time itemprop="dateCreated" datetime="2016-07-26T10:55:30+08:00" content="2016-07-26">
+              2016-07-26
             </time>
           </span>
 
@@ -256,7 +277,7 @@
 
           
           
-             <span id="/2016/06/15/android-studio-rename-package/" class="leancloud_visitors" data-flag-title="Android必知必会-Android Studio修改包名">
+             <span id="/2016/07/26/android-size-set/" class="leancloud_visitors" data-flag-title="Android必知必会-App 常用图标尺寸规范汇总">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -277,26 +298,179 @@
       
 
       
-        <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>公司做相似产品较多，一般都是以某个产品为基础修改，逐步替换设计图的切图。这个就会导致需要经常为Copy的项目修改包名。<br>这里是参考一些网上的说法，结合自身实战经验加以完善，特此分享给同行们，避免不必要的弯路。</p>
-<a id="more"></a>
-<h2 id="Android-Studio修改包名"><a href="#Android-Studio修改包名" class="headerlink" title="Android Studio修改包名"></a>Android Studio修改包名</h2><h3 id="1-修改包显示方式"><a href="#1-修改包显示方式" class="headerlink" title="1.修改包显示方式"></a>1.修改包显示方式</h3><p>如下图所示：<br><img src="http://img.blog.csdn.net/20160615174836929" alt="这里写图片描述"></p>
-<p>通过修改包显示方式，我们可以更方便的修改包名。</p>
-<h3 id="2-修改包名"><a href="#2-修改包名" class="headerlink" title="2.修改包名"></a>2.修改包名</h3><p>经过1中的操作，我们可以随意修改包的某个节点</p>
+        <p><strong>内容持续更新中，更新日期：2016-07-26</strong></p>
+<h2 id="1-程序启动图标（icon-launcher）"><a href="#1-程序启动图标（icon-launcher）" class="headerlink" title="1. 程序启动图标（icon launcher）"></a>1. 程序启动图标（icon launcher）</h2><p>放在<code>mipmap-*dpi</code>下，文件名为<code>ic_launcher.png</code></p>
 <ul>
-<li>选中所要修改包的节点</li>
-<li>右键后选中-&gt;<code>Refactor</code>-&gt;<code>Rename</code></li>
-<li>在弹窗里输入要修改成什么名字，确认</li>
-<li>在弹窗里选择 修改<code>package</code></li>
+<li><p>LDPI (Low Density Screen，120 DPI)，其图标大小为 36 x 36 px。</p>
+</li>
+<li><p>MDPI (Medium Density Screen, 160 DPI)，其图标大小为 48 x 48 px。</p>
+</li>
+<li><p>HDPI (High Density Screen, 240 DPI)，其图标大小为 72 x 72 px。</p>
+</li>
+<li><p>xhdpi (Extra-high density screen, 320 DPI)，其图标大小为 96 x 96 px。</p>
+</li>
+<li><p>xxhdpi（xx-high density screen, 480 DPI）,其图标大小为144 x 144 px。</p>
+</li>
+<li>xxxhdpi（xxx-high density screen, 640 DPI）,其图标大小为192 x 192 px。</li>
 </ul>
-<h3 id="3-后续操作"><a href="#3-后续操作" class="headerlink" title="3.后续操作"></a>3.后续操作</h3><ol>
-<li>修改当前<code>Module</code>的<code>build.gradle</code>文件中的<code>applicationId</code>,改为跟你的包名一致；</li>
-<li>修改当前<code>Module</code>的<code>AndroidManifest.xml</code>文件中的<code>manifest</code>节点里的<code>package</code>属性值，改为跟你的包名一致。</li>
-</ol>
-<p>以上两个后续操作缺一不可，否则会造成很多奇特的Bug，比如<code>Id</code>没有错误且存在的情况下，提示找不到<code>id</code>；还有找不到资源、某些<code>Activity</code> 无法启动等等的Bug。</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>以上「3.后续操作」里的第二操作是很多人都容易忽略的地方，不修改的话一时间也不会出现问题，如果忽略里，以后遇到无法解决的Bug后可能需要很久才会意识到<code>AndroidManifest.xml</code> 包名的问题。</p>
+<h2 id="2-不透明度16进制值"><a href="#2-不透明度16进制值" class="headerlink" title="2. 不透明度16进制值"></a>2. 不透明度16进制值</h2><table>
+<thead>
+<tr>
+<th style="text-align:center">不透明度</th>
+<th style="text-align:center">16进制值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">100%</td>
+<td style="text-align:center">FF</td>
+</tr>
+<tr>
+<td style="text-align:center">95%</td>
+<td style="text-align:center">F2</td>
+</tr>
+<tr>
+<td style="text-align:center">90%</td>
+<td style="text-align:center">E6</td>
+</tr>
+<tr>
+<td style="text-align:center">85%</td>
+<td style="text-align:center">D9</td>
+</tr>
+<tr>
+<td style="text-align:center">80%</td>
+<td style="text-align:center">CC</td>
+</tr>
+<tr>
+<td style="text-align:center">75%</td>
+<td style="text-align:center">BF</td>
+</tr>
+<tr>
+<td style="text-align:center">70%</td>
+<td style="text-align:center">B3</td>
+</tr>
+<tr>
+<td style="text-align:center">65%</td>
+<td style="text-align:center">A6</td>
+</tr>
+<tr>
+<td style="text-align:center">60%</td>
+<td style="text-align:center">99</td>
+</tr>
+<tr>
+<td style="text-align:center">55%</td>
+<td style="text-align:center">8C</td>
+</tr>
+<tr>
+<td style="text-align:center">50%</td>
+<td style="text-align:center">80</td>
+</tr>
+<tr>
+<td style="text-align:center">45%</td>
+<td style="text-align:center">73</td>
+</tr>
+<tr>
+<td style="text-align:center">40%</td>
+<td style="text-align:center">66</td>
+</tr>
+<tr>
+<td style="text-align:center">35%</td>
+<td style="text-align:center">59</td>
+</tr>
+<tr>
+<td style="text-align:center">30%</td>
+<td style="text-align:center">4D</td>
+</tr>
+<tr>
+<td style="text-align:center">25%</td>
+<td style="text-align:center">40</td>
+</tr>
+<tr>
+<td style="text-align:center">20%</td>
+<td style="text-align:center">33</td>
+</tr>
+<tr>
+<td style="text-align:center">15%</td>
+<td style="text-align:center">26</td>
+</tr>
+<tr>
+<td style="text-align:center">10%</td>
+<td style="text-align:center">1A</td>
+</tr>
+<tr>
+<td style="text-align:center">5%</td>
+<td style="text-align:center">0D</td>
+</tr>
+<tr>
+<td style="text-align:center">0%</td>
+<td style="text-align:center">00</td>
+</tr>
+</tbody>
+</table>
+<h2 id="3-dp和px换算及关系"><a href="#3-dp和px换算及关系" class="headerlink" title="3. dp和px换算及关系"></a>3. dp和px换算及关系</h2><p>各DPI的换算：</p>
+<p><img src="http://img.blog.csdn.net/20160721152503652" alt="Android DPI"></p>
+<p>数据总结表：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">名称</th>
+<th style="text-align:center">对应 DPI</th>
+<th style="text-align:center">比例(以 mdpi 为基数 1)</th>
+<th style="text-align:center">和px的换算关系</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">lpdi</td>
+<td style="text-align:center">120 DPI</td>
+<td style="text-align:center">0.75</td>
+<td style="text-align:center">1 dp = 0.75 px</td>
+</tr>
+<tr>
+<td style="text-align:center">mdpi</td>
+<td style="text-align:center">160 DPI</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1 dp = 1 px</td>
+</tr>
+<tr>
+<td style="text-align:center">hdpi</td>
+<td style="text-align:center">240 DPI</td>
+<td style="text-align:center">1.5</td>
+<td style="text-align:center">1 dp = 1.5 px</td>
+</tr>
+<tr>
+<td style="text-align:center">xhdpi</td>
+<td style="text-align:center">320 DPI</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">1 dp = 2 px</td>
+</tr>
+<tr>
+<td style="text-align:center">xxhdpi</td>
+<td style="text-align:center">480 DPI</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">1 dp = 3 px</td>
+</tr>
+<tr>
+<td style="text-align:center">xxxhdpi</td>
+<td style="text-align:center">640 DPI</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">1 dp = 4 px</td>
+</tr>
+</tbody>
+</table>
+<h3 id="dp-到-px"><a href="#dp-到-px" class="headerlink" title="dp 到 px"></a>dp 到 px</h3><p>这里给定：<strong>400 dp * 240 dp</strong><br>则对应的图片分辨率分别为：</p>
+<ul>
+<li>lpdi  ⇒ 300 px * 180 px</li>
+<li>mdpi ⇒ 400 px * 240 px</li>
+<li>hdpi ⇒ 600 px * 360 px</li>
+<li>xhdpi ⇒ 800 px * 480 px</li>
+<li>xxhdpi ⇒ 1200 px * 720 px</li>
+<li>xxxhdpi ⇒ 1600 px * 960 px</li>
+</ul>
+<h3 id="px-到-dp"><a href="#px-到-dp" class="headerlink" title="px 到 dp"></a>px 到 dp</h3><p>从 <code>px</code> 换算成 <code>dp</code> 要知道它是以什么 <code>dpi</code> 标准来设计的，根据换算关系表可得到相应的 <code>dp</code> 。<br>例如： 以 <code>xxhdpi</code> 标准设计的 UI，其中一个切图的分辨率是 <code>600 px * 360 px</code> ，根据换算关系表可知，在 <code>xxhdpi</code> 标准下，<code>1 dp = 3 px</code> ,则其对应的 <code>dp</code> 是  <code>200 dp * 120 dp</code> 。</p>
 <p>PS:</p>
 <blockquote>
-<p>你可以关注的我<a href="https://github.com/likfe" target="_blank" rel="external">Github</a>、<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="external">CSDN</a>和<a href="http://weibo.com/zyansen" target="_blank" rel="external">微博</a></p>
+<p>你可以关注的我 <a href="https://github.com/likfe" target="_blank" rel="external">Github</a>、<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="external">CSDN</a> 和<a href="http://weibo.com/zyansen" target="_blank" rel="external">微博</a></p>
 </blockquote>
 
       
@@ -327,17 +501,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/06/14/mamp-list-file/" rel="next" title="MAMP显示文件列表">
-                <i class="fa fa-chevron-left"></i> MAMP显示文件列表
+              <a href="/2016/07/17/android-postOpenProjectNote/" rel="next" title="Android必知必会-发布开源Android项目注意事项">
+                <i class="fa fa-chevron-left"></i> Android必知必会-发布开源Android项目注意事项
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/06/28/android-multiDex/" rel="prev" title="Android项目开发填坑记--使用MultiDex">
-                Android项目开发填坑记--使用MultiDex <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -466,7 +636,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#背景"><span class="nav-number">1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Android-Studio修改包名"><span class="nav-number">2.</span> <span class="nav-text">Android Studio修改包名</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-修改包显示方式"><span class="nav-number">2.1.</span> <span class="nav-text">1.修改包显示方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-修改包名"><span class="nav-number">2.2.</span> <span class="nav-text">2.修改包名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-后续操作"><span class="nav-number">2.3.</span> <span class="nav-text">3.后续操作</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">3.</span> <span class="nav-text">总结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-程序启动图标（icon-launcher）"><span class="nav-number">1.</span> <span class="nav-text">1. 程序启动图标（icon launcher）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-不透明度16进制值"><span class="nav-number">2.</span> <span class="nav-text">2. 不透明度16进制值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-dp和px换算及关系"><span class="nav-number">3.</span> <span class="nav-text">3. dp和px换算及关系</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#dp-到-px"><span class="nav-number">3.1.</span> <span class="nav-text">dp 到 px</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#px-到-dp"><span class="nav-number">3.2.</span> <span class="nav-text">px 到 dp</span></a></li></ol></li></ol></div>
             
           </div>
         </section>
