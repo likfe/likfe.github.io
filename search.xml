@@ -1,0 +1,984 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+  
+    
+    <entry>
+      <title><![CDATA[Android必知必会-App 常用图标尺寸规范汇总]]></title>
+      <url>http://likfe.com/2016/07/26/android-size-set/</url>
+      <content type="html"><![CDATA[<p><strong>内容持续更新中，更新日期：2016-07-26</strong></p>
+<h2 id="1-程序启动图标（icon-launcher）"><a href="#1-程序启动图标（icon-launcher）" class="headerlink" title="1. 程序启动图标（icon launcher）"></a>1. 程序启动图标（icon launcher）</h2><p>放在<code>mipmap-*dpi</code>下，文件名为<code>ic_launcher.png</code></p>
+<ul>
+<li><p>LDPI (Low Density Screen，120 DPI)，其图标大小为 36 x 36 px。</p>
+</li>
+<li><p>MDPI (Medium Density Screen, 160 DPI)，其图标大小为 48 x 48 px。</p>
+</li>
+<li><p>HDPI (High Density Screen, 240 DPI)，其图标大小为 72 x 72 px。</p>
+</li>
+<li><p>xhdpi (Extra-high density screen, 320 DPI)，其图标大小为 96 x 96 px。</p>
+</li>
+<li><p>xxhdpi（xx-high density screen, 480 DPI）,其图标大小为144 x 144 px。</p>
+</li>
+<li>xxxhdpi（xxx-high density screen, 640 DPI）,其图标大小为192 x 192 px。</li>
+</ul>
+<a id="more"></a>
+<h2 id="2-不透明度16进制值"><a href="#2-不透明度16进制值" class="headerlink" title="2. 不透明度16进制值"></a>2. 不透明度16进制值</h2><table>
+<thead>
+<tr>
+<th style="text-align:center">不透明度</th>
+<th style="text-align:center">16进制值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">100%</td>
+<td style="text-align:center">FF</td>
+</tr>
+<tr>
+<td style="text-align:center">95%</td>
+<td style="text-align:center">F2</td>
+</tr>
+<tr>
+<td style="text-align:center">90%</td>
+<td style="text-align:center">E6</td>
+</tr>
+<tr>
+<td style="text-align:center">85%</td>
+<td style="text-align:center">D9</td>
+</tr>
+<tr>
+<td style="text-align:center">80%</td>
+<td style="text-align:center">CC</td>
+</tr>
+<tr>
+<td style="text-align:center">75%</td>
+<td style="text-align:center">BF</td>
+</tr>
+<tr>
+<td style="text-align:center">70%</td>
+<td style="text-align:center">B3</td>
+</tr>
+<tr>
+<td style="text-align:center">65%</td>
+<td style="text-align:center">A6</td>
+</tr>
+<tr>
+<td style="text-align:center">60%</td>
+<td style="text-align:center">99</td>
+</tr>
+<tr>
+<td style="text-align:center">55%</td>
+<td style="text-align:center">8C</td>
+</tr>
+<tr>
+<td style="text-align:center">50%</td>
+<td style="text-align:center">80</td>
+</tr>
+<tr>
+<td style="text-align:center">45%</td>
+<td style="text-align:center">73</td>
+</tr>
+<tr>
+<td style="text-align:center">40%</td>
+<td style="text-align:center">66</td>
+</tr>
+<tr>
+<td style="text-align:center">35%</td>
+<td style="text-align:center">59</td>
+</tr>
+<tr>
+<td style="text-align:center">30%</td>
+<td style="text-align:center">4D</td>
+</tr>
+<tr>
+<td style="text-align:center">25%</td>
+<td style="text-align:center">40</td>
+</tr>
+<tr>
+<td style="text-align:center">20%</td>
+<td style="text-align:center">33</td>
+</tr>
+<tr>
+<td style="text-align:center">15%</td>
+<td style="text-align:center">26</td>
+</tr>
+<tr>
+<td style="text-align:center">10%</td>
+<td style="text-align:center">1A</td>
+</tr>
+<tr>
+<td style="text-align:center">5%</td>
+<td style="text-align:center">0D</td>
+</tr>
+<tr>
+<td style="text-align:center">0%</td>
+<td style="text-align:center">00</td>
+</tr>
+</tbody>
+</table>
+<h2 id="3-dp和px换算及关系"><a href="#3-dp和px换算及关系" class="headerlink" title="3. dp和px换算及关系"></a>3. dp和px换算及关系</h2><p>各DPI的换算：</p>
+<p><img src="http://img.blog.csdn.net/20160721152503652" alt="Android DPI"></p>
+<p>数据总结表：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">名称</th>
+<th style="text-align:center">对应 DPI</th>
+<th style="text-align:center">比例(以 mdpi 为基数 1)</th>
+<th style="text-align:center">和px的换算关系</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">lpdi</td>
+<td style="text-align:center">120 DPI</td>
+<td style="text-align:center">0.75</td>
+<td style="text-align:center">1 dp = 0.75 px</td>
+</tr>
+<tr>
+<td style="text-align:center">mdpi</td>
+<td style="text-align:center">160 DPI</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1 dp = 1 px</td>
+</tr>
+<tr>
+<td style="text-align:center">hdpi</td>
+<td style="text-align:center">240 DPI</td>
+<td style="text-align:center">1.5</td>
+<td style="text-align:center">1 dp = 1.5 px</td>
+</tr>
+<tr>
+<td style="text-align:center">xhdpi</td>
+<td style="text-align:center">320 DPI</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">1 dp = 2 px</td>
+</tr>
+<tr>
+<td style="text-align:center">xxhdpi</td>
+<td style="text-align:center">480 DPI</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">1 dp = 3 px</td>
+</tr>
+<tr>
+<td style="text-align:center">xxxhdpi</td>
+<td style="text-align:center">640 DPI</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">1 dp = 4 px</td>
+</tr>
+</tbody>
+</table>
+<h3 id="dp-到-px"><a href="#dp-到-px" class="headerlink" title="dp 到 px"></a>dp 到 px</h3><p>这里给定：<strong>400 dp * 240 dp</strong><br>则对应的图片分辨率分别为：</p>
+<ul>
+<li>lpdi  ⇒ 300 px * 180 px</li>
+<li>mdpi ⇒ 400 px * 240 px</li>
+<li>hdpi ⇒ 600 px * 360 px</li>
+<li>xhdpi ⇒ 800 px * 480 px</li>
+<li>xxhdpi ⇒ 1200 px * 720 px</li>
+<li>xxxhdpi ⇒ 1600 px * 960 px</li>
+</ul>
+<h3 id="px-到-dp"><a href="#px-到-dp" class="headerlink" title="px 到 dp"></a>px 到 dp</h3><p>从 <code>px</code> 换算成 <code>dp</code> 要知道它是以什么 <code>dpi</code> 标准来设计的，根据换算关系表可得到相应的 <code>dp</code> 。<br>例如： 以 <code>xxhdpi</code> 标准设计的 UI，其中一个切图的分辨率是 <code>600 px * 360 px</code> ，根据换算关系表可知，在 <code>xxhdpi</code> 标准下，<code>1 dp = 3 px</code> ,则其对应的 <code>dp</code> 是  <code>200 dp * 120 dp</code> 。</p>
+<p>PS:</p>
+<blockquote>
+<p>你可以关注的我 <a href="https://github.com/likfe" target="_blank" rel="external">Github</a>、<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="external">CSDN</a> 和<a href="http://weibo.com/zyansen" target="_blank" rel="external">微博</a></p>
+</blockquote>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Android必知必会-发布开源Android项目注意事项]]></title>
+      <url>http://likfe.com/2016/07/17/android-postOpenProjectNote/</url>
+      <content type="html"><![CDATA[<h2 id="1-合理配置-gitignore-文件"><a href="#1-合理配置-gitignore-文件" class="headerlink" title="1. 合理配置 .gitignore 文件"></a>1. 合理配置 <code>.gitignore</code> 文件</h2><p>配置 <code>.gitignore</code> 可以排除一些非必要文件和保护保密信息，下面是在项目根目录下 <code>.gitignore</code> 的配置：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">.gradle</span><br><span class="line">/local.properties</span><br><span class="line">/gradle.properties</span><br><span class="line">/build</span><br><span class="line">*.log</span><br><span class="line">*.apk</span><br><span class="line">*.ap_</span><br><span class="line">/*/build/</span><br></pre></td></tr></table></figure>
+<p>这里介绍下一些参数的意义：</p>
+<ul>
+<li><code>/local.properties</code>：这个文件里默认写的有本地 SDK 的位置，多人协作时一般要排除，仅仅做开源项目可以不排除。</li>
+<li><code>/gradle.properties</code>：一般写有 gradle 的 jvm 、代理和打包签名文件 Key 的一些信息，根据需要进行处理，一般情况下需要排除，其他情况见下文。</li>
+<li><code>/build</code>和<code>/*/build/</code>：排除 build 项目生成的文件，文件较大，且 IDE 可以自动生成，无特殊需求，<strong>必须排除</strong>。</li>
+</ul>
+<a id="more"></a>
+<h2 id="2-签名文件"><a href="#2-签名文件" class="headerlink" title="2. 签名文件"></a>2. 签名文件</h2><p>在使用了一些需要配置 <code>appkey</code> 的第三方的 SDK 时，比如 XX 地图 SDK 、XX 播放器 SDK ，这些都需要在对应的开发者中心里配置<strong>包名</strong>和 <strong>Android签名</strong> 信息，这些和签名文件直接相关，所以需要在项目里提前放置好一个编译用的签名文件，可以在 <code>gradle.properties</code> 里写上相应的变量。</p>
+<p>签名文件目前有两种格式：<code>.keystore</code> 和 <code>.jsk</code> ，这里以 <code>debug.jks</code> 为例，<strong>此文件存放在项目根目录</strong>，如果目录有变化，加上相应的路径即可。</p>
+<p>根据是否在 <code>gradle.properties</code> 里写上相应的变量有两种使用方法：</p>
+<h3 id="方案一：不使用-gradle-properties"><a href="#方案一：不使用-gradle-properties" class="headerlink" title="方案一：不使用 gradle.properties"></a>方案一：不使用 <code>gradle.properties</code></h3><p>不使用 <code>gradle.properties</code> 的话，相关信息直接写在 <code>/app/build.gradle</code> 文件里:</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">android &#123;</span><br><span class="line">  	...</span><br><span class="line">  	signingConfigs &#123;</span><br><span class="line">        debug &#123;</span><br><span class="line">            storeFile file(<span class="string">"$rootDir/debug.jks"</span>)</span><br><span class="line">            storePassword <span class="string">"androidstore"</span></span><br><span class="line">            keyAlias <span class="string">"androiddebugkey"</span></span><br><span class="line">            keyPassword <span class="string">"androidkey"</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        release &#123;</span><br><span class="line">            storeFile file(<span class="string">"$rootDir/debug.jks"</span>)</span><br><span class="line">            storePassword <span class="string">"androidstore"</span></span><br><span class="line">            keyAlias <span class="string">"androiddebugkey"</span></span><br><span class="line">            keyPassword <span class="string">"androidkey"</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="方案二：使用-gradle-properties"><a href="#方案二：使用-gradle-properties" class="headerlink" title="方案二：使用 gradle.properties"></a>方案二：使用 <code>gradle.properties</code></h3><p>使用 <code>gradle.properties</code> 的话，相关信息写在 <code>/gradle.properties</code> 和 <code>/app/build.gradle</code> 文件里:</p>
+<p>对于 <code>/gradle.properties</code> ：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">RELEASE_KEY_ALIAS=androiddebugkey</span><br><span class="line">RELEASE_STORE_PASSWORD=androidstore</span><br><span class="line">RELEASE_KEY_PASSWORD=androidkey</span><br><span class="line">RELEASE_STORE_FILE=$rootDir/debug.jks</span><br></pre></td></tr></table></figure>
+<p>对于 <code>/app/build.gradle</code> ：</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">android &#123;</span><br><span class="line">  	...</span><br><span class="line">  	signingConfigs &#123;</span><br><span class="line">        debug &#123;</span><br><span class="line">            storeFile file(RELEASE_STORE_FILE)</span><br><span class="line">            storePassword RELEASE_STORE_PASSWORD</span><br><span class="line">            keyAlias RELEASE_KEY_ALIAS</span><br><span class="line">            keyPassword RELEASE_KEY_PASSWORD</span><br><span class="line">        &#125;</span><br><span class="line">        releaseConfig &#123;</span><br><span class="line">            storeFile file(RELEASE_STORE_FILE)</span><br><span class="line">            storePassword RELEASE_STORE_PASSWORD</span><br><span class="line">            keyAlias RELEASE_KEY_ALIAS</span><br><span class="line">            keyPassword RELEASE_KEY_PASSWORD</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这种情况下 <code>/gradle.properties</code> 不能出现在 <code>.gitignore</code> 文件中。</p>
+<h2 id="3-SO-文件"><a href="#3-SO-文件" class="headerlink" title="3. .SO 文件"></a>3. <code>.SO</code> 文件</h2><p>如果开源项目中使用的开源库中有多个库包含 <code>jni</code>，由于每个开源库提供的 <code>so</code> 文件的编译版本不尽相同，那么，很有可能在不同 CPU 架构的手机上崩溃，所以要在打包时进行 <code>so</code> 文件的过滤或者说选择。</p>
+<p>下面举个简单的例子：假设我的一个开源项目使用了 <code>gif-drawable</code>、<code>fresco</code>、<code>Vitamio-4.0</code></p>
+<p>在 <code>/app/build.gradle</code> 中的配置如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">dependencies &#123;</span><br><span class="line">	...</span><br><span class="line">	compile &apos;pl.droidsonroids.gif:android-gif-drawable:1.1.14&apos;</span><br><span class="line">	compile &apos;com.facebook.fresco:fresco:0.9.0&apos;</span><br><span class="line">	compile(name: &apos;Vitamio-4.0&apos;, ext: &apos;aar&apos;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>然后我们看一下它们各自编译的 <code>so</code> 版本：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">gif-drawable</span><br><span class="line">	--mips</span><br><span class="line">	--mips64</span><br><span class="line">	--armeabi</span><br><span class="line">	--armeabi-v7a</span><br><span class="line">	--arm64-v8a</span><br><span class="line">	--x86</span><br><span class="line">	--x86_64</span><br><span class="line">fresco:imagepipeline</span><br><span class="line">	--armeabi</span><br><span class="line">	--armeabi-v7a</span><br><span class="line">	--arm64-v8a</span><br><span class="line">	--x86</span><br><span class="line">	--x86_64</span><br><span class="line">Vitamio-4.0</span><br><span class="line">	--mips</span><br><span class="line">	--armeabi</span><br><span class="line">	--armeabi-v7a</span><br><span class="line">	--x86</span><br></pre></td></tr></table></figure>
+<p>我们找一下以上三个库的 <code>so</code> 版本的<strong>交集</strong>，对，这里强调下：<strong>交集</strong>、<strong>交集</strong>、<strong>交集</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">armeabi</span><br><span class="line">armeabi-v7a</span><br><span class="line">x86</span><br></pre></td></tr></table></figure>
+<p>找到了交集，就是我们需要在打包进APK的 <code>so</code> 版本，如何指定打包 <code>so</code> 版本，需要配置 <code>/app/build.gradle</code> 文件：</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">android &#123;</span><br><span class="line">	...</span><br><span class="line">	productFlavors &#123;</span><br><span class="line">        dev &#123;</span><br><span class="line">            ndk &#123;</span><br><span class="line">                abiFilters <span class="string">"armeabi-v7a"</span>,<span class="string">"arm64-v8a"</span>,<span class="string">"x86"</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        prod &#123;</span><br><span class="line">            ndk &#123;</span><br><span class="line">                abiFilters <span class="string">"armeabi-v7a"</span>,<span class="string">"arm64-v8a"</span>,<span class="string">"x86"</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>关于打包时指定 <code>so</code> 版本这一点很重要，不仅时在开源项目中需要注意，在实际的开发项目中更要注意这一点，所以在选择包含了 jni 的开源库时，务必要注意到当前项目中其他开源库的 jni 的版本。每次添加新的包含 jni 的类库时，都要做一次比对，务必打包它们交集的 jni 版本。</p>
+<h2 id="4-第三方SDK二次打包"><a href="#4-第三方SDK二次打包" class="headerlink" title="4. 第三方SDK二次打包"></a>4. 第三方SDK二次打包</h2><p>项目中使用的第三方 SDK 中，其作者可能考虑的不够细致，也可能是为了兼容 Eclipse ，常常会出现让你复制粘贴大量的图片和 XML 文件到现有的项目中，这大大影响了项目原有的目录结构和可读性，更糟糕的问题是对 SDK 的升级、删除会非常的麻烦，碰到这样的 SDK ，需要我们进行二次打包成 aar 格式的类库。</p>
+<p><strong>PS</strong>：Eclipse 不支持 aar 格式，只能使用上述比较麻烦的方式，不过你可以在使用此类类库的时候，<strong>列一张清单</strong>，记录此 SDK 在项目中添加的所有文件，便于以后变更。如果不是特别需要，建议使用 Android Studio 进行开发。</p>
+<h3 id="打包-aar"><a href="#打包-aar" class="headerlink" title="打包 aar"></a>打包 aar</h3><p>打包 aar 需要在 Android Studio 中进行。这里先做一个约定，在 Android Studio 中的一个 Project 中，包含两个 module ，其中需要打包成 aar 的 module ，名称是 <strong>demoLibary</strong> ，主 module 或者说测试用的 module 名称是 <strong>app</strong> 。</p>
+<p>1.修改 <strong>demoLibary</strong> 的 <code>build.gradle</code>  ：</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//apply plugin: 'com.android.application'</span></span><br><span class="line">apply <span class="string">plugin:</span> <span class="string">'com.android.library'</span></span><br></pre></td></tr></table></figure>
+<p>即修改 <code>apply plugin: &#39;com.android.application&#39;</code> 为 <code>apply plugin: &#39;com.android.library&#39;</code></p>
+<p>2.修改<strong>demoLibary</strong>一些信息：</p>
+<p>删除 <code>AndroidManifest.xml</code> 中的无用信息：</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//例如：</span></span><br><span class="line"><span class="string">android:</span>icon=<span class="string">"@mipmap/ic_launcher"</span></span><br><span class="line"><span class="string">android:</span>label=<span class="string">"@string/app_name"</span></span><br></pre></td></tr></table></figure>
+<p>删除 <code>res/values</code> 下不用的值和文件。</p>
+<p>3.在主 module <strong>app</strong> 里添加对 <strong>demoLibary</strong> 的引用：</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">dependencies &#123;</span><br><span class="line">	...</span><br><span class="line">	compile project(<span class="string">':demoLibary'</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>4.生成 aar 文件：</p>
+<p><code>build</code> module <strong>app</strong> 之后就能在 <strong>demoLibary</strong> 下的 <code>build/outputs/aar</code> 下找到我们需要的 aar 文件了，这里命名为 <code>demoLibary-1.0.aar</code>。</p>
+<h3 id="使用-aar"><a href="#使用-aar" class="headerlink" title="使用 aar"></a>使用 aar</h3><p>1.配置项目根目录的 <code>/build.gradle</code> ：</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">allprojects &#123;</span><br><span class="line">    repositories &#123;</span><br><span class="line">    	...</span><br><span class="line">    	flatDir &#123;</span><br><span class="line">            dirs <span class="string">'libs'</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>2.在 module <strong>app</strong> 中引用 aar ：</p>
+<p>首先复制 <code>demoLibary-1.0.aar</code> 到 module <strong>app</strong> 下的 <code>libs</code> 目录（没有则创建此目录）中，然后修改 <code>/app/build.gradle</code> 文件：</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">dependencies &#123;</span><br><span class="line">    compile fileTree(<span class="string">include:</span> [<span class="string">'*.jar'</span>], <span class="string">dir:</span> <span class="string">'libs'</span>)</span><br><span class="line">    compile(<span class="string">name:</span> <span class="string">'demoLibary-1.0'</span>, <span class="string">ext:</span> <span class="string">'aar'</span>)</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这样，你就可以使用 <strong>demoLibary</strong> 开放的接口和方法了。</p>
+<h2 id="n-不是结尾"><a href="#n-不是结尾" class="headerlink" title="n. 不是结尾"></a>n. 不是结尾</h2><p>以上几点是目前发现的较明显的问题，如果你了解更多的注意事项，欢迎和我联系。</p>
+<p>PS:</p>
+<blockquote>
+<p>你可以关注的我 <a href="https://github.com/likfe" target="_blank" rel="external">Github</a>、<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="external">CSDN</a> 和<a href="http://weibo.com/zyansen" target="_blank" rel="external">微博</a></p>
+</blockquote>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Android必知必会-长按返回健退出]]></title>
+      <url>http://likfe.com/2016/07/06/android-longpress-back/</url>
+      <content type="html"><![CDATA[<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>平常比较常见的都是一定时间间隔内按两次返回键来退出应用，并且第一次点击会有相应的提示，网上资料比较多，这里写一下，长按返回键退出。</p>
+<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><p>实现的方案常用的有两个：</p>
+<ul>
+<li>重写<code>dispatchKeyEvent(KeyEvent event)</code>方法</li>
+<li>重写<code>onKeyDown(int keyCode, KeyEvent event)</code>方法</li>
+</ul>
+<a id="more"></a>
+<h3 id="方案一"><a href="#方案一" class="headerlink" title="方案一"></a>方案一</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">dispatchKeyEvent</span><span class="params">(KeyEvent event)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (event.getKeyCode() == KeyEvent.KEYCODE_BACK &amp;&amp; event.isLongPress()) &#123;</span><br><span class="line">        <span class="comment">//do something else</span></span><br><span class="line">        System.exit(<span class="number">0</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>代码很简单，如果按下了返回键且是长按，则退出。</p>
+<h3 id="方案二"><a href="#方案二" class="headerlink" title="方案二"></a>方案二</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">onKeyDown</span><span class="params">(<span class="keyword">int</span> keyCode, KeyEvent event)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (keyCode == KeyEvent.KEYCODE_BACK &amp;&amp; event.getRepeatCount() == <span class="number">0</span>) &#123;</span><br><span class="line">        Toast.makeText(<span class="keyword">this</span>, <span class="string">"长按返回键退出"</span>, Toast.LENGTH_SHORT).show();</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (keyCode == KeyEvent.KEYCODE_BACK &amp;&amp; event.getRepeatCount() == <span class="number">2</span>) &#123;</span><br><span class="line">        <span class="comment">//do something else</span></span><br><span class="line">        System.exit(<span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>推荐本方案，可以修改<code>else if</code>中<code>event.getRepeatCount()==</code>的次数来修改长按的时间，<code>event.getRepeatCount()</code> 为<strong>0</strong>时代表单击了一次，当次数<code>&gt;=1</code>时就代表长按了,值越大，说明按的时间越长。<br>之所以推荐本方案，因为可以在第一次点击返回键的时候提醒用户。</p>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>本来准备多整理些资料一起发出来，掘金刚刚在内测发布工具，这里就手写一篇试试感觉如何，体验还是很棒的。以下是个人意见：</p>
+<p>优点：</p>
+<ul>
+<li>配色漂亮</li>
+<li>界面干净，写作比较专注，适合有经验的老手</li>
+<li>响应快，对<code>MarkDown</code>语法的细节处理的不错</li>
+</ul>
+<p>缺点：</p>
+<ul>
+<li>界面没有引导，新手会蒙圈吧</li>
+<li>左边的写作区的配色是暗色，没有可选性（难道根据时间换白色和黑色主题？）</li>
+<li>不支持流程图等高级功能</li>
+</ul>
+<p>总的来说，基本功能都是有的，界面比较干净，这个是优点也是缺点了，相对而言，更适合把<code>MarkDown</code>语法熟记于心的人。</p>
+<p>最后，来个配图看看写作界面：</p>
+<p><img src="http://ac-mhke0kuv.clouddn.com/bcb599449a6de0393bcc.png" alt=""></p>
+<p>PS:</p>
+<blockquote>
+<p>你可以关注的我<a href="https://github.com/likfe" target="_blank" rel="external">Github</a>、<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="external">CSDN</a>和<a href="http://weibo.com/zyansen" target="_blank" rel="external">微博</a></p>
+</blockquote>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Android必知必会-Android Studio下配置和使用Lambda]]></title>
+      <url>http://likfe.com/2016/07/06/android-setting-lamdba/</url>
+      <content type="html"><![CDATA[<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>和朋友讨论 <code>JAVA8</code> 的新特性，聊到<code>Lambda</code>，正好在掘金上看到一篇相关的文章，结合资料，作一个总结，特别是记录下实际使用中遇到的问题。</p>
+<h3 id="什么是Lambda表达式"><a href="#什么是Lambda表达式" class="headerlink" title="什么是Lambda表达式"></a>什么是Lambda表达式</h3><blockquote>
+<p>lambda表达式，它将允许我们将行为传到函数里。在Java 8之前，如果想将行为传入函数，仅有的选择就是匿名类，需要6行代码。而定义行为最重要的那行代码，却混在中间不够突出。Lambda表达式取代了匿名类，取消了模板，允许用函数式风格编写代码。这样有时可读性更好，表达更清晰。</p>
+<p>— Java8 lambda表达式10个示例</p>
+</blockquote>
+<a id="more"></a>
+<p>阅读完上面的文字估计也不是特别明白，对于我们日常开发Android，就是简化了匿名函数的使用，可以简单通过下面的示例来感受一下，如果你有更深的兴趣，文末有更多搜集的资料供你阅读。</p>
+<h3 id="Lamdba示例"><a href="#Lamdba示例" class="headerlink" title="Lamdba示例"></a>Lamdba示例</h3><h4 id="用lambda表达式实现Runnable"><a href="#用lambda表达式实现Runnable" class="headerlink" title="用lambda表达式实现Runnable"></a>用lambda表达式实现Runnable</h4><p>使用lambda表达式可以替换匿名类，而实现<code>Runnable</code>接口是匿名类的最好示例。Java 8之前的<code>runnable</code>实现方法，需要4行代码，而使用<code>lambda</code>表达式只需要一行代码。只需要用<code>() -&gt; {}</code>代码块替代整个匿名类。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Java 8之前：</span></span><br><span class="line"><span class="keyword">new</span> Thread(<span class="keyword">new</span> Runnable() &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    	System.out.println(<span class="string">"在Java8之前, 需要写很多代码"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;).start();</span><br><span class="line"></span><br><span class="line"><span class="comment">//Java 8方式：</span></span><br><span class="line"><span class="keyword">new</span> Thread( () -&gt; System.out.println(<span class="string">"使用Java8, Lambda表达式一目了然"</span>) ).start();</span><br></pre></td></tr></table></figure>
+<p>输出：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">在Java8之前, 需要写很多代码</span><br><span class="line">使用Java8, Lambda表达式一目了然</span><br></pre></td></tr></table></figure></p>
+<p>这个例子展示了Java 8 lambda表达式的语法，可以使用<code>lambda</code>写出如下代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(params) -&gt; expression</span><br><span class="line">(params) -&gt; statement</span><br><span class="line">(params) -&gt; &#123; statements &#125;</span><br></pre></td></tr></table></figure></p>
+<p>例如，如果你的方法不对参数进行修改、重写，只是在控制台打印点东西的话，那么可以这样写：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">() -&gt; System.out.println(<span class="string">"Hello World"</span>);</span><br></pre></td></tr></table></figure></p>
+<p>如果你的方法接收两个参数，那么可以写成如下这样：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(int a, int b) -&gt; a + b</span><br></pre></td></tr></table></figure></p>
+<h4 id="使用lambda表达式进行事件处理"><a href="#使用lambda表达式进行事件处理" class="headerlink" title="使用lambda表达式进行事件处理"></a>使用lambda表达式进行事件处理</h4><p>在Android日常开发中，我们常常会设置各种事件，比如<code>setOnClickListener</code>、<code>setOnItemClickListener</code>等等，下面对比下前后的写法变化：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//之前</span></span><br><span class="line">viewA.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</span><br><span class="line">            	<span class="comment">//Do something</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line"><span class="comment">//使用lambda</span></span><br><span class="line">viewA.setOnClickListener(v -&gt; &#123;</span><br><span class="line">  <span class="comment">//Do something</span></span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">//或者</span></span><br><span class="line">viewA.setOnClickListener(View v -&gt; &#123;</span><br><span class="line">  <span class="comment">//Do something</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>这样一对比是不是简洁很多？那么对于多个参数的<code>setOnItemClickListener</code>怎么写呢？</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//之前</span></span><br><span class="line">xxxListView.setOnItemClickListener(<span class="keyword">new</span> AdapterView.OnItemClickListener() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onItemClick</span><span class="params">(AdapterView&lt;?&gt; parent, View view, <span class="keyword">int</span> position, <span class="keyword">long</span> id)</span> </span>&#123;</span><br><span class="line">                <span class="comment">//Do something</span></span><br><span class="line">            &#125;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">//使用lambda后</span></span><br><span class="line">xxxListView.setOnItemClickListener((parent,view,position,id)-&gt;&#123;</span><br><span class="line">	<span class="comment">//Do something</span></span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">//或者</span></span><br><span class="line">xxxListView.setOnItemClickListener((AdapterView&lt;?&gt; parent, View view, <span class="keyword">int</span> position, <span class="keyword">long</span> id)-&gt;&#123;</span><br><span class="line">	<span class="comment">//Do something</span></span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">//甚至</span></span><br><span class="line">xxxListView.setOnItemClickListener((a,b,c,d)-&gt;&#123;</span><br><span class="line">	<span class="comment">//Do something</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>以上两种例子大概是日常Android开发中最为常用的，更多示例请访问 ：<a href="http://www.importnew.com/16436.html" target="_blank" rel="external">Java8 lambda表达式10个示例</a></p>
+<h2 id="启用Lambda"><a href="#启用Lambda" class="headerlink" title="启用Lambda"></a>启用Lambda</h2><p>启用<code>Lamdba</code>目前有两种方式，一个是使用Google官方的，一个是使用第三方Java8兼容插件，<strong>推荐使用第三方兼容插件</strong> 。</p>
+<p>基本要求如下：</p>
+<ul>
+<li>Android Studio 2.1+</li>
+<li>安装好 JAVA 8</li>
+</ul>
+<h3 id="方式一：Google官方方式"><a href="#方式一：Google官方方式" class="headerlink" title="方式一：Google官方方式"></a>方式一：Google官方方式</h3><blockquote>
+<p>要使用新的 Java 8 语言功能，还需使用新的 Jack 工具链。新的 Android 工具链将 Java 源语言编译成 Android 可读取的 Dalvik 可执行文件字节码，且有其自己的 .jack 库格式，在一个工具中提供了大多数工具链功能：重新打包、压缩、模糊化以及 Dalvik 可执行文件分包。</p>
+</blockquote>
+<p>以下是构建 Android Dalvik 可执行文件可用的两种工具链的对比：</p>
+<p>旧版 javac 工具链：<br><code>javac (.java --&gt; .class) --&gt; dx (.class --&gt; .dex)</code><br>新版 Jack 工具链：<br><code>Jack (.java --&gt; .jack --&gt; .dex)</code><br><strong>配置 Gradle</strong><br>如需为您的项目启用 Java 8 语言功能和 Jack，请在模块层级的 build.gradle 文件中输入以下内容：<br><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">android &#123;</span><br><span class="line">  ...</span><br><span class="line">  defaultConfig &#123;</span><br><span class="line">    ...</span><br><span class="line">    jackOptions &#123;</span><br><span class="line">      enabled <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  compileOptions &#123;</span><br><span class="line">    sourceCompatibility JavaVersion.VERSION_1_8</span><br><span class="line">    targetCompatibility JavaVersion.VERSION_1_8</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>已知问题</strong><br>Instant Run 目前不能用于 Jack，在使用新的工具链时将被禁用。</p>
+<blockquote>
+<p><a href="https://developer.android.com/preview/j8-jack.html#configuration" target="_blank" rel="external">Java 8 语言功能</a></p>
+</blockquote>
+<h3 id="方式二：使用第三方Java8兼容插件"><a href="#方式二：使用第三方Java8兼容插件" class="headerlink" title="方式二：使用第三方Java8兼容插件"></a>方式二：使用第三方Java8兼容插件</h3><p>下面是插件的<code>ReadMe</code>的配置：添加下面的内容到项目的<code>build.gradle</code>文件中</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">buildscript &#123;</span><br><span class="line">  repositories &#123;</span><br><span class="line">     mavenCentral()</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  dependencies &#123;</span><br><span class="line">     classpath <span class="string">'me.tatarka:gradle-retrolambda:3.2.5'</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Required because retrolambda is on maven central</span></span><br><span class="line">repositories &#123;</span><br><span class="line">  mavenCentral()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">apply <span class="string">plugin:</span> <span class="string">'com.android.application'</span> <span class="comment">//or apply plugin: 'java'</span></span><br><span class="line">apply <span class="string">plugin:</span> <span class="string">'me.tatarka.retrolambda'</span></span><br></pre></td></tr></table></figure>
+<p>在本人的项目中，是如下配置，可以避免很多不必要的错误：</p>
+<p><code>build.gradle</code>文件在项目根目录有一个，在Module下也有一个：</p>
+<blockquote>
+<p>/build.gradle</p>
+</blockquote>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">buildscript &#123;</span><br><span class="line">    repositories &#123;</span><br><span class="line">    	jcenter()</span><br><span class="line">        mavenCentral()</span><br><span class="line">    &#125;</span><br><span class="line">    dependencies &#123;</span><br><span class="line">        classpath <span class="string">'com.android.tools.build:gradle:2.1.2'</span></span><br><span class="line">        classpath <span class="string">'me.tatarka:gradle-retrolambda:3.2.5'</span></span><br><span class="line">        classpath <span class="string">'me.tatarka.retrolambda.projectlombok:lombok.ast:0.2.3.a2'</span></span><br><span class="line">    &#125;</span><br><span class="line">    configurations.classpath.exclude <span class="string">group:</span> <span class="string">'com.android.tools.external.lombok'</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">allprojects &#123;</span><br><span class="line">    repositories &#123;</span><br><span class="line">        jcenter()</span><br><span class="line">        mavenCentral()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>/app/build.gradle</p>
+</blockquote>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">apply <span class="string">plugin:</span> <span class="string">'com.android.application'</span></span><br><span class="line">apply <span class="string">plugin:</span> <span class="string">'me.tatarka.retrolambda'</span></span><br><span class="line"></span><br><span class="line">android &#123;</span><br><span class="line">	...</span><br><span class="line">	compileOptions &#123;</span><br><span class="line">        sourceCompatibility JavaVersion.VERSION_1_8</span><br><span class="line">        targetCompatibility JavaVersion.VERSION_1_8</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>可以看到我在使用中多了<a href="https://github.com/evant/android-retrolambda-lombok" target="_blank" rel="external">几个配置</a>，不过都是在这个插件的<code>issue</code>里查到的。建议仔细阅读下<a href="https://github.com/evant/gradle-retrolambda" target="_blank" rel="external">配置说明</a> ，可以适应一些实际项目中的一些特别需求。</p>
+<h2 id="常见Error及解决方式"><a href="#常见Error及解决方式" class="headerlink" title="常见Error及解决方式"></a>常见Error及解决方式</h2><h3 id="Couldnot-find-property-‘options’-on-task-‘-app-compileDebugJavaWithJack’"><a href="#Couldnot-find-property-‘options’-on-task-‘-app-compileDebugJavaWithJack’" class="headerlink" title="Couldnot find property ‘options’ on task ‘:app:compileDebugJavaWithJack’."></a>Couldnot find property ‘options’ on task ‘:app:compileDebugJavaWithJack’.</h3><p><strong>原因</strong>：使用Google官方的方式有一定的兼容性，使用Jack时不能同时使用APT，如果使用butterknife、Dagger等使用了APT的注解框架就不行了</p>
+<p><strong>解决方案</strong>：使用retrolambda的兼容插件的方式启用lambda</p>
+<h3 id="Doesn’t-seem-to-correctly-use-modified-lombok-version"><a href="#Doesn’t-seem-to-correctly-use-modified-lombok-version" class="headerlink" title="Doesn’t seem to correctly use modified lombok version"></a>Doesn’t seem to correctly use modified lombok version</h3><p><strong>原因</strong>：<a href="https://github.com/evant/android-retrolambda-lombok/issues/4" target="_blank" rel="external">参见这里</a></p>
+<p><strong>解决方案</strong>：按照我上面写的就不会出现这个问题了。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>对于想尝鲜的的开发者，启用Lamdba是个不错的选择，毕竟这个东西会慢慢普及的。下面是一些为想了解更多Lamdba使用方法的朋友搜集的资料以及本文参考的文章：</p>
+<ul>
+<li><a href="http://www.jianshu.com/p/5fc2b3362702" target="_blank" rel="external">jdk1.8新特性之lambda表达式及在Android Studio中的使用</a></li>
+<li><a href="http://www.importnew.com/16436.html" target="_blank" rel="external">Java8 lambda表达式10个示例</a></li>
+<li><a href="http://www.importnew.com/10360.html" target="_blank" rel="external">Java 8简明教程</a></li>
+<li><a href="http://blog.csdn.net/yuhanghate/article/details/51544201" target="_blank" rel="external">Error:Could not find property ‘options’ on task ‘:app:compileDebugJavaWithJack’.</a></li>
+<li><a href="https://github.com/evant/android-retrolambda-lombok/issues/4" target="_blank" rel="external">Doesn’t seem to correctly use modified lombok version</a></li>
+<li><a href="https://github.com/evant/gradle-retrolambda" target="_blank" rel="external">retrolambda插件</a></li>
+</ul>
+<p>PS:</p>
+<blockquote>
+<p>你可以关注的我<a href="https://github.com/likfe" target="_blank" rel="external">Github</a>、<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="external">CSDN</a>和<a href="http://weibo.com/zyansen" target="_blank" rel="external">微博</a></p>
+</blockquote>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Android 开发指南-0]]></title>
+      <url>http://likfe.com/2016/06/28/androidTutorials-0/</url>
+      <content type="html"><![CDATA[<p>无意间发现一个网站，主打IOS方面的教程，然而作为一个Android开发者，我就找了下网站里有没有Android的教程，还真有，这里就翻译一下。</p>
+<blockquote>
+<p>翻译目标教程：<a href="https://www.raywenderlich.com/category/android" target="_blank" rel="external">https://www.raywenderlich.com/category/android</a></p>
+</blockquote>
+<h2 id="Android-开发指南"><a href="#Android-开发指南" class="headerlink" title="Android 开发指南"></a>Android 开发指南</h2><p>想用 <code>Java</code> 来开发 <code>Android APP</code> 吗？<br>看看我们收集的超过15免费安卓开发教程，用覆盖所有你知道的知识来开始!</p>
+<blockquote>
+<p>注意:网站所有的Android教程使用Java。如果您是初次接触Java，一定要先读一本Java主题的书。</p>
+</blockquote>
+<a id="more"></a>
+<h3 id="Getting-Started-开始"><a href="#Getting-Started-开始" class="headerlink" title="Getting Started 开始"></a>Getting Started 开始</h3><p>开始的最好方法是通过学习我们的<a href="https://www.raywenderlich.com/120177/beginning-android-development-tutorial-installing-android-studio" target="_blank" rel="external">开始Android开发</a>系列教程。<br>如果你需要快速学习Java，看看我们的 <a href="https://www.raywenderlich.com/110452/java-for-android" target="_blank" rel="external">Java For Android 教程</a>和<a href="https://www.raywenderlich.com/119175/java-for-android-cheat-sheet-and-quick-reference" target="_blank" rel="external">cheat sheet 备忘录</a>。</p>
+<ul>
+<li><a href="https://www.raywenderlich.com/110452/java-for-android" target="_blank" rel="external">Java For Android</a></li>
+</ul>
+<ul>
+<li><a href="https://www.raywenderlich.com/119175/java-for-android-cheat-sheet-and-quick-reference" target="_blank" rel="external">Java for Android 备忘录和速记</a></li>
+</ul>
+<ul>
+<li><a href="https://www.raywenderlich.com/120177/beginning-android-development-tutorial-installing-android-studio" target="_blank" rel="external">开始Android开发教程: 安装 Android Studio</a></li>
+</ul>
+<ul>
+<li><a href="https://www.raywenderlich.com/120508/beginning-android-development-tutorial-android-studio" target="_blank" rel="external">开始Android开发教程:介绍 Android Studio</a></li>
+</ul>
+<h3 id="Core-Concepts-核心概念"><a href="#Core-Concepts-核心概念" class="headerlink" title="Core Concepts 核心概念"></a>Core Concepts 核心概念</h3><p>一旦你已经学习了基础知识，你应该了解Android开发所需要知道的一些核心概念，如<code>activities</code>（活动）、<code>fragments</code> （片段）,<code>intents</code> （意图）,一些重要的设计模式。</p>
+<ul>
+<li><a href="https://www.raywenderlich.com/103044/android-intents-tutorial" target="_blank" rel="external">Android: Intents 教程</a></li>
+</ul>
+<ul>
+<li><a href="https://www.raywenderlich.com/109843/common-design-patterns-for-android" target="_blank" rel="external">Android 常见的设计模式</a></li>
+</ul>
+<ul>
+<li><a href="https://www.raywenderlich.com/116580/introduction-to-android-activities-tutorial" target="_blank" rel="external">介绍 Android Activities 的教程</a></li>
+</ul>
+<ul>
+<li><a href="https://www.raywenderlich.com/117838/introduction-to-android-fragments-tutorial" target="_blank" rel="external">介绍 Android Fragments 的教程</a></li>
+</ul>
+<h3 id="User-Interface-用户界面"><a href="#User-Interface-用户界面" class="headerlink" title="User Interface 用户界面"></a>User Interface 用户界面</h3><p>创建一个Android应用的一个重要组成部分是创建一个用户界面。在本节中,您将学习如何创建用户界面外观和了解各种屏幕尺寸。</p>
+<ul>
+<li><a href="https://www.raywenderlich.com/103367/material-design" target="_blank" rel="external">Android: Material Design 介绍</a></li>
+</ul>
+<ul>
+<li><a href="https://www.raywenderlich.com/114066/adaptive-ui-android-tutorial" target="_blank" rel="external">Adaptive UI in Android Tutorial 自适应界面</a></li>
+</ul>
+<ul>
+<li><a href="https://www.raywenderlich.com/124438/android-listview-tutorial" target="_blank" rel="external">Android ListView 教程</a></li>
+</ul>
+<ul>
+<li><a href="https://www.raywenderlich.com/126528/android-recyclerview-tutorial" target="_blank" rel="external">Android RecyclerView 教程</a></li>
+</ul>
+<h3 id="其他-Android-教程"><a href="#其他-Android-教程" class="headerlink" title="其他 Android 教程"></a>其他 Android 教程</h3><p>别急，还有更多！在本节中,您将学习如何使用不同的Android SDK版本，如何分发你的应用程序到Android应用程序商店,等等。</p>
+<ul>
+<li><a href="https://www.raywenderlich.com/103540/geofences-googleapiclient" target="_blank" rel="external">Geofences on Android with GoogleApiClient</a></li>
+</ul>
+<ul>
+<li><a href="https://www.raywenderlich.com/118966/android-sdk-versions-tutorial" target="_blank" rel="external">Android SDK 版本教程</a></li>
+</ul>
+<ul>
+<li><a href="https://www.raywenderlich.com/122114/android-app-distribution-tutorial-zero-google-play-store" target="_blank" rel="external">Android App 分发教程: 从零到 Google Play Store</a></li>
+</ul>
+<ul>
+<li><a href="https://www.raywenderlich.com/124936/whats-new-android-studio-2-0" target="_blank" rel="external">Android Studio 2.0 有什么新东西？</a></li>
+</ul>
+<p>后续内容翻译中…</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Android项目开发填坑记--使用MultiDex]]></title>
+      <url>http://likfe.com/2016/06/28/android-multiDex/</url>
+      <content type="html"><![CDATA[<h2 id="背景知识"><a href="#背景知识" class="headerlink" title="背景知识"></a>背景知识</h2>]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Android必知必会-Android Studio修改包名]]></title>
+      <url>http://likfe.com/2016/06/15/android-studio-rename-package/</url>
+      <content type="html"><![CDATA[<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>公司做相似产品较多，一般都是以某个产品为基础修改，逐步替换设计图的切图。这个就会导致需要经常为Copy的项目修改包名。<br>这里是参考一些网上的说法，结合自身实战经验加以完善，特此分享给同行们，避免不必要的弯路。</p>
+<a id="more"></a>
+<h2 id="Android-Studio修改包名"><a href="#Android-Studio修改包名" class="headerlink" title="Android Studio修改包名"></a>Android Studio修改包名</h2><h3 id="1-修改包显示方式"><a href="#1-修改包显示方式" class="headerlink" title="1.修改包显示方式"></a>1.修改包显示方式</h3><p>如下图所示：<br><img src="http://img.blog.csdn.net/20160615174836929" alt="这里写图片描述"></p>
+<p>通过修改包显示方式，我们可以更方便的修改包名。</p>
+<h3 id="2-修改包名"><a href="#2-修改包名" class="headerlink" title="2.修改包名"></a>2.修改包名</h3><p>经过1中的操作，我们可以随意修改包的某个节点</p>
+<ul>
+<li>选中所要修改包的节点</li>
+<li>右键后选中-&gt;<code>Refactor</code>-&gt;<code>Rename</code></li>
+<li>在弹窗里输入要修改成什么名字，确认</li>
+<li>在弹窗里选择 修改<code>package</code></li>
+</ul>
+<h3 id="3-后续操作"><a href="#3-后续操作" class="headerlink" title="3.后续操作"></a>3.后续操作</h3><ol>
+<li>修改当前<code>Module</code>的<code>build.gradle</code>文件中的<code>applicationId</code>,改为跟你的包名一致；</li>
+<li>修改当前<code>Module</code>的<code>AndroidManifest.xml</code>文件中的<code>manifest</code>节点里的<code>package</code>属性值，改为跟你的包名一致。</li>
+</ol>
+<p>以上两个后续操作缺一不可，否则会造成很多奇特的Bug，比如<code>Id</code>没有错误且存在的情况下，提示找不到<code>id</code>；还有找不到资源、某些<code>Activity</code> 无法启动等等的Bug。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>以上「3.后续操作」里的第二操作是很多人都容易忽略的地方，不修改的话一时间也不会出现问题，如果忽略里，以后遇到无法解决的Bug后可能需要很久才会意识到<code>AndroidManifest.xml</code> 包名的问题。</p>
+<p>PS:</p>
+<blockquote>
+<p>你可以关注的我<a href="https://github.com/likfe" target="_blank" rel="external">Github</a>、<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="external">CSDN</a>和<a href="http://weibo.com/zyansen" target="_blank" rel="external">微博</a></p>
+</blockquote>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[MAMP显示文件列表]]></title>
+      <url>http://likfe.com/2016/06/14/mamp-list-file/</url>
+      <content type="html"><![CDATA[<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>MAMP是Mac下的一个PHP+Nginx+MySQL的集成环境，支持多站点，不同版本PHP。<br>今天有人请教MAMP如何显示文件列表的问题，这里记录一下。</p>
+<a id="more"></a>
+<h3 id="知识补充"><a href="#知识补充" class="headerlink" title="知识补充"></a>知识补充</h3><p>一个网站为了安全考虑，默认是禁止访问目录下的文件列表的。<br>当你请求一个目录时：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">st=&gt;start: 开始</span><br><span class="line">e=&gt;end: 结束</span><br><span class="line"></span><br><span class="line">cond1=&gt;condition: 是否存在index文件列表里的文件？</span><br><span class="line">cond2=&gt;condition: 是否允许显示文件列表？</span><br><span class="line">cond3=&gt;condition: 是否指定了404页面？</span><br><span class="line"></span><br><span class="line">op1=&gt;operation: 显示默认的文件</span><br><span class="line">op2=&gt;operation: 显示文件列表</span><br><span class="line">op3=&gt;operation: 显示指定的404页面</span><br><span class="line">op4=&gt;operation: 显示服务器级的404错误</span><br><span class="line"></span><br><span class="line">st-&gt;cond1-&gt;e</span><br><span class="line">cond1(yes)-&gt;op1-&gt;e</span><br><span class="line">cond1(no)-&gt;cond2(bottom)</span><br><span class="line"></span><br><span class="line">cond2(yes)-&gt;op2-&gt;e</span><br><span class="line">cond2(no)-&gt;cond3(right)</span><br><span class="line"></span><br><span class="line">cond3(yes)-&gt;op3-&gt;e</span><br><span class="line">cond3(no)-&gt;op4-&gt;e</span><br></pre></td></tr></table></figure>
+<ul>
+<li>默认的index文件列表（一般是index.html,index.htm,index.php）</li>
+<li>网站配置里404相关说明，可以指定404时访问的文件<h2 id="配置MAMP"><a href="#配置MAMP" class="headerlink" title="配置MAMP"></a>配置MAMP</h2>如图所示：<br><img src="http://img.blog.csdn.net/20160614185258257" alt="这里写图片描述"></li>
+</ul>
+<ol>
+<li>勾选 Indexs</li>
+<li>设置Directory index的值为<code>*</code></li>
+</ol>
+<p>这里有配置Nginx的配置文件开启访问文件列表的方式：</p>
+<blockquote>
+<p><a href="http://blog.csdn.net/testcs_dn/article/details/39644147" target="_blank" rel="external">http://blog.csdn.net/testcs_dn/article/details/39644147</a></p>
+</blockquote>
+<p>PS:</p>
+<blockquote>
+<p>你可以关注的我<a href="https://github.com/likfe" target="_blank" rel="external">Github</a>、<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="external">CSDN</a>和<a href="http://weibo.com/zyansen" target="_blank" rel="external">微博</a></p>
+</blockquote>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[AMH 5.X下安装 Flarum]]></title>
+      <url>http://likfe.com/2016/06/12/amh-install-flarum/</url>
+      <content type="html"><![CDATA[<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>最近无意间发现几个开源软件的<code>Bug反馈系统</code>使用的是<strong>Flarum</strong>，Flarum是一款优雅简洁论坛软件，看起来还是相当不错的，一时抑制不住想要尝试一下。</p>
+<p>由于服务器使用的是AMH集成环境，它相对于通常的直接安装环境有很多的区别，这导致安装过程中产生里不少问题。这里做个总结。</p>
+<h3 id="Flarum"><a href="#Flarum" class="headerlink" title="Flarum"></a>Flarum</h3><p>Flarum 是一款优雅简洁论坛软件，让在线交流变得更加轻松愉快。</p>
+<a id="more"></a>
+<ul>
+<li><a href="https://discuss.flarum.org" target="_blank" rel="external">官网</a></li>
+<li><a href="http://www.flarum.org.cn" target="_blank" rel="external">中文站</a></li>
+</ul>
+<h3 id="AMH"><a href="#AMH" class="headerlink" title="AMH"></a>AMH</h3><p><a href="https://amh.sh" target="_blank" rel="external">AMH</a> 是国内首个开源的主机面板，AMH 支持用户自由弹性组建运行环境与切换环境，您可以下载安装不同版本的WEB服务器、数据库、脚本软件自由组合创建您需要的运行环境。</p>
+<p>我使用的是<code>AMH5.X</code>的付费版本，<code>4.X</code>的免费版本也可以参考本教程。</p>
+<p>目前服务器环境是LNMP：</p>
+<blockquote>
+<p>CentOS-6.6 64位</p>
+<p>lnmp-2.5</p>
+<p>mysql-generic-5.5.40</p>
+<p>nginx-generic-1.6.0</p>
+<p>php-7.0</p>
+</blockquote>
+<h3 id="Composer"><a href="#Composer" class="headerlink" title="Composer"></a>Composer</h3><p>Composer是 PHP 用来管理依赖（dependency）关系的工具。你可以在自己的项目中声明所依赖的外部工具库（libraries），Composer 会帮你安装这些依赖的库文件。</p>
+<ul>
+<li><a href="https://getcomposer.org" target="_blank" rel="external">官网</a></li>
+<li><a href="http://www.phpcomposer.com" target="_blank" rel="external">中文站</a></li>
+</ul>
+<p>Composer是安装Flarum的必要工具。</p>
+<h2 id="安装PHP扩展"><a href="#安装PHP扩展" class="headerlink" title="安装PHP扩展"></a>安装PHP扩展</h2><p>这里需要安装Flarum所需要的必要的PHP扩展，先看下系统需求：</p>
+<blockquote>
+<p>Flarum 系统需求</p>
+<p>服务器： Apache (需要支持 mod_rewrite)、Nginx、Lighttpd<br>PHP 5.5+，需要开启的扩展：mbstring, pdo_mysql, openssl, json, gd, dom, fileinfo<br>MySQL 5.5+</p>
+</blockquote>
+<p><strong>特别注意：</strong>PHP是5.5+、MySQL 5.5+，如果版本过低可以使用AMH安装更高版本，AMH支持多版本PHP和MySQL。</p>
+<h3 id="流程："><a href="#流程：" class="headerlink" title="流程："></a>流程：</h3><ol>
+<li>登录到AMH的管理面板</li>
+<li>软件下载 &gt; fileinfo-1.0 &gt; 下载并安装到对应的环境</li>
+<li>软件下载 &gt; mcrypt-1.0 &gt; 下载并安装到对应的环境</li>
+<li>软件下载 &gt; pdo_mysql-1.0 &gt; 下载并安装到对应的环境</li>
+</ol>
+<h2 id="安装Composer"><a href="#安装Composer" class="headerlink" title="安装Composer"></a>安装Composer</h2><p>Flarum官网的文档要求使用Composer命令行的方式进行安装，所以需要先安装Composer：</p>
+<p>使用SSH方式登录服务器之后：执行</p>
+<p><code>curl -sS https://getcomposer.org/installer | php</code></p>
+<blockquote>
+<p>注意： 如果上述方法由于某些原因失败了，你还可以通过 php &gt;下载安装器：</p>
+</blockquote>
+<p><code>php -r &quot;readfile(&#39;https://getcomposer.org/installer&#39;);&quot; | php</code></p>
+<p>这里你可能会遇到 <code>-bash php command not found</code>的错误提示，请参考下文的<strong>问题集锦</strong> 。</p>
+<p>PS：<a href="http://docs.phpcomposer.com/00-intro.html" target="_blank" rel="external">安装Composer文档</a></p>
+<h2 id="安装Flarum"><a href="#安装Flarum" class="headerlink" title="安装Flarum"></a>安装Flarum</h2><p>环境搭建好了，这里讲解安装Flarum的过程</p>
+<blockquote>
+<p><a href="http://flarum.org/docs/installation/" target="_blank" rel="external">官方安装文档</a></p>
+</blockquote>
+<ol>
+<li>在AMH控制面板下创建好一个站点（这里指定为<code>A站点</code>），并做好域名解析，确认可以正常访问</li>
+<li>删除<code>A站点</code>下的所有文件</li>
+<li>创建好一个Flarum使用的MySQL数据库和对应的用户</li>
+<li>SSH下进入<code>A站点</code>根目录（<code>cd /home/wwwroot/环境/domain/主域名/web/</code>）</li>
+<li>执行安装命令：<code>composer create-project flarum/flarum . --stability=beta</code></li>
+<li>配置<code>A站点的Nginx</code>配置文件（<code>/home/wwwroot/环境/vhost/主域名.conf</code>）：参见<a href="http://flarum.org/docs/installation/" target="_blank" rel="external">官方安装文档</a>。特别注意：<code>location ~* \.php$</code>下的参数以自动生成的为准，还需要删除自动生成的ErrorPage的配置信息。</li>
+<li>重载Nginx并访问<code>A站点</code>，填写相关安装信息。（遇到文件读写权限问题，查看下文问题集锦）</li>
+</ol>
+<h3 id="安装Flarum中文语言包"><a href="#安装Flarum中文语言包" class="headerlink" title="安装Flarum中文语言包"></a>安装Flarum中文语言包</h3><p>为了便于操作，我们安装中文语言包来进行默认语言的切换。</p>
+<p>尝试了几种安装方式，这里推荐使用命令行安装：</p>
+<ol>
+<li>SSH下进入<code>A站点</code>根目录</li>
+<li>执行<code>composer require jsthon/flarum-ext-simplified-chinese</code>即可</li>
+<li>访问<code>A站点</code>，进入后台修改勾选中文扩展，并修改默认语言。</li>
+</ol>
+<blockquote>
+<p>其他语言和扩展：<a href="https://discuss.flarum.org/d/1534-extension-list" target="_blank" rel="external">https://discuss.flarum.org/d/1534-extension-list</a></p>
+</blockquote>
+<h2 id="问题集锦"><a href="#问题集锦" class="headerlink" title="问题集锦"></a>问题集锦</h2><p>可能遇到的问题：</p>
+<h3 id="bash-php-command-not-found"><a href="#bash-php-command-not-found" class="headerlink" title="-bash php command not found"></a>-bash php command not found</h3><p>Composer的安装和使用是使用的php-cli的方式，AMH支持多版本的PHP，环境变量里并未指定php-cli的版本，这里需要我们把指定版本的<a href="http://blog.csdn.net/ys743276112/article/details/51648243" target="_blank" rel="external">PHP加入到环境变量</a>里。</p>
+<p>在<code>~/.bash_profile</code>里加入：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">PATH=<span class="variable">$PATH</span>:/usr/<span class="built_in">local</span>/php-版本/bin</span><br><span class="line"><span class="built_in">export</span> PATH</span><br></pre></td></tr></table></figure>
+<p>保存修改后执行<code>source ~/.bash_profile</code>使得修改生效。</p>
+<p>PS：如果你使用的是其他发行版的Linux，请自行搜索如何设置<code>PHP加入到环境变量</code> 。</p>
+<h3 id="requires-ext-fileinfo-或者-request-for-intervention-image"><a href="#requires-ext-fileinfo-或者-request-for-intervention-image" class="headerlink" title="requires ext-fileinfo * 或者 request for intervention/image"></a>requires ext-fileinfo * 或者 request for intervention/image</h3><blockquote>
+<p>参见：</p>
+<ul>
+<li><a href="http://stackoverflow.com/questions/24850136/i-have-ext-fileinfo-but-composer-says-it-is-missing" target="_blank" rel="external">http://stackoverflow.com/questions/24850136/i-have-ext-fileinfo-but-composer-says-it-is-missing</a></li>
+<li><a href="http://amh.sh/bbs/post-6149-1-1.htm" target="_blank" rel="external">http://amh.sh/bbs/post-6149-1-1.htm</a></li>
+</ul>
+</blockquote>
+<p>简单来说，就是咱们在AMH里安装的PHP扩展并没有影响到<code>php-cli</code>方式运行PHP的配置，需要我们手动同步一下配置：</p>
+<p><code>cp /home/wwwroot/环境/etc/amh-php.ini /usr/local/php-版本/etc/php.ini</code></p>
+<p>重载Nginx即可生效。</p>
+<h3 id="Please-chmod-this-directory-to-0775"><a href="#Please-chmod-this-directory-to-0775" class="headerlink" title="Please chmod this directory to 0775"></a>Please chmod this directory to 0775</h3><p>当你访问通过composer安装好的<code>A站点</code>时，遇到里类似的权限读写问题，对于AMH环境，我们需要执行：</p>
+<p><code>sudo chown www:www -R  /home/wwwroot/环境/domain/主域名/web</code></p>
+<p>这里有一些讨论：</p>
+<ul>
+<li><a href="https://discuss.flarum.org/d/823-directorys-are-not-writable/46" target="_blank" rel="external">https://discuss.flarum.org/d/823-directorys-are-not-writable/46</a></li>
+<li><a href="https://discuss.flarum.org/d/2209-directory-not-writable/3" target="_blank" rel="external">https://discuss.flarum.org/d/2209-directory-not-writable/3</a></li>
+</ul>
+<p>上面的讨论使用的用户组和AMH的不一样，AMH网站的用户组是<code>www</code>，结合实际情况才能真正解决问题。</p>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p>查看我们的成果：<a href="http://forum.inkcode.cc" target="_blank" rel="external">Cafeting的论坛</a></p>
+<blockquote>
+<p><a href="http://flarum.org/docs/" target="_blank" rel="external">官方文档</a> 适应最新版的Flarum，推荐<br><a href="https://www.gitbook.com/book/justjavac/flarum" target="_blank" rel="external">中文文档</a> 较旧，有一定参考意义</p>
+</blockquote>
+<p>AMH集成环境相对于通常的直接安装环境有很多的区别，使用的时候务必要考虑到。</p>
+<p>如果有什么问题，可以在博客下留言或者通过下面的方式联系我:</p>
+<blockquote>
+<p>你可以关注的我<a href="https://github.com/likfe" target="_blank" rel="external">Github</a>、<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="external">CSDN</a>和<a href="http://weibo.com/zyansen" target="_blank" rel="external">微博</a></p>
+</blockquote>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Android必知必会-带列表的地图POI周边搜索]]></title>
+      <url>http://likfe.com/2016/05/30/mapPoiSearch/</url>
+      <content type="html"><![CDATA[<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>先看效果图：（以公司附近的国贸为中心点）</p>
+<p><img src="http://mmmedia.qiniudn.com/2016-05-30_007D8133A7BD3AF58D7994F64FDDB8D9.gif" alt="2016-05-30_007D8133A7BD3AF58D7994F64FDDB8D9.gif"></p>
+<p>上面是地图，下面是地理位置列表，有的只有地理位置列表（QQ动态的位置），这是个很常见的功能。它有个专门的叫法：<strong>POI周边搜索</strong>。</p>
+<a id="more"></a>
+<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><p>这个效果实现起来其实很简单，不过需要你先阅读下地图的API，这里使用的是高德地图的Android SDK，SDK的配置这里不作讲解，文末会放一些链接供学习。</p>
+<h3 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h3><ol>
+<li>利用地图的定位功能，获取用户当前的位置</li>
+<li>根据获得的位置信息调用POI搜索，获取位置列表</li>
+<li>ListView展示位置列表</li>
+<li>用户拖动地图，获取地图中心坐标的位置信息，并执行2~3的步骤</li>
+</ol>
+<h3 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h3><p><strong>Layout:</strong></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">LinearLayout</span></span><br><span class="line">    <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span><br><span class="line">    <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span><br><span class="line">    <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span></span><br><span class="line">    <span class="attr">android:orientation</span>=<span class="string">"vertical"</span></span><br><span class="line">    &gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">com.amap.api.maps2d.MapView</span></span><br><span class="line">        <span class="attr">android:id</span>=<span class="string">"@+id/map_local"</span></span><br><span class="line">        <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span><br><span class="line">        <span class="attr">android:layout_height</span>=<span class="string">"0dp"</span></span><br><span class="line">        <span class="attr">android:layout_weight</span>=<span class="string">"2"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">ListView</span></span><br><span class="line">        <span class="attr">android:id</span>=<span class="string">"@+id/map_list"</span></span><br><span class="line">        <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span><br><span class="line">        <span class="attr">android:layout_height</span>=<span class="string">"0dp"</span></span><br><span class="line">        <span class="attr">android:layout_weight</span>=<span class="string">"3"</span></span><br><span class="line">        <span class="attr">android:divider</span>=<span class="string">"@color/space"</span></span><br><span class="line">        <span class="attr">android:dividerHeight</span>=<span class="string">"1dp"</span></span><br><span class="line">        <span class="attr">android:scrollbars</span>=<span class="string">"none"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">LinearLayout</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>Activity:</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">New_LocalActivity</span> <span class="keyword">extends</span> <span class="title">Activity</span> <span class="keyword">implements</span> <span class="title">LocationSource</span>,</span><br><span class="line">        <span class="title">AMapLocationListener</span>, <span class="title">AMap</span>.<span class="title">OnCameraChangeListener</span>, <span class="title">PoiSearch</span>.<span class="title">OnPoiSearchListener</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@BindView</span>(R.id.map_local)</span><br><span class="line">    MapView mapView;</span><br><span class="line">    <span class="meta">@BindView</span>(R.id.map_list)</span><br><span class="line">    ListView mapList;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String KEY_LAT = <span class="string">"lat"</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String KEY_LNG = <span class="string">"lng"</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String KEY_DES = <span class="string">"des"</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> AMapLocationClient mLocationClient;</span><br><span class="line">    <span class="keyword">private</span> LocationSource.OnLocationChangedListener mListener;</span><br><span class="line">    <span class="keyword">private</span> LatLng latlng;</span><br><span class="line">    <span class="keyword">private</span> String city;</span><br><span class="line">    <span class="keyword">private</span> AMap aMap;</span><br><span class="line">    <span class="keyword">private</span> String deepType = <span class="string">""</span>;<span class="comment">// poi搜索类型</span></span><br><span class="line">    <span class="keyword">private</span> PoiSearch.Query query;<span class="comment">// Poi查询条件类</span></span><br><span class="line">    <span class="keyword">private</span> PoiSearch poiSearch;</span><br><span class="line">    <span class="keyword">private</span> PoiResult poiResult; <span class="comment">// poi返回的结果</span></span><br><span class="line">    <span class="keyword">private</span> PoiOverlay poiOverlay;<span class="comment">// poi图层</span></span><br><span class="line">    <span class="keyword">private</span> List&lt;PoiItem&gt; poiItems;<span class="comment">// poi数据</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> PoiSearch_adapter adapter;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</span><br><span class="line">        setContentView(R.layout.activity_new__local);</span><br><span class="line">        ButterKnife.bind(<span class="keyword">this</span>);</span><br><span class="line">        mapView.onCreate(savedInstanceState);</span><br><span class="line">        init();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (aMap == <span class="keyword">null</span>) &#123;</span><br><span class="line">            aMap = mapView.getMap();</span><br><span class="line">            aMap.setOnCameraChangeListener(<span class="keyword">this</span>);</span><br><span class="line">            setUpMap();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        deepType = <span class="string">"餐饮"</span>;<span class="comment">//这里以餐饮为例</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//-------- 定位 Start ------</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">setUpMap</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (mLocationClient == <span class="keyword">null</span>) &#123;</span><br><span class="line">            mLocationClient = <span class="keyword">new</span> AMapLocationClient(getApplicationContext());</span><br><span class="line">            AMapLocationClientOption mLocationOption = <span class="keyword">new</span> AMapLocationClientOption();</span><br><span class="line">            <span class="comment">//设置定位监听</span></span><br><span class="line">            mLocationClient.setLocationListener(<span class="keyword">this</span>);</span><br><span class="line">            <span class="comment">//设置为高精度定位模式</span></span><br><span class="line">            mLocationOption.setOnceLocation(<span class="keyword">true</span>);</span><br><span class="line">            mLocationOption.setLocationMode(AMapLocationClientOption.AMapLocationMode.Hight_Accuracy);</span><br><span class="line">            <span class="comment">//设置定位参数</span></span><br><span class="line">            mLocationClient.setLocationOption(mLocationOption);</span><br><span class="line">            mLocationClient.startLocation();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 自定义系统定位小蓝点</span></span><br><span class="line">        MyLocationStyle myLocationStyle = <span class="keyword">new</span> MyLocationStyle();</span><br><span class="line">        myLocationStyle.myLocationIcon(BitmapDescriptorFactory</span><br><span class="line">                .fromResource(R.drawable.location_marker));<span class="comment">// 设置小蓝点的图标</span></span><br><span class="line">        myLocationStyle.strokeColor(Color.BLACK);<span class="comment">// 设置圆形的边框颜色</span></span><br><span class="line">        myLocationStyle.radiusFillColor(Color.argb(<span class="number">100</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">180</span>));<span class="comment">// 设置圆形的填充颜色</span></span><br><span class="line">        myLocationStyle.strokeWidth(<span class="number">1.0f</span>);<span class="comment">// 设置圆形的边框粗细</span></span><br><span class="line">        aMap.setMyLocationStyle(myLocationStyle);</span><br><span class="line">        aMap.setLocationSource(<span class="keyword">this</span>);<span class="comment">// 设置定位监听</span></span><br><span class="line">        aMap.getUiSettings().setMyLocationButtonEnabled(<span class="keyword">true</span>);<span class="comment">// 设置默认定位按钮是否显示</span></span><br><span class="line">        aMap.setMyLocationEnabled(<span class="keyword">true</span>);<span class="comment">// 设置为true表示显示定位层并可触发定位，false表示隐藏定位层并不可触发定位，默认是false</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span><br><span class="line">     * 开始进行poi搜索</span><br><span class="line">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doSearchQuery</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        aMap.setOnMapClickListener(<span class="keyword">null</span>);<span class="comment">// 进行poi搜索时清除掉地图点击事件</span></span><br><span class="line">        <span class="keyword">int</span> currentPage = <span class="number">0</span>;</span><br><span class="line">        query = <span class="keyword">new</span> PoiSearch.Query(<span class="string">""</span>, deepType, city);<span class="comment">// 第一个参数表示搜索字符串，第二个参数表示poi搜索类型，第三个参数表示poi搜索区域（空字符串代表全国）</span></span><br><span class="line">        query.setPageSize(<span class="number">20</span>);<span class="comment">// 设置每页最多返回多少条poiitem</span></span><br><span class="line">        query.setPageNum(currentPage);<span class="comment">// 设置查第一页</span></span><br><span class="line">        LatLonPoint lp = <span class="keyword">new</span> LatLonPoint(latlng.latitude, latlng.longitude);</span><br><span class="line"></span><br><span class="line">        poiSearch = <span class="keyword">new</span> PoiSearch(<span class="keyword">this</span>, query);</span><br><span class="line">        poiSearch.setOnPoiSearchListener(<span class="keyword">this</span>);</span><br><span class="line">        poiSearch.setBound(<span class="keyword">new</span> PoiSearch.SearchBound(lp, <span class="number">5000</span>, <span class="keyword">true</span>));</span><br><span class="line">        <span class="comment">// 设置搜索区域为以lp点为圆心，其周围2000米范围</span></span><br><span class="line">        poiSearch.searchPOIAsyn();<span class="comment">// 异步搜索</span></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onLocationChanged</span><span class="params">(AMapLocation aMapLocation)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (mListener != <span class="keyword">null</span> &amp;&amp; aMapLocation != <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (aMapLocation.getErrorCode() == <span class="number">0</span>) &#123;</span><br><span class="line">                <span class="comment">// 显示我的位置</span></span><br><span class="line">                mListener.onLocationChanged(aMapLocation);</span><br><span class="line">                <span class="comment">//设置第一次焦点中心</span></span><br><span class="line">                latlng = <span class="keyword">new</span> LatLng(aMapLocation.getLatitude(), aMapLocation.getLongitude());</span><br><span class="line">                aMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latlng, <span class="number">14</span>), <span class="number">1000</span>, <span class="keyword">null</span>);</span><br><span class="line">                city = aMapLocation.getProvince();</span><br><span class="line">                doSearchQuery();</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                String errText = <span class="string">"定位失败,"</span> + aMapLocation.getErrorCode() + <span class="string">": "</span> + aMapLocation.getErrorInfo();</span><br><span class="line">                Log.e(<span class="string">"AmapErr"</span>, errText);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">activate</span><span class="params">(OnLocationChangedListener listener)</span> </span>&#123;</span><br><span class="line">        mListener = listener;</span><br><span class="line">        mLocationClient.startLocation();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">deactivate</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        mListener = <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">if</span> (mLocationClient != <span class="keyword">null</span>) &#123;</span><br><span class="line">            mLocationClient.stopLocation();</span><br><span class="line">            mLocationClient.onDestroy();</span><br><span class="line">        &#125;</span><br><span class="line">        mLocationClient = <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCameraChange</span><span class="params">(CameraPosition cameraPosition)</span> </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCameraChangeFinish</span><span class="params">(CameraPosition cameraPosition)</span> </span>&#123;</span><br><span class="line">        latlng = cameraPosition.target;</span><br><span class="line">        aMap.clear();</span><br><span class="line">        aMap.addMarker(<span class="keyword">new</span> MarkerOptions().position(latlng));</span><br><span class="line">        doSearchQuery();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onPoiSearched</span><span class="params">(PoiResult result, <span class="keyword">int</span> rCode)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (rCode == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (result != <span class="keyword">null</span> &amp;&amp; result.getQuery() != <span class="keyword">null</span>) &#123;<span class="comment">// 搜索poi的结果</span></span><br><span class="line">                <span class="keyword">if</span> (result.getQuery().equals(query)) &#123;<span class="comment">// 是否是同一条</span></span><br><span class="line">                    poiResult = result;</span><br><span class="line">                    poiItems = poiResult.getPois();<span class="comment">// 取得第一页的poiitem数据，页数从数字0开始</span></span><br><span class="line">                    List&lt;SuggestionCity&gt; suggestionCities = poiResult</span><br><span class="line">                            .getSearchSuggestionCitys();</span><br><span class="line">                    <span class="keyword">if</span> (poiItems != <span class="keyword">null</span> &amp;&amp; poiItems.size() &gt; <span class="number">0</span>) &#123;</span><br><span class="line">                        adapter = <span class="keyword">new</span> PoiSearch_adapter(<span class="keyword">this</span>, poiItems);</span><br><span class="line">                        mapList.setAdapter(adapter);</span><br><span class="line">                        mapList.setOnItemClickListener(<span class="keyword">new</span> mOnItemClickListener());</span><br><span class="line"></span><br><span class="line">                      &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">else</span> &#123;</span><br><span class="line">                        Logger.d(<span class="string">"无结果"</span>);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                Logger.e(<span class="string">"无结果"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (rCode == <span class="number">27</span>) &#123;</span><br><span class="line">            Logger.e(<span class="string">"error_network"</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (rCode == <span class="number">32</span>) &#123;</span><br><span class="line">            Logger.e(<span class="string">"error_key"</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            Logger.e(<span class="string">"error_other："</span> + rCode);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onPoiItemSearched</span><span class="params">(PoiItem poiItem, <span class="keyword">int</span> i)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//-------- 定位 End ------</span></span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onResume</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.onResume();</span><br><span class="line">        mLocationClient.startLocation();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onPause</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.onPause();</span><br><span class="line">        mLocationClient.stopLocation();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onDestroy</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        mLocationClient.onDestroy();</span><br><span class="line">        <span class="keyword">super</span>.onDestroy();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="class"><span class="keyword">class</span> <span class="title">mOnItemClickListener</span> <span class="keyword">implements</span> <span class="title">AdapterView</span>.<span class="title">OnItemClickListener</span> </span>&#123;</span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onItemClick</span><span class="params">(AdapterView&lt;?&gt; parent, View view, <span class="keyword">int</span> position, <span class="keyword">long</span> id)</span> </span>&#123;</span><br><span class="line">            Intent intent = <span class="keyword">new</span> Intent();</span><br><span class="line">            intent.putExtra(KEY_LAT, poiItems.get(position).getLatLonPoint().getLatitude());</span><br><span class="line">            intent.putExtra(KEY_LNG, poiItems.get(position).getLatLonPoint().getLongitude());</span><br><span class="line">            intent.putExtra(KEY_DES, poiItems.get(position).getTitle());</span><br><span class="line">            setResult(RESULT_OK, intent);</span><br><span class="line">            finish();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>示例中的Activity是使用<code>startActivityForResult</code>方式启动的，最后点击位置之后会返回点选的位置信息。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>我第一次准备实现上述的效果时，也是不知所措，因为还没有对地图API有比较全面的认识，后来看了不少资料，自己便结合了一下地图的功能点，实现了设计图中的效果。</p>
+<p>下面是一些资料，初学者务必先学习基础API的应用：</p>
+<ul>
+<li><a href="http://lbs.amap.com" target="_blank" rel="external">高德开发者中心</a></li>
+<li><a href="http://www.imooc.com/learn/339" target="_blank" rel="external">慕课网-如何使用高德Android SDK进行LBS的开发</a></li>
+<li><a href="http://blog.csdn.net/ys743276112/article/details/51519223" target="_blank" rel="external">带列表的地图POI周边搜索</a></li>
+</ul>
+<p>如果你有什么问题，可以在博客上留言。</p>
+<p>PS:</p>
+<blockquote>
+<p>你可以关注的我<a href="https://github.com/likfe" target="_blank" rel="external">Github</a>、<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="external">CSDN</a>和<a href="http://weibo.com/zyansen" target="_blank" rel="external">微博</a></p>
+</blockquote>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Android必知必会-自定义Scrollbar样式]]></title>
+      <url>http://likfe.com/2016/05/16/diyScrollbar/</url>
+      <content type="html"><![CDATA[<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>设计师给的设计图完全依照 IOS 的标准来的，导致很多细节的控件都得自己重写，最近的设计图中有显示滚动条，Android 默认的滚动条样式（带描边）和设计图格格不入，无奈，只好研究下自定义 Scrollbar 样式。这里稍微整理下。<br><a id="more"></a></p>
+<h2 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h2><p>在<code>ListView</code>/<code>ScrollView</code>/<code>RecyclerView</code>中添加属性：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 情况A ：垂直滚动条--&gt;</span></span><br><span class="line">android:scrollbars="vertical"</span><br><span class="line">android:scrollbarTrackVertical="@drawable/xxx_vertical_track"</span><br><span class="line">android:scrollbarThumbVertical="@drawable/xxx_vertical_thumb"</span><br><span class="line"><span class="comment">&lt;!-- 情况B ：水平滚动条--&gt;</span></span><br><span class="line">android:scrollbars="horizontal"</span><br><span class="line">android:scrollbarTrackHorizontal="@drawable/xxx_horizontal_track"</span><br><span class="line">android:scrollbarThumbHorizontal="@drawable/xxx_horizontal_thumb"</span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 其他通用的属性 --&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 1.定义滚动条的样式和位置 --&gt;</span></span><br><span class="line">android:scrollbarStyle="outsideInset"</span><br><span class="line"><span class="comment">&lt;!-- 2.定义滚动条的大小，垂直时指宽度，水平时指高度 --&gt;</span></span><br><span class="line">android:scrollbarSize="4dp"</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">属性</th>
+<th style="text-align:center">效果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">scrollbarThumbVertical[Horizontal]</td>
+<td style="text-align:center">短条</td>
+</tr>
+<tr>
+<td style="text-align:center">scrollbarTrackVertical[Horizontal]</td>
+<td style="text-align:center">长条，即背景</td>
+</tr>
+</tbody>
+</table>
+<p>即<code>scrollbaTrackxxx</code>，<code>scrollbarThumbxxx</code>自定义的 xml 文件，放在<code>Drawable</code>中，<code>track</code>是指长条，<code>thumb</code>是指短条，然后再 xml 中定义短条和长条的样式。</p>
+<h3 id="需要注意"><a href="#需要注意" class="headerlink" title="需要注意"></a>需要注意</h3><p>其中，<code>scrollbaTrackxxx</code>、<code>scrollbarThumbxxx</code><strong>可以使用</strong>：</p>
+<ul>
+<li>Shape自定义 Drawable</li>
+<li>图片</li>
+<li><code>.9.png</code></li>
+<li><code>@color/xxx</code>的方式使用颜色值</li>
+</ul>
+<p><strong>不可以</strong>直接使用<code>#xxxxxx</code>颜色值</p>
+<h3 id="android-scrollbarStyle"><a href="#android-scrollbarStyle" class="headerlink" title="android:scrollbarStyle"></a>android:scrollbarStyle</h3><p> <code>android:scrollbarStyle</code>可以定义滚动条的样式和位置，可选值有<code>insideOverlay</code>、<code>insideInset</code>、<code>outsideOverlay</code>、<code>outsideInset</code>四种。</p>
+<p>其中<code>inside</code>和<code>outside</code>分别表示是否在 view 的 padding 区域内，<code>overlay</code>和<code>inset</code>表示覆盖在 view 上或是插在 view 后面，所以四种值分别表示：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">属性值</th>
+<th style="text-align:center">效果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">insideOverlay</td>
+<td style="text-align:center"><strong>默认值</strong>，表示在padding区域内并且覆盖在view上</td>
+</tr>
+<tr>
+<td style="text-align:center">insideInset</td>
+<td style="text-align:center">表示在padding区域内并且插入在view后面</td>
+</tr>
+<tr>
+<td style="text-align:center">outsideOverlay</td>
+<td style="text-align:center">表示在padding区域外并且覆盖在view上</td>
+</tr>
+<tr>
+<td style="text-align:center">outsideInset</td>
+<td style="text-align:center">表示在padding区域外并且插入在view后面</td>
+</tr>
+</tbody>
+</table>
+<h2 id="Demo"><a href="#Demo" class="headerlink" title="Demo"></a>Demo</h2><p>下面是两个Demo：</p>
+<p>color:</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">color</span> <span class="attr">name</span>=<span class="string">"red_square"</span>&gt;</span>#CCFF6464<span class="tag">&lt;/<span class="name">color</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">color</span> <span class="attr">name</span>=<span class="string">"transparent"</span>&gt;</span>#00000000<span class="tag">&lt;/<span class="name">color</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>drawable:scrollbar_vertical_thumb</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span><br><span class="line"><span class="tag">&lt;<span class="name">shape</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span>&gt;</span></span><br><span class="line">	<span class="comment">&lt;!-- 填充 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">solid</span> <span class="attr">android:color</span>=<span class="string">"#66000000"</span>/&gt;</span></span><br><span class="line">	<span class="comment">&lt;!-- 圆角 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">corners</span> <span class="attr">android:radius</span>=<span class="string">"1dp"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">shape</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="Demo-1"><a href="#Demo-1" class="headerlink" title="Demo 1"></a>Demo 1</h3><p><strong>layout：</strong></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">android:scrollbarStyle="outsideOverlay"</span><br><span class="line">android:scrollbarThumbVertical="@drawable/scrollbar_vertical_thumb"</span><br><span class="line"><span class="comment">&lt;!-- </span><br><span class="line">scrollbarTrackVertical设为透明或者直接不设置即可</span><br><span class="line">android:scrollbarTrackVertical="@color/transparent"</span><br><span class="line">再次强调：scrollbarThumbVertical、scrollbarTrackVertical 不可以直接设置为颜色值,但可以使用@color的方式使用颜色值</span><br><span class="line">--&gt;</span></span><br><span class="line">android:scrollbarSize="3dp"</span><br><span class="line">android:scrollbars="vertical"</span><br></pre></td></tr></table></figure>
+<h3 id="Demo-2"><a href="#Demo-2" class="headerlink" title="Demo 2"></a>Demo 2</h3><p><strong>layout：</strong><br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">android:scrollbarStyle="outsideOverlay"</span><br><span class="line">android:scrollbarThumbVertical="@color/red_square"</span><br><span class="line">android:scrollbarSize="3dp"</span><br><span class="line">android:scrollbars="vertical"</span><br></pre></td></tr></table></figure></p>
+<h3 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h3><table>
+<thead>
+<tr>
+<th style="text-align:center">默认样式</th>
+<th style="text-align:center">Demo 1</th>
+<th style="text-align:center">Demo 2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><img src="http://img.blog.csdn.net/20160516180441093" alt="default"></td>
+<td style="text-align:center"><img src="http://img.blog.csdn.net/20160516180459625" alt="demo1"></td>
+<td style="text-align:center"><img src="http://img.blog.csdn.net/20160516180511849" alt="demo2"></td>
+</tr>
+</tbody>
+</table>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>在查资料的过程中，发现滚动条也可以使用代码来画，这里不做过多介绍，有兴趣的可以研究一下。</p>
+<p>PS:</p>
+<blockquote>
+<p>你可以关注的我<a href="https://github.com/likfe" target="_blank" rel="external">Github</a>、<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="external">CSDN</a>和<a href="http://weibo.com/zyansen" target="_blank" rel="external">微博</a></p>
+</blockquote>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Android必知必会-获取View坐标和长宽的时机]]></title>
+      <url>http://likfe.com/2016/05/13/theTimeGetViewInfo/</url>
+      <content type="html"><![CDATA[<h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>最近要实现一个功能，用到了一些属性动画，需要获取一些View的坐标信息，设计图如下：<br><a id="more"></a><br><img src="http://img.blog.csdn.net/20160513160842549" alt="design"></p>
+<p>这里我使用的是<code>DialogFragment</code>来实现的，可以复用。</p>
+<p>先贴一下获取View坐标的一些资料：</p>
+<blockquote>
+<p><a href="http://www.cnblogs.com/mengdd/p/3273284.html" target="_blank" rel="external">Android View各种尺寸位置相关的方法探究</a></p>
+<p><a href="http://blog.csdn.net/ys743276112/article/details/51396319" target="_blank" rel="external"> Android获得控件在屏幕中的绝对坐标</a></p>
+</blockquote>
+<h3 id="合适的时机"><a href="#合适的时机" class="headerlink" title="合适的时机"></a>合适的时机</h3><p>要想获得View的坐标和长宽，必须要等到View绘制完毕，在平常写代码的生命周期函数内一般是获取不到的：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Activity</span></span><br><span class="line">onCreate();</span><br><span class="line">onResume();</span><br><span class="line"><span class="comment">//Fragmen</span></span><br><span class="line">onCreate();</span><br><span class="line">onCreateView();</span><br><span class="line">onResume();</span><br><span class="line">onShow();</span><br><span class="line">setUserVisibleHint();</span><br></pre></td></tr></table></figure>
+<p>以上这些时机都是不行的。</p>
+<p>目前经过测试可用的方法是：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span><br><span class="line"> * 对于：Activity</span><br><span class="line"> * 覆写 onWindowFocusChanged(boolean hasFocus)方法</span><br><span class="line"> */</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onWindowFocusChanged</span><span class="params">(<span class="keyword">boolean</span> hasFocus)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.onWindowFocusChanged(hasFocus);</span><br><span class="line">        <span class="keyword">int</span>[] location1 = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">2</span>] ;</span><br><span class="line">        view.getLocationInWindow(location1); <span class="comment">//获取在当前窗口内的绝对坐标</span></span><br><span class="line">        <span class="keyword">int</span>[] location2 = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">2</span>] ;</span><br><span class="line">        view.getLocationOnScreen(location2);<span class="comment">//获取在整个屏幕内的绝对坐标</span></span><br><span class="line">        <span class="comment">//do something</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span><br><span class="line"> * 对于：Fragmen</span><br><span class="line"> * 在 onCreateView()中为View添加addOnGlobalLayoutListener</span><br><span class="line"> */</span></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> View <span class="title">onCreateView</span><span class="params">(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState)</span> </span>&#123;</span><br><span class="line">        View view = inflater.inflate(R.layout.xxx, container, <span class="keyword">false</span>);</span><br><span class="line">        ViewTreeObserver vto = view.getViewTreeObserver();</span><br><span class="line">        vto.addOnGlobalLayoutListener(<span class="keyword">new</span>  ViewTreeObserver.OnGlobalLayoutListener() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onGlobalLayout</span><span class="params">()</span> </span>&#123;</span><br><span class="line">                <span class="comment">//在这里获取View及其子控件的坐标和长宽信息</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">      <span class="comment">//do something</span></span><br><span class="line">        <span class="keyword">return</span> view;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="comment">/*</span><br><span class="line"> * 对于：DialogFragment</span><br><span class="line"> * 在 onCreateDialog()中为View添加addOnGlobalLayoutListener</span><br><span class="line"> * PS: start-end之间的是重点，其他可以不看</span><br><span class="line"> */</span></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Dialog <span class="title">onCreateDialog</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</span><br><span class="line">        LayoutInflater inflater = getActivity().getLayoutInflater();</span><br><span class="line">        View view = inflater.inflate(R.layout.xxxx, <span class="keyword">null</span>);</span><br><span class="line">      <span class="comment">//-----获取View及其子控件的坐标和长宽信息 start----</span></span><br><span class="line">      	ViewTreeObserver vto = view.getViewTreeObserver();</span><br><span class="line">        vto.addOnGlobalLayoutListener(<span class="keyword">new</span> ViewTreeObserver.OnGlobalLayoutListener() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onGlobalLayout</span><span class="params">()</span> </span>&#123;</span><br><span class="line">                <span class="comment">//在这里获取View及其子控件的坐标和长宽信息</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">      <span class="comment">//-----获取View及其子控件的坐标和长宽信息 end----</span></span><br><span class="line">      </span><br><span class="line">        Dialog dialog = <span class="keyword">new</span> Dialog(getActivity(), R.style.CustomCityPickerDialog);</span><br><span class="line">        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);</span><br><span class="line">        dialog.setContentView(view);</span><br><span class="line">        dialog.setCanceledOnTouchOutside(<span class="keyword">true</span>);</span><br><span class="line">        ButterKnife.bind(<span class="keyword">this</span>, view);</span><br><span class="line">        <span class="comment">// 设置宽度为屏宽、靠近屏幕底部。</span></span><br><span class="line">        Window window = dialog.getWindow();</span><br><span class="line">        window.setBackgroundDrawableResource(R.color.transparent);</span><br><span class="line">        WindowManager.LayoutParams wlp = window.getAttributes();</span><br><span class="line">        wlp.gravity = Gravity.BOTTOM;</span><br><span class="line">        wlp.width = WindowManager.LayoutParams.MATCH_PARENT;</span><br><span class="line">        window.setAttributes(wlp);</span><br><span class="line">        <span class="keyword">return</span> dialog;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="后话"><a href="#后话" class="headerlink" title="后话"></a>后话</h3><p>这是最后的成果：<br><img src="http://o73yhoopc.bkt.clouddn.com/5EAA53013EB5AD8401EBF68B86F60F98.gif" alt="成果"></p>
+<p>下一篇文章将简单总结一下最近学习的属性动画，和如何实现上图中效果。</p>
+<p>PS:</p>
+<blockquote>
+<p>你可以关注的我<a href="https://github.com/likfe" target="_blank" rel="external">Github</a>、<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="external">CSDN</a>和<a href="http://weibo.com/zyansen" target="_blank" rel="external">微博</a></p>
+</blockquote>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Android项目开发填坑记-9patchPng报错]]></title>
+      <url>http://likfe.com/2016/04/28/9patchAttention/</url>
+      <content type="html"><![CDATA[<h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>之前写了一篇文章<a href="http://blog.csdn.net/ys743276112/article/details/45794809" target="_blank" rel="external">Android必知必会–NinePatch图片制作</a>详细介绍了Android 9Patch图片的制作和一些Demo展示，这次说明一下9Patch图片的制作的注意事项和遇到相关报错的解决方案。</p>
+<h3 id="一、注意事项"><a href="#一、注意事项" class="headerlink" title="一、注意事项"></a>一、注意事项</h3><p>9Patch图片的<strong>左边框</strong>和<strong>上边框</strong>至少<strong>有一个描点</strong>，<strong>右边框</strong>和<strong>下边框</strong>则<strong>有且只有一段描点</strong>。</p>
+<a id="more"></a>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">边框</th>
+<th style="text-align:center">描点数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">左边框</td>
+<td style="text-align:center">>=1</td>
+</tr>
+<tr>
+<td style="text-align:center">上边框</td>
+<td style="text-align:center">>=1</td>
+</tr>
+<tr>
+<td style="text-align:center">右边框</td>
+<td style="text-align:center">非0，仅仅可为1</td>
+</tr>
+<tr>
+<td style="text-align:center">下边框</td>
+<td style="text-align:center">非0，仅仅可为1</td>
+</tr>
+</tbody>
+</table>
+<p><strong>左边框</strong>和<strong>上边框</strong>留白的地方，即告诉系统那里不进行处理，保持原样。</p>
+<h3 id="二、No-marked-region-found-along-edge"><a href="#二、No-marked-region-found-along-edge" class="headerlink" title="二、No marked region found along edge"></a>二、No marked region found along edge</h3><p>与<code>No marked region found along edge</code>类似和相关的，意思是某条边框或者全部的边框没有进行描点。</p>
+<p><strong>解决方法</strong>：检查一下报错的那个9Patch的四条边是否都进行了描点。</p>
+<h3 id="三、Can’t-have-more-than-one-marked-region-along-edge"><a href="#三、Can’t-have-more-than-one-marked-region-along-edge" class="headerlink" title="三、Can’t have more than one marked region along edge."></a>三、Can’t have more than one marked region along edge.</h3><p>与<code>Can&#39;t have more than one marked region along edge.</code>类似和相关的，意思是右边框或者下边框有一个或两边框的描点<strong>超过了一个</strong>，从【注意事项】里我们了解到这两条边框的描点数只能为1。</p>
+<p><strong>解决方法</strong>：检查一下报错的那个9Patch的右边框和下边框是否描点数超过1，有可能只是描点描了一个像素，所以检查的时候建议放大多倍进行检查。</p>
+<blockquote>
+<p>参考: <a href="http://stackoverflow.com/questions/3733471/android-9-patch-png-what-if-i-need-smth-like-a-11-patch-png" target="_blank" rel="external">StackOverFlow</a></p>
+</blockquote>
+<p>PS:</p>
+<blockquote>
+<p>你可以关注的我<a href="https://github.com/likfe" target="_blank" rel="external">Github</a>、<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="external">CSDN</a>和<a href="http://weibo.com/zyansen" target="_blank" rel="external">微博</a></p>
+</blockquote>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Android必知必会--GreenDao缓存]]></title>
+      <url>http://likfe.com/2016/04/22/greenDao-session/</url>
+      <content type="html"><![CDATA[<ul>
+<li><a href="http://likfe.github.io/2016/04/22/greenDao-session/" target="_blank" rel="external">Github版</a></li>
+<li><a href="http://blog.csdn.net/ys743276112/article/details/50479917" target="_blank" rel="external">CSDN版</a></li>
+</ul>
+<p>本篇文章不是介绍GreenDao的配置和基础使用，记录一下GreenDao缓存的问题，帮助遇到同样问题的朋友找到原因和方法，下面是示例：<br><a id="more"></a></p>
+<h3 id="场景重现"><a href="#场景重现" class="headerlink" title="场景重现"></a>场景重现</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//第一次查询</span></span><br><span class="line">List chats = daoSession.getChatSessionDao()</span><br><span class="line">	.queryBuilder()</span><br><span class="line">	.orderDesc(ChatSessionDao.Properties.Updatetime)</span><br><span class="line">	.list();</span><br><span class="line"></span><br><span class="line"><span class="comment">//对数据库中的一条数据进行更新：</span></span><br><span class="line">ChatSession cs = chats.get(<span class="number">0</span>);</span><br><span class="line">Log.d(<span class="string">"body"</span>,cs.getBody());</span><br><span class="line">cs.setBody(cs.getBody() + <span class="string">"new"</span>);</span><br><span class="line">daoSession.getChatSessionDao().update(cs);</span><br><span class="line"></span><br><span class="line"><span class="comment">//第二次查询</span></span><br><span class="line">List chats = daoSession.getChatSessionDao()</span><br><span class="line">	.queryBuilder()</span><br><span class="line">	.orderDesc(ChatSessionDao.Properties.Updatetime)</span><br><span class="line">	.list();</span><br><span class="line">	</span><br><span class="line">Log.d(<span class="string">"body"</span>,chats.get(<span class="number">0</span>).getBody());</span><br></pre></td></tr></table></figure>
+<p>结果发现两次的<code>body</code>的值是一样的，使用工具查看Sqlite数据库，发现<code>body</code>的值已经变化了，也就是说，我们第二次查询并没有真正执行，返回的是第一次查询的结果。如果要解决缓存问题，这里就要用到<code>DaoSession</code>的一个方法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DaoSession.clear();</span><br></pre></td></tr></table></figure>
+<p>在示例代码中应该写在第二次查询前面<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">daoSession.clear();</span><br><span class="line"><span class="comment">//第二次查询</span></span><br><span class="line">......</span><br></pre></td></tr></table></figure></p>
+<p>PS:这个清理缓存的方法，会清除所有表的缓存，目前没有发现可以清除单个表或者某个查询的缓存的方法。</p>
+<h3 id="GreenDao配置与使用"><a href="#GreenDao配置与使用" class="headerlink" title="GreenDao配置与使用"></a>GreenDao配置与使用</h3><p>GreenDao详细的配置和Demo可以参考：</p>
+<blockquote>
+<ol>
+<li><a href="http://www.jcodecraeer.com/a/anzhuokaifa/androidkaifa/2015/0727/3223.html" target="_blank" rel="external">ORM 框架之 greenDAO 使用心得</a></li>
+<li><a href="http://wiki.xby1993.net/doku.php?id=greendao" target="_blank" rel="external">GreenDao</a></li>
+</ol>
+</blockquote>
+<p>PS:</p>
+<blockquote>
+<p>你可以关注的我<a href="https://github.com/likfe" target="_blank" rel="external">Github</a>、<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="external">CSDN</a>和<a href="http://weibo.com/zyansen" target="_blank" rel="external">微博</a></p>
+</blockquote>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Android项目开发填坑记-Fragmen的onBackPressed]]></title>
+      <url>http://likfe.com/2016/04/20/fragmen-onBackPressed/</url>
+      <content type="html"><![CDATA[<h2 id="知识背景"><a href="#知识背景" class="headerlink" title="知识背景"></a>知识背景</h2><p><code>Fragment</code>在当前的Android开发中，有两种引用方式，一个是 Android 3.0 时加入的，一个是supportV4包中的。这里简称为<code>Fragment3.0</code>和<code>FragmentV4</code>。</p>
+<h2 id="Fragment中的返回"><a href="#Fragment中的返回" class="headerlink" title="Fragment中的返回"></a>Fragment中的返回</h2><p>在Fragment中经常用到自定义标题栏，而<strong>返回按钮</strong>的点击事件一般设置为：<code>getActivity().onBackPressed();</code>，这样可以使得点击返回按钮和点击手机上的返回键的效果一致，即调用所在Activity的<code>onBackPressed();</code>。</p>
+<a id="more"></a>
+<p>那么可能会造成一个问题：</p>
+<p>本来你是想点击返回按钮让当前的<code>Fragment</code>出栈，显示上一个<code>Fragment</code>，但是却关闭了整个<code>Fragment</code>所在的<code>Activity</code>。</p>
+<p>即 启动Activity–&gt;显示FragmentA–&gt;显示FragmentB–&gt;用户点击返回按钮或者手机上的返回键–&gt;退出了Activity。</p>
+<h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><p>下面我们追踪一下代码调用，找找产生这种现象的原因：</p>
+<h3 id="Fragment-3-0的getActivity-onBackPressed"><a href="#Fragment-3-0的getActivity-onBackPressed" class="headerlink" title="Fragment 3.0的getActivity().onBackPressed()"></a><strong>Fragment 3.0</strong>的<code>getActivity().onBackPressed()</code></h3><blockquote>
+<p>Activity类</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onBackPressed</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (mActionBar != <span class="keyword">null</span> &amp;&amp; mActionBar.collapseActionView()) &#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (!mFragments.getFragmentManager().popBackStackImmediate()) &#123;</span><br><span class="line">            finishAfterTransition();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Fragment-V4的getActivity-onBackPressed"><a href="#Fragment-V4的getActivity-onBackPressed" class="headerlink" title="Fragment V4的getActivity().onBackPressed()"></a><strong>Fragment V4</strong>的<code>getActivity().onBackPressed()</code></h3><blockquote>
+<p>FragmentActivity</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onBackPressed</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (!mFragments.getSupportFragmentManager().popBackStackImmediate()) &#123;</span><br><span class="line">            supportFinishAfterTransition();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="真相"><a href="#真相" class="headerlink" title="真相"></a>真相</h3><p>从对代码调用的追踪，发现了真相。<code>Fragment3.0</code>和<code>FragmentV4</code></p>
+<ol>
+<li><code>Fragment3.0</code>的<code>getActivity().onBackPressed()</code>默认调用了<code>Activity</code>的<code>onBackPressed()</code>方法，方法里面使用的<code>getFragmentManager()</code>获取<code>FragmentManager</code>对象弹出栈内的<code>Fragment3.0</code>版的Fragment</li>
+<li><code>FragmentV4</code>的<code>getActivity().onBackPressed()</code>默认调用了<code>FragmentActivity</code>的<code>onBackPressed()</code>方法，方法里面使用的<code>getSupportFragmentManager()</code>获取<code>FragmentManager</code>对象进行弹出栈内的<code>FragmentV4</code>版的Fragment</li>
+</ol>
+<p>简单说就是<code>Fragment3.0</code>要放在继承了<code>Activity</code>的Activity中使用：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">XXX_Activity</span> <span class="keyword">extends</span> <span class="title">Activity</span></span>&#123;</span><br><span class="line">...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>FragmentV4</code>要放在继承了<code>FragmentActivity</code>的Activity中使用：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">XXX_Activity</span> <span class="keyword">extends</span> <span class="title">FragmentActivity</span></span>&#123;</span><br><span class="line">...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//或者系统默认的 FragmentActivity 的子类 AppCompatActivity</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">XXX_Activity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span></span>&#123;</span><br><span class="line">...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Fragment和Activity版本不匹配时"><a href="#Fragment和Activity版本不匹配时" class="headerlink" title="Fragment和Activity版本不匹配时"></a>Fragment和Activity版本不匹配时</h2><p>开发的时候，或许并不能达到Fragment版本和对应的Activity相匹配的理想状态，那么就有了下面的一个比较完善的解决方案：</p>
+<h3 id="解决方案："><a href="#解决方案：" class="headerlink" title="解决方案："></a>解决方案：</h3><p>使用其匹配的Activity类的<code>onBackPressed()</code>方法的代码重写所在的<code>Activity</code>的<code>onBackPressed()</code>方法：</p>
+<p><code>FragmentV4</code>配合继承了<code>Activity</code>的Activity中时：</p>
+<blockquote>
+<p>XXX_Activity extends Activity</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//使用FragmentActivity的onBackPressed()的代码覆盖</span></span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onBackPressed</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (!mFragments.getSupportFragmentManager().popBackStackImmediate()) &#123;</span><br><span class="line">            supportFinishAfterTransition();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p><code>Fragment3.0</code>配合继承了<code>FragmentActivity</code>的Activity中时：</p>
+<blockquote>
+<p>XXX_Activity extends FragmentActivity（或者AppCompatActivity）</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//使用Activity的onBackPressed()的代码覆盖</span></span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onBackPressed</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (mActionBar != <span class="keyword">null</span> &amp;&amp; mActionBar.collapseActionView()) &#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (!mFragments.getFragmentManager().popBackStackImmediate()) &#123;</span><br><span class="line">            finishAfterTransition();</span><br><span class="line">        &#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>由于当前 Android Studio 默认新建的 Activity 继承于 <code>AppCompatActivity</code>,所以建议大家使用<code>FragmentV4</code>进行开发，这样能省下不少麻烦，本系列还有一篇文章介绍<code>Fragment3.0</code>使用<code>onAttach</code>时的Bug，而这个对于<code>FragmentV4</code>则没有。<br>传送门：<a href="">Android项目开发填坑记-Fragmen的onAttach方法</a></p>
+<p><strong>PS:</strong></p>
+<blockquote>
+<p>你可以关注的我<a href="https://github.com/likfe" target="_blank" rel="external">Github</a>、<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="external">CSDN</a>和<a href="http://weibo.com/zyansen" target="_blank" rel="external">微博</a></p>
+</blockquote>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Android项目开发填坑记-Fragmen的onAttach方法]]></title>
+      <url>http://likfe.com/2016/04/20/fragmen-onAttach/</url>
+      <content type="html"><![CDATA[<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>现在Android开发多使用一个Activity管理多个Fragment进行开发，不免需要两者相互传递数据，一般是给Fragment添加回调接口，让Activity继承并实现。</p>
+<p>回调接口一般都写在Fragment的<code>onAttach()</code>方法中，Fragment 3.0 的<code>onAttach()</code>方法有2个重载，其中一个被废弃，所以通常是：</p>
+<a id="more"></a>
+<blockquote>
+<p>XX_Fragment extends Fragment(Fragment 3.0)</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onAttach</span><span class="params">(Context context)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (context <span class="keyword">instanceof</span> OnCoverChangeListener) &#123;</span><br><span class="line">            mListener = (ABC_Listener) context;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(context.toString()</span><br><span class="line">                    + <span class="string">" must implement ABC_Listener"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">super</span>.onAttach(context);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>但是在一些特定的Android版本下，这个<code>onAttach(Context context)</code>并未被调用，而是调用了<strong>废弃的</strong><code>onAttach(Activity activity)</code>方法。</p>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>如果使用了Fragment 3.0，并且用到了自定义回调，那么为了兼容，需要：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onAttach</span><span class="params">(Context context)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (context <span class="keyword">instanceof</span> OnCoverChangeListener) &#123;</span><br><span class="line">            mListener = (ABC_Listener) context;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(context.toString()</span><br><span class="line">                    + <span class="string">" must implement ABC_Listener"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">super</span>.onAttach(context);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//SDK API&lt;23时，onAttach(Context)不执行，需要使用onAttach(Activity)。Fragment自身的Bug，v4的没有此问题</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onAttach</span><span class="params">(Activity activity)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.onAttach(activity);</span><br><span class="line">        <span class="keyword">if</span> (Build.VERSION.SDK_INT &lt; Build.VERSION_CODES.M) &#123;</span><br><span class="line">            <span class="keyword">if</span> (activity <span class="keyword">instanceof</span> OnCoverChangeListener) &#123;</span><br><span class="line">                mListener = (ABC_Listener) activity;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(activity.toString()</span><br><span class="line">                        + <span class="string">" must implement ABC_Listener"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>建议使用FragmentV4版的，减少不必要的系统自身Bug的处理。</p>
+<p>还有一篇关于FragmentV4、Fragment3.0的<code>onBackPressed();</code>的Bug详解：<br>传送门：<a href="">Android项目开发填坑记-Fragmen的onBackPressed</a></p>
+<p><strong>PS:</strong></p>
+<blockquote>
+<p>你可以关注的我<a href="https://github.com/likfe" target="_blank" rel="external">Github</a>、<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="external">CSDN</a>和<a href="http://weibo.com/zyansen" target="_blank" rel="external">微博</a></p>
+</blockquote>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Android必知必会-Fragment监听返回键事件]]></title>
+      <url>http://likfe.com/2016/04/14/fragment-backpress/</url>
+      <content type="html"><![CDATA[<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>项目要求用户注册成功后进入修改个人资料的页面，且不允许返回到上一个页面，资料修改完成后结束当前页面，进入APP主页。</p>
+<p>由于是使用多个Fragment完成注册流程，就需要Fragment监听用户点击手机上的返回按钮，查了一些资料，加上自己使用过程中发现的问题，特此记录，帮助更多有此需求的朋友</p>
+<a id="more"></a>
+<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><blockquote>
+<p>XXX_Fragment</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onResume</span><span class="params">()</span> </span>&#123;</span><br><span class="line">       <span class="keyword">super</span>.onResume();</span><br><span class="line">       getFocus();</span><br><span class="line">   &#125;</span><br><span class="line">   </span><br><span class="line"><span class="comment">//主界面获取焦点</span></span><br><span class="line">   <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">getFocus</span><span class="params">()</span> </span>&#123;</span><br><span class="line">       getView().setFocusableInTouchMode(<span class="keyword">true</span>);</span><br><span class="line">       getView().requestFocus();</span><br><span class="line">       getView().setOnKeyListener(<span class="keyword">new</span> View.OnKeyListener() &#123;</span><br><span class="line">           <span class="meta">@Override</span></span><br><span class="line">           <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">onKey</span><span class="params">(View v, <span class="keyword">int</span> keyCode, KeyEvent event)</span> </span>&#123;</span><br><span class="line">               <span class="keyword">if</span> (event.getAction() == KeyEvent.ACTION_UP &amp;&amp; keyCode == KeyEvent.KEYCODE_BACK) &#123;</span><br><span class="line">                   <span class="comment">// 监听到返回按钮点击事件</span></span><br><span class="line">                   ......</span><br><span class="line">                  <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">               &#125;</span><br><span class="line">               <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;);</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<p>以上代码是<code>stackoverflow.com</code>中找到的一个解决方案，但是在使用时，由于Fragment页面里可能有其他能获取焦点的View（例如EditText），会导致监听失效，点击返回键会返回到上个页面。</p>
+<h3 id="更完善的解决方案："><a href="#更完善的解决方案：" class="headerlink" title="更完善的解决方案："></a>更完善的解决方案：</h3><p>除了上面的代码，我们需要对可以获取焦点的View的<code>setOnKeyListener</code>进行处理，这里以一个EditText为例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//private EditText nickname;</span></span><br><span class="line"></span><br><span class="line">nickname.setOnKeyListener(<span class="keyword">new</span> View.OnKeyListener() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">onKey</span><span class="params">(View v, <span class="keyword">int</span> keyCode, KeyEvent event)</span> </span>&#123;</span><br><span class="line">                <span class="keyword">if</span> (keyCode == KeyEvent.KEYCODE_BACK</span><br><span class="line">                        &amp;&amp; event.getAction() == KeyEvent.ACTION_UP) &#123;</span><br><span class="line">                    <span class="comment">//关闭软键盘</span></span><br><span class="line">                    InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);</span><br><span class="line">                    imm.hideSoftInputFromWindow(nickname.getWindowToken(), <span class="number">0</span>);</span><br><span class="line">                    <span class="comment">//使得根View重新获取焦点，以监听返回键</span></span><br><span class="line">                    getFocus();</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br></pre></td></tr></table></figure>
+<p>使用到的资料：</p>
+<blockquote>
+<p><a href="http://blog.csdn.net/ccpat/article/details/45176665" target="_blank" rel="external">http://blog.csdn.net/ccpat/article/details/45176665</a></p>
+<p><a href="http://stackoverflow.com/questions/22552958/handling-back-press-when-using-fragments-in-android" target="_blank" rel="external">http://stackoverflow.com/questions/22552958/handling-back-press-when-using-fragments-in-android</a></p>
+</blockquote>
+<p>PS:</p>
+<blockquote>
+<p>你可以关注的我<a href="https://github.com/likfe" target="_blank" rel="external">Github</a>、<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="external">CSDN</a>和<a href="http://weibo.com/zyansen" target="_blank" rel="external">微博</a></p>
+</blockquote>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Android反编译 -- 错误代码还原]]></title>
+      <url>http://likfe.com/2016/04/09/My-New-Post/</url>
+      <content type="html"><![CDATA[<h3 id="1-setColor-16777216"><a href="#1-setColor-16777216" class="headerlink" title="1. setColor(-16777216)"></a>1. <code>setColor(-16777216)</code></h3><p>反编译的代码中会有很多<code>setColor(int)</code>的情况，比如<code>setColor(-16777216)</code>，这个值比较特别，能轻易的查到Android文档中对这个整数的定义：</p>
+<blockquote>
+<p>public static final int BLACK.<br>Added in API level 1<br>Constant Value: -16777216 ( 0xff000000). </p>
+</blockquote>
+<p>也就是说<code>setColor(-16777216)</code>中<code>-16777216</code>对应的颜色是<strong>BLACK</strong>(0xff000000)，那么其他系统未定义成某个颜色名的值呢？</p>
+<a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">-16777216 对应 0xff000000</span><br><span class="line">       -1 对应 0xffffffff</span><br><span class="line"> 0xffffff 的值 16777215</span><br><span class="line">   </span><br><span class="line">那么对任意的 setColor(int)中的int值，我们可以：</span><br><span class="line">0xffffffff+(int)+1 或 0xffffffff-(-int+1) </span><br><span class="line"></span><br><span class="line">则对于 ：setColor(-16777216)</span><br><span class="line">可写成 ：setColor(0xffffffff - 16777215)) 或 setColor(-16777216 + 1 + 0xffffffff))</span><br><span class="line"></span><br><span class="line">这样，我们就不用查文档寻找特定的颜色值，也能解决任意颜色的设置。</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><a href="http://stackoverflow.com/questions/8489990/how-to-set-color-using-integer" target="_blank" rel="external">Stackoverflow : How to set color using integer?</a></p>
+</blockquote>
+<h3 id="2-MeasureSpec-makeMeasureSpec-xx-int"><a href="#2-MeasureSpec-makeMeasureSpec-xx-int" class="headerlink" title="2.MeasureSpec.makeMeasureSpec(xx, int)"></a>2.<code>MeasureSpec.makeMeasureSpec(xx, int)</code></h3><p>反编译的代码中<code>MeasureSpec.makeMeasureSpec(xx, int)</code>的第二个参数是个<code>int</code>类型的数，这个比较简单，直接看文档或者源码即可找到：</p>
+<p>源码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">MeasureSpec</span> </span>&#123;</span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> UNSPECIFIED = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> EXACTLY = <span class="number">1073741824</span>;</span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> AT_MOST = -<span class="number">2147483648</span>;</span><br><span class="line">        ...</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+<p>文档：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">public static final int AT_MOST</span><br><span class="line">Added in API level 1</span><br><span class="line">Measure specification mode: The child can be as large as it wants up to the specified size.</span><br><span class="line">Constant Value: -2147483648 (0x80000000)</span><br><span class="line"></span><br><span class="line">public static final int EXACTLY</span><br><span class="line">Added in API level 1</span><br><span class="line">Measure specification mode: The parent has determined an exact size for the child. The child is going to be given those bounds regardless of how big it wants to be.</span><br><span class="line">Constant Value: 1073741824 (0x40000000)</span><br><span class="line"></span><br><span class="line">public static final int UNSPECIFIED</span><br><span class="line">Added in API level 1</span><br><span class="line">Measure specification mode: The parent has not imposed any constraint on the child. It can be whatever size it wants.</span><br><span class="line">Constant Value: 0 (0x00000000)</span><br></pre></td></tr></table></figure>
+<p>则对于：<br><code>MeasureSpec.makeMeasureSpec(xx, 0)</code><br>我们应该修改为<br><code>MeasureSpec.makeMeasureSpec(xx, View.MeasureSpec.UNSPECIFIED)</code></p>
+<p>其他依次类推。</p>
+<h3 id="3-setVisibility-int"><a href="#3-setVisibility-int" class="headerlink" title="3.setVisibility(int)"></a>3.<code>setVisibility(int)</code></h3><p>这个同<strong>[2]</strong>,看文档或者看源码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> VISIBLE = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> INVISIBLE = <span class="number">4</span>;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> GONE = <span class="number">8</span>;</span><br></pre></td></tr></table></figure>
+<p>则对于：<code>setVisibility(0)</code> ==&gt; <code>setVisibility(View.VISIBLE)</code></p>
+<p>其他依次类推。</p>
+<h3 id="4-new-Runnable"><a href="#4-new-Runnable" class="headerlink" title="4.new Runnable()..."></a>4.<code>new Runnable()...</code></h3><p>反编译的代码中：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> Runnable() &#123;</span><br><span class="line">    <span class="keyword">final</span> <span class="comment">/* synthetic */</span> AbstractButton a;</span><br><span class="line">		&#123;</span><br><span class="line">       	<span class="keyword">this</span>.a = r1;</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">       <span class="function"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">          <span class="keyword">this</span>.a.xxxxx();</span><br><span class="line">       &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>可直接去掉成员变量：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> Runnable() &#123;</span><br><span class="line">       <span class="function"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">          xxxxx();</span><br><span class="line">       &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="5-new-Handler"><a href="#5-new-Handler" class="headerlink" title="5.new Handler()..."></a>5.<code>new Handler()...</code></h3><p>同<code>[4]</code>,直接去掉成员变量:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> Handler() &#123;</span><br><span class="line">            <span class="keyword">final</span> <span class="comment">/* synthetic */</span> ButtonSave a;</span><br><span class="line"></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">this</span>.a = r1;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">void</span> <span class="title">handleMessage</span><span class="params">(Message message)</span> </span>&#123;</span><br><span class="line">            		<span class="keyword">this</span>.a.xxx();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line"><span class="comment">//修改为</span></span><br><span class="line"><span class="keyword">new</span> Handler() &#123;</span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">void</span> <span class="title">handleMessage</span><span class="params">(Message message)</span> </span>&#123;</span><br><span class="line">                xxx();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="6-context-getSystemService-quot-layout-inflater-quot"><a href="#6-context-getSystemService-quot-layout-inflater-quot" class="headerlink" title="6.context.getSystemService(&quot;layout_inflater&quot;)"></a>6.<code>context.getSystemService(&quot;layout_inflater&quot;)</code></h3><p>直接看源码即可：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String POWER_SERVICE = <span class="string">"power"</span>;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String WINDOW_SERVICE = <span class="string">"window"</span>;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String LAYOUT_INFLATER_SERVICE = <span class="string">"layout_inflater"</span>;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String ACCOUNT_SERVICE = <span class="string">"account"</span>;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String ACTIVITY_SERVICE = <span class="string">"activity"</span>;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String ALARM_SERVICE = <span class="string">"alarm"</span>;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String NOTIFICATION_SERVICE = <span class="string">"notification"</span>;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String ACCESSIBILITY_SERVICE = <span class="string">"accessibility"</span>;</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<p>则<code>context.getSystemService(&quot;layout_inflater&quot;)</code> ==&gt; <code>context.getSystemService(Context.LAYOUT_INFLATER_SERVICE)</code></p>
+<p>其他依次类推。</p>
+<h3 id="7-intent-setFlags-335544320"><a href="#7-intent-setFlags-335544320" class="headerlink" title="7.intent.setFlags(335544320)"></a>7.<code>intent.setFlags(335544320)</code></h3><p>先看源码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">Intent implements Parcelable, Cloneable  &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> FLAG_GRANT_READ_URI_PERMISSION = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> FLAG_GRANT_WRITE_URI_PERMISSION = <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> FLAG_FROM_BACKGROUND = <span class="number">4</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> FLAG_DEBUG_LOG_RESOLUTION = <span class="number">8</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> FLAG_EXCLUDE_STOPPED_PACKAGES = <span class="number">16</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> FLAG_INCLUDE_STOPPED_PACKAGES = <span class="number">32</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> FLAG_ACTIVITY_NO_HISTORY = <span class="number">1073741824</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> FLAG_ACTIVITY_SINGLE_TOP = <span class="number">536870912</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> FLAG_ACTIVITY_NEW_TASK = <span class="number">268435456</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> FLAG_ACTIVITY_MULTIPLE_TASK = <span class="number">134217728</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> FLAG_ACTIVITY_CLEAR_TOP = <span class="number">67108864</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> FLAG_ACTIVITY_FORWARD_RESULT = <span class="number">33554432</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> FLAG_ACTIVITY_PREVIOUS_IS_TOP = <span class="number">16777216</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS = <span class="number">8388608</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> FLAG_ACTIVITY_BROUGHT_TO_FRONT = <span class="number">4194304</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> FLAG_ACTIVITY_RESET_TASK_IF_NEEDED = <span class="number">2097152</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> FLAG_ACTIVITY_LAUNCHED_FROM_HISTORY = <span class="number">1048576</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET = <span class="number">524288</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> FLAG_ACTIVITY_NO_USER_ACTION = <span class="number">262144</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> FLAG_ACTIVITY_REORDER_TO_FRONT = <span class="number">131072</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> FLAG_ACTIVITY_NO_ANIMATION = <span class="number">65536</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> FLAG_ACTIVITY_CLEAR_TASK = <span class="number">32768</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> FLAG_ACTIVITY_TASK_ON_HOME = <span class="number">16384</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> FLAG_RECEIVER_REGISTERED_ONLY = <span class="number">1073741824</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> FLAG_RECEIVER_REPLACE_PENDING = <span class="number">536870912</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> FLAG_RECEIVER_FOREGROUND = <span class="number">268435456</span>;</span><br></pre></td></tr></table></figure>
+<p>那么对于<code>intent.setFlags(int);</code> 中 <code>int</code>值是上面四种之一的话就比较简单，例如：</p>
+<p><code>intent.setFlags(536870912);</code> ==&gt; <code>intent.setFlags(PendingIntent.FLAG_NO_CREATE);</code> </p>
+<p>但是遇到一个比较特别的：<code>intent.setFlags(335544320);</code></p>
+<p>源码里根本没有这样一个值啊，其实<code>intent.setFlags( A | B )</code>是可以使用<code>|(或运算)</code>的，那么：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">10000000000000000000000000000 = 268435456</span><br><span class="line">					|				|</span><br><span class="line">  100000000000000000000000000 =  67108864</span><br><span class="line">10100000000000000000000000000 = 335544320</span><br><span class="line"></span><br><span class="line">即 268435456 | 67108864 = 335544320</span><br></pre></td></tr></table></figure>
+<p>从而:</p>
+<p><code>intent.setFlags(335544320);</code>==&gt;</p>
+<p><code>intent.setFlags( FLAG_ACTIVITY_NEW_TASK | FLAG_ACTIVITY_CLEAR_TOP )</code></p>
+<p>或者</p>
+<p><code>intent.setFlags( FLAG_RECEIVER_FOREGROUND | FLAG_ACTIVITY_CLEAR_TOP )</code></p>
+<p>从 <a href="https://www.codota.com" target="_blank" rel="external">Codota</a> 中搜索<code>intent.setFlags(335544320);</code>看到的是第一种情况，结合<code>intent.setFlags()</code>的用法，应该也是第一种情况。</p>
+<p>相关资料：</p>
+<blockquote>
+<p><a href="http://farwmarth.com/2013/04/23/android%20反编译和代码解读/" target="_blank" rel="external">http://farwmarth.com/2013/04/23/android%20反编译和代码解读/</a></p>
+</blockquote>
+<p>PS:</p>
+<blockquote>
+<p>本文已整理到Github上，欢迎提交更多代码！</p>
+<p>你可以关注的我<a href="https://github.com/likfe" target="_blank" rel="external">Github</a>、<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="external">CSDN</a>和<a href="http://weibo.com/zyansen" target="_blank" rel="external">微博</a></p>
+</blockquote>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Hello World]]></title>
+      <url>http://likfe.com/2016/04/09/hello-world/</url>
+      <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+]]></content>
+    </entry>
+    
+  
+  
+</search>
