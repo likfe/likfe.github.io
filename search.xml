@@ -179,7 +179,7 @@
 <h3 id="px-到-dp"><a href="#px-到-dp" class="headerlink" title="px 到 dp"></a>px 到 dp</h3><p>从 <code>px</code> 换算成 <code>dp</code> 要知道它是以什么 <code>dpi</code> 标准来设计的，根据换算关系表可得到相应的 <code>dp</code> 。<br>例如： 以 <code>xxhdpi</code> 标准设计的 UI，其中一个切图的分辨率是 <code>600 px * 360 px</code> ，根据换算关系表可知，在 <code>xxhdpi</code> 标准下，<code>1 dp = 3 px</code> ,则其对应的 <code>dp</code> 是  <code>200 dp * 120 dp</code> 。</p>
 <p>PS:</p>
 <blockquote>
-<p>你可以关注的我 <a href="https://github.com/likfe" target="_blank" rel="external">Github</a>、<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="external">CSDN</a> 和<a href="http://weibo.com/zyansen" target="_blank" rel="external">微博</a></p>
+<p>你可以关注的我 <a href="https://github.com/likfe" target="_blank" rel="external">Github</a>、<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="external">CSDN</a> 和 <a href="http://weibo.com/zyansen" target="_blank" rel="external">微博</a></p>
 </blockquote>
 ]]></content>
     </entry>
@@ -241,7 +241,7 @@
 <h2 id="n-不是结尾"><a href="#n-不是结尾" class="headerlink" title="n. 不是结尾"></a>n. 不是结尾</h2><p>以上几点是目前发现的较明显的问题，如果你了解更多的注意事项，欢迎和我联系。</p>
 <p>PS:</p>
 <blockquote>
-<p>你可以关注的我 <a href="https://github.com/likfe" target="_blank" rel="external">Github</a>、<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="external">CSDN</a> 和<a href="http://weibo.com/zyansen" target="_blank" rel="external">微博</a></p>
+<p>你可以关注的我 <a href="https://github.com/likfe" target="_blank" rel="external">Github</a>、<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="external">CSDN</a> 和 <a href="http://weibo.com/zyansen" target="_blank" rel="external">微博</a></p>
 </blockquote>
 ]]></content>
     </entry>
@@ -278,7 +278,7 @@
 <p><img src="http://ac-mhke0kuv.clouddn.com/bcb599449a6de0393bcc.png" alt=""></p>
 <p>PS:</p>
 <blockquote>
-<p>你可以关注的我<a href="https://github.com/likfe" target="_blank" rel="external">Github</a>、<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="external">CSDN</a>和<a href="http://weibo.com/zyansen" target="_blank" rel="external">微博</a></p>
+<p>你可以关注的我 <a href="https://github.com/likfe" target="_blank" rel="external">Github</a>、<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="external">CSDN</a> 和 <a href="http://weibo.com/zyansen" target="_blank" rel="external">微博</a></p>
 </blockquote>
 ]]></content>
     </entry>
@@ -347,7 +347,7 @@
 </ul>
 <p>PS:</p>
 <blockquote>
-<p>你可以关注的我<a href="https://github.com/likfe" target="_blank" rel="external">Github</a>、<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="external">CSDN</a>和<a href="http://weibo.com/zyansen" target="_blank" rel="external">微博</a></p>
+<p>你可以关注的我 <a href="https://github.com/likfe" target="_blank" rel="external">Github</a>、<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="external">CSDN</a> 和 <a href="http://weibo.com/zyansen" target="_blank" rel="external">微博</a></p>
 </blockquote>
 ]]></content>
     </entry>
@@ -417,6 +417,10 @@
 <li><a href="https://www.raywenderlich.com/124936/whats-new-android-studio-2-0" target="_blank" rel="external">Android Studio 2.0 有什么新东西？</a></li>
 </ul>
 <p>后续内容翻译中…</p>
+<p>PS:</p>
+<blockquote>
+<p>你可以关注的我 <a href="https://github.com/likfe" target="_blank" rel="external">Github</a>、<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="external">CSDN</a> 和 <a href="http://weibo.com/zyansen" target="_blank" rel="external">微博</a></p>
+</blockquote>
 ]]></content>
     </entry>
     
@@ -448,7 +452,7 @@
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>以上「3.后续操作」里的第二操作是很多人都容易忽略的地方，不修改的话一时间也不会出现问题，如果忽略里，以后遇到无法解决的Bug后可能需要很久才会意识到<code>AndroidManifest.xml</code> 包名的问题。</p>
 <p>PS:</p>
 <blockquote>
-<p>你可以关注的我<a href="https://github.com/likfe" target="_blank" rel="external">Github</a>、<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="external">CSDN</a>和<a href="http://weibo.com/zyansen" target="_blank" rel="external">微博</a></p>
+<p>你可以关注的我 <a href="https://github.com/likfe" target="_blank" rel="external">Github</a>、<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="external">CSDN</a> 和 <a href="http://weibo.com/zyansen" target="_blank" rel="external">微博</a></p>
 </blockquote>
 ]]></content>
     </entry>
@@ -474,7 +478,7 @@
 </blockquote>
 <p>PS:</p>
 <blockquote>
-<p>你可以关注的我<a href="https://github.com/likfe" target="_blank" rel="external">Github</a>、<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="external">CSDN</a>和<a href="http://weibo.com/zyansen" target="_blank" rel="external">微博</a></p>
+<p>你可以关注的我 <a href="https://github.com/likfe" target="_blank" rel="external">Github</a>、<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="external">CSDN</a> 和 <a href="http://weibo.com/zyansen" target="_blank" rel="external">微博</a></p>
 </blockquote>
 ]]></content>
     </entry>
@@ -579,9 +583,9 @@
 <p><a href="http://flarum.org/docs/" target="_blank" rel="external">官方文档</a> 适应最新版的Flarum，推荐<br><a href="https://www.gitbook.com/book/justjavac/flarum" target="_blank" rel="external">中文文档</a> 较旧，有一定参考意义</p>
 </blockquote>
 <p>AMH集成环境相对于通常的直接安装环境有很多的区别，使用的时候务必要考虑到。</p>
-<p>如果有什么问题，可以在博客下留言或者通过下面的方式联系我:</p>
+<p>PS:</p>
 <blockquote>
-<p>你可以关注的我<a href="https://github.com/likfe" target="_blank" rel="external">Github</a>、<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="external">CSDN</a>和<a href="http://weibo.com/zyansen" target="_blank" rel="external">微博</a></p>
+<p>你可以关注的我 <a href="https://github.com/likfe" target="_blank" rel="external">Github</a>、<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="external">CSDN</a> 和 <a href="http://weibo.com/zyansen" target="_blank" rel="external">微博</a></p>
 </blockquote>
 ]]></content>
     </entry>
@@ -615,7 +619,7 @@
 <p>如果你有什么问题，可以在博客上留言。</p>
 <p>PS:</p>
 <blockquote>
-<p>你可以关注的我<a href="https://github.com/likfe" target="_blank" rel="external">Github</a>、<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="external">CSDN</a>和<a href="http://weibo.com/zyansen" target="_blank" rel="external">微博</a></p>
+<p>你可以关注的我 <a href="https://github.com/likfe" target="_blank" rel="external">Github</a>、<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="external">CSDN</a> 和 <a href="http://weibo.com/zyansen" target="_blank" rel="external">微博</a></p>
 </blockquote>
 ]]></content>
     </entry>
@@ -708,7 +712,7 @@
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>在查资料的过程中，发现滚动条也可以使用代码来画，这里不做过多介绍，有兴趣的可以研究一下。</p>
 <p>PS:</p>
 <blockquote>
-<p>你可以关注的我<a href="https://github.com/likfe" target="_blank" rel="external">Github</a>、<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="external">CSDN</a>和<a href="http://weibo.com/zyansen" target="_blank" rel="external">微博</a></p>
+<p>你可以关注的我 <a href="https://github.com/likfe" target="_blank" rel="external">Github</a>、<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="external">CSDN</a> 和 <a href="http://weibo.com/zyansen" target="_blank" rel="external">微博</a></p>
 </blockquote>
 ]]></content>
     </entry>
@@ -732,7 +736,7 @@
 <p>下一篇文章将简单总结一下最近学习的属性动画，和如何实现上图中效果。</p>
 <p>PS:</p>
 <blockquote>
-<p>你可以关注的我<a href="https://github.com/likfe" target="_blank" rel="external">Github</a>、<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="external">CSDN</a>和<a href="http://weibo.com/zyansen" target="_blank" rel="external">微博</a></p>
+<p>你可以关注的我 <a href="https://github.com/likfe" target="_blank" rel="external">Github</a>、<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="external">CSDN</a> 和 <a href="http://weibo.com/zyansen" target="_blank" rel="external">微博</a></p>
 </blockquote>
 ]]></content>
     </entry>
@@ -779,7 +783,7 @@
 </blockquote>
 <p>PS:</p>
 <blockquote>
-<p>你可以关注的我<a href="https://github.com/likfe" target="_blank" rel="external">Github</a>、<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="external">CSDN</a>和<a href="http://weibo.com/zyansen" target="_blank" rel="external">微博</a></p>
+<p>你可以关注的我 <a href="https://github.com/likfe" target="_blank" rel="external">Github</a>、<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="external">CSDN</a> 和 <a href="http://weibo.com/zyansen" target="_blank" rel="external">微博</a></p>
 </blockquote>
 ]]></content>
     </entry>
@@ -806,7 +810,7 @@
 </blockquote>
 <p>PS:</p>
 <blockquote>
-<p>你可以关注的我<a href="https://github.com/likfe" target="_blank" rel="external">Github</a>、<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="external">CSDN</a>和<a href="http://weibo.com/zyansen" target="_blank" rel="external">微博</a></p>
+<p>你可以关注的我 <a href="https://github.com/likfe" target="_blank" rel="external">Github</a>、<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="external">CSDN</a> 和 <a href="http://weibo.com/zyansen" target="_blank" rel="external">微博</a></p>
 </blockquote>
 ]]></content>
     </entry>
@@ -851,9 +855,9 @@
 </blockquote>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//使用Activity的onBackPressed()的代码覆盖</span></span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onBackPressed</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (mActionBar != <span class="keyword">null</span> &amp;&amp; mActionBar.collapseActionView()) &#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (!mFragments.getFragmentManager().popBackStackImmediate()) &#123;</span><br><span class="line">            finishAfterTransition();</span><br><span class="line">        &#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>由于当前 Android Studio 默认新建的 Activity 继承于 <code>AppCompatActivity</code>,所以建议大家使用<code>FragmentV4</code>进行开发，这样能省下不少麻烦，本系列还有一篇文章介绍<code>Fragment3.0</code>使用<code>onAttach</code>时的Bug，而这个对于<code>FragmentV4</code>则没有。<br>传送门：<a href="">Android项目开发填坑记-Fragmen的onAttach方法</a></p>
-<p><strong>PS:</strong></p>
+<p>PS:</p>
 <blockquote>
-<p>你可以关注的我<a href="https://github.com/likfe" target="_blank" rel="external">Github</a>、<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="external">CSDN</a>和<a href="http://weibo.com/zyansen" target="_blank" rel="external">微博</a></p>
+<p>你可以关注的我 <a href="https://github.com/likfe" target="_blank" rel="external">Github</a>、<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="external">CSDN</a> 和 <a href="http://weibo.com/zyansen" target="_blank" rel="external">微博</a></p>
 </blockquote>
 ]]></content>
     </entry>
@@ -873,9 +877,9 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onAttach</span><span class="params">(Context context)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (context <span class="keyword">instanceof</span> OnCoverChangeListener) &#123;</span><br><span class="line">            mListener = (ABC_Listener) context;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(context.toString()</span><br><span class="line">                    + <span class="string">" must implement ABC_Listener"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">super</span>.onAttach(context);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//SDK API&lt;23时，onAttach(Context)不执行，需要使用onAttach(Activity)。Fragment自身的Bug，v4的没有此问题</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onAttach</span><span class="params">(Activity activity)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.onAttach(activity);</span><br><span class="line">        <span class="keyword">if</span> (Build.VERSION.SDK_INT &lt; Build.VERSION_CODES.M) &#123;</span><br><span class="line">            <span class="keyword">if</span> (activity <span class="keyword">instanceof</span> OnCoverChangeListener) &#123;</span><br><span class="line">                mListener = (ABC_Listener) activity;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(activity.toString()</span><br><span class="line">                        + <span class="string">" must implement ABC_Listener"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>建议使用FragmentV4版的，减少不必要的系统自身Bug的处理。</p>
 <p>还有一篇关于FragmentV4、Fragment3.0的<code>onBackPressed();</code>的Bug详解：<br>传送门：<a href="">Android项目开发填坑记-Fragmen的onBackPressed</a></p>
-<p><strong>PS:</strong></p>
+<p>PS:</p>
 <blockquote>
-<p>你可以关注的我<a href="https://github.com/likfe" target="_blank" rel="external">Github</a>、<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="external">CSDN</a>和<a href="http://weibo.com/zyansen" target="_blank" rel="external">微博</a></p>
+<p>你可以关注的我 <a href="https://github.com/likfe" target="_blank" rel="external">Github</a>、<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="external">CSDN</a> 和 <a href="http://weibo.com/zyansen" target="_blank" rel="external">微博</a></p>
 </blockquote>
 ]]></content>
     </entry>
@@ -900,7 +904,7 @@
 </blockquote>
 <p>PS:</p>
 <blockquote>
-<p>你可以关注的我<a href="https://github.com/likfe" target="_blank" rel="external">Github</a>、<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="external">CSDN</a>和<a href="http://weibo.com/zyansen" target="_blank" rel="external">微博</a></p>
+<p>你可以关注的我 <a href="https://github.com/likfe" target="_blank" rel="external">Github</a>、<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="external">CSDN</a> 和 <a href="http://weibo.com/zyansen" target="_blank" rel="external">微博</a></p>
 </blockquote>
 ]]></content>
     </entry>
@@ -959,7 +963,7 @@
 <p>PS:</p>
 <blockquote>
 <p>本文已整理到Github上，欢迎提交更多代码！</p>
-<p>你可以关注的我<a href="https://github.com/likfe" target="_blank" rel="external">Github</a>、<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="external">CSDN</a>和<a href="http://weibo.com/zyansen" target="_blank" rel="external">微博</a></p>
+<p>你可以关注的我 <a href="https://github.com/likfe" target="_blank" rel="external">Github</a>、<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="external">CSDN</a> 和 <a href="http://weibo.com/zyansen" target="_blank" rel="external">微博</a></p>
 </blockquote>
 ]]></content>
     </entry>

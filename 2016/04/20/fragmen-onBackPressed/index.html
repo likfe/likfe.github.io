@@ -70,7 +70,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Android," />
+  <meta name="keywords" content="Android,Fragment," />
 
 
 
@@ -94,7 +94,7 @@ Fragment中的返回在Fragment中经常用到自定义标题栏，而返回按�
 <meta property="og:site_name" content="Cafeting">
 <meta property="og:description" content="知识背景Fragment在当前的Android开发中，有两种引用方式，一个是 Android 3.0 时加入的，一个是supportV4包中的。这里简称为Fragment3.0和FragmentV4。
 Fragment中的返回在Fragment中经常用到自定义标题栏，而返回按钮的点击事件一般设置为：getActivity().onBackPressed();，这样可以使得点击返回按钮和点击手机上的">
-<meta property="og:updated_time" content="2016-04-20T17:06:48.000Z">
+<meta property="og:updated_time" content="2016-07-29T10:46:05.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android项目开发填坑记-Fragmen的onBackPressed">
 <meta name="twitter:description" content="知识背景Fragment在当前的Android开发中，有两种引用方式，一个是 Android 3.0 时加入的，一个是supportV4包中的。这里简称为Fragment3.0和FragmentV4。
@@ -354,9 +354,9 @@ Fragment中的返回在Fragment中经常用到自定义标题栏，而返回按�
 </blockquote>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//使用Activity的onBackPressed()的代码覆盖</span></span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onBackPressed</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (mActionBar != <span class="keyword">null</span> &amp;&amp; mActionBar.collapseActionView()) &#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (!mFragments.getFragmentManager().popBackStackImmediate()) &#123;</span><br><span class="line">            finishAfterTransition();</span><br><span class="line">        &#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>由于当前 Android Studio 默认新建的 Activity 继承于 <code>AppCompatActivity</code>,所以建议大家使用<code>FragmentV4</code>进行开发，这样能省下不少麻烦，本系列还有一篇文章介绍<code>Fragment3.0</code>使用<code>onAttach</code>时的Bug，而这个对于<code>FragmentV4</code>则没有。<br>传送门：<a href="">Android项目开发填坑记-Fragmen的onAttach方法</a></p>
-<p><strong>PS:</strong></p>
+<p>PS:</p>
 <blockquote>
-<p>你可以关注的我<a href="https://github.com/likfe" target="_blank" rel="external">Github</a>、<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="external">CSDN</a>和<a href="http://weibo.com/zyansen" target="_blank" rel="external">微博</a></p>
+<p>你可以关注的我 <a href="https://github.com/likfe" target="_blank" rel="external">Github</a>、<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="external">CSDN</a> 和 <a href="http://weibo.com/zyansen" target="_blank" rel="external">微博</a></p>
 </blockquote>
 
       
@@ -379,6 +379,8 @@ Fragment中的返回在Fragment中经常用到自定义标题栏，而返回按�
         <div class="post-tags">
           
             <a href="/tags/Android/" rel="tag">#Android</a>
+          
+            <a href="/tags/Fragment/" rel="tag">#Fragment</a>
           
         </div>
       
@@ -475,7 +477,7 @@ Fragment中的返回在Fragment中经常用到自定义标题栏，而返回按�
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">14</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
