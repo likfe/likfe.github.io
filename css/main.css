@@ -516,7 +516,7 @@ pre,
 }
 pre,
 code {
-  font-family: consolas, Menlo, "PingFang SC", "Microsoft YaHei", monospace;
+  font-family: 'Oxygen', consolas, Menlo, "PingFang SC", "Microsoft YaHei", monospace;
 }
 code {
   padding: 2px 4px;
@@ -913,7 +913,7 @@ pre .javascript .function {
   line-height: 36px;
   font-size: 20px;
   font-weight: normal;
-  font-family: 'Oxygen', 'Oxygen', "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-family: 'Oxygen', "PingFang SC", "Microsoft YaHei", sans-serif;
 }
 .site-subtitle {
   margin-top: 10px;
@@ -1521,7 +1521,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #290db6;
+  background: #162bff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2398,6 +2398,7 @@ hr {
 }
 p code,
 ul code {
+  font-family: "Oxygen", consolas, Menlo, "PingFang SC", "Microsoft YaHei", monospace;
   border: none;
   padding: 0.2em 0.4em;
   color: #f9256c;
