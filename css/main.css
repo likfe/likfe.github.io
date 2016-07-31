@@ -2396,8 +2396,15 @@ hr {
     text-align: center;
   }
 }
+@font-face {
+  font-family: 'SF Mono';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Open Sans Regular'), url("/SF/SFMono-Regular.otf") format('otf');
+}
 p code,
 ul code {
+  font: "SF Mono";
   border: none;
   padding: 0.2em 0.4em;
   color: #f9256c;
