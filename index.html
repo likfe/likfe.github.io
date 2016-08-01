@@ -268,6 +268,135 @@
             
               
                 
+                <a class="post-title-link" href="/2016/08/01/sublime-text-3-install-emmet-for-mac/" itemprop="url">
+                  Sublime Text 3 安装 Emmet
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-08-01T16:47:56+08:00" content="2016-08-01">
+              2016-08-01
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/08/01/sublime-text-3-install-emmet-for-mac/" class="leancloud_visitors" data-flag-title="Sublime Text 3 安装 Emmet">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>前几天重写了2014年发布的 <a href="http://blog.csdn.net/ys743276112/article/details/52063396" target="_blank" rel="external">超高速前端开发工具——Emmet</a> ，主要是优化了代码段的格式，更加易读。今天在 MacBook 上安装了 Sublime Text 3 ，在安装一系列的插件时被网络问题影响到，这里介绍下安装过程，包含本地安装的情况。</p>
+<h2 id="1-安装-Package-Control"><a href="#1-安装-Package-Control" class="headerlink" title="1. 安装 Package Control"></a>1. 安装 <code>Package Control</code></h2><p>这里我们访问 <a href="https://packagecontrol.io/installation" target="_blank" rel="external">Package Control 官网</a> ，按照步骤即可：</p>
+<h3 id="1-打开命令行"><a href="#1-打开命令行" class="headerlink" title="1. 打开命令行"></a>1. 打开命令行</h3><p>使用快捷键 <strong>ctrl+` </strong> 或者在菜单中点击 <strong>View &gt; Show Console</strong> 。</p>
+<h3 id="2-执行安装命令"><a href="#2-执行安装命令" class="headerlink" title="2. 执行安装命令"></a>2. 执行安装命令</h3><p>如果是 <code>Sublime Text 2</code> ，则复制下面的命令到命令行里并按下回车键进行安装：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> urllib2,os,hashlib; h = <span class="string">'2915d1851351e5ee549c20394736b442'</span> + <span class="string">'8bc59f460fa1548d1514676163dafc88'</span>; pf = <span class="string">'Package Control.sublime-package'</span>; ipp = sublime.installed_packages_path(); os.makedirs( ipp ) <span class="keyword">if</span> <span class="keyword">not</span> os.path.exists(ipp) <span class="keyword">else</span> <span class="keyword">None</span>; urllib2.install_opener( urllib2.build_opener( urllib2.ProxyHandler()) ); by = urllib2.urlopen( <span class="string">'http://packagecontrol.io/'</span> + pf.replace(<span class="string">' '</span>, <span class="string">'%20'</span>)).read(); dh = hashlib.sha256(by).hexdigest(); open( os.path.join( ipp, pf), <span class="string">'wb'</span> ).write(by) <span class="keyword">if</span> dh == h <span class="keyword">else</span> <span class="keyword">None</span>; print(<span class="string">'Error validating download (got %s instead of %s), please try manual install'</span> % (dh, h) <span class="keyword">if</span> dh != h <span class="keyword">else</span> <span class="string">'Please restart Sublime Text to finish installation'</span>)</span><br></pre></td></tr></table></figure>
+<p>如果是 <code>Sublime Text 3</code> ，则复制下面的命令到命令行里并按下回车键进行安装：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> urllib.request,os,hashlib; h = <span class="string">'2915d1851351e5ee549c20394736b442'</span> + <span class="string">'8bc59f460fa1548d1514676163dafc88'</span>; pf = <span class="string">'Package Control.sublime-package'</span>; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( <span class="string">'http://packagecontrol.io/'</span> + pf.replace(<span class="string">' '</span>, <span class="string">'%20'</span>)).read(); dh = hashlib.sha256(by).hexdigest(); print(<span class="string">'Error validating download (got %s instead of %s), please try manual install'</span> % (dh, h)) <span class="keyword">if</span> dh != h <span class="keyword">else</span> open(os.path.join( ipp, pf), <span class="string">'wb'</span> ).write(by)</span><br></pre></td></tr></table></figure>
+<p><strong>本地安装：</strong></p>
+<p>本地安装可能不区分 <code>Sublime Text</code> 的版本问题，因为官网只提供了一个下载链接。</p>
+<ol>
+<li>点击菜单：<code>Preferences &gt; Browse Packages…</code> ；</li>
+<li>打开并进入 <code>Installed Packages/</code> 目录；</li>
+<li>下载 <a href="https://packagecontrol.io/Package%20Control.sublime-package" target="_blank" rel="external">Package Control.sublime-packageb</a> 并拷贝文件到 <code>Installed Packages/</code> 目录；</li>
+<li>重启 <code>Sublime Text</code> 。</li>
+</ol>
+<h2 id="2-安装-Emmet"><a href="#2-安装-Emmet" class="headerlink" title="2. 安装 Emmet"></a>2. 安装 <code>Emmet</code></h2><p>在 <code>Sublime Text</code> 中按 <code>Ctrl+Shift+p</code> 快捷键或在菜单-工具中打开“命令面板”（ <code>Tools &gt; Command Palette...</code> ），输入：<code>Install Package</code> (安装扩展)后回车，弹出新的窗口，再输入 <code>Emmet</code> 查找 <code>Emmet</code> 确定安装，等到自动打开一个文档，说明安装成功。</p>
+<h3 id="解决-Emmet-安装之后，Pyv8-未安装的问题"><a href="#解决-Emmet-安装之后，Pyv8-未安装的问题" class="headerlink" title="解决 Emmet 安装之后，Pyv8 未安装的问题"></a>解决 Emmet 安装之后，Pyv8 未安装的问题</h3><p>安装 <code>Emmet</code> 之后，自动打开的文档提示会自动安装 <code>PyV8</code> 的包，请在安装 <code>PyV8</code> 成功之后重启 <code>Sublime Text</code> ，你可能会发现 <code>Sublime Text</code> 左下角一直显示 <code>Loading PyV8…</code> 之类的提示，如果关闭重启之后依旧如此，最后还是无法使用 <code>Emmet</code> 的话，就说明网络有一定的问题，无法正常下载 <code>PyV8</code> 的包了，下面介绍本地安装 <code>PyV8</code> 的方法（Mac系统下）：</p>
+<ul>
+<li>打开 <a href="https://github.com/emmetio/pyv8-binaries" target="_blank" rel="external">PyV8 的 Github 主页</a></li>
+<li>按照说明下载对应版本的包，并解压到指定的目录。</li>
+</ul>
+<p>对于 <code>OSX 10.7+</code> 上使用 <code>Sublime Text 3</code> ,我们需要下载 <a href="https://raw.githubusercontent.com/emmetio/pyv8-binaries/master/pyv8-osx-p3.zip" target="_blank" rel="external">pyv8-osx-p3.zip</a> ,然后把解压后 2 个的文件放在如下目录结构中：</p>
+<p><img src="http://mmmedia.qiniudn.com/2016-08-01_2016-08-01%20at%20%E4%B8%8B%E5%8D%884.39.png" alt="2016-08-01_2016-08-01 at 下午4.39.png"></p>
+<p>没有的目录需要自己创建，然后重启 <code>Sublime Text 3</code> 即可。</p>
+<p>PS:</p>
+<blockquote>
+<p>你可以关注的我 <a href="https://github.com/likfe" target="_blank" rel="external">Github</a>、<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="external">CSDN</a> 和 <a href="http://weibo.com/zyansen" target="_blank" rel="external">微博</a></p>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/07/26/android-size-set/" itemprop="url">
                   Android必知必会-App 常用图标尺寸规范汇总
                 </a>
@@ -1219,112 +1348,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/05/30/mapPoiSearch/" itemprop="url">
-                  Android必知必会-带列表的地图POI周边搜索
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-05-30T11:31:06+08:00" content="2016-05-30">
-              2016-05-30
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/05/30/mapPoiSearch/" class="leancloud_visitors" data-flag-title="Android必知必会-带列表的地图POI周边搜索">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>先看效果图：（以公司附近的国贸为中心点）</p>
-<p><img src="http://mmmedia.qiniudn.com/2016-05-30_007D8133A7BD3AF58D7994F64FDDB8D9.gif" alt="2016-05-30_007D8133A7BD3AF58D7994F64FDDB8D9.gif"></p>
-<p>上面是地图，下面是地理位置列表，有的只有地理位置列表（QQ动态的位置），这是个很常见的功能。它有个专门的叫法：<strong>POI周边搜索</strong>。</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/05/30/mapPoiSearch/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-    
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1370,7 +1393,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">19</span>
+              <span class="site-state-item-count">20</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1380,7 +1403,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
