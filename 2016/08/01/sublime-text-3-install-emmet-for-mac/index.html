@@ -97,7 +97,7 @@
 1. 安装 Package Control这里我们访问 Package Control 官网 ，按照步骤即可：
 1. 打开命令行使用快捷键 ctrl+`">
 <meta property="og:image" content="http://mmmedia.qiniudn.com/2016-08-01_2016-08-01%20at%20%E4%B8%8B%E5%8D%884.39.png">
-<meta property="og:updated_time" content="2016-08-01T08:49:25.000Z">
+<meta property="og:updated_time" content="2016-08-01T08:54:52.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Sublime Text 3 安装 Emmet">
 <meta name="twitter:description" content="前几天重写了2014年发布的 超高速前端开发工具——Emmet ，主要是优化了代码段的格式，更加易读。今天在 MacBook 上安装了 Sublime Text 3 ，在安装一系列的插件时被网络问题影响到，这里介绍下安装过程，包含本地安装的情况。
@@ -325,6 +325,7 @@
         <p>前几天重写了2014年发布的 <a href="http://blog.csdn.net/ys743276112/article/details/52063396" target="_blank" rel="external">超高速前端开发工具——Emmet</a> ，主要是优化了代码段的格式，更加易读。今天在 MacBook 上安装了 Sublime Text 3 ，在安装一系列的插件时被网络问题影响到，这里介绍下安装过程，包含本地安装的情况。</p>
 <h2 id="1-安装-Package-Control"><a href="#1-安装-Package-Control" class="headerlink" title="1. 安装 Package Control"></a>1. 安装 <code>Package Control</code></h2><p>这里我们访问 <a href="https://packagecontrol.io/installation" target="_blank" rel="external">Package Control 官网</a> ，按照步骤即可：</p>
 <h3 id="1-打开命令行"><a href="#1-打开命令行" class="headerlink" title="1. 打开命令行"></a>1. 打开命令行</h3><p>使用快捷键 <strong>ctrl+` </strong> 或者在菜单中点击 <strong>View &gt; Show Console</strong> 。</p>
+<a id="more"></a>
 <h3 id="2-执行安装命令"><a href="#2-执行安装命令" class="headerlink" title="2. 执行安装命令"></a>2. 执行安装命令</h3><p>如果是 <code>Sublime Text 2</code> ，则复制下面的命令到命令行里并按下回车键进行安装：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> urllib2,os,hashlib; h = <span class="string">'2915d1851351e5ee549c20394736b442'</span> + <span class="string">'8bc59f460fa1548d1514676163dafc88'</span>; pf = <span class="string">'Package Control.sublime-package'</span>; ipp = sublime.installed_packages_path(); os.makedirs( ipp ) <span class="keyword">if</span> <span class="keyword">not</span> os.path.exists(ipp) <span class="keyword">else</span> <span class="keyword">None</span>; urllib2.install_opener( urllib2.build_opener( urllib2.ProxyHandler()) ); by = urllib2.urlopen( <span class="string">'http://packagecontrol.io/'</span> + pf.replace(<span class="string">' '</span>, <span class="string">'%20'</span>)).read(); dh = hashlib.sha256(by).hexdigest(); open( os.path.join( ipp, pf), <span class="string">'wb'</span> ).write(by) <span class="keyword">if</span> dh == h <span class="keyword">else</span> <span class="keyword">None</span>; print(<span class="string">'Error validating download (got %s instead of %s), please try manual install'</span> % (dh, h) <span class="keyword">if</span> dh != h <span class="keyword">else</span> <span class="string">'Please restart Sublime Text to finish installation'</span>)</span><br></pre></td></tr></table></figure>
 <p>如果是 <code>Sublime Text 3</code> ，则复制下面的命令到命令行里并按下回车键进行安装：</p>
