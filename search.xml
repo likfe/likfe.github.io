@@ -8,6 +8,7 @@
       <url>http://likfe.com/2016/08/05/use-gitbook-on-mac/</url>
       <content type="html"><![CDATA[<h2 id="剪不断的情缘"><a href="#剪不断的情缘" class="headerlink" title="剪不断的情缘"></a>剪不断的情缘</h2><p>之前写了一篇 <a href="http://blog.csdn.net/ys743276112/article/details/45130831" target="_blank" rel="external">在自己的服务器上安装GitBook</a> ,发布于 2015-04-20，当时的安装环境是 <code>CentOS 6.X_64Bit</code>，今天想再研究一下这个 <code>GitBook</code> ，发现在基于 <code>Linux</code> 内核的机器上==安装基础功能很简单==，但是牵涉到生成 <code>pdf/epub/mobi</code> 格式的书籍时，==安装calibre的代价非常大==（因为要安装 N 多前置库），对于不是非常非常熟练使用 <code>Linux</code> 的用户，几乎是一种灾难。</p>
 <p>然而，对于 <code>OS X</code> 和 <code>Windows</code> 用户，则相对容易很多（Windows环境未测试），安装相应的 <code>calibre</code> 的客户端即可解决格式转换的问题。</p>
+<a id="more"></a>
 <h2 id="只讲重点-゜-゜"><a href="#只讲重点-゜-゜" class="headerlink" title="只讲重点  (゜-゜)"></a>只讲重点  (゜-゜)</h2><p>前提条件这里一笔带过（在 Mac 上进行）：</p>
 <ol>
 <li>安装 <code>nvm</code> ；</li>
