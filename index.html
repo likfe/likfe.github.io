@@ -262,6 +262,127 @@
             
               
                 
+                <a class="post-title-link" href="/2016/08/05/use-gitbook-on-mac/" itemprop="url">
+                  在自己的服务器上安装 GitBook For Mac
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-08-05T01:43:19+08:00" content="2016-08-05">
+              2016-08-05
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/08/05/use-gitbook-on-mac/" class="leancloud_visitors" data-flag-title="在自己的服务器上安装 GitBook For Mac">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="剪不断的情缘"><a href="#剪不断的情缘" class="headerlink" title="剪不断的情缘"></a>剪不断的情缘</h2><p>之前写了一篇 <a href="http://blog.csdn.net/ys743276112/article/details/45130831" target="_blank" rel="external">在自己的服务器上安装GitBook</a> ,发布于 2015-04-20，当时的安装环境是 <code>CentOS 6.X_64Bit</code>，今天想再研究一下这个 <code>GitBook</code> ，发现在基于 <code>Linux</code> 内核的机器上==安装基础功能很简单==，但是牵涉到生成 <code>pdf/epub/mobi</code> 格式的书籍时，==安装calibre的代价非常大==（因为要安装 N 多前置库），对于不是非常非常熟练使用 <code>Linux</code> 的用户，几乎是一种灾难。</p>
+<p>然而，对于 <code>OS X</code> 和 <code>Windows</code> 用户，则相对容易很多（Windows环境未测试），安装相应的 <code>calibre</code> 的客户端即可解决格式转换的问题。</p>
+<h2 id="只讲重点-゜-゜"><a href="#只讲重点-゜-゜" class="headerlink" title="只讲重点  (゜-゜)"></a>只讲重点  (゜-゜)</h2><p>前提条件这里一笔带过（在 Mac 上进行）：</p>
+<ol>
+<li>安装 <code>nvm</code> ；</li>
+<li>使用 <code>nvm</code> 安装 <code>Node.js</code> ，我安装了 <code>v5.0.0</code> 版本的；</li>
+<li>使用 <code>npm</code> 安装 <code>gitbook</code> ，不会的看 <a href="http://toolchain.gitbook.com/setup.html" target="_blank" rel="external">这里</a>；</li>
+<li>安装 <code>calibre</code> 的客户端==&gt;重点在此步；</li>
+<li>执行生成命令：生成指定格式的文件。</li>
+</ol>
+<h3 id="画重点啦-´−｀-ﾝｰ-咳咳，看黑板"><a href="#画重点啦-´−｀-ﾝｰ-咳咳，看黑板" class="headerlink" title="画重点啦 (´−｀) ﾝｰ 咳咳，看黑板"></a>画重点啦 (´−｀) ﾝｰ 咳咳，看黑板</h3><p>1.下载对应的 <code>Calibre</code> 文件，<a href="http://www.calibre-ebook.com/download" target="_blank" rel="external">下载地址在此</a> ，Mac 用户自然是下载 <code>OS X</code> 版本的了；<br>2.下载安装 <code>Calibre</code> ，然后==务必打开运行一次 <code>Calibre</code>== ，否则就嘿嘿嘿了；<br>3.在终端里执行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo ln <span class="_">-s</span> /Applications/calibre.app/Contents/MacOS/ebook-convert /usr/<span class="built_in">local</span>/bin</span><br><span class="line"></span><br><span class="line">//官方的文档里是如下命令：会引起权限和命令无效等问题</span><br><span class="line">sudo ln <span class="_">-s</span> ~/Applications/calibre.app/Contents/MacOS/ebook-convert /usr/bin</span><br></pre></td></tr></table></figure>
+<p>4.转换格式，参考官方文档</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Generate a PDF file</span></span><br><span class="line">$ gitbook pdf ./ ./mybook.pdf</span><br><span class="line"></span><br><span class="line"><span class="comment"># Generate an ePub file</span></span><br><span class="line">$ gitbook epub ./ ./mybook.epub</span><br><span class="line"></span><br><span class="line"><span class="comment"># Generate a Mobi file</span></span><br><span class="line">$ gitbook mobi ./ ./mybook.mobi</span><br></pre></td></tr></table></figure>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>不管怎么说，终于还是实现了 <code>GitBook</code> 在 Mac 上的完美运行。在有生成 <code>pdf/epub/mobi</code> 格式的文件的需求时，就不心虚了。</p>
+<p>最近在阅读的比较火的一个项目 <a href="https://github.com/GeniusVJR/LearningNotes" target="_blank" rel="external">LearningNotes</a> ，是一个 Android 知识点笔记和面试题的一个总结，我用 <code>GitBook</code> 生成了一份 HTML 版，<a href="http://doc.inkcode.cc/ALN/index.html" target="_blank" rel="external">点击这里访问</a>，我还打算和作者联系一下，帮他生成 <code>pdf/epub/mobi</code> 格式，方便本地阅读。</p>
+<p>PS:</p>
+<blockquote>
+<p>你可以通过 <a href="https://github.com/likfe" target="_blank" rel="external">Github</a>、<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="external">CSDN</a> 和 <a href="http://weibo.com/zyansen" target="_blank" rel="external">微博</a> 与我联系</p>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/08/01/sublime-text-3-install-emmet-for-mac/" itemprop="url">
                   Sublime Text 3 安装 Emmet
                 </a>
@@ -1213,117 +1334,11 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/06/12/amh-install-flarum/" itemprop="url">
-                  AMH 5.X下安装 Flarum
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-06-12T16:16:00+08:00" content="2016-06-12">
-              2016-06-12
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/06/12/amh-install-flarum/" class="leancloud_visitors" data-flag-title="AMH 5.X下安装 Flarum">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>最近无意间发现几个开源软件的<code>Bug反馈系统</code>使用的是<strong>Flarum</strong>，Flarum是一款优雅简洁论坛软件，看起来还是相当不错的，一时抑制不住想要尝试一下。</p>
-<p>由于服务器使用的是AMH集成环境，它相对于通常的直接安装环境有很多的区别，这导致安装过程中产生里不少问题。这里做个总结。</p>
-<h3 id="Flarum"><a href="#Flarum" class="headerlink" title="Flarum"></a>Flarum</h3><p>Flarum 是一款优雅简洁论坛软件，让在线交流变得更加轻松愉快。</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/06/12/amh-install-flarum/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-    
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1364,7 +1379,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">20</span>
+              <span class="site-state-item-count">21</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1374,7 +1389,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-count">16</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
