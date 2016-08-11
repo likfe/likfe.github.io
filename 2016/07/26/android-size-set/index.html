@@ -80,39 +80,34 @@
 
 
 
-<meta name="description" content="内容持续更新中，更新日期：2016-07-26
+<meta name="description" content="内容持续更新中，更新日期：2016-08-11
 1. 程序启动图标（icon launcher）放在mipmap-*dpi下，文件名为ic_launcher.png
 
 LDPI (Low Density Screen，120 DPI)，其图标大小为 36 x 36 px。
-
 MDPI (Medium Density Screen, 160 DPI)，其图标大小为 48 x 48 px。
-
-HDPI">
+HDPI (">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android必知必会-App 常用图标尺寸规范汇总">
 <meta property="og:url" content="http://likfe.com/2016/07/26/android-size-set/index.html">
 <meta property="og:site_name" content="Cafeting">
-<meta property="og:description" content="内容持续更新中，更新日期：2016-07-26
+<meta property="og:description" content="内容持续更新中，更新日期：2016-08-11
 1. 程序启动图标（icon launcher）放在mipmap-*dpi下，文件名为ic_launcher.png
 
 LDPI (Low Density Screen，120 DPI)，其图标大小为 36 x 36 px。
-
 MDPI (Medium Density Screen, 160 DPI)，其图标大小为 48 x 48 px。
-
-HDPI">
+HDPI (">
+<meta property="og:image" content="http://mmmedia.qiniudn.com/2016-08-11_2016-08-11%20at%20%E4%B8%8A%E5%8D%8811.38.png">
 <meta property="og:image" content="http://img.blog.csdn.net/20160721152503652">
-<meta property="og:updated_time" content="2016-07-29T10:44:18.000Z">
+<meta property="og:updated_time" content="2016-08-11T03:44:04.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android必知必会-App 常用图标尺寸规范汇总">
-<meta name="twitter:description" content="内容持续更新中，更新日期：2016-07-26
+<meta name="twitter:description" content="内容持续更新中，更新日期：2016-08-11
 1. 程序启动图标（icon launcher）放在mipmap-*dpi下，文件名为ic_launcher.png
 
 LDPI (Low Density Screen，120 DPI)，其图标大小为 36 x 36 px。
-
 MDPI (Medium Density Screen, 160 DPI)，其图标大小为 48 x 48 px。
-
-HDPI">
-<meta name="twitter:image" content="http://img.blog.csdn.net/20160721152503652">
+HDPI (">
+<meta name="twitter:image" content="http://mmmedia.qiniudn.com/2016-08-11_2016-08-11%20at%20%E4%B8%8A%E5%8D%8811.38.png">
 
 
 
@@ -331,22 +326,32 @@ HDPI">
       
 
       
-        <p><strong>内容持续更新中，更新日期：2016-07-26</strong></p>
+        <p><strong>内容持续更新中，更新日期：2016-08-11</strong></p>
 <h2 id="1-程序启动图标（icon-launcher）"><a href="#1-程序启动图标（icon-launcher）" class="headerlink" title="1. 程序启动图标（icon launcher）"></a>1. 程序启动图标（icon launcher）</h2><p>放在<code>mipmap-*dpi</code>下，文件名为<code>ic_launcher.png</code></p>
 <ul>
-<li><p>LDPI (Low Density Screen，120 DPI)，其图标大小为 36 x 36 px。</p>
-</li>
-<li><p>MDPI (Medium Density Screen, 160 DPI)，其图标大小为 48 x 48 px。</p>
-</li>
-<li><p>HDPI (High Density Screen, 240 DPI)，其图标大小为 72 x 72 px。</p>
-</li>
-<li><p>xhdpi (Extra-high density screen, 320 DPI)，其图标大小为 96 x 96 px。</p>
-</li>
-<li><p>xxhdpi（xx-high density screen, 480 DPI）,其图标大小为144 x 144 px。</p>
-</li>
+<li>LDPI (Low Density Screen，120 DPI)，其图标大小为 36 x 36 px。</li>
+<li>MDPI (Medium Density Screen, 160 DPI)，其图标大小为 48 x 48 px。</li>
+<li>HDPI (High Density Screen, 240 DPI)，其图标大小为 72 x 72 px。</li>
+<li>xhdpi (Extra-high density screen, 320 DPI)，其图标大小为 96 x 96 px。</li>
+<li>xxhdpi（xx-high density screen, 480 DPI）,其图标大小为144 x 144 px。</li>
 <li>xxxhdpi（xxx-high density screen, 640 DPI）,其图标大小为192 x 192 px。</li>
 </ul>
+<h3 id="技巧：自动生成对应分辨率的-icon-launcher"><a href="#技巧：自动生成对应分辨率的-icon-launcher" class="headerlink" title="技巧：自动生成对应分辨率的 icon launcher"></a>技巧：自动生成对应分辨率的 icon launcher</h3><blockquote>
+<p>新增于2016-08-11 </p>
+</blockquote>
+<p>使用 <code>Android Studio</code> ，在 <code>module</code>或者 <code>drawable</code> 上右键 <code>new &gt; ImageAsset</code> ,可以把一张大图自动裁切成各 DPI 对应的分辨率的 icon launcher。</p>
 <a id="more"></a>
+<p>细节操作参照下图：</p>
+<p><img src="http://mmmedia.qiniudn.com/2016-08-11_2016-08-11%20at%20%E4%B8%8A%E5%8D%8811.38.png" alt="2016-08-11_2016-08-11 at 上午11.38.png"></p>
+<ol>
+<li>选择要生成的图片类型：<code>Launcher Icons</code> ；</li>
+<li>Name 会自动生成 <code>ic_launcher</code> ，如果不是则填成 <code>ic_launcher</code> ；</li>
+<li><code>Asset Type</code> 设置成 <code>Image</code> ;</li>
+<li>在 <code>path</code> 一列的最后选择自己要生成的图片</li>
+<li>调整 <code>Shape</code> 等参数；</li>
+<li>点击 <code>next</code> 一路到 <code>finish</code> 即可。</li>
+</ol>
+<p><strong>PS：</strong>使用 <code>Shape</code> 的其他参数，比如圆角<code>square</code> , 会默认使用<strong>不支持透明度的颜色</strong>作为背景，所以要根据具体的图标进行修改，特殊的情况需要设计师切出带圆角和透明度的大图。</p>
 <h2 id="2-不透明度16进制值"><a href="#2-不透明度16进制值" class="headerlink" title="2. 不透明度16进制值"></a>2. 不透明度16进制值</h2><table>
 <thead>
 <tr>
@@ -504,7 +509,7 @@ HDPI">
 <h3 id="px-到-dp"><a href="#px-到-dp" class="headerlink" title="px 到 dp"></a>px 到 dp</h3><p>从 <code>px</code> 换算成 <code>dp</code> 要知道它是以什么 <code>dpi</code> 标准来设计的，根据换算关系表可得到相应的 <code>dp</code> 。<br>例如： 以 <code>xxhdpi</code> 标准设计的 UI，其中一个切图的分辨率是 <code>600 px * 360 px</code> ，根据换算关系表可知，在 <code>xxhdpi</code> 标准下，<code>1 dp = 3 px</code> ,则其对应的 <code>dp</code> 是  <code>200 dp * 120 dp</code> 。</p>
 <p>PS:</p>
 <blockquote>
-<p>你可以关注的我 <a href="https://github.com/likfe" target="_blank" rel="external">Github</a>、<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="external">CSDN</a> 和 <a href="http://weibo.com/zyansen" target="_blank" rel="external">微博</a></p>
+<p>你可以通过 <a href="https://github.com/likfe" target="_blank" rel="external">Github</a>、<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="external">CSDN</a> 和 <a href="http://weibo.com/zyansen" target="_blank" rel="external">微博</a> 和我交流</p>
 </blockquote>
 
       
@@ -674,7 +679,7 @@ HDPI">
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-程序启动图标（icon-launcher）"><span class="nav-text">1. 程序启动图标（icon launcher）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-不透明度16进制值"><span class="nav-text">2. 不透明度16进制值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-dp和px换算及关系"><span class="nav-text">3. dp和px换算及关系</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#dp-到-px"><span class="nav-text">dp 到 px</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#px-到-dp"><span class="nav-text">px 到 dp</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-程序启动图标（icon-launcher）"><span class="nav-text">1. 程序启动图标（icon launcher）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#技巧：自动生成对应分辨率的-icon-launcher"><span class="nav-text">技巧：自动生成对应分辨率的 icon launcher</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-不透明度16进制值"><span class="nav-text">2. 不透明度16进制值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-dp和px换算及关系"><span class="nav-text">3. dp和px换算及关系</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#dp-到-px"><span class="nav-text">dp 到 px</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#px-到-dp"><span class="nav-text">px 到 dp</span></a></li></ol></li></ol></div>
             
           </div>
         </section>
