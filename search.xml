@@ -4,6 +4,42 @@
   
     
     <entry>
+      <title><![CDATA[Android 必知必会 - Android Splash 页秒开之细节处理]]></title>
+      <url>http://likfe.com/2016/08/16/create-splash-activity/</url>
+      <content type="html"><![CDATA[<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>今天阅读了两篇 Android Splash 页秒开的文章，就上手试了试，效果确实不错，不过在使用过程中发现个小的问题，应用是发现在 Android 6.0 系统下 APP 启动的时候有个默认的动画，如果按照文章介绍的直接启动下一个加载数据的页面会出现页面闪动，有点美中不足的感觉。</p>
+<a id="more"></a>
+<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>解决方法很简单，我这里做出了两处修改：<strong>延迟启动</strong>和<strong>添加淡出的过场动画</strong></p>
+<blockquote>
+<p>SplashActivity</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line">   <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</span><br><span class="line">       <span class="keyword">super</span>.onCreate(savedInstanceState);</span><br><span class="line">       <span class="keyword">new</span> Handler().postDelayed(<span class="keyword">new</span> Runnable() &#123;</span><br><span class="line">           <span class="meta">@Override</span></span><br><span class="line">           <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">               Intent starter = <span class="keyword">new</span> Intent(SplashActivity.<span class="keyword">this</span>, xxxActivity.class);</span><br><span class="line">       		startActivity(starter);</span><br><span class="line">               finish();</span><br><span class="line">               overridePendingTransition(R.anim.stand,R.anim.splash);</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;,<span class="number">500</span>);</span><br><span class="line"></span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>stand.xml</p>
+</blockquote>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span><br><span class="line"><span class="tag">&lt;<span class="name">set</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span><br><span class="line">    <span class="attr">android:interpolator</span>=<span class="string">"@android:anim/accelerate_interpolator"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">translate</span></span><br><span class="line">        <span class="attr">android:duration</span>=<span class="string">"200"</span></span><br><span class="line">        <span class="attr">android:fromXDelta</span>=<span class="string">"0%p"</span></span><br><span class="line">        <span class="attr">android:toXDelta</span>=<span class="string">"0%p"</span></span><br><span class="line">        /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">set</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>splash.xml</p>
+</blockquote>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span><br><span class="line"><span class="tag">&lt;<span class="name">set</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">alpha</span></span><br><span class="line">        <span class="attr">android:fromAlpha</span>=<span class="string">"1.0"</span></span><br><span class="line">        <span class="attr">android:toAlpha</span>=<span class="string">"0.0"</span></span><br><span class="line">        <span class="attr">android:duration</span>=<span class="string">"200"</span></span><br><span class="line">        /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">set</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>首先贴一下阅读到的两篇文章：</p>
+<ul>
+<li><a href="http://blog.csdn.net/yanzhenjie1003/article/details/52201896" target="_blank" rel="external">带你重新认识：Android Splash 页秒开 Activity 白屏 Activity 黑屏</a></li>
+<li><a href="https://www.bignerdranch.com/blog/splash-screens-the-right-way/" target="_blank" rel="external">Splash Screens the Right Way</a></li>
+</ul>
+<p>先感谢下博主的认真总结，才能让我们把自己的 APP 启动体验做的这么完美。</p>
+<p>在实际开发中，我们可能会遇到很多复杂的情况，一篇博客或者教程也好，只能记录最核心的一些东西，学习的时候还是需要多多思考的。</p>
+<p><strong>PS</strong>：你可以通过下面的方式和我联系</p>
+<blockquote>
+<ul>
+<li>微博：<a href="http://weibo.com/zyansen" target="_blank" rel="external">cafeting</a></li>
+<li>Github： <a href="https://github.com/likfe" target="_blank" rel="external">likfe</a></li>
+<li>CSDN：<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="external">他叫自己Mr.张</a> </li>
+</ul>
+</blockquote>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[在自己的电脑上安装 GitBook For Mac]]></title>
       <url>http://likfe.com/2016/08/05/use-gitbook-on-mac/</url>
       <content type="html"><![CDATA[<h2 id="剪不断的情缘"><a href="#剪不断的情缘" class="headerlink" title="剪不断的情缘"></a>剪不断的情缘</h2><p>之前写了一篇 <a href="http://blog.csdn.net/ys743276112/article/details/45130831" target="_blank" rel="external">在自己的服务器上安装GitBook</a> ,发布于 2015-04-20，当时的安装环境是 <code>CentOS 6.X_64Bit</code>，今天想再研究一下这个 <code>GitBook</code> ，发现在基于 <code>Linux</code> 内核的机器上<strong>安装基础功能很简单</strong>，但是牵涉到生成 <code>pdf/epub/mobi</code> 格式的书籍时，<strong>安装calibre的代价非常大</strong>（因为要安装 N 多前置库），对于不是非常非常熟练使用 <code>Linux</code> 的用户，几乎是一种灾难。</p>
@@ -249,9 +285,13 @@
 <li>xxxhdpi ⇒ 1600 px * 960 px</li>
 </ul>
 <h3 id="px-到-dp"><a href="#px-到-dp" class="headerlink" title="px 到 dp"></a>px 到 dp</h3><p>从 <code>px</code> 换算成 <code>dp</code> 要知道它是以什么 <code>dpi</code> 标准来设计的，根据换算关系表可得到相应的 <code>dp</code> 。<br>例如： 以 <code>xxhdpi</code> 标准设计的 UI，其中一个切图的分辨率是 <code>600 px * 360 px</code> ，根据换算关系表可知，在 <code>xxhdpi</code> 标准下，<code>1 dp = 3 px</code> ,则其对应的 <code>dp</code> 是  <code>200 dp * 120 dp</code> 。</p>
-<p>PS:</p>
+<p><strong>PS</strong>：你可以通过下面的方式和我联系</p>
 <blockquote>
-<p>你可以通过 <a href="https://github.com/likfe" target="_blank" rel="external">Github</a>、<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="external">CSDN</a> 和 <a href="http://weibo.com/zyansen" target="_blank" rel="external">微博</a> 和我交流</p>
+<ul>
+<li>微博：<a href="http://weibo.com/zyansen" target="_blank" rel="external">cafeting</a></li>
+<li>Github： <a href="https://github.com/likfe" target="_blank" rel="external">likfe</a></li>
+<li>CSDN：<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="external">他叫自己Mr.张</a> </li>
+</ul>
 </blockquote>
 ]]></content>
     </entry>
@@ -311,9 +351,13 @@
 <figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">dependencies &#123;</span><br><span class="line">    compile fileTree(<span class="string">include:</span> [<span class="string">'*.jar'</span>], <span class="string">dir:</span> <span class="string">'libs'</span>)</span><br><span class="line">    compile(<span class="string">name:</span> <span class="string">'demoLibary-1.0'</span>, <span class="string">ext:</span> <span class="string">'aar'</span>)</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>这样，你就可以使用 <strong>demoLibary</strong> 开放的接口和方法了。</p>
 <h2 id="n-不是结尾"><a href="#n-不是结尾" class="headerlink" title="n. 不是结尾"></a>n. 不是结尾</h2><p>以上几点是目前发现的较明显的问题，如果你了解更多的注意事项，欢迎和我联系。</p>
-<p>PS:</p>
 <blockquote>
-<p>你可以关注的我 <a href="https://github.com/likfe" target="_blank" rel="external">Github</a>、<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="external">CSDN</a> 和 <a href="http://weibo.com/zyansen" target="_blank" rel="external">微博</a></p>
+<p><strong>PS</strong>：你可以通过下面的方式和我联系</p>
+<ul>
+<li>微博：<a href="http://weibo.com/zyansen" target="_blank" rel="external">cafeting</a></li>
+<li>Github： <a href="https://github.com/likfe" target="_blank" rel="external">likfe</a></li>
+<li>CSDN：<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="external">他叫自己Mr.张</a> </li>
+</ul>
 </blockquote>
 ]]></content>
     </entry>
@@ -348,9 +392,13 @@
 <p>总的来说，基本功能都是有的，界面比较干净，这个是优点也是缺点了，相对而言，更适合把<code>MarkDown</code>语法熟记于心的人。</p>
 <p>最后，来个配图看看写作界面：</p>
 <p><img src="http://ac-mhke0kuv.clouddn.com/bcb599449a6de0393bcc.png" alt=""></p>
-<p>PS:</p>
 <blockquote>
-<p>你可以关注的我 <a href="https://github.com/likfe" target="_blank" rel="external">Github</a>、<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="external">CSDN</a> 和 <a href="http://weibo.com/zyansen" target="_blank" rel="external">微博</a></p>
+<p><strong>PS</strong>：你可以通过下面的方式和我联系</p>
+<ul>
+<li>微博：<a href="http://weibo.com/zyansen" target="_blank" rel="external">cafeting</a></li>
+<li>Github： <a href="https://github.com/likfe" target="_blank" rel="external">likfe</a></li>
+<li>CSDN：<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="external">他叫自己Mr.张</a> </li>
+</ul>
 </blockquote>
 ]]></content>
     </entry>
@@ -417,9 +465,13 @@
 <li><a href="https://github.com/evant/android-retrolambda-lombok/issues/4" target="_blank" rel="external">Doesn’t seem to correctly use modified lombok version</a></li>
 <li><a href="https://github.com/evant/gradle-retrolambda" target="_blank" rel="external">retrolambda插件</a></li>
 </ul>
-<p>PS:</p>
 <blockquote>
-<p>你可以关注的我 <a href="https://github.com/likfe" target="_blank" rel="external">Github</a>、<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="external">CSDN</a> 和 <a href="http://weibo.com/zyansen" target="_blank" rel="external">微博</a></p>
+<p><strong>PS</strong>：你可以通过下面的方式和我联系</p>
+<ul>
+<li>微博：<a href="http://weibo.com/zyansen" target="_blank" rel="external">cafeting</a></li>
+<li>Github： <a href="https://github.com/likfe" target="_blank" rel="external">likfe</a></li>
+<li>CSDN：<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="external">他叫自己Mr.张</a> </li>
+</ul>
 </blockquote>
 ]]></content>
     </entry>
@@ -489,9 +541,13 @@
 <li><a href="https://www.raywenderlich.com/124936/whats-new-android-studio-2-0" target="_blank" rel="external">Android Studio 2.0 有什么新东西？</a></li>
 </ul>
 <p>后续内容翻译中…</p>
-<p>PS:</p>
 <blockquote>
-<p>你可以关注的我 <a href="https://github.com/likfe" target="_blank" rel="external">Github</a>、<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="external">CSDN</a> 和 <a href="http://weibo.com/zyansen" target="_blank" rel="external">微博</a></p>
+<p><strong>PS</strong>：你可以通过下面的方式和我联系</p>
+<ul>
+<li>微博：<a href="http://weibo.com/zyansen" target="_blank" rel="external">cafeting</a></li>
+<li>Github： <a href="https://github.com/likfe" target="_blank" rel="external">likfe</a></li>
+<li>CSDN：<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="external">他叫自己Mr.张</a> </li>
+</ul>
 </blockquote>
 ]]></content>
     </entry>
@@ -522,9 +578,13 @@
 </ol>
 <p>以上两个后续操作缺一不可，否则会造成很多奇特的Bug，比如<code>Id</code>没有错误且存在的情况下，提示找不到<code>id</code>；还有找不到资源、某些<code>Activity</code> 无法启动等等的Bug。</p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>以上「3.后续操作」里的第二操作是很多人都容易忽略的地方，不修改的话一时间也不会出现问题，如果忽略里，以后遇到无法解决的Bug后可能需要很久才会意识到<code>AndroidManifest.xml</code> 包名的问题。</p>
-<p>PS:</p>
 <blockquote>
-<p>你可以关注的我 <a href="https://github.com/likfe" target="_blank" rel="external">Github</a>、<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="external">CSDN</a> 和 <a href="http://weibo.com/zyansen" target="_blank" rel="external">微博</a></p>
+<p><strong>PS</strong>：你可以通过下面的方式和我联系</p>
+<ul>
+<li>微博：<a href="http://weibo.com/zyansen" target="_blank" rel="external">cafeting</a></li>
+<li>Github： <a href="https://github.com/likfe" target="_blank" rel="external">likfe</a></li>
+<li>CSDN：<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="external">他叫自己Mr.张</a> </li>
+</ul>
 </blockquote>
 ]]></content>
     </entry>
@@ -655,9 +715,13 @@
 <p><a href="http://flarum.org/docs/" target="_blank" rel="external">官方文档</a> 适应最新版的Flarum，推荐<br><a href="https://www.gitbook.com/book/justjavac/flarum" target="_blank" rel="external">中文文档</a> 较旧，有一定参考意义</p>
 </blockquote>
 <p>AMH集成环境相对于通常的直接安装环境有很多的区别，使用的时候务必要考虑到。</p>
-<p>PS:</p>
 <blockquote>
-<p>你可以关注的我 <a href="https://github.com/likfe" target="_blank" rel="external">Github</a>、<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="external">CSDN</a> 和 <a href="http://weibo.com/zyansen" target="_blank" rel="external">微博</a></p>
+<p><strong>PS</strong>：你可以通过下面的方式和我联系</p>
+<ul>
+<li>微博：<a href="http://weibo.com/zyansen" target="_blank" rel="external">cafeting</a></li>
+<li>Github： <a href="https://github.com/likfe" target="_blank" rel="external">likfe</a></li>
+<li>CSDN：<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="external">他叫自己Mr.张</a> </li>
+</ul>
 </blockquote>
 ]]></content>
     </entry>
@@ -782,9 +846,13 @@
 </tbody>
 </table>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>在查资料的过程中，发现滚动条也可以使用代码来画，这里不做过多介绍，有兴趣的可以研究一下。</p>
-<p>PS:</p>
 <blockquote>
-<p>你可以关注的我 <a href="https://github.com/likfe" target="_blank" rel="external">Github</a>、<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="external">CSDN</a> 和 <a href="http://weibo.com/zyansen" target="_blank" rel="external">微博</a></p>
+<p><strong>PS</strong>：你可以通过下面的方式和我联系</p>
+<ul>
+<li>微博：<a href="http://weibo.com/zyansen" target="_blank" rel="external">cafeting</a></li>
+<li>Github： <a href="https://github.com/likfe" target="_blank" rel="external">likfe</a></li>
+<li>CSDN：<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="external">他叫自己Mr.张</a> </li>
+</ul>
 </blockquote>
 ]]></content>
     </entry>
@@ -852,10 +920,12 @@
 <p><strong>解决方法</strong>：检查一下报错的那个9Patch的右边框和下边框是否描点数超过1，有可能只是描点描了一个像素，所以检查的时候建议放大多倍进行检查。</p>
 <blockquote>
 <p>参考: <a href="http://stackoverflow.com/questions/3733471/android-9-patch-png-what-if-i-need-smth-like-a-11-patch-png" target="_blank" rel="external">StackOverFlow</a></p>
-</blockquote>
-<p>PS:</p>
-<blockquote>
-<p>你可以关注的我 <a href="https://github.com/likfe" target="_blank" rel="external">Github</a>、<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="external">CSDN</a> 和 <a href="http://weibo.com/zyansen" target="_blank" rel="external">微博</a></p>
+<p><strong>PS</strong>：你可以通过下面的方式和我联系</p>
+<ul>
+<li>微博：<a href="http://weibo.com/zyansen" target="_blank" rel="external">cafeting</a></li>
+<li>Github： <a href="https://github.com/likfe" target="_blank" rel="external">likfe</a></li>
+<li>CSDN：<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="external">他叫自己Mr.张</a> </li>
+</ul>
 </blockquote>
 ]]></content>
     </entry>
@@ -949,9 +1019,13 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onAttach</span><span class="params">(Context context)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (context <span class="keyword">instanceof</span> OnCoverChangeListener) &#123;</span><br><span class="line">            mListener = (ABC_Listener) context;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(context.toString()</span><br><span class="line">                    + <span class="string">" must implement ABC_Listener"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">super</span>.onAttach(context);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//SDK API&lt;23时，onAttach(Context)不执行，需要使用onAttach(Activity)。Fragment自身的Bug，v4的没有此问题</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onAttach</span><span class="params">(Activity activity)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.onAttach(activity);</span><br><span class="line">        <span class="keyword">if</span> (Build.VERSION.SDK_INT &lt; Build.VERSION_CODES.M) &#123;</span><br><span class="line">            <span class="keyword">if</span> (activity <span class="keyword">instanceof</span> OnCoverChangeListener) &#123;</span><br><span class="line">                mListener = (ABC_Listener) activity;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(activity.toString()</span><br><span class="line">                        + <span class="string">" must implement ABC_Listener"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>建议使用FragmentV4版的，减少不必要的系统自身Bug的处理。</p>
 <p>还有一篇关于FragmentV4、Fragment3.0的<code>onBackPressed();</code>的Bug详解：<br>传送门：<a href="">Android项目开发填坑记-Fragmen的onBackPressed</a></p>
-<p>PS:</p>
+<p><strong>PS</strong>：你可以通过下面的方式和我联系</p>
 <blockquote>
-<p>你可以关注的我 <a href="https://github.com/likfe" target="_blank" rel="external">Github</a>、<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="external">CSDN</a> 和 <a href="http://weibo.com/zyansen" target="_blank" rel="external">微博</a></p>
+<ul>
+<li>微博：<a href="http://weibo.com/zyansen" target="_blank" rel="external">cafeting</a></li>
+<li>Github： <a href="https://github.com/likfe" target="_blank" rel="external">likfe</a></li>
+<li>CSDN：<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="external">他叫自己Mr.张</a> </li>
+</ul>
 </blockquote>
 ]]></content>
     </entry>

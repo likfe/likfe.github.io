@@ -88,7 +88,7 @@
 <meta property="og:site_name" content="Cafeting">
 <meta property="og:description" content="背景现在Android开发多使用一个Activity管理多个Fragment进行开发，不免需要两者相互传递数据，一般是给Fragment添加回调接口，让Activity继承并实现。
 回调接口一般都写在Fragment的onAttach()方法中，Fragment 3.0 的onAttach()方法有2个重载，其中一个被废弃，所以通常是：">
-<meta property="og:updated_time" content="2016-07-29T10:45:14.000Z">
+<meta property="og:updated_time" content="2016-08-15T07:02:29.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android项目开发填坑记-Fragmen的onAttach方法">
 <meta name="twitter:description" content="背景现在Android开发多使用一个Activity管理多个Fragment进行开发，不免需要两者相互传递数据，一般是给Fragment添加回调接口，让Activity继承并实现。
@@ -323,9 +323,13 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onAttach</span><span class="params">(Context context)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (context <span class="keyword">instanceof</span> OnCoverChangeListener) &#123;</span><br><span class="line">            mListener = (ABC_Listener) context;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(context.toString()</span><br><span class="line">                    + <span class="string">" must implement ABC_Listener"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">super</span>.onAttach(context);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//SDK API&lt;23时，onAttach(Context)不执行，需要使用onAttach(Activity)。Fragment自身的Bug，v4的没有此问题</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onAttach</span><span class="params">(Activity activity)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.onAttach(activity);</span><br><span class="line">        <span class="keyword">if</span> (Build.VERSION.SDK_INT &lt; Build.VERSION_CODES.M) &#123;</span><br><span class="line">            <span class="keyword">if</span> (activity <span class="keyword">instanceof</span> OnCoverChangeListener) &#123;</span><br><span class="line">                mListener = (ABC_Listener) activity;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(activity.toString()</span><br><span class="line">                        + <span class="string">" must implement ABC_Listener"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>建议使用FragmentV4版的，减少不必要的系统自身Bug的处理。</p>
 <p>还有一篇关于FragmentV4、Fragment3.0的<code>onBackPressed();</code>的Bug详解：<br>传送门：<a href="">Android项目开发填坑记-Fragmen的onBackPressed</a></p>
-<p>PS:</p>
+<p><strong>PS</strong>：你可以通过下面的方式和我联系</p>
 <blockquote>
-<p>你可以关注的我 <a href="https://github.com/likfe" target="_blank" rel="external">Github</a>、<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="external">CSDN</a> 和 <a href="http://weibo.com/zyansen" target="_blank" rel="external">微博</a></p>
+<ul>
+<li>微博：<a href="http://weibo.com/zyansen" target="_blank" rel="external">cafeting</a></li>
+<li>Github： <a href="https://github.com/likfe" target="_blank" rel="external">likfe</a></li>
+<li>CSDN：<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="external">他叫自己Mr.张</a> </li>
+</ul>
 </blockquote>
 
       
@@ -436,7 +440,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">21</span>
+              <span class="site-state-item-count">22</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
