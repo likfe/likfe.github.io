@@ -92,7 +92,7 @@
 启用 Multidex基本要求：
 
 使用 Android Studio 开发工具">
-<meta property="og:updated_time" content="2016-08-17T06:02:00.000Z">
+<meta property="og:updated_time" content="2016-08-17T06:03:09.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android 项目开发填坑记 - 使用 MultiDex 解决 64K 限制">
 <meta name="twitter:description" content="背景Android 的 classLoader 在加载 APK 的时候限制了class.dex 包含的 Java 方法数，其总数不能超过65535（64K，不要再说成 65K 了，1K = 2^10 = 1024 , 64 * 1024 = 65535），Google 官方给出的解决方案是使用  Multidex 。
@@ -329,6 +329,7 @@
 <li>配置 Gradle build 来开启 multidex</li>
 <li>修改 manifest 来引用 MultiDexApplication 类</li>
 </ol>
+<a id="more"></a>
 <p>修改 <code>module</code> 下的 <code>build.gradle</code> 文件，添加支持库并开启 multidex：</p>
 <figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">android &#123;</span><br><span class="line">    compileSdkVersion <span class="number">21</span></span><br><span class="line">    buildToolsVersion <span class="string">"21.1.0"</span></span><br><span class="line"></span><br><span class="line">    defaultConfig &#123;</span><br><span class="line">        ...</span><br><span class="line">        minSdkVersion <span class="number">14</span></span><br><span class="line">        targetSdkVersion <span class="number">21</span></span><br><span class="line">        ...</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Enabling multidex support.</span></span><br><span class="line">        multiDexEnabled <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">dependencies &#123;</span><br><span class="line">  compile <span class="string">'com.android.support:multidex:1.0.0'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>PS： compileSdkVersion、buildToolsVersion 根据实际项目配置，但是版本不能低于上述版本。</p>
