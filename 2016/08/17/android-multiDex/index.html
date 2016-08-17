@@ -80,16 +80,25 @@
 
 
 
-<meta name="description" content="背景知识">
+<meta name="description" content="背景Android 的 classLoader 在加载 APK 的时候限制了class.dex 包含的 Java 方法数，其总数不能超过65535（64K，不要再说成 65K 了，1K = 2^10 = 1024 , 64 * 1024 = 65535），Google 官方给出的解决方案是使用  Multidex 。
+启用 Multidex基本要求：
+
+使用 Android Studio 开发工具">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Android项目开发填坑记--使用MultiDex">
-<meta property="og:url" content="http://likfe.com/2016/06/28/android-multiDex/index.html">
+<meta property="og:title" content="Android 项目开发填坑记 - 使用 MultiDex 解决 64K 限制">
+<meta property="og:url" content="http://likfe.com/2016/08/17/android-multiDex/index.html">
 <meta property="og:site_name" content="Cafeting">
-<meta property="og:description" content="背景知识">
-<meta property="og:updated_time" content="2016-07-06T08:21:24.000Z">
+<meta property="og:description" content="背景Android 的 classLoader 在加载 APK 的时候限制了class.dex 包含的 Java 方法数，其总数不能超过65535（64K，不要再说成 65K 了，1K = 2^10 = 1024 , 64 * 1024 = 65535），Google 官方给出的解决方案是使用  Multidex 。
+启用 Multidex基本要求：
+
+使用 Android Studio 开发工具">
+<meta property="og:updated_time" content="2016-08-17T06:02:00.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Android项目开发填坑记--使用MultiDex">
-<meta name="twitter:description" content="背景知识">
+<meta name="twitter:title" content="Android 项目开发填坑记 - 使用 MultiDex 解决 64K 限制">
+<meta name="twitter:description" content="背景Android 的 classLoader 在加载 APK 的时候限制了class.dex 包含的 Java 方法数，其总数不能超过65535（64K，不要再说成 65K 了，1K = 2^10 = 1024 , 64 * 1024 = 65535），Google 官方给出的解决方案是使用  Multidex 。
+启用 Multidex基本要求：
+
+使用 Android Studio 开发工具">
 
 
 
@@ -107,7 +116,7 @@
   };
 </script>
 
-  <title> Android项目开发填坑记--使用MultiDex | Cafeting </title>
+  <title> Android 项目开发填坑记 - 使用 MultiDex 解决 64K 限制 | Cafeting </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -260,7 +269,7 @@
             
             
               
-                Android项目开发填坑记--使用MultiDex
+                Android 项目开发填坑记 - 使用 MultiDex 解决 64K 限制
               
             
           </h1>
@@ -272,8 +281,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-06-28T12:15:12+08:00" content="2016-06-28">
-              2016-06-28
+            <time itemprop="dateCreated" datetime="2016-08-17T12:15:12+08:00" content="2016-08-17">
+              2016-08-17
             </time>
           </span>
 
@@ -287,7 +296,7 @@
 
           
           
-             <span id="/2016/06/28/android-multiDex/" class="leancloud_visitors" data-flag-title="Android项目开发填坑记--使用MultiDex">
+             <span id="/2016/08/17/android-multiDex/" class="leancloud_visitors" data-flag-title="Android 项目开发填坑记 - 使用 MultiDex 解决 64K 限制">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -308,7 +317,59 @@
       
 
       
-        <h2 id="背景知识"><a href="#背景知识" class="headerlink" title="背景知识"></a>背景知识</h2>
+        <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>Android 的 <code>classLoader</code> 在加载 APK 的时候限制了<code>class.dex</code> 包含的 Java 方法数，其总数不能超过65535（64K，<strong>不要再说成 65K</strong> 了，1K = 2^10 = 1024 , 64 * 1024 = 65535），Google 官方给出的解决方案是使用  <a href="https://developer.android.com/studio/build/multidex.html" target="_blank" rel="external">Multidex</a> 。</p>
+<h2 id="启用-Multidex"><a href="#启用-Multidex" class="headerlink" title="启用 Multidex"></a>启用 Multidex</h2><p>基本要求：</p>
+<ul>
+<li>使用 Android Studio 开发工具</li>
+<li>Android SDK Build Tools &gt;= 21.1</li>
+<li>更新  Android Support Repository 到最新版本</li>
+</ul>
+<p>配置步骤：</p>
+<ol>
+<li>配置 Gradle build 来开启 multidex</li>
+<li>修改 manifest 来引用 MultiDexApplication 类</li>
+</ol>
+<p>修改 <code>module</code> 下的 <code>build.gradle</code> 文件，添加支持库并开启 multidex：</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">android &#123;</span><br><span class="line">    compileSdkVersion <span class="number">21</span></span><br><span class="line">    buildToolsVersion <span class="string">"21.1.0"</span></span><br><span class="line"></span><br><span class="line">    defaultConfig &#123;</span><br><span class="line">        ...</span><br><span class="line">        minSdkVersion <span class="number">14</span></span><br><span class="line">        targetSdkVersion <span class="number">21</span></span><br><span class="line">        ...</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Enabling multidex support.</span></span><br><span class="line">        multiDexEnabled <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">dependencies &#123;</span><br><span class="line">  compile <span class="string">'com.android.support:multidex:1.0.0'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>PS： compileSdkVersion、buildToolsVersion 根据实际项目配置，但是版本不能低于上述版本。</p>
+<p>在 <code>AndroidManifest.xml</code> 中给 <code>application</code> 节点添加对 <code>MultiDexApplication</code> 类的引用：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span><br><span class="line"><span class="tag">&lt;<span class="name">manifest</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span><br><span class="line">    <span class="attr">package</span>=<span class="string">"xxx"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">application</span></span><br><span class="line">        <span class="attr">...</span></span><br><span class="line">        <span class="attr">android:name</span>=<span class="string">"android.support.multidex.MultiDexApplication"</span>&gt;</span></span><br><span class="line">        ...</span><br><span class="line">    <span class="tag">&lt;/<span class="name">application</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">manifest</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>PS： <code>manifest</code> 节点的 <code>package</code> 属性值根据实际项目有所不同。</p>
+<p><strong>注意</strong>：如果你的 APP 使用了继承 <code>Application</code> 的类，你需要重写<code>attachBaseContext()</code>方法并调用 <code>MultiDex.install(this)</code> 来启用 multidex 。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">XXX</span> <span class="keyword">extends</span> <span class="title">Application</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">attachBaseContext</span><span class="params">(Context base)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">super</span>.attachBaseContext(base);</span><br><span class="line">		MultiDex.install(<span class="keyword">this</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>网上搜到还有一个方法：不继承 <code>Application</code> ，而是直接继承 <code>MultiDexApplication</code> 即可，这样就不需要重写<code>attachBaseContext()</code>方法了。</p>
+<blockquote>
+<p>参考资料：<a href="https://developer.android.com/studio/build/multidex.html" target="_blank" rel="external">Configure Apps with Over 64K Methods</a></p>
+</blockquote>
+<h2 id="可能遇到的问题"><a href="#可能遇到的问题" class="headerlink" title="可能遇到的问题"></a>可能遇到的问题</h2><h3 id="NoClassDefFoundError"><a href="#NoClassDefFoundError" class="headerlink" title="NoClassDefFoundError"></a>NoClassDefFoundError</h3><blockquote>
+<p>Android SDK Build Tools 21.1 或者更高版本中的 Gradle  Android 插件有对 multidex 的支持。这个插件使用 Proguard 来分析你的项目并在 <code>[buildDir]/intermediates/multi-dex/[buildType]/maindexlist.txt</code> 文件中生成一个 app 启动 classes 的列表。但是这个列表并不是100%准确，可能会丢失一些app启动所需的 classes 。</p>
+</blockquote>
+<p>如果你在本地的测试机上没有遇到这个问题，并不代表你的 APP 没有问题，我通过查看友盟的崩溃记录和使用一些真机测试平台来进行检查，通常情况下会有所发现。</p>
+<p>解决方法：在 <code>module</code> 下创建 <code>multidex.keep</code> 文件，并在其中罗列出那些 class，以便让编译器知道在 main dex 文件中要保持哪些 class。</p>
+<p>生成 <code>multidex.keep</code> 文件中的内容有多种：</p>
+<p><strong>方法一</strong>：修改 <code>module</code> 下的 <code>build.gradle</code> 文件</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">apply <span class="string">plugin:</span> <span class="string">'com.android.application'</span></span><br><span class="line">android &#123;</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br><span class="line">dependencies &#123;</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br><span class="line">android.applicationVariants.all &#123; variant -&gt;</span><br><span class="line">    task <span class="string">"fix$&#123;variant.name.capitalize()&#125;MainDexClassList"</span> &lt;&lt; &#123;</span><br><span class="line">        logger.info <span class="string">"Fixing main dex keep file for $variant.name"</span></span><br><span class="line">        File keepFile = <span class="keyword">new</span> File(<span class="string">"$buildDir/intermediates/multi-dex/$variant.buildType.name/maindexlist.txt"</span>)</span><br><span class="line">        keepFile.withWriterAppend &#123; w -&gt;</span><br><span class="line">            <span class="comment">// Get a reader for the input file</span></span><br><span class="line">            w.append(<span class="string">'\n'</span>)</span><br><span class="line">            <span class="keyword">new</span> File(<span class="string">"$&#123;projectDir&#125;/multidex.keep"</span>).withReader &#123; r -&gt;</span><br><span class="line">                <span class="comment">// And write data from the input into the output</span></span><br><span class="line">                w &lt;&lt; r &lt;&lt; <span class="string">'\n'</span></span><br><span class="line">            &#125;</span><br><span class="line">            logger.info <span class="string">"Updated main dex keep file for $&#123;keepFile.getAbsolutePath()&#125;\n$keepFile.text"</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">tasks.whenTaskAdded &#123; task -&gt;</span><br><span class="line">    android.applicationVariants.all &#123; variant -&gt;</span><br><span class="line">        <span class="keyword">if</span> (task.name == <span class="string">"create$&#123;variant.name.capitalize()&#125;MainDexClassList"</span>) &#123;</span><br><span class="line">            task.finalizedBy <span class="string">"fix$&#123;variant.name.capitalize()&#125;MainDexClassList"</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>方法二</strong>：修改 <code>module</code> 下的 <code>build.gradle</code> 文件</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">apply <span class="string">plugin:</span> <span class="string">'com.android.application'</span></span><br><span class="line">android &#123;</span><br><span class="line">  ...</span><br><span class="line">  afterEvaluate &#123;</span><br><span class="line">        tasks.matching &#123;</span><br><span class="line">            it.name.startsWith(<span class="string">'dex'</span>)</span><br><span class="line">        &#125;.each &#123; dx -&gt;</span><br><span class="line">            <span class="keyword">if</span> (dx.additionalParameters == <span class="literal">null</span>) &#123;</span><br><span class="line">                dx.additionalParameters = []</span><br><span class="line">            &#125;</span><br><span class="line">            dx.additionalParameters += <span class="string">'--multi-dex'</span> <span class="comment">// enable multidex</span></span><br><span class="line"></span><br><span class="line">            <span class="comment">// optional</span></span><br><span class="line">            dx.additionalParameters += <span class="string">"--main-dex-list=$projectDir/class-list.txt"</span>.toString() <span class="comment">// enable the main-dex-list</span></span><br><span class="line">            dx.additionalParameters += <span class="string">'--minimal-main-dex'</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">dependencies &#123;</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>使用上述任意方式配置完成后，<code>clean</code> 然后 <code>rebuild</code> 项目，完成之后在 <code>module</code> 下的<code>build/intermediates/multi-dex/xxx</code>里找到 <code>maindexlist.txt</code> 文件（如果找不到相关目录，可能需要你同步后 <code>rebuild</code> 项目才能生成），复制里面的内容到 <code>module</code> 根目录下 <code>multidex.keep</code> 文件中（没有则先创建此文件）。</p>
+<p>然后，比较重要的一步就是：通过友盟、测试记录、Bug记录等获取到 <code>NoClassDefFoundError</code> 错误对应的类，按照 <code>maindexlist.txt</code> 文件的方式添加这些类到 <code>multidex.keep</code> 文件中就可解决了。</p>
+<h3 id="其他错误和问题"><a href="#其他错误和问题" class="headerlink" title="其他错误和问题"></a>其他错误和问题</h3><p>比如<strong>首次安装启动时黑屏没有响应／ANR</strong>、<strong>安装时异常</strong>等，你可以参考文末的一些文章，此外你还可以参考 <a href="http://blog.csdn.net/ys743276112/article/details/52223272" target="_blank" rel="external">Android 必知必会-Android Splash 页秒开之细节处理</a> 来优化启动体验。</p>
+<p>参考资料和推荐阅读：</p>
+<ul>
+<li><a href="http://blog.csdn.net/wangbaochu/article/details/51178881" target="_blank" rel="external">Android Multidex 遇到的问题</a> （推荐此文）</li>
+<li><a href="http://www.jcodecraeer.com/a/anzhuokaifa/androidkaifa/2015/1223/3796.html" target="_blank" rel="external">Android的multidex带来的性能问题－减慢app启动速度</a></li>
+<li><a href="https://github.com/casidiablo/multidex/issues/7" target="_blank" rel="external">ClassNotFoundException</a></li>
+</ul>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>这是一篇早就准备写的文章，但当时搜集的资料未及时保存或者丢失，就拖到了现在。因为一个比较旧的 APP 也遇到了相关的问题，所以重新搜集了下资料整理发布出来了，希望能帮到遇到相关问题的朋友们。</p>
+<p><strong>PS</strong>：你可以通过下面的方式和我联系</p>
+<blockquote>
+<ul>
+<li>微博：<a href="http://weibo.com/zyansen" target="_blank" rel="external">cafeting</a></li>
+<li>Github： <a href="https://github.com/likfe" target="_blank" rel="external">likfe</a></li>
+<li>CSDN：<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="external">他叫自己Mr.张</a> </li>
+</ul>
+</blockquote>
+
       
     </div>
     
@@ -337,17 +398,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/06/15/android-studio-rename-package/" rel="next" title="Android必知必会-Android Studio修改包名">
-                <i class="fa fa-chevron-left"></i> Android必知必会-Android Studio修改包名
+              <a href="/2016/08/16/create-splash-activity/" rel="next" title="Android 必知必会 - Android Splash 页秒开之细节处理">
+                <i class="fa fa-chevron-left"></i> Android 必知必会 - Android Splash 页秒开之细节处理
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/06/28/androidTutorials-0/" rel="prev" title="Android 开发指南-0">
-                Android 开发指南-0 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -476,7 +533,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#背景知识"><span class="nav-text">背景知识</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#背景"><span class="nav-text">背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启用-Multidex"><span class="nav-text">启用 Multidex</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#可能遇到的问题"><span class="nav-text">可能遇到的问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#NoClassDefFoundError"><span class="nav-text">NoClassDefFoundError</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他错误和问题"><span class="nav-text">其他错误和问题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-text">总结</span></a></li></ol></div>
             
           </div>
         </section>
