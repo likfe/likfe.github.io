@@ -4,7 +4,7 @@
   
     
     <entry>
-      <title><![CDATA[使用 supportV4 的 RoundedBitmapDrawable 实现圆角]]></title>
+      <title><![CDATA[Android 必知必会-使用 supportV4 的 RoundedBitmapDrawable 实现圆角]]></title>
       <url>http://likfe.com/2016/08/25/use-supportv4-RoundedBitmapDrawable/</url>
       <content type="html"><![CDATA[<p><code>RoundedBitmapDrawable</code> 是 <code>supportV4</code> 下的一个类，有了它，显示圆角和圆形图片的情况下就不需要额外的第三方类库了，还能和各种图片加载库配合使用。</p>
 <a id="more"></a>
