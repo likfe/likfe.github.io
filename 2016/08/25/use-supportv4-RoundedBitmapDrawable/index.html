@@ -64,7 +64,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Android,GreenDao," />
+  <meta name="keywords" content="Android," />
 
 
 
@@ -80,25 +80,18 @@
 
 
 
-<meta name="description" content="Github版
-CSDN版
-
-本篇文章不是介绍GreenDao的配置和基础使用，记录一下GreenDao缓存的问题，帮助遇到同样问题的朋友找到原因和方法，下面是示例：">
+<meta name="description" content="RoundedBitmapDrawable 是 supportV4 下的一个类，有了它，显示圆角和圆形图片的情况下就不需要额外的第三方类库了，还能和各种图片加载库配合使用。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Android必知必会--GreenDao缓存">
-<meta property="og:url" content="http://likfe.com/2016/04/22/greenDao-session/index.html">
+<meta property="og:title" content="使用 supportV4 的 RoundedBitmapDrawable 实现圆角">
+<meta property="og:url" content="http://likfe.com/2016/08/25/use-supportv4-RoundedBitmapDrawable/index.html">
 <meta property="og:site_name" content="Cafeting">
-<meta property="og:description" content="Github版
-CSDN版
-
-本篇文章不是介绍GreenDao的配置和基础使用，记录一下GreenDao缓存的问题，帮助遇到同样问题的朋友找到原因和方法，下面是示例：">
-<meta property="og:updated_time" content="2016-07-29T10:47:05.000Z">
+<meta property="og:description" content="RoundedBitmapDrawable 是 supportV4 下的一个类，有了它，显示圆角和圆形图片的情况下就不需要额外的第三方类库了，还能和各种图片加载库配合使用。">
+<meta property="og:image" content="http://mmmedia.qiniudn.com/2016-08-25_08104B752A742F5F71AE7F16661CBA2A.jpg">
+<meta property="og:updated_time" content="2016-08-25T09:21:17.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Android必知必会--GreenDao缓存">
-<meta name="twitter:description" content="Github版
-CSDN版
-
-本篇文章不是介绍GreenDao的配置和基础使用，记录一下GreenDao缓存的问题，帮助遇到同样问题的朋友找到原因和方法，下面是示例：">
+<meta name="twitter:title" content="使用 supportV4 的 RoundedBitmapDrawable 实现圆角">
+<meta name="twitter:description" content="RoundedBitmapDrawable 是 supportV4 下的一个类，有了它，显示圆角和圆形图片的情况下就不需要额外的第三方类库了，还能和各种图片加载库配合使用。">
+<meta name="twitter:image" content="http://mmmedia.qiniudn.com/2016-08-25_08104B752A742F5F71AE7F16661CBA2A.jpg">
 
 
 
@@ -116,7 +109,7 @@ CSDN版
   };
 </script>
 
-  <title> Android必知必会--GreenDao缓存 | Cafeting </title>
+  <title> 使用 supportV4 的 RoundedBitmapDrawable 实现圆角 | Cafeting </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -269,7 +262,7 @@ CSDN版
             
             
               
-                Android必知必会--GreenDao缓存
+                使用 supportV4 的 RoundedBitmapDrawable 实现圆角
               
             
           </h1>
@@ -281,8 +274,8 @@ CSDN版
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-22T14:03:39+08:00" content="2016-04-22">
-              2016-04-22
+            <time itemprop="dateCreated" datetime="2016-08-25T16:37:11+08:00" content="2016-08-25">
+              2016-08-25
             </time>
           </span>
 
@@ -296,7 +289,7 @@ CSDN版
 
           
           
-             <span id="/2016/04/22/greenDao-session/" class="leancloud_visitors" data-flag-title="Android必知必会--GreenDao缓存">
+             <span id="/2016/08/25/use-supportv4-RoundedBitmapDrawable/" class="leancloud_visitors" data-flag-title="使用 supportV4 的 RoundedBitmapDrawable 实现圆角">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -317,26 +310,59 @@ CSDN版
       
 
       
-        <ul>
-<li><a href="http://likfe.github.io/2016/04/22/greenDao-session/" target="_blank" rel="external">Github版</a></li>
-<li><a href="http://blog.csdn.net/ys743276112/article/details/50479917" target="_blank" rel="external">CSDN版</a></li>
+        <p><code>RoundedBitmapDrawable</code> 是 <code>supportV4</code> 下的一个类，有了它，显示圆角和圆形图片的情况下就不需要额外的第三方类库了，还能和各种图片加载库配合使用。</p>
+<a id="more"></a>
+<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>今天无意间看到一段实现圆形头像的代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">RoundedBitmapDrawable drawable = RoundedBitmapDrawableFactory.create(getResources(), bitmap);</span><br><span class="line">drawable.setCircular(<span class="keyword">true</span>);</span><br></pre></td></tr></table></figure>
+<p><code>RoundedBitmapDrawable</code> 这个类顿时就引起我的好奇了，一查发现是 <code>android.support.v4.graphics.drawable.RoundedBitmapDrawable</code> ，<a href="http://developer.android.youdaxue.com/reference/android/support/v4/graphics/drawable/RoundedBitmapDrawable.html?_ga=1.118511817.1571171213.1463032326" target="_blank" rel="external">点击此处</a> 可以看到官方的介绍。这个类中的两个方法是今天的主角：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">return</th>
+<th style="text-align:center">method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">void</td>
+<td style="text-align:center"><code>setCircular(boolean circular)</code> : Sets the image shape to circular.</td>
+</tr>
+<tr>
+<td style="text-align:center">void</td>
+<td style="text-align:center"><code>setCornerRadius(float cornerRadius)</code> : Sets the corner radius to be applied when drawing the bitmap.</td>
+</tr>
+</tbody>
+</table>
+<p><code>setCircular(boolean circular)</code> : 把图片的形状设为圆形；</p>
+<p><code>setCornerRadius(float cornerRadius)</code> : 设置图片的圆角半径。</p>
+<p>这里贴一下源码，更能清晰的知道它的实现：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line">    * Sets the image shape to circular.</span><br><span class="line">    * &lt;p&gt;This overwrites any calls made to &#123;<span class="doctag">@link</span> #setCornerRadius(float)&#125; so far.&lt;/p&gt;</span><br><span class="line">    */</span></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setCircular</span><span class="params">(<span class="keyword">boolean</span> circular)</span> </span>&#123;</span><br><span class="line">       mIsCircular = circular;</span><br><span class="line">       mApplyGravity = <span class="keyword">true</span>;</span><br><span class="line">       <span class="keyword">if</span> (circular) &#123;</span><br><span class="line">           updateCircularCornerRadius();</span><br><span class="line">           mPaint.setShader(mBitmapShader);</span><br><span class="line">           invalidateSelf();</span><br><span class="line">       &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">           setCornerRadius(<span class="number">0</span>);</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">updateCircularCornerRadius</span><span class="params">()</span> </span>&#123;</span><br><span class="line">       <span class="keyword">final</span> <span class="keyword">int</span> minCircularSize = Math.min(mBitmapHeight, mBitmapWidth);</span><br><span class="line">       mCornerRadius = minCircularSize / <span class="number">2</span>;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="comment">/**</span><br><span class="line">    * Sets the corner radius to be applied when drawing the bitmap.</span><br><span class="line">    */</span></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setCornerRadius</span><span class="params">(<span class="keyword">float</span> cornerRadius)</span> </span>&#123;</span><br><span class="line">       <span class="keyword">if</span> (mCornerRadius == cornerRadius) <span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">       mIsCircular = <span class="keyword">false</span>;</span><br><span class="line">       <span class="keyword">if</span> (isGreaterThanZero(cornerRadius)) &#123;</span><br><span class="line">           mPaint.setShader(mBitmapShader);</span><br><span class="line">       &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">           mPaint.setShader(<span class="keyword">null</span>);</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">       mCornerRadius = cornerRadius;</span><br><span class="line">       invalidateSelf();</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<p>至于具体的实现，阅读源码发现官方使用了 <code>BitmapShader</code> 来实现的圆角。</p>
+<p>如果你有兴趣研究，更多资料：</p>
+<ul>
+<li><a href="http://blog.csdn.net/lmj623565791/article/details/41967509" target="_blank" rel="external">Android BitmapShader 实战 实现圆形、圆角图片</a></li>
+<li><a href="自定义控件其实很简单1/3">自定义控件其实很简单1/3</a></li>
 </ul>
-<p>本篇文章不是介绍GreenDao的配置和基础使用，记录一下GreenDao缓存的问题，帮助遇到同样问题的朋友找到原因和方法，下面是示例：<br><a id="more"></a></p>
-<h3 id="场景重现"><a href="#场景重现" class="headerlink" title="场景重现"></a>场景重现</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//第一次查询</span></span><br><span class="line">List chats = daoSession.getChatSessionDao()</span><br><span class="line">	.queryBuilder()</span><br><span class="line">	.orderDesc(ChatSessionDao.Properties.Updatetime)</span><br><span class="line">	.list();</span><br><span class="line"></span><br><span class="line"><span class="comment">//对数据库中的一条数据进行更新：</span></span><br><span class="line">ChatSession cs = chats.get(<span class="number">0</span>);</span><br><span class="line">Log.d(<span class="string">"body"</span>,cs.getBody());</span><br><span class="line">cs.setBody(cs.getBody() + <span class="string">"new"</span>);</span><br><span class="line">daoSession.getChatSessionDao().update(cs);</span><br><span class="line"></span><br><span class="line"><span class="comment">//第二次查询</span></span><br><span class="line">List chats = daoSession.getChatSessionDao()</span><br><span class="line">	.queryBuilder()</span><br><span class="line">	.orderDesc(ChatSessionDao.Properties.Updatetime)</span><br><span class="line">	.list();</span><br><span class="line">	</span><br><span class="line">Log.d(<span class="string">"body"</span>,chats.get(<span class="number">0</span>).getBody());</span><br></pre></td></tr></table></figure>
-<p>结果发现两次的<code>body</code>的值是一样的，使用工具查看Sqlite数据库，发现<code>body</code>的值已经变化了，也就是说，我们第二次查询并没有真正执行，返回的是第一次查询的结果。如果要解决缓存问题，这里就要用到<code>DaoSession</code>的一个方法：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DaoSession.clear();</span><br></pre></td></tr></table></figure>
-<p>在示例代码中应该写在第二次查询前面<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">daoSession.clear();</span><br><span class="line"><span class="comment">//第二次查询</span></span><br><span class="line">......</span><br></pre></td></tr></table></figure></p>
-<p>PS:这个清理缓存的方法，会清除所有表的缓存，目前没有发现可以清除单个表或者某个查询的缓存的方法。</p>
-<h3 id="GreenDao配置与使用"><a href="#GreenDao配置与使用" class="headerlink" title="GreenDao配置与使用"></a>GreenDao配置与使用</h3><p>GreenDao详细的配置和Demo可以参考：</p>
+<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><p>先看效果图：</p>
+<p><img src="http://mmmedia.qiniudn.com/2016-08-25_08104B752A742F5F71AE7F16661CBA2A.jpg" alt="2016-08-25_08104B752A742F5F71AE7F16661CBA2A.jpg"></p>
+<p>其中第一个图片是圆形，第二个和第三个图片设置了自定义大小的圆角。</p>
 <blockquote>
-<ol>
-<li><a href="http://www.jcodecraeer.com/a/anzhuokaifa/androidkaifa/2015/0727/3223.html" target="_blank" rel="external">ORM 框架之 greenDAO 使用心得</a></li>
-<li><a href="http://wiki.xby1993.net/doku.php?id=greendao" target="_blank" rel="external">GreenDao</a></li>
-</ol>
+<p>xxActivity</p>
 </blockquote>
-<p>PS:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        RoundedBitmapDrawable drawableA = RoundedBitmapDrawableFactory.create(getResources(), id2Bitmap(<span class="keyword">this</span>, R.drawable.icon_avatar));</span><br><span class="line">        drawableA.setCircular(<span class="keyword">true</span>);</span><br><span class="line">        rbA.setImageDrawable(drawableA);</span><br><span class="line"></span><br><span class="line">        RoundedBitmapDrawable drawableB = RoundedBitmapDrawableFactory.create(getResources(), id2Bitmap(<span class="keyword">this</span>, R.drawable.icon_avatar));</span><br><span class="line">        drawableB.setCornerRadius(<span class="number">30L</span>);</span><br><span class="line">        rbB.setImageDrawable(drawableB);</span><br><span class="line"></span><br><span class="line">        RoundedBitmapDrawable drawableC = RoundedBitmapDrawableFactory.create(getResources(), id2Bitmap(<span class="keyword">this</span>, R.drawable.icon_avatar));</span><br><span class="line">        drawableC.setCornerRadius(<span class="number">60L</span>);</span><br><span class="line">        rbC.setImageDrawable(drawableC);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Bitmap <span class="title">id2Bitmap</span><span class="params">(Context context, <span class="keyword">int</span> id)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> BitmapFactory.decodeResource(context.getResources(), id);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>你可以关注的我 <a href="https://github.com/likfe" target="_blank" rel="external">Github</a>、<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="external">CSDN</a> 和 <a href="http://weibo.com/zyansen" target="_blank" rel="external">微博</a></p>
+<p>activity_xx.xml</p>
+</blockquote>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span><br><span class="line"><span class="tag">&lt;<span class="name">LinearLayout</span></span><br><span class="line">    <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span><br><span class="line">    <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span><br><span class="line">    <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span></span><br><span class="line">    <span class="attr">android:gravity</span>=<span class="string">"center_horizontal"</span></span><br><span class="line">    <span class="attr">android:orientation</span>=<span class="string">"vertical"</span></span><br><span class="line">    &gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">ImageView</span></span><br><span class="line">        <span class="attr">android:id</span>=<span class="string">"@+id/rb_a"</span></span><br><span class="line">        <span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></span><br><span class="line">        <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span><br><span class="line">        /&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">ImageView</span></span><br><span class="line">        <span class="attr">android:id</span>=<span class="string">"@+id/rb_b"</span></span><br><span class="line">        <span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></span><br><span class="line">        <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span><br><span class="line">        <span class="attr">android:layout_marginTop</span>=<span class="string">"10dp"</span></span><br><span class="line">        /&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">ImageView</span></span><br><span class="line">        <span class="attr">android:id</span>=<span class="string">"@+id/rb_c"</span></span><br><span class="line">        <span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></span><br><span class="line">        <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span><br><span class="line">        <span class="attr">android:layout_marginTop</span>=<span class="string">"10dp"</span></span><br><span class="line">        /&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">LinearLayout</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>代码比较简单，有什么问题欢迎随时和我联系。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>一个小小的发现，让我又少使用了一个第三方库，心情大好。另外在此过程中发现的 <code>BitmapShader</code>  是学习自定义 View 的一个不错的切入点，需要再研究研究。</p>
+<p><strong>PS</strong>：你可以通过下面的方式和我联系</p>
+<blockquote>
+<ul>
+<li>微博：<a href="http://weibo.com/zyansen" target="_blank" rel="external">cafeting</a></li>
+<li>Github： <a href="https://github.com/likfe" target="_blank" rel="external">likfe</a></li>
+<li>CSDN：<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="external">他叫自己Mr.张</a> </li>
+</ul>
 </blockquote>
 
       
@@ -360,8 +386,6 @@ CSDN版
           
             <a href="/tags/Android/" rel="tag">#Android</a>
           
-            <a href="/tags/GreenDao/" rel="tag">#GreenDao</a>
-          
         </div>
       
 
@@ -369,17 +393,13 @@ CSDN版
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/04/20/fragmen-onBackPressed/" rel="next" title="Android项目开发填坑记-Fragmen的onBackPressed">
-                <i class="fa fa-chevron-left"></i> Android项目开发填坑记-Fragmen的onBackPressed
+              <a href="/2016/08/17/android-multiDex/" rel="next" title="Android 项目开发填坑记 - 使用 MultiDex 解决 64K 限制">
+                <i class="fa fa-chevron-left"></i> Android 项目开发填坑记 - 使用 MultiDex 解决 64K 限制
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/04/28/9patchAttention/" rel="prev" title="Android项目开发填坑记-9patchPng报错">
-                Android项目开发填坑记-9patchPng报错 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -508,7 +528,7 @@ CSDN版
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#场景重现"><span class="nav-text">场景重现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GreenDao配置与使用"><span class="nav-text">GreenDao配置与使用</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#背景"><span class="nav-text">背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现"><span class="nav-text">实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-text">总结</span></a></li></ol></div>
             
           </div>
         </section>
