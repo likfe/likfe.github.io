@@ -262,6 +262,120 @@
             
               
                 
+                <a class="post-title-link" href="/2016/08/31/android-glide-roundedBitmapTransformation/" itemprop="url">
+                  Android 必知必会 - Glide 加载圆形图片和圆角图片的两种方法
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-08-31T16:01:27+08:00" content="2016-08-31">
+              2016-08-31
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/08/31/android-glide-roundedBitmapTransformation/" class="leancloud_visitors" data-flag-title="Android 必知必会 - Glide 加载圆形图片和圆角图片的两种方法">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>两种使用 <code>BitmapTransformation</code> 来实现<code>Glide</code> 加载圆形图片和圆角图片的方法。</p>
+<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p><code>Glide</code> 并不能直接支持 <code>Round Pictures</code> ，需要使用 <code>BitmapTransformation</code> 来进行处理。</p>
+<blockquote>
+<p>Round Pictures: <code>CircleImageView</code> / <code>CircularImageView</code> / <code>RoundedImageView</code> are known to have <a href="https://github.com/bumptech/glide/issues?q=is%3Aissue+CircleImageView+OR+CircularImageView+OR+RoundedImageView">issues</a> with TransitionDrawable (.crossFade() with .thumbnail() or .placeholder()) and animated GIFs, use a BitmapTransformation (.circleCrop() will be available in v4) or .dontAnimate() to fix the issue.</p>
+</blockquote>
+<p>这里介绍下网上常见的方式和使用 <code>RoundedBitmapDrawable</code> 两种方法，本质上是差不多的：</p>
+<ul>
+<li>使用 <code>Canvas</code> 和 <code>Paint</code> 来绘制</li>
+<li>使用 <code>Android.support.v4.graphics.drawable.RoundedBitmapDrawable</code> </li>
+</ul>
+<p><strong>PS：</strong> <code>RoundedBitmapDrawable</code> 是 <code>support.v4</code> 下的一个类，想了解更多，可以阅读我之前的文章：<a href="http://blog.csdn.net/ys743276112/article/details/52316588">Android 必知必会-使用 supportV4 的 RoundedBitmapDrawable 实现圆角</a> 。</p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/08/31/android-glide-roundedBitmapTransformation/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+    
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/08/29/android-simple-leancloud-sms/" itemprop="url">
                   Android 必知必会- 极简版 Leancloud 短信验证码功能
                 </a>
@@ -1225,114 +1339,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/07/06/android-setting-lamdba/" itemprop="url">
-                  Android必知必会-Android Studio下配置和使用Lambda
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-07-06T14:29:25+08:00" content="2016-07-06">
-              2016-07-06
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/07/06/android-setting-lamdba/" class="leancloud_visitors" data-flag-title="Android必知必会-Android Studio下配置和使用Lambda">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>和朋友讨论 <code>JAVA8</code> 的新特性，聊到<code>Lambda</code>，正好在掘金上看到一篇相关的文章，结合资料，作一个总结，特别是记录下实际使用中遇到的问题。</p>
-<h3 id="什么是Lambda表达式"><a href="#什么是Lambda表达式" class="headerlink" title="什么是Lambda表达式"></a>什么是Lambda表达式</h3><blockquote>
-<p>lambda表达式，它将允许我们将行为传到函数里。在Java 8之前，如果想将行为传入函数，仅有的选择就是匿名类，需要6行代码。而定义行为最重要的那行代码，却混在中间不够突出。Lambda表达式取代了匿名类，取消了模板，允许用函数式风格编写代码。这样有时可读性更好，表达更清晰。</p>
-<p>— Java8 lambda表达式10个示例</p>
-</blockquote>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/07/06/android-setting-lamdba/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-    
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1378,7 +1384,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">24</span>
+              <span class="site-state-item-count">25</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1388,7 +1394,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">17</span>
+                <span class="site-state-item-count">18</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
