@@ -64,7 +64,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="PHP,MAMP," />
+  <meta name="keywords" content="Cafeting, likfe" />
 
 
 
@@ -80,18 +80,15 @@
 
 
 
-<meta name="description" content="背景MAMP是Mac下的一个PHP+Nginx+MySQL的集成环境，支持多站点，不同版本PHP。今天有人请教MAMP如何显示文件列表的问题，这里记录一下。">
-<meta property="og:type" content="article">
-<meta property="og:title" content="MAMP显示文件列表">
-<meta property="og:url" content="http://likfe.com/2016/06/14/mamp-list-file/index.html">
+<meta name="description" content="我的代码空间">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Cafeting">
+<meta property="og:url" content="http://likfe.com/tags/ViewPager/index.html">
 <meta property="og:site_name" content="Cafeting">
-<meta property="og:description" content="背景MAMP是Mac下的一个PHP+Nginx+MySQL的集成环境，支持多站点，不同版本PHP。今天有人请教MAMP如何显示文件列表的问题，这里记录一下。">
-<meta property="og:image" content="http://img.blog.csdn.net/20160614185258257">
-<meta property="og:updated_time" content="2016-07-29T10:47:36.000Z">
+<meta property="og:description" content="我的代码空间">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MAMP显示文件列表">
-<meta name="twitter:description" content="背景MAMP是Mac下的一个PHP+Nginx+MySQL的集成环境，支持多站点，不同版本PHP。今天有人请教MAMP如何显示文件列表的问题，这里记录一下。">
-<meta name="twitter:image" content="http://img.blog.csdn.net/20160614185258257">
+<meta name="twitter:title" content="Cafeting">
+<meta name="twitter:description" content="我的代码空间">
 
 
 
@@ -109,7 +106,7 @@
   };
 </script>
 
-  <title> MAMP显示文件列表 | Cafeting </title>
+  <title> 标签: ViewPager | Cafeting </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -130,7 +127,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left page-post-detail ">
+  <div class="container one-collumn sidebar-position-left  ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -241,153 +238,46 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-expand">
-    
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <div id="posts" class="posts-collapse">
+    <div class="collection-title">
+      <h2 >
+        ViewPager
+        <small>标签</small>
+      </h2>
+    </div>
 
     
-      <header class="post-header">
+      
 
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h1 class="post-title">
         
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
+            <a class="post-title-link" href="/2016/09/20/androd-radioGroup-and-viewPager/" itemprop="url">
               
-                MAMP显示文件列表
+                <span itemprop="name">Android 必知必会 - RadioGroup 和 ViewPager 联动</span>
               
-            
-          </h1>
+            </a>
         
+      </h1>
 
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-06-14T19:06:53+08:00" content="2016-06-14">
-              2016-06-14
-            </time>
-          </span>
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2016-09-20T19:17:24+08:00"
+              content="2016-09-20" >
+          09-20
+        </time>
+      </div>
 
-          
-
-          
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/06/14/mamp-list-file/" class="leancloud_visitors" data-flag-title="MAMP显示文件列表">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>MAMP是Mac下的一个PHP+Nginx+MySQL的集成环境，支持多站点，不同版本PHP。<br>今天有人请教MAMP如何显示文件列表的问题，这里记录一下。</p>
-<a id="more"></a>
-<h3 id="知识补充"><a href="#知识补充" class="headerlink" title="知识补充"></a>知识补充</h3><p>一个网站为了安全考虑，默认是禁止访问目录下的文件列表的。<br>当你请求一个目录时：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">st=&gt;start: 开始</span><br><span class="line">e=&gt;end: 结束</span><br><span class="line"></span><br><span class="line">cond1=&gt;condition: 是否存在index文件列表里的文件？</span><br><span class="line">cond2=&gt;condition: 是否允许显示文件列表？</span><br><span class="line">cond3=&gt;condition: 是否指定了404页面？</span><br><span class="line"></span><br><span class="line">op1=&gt;operation: 显示默认的文件</span><br><span class="line">op2=&gt;operation: 显示文件列表</span><br><span class="line">op3=&gt;operation: 显示指定的404页面</span><br><span class="line">op4=&gt;operation: 显示服务器级的404错误</span><br><span class="line"></span><br><span class="line">st-&gt;cond1-&gt;e</span><br><span class="line">cond1(yes)-&gt;op1-&gt;e</span><br><span class="line">cond1(no)-&gt;cond2(bottom)</span><br><span class="line"></span><br><span class="line">cond2(yes)-&gt;op2-&gt;e</span><br><span class="line">cond2(no)-&gt;cond3(right)</span><br><span class="line"></span><br><span class="line">cond3(yes)-&gt;op3-&gt;e</span><br><span class="line">cond3(no)-&gt;op4-&gt;e</span><br></pre></td></tr></table></figure>
-<ul>
-<li>默认的index文件列表（一般是index.html,index.htm,index.php）</li>
-<li>网站配置里404相关说明，可以指定404时访问的文件<h2 id="配置MAMP"><a href="#配置MAMP" class="headerlink" title="配置MAMP"></a>配置MAMP</h2>如图所示：<br><img src="http://img.blog.csdn.net/20160614185258257" alt="这里写图片描述"></li>
-</ul>
-<ol>
-<li>勾选 Indexs</li>
-<li>设置Directory index的值为<code>*</code></li>
-</ol>
-<p>这里有配置Nginx的配置文件开启访问文件列表的方式：</p>
-<blockquote>
-<p><a href="http://blog.csdn.net/testcs_dn/article/details/39644147" target="_blank" rel="external">http://blog.csdn.net/testcs_dn/article/details/39644147</a></p>
-</blockquote>
-<p>PS:</p>
-<blockquote>
-<p>你可以关注的我 <a href="https://github.com/likfe" target="_blank" rel="external">Github</a>、<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="external">CSDN</a> 和 <a href="http://weibo.com/zyansen" target="_blank" rel="external">微博</a></p>
-</blockquote>
-
-      
-    </div>
-    
-    <div>
-      
-        
-      
-    </div>
-
-    <div>
-      
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/PHP/" rel="tag">#PHP</a>
-          
-            <a href="/tags/MAMP/" rel="tag">#MAMP</a>
-          
-        </div>
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2016/06/12/amh-install-flarum/" rel="next" title="AMH 5.X下安装 Flarum">
-                <i class="fa fa-chevron-left"></i> AMH 5.X下安装 Flarum
-              </a>
-            
-          </div>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/06/15/android-studio-rename-package/" rel="prev" title="Android必知必会-Android Studio修改包名">
-                Android必知必会-Android Studio修改包名 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
+    </header>
   </article>
 
 
-
-    <div class="post-spread">
-      
-    </div>
+    
   </div>
+
+  
 
 
           </div>
@@ -395,10 +285,6 @@
 
 
           
-  <div class="comments" id="comments">
-    
-  </div>
-
 
         </div>
         
@@ -418,17 +304,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel ">
+      <section class="site-overview sidebar-panel  sidebar-panel-active ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="http://7d9l9j.com1.z0.glb.clouddn.com/avatar.jpeg"
@@ -493,17 +370,6 @@
 
       </section>
 
-      
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-            
-              
-            
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#背景"><span class="nav-text">背景</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#知识补充"><span class="nav-text">知识补充</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置MAMP"><span class="nav-text">配置MAMP</span></a></li></ol></div>
-            
-          </div>
-        </section>
       
 
     </div>
@@ -599,10 +465,6 @@
   
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
-
-
 
   
 
