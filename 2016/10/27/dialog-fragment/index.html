@@ -102,7 +102,7 @@
 虽然这两种方式都能实现相同的效果，但是它们各有自己适合的应用场景：
 
 方">
-<meta property="og:updated_time" content="2016-10-28T17:23:25.000Z">
+<meta property="og:updated_time" content="2016-10-28T17:26:21.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android 必知必会 - DialogFragment 使用总结">
 <meta name="twitter:description" content="背景Android 官方推荐使用 DialogFragment 来代替 Dialog ，可以让它具有更高的可复用性（降低耦合）和更好的便利性（很好的处理屏幕翻转的情况）。
@@ -379,6 +379,12 @@
 <p> 如果在网络请求未结束或者刚结束时关闭了当前 <code>DialogFragment</code> ，代码 <code>19</code> 行就会报空指针异常了，代码 <code>17</code> 的作用就是判断 <code>DialogFragment</code> 当前的状态是否为可用态，但是 <code>isVisible()</code> 以及 <code>isHide()</code> 对于方法 ① 无法正确返回其状态，方法 ② 则正常。方法 ① 和方法 ② 创建 <code>DialogFragment</code> 的一些状态并不是完全一致。</p>
 <p>PS：你也可以使用静态 <code>Handler</code> 结合弱引用等来处理异步操作，那样对 <code>DialogFragment</code> 状态的获取就不重要了。</p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>以上是个人在实际开发过程中的一点总结和看法，希望你能抱着存疑的态度进行尝试，如果有新的观点或者文章中有不正确的地方，欢迎和我联系。</p>
+<p>扩展阅读：</p>
+<ul>
+<li><a href="http://www.cnblogs.com/tianzhijiexian/p/4161811.html" target="_blank" rel="external">详细解读 DialogFragment</a></li>
+<li><a href="Android--&gt;Dialog/DialogFragment宽度高度修改/全屏,自定义样式">Android–&gt;Dialog/DialogFragment宽度高度修改/全屏,自定义样式</a></li>
+<li><a href="http://stackoverflow.com/questions/7189948/full-screen-dialogfragment-in-android" target="_blank" rel="external">Full Screen DialogFragment in Android</a></li>
+</ul>
 <p><strong>PS</strong>：你可以通过下面的方式和我联系</p>
 <blockquote>
 <ul>
