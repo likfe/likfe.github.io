@@ -11,6 +11,7 @@
 <hr>
 <p>最新的 Android 4.1（Jelly Bean）版本在上周的 Google I / O 大会上发布了，它有一大堆新功能和改进。 其中一个有趣的功能是<strong>应用程序加密</strong>，除了简短的说明还没有任何细节：“从 Jelly Bean 版本起，Google Play 中的付费应用程序在分发和存储之前，会使用设备特定的密钥加密”。缺乏细节当然会引起猜测，有些人甚至担心，当他们使用一个新的设备时必须回购他们的付费应用程序。 在本文中，我们将介绍如何在操作系统中实施应用加密，展示如何在不通过 Google Play 的情况下安装加密的应用，并了解 Google Play 如何提供加密的应用。</p>
 <h2 id="操作系统对加密应用程序的支持"><a href="#操作系统对加密应用程序的支持" class="headerlink" title="操作系统对加密应用程序的支持"></a>操作系统对加密应用程序的支持</h2><p>本文之前的版本是基于 Eclipse 框架和二进制的系统镜像，并且缺少一部分。由于 Jelly Bean 已经开源，下面的讨论已经修改，现在是基于 AOSP 代码（4.1.1_r1）。如果你回来重读本文，重点放在第二部分。</p>
+<a id="more"></a>
 <p>Android 上的应用可以通过几种不同的方式安装：</p>
 <ul>
 <li>通过应用商店（例如 <a href="https://play.google.com/store" target="_blank" rel="external">Google Play Store</a>，也称为 Android Market）</li>
@@ -66,6 +67,7 @@
 <p>这是在知乎上的原问题的描述。尝试了该问题下面的多个答案，并没有十分完美的方案，直到一个为公司编译 Android 系统的同事，最近无奈转战到 Android Studio 开始…..</p>
 <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>先了解一些基础点：</p>
 <h3 id="Android-Studio-中的六种依赖"><a href="#Android-Studio-中的六种依赖" class="headerlink" title="Android Studio 中的六种依赖"></a>Android Studio 中的六种依赖</h3><p>Compile，Provided，APK，Test compile，Debug compile，Release compile</p>
+<a id="more"></a>
 <p><strong>Compile</strong></p>
 <p>compile 是对所有的 build type 以及 favlors 都会参与编译并且打包到最终的 apk 文件中。</p>
 <p><strong>Provided</strong></p>
