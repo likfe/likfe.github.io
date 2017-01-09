@@ -4,6 +4,38 @@
   
     
     <entry>
+      <title><![CDATA[Android 必知必会- 解决在 Android Studio 中 framework 等 jar 包无法被引用的问题]]></title>
+      <url>http://likfe.com/2016/12/28/android-code-framework/</url>
+      <content type="html"><![CDATA[<blockquote>
+<p>在编译原生 Contacts 应用时需用到非公开的 API，需要引入 framework 等 jar 包，但在 Android Studio 中 SDK 带的 jar 包的优先级最高，导致引入的 framework 等 jar 包无法被引用，请问如何将 framework 等 jar 包的优先级调成最高？</p>
+<p>—— 知乎 <a href="https://www.zhihu.com/question/35628837" target="_blank" rel="external">在 Android Studio 中如何将依赖的 jar 包放在 SDK 的 android.jar 前？</a></p>
+</blockquote>
+<p>这是在知乎上的原问题的描述。尝试了该问题下面的多个答案，并没有十分完美的方案，直到一个为公司编译 Android 系统的同事，最近无奈转战到 Android Studio 开始…..</p>
+<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>先了解一些基础点：</p>
+<h3 id="Android-Studio-中的六种依赖"><a href="#Android-Studio-中的六种依赖" class="headerlink" title="Android Studio 中的六种依赖"></a>Android Studio 中的六种依赖</h3><p>Compile，Provided，APK，Test compile，Debug compile，Release compile</p>
+<p><strong>Compile</strong></p>
+<p>compile 是对所有的 build type 以及 favlors 都会参与编译并且打包到最终的 apk 文件中。</p>
+<p><strong>Provided</strong></p>
+<p>Provided 是对所有的 build type 以及 favlors 只在编译时使用，类似 eclipse 中的 external-libs ，只参与编译，不打包到最终 apk 。</p>
+<p><strong>APK</strong></p>
+<p>只会打包到 apk 文件中，而不参与编译，所以不能再代码中直接调用 jar 中的类或方法，否则在编译时会报错</p>
+<p><strong>Test compile</strong></p>
+<p>Test compile 仅仅是针对单元测试代码的编译编译以及最终打包测试 apk 时有效，而对正常的 debug 或者 release apk 包不起作用。</p>
+<p><strong>Debug compile</strong></p>
+<p>Debug compile 仅仅针对 debug 模式的编译和最终的 debug apk 打包。</p>
+<p><strong>Release compile</strong></p>
+<p>Release compile 仅仅针对 Release 模式的编译和最终的 Release apk 打包。</p>
+<p><strong>PS：</strong>我们会用到 <code>Provided</code> 引用。</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[android library version]]></title>
+      <url>http://likfe.com/2016/11/11/android-library-version/</url>
+      <content type="html"></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[Android 必知必会 - DialogFragment 使用总结]]></title>
       <url>http://likfe.com/2016/10/27/dialog-fragment/</url>
       <content type="html"><![CDATA[<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>Android 官方推荐使用 <code>DialogFragment</code> 来代替 <code>Dialog</code> ，可以让它具有更高的可复用性（降低耦合）和更好的便利性（很好的处理屏幕翻转的情况）。</p>
