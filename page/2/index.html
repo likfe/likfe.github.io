@@ -270,6 +270,122 @@
             
               
                 
+                <a class="post-title-link" href="/2016/08/17/android-multiDex/" itemprop="url">
+                  Android 项目开发填坑记 - 使用 MultiDex 解决 64K 限制
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-08-17T12:15:12+08:00" content="2016-08-17">
+              2016-08-17
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/08/17/android-multiDex/" class="leancloud_visitors" data-flag-title="Android 项目开发填坑记 - 使用 MultiDex 解决 64K 限制">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>Android 的 <code>classLoader</code> 在加载 APK 的时候限制了<code>class.dex</code> 包含的 Java 方法数，其总数不能超过65535（64K，<strong>不要再说成 65K</strong> 了，1K = 2^10 = 1024 , 64 * 1024 = 65535），Google 官方给出的解决方案是使用  <a href="https://developer.android.com/studio/build/multidex.html">Multidex</a> 。</p>
+<h2 id="启用-Multidex"><a href="#启用-Multidex" class="headerlink" title="启用 Multidex"></a>启用 Multidex</h2><p>基本要求：</p>
+<ul>
+<li>使用 Android Studio 开发工具</li>
+<li>Android SDK Build Tools &gt;= 21.1</li>
+<li>更新  Android Support Repository 到最新版本</li>
+</ul>
+<p>配置步骤：</p>
+<ol>
+<li>配置 Gradle build 来开启 multidex</li>
+<li>修改 manifest 来引用 MultiDexApplication 类</li>
+</ol>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/08/17/android-multiDex/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/08/16/create-splash-activity/" itemprop="url">
                   Android 必知必会 - Android Splash 页秒开之细节处理
                 </a>
@@ -1233,111 +1349,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/06/14/mamp-list-file/" itemprop="url">
-                  MAMP显示文件列表
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-06-14T19:06:53+08:00" content="2016-06-14">
-              2016-06-14
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/06/14/mamp-list-file/" class="leancloud_visitors" data-flag-title="MAMP显示文件列表">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>MAMP是Mac下的一个PHP+Nginx+MySQL的集成环境，支持多站点，不同版本PHP。<br>今天有人请教MAMP如何显示文件列表的问题，这里记录一下。</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/06/14/mamp-list-file/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1383,7 +1394,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">31</span>
+              <span class="site-state-item-count">32</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
