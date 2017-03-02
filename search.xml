@@ -4,6 +4,24 @@
   
     
     <entry>
+      <title><![CDATA[解决 Mac 下 Android Studio 不打印日志]]></title>
+      <url>http://likfe.com/2017/03/02/mac-android-no-log/</url>
+      <content type="html"><![CDATA[<p>在 Mac 下使用 Android Studio 时常会遇到 Android Monitor 突然不打印日志的情况，目前知道的有三个方法：</p>
+<ol>
+<li><p>重启 Android Studio</p>
+<p>这个不需要多说，点击 Android Studio 的 File =&gt; Invalidate caches / Restart ，选择 Just Restart</p>
+</li>
+<li><p>重启 adb</p>
+<p>命令行下输入：<code>adb kill-server</code> 关闭 adb，<code>adb start-server</code> 开启 adb 即可。</p>
+</li>
+<li><p>切换 adb 的 root/unroot 模式</p>
+<p>这个实际上还是重启了 adb 。 <code>adb root</code> 使 adb 默认进入 root 模式，<code>adb unroot</code> 使 adb 进入非 root 模式，切换模式会导致 adb 重启。</p>
+</li>
+</ol>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[Android 必知必会 - 根据包名判断 App 运行状态]]></title>
       <url>http://likfe.com/2017/02/07/android-is-app-running/</url>
       <content type="html"><![CDATA[<p>获取指定包名的 APP 是否还在后台运行，判断 APP 是否存活。</p>
