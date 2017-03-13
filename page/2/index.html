@@ -270,6 +270,120 @@
             
               
                 
+                <a class="post-title-link" href="/2016/08/29/android-simple-leancloud-sms/" itemprop="url">
+                  Android 必知必会 - 极简版 Leancloud 短信验证码功能
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-08-29T16:48:06+08:00" content="2016-08-29">
+              2016-08-29
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/08/29/android-simple-leancloud-sms/" class="leancloud_visitors" data-flag-title="Android 必知必会 - 极简版 Leancloud 短信验证码功能">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>使用 LeanCloud 的 REST API 来自定义短信验证码相关功能，不再需要臃肿的 SDK 。</p>
+<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>公司的项目仅仅使用了 Leancloud 短信功能来发送验证码，刚开始 Leancloud 的短信 SDK 还会和项目中的 <code>okhttp</code> 、<code>fastjson</code> 产生冲突，后来使用了独立的命名空间解决了冲突，但这样处理会导致项目中产生大量的冗余库。在仅仅使用短信验证码功能 SDK 的情况下会有下列文件被引入到项目中：</p>
+<ul>
+<li><code>avoscloud-sdk-v3.13.8.jar</code></li>
+<li><code>fastjson-1.1.39-leancloud.jar</code></li>
+<li><code>okhttp-2.6.0-leancloud.jar</code></li>
+<li><code>okio-1.6.0-leancloud.jar</code></li>
+</ul>
+<p>本来开发 Android 时，大家都尽量避免触碰 <code>64K</code> 个方法的限制，对于发验证码这样一个简单的事情，还需要引入大量的第三方库实在是难以接受。</p>
+<p>在目前开发的新项目中，我尽量控制第三方库的筛选和使用，不想引起启用 <code>Multidex</code> 导致应用启动慢的问题。直到我发现 Leancloud 的 <code>REST API</code> ，顿时觉得里面有搞头，对，<strong>大有搞头</strong>。</p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/08/29/android-simple-leancloud-sms/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/08/25/use-supportv4-RoundedBitmapDrawable/" itemprop="url">
                   Android 必知必会-使用 supportV4 的 RoundedBitmapDrawable 实现圆角
                 </a>
@@ -1237,118 +1351,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/06/28/androidTutorials-0/" itemprop="url">
-                  Android 开发指南-0
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-06-28T12:35:08+08:00" content="2016-06-28">
-              2016-06-28
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/06/28/androidTutorials-0/" class="leancloud_visitors" data-flag-title="Android 开发指南-0">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>无意间发现一个网站，主打IOS方面的教程，然而作为一个Android开发者，我就找了下网站里有没有Android的教程，还真有，这里就翻译一下。</p>
-<blockquote>
-<p>翻译目标教程：<a href="https://www.raywenderlich.com/category/android">https://www.raywenderlich.com/category/android</a></p>
-</blockquote>
-<h2 id="Android-开发指南"><a href="#Android-开发指南" class="headerlink" title="Android 开发指南"></a>Android 开发指南</h2><p>想用 <code>Java</code> 来开发 <code>Android APP</code> 吗？<br>看看我们收集的超过15免费安卓开发教程，用覆盖所有你知道的知识来开始!</p>
-<blockquote>
-<p>注意:网站所有的Android教程使用Java。如果您是初次接触Java，一定要先读一本Java主题的书。</p>
-</blockquote>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/06/28/androidTutorials-0/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1394,7 +1396,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">33</span>
+              <span class="site-state-item-count">34</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1404,7 +1406,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-count">25</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

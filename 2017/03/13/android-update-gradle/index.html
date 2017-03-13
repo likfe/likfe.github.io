@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Cafeting, likfe" />
+  <meta name="keywords" content="Android,AndroidStudio,Gradle," />
 
 
 
@@ -84,15 +84,25 @@
 
 
 
-<meta name="description" content="我的代码空间">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Cafeting">
-<meta property="og:url" content="http://likfe.com/tags/Flarum/index.html">
+<meta name="description" content="错误提示如下：
+12Gradle sync failed: Cause: error in opening zip fileConsult IDE log for more details (Help | Show Log)
+今天升级 2.2 到 2.3 后打开一个项目提示升级 gradle，就同意了，结果报了上面的错误。
+大概原因应该是下载的最新的 gradle 包有问题，新升级后配置的代理失效">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android Studio 升级 gradle 报错">
+<meta property="og:url" content="http://likfe.com/2017/03/13/android-update-gradle/index.html">
 <meta property="og:site_name" content="Cafeting">
-<meta property="og:description" content="我的代码空间">
+<meta property="og:description" content="错误提示如下：
+12Gradle sync failed: Cause: error in opening zip fileConsult IDE log for more details (Help | Show Log)
+今天升级 2.2 到 2.3 后打开一个项目提示升级 gradle，就同意了，结果报了上面的错误。
+大概原因应该是下载的最新的 gradle 包有问题，新升级后配置的代理失效">
+<meta property="og:updated_time" content="2017-03-13T03:23:42.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Cafeting">
-<meta name="twitter:description" content="我的代码空间">
+<meta name="twitter:title" content="Android Studio 升级 gradle 报错">
+<meta name="twitter:description" content="错误提示如下：
+12Gradle sync failed: Cause: error in opening zip fileConsult IDE log for more details (Help | Show Log)
+今天升级 2.2 到 2.3 后打开一个项目提示升级 gradle，就同意了，结果报了上面的错误。
+大概原因应该是下载的最新的 gradle 包有问题，新升级后配置的代理失效">
 
 
 
@@ -113,10 +123,10 @@
 
 
 
-  <link rel="canonical" href="http://likfe.com/tags/Flarum/"/>
+  <link rel="canonical" href="http://likfe.com/2017/03/13/android-update-gradle/"/>
 
 
-  <title> 标签: Flarum | Cafeting </title>
+  <title> Android Studio 升级 gradle 报错 | Cafeting </title>
 </head>
 
 <body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
@@ -137,7 +147,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
@@ -246,46 +256,144 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h2 >
-        Flarum
-        <small>标签</small>
-      </h2>
-    </div>
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Android Studio 升级 gradle 报错
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-03-13T11:22:25+08:00" content="2017-03-13">
+              2017-03-13
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+             <span id="/2017/03/13/android-update-gradle/" class="leancloud_visitors" data-flag-title="Android Studio 升级 gradle 报错">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
       
 
-  <article class="post post-type-normal" itemscope itemtype="//schema.org/Article">
-    <header class="post-header">
+      
+        <p>错误提示如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Gradle sync failed: Cause: error in opening zip file</span><br><span class="line">Consult IDE log for more details (Help | Show Log)</span><br></pre></td></tr></table></figure>
+<p>今天升级 2.2 到 2.3 后打开一个项目提示升级 gradle，就同意了，结果报了上面的错误。</p>
+<p>大概原因应该是下载的最新的 gradle 包有问题，新升级后配置的代理失效了。</p>
+<p>操作如下：</p>
+<ol>
+<li>删除项目目录下的 <code>.gradle/</code> 整个项目</li>
+<li>查看 <code>gradle/wrapper/gradle-warpper.properties</code> 的 <code>distributionUrl</code> 的 gradle 版本，比如是 3.3 ，然后去 <code>~/.gradle/warpper/dists/</code> 下删除对应版本的 gradle ,这里是 <code>gradle-3.3-all</code></li>
+<li>然后重启 Android Studio 让它重新同步即可</li>
+</ol>
 
-      <h1 class="post-title">
+      
+    </div>
+
+    <div>
+      
         
-            <a class="post-title-link" href="/2016/06/12/amh-install-flarum/" itemprop="url">
-              
-                <span itemprop="name">AMH 5.X下安装 Flarum</span>
-              
-            </a>
+
+      
+    </div>
+
+    <div>
+      
         
-      </h1>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-06-12T16:16:00+08:00"
-              content="2016-06-12" >
-          06-12
-        </time>
-      </div>
+      
+    </div>
 
-    </header>
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Android/" rel="tag">#Android</a>
+          
+            <a href="/tags/AndroidStudio/" rel="tag">#AndroidStudio</a>
+          
+            <a href="/tags/Gradle/" rel="tag">#Gradle</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/03/02/mac-android-no-log/" rel="next" title="解决 Mac 下 Android Studio 不打印日志">
+                <i class="fa fa-chevron-left"></i> 解决 Mac 下 Android Studio 不打印日志
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </article>
 
 
-    
-  </div>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -293,6 +401,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -312,8 +424,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="http://7d9l9j.com1.z0.glb.clouddn.com/avatar.jpeg"
@@ -376,6 +497,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -472,6 +604,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
 
   
 
