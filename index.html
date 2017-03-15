@@ -270,6 +270,121 @@
             
               
                 
+                <a class="post-title-link" href="/2017/03/15/android-studio-exploded-aar/" itemprop="url">
+                  Android 必知必会 - Android Studio 2.3 找回 exploded-aar 目录
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-03-15T18:45:35+08:00" content="2017-03-15">
+              2017-03-15
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+             <span id="/2017/03/15/android-studio-exploded-aar/" class="leancloud_visitors" data-flag-title="Android 必知必会 - Android Studio 2.3 找回 exploded-aar 目录">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>升级到 Android Studio 2.3 后，Gradle Plugin 也升级到 2.3.0，对应推荐使用的 Gradle 版本是 3.3。</p>
+<p>这时候会发现项目目录下 <code>{module name}/build/intermediates/exploded-aar/</code> 目录没了，经过一番查找，发现这并不是一个 Bug，是官方刻意为之，它会在 <code>{user name}/.android/build-cache</code> 下生成一部分缓存文件，来代替 <code>exploded-aar</code> ，如果需要生成它，可以配置项目目录下的 <code>gradle.properties</code> ，添加一行内容：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">android.enableBuildCache=false</span><br></pre></td></tr></table></figure>
+<p>然后重建项目即可在 <code>{module name}/build/intermediates/</code> 看到 <strong>exploded-aar</strong> 目录了。</p>
+<p>想重新开启 <code>BuildCache</code>  功能，可以修改为 <code>android.enableBuildCache=true</code> 或者直接删除本行内容即可。</p>
+<p><strong>PS</strong>：你可以通过下面的方式和我联系</p>
+<blockquote>
+<ul>
+<li>微博：<a href="http://weibo.com/zyansen" target="_blank" rel="external">cafeting</a></li>
+<li>Github： <a href="https://github.com/likfe" target="_blank" rel="external">likfe</a></li>
+<li>CSDN：<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="external">他叫自己Mr.张</a> </li>
+</ul>
+</blockquote>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2017/03/13/android-update-gradle/" itemprop="url">
                   Android Studio 升级 gradle 报错
                 </a>
@@ -1246,121 +1361,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/08/31/android-glide-roundedBitmapTransformation/" itemprop="url">
-                  Android 必知必会 - Glide 加载圆形和圆角图片的两种方法
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-08-31T16:01:27+08:00" content="2016-08-31">
-              2016-08-31
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/08/31/android-glide-roundedBitmapTransformation/" class="leancloud_visitors" data-flag-title="Android 必知必会 - Glide 加载圆形和圆角图片的两种方法">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>两种使用 <code>BitmapTransformation</code> 来实现<code>Glide</code> 加载圆形图片和圆角图片的方法。</p>
-<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p><code>Glide</code> 并不能直接支持 <code>Round Pictures</code> ，需要使用 <code>BitmapTransformation</code> 来进行处理。</p>
-<blockquote>
-<p>Round Pictures: <code>CircleImageView</code> / <code>CircularImageView</code> / <code>RoundedImageView</code> are known to have <a href="https://github.com/bumptech/glide/issues?q=is%3Aissue+CircleImageView+OR+CircularImageView+OR+RoundedImageView">issues</a> with TransitionDrawable (.crossFade() with .thumbnail() or .placeholder()) and animated GIFs, use a BitmapTransformation (.circleCrop() will be available in v4) or .dontAnimate() to fix the issue.</p>
-</blockquote>
-<p>这里介绍下网上常见的方式和使用 <code>RoundedBitmapDrawable</code> 两种方法，本质上是差不多的：</p>
-<ul>
-<li>使用 <code>Canvas</code> 和 <code>Paint</code> 来绘制</li>
-<li>使用 <code>Android.support.v4.graphics.drawable.RoundedBitmapDrawable</code> </li>
-</ul>
-<p><strong>PS：</strong> <code>RoundedBitmapDrawable</code> 是 <code>support.v4</code> 下的一个类，想了解更多，可以阅读我之前的文章：<a href="http://blog.csdn.net/ys743276112/article/details/52316588">Android 必知必会-使用 supportV4 的 RoundedBitmapDrawable 实现圆角</a> 。</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/08/31/android-glide-roundedBitmapTransformation/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1406,7 +1406,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">34</span>
+              <span class="site-state-item-count">35</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
