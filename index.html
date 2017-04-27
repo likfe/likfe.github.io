@@ -179,14 +179,6 @@
         </li>
       
         
-        <li class="menu-item menu-item-categories">
-          <a href="/categories" rel="section">
-            
-            分类
-          </a>
-        </li>
-      
-        
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
@@ -248,6 +240,116 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/03/25/tp3-x-all-string/" itemprop="url">
+                  ThinkPHP 转换数据库查询出的数据到对应类型
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-03-25T22:20:22+08:00" content="2017-03-25">
+              2017-03-25
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+             <span id="/2017/03/25/tp3-x-all-string/" class="leancloud_visitors" data-flag-title="ThinkPHP 转换数据库查询出的数据到对应类型">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="ThinkPHP-转换数据库查询出的数据到对应类型"><a href="#ThinkPHP-转换数据库查询出的数据到对应类型" class="headerlink" title="ThinkPHP 转换数据库查询出的数据到对应类型"></a>ThinkPHP 转换数据库查询出的数据到对应类型</h1><p>最近使用 ThinkPHP3.2.3 进行 API 开发，发现 ThinkPHP3.x 查询数据库返回所有字段值类型都是 String。以前开发 web 的时候没怎么注意这个，现在发现用到 API 开发很难办，数据类型不对，不能每个字段都让客户端自己强制转换一下。</p>
+<p>查资料后发现 ThinkPHP3.x 的 Model.class.php，提供了 <code>_parseType</code> 方法，在查询完以后进行类型转换，但需要我们手工调一下。</p>
+<p>需要自己写一个 Model 基类:</p>
+<p><code>MBaseModel.class.php</code> 继承自 <code>Model</code></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">use</span> <span class="title">Think</span>\<span class="title">Model</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BaseModel</span> <span class="keyword">extends</span> <span class="title">Model</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">protected</span> <span class="function"><span class="keyword">function</span> <span class="title">_after_select</span><span class="params">(&amp;$resultSet, $options)</span></span><br><span class="line">    </span>&#123;</span><br><span class="line">        <span class="keyword">parent</span>::_after_select($resultSet,$options);</span><br><span class="line">        <span class="keyword">foreach</span> ($resultSet <span class="keyword">as</span> &amp;$result) &#123;</span><br><span class="line">            $this-&gt;_after_find($result, $options);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">protected</span> <span class="function"><span class="keyword">function</span> <span class="title">_after_find</span><span class="params">(&amp;$result, $options)</span></span><br><span class="line">    </span>&#123;</span><br><span class="line">        <span class="keyword">parent</span>::_after_find($result,$options);</span><br><span class="line">        <span class="keyword">foreach</span> ($result <span class="keyword">as</span> $field =&gt; $value) &#123;</span><br><span class="line">            $this-&gt;_parseType($result, $field);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>然后所有自己写的 Model 类都继承自 MBaseModel.</p>
+<p><strong>注意：</strong>必须把上面两个方法写到 <code>Model</code> 的子类中。</p>
+<p>本来，这样已经搞定了，但发现 Model.class.php 的 <code>_parseType</code> 方法里有个低级 bug，看图</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
     
       
 
@@ -1246,113 +1348,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/09/19/android-dynamic-set-statusBar/" itemprop="url">
-                  Android 必知必会 - 动态切换着色模式和全屏模式
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-09-19T16:59:27+08:00" content="2016-09-19">
-              2016-09-19
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/09/19/android-dynamic-set-statusBar/" class="leancloud_visitors" data-flag-title="Android 必知必会 - 动态切换着色模式和全屏模式">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>通过代码动态切换页面的<strong>着色模式</strong>和<strong>全屏模式</strong>，兼容 <code>Android 4.4 +</code> 。</p>
-<p>本文假设读者已经了解着色模式和全屏模式（沉浸模式）。</p>
-<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>公司的 APP 设计图仅有 iOS 版的，对于 Android 平台，它整体算是着色模式，但是在个人页面是全屏模式（沉浸模式），实现设计图时，我使用的是一个 <code>Activity</code> + 四个 <code>Fragment</code> 实现的。</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/09/19/android-dynamic-set-statusBar/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1398,7 +1393,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">35</span>
+              <span class="site-state-item-count">36</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
