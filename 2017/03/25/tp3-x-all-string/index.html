@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="PHP," />
+  <meta name="keywords" content="PHP,ThinkPHP," />
 
 
 
@@ -84,19 +84,19 @@
 
 
 
-<meta name="description" content="ThinkPHP 转换数据库查询出的数据到对应类型最近使用 ThinkPHP3.2.3 进行 API 开发，发现 ThinkPHP3.x 查询数据库返回所有字段值类型都是 String。以前开发 web 的时候没怎么注意这个，现在发现用到 API 开发很难办，数据类型不对，不能每个字段都让客户端自己强制转换一下。
-查资料后发现 ThinkPHP3.x 的 Model.class.php，提供了 _">
+<meta name="description" content="最近使用 ThinkPHP3.2.3 进行 API 开发，发现 ThinkPHP3.x 查询数据库返回所有字段值类型都是 String。以前开发 web 的时候没怎么注意这个，现在发现用到 API 开发很难办，数据类型不对，不能每个字段都让客户端自己强制转换一下。
+查资料后发现 ThinkPHP3.x 的 Model.class.php，提供了 _parseType 方法，在查询完以后进行类型转换">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ThinkPHP 转换数据库查询出的数据到对应类型">
 <meta property="og:url" content="http://likfe.com/2017/03/25/tp3-x-all-string/index.html">
 <meta property="og:site_name" content="Cafeting">
-<meta property="og:description" content="ThinkPHP 转换数据库查询出的数据到对应类型最近使用 ThinkPHP3.2.3 进行 API 开发，发现 ThinkPHP3.x 查询数据库返回所有字段值类型都是 String。以前开发 web 的时候没怎么注意这个，现在发现用到 API 开发很难办，数据类型不对，不能每个字段都让客户端自己强制转换一下。
-查资料后发现 ThinkPHP3.x 的 Model.class.php，提供了 _">
-<meta property="og:updated_time" content="2017-03-25T15:42:16.000Z">
+<meta property="og:description" content="最近使用 ThinkPHP3.2.3 进行 API 开发，发现 ThinkPHP3.x 查询数据库返回所有字段值类型都是 String。以前开发 web 的时候没怎么注意这个，现在发现用到 API 开发很难办，数据类型不对，不能每个字段都让客户端自己强制转换一下。
+查资料后发现 ThinkPHP3.x 的 Model.class.php，提供了 _parseType 方法，在查询完以后进行类型转换">
+<meta property="og:updated_time" content="2017-05-08T08:05:29.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ThinkPHP 转换数据库查询出的数据到对应类型">
-<meta name="twitter:description" content="ThinkPHP 转换数据库查询出的数据到对应类型最近使用 ThinkPHP3.2.3 进行 API 开发，发现 ThinkPHP3.x 查询数据库返回所有字段值类型都是 String。以前开发 web 的时候没怎么注意这个，现在发现用到 API 开发很难办，数据类型不对，不能每个字段都让客户端自己强制转换一下。
-查资料后发现 ThinkPHP3.x 的 Model.class.php，提供了 _">
+<meta name="twitter:description" content="最近使用 ThinkPHP3.2.3 进行 API 开发，发现 ThinkPHP3.x 查询数据库返回所有字段值类型都是 String。以前开发 web 的时候没怎么注意这个，现在发现用到 API 开发很难办，数据类型不对，不能每个字段都让客户端自己强制转换一下。
+查资料后发现 ThinkPHP3.x 的 Model.class.php，提供了 _parseType 方法，在查询完以后进行类型转换">
 
 
 
@@ -312,14 +312,19 @@
       
 
       
-        <h1 id="ThinkPHP-转换数据库查询出的数据到对应类型"><a href="#ThinkPHP-转换数据库查询出的数据到对应类型" class="headerlink" title="ThinkPHP 转换数据库查询出的数据到对应类型"></a>ThinkPHP 转换数据库查询出的数据到对应类型</h1><p>最近使用 ThinkPHP3.2.3 进行 API 开发，发现 ThinkPHP3.x 查询数据库返回所有字段值类型都是 String。以前开发 web 的时候没怎么注意这个，现在发现用到 API 开发很难办，数据类型不对，不能每个字段都让客户端自己强制转换一下。</p>
+        <p>最近使用 ThinkPHP3.2.3 进行 API 开发，发现 ThinkPHP3.x 查询数据库返回所有字段值类型都是 String。以前开发 web 的时候没怎么注意这个，现在发现用到 API 开发很难办，数据类型不对，不能每个字段都让客户端自己强制转换一下。</p>
 <p>查资料后发现 ThinkPHP3.x 的 Model.class.php，提供了 <code>_parseType</code> 方法，在查询完以后进行类型转换，但需要我们手工调一下。</p>
+<a id="more"></a>
 <p>需要自己写一个 Model 基类:</p>
 <p><code>MBaseModel.class.php</code> 继承自 <code>Model</code></p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">use</span> <span class="title">Think</span>\<span class="title">Model</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BaseModel</span> <span class="keyword">extends</span> <span class="title">Model</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">protected</span> <span class="function"><span class="keyword">function</span> <span class="title">_after_select</span><span class="params">(&amp;$resultSet, $options)</span></span><br><span class="line">    </span>&#123;</span><br><span class="line">        <span class="keyword">parent</span>::_after_select($resultSet,$options);</span><br><span class="line">        <span class="keyword">foreach</span> ($resultSet <span class="keyword">as</span> &amp;$result) &#123;</span><br><span class="line">            $this-&gt;_after_find($result, $options);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">protected</span> <span class="function"><span class="keyword">function</span> <span class="title">_after_find</span><span class="params">(&amp;$result, $options)</span></span><br><span class="line">    </span>&#123;</span><br><span class="line">        <span class="keyword">parent</span>::_after_find($result,$options);</span><br><span class="line">        <span class="keyword">foreach</span> ($result <span class="keyword">as</span> $field =&gt; $value) &#123;</span><br><span class="line">            $this-&gt;_parseType($result, $field);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>然后所有自己写的 Model 类都继承自 MBaseModel.</p>
 <p><strong>注意：</strong>必须把上面两个方法写到 <code>Model</code> 的子类中。</p>
-<p>本来，这样已经搞定了，但发现 Model.class.php 的 <code>_parseType</code> 方法里有个低级 bug，看图</p>
+<p>本来，这样已经搞定了，但发现 Model.class.php 的 <code>_parseType</code> 方法里有个低级 bug：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">	<span class="comment">/**</span><br><span class="line">     * 数据类型检测</span><br><span class="line">     * <span class="doctag">@access</span> protected</span><br><span class="line">     * <span class="doctag">@param</span> mixed $data 数据</span><br><span class="line">     * <span class="doctag">@param</span> string $key 字段名</span><br><span class="line">     * <span class="doctag">@return</span> void</span><br><span class="line">     */</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="function"><span class="keyword">function</span> <span class="title">_parseType</span><span class="params">(&amp;$data,$key)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!<span class="keyword">isset</span>($this-&gt;options[<span class="string">'bind'</span>][<span class="string">':'</span>.$key]) &amp;&amp; <span class="keyword">isset</span>($this-&gt;fields[<span class="string">'_type'</span>][$key]))&#123;</span><br><span class="line">            $fieldType = strtolower($this-&gt;fields[<span class="string">'_type'</span>][$key]);</span><br><span class="line">            <span class="keyword">if</span>(<span class="keyword">false</span> !== strpos($fieldType,<span class="string">'enum'</span>))&#123;</span><br><span class="line">                <span class="comment">// 支持ENUM类型优先检测</span></span><br><span class="line">            &#125;<span class="keyword">elseif</span>(<span class="keyword">false</span> === strpos($fieldType,<span class="string">'bigint'</span>) &amp;&amp; <span class="keyword">false</span> !== strpos($fieldType,<span class="string">'int'</span>)) &#123;</span><br><span class="line">                $data[$key]   =  intval($data[$key]);</span><br><span class="line">            &#125;<span class="keyword">elseif</span>(<span class="keyword">false</span> !== strpos($fieldType,<span class="string">'float'</span>) || <span class="keyword">false</span> !== strpos($fieldType,<span class="string">'double'</span>))&#123;</span><br><span class="line">                $data[$key]   =  floatval($data[$key]);</span><br><span class="line">            &#125;<span class="keyword">elseif</span>(<span class="keyword">false</span> !== strpos($fieldType,<span class="string">'bool'</span>))&#123;</span><br><span class="line">                $data[$key]   =  (bool)$data[$key];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 上面第13行修改为</span></span><br><span class="line">            &#125;<span class="keyword">elseif</span>(<span class="keyword">false</span> !== strpos($fieldType,<span class="string">'bigint'</span>) || <span class="keyword">false</span> !== strpos($fieldType,<span class="string">'int'</span>) || <span class="keyword">false</span> !== strpos($fieldType,<span class="string">'tinyint'</span>)) &#123;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>原文链接：<a href="https://www.pocketdigi.com/20160411/1469.html?utm_source=tuicool&amp;utm_medium=referral" target="_blank" rel="external">https://www.pocketdigi.com/20160411/1469.html?utm_source=tuicool&amp;utm_medium=referral</a></p>
+</blockquote>
 
       
     </div>
@@ -343,6 +348,8 @@
         <div class="post-tags">
           
             <a href="/tags/PHP/" rel="tag">#PHP</a>
+          
+            <a href="/tags/ThinkPHP/" rel="tag">#ThinkPHP</a>
           
         </div>
       
@@ -435,7 +442,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">25</span>
+                <span class="site-state-item-count">26</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -484,7 +491,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ThinkPHP-转换数据库查询出的数据到对应类型"><span class="nav-text">ThinkPHP 转换数据库查询出的数据到对应类型</span></a></li></ol></div>
+              <p class="post-toc-empty">此文章未包含目录</p>
             
           </div>
         </section>
