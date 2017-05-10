@@ -262,6 +262,120 @@
             
               
                 
+                <a class="post-title-link" href="/2016/09/20/androd-radioGroup-and-viewPager/" itemprop="url">
+                  Android 必知必会 - RadioGroup 和 ViewPager 联动
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-09-20T19:17:24+08:00" content="2016-09-20">
+              2016-09-20
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/09/20/androd-radioGroup-and-viewPager/" class="leancloud_visitors" data-flag-title="Android 必知必会 - RadioGroup 和 ViewPager 联动">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>使用 RadioGroup 和 ViewPager 实现更加可定制的效果。</p>
+<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>昨天设计图刚出一点，写了<a href="http://blog.csdn.net/ys743276112/article/details/52587509">《Android 必知必会 - 动态切换着色模式和全屏模式》</a>，记录了动态修改页面显示模式的方式。今天又有新图，不过设计师只考虑 iOS 平台的设计，拿到设计图发现 <code>TabLayout + ViewPager</code> 的套路实现起来很麻烦，考虑了下，为了方便，决定使用 <code>RadioGroup + ViewPager</code> 来实现，之所以使用 <code>RadioGroup</code> ，是因为它内部多个 <code>RadioButton</code> 的状态是互斥的，也就是只有一个是选中状态，不需要我们进行多余的处理。总体来说比较简单，就是细节略多了点。</p>
+<p>主要知识点：</p>
+<ul>
+<li>自定义 <code>RadioButton</code> 样式 : <code>selector + shape</code></li>
+<li>自定义 <code>RadioButton</code> 文字样式 : <code>selector</code></li>
+<li><code>ViewPager + Fragment</code> 及其适配器</li>
+<li><code>RadioGroup</code> 状态监听</li>
+<li><code>ViewPager</code> 页面切换监听</li>
+</ul>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/09/20/androd-radioGroup-and-viewPager/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/09/19/android-dynamic-set-statusBar/" itemprop="url">
                   Android 必知必会 - 动态切换着色模式和全屏模式
                 </a>
@@ -1234,118 +1348,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/07/17/android-postOpenProjectNote/" itemprop="url">
-                  Android必知必会-发布开源Android项目注意事项
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-07-17T19:03:07+08:00" content="2016-07-17">
-              2016-07-17
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/07/17/android-postOpenProjectNote/" class="leancloud_visitors" data-flag-title="Android必知必会-发布开源Android项目注意事项">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="1-合理配置-gitignore-文件"><a href="#1-合理配置-gitignore-文件" class="headerlink" title="1. 合理配置 .gitignore 文件"></a>1. 合理配置 <code>.gitignore</code> 文件</h2><p>配置 <code>.gitignore</code> 可以排除一些非必要文件和保护保密信息，下面是在项目根目录下 <code>.gitignore</code> 的配置：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">.gradle</span><br><span class="line">/local.properties</span><br><span class="line">/gradle.properties</span><br><span class="line">/build</span><br><span class="line">*.log</span><br><span class="line">*.apk</span><br><span class="line">*.ap_</span><br><span class="line">/*/build/</span><br></pre></td></tr></table></figure>
-<p>这里介绍下一些参数的意义：</p>
-<ul>
-<li><code>/local.properties</code>：这个文件里默认写的有本地 SDK 的位置，多人协作时一般要排除，仅仅做开源项目可以不排除。</li>
-<li><code>/gradle.properties</code>：一般写有 gradle 的 jvm 、代理和打包签名文件 Key 的一些信息，根据需要进行处理，一般情况下需要排除，其他情况见下文。</li>
-<li><code>/build</code>和<code>/*/build/</code>：排除 build 项目生成的文件，文件较大，且 IDE 可以自动生成，无特殊需求，<strong>必须排除</strong>。</li>
-</ul>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/07/17/android-postOpenProjectNote/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1391,7 +1393,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">36</span>
+              <span class="site-state-item-count">37</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
