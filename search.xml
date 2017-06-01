@@ -49,6 +49,22 @@
 </blockquote>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">super</span>.onCreate(savedInstanceState);</span><br><span class="line">	setContentView(R.layout.activity_main);</span><br><span class="line">  	findViewById(R.id.bt_menu).setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</span><br><span class="line">    	<span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</span><br><span class="line">			TextView title = (TextView) findViewById(R.id.tv_title);</span><br><span class="line">			TopFragment.getInstant(title.getBottom()).show(getSupportFragmentManager(), <span class="string">"tags"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>注意：如果当前 Activity 使用了<strong>沉浸式状态栏</strong>，需要使用 <code>TopFragment.getInstant(int y, boolean isTranslucentDecor)</code> 方法，并且 <code>isTranslucentDecor</code> 传值为 <code>true</code> 。</p>
+<h3 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h3><table>
+<thead>
+<tr>
+<th style="text-align:left">未使用沉浸式状态栏、 <code>isTranslucentDecor</code> 传值为 <code>false</code> ，位置正确</th>
+<th style="text-align:left">使用沉浸式状态栏、 <code>isTranslucentDecor</code> 传值为 <code>false</code> ，位置定位差个状态栏高度</th>
+<th style="text-align:left">使用沉浸式状态栏、 <code>isTranslucentDecor</code> 传值为 <code>true</code> ，位置正确</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><img src="http://img.blog.csdn.net/20170601183835306?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQveXM3NDMyNzYxMTI=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="s1"></td>
+<td style="text-align:left"><img src="http://img.blog.csdn.net/20170601183850744?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQveXM3NDMyNzYxMTI=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="s2"></td>
+<td style="text-align:left"><img src="http://img.blog.csdn.net/20170601183904651?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQveXM3NDMyNzYxMTI=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="s3"></td>
+</tr>
+</tbody>
+</table>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>总的来说，这里基本完成了要求的效果，但是定位只能指定其顶部开始的位置，不方便底部定位到某个 View 的上面，因为高度自适应的话，在页面渲染完成前是不能知道它的高度的。当然，你可以使用固定高度布局的方式来实现随意定位。</p>
 <p>有什么意见或者问题可以随时联系我，共同探讨学习：</p>
 <blockquote>
