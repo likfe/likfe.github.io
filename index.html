@@ -262,6 +262,116 @@
             
               
                 
+                <a class="post-title-link" href="/2017/06/01/android-dialogfragment-as-pop/" itemprop="url">
+                  Android 必知必会 - DialogFragment 实现类似 PopupWindow 效果
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-06-01T10:56:29+08:00" content="2017-06-01">
+              2017-06-01
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+             <span id="/2017/06/01/android-dialogfragment-as-pop/" class="leancloud_visitors" data-flag-title="Android 必知必会 - DialogFragment 实现类似 PopupWindow 效果">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>近期有网友根据 <a href="http://blog.csdn.net/ys743276112/article/details/52962046">Android 必知必会 - DialogFragment 使用总结</a> 做一些业务，但是目标却是用 DialogFragment 实现类似 PopupWindow 效果：</p>
+<ul>
+<li>只拦截自身所占空间部分的事件，其余空间的点击事件不处理</li>
+<li>可以根据某个 View 定位自身位置</li>
+</ul>
+<p>虽然在功能上 PopupWindow 更符合需要，但是使用 DialogFragment 代码更简洁、更方便封装功能模块。</p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2017/06/01/android-dialogfragment-as-pop/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2017/05/10/android-sys-language/" itemprop="url">
                   Android 项目开发填坑记 - 获取系统语言(兼容7.0)
                 </a>
@@ -1229,121 +1339,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/10/27/dialog-fragment/" itemprop="url">
-                  Android 必知必会 - DialogFragment 使用总结
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-27T23:30:48+08:00" content="2016-10-27">
-              2016-10-27
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/10/27/dialog-fragment/" class="leancloud_visitors" data-flag-title="Android 必知必会 - DialogFragment 使用总结">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>Android 官方推荐使用 <code>DialogFragment</code> 来代替 <code>Dialog</code> ，可以让它具有更高的可复用性（降低耦合）和更好的便利性（很好的处理屏幕翻转的情况）。</p>
-<p>而创建 <code>DialogFragment</code> 有两种方式：</p>
-<ol>
-<li>覆写其 <code>onCreateDialog</code> 方法 — ①</li>
-<li>覆写其 <code>onCreateView</code> 方法 — ②</li>
-</ol>
-<p>虽然这两种方式都能实现相同的效果，但是它们各有自己适合的应用场景：</p>
-<ol>
-<li>方法 ①，一般用于创建替代传统的 <code>Dialog</code> 对话框的场景，UI 简单，功能单一。</li>
-<li>方法 ②，一般用于创建复杂内容弹窗或全屏展示效果的场景，UI 复杂，功能复杂，一般有网络请求等异步操作。</li>
-</ol>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/10/27/dialog-fragment/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1389,7 +1384,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">37</span>
+              <span class="site-state-item-count">38</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1399,7 +1394,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">26</span>
+                <span class="site-state-item-count">27</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
