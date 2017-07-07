@@ -94,7 +94,7 @@
 <meta property="og:description" content="关键词：GridView ListView EmptyView SwipeRefreshLayout
 在使用 GridView、ListView 时经常需要处理无数据的情况，给用户一些必要的提示。而 GridView 和 ListView 可以使用 setEmptyView() 方法来设置无数据时展示的  View 。
 本文讲一下 EmptyView 的基本用法以及如何配合 SwipeRefres">
-<meta property="og:updated_time" content="2017-07-07T10:10:48.000Z">
+<meta property="og:updated_time" content="2017-07-07T10:31:46.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android 必知必会 - EmptyView">
 <meta name="twitter:description" content="关键词：GridView ListView EmptyView SwipeRefreshLayout
@@ -348,7 +348,7 @@
 </li>
 </ul>
 <p><strong>关键代码：</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">super</span>.onCreate(savedInstanceState);</span><br><span class="line">	setContentView(R.layout.xxx);</span><br><span class="line">	mDataView = (GridView|ListView) findViewById(R.id.dataView);</span><br><span class="line">	adapter = xxxx;</span><br><span class="line">	mDataView.setAdapter(adapter);</span><br><span class="line">	mDataView.setEmptyView(findViewById(R.id.mDataView));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">super</span>.onCreate(savedInstanceState);</span><br><span class="line">	setContentView(R.layout.xxx);</span><br><span class="line">	mDataView = (GridView|ListView) findViewById(R.id.dataView);</span><br><span class="line">	adapter = xxxx;</span><br><span class="line">	mDataView.setAdapter(adapter);</span><br><span class="line">	mDataView.setEmptyView(findViewById(R.id.mEmptyView));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>PS：务必在 <code>setAdapter()</code> 之后调用 <code>setEmptyView()</code> 。</p>
 <h3 id="配合-SwipeRefreshLayout-使用"><a href="#配合-SwipeRefreshLayout-使用" class="headerlink" title="配合 SwipeRefreshLayout 使用"></a>配合 SwipeRefreshLayout 使用</h3><p>配合 SwipeRefreshLayout 使用和基础用法类似，唯一需要注意的是布局的嵌套关系。</p>
 <p><strong>布局：</strong></p>
