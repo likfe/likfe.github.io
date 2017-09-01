@@ -46,9 +46,6 @@
 <h3 id="3-隐式启动第三方应用"><a href="#3-隐式启动第三方应用" class="headerlink" title="3.隐式启动第三方应用"></a>3.隐式启动第三方应用</h3><p>此方式多用于启动系统中的功能性应用，比如打电话、发邮件、预览图片、使用默认浏览器打开一个网页等。</p>
 <blockquote>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt; Intent intent = <span class="keyword">new</span> Intent();</span><br><span class="line">&gt; intent.setAction(action);</span><br><span class="line">&gt; intent.addCategory(category);</span><br><span class="line">&gt; intent.setDataAndType(<span class="string">"abc://www.dfg.com"</span>,<span class="string">"image/gif"</span>);</span><br><span class="line">&gt; startActivity(intent);</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
-</blockquote>
-<p>&gt;</p>
-<blockquote>
 <ul>
 <li>条件1：IntentFilter 至少有一个 action 至少有一个Category，可以没有 Data 和 Type</li>
 </ul>
