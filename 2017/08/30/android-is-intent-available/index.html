@@ -1,0 +1,939 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Android,Intent," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.2" />
+
+
+
+
+
+
+<meta name="description" content="本文主要记录：
+
+使用 Intent 打开第三方应用或指定 Activity 的三种方式
+使用上面三种方式时分别如何判断该 Intent 能否被解析
+判断该 Intent 能否被解析中可能出现的遗漏
+
+基础知识1. App 的入口 Activity 与其 icon一个普通的应用默认会有一个入口 Activity，它在 AndroidManifest.xml 中一般这样写：
+12345678910&amp;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android 必知必会 - 使用 Intent 打开第三方应用及验证可用性">
+<meta property="og:url" content="http://likfe.com/2017/08/30/android-is-intent-available/index.html">
+<meta property="og:site_name" content="Cafeting">
+<meta property="og:description" content="本文主要记录：
+
+使用 Intent 打开第三方应用或指定 Activity 的三种方式
+使用上面三种方式时分别如何判断该 Intent 能否被解析
+判断该 Intent 能否被解析中可能出现的遗漏
+
+基础知识1. App 的入口 Activity 与其 icon一个普通的应用默认会有一个入口 Activity，它在 AndroidManifest.xml 中一般这样写：
+12345678910&amp;">
+<meta property="og:updated_time" content="2017-09-01T10:09:28.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android 必知必会 - 使用 Intent 打开第三方应用及验证可用性">
+<meta name="twitter:description" content="本文主要记录：
+
+使用 Intent 打开第三方应用或指定 Activity 的三种方式
+使用上面三种方式时分别如何判断该 Intent 能否被解析
+判断该 Intent 能否被解析中可能出现的遗漏
+
+基础知识1. App 的入口 Activity 与其 icon一个普通的应用默认会有一个入口 Activity，它在 AndroidManifest.xml 中一般这样写：
+12345678910&amp;">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://likfe.com/2017/08/30/android-is-intent-available/"/>
+
+
+  <title> Android 必知必会 - 使用 Intent 打开第三方应用及验证可用性 | Cafeting </title>
+</head>
+
+<body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Cafeting</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">一个人的行走范围，就是他的世界。</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Android 必知必会 - 使用 Intent 打开第三方应用及验证可用性
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-08-30T16:54:23+08:00" content="2017-08-30">
+              2017-08-30
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+             <span id="/2017/08/30/android-is-intent-available/" class="leancloud_visitors" data-flag-title="Android 必知必会 - 使用 Intent 打开第三方应用及验证可用性">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>本文主要记录：</p>
+<ul>
+<li>使用 Intent 打开第三方应用或指定 Activity 的三种方式</li>
+<li>使用上面三种方式时分别如何判断该 Intent 能否被解析</li>
+<li>判断该 Intent 能否被解析中可能出现的遗漏</li>
+</ul>
+<h2 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h2><h3 id="1-App-的入口-Activity-与其-icon"><a href="#1-App-的入口-Activity-与其-icon" class="headerlink" title="1. App 的入口 Activity 与其 icon"></a>1. App 的入口 Activity 与其 icon</h3><p>一个普通的应用默认会有一个入口 Activity，它在 AndroidManifest.xml 中一般这样写：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">application</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">activity</span> <span class="attr">android:name</span>=<span class="string">".MainActivity"</span> &gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">intent-filter</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">action</span> <span class="attr">android:name</span>=<span class="string">"android.intent.action.MAIN"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line">			<span class="tag">&lt;<span class="name">category</span> <span class="attr">android:name</span>=<span class="string">"android.intent.category.LAUNCHER"</span> /&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">intent-filter</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">activity</span>&gt;</span></span><br><span class="line">	...</span><br><span class="line"><span class="tag">&lt;/<span class="name">application</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>只有配置了一个这样的 Activity，这个应用才会点击的时候知道启动哪个 Activity，如果把 <code>category</code> 的值修改为 <code>android.intent.category.DEFAULT</code> 那么，这个应用将在桌面看不到 icon，无法直接打开了。</p>
+<h2 id="使用-Intent-打开第三方应用或指定-Activity-的方式"><a href="#使用-Intent-打开第三方应用或指定-Activity-的方式" class="headerlink" title="使用 Intent 打开第三方应用或指定 Activity 的方式"></a>使用 Intent 打开第三方应用或指定 Activity 的方式</h2><ol>
+<li>只知道包名 - 需要有默认的入口 Activity</li>
+<li>启动指定第三方应用的 Activity - 需要包名和 Activity 名，且该 Activity 的 <code>Export=“true”</code></li>
+<li>隐式启动第三方应用</li>
+</ol>
+<h3 id="1-使用-PackageManager-getLaunchIntentForPackage"><a href="#1-使用-PackageManager-getLaunchIntentForPackage" class="headerlink" title="1. 使用 PackageManager.getLaunchIntentForPackage()"></a>1. 使用 <code>PackageManager.getLaunchIntentForPackage()</code></h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">String package_name=<span class="string">"xx.xx.xx"</span>;</span><br><span class="line">PackageManager packageManager = context.getPackageManager();</span><br><span class="line">Intent it = packageManager.getLaunchIntentForPackage(package_name);</span><br><span class="line">startActivity(it);</span><br></pre></td></tr></table></figure>
+<p>该方法针对只知道包名，想要启动该应用时使用，对该应用的唯一限制是<strong>有默认的入口 Activity</strong>。</p>
+<p>当没有默认的入口 Activity 时，会报 <code>NullPointerException</code> 异常：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java.lang.NullPointerException: Attempt to invoke virtual method &apos;java.lang.String android.content.Intent.toString()&apos; on a null object reference</span><br></pre></td></tr></table></figure>
+<p>再看看 <code>getLaunchIntentForPackage()</code> 方法的说明：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line">     * Returns a "good" intent to launch a front-door activity in a package.</span><br><span class="line">     * This is used, for example, to implement an "open" button when browsing</span><br><span class="line">     * through packages.  The current implementation looks first for a main</span><br><span class="line">     * activity in the category &#123;<span class="doctag">@link</span> Intent#CATEGORY_INFO&#125;, and next for a</span><br><span class="line">     * main activity in the category &#123;<span class="doctag">@link</span> Intent#CATEGORY_LAUNCHER&#125;. Returns</span><br><span class="line">     * &lt;code&gt;null&lt;/code&gt; if neither are found.</span><br><span class="line">     *</span><br><span class="line">     * <span class="doctag">@param</span> packageName The name of the package to inspect.</span><br><span class="line">     *</span><br><span class="line">     * <span class="doctag">@return</span> A fully-qualified &#123;<span class="doctag">@link</span> Intent&#125; that can be used to launch the</span><br><span class="line">     * main activity in the package. Returns &lt;code&gt;null&lt;/code&gt; if the package</span><br><span class="line">     * does not contain such an activity, or if &lt;em&gt;packageName&lt;/em&gt; is not</span><br><span class="line">     * recognized.</span><br><span class="line">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> Intent <span class="title">getLaunchIntentForPackage</span><span class="params">(String packageName)</span></span>;</span><br></pre></td></tr></table></figure>
+<p>所以使用此方式判定 Intent 是否为空即可。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">String package_name = <span class="string">"xx.xx.xx"</span>;</span><br><span class="line">PackageManager packageManager = getPackageManager();</span><br><span class="line">Intent it = packageManager.getLaunchIntentForPackage(package_name);</span><br><span class="line"><span class="keyword">if</span> (it != <span class="keyword">null</span>)&#123;</span><br><span class="line">	startActivity(it);</span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">	<span class="comment">//没有默认的入口 Activity</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="2-使用-Intent-setComponent"><a href="#2-使用-Intent-setComponent" class="headerlink" title="2. 使用 Intent.setComponent()"></a>2. 使用 <code>Intent.setComponent()</code></h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">String package_name = <span class="string">"xx.xx.xx"</span>;</span><br><span class="line">String activity_path = <span class="string">"xx.xx.xx.ab.xxActivity"</span>;</span><br><span class="line">Intent intent = <span class="keyword">new</span> Intent();</span><br><span class="line">intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);<span class="comment">//可选</span></span><br><span class="line">ComponentName comp = <span class="keyword">new</span> ComponentName(package_name,activity_path);</span><br><span class="line">intent.setComponent(comp);</span><br><span class="line">startActivity(intent);</span><br></pre></td></tr></table></figure>
+<p>此方式可以启动一个应用指定的 Activity，不限于默认入口 Activity。但此方式要求的条件多，如下：</p>
+<ol>
+<li>知道 App 的包名和 Activity 的全路径及其名称</li>
+<li>需要启动的目标 Activity 在 AndroidManifest.xml 中的属性 <code>Export=“true”</code></li>
+</ol>
+<p>那这种方式下，如何判断目标 Activity 是否存在呢？</p>
+<p>下面是网上流传的非常普遍的用法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">String package_name = <span class="string">"xx.xx.xx"</span>;</span><br><span class="line">String activity_path = <span class="string">"xx.xx.xx.ab.xxActivity"</span>;</span><br><span class="line">Intent intent = <span class="keyword">new</span> Intent();</span><br><span class="line">intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);<span class="comment">//可选</span></span><br><span class="line">ComponentName cn = <span class="keyword">new</span> ComponentName(package_name,activity_path);</span><br><span class="line">intent.setComponent(cn);</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (intent.resolveActivity(getPackageManager()) != <span class="keyword">null</span>) &#123;</span><br><span class="line">	startActivity(intent);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">	<span class="comment">//找不到指定的 Activity</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>遗憾的是，<code>Intent.resolveActivity()</code> 方法并不能判定此方式所要启动的 Activity 是否存在，如果此 Activity 不存在，会报 <code>java.lang.IllegalArgumentException: Unknown component</code> 异常，并导致程序崩溃。</p>
+<p>下面看下 <code>resolveActivity()</code> 的代码，以及它的 相似方法 <code>resolveActivityInfo()</code> ：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> ComponentName <span class="title">resolveActivity</span><span class="params">(PackageManager pm)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (mComponent != <span class="keyword">null</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> mComponent;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	ResolveInfo info = pm.resolveActivity(<span class="keyword">this</span>,</span><br><span class="line">		PackageManager.MATCH_DEFAULT_ONLY);</span><br><span class="line">	<span class="keyword">if</span> (info != <span class="keyword">null</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">new</span> ComponentName(</span><br><span class="line">			info.activityInfo.applicationInfo.packageName,</span><br><span class="line">			info.activityInfo.name);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> ActivityInfo <span class="title">resolveActivityInfo</span><span class="params">(PackageManager pm, <span class="keyword">int</span> flags)</span> </span>&#123;</span><br><span class="line">	ActivityInfo ai = <span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">if</span> (mComponent != <span class="keyword">null</span>) &#123;</span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			ai = pm.getActivityInfo(mComponent, flags);</span><br><span class="line">		&#125; <span class="keyword">catch</span> (PackageManager.NameNotFoundException e) &#123;</span><br><span class="line">			<span class="comment">// ignore</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">		ResolveInfo info = pm.resolveActivity(<span class="keyword">this</span>,</span><br><span class="line">			PackageManager.MATCH_DEFAULT_ONLY | flags);</span><br><span class="line">		<span class="keyword">if</span> (info != <span class="keyword">null</span>) &#123;</span><br><span class="line">			ai = info.activityInfo;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> ai;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>显而易见，我们此方式就是先设置的 ComponentName，所以会直接 <code>return mComponent</code> 给我们，并没有任何判定的逻辑。相对的，<code>resolveActivityInfo()</code> 则可以进行有效判定并返回 null。故，我们选择使用 <code>Intent.resolveActivityInfo()</code> 进行此方式下的判定：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">String package_name = <span class="string">"xx.xx.xx"</span>;</span><br><span class="line">String activity_path = <span class="string">"xx.xx.xx.ab.xxActivity"</span>;</span><br><span class="line">Intent intent = <span class="keyword">new</span> Intent();</span><br><span class="line">intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);<span class="comment">//可选</span></span><br><span class="line">ComponentName cn = <span class="keyword">new</span> ComponentName(package_name,activity_path);</span><br><span class="line">intent.setComponent(cn);</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (intent.resolveActivityInfo(getPackageManager(), PackageManager.MATCH_DEFAULT_ONLY) != <span class="keyword">null</span>) &#123;</span><br><span class="line">	startActivity(intent);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">	<span class="comment">//找不到指定的 Activity</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="3-隐式启动第三方应用"><a href="#3-隐式启动第三方应用" class="headerlink" title="3.隐式启动第三方应用"></a>3.隐式启动第三方应用</h3><p>此方式多用于启动系统中的功能性应用，比如打电话、发邮件、预览图片、使用默认浏览器打开一个网页等。</p>
+<blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt; Intent intent = <span class="keyword">new</span> Intent();</span><br><span class="line">&gt; intent.setAction(action);</span><br><span class="line">&gt; intent.addCategory(category);</span><br><span class="line">&gt; intent.setDataAndType(<span class="string">"abc://www.dfg.com"</span>,<span class="string">"image/gif"</span>);</span><br><span class="line">&gt; startActivity(intent);</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>&gt;</p>
+<blockquote>
+<ul>
+<li>条件1：IntentFilter 至少有一个 action 至少有一个Category，可以没有 Data 和 Type</li>
+</ul>
+<ul>
+<li>条件2：如果有 Data，参数中 Data 必须符合 Data 规则</li>
+</ul>
+<ul>
+<li>条件3：Action 和 Category 必须同时匹配 Activity 中的一个 Action 和一个 Category (Category 默认：android.intent.category.DEFAULT)</li>
+</ul>
+<p>来源： <a href="http://blog.csdn.net/tonyyxm/article/details/50260185" target="_blank" rel="external">Android 启动第三方应用的几种方法（整理）</a></p>
+</blockquote>
+<p>隐式启动功能繁多，就不一一列举了，需要时直接搜索相关代码即可，我们用打开一个网页为例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Uri uri = Uri.parse(<span class="string">"http://www.abc.xyz"</span>);</span><br><span class="line">Intent intent = <span class="keyword">new</span> Intent(Intent.ACTION_VIEW, uri);</span><br><span class="line">startActivity(intent);</span><br></pre></td></tr></table></figure>
+<p>这时，直接使用 <code>Intent.resolveActivity()</code> 方法没什么问题：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Uri uri = Uri.parse(<span class="string">"http://www.abc.xyz"</span>);</span><br><span class="line">Intent intent = <span class="keyword">new</span> Intent(Intent.ACTION_VIEW, uri);</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (intent.resolveActivity(getPackageManager()) != <span class="keyword">null</span>) &#123;</span><br><span class="line">	startActivity(intent);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">	<span class="comment">// 没有安装所需应用</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>经过阅读 PackageManager 的代码，发现还可以使用 <code>packageManager.queryIntentActivities()</code> 方法判断系统里是否有能解析指定 Intent 的应用。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isAvailable</span><span class="params">(Context context, Intent intent)</span> </span>&#123;</span><br><span class="line">	PackageManager packageManager = context.getPackageManager();</span><br><span class="line">	List list = packageManager.queryIntentActivities(intent,</span><br><span class="line">	PackageManager.MATCH_DEFAULT_ONLY);</span><br><span class="line">	<span class="keyword">return</span> list.size() &gt; <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>那么，总结下来就是：</p>
+<ul>
+<li>方式一 <code>PackageManager.getLaunchIntentForPackage()</code>，直接判断返回的 Intent 是否为空即可；</li>
+<li>方式二 <code>Intent.setComponent()</code>，使用 <code>Intent.resolveActivityInfo()</code> 或者 <code>packageManager.queryIntentActivities()</code> 两种方式；</li>
+<li>方式三 隐式启动，使用  <code>Intent.resolveActivity()</code>、<code>Intent.resolveActivityInfo()</code> 、<code>packageManager.queryIntentActivities()</code> 三种方式均可。</li>
+</ul>
+<p>如果有什么建议或者问题可以随时联系我，共同探讨学习：</p>
+<blockquote>
+<ul>
+<li>微博：<a href="http://weibo.com/zyansen" target="_blank" rel="external">cafeting</a></li>
+<li>Github： <a href="https://github.com/likfe" target="_blank" rel="external">likfe</a></li>
+<li>CSDN：<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="external">他叫自己Mr.张</a> </li>
+</ul>
+</blockquote>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Android/" rel="tag">#Android</a>
+          
+            <a href="/tags/Intent/" rel="tag">#Intent</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/07/21/android-proguard-delete/" rel="next" title="Android 必知必会 - 利用混淆删除日志打印代码">
+                <i class="fa fa-chevron-left"></i> Android 必知必会 - 利用混淆删除日志打印代码
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://7d9l9j.com1.z0.glb.clouddn.com/avatar.jpeg"
+               alt="Cafeting" />
+          <p class="site-author-name" itemprop="name">Cafeting</p>
+          <p class="site-description motion-element" itemprop="description">我的代码空间</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">41</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">29</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/likfe" target="_blank" title="Github">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Github
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/zyansen" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基础知识"><span class="nav-text">基础知识</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-App-的入口-Activity-与其-icon"><span class="nav-text">1. App 的入口 Activity 与其 icon</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用-Intent-打开第三方应用或指定-Activity-的方式"><span class="nav-text">使用 Intent 打开第三方应用或指定 Activity 的方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-使用-PackageManager-getLaunchIntentForPackage"><span class="nav-text">1. 使用 PackageManager.getLaunchIntentForPackage()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-使用-Intent-setComponent"><span class="nav-text">2. 使用 Intent.setComponent()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-隐式启动第三方应用"><span class="nav-text">3.隐式启动第三方应用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-text">总结</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Cafeting</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.2"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = false;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = decodeURIComponent(data.url);
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title >= 0 || index_content >= 0 ){
+                                isMatch = true;
+								if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            } 
+							
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("2nXIpjWLUKkYRIXj2zESyxbJ-gzGzoHsz", "GhYJy4g50Rt6nwyP6MslqpnX");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+
+</body>
+</html>
