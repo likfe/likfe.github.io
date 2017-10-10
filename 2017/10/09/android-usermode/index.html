@@ -92,7 +92,7 @@
 <meta property="og:site_name" content="Cafeting">
 <meta property="og:description" content="关键词：Android 、Make 、user mode 、user 、userdebug 、eng  判定手机系统的构建模式、用户模式 编译 Rom 时，需要指定目标构建模式，构建模式有三种：用户模式 user、用户调试模式 userdebug 和工程模式 eng">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-10-10T02:42:26.000Z">
+<meta property="og:updated_time" content="2017-10-10T02:45:29.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android 必知必会：获取手机系统的构建模式">
 <meta name="twitter:description" content="关键词：Android 、Make 、user mode 、user 、userdebug 、eng  判定手机系统的构建模式、用户模式 编译 Rom 时，需要指定目标构建模式，构建模式有三种：用户模式 user、用户调试模式 userdebug 和工程模式 eng">
@@ -349,9 +349,6 @@
 </ul>
 <p>指定目标构建模式：在 <code>make</code> 命令中加入参数</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&gt; $ sudo make -j8 PRODUCT-rk312x-user</div><div class="line">&gt; $ sudo make -j8 PRODUCT-rk312x-userdebug</div><div class="line">&gt; $ sudo make -j8 PRODUCT-rk312x-eng</div><div class="line">&gt;</div></pre></td></tr></table></figure>
-</blockquote>
-<p>&gt;</p>
-<blockquote>
 <p>来源：<a href="https://www.kancloud.cn/amoy0226/fireprime_android_compile/105885" target="_blank" rel="external">https://www.kancloud.cn/amoy0226/fireprime_android_compile/105885</a></p>
 </blockquote>
 <h2 id="判断构建模式"><a href="#判断构建模式" class="headerlink" title="判断构建模式"></a>判断构建模式</h2><p><strong>思路</strong>：通过观察以上三个模式的属性，这里使用安全检查功能（ro.securero）和应用调试功能（ro.debuggable）两个属性来区分这三个模式：</p>

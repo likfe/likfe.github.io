@@ -44,9 +44,6 @@
 </ul>
 <p>指定目标构建模式：在 <code>make</code> 命令中加入参数</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&gt; $ sudo make -j8 PRODUCT-rk312x-user</div><div class="line">&gt; $ sudo make -j8 PRODUCT-rk312x-userdebug</div><div class="line">&gt; $ sudo make -j8 PRODUCT-rk312x-eng</div><div class="line">&gt;</div></pre></td></tr></table></figure>
-</blockquote>
-<p>&gt;</p>
-<blockquote>
 <p>来源：<a href="https://www.kancloud.cn/amoy0226/fireprime_android_compile/105885" target="_blank" rel="external">https://www.kancloud.cn/amoy0226/fireprime_android_compile/105885</a></p>
 </blockquote>
 <h2 id="判断构建模式"><a href="#判断构建模式" class="headerlink" title="判断构建模式"></a>判断构建模式</h2><p><strong>思路</strong>：通过观察以上三个模式的属性，这里使用安全检查功能（ro.securero）和应用调试功能（ro.debuggable）两个属性来区分这三个模式：</p>
