@@ -84,25 +84,18 @@
 
 
 
-<meta name="description" content="Github版
-CSDN版
-
-本篇文章不是介绍GreenDao的配置和基础使用，记录一下GreenDao缓存的问题，帮助遇到同样问题的朋友找到原因和方法，下面是示例：">
+<meta name="description" content="Github版 CSDN版  本篇文章不是介绍GreenDao的配置和基础使用，记录一下GreenDao缓存的问题，帮助遇到同样问题的朋友找到原因和方法，下面是示例：">
+<meta name="keywords" content="Android,GreenDao">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android必知必会--GreenDao缓存">
 <meta property="og:url" content="http://likfe.com/2016/04/22/greenDao-session/index.html">
 <meta property="og:site_name" content="Cafeting">
-<meta property="og:description" content="Github版
-CSDN版
-
-本篇文章不是介绍GreenDao的配置和基础使用，记录一下GreenDao缓存的问题，帮助遇到同样问题的朋友找到原因和方法，下面是示例：">
+<meta property="og:description" content="Github版 CSDN版  本篇文章不是介绍GreenDao的配置和基础使用，记录一下GreenDao缓存的问题，帮助遇到同样问题的朋友找到原因和方法，下面是示例：">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2016-07-29T10:47:05.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android必知必会--GreenDao缓存">
-<meta name="twitter:description" content="Github版
-CSDN版
-
-本篇文章不是介绍GreenDao的配置和基础使用，记录一下GreenDao缓存的问题，帮助遇到同样问题的朋友找到原因和方法，下面是示例：">
+<meta name="twitter:description" content="Github版 CSDN版  本篇文章不是介绍GreenDao的配置和基础使用，记录一下GreenDao缓存的问题，帮助遇到同样问题的朋友找到原因和方法，下面是示例：">
 
 
 
@@ -323,10 +316,10 @@ CSDN版
 <li><a href="http://blog.csdn.net/ys743276112/article/details/50479917" target="_blank" rel="external">CSDN版</a></li>
 </ul>
 <p>本篇文章不是介绍GreenDao的配置和基础使用，记录一下GreenDao缓存的问题，帮助遇到同样问题的朋友找到原因和方法，下面是示例：<br><a id="more"></a></p>
-<h3 id="场景重现"><a href="#场景重现" class="headerlink" title="场景重现"></a>场景重现</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//第一次查询</span></span><br><span class="line">List chats = daoSession.getChatSessionDao()</span><br><span class="line">	.queryBuilder()</span><br><span class="line">	.orderDesc(ChatSessionDao.Properties.Updatetime)</span><br><span class="line">	.list();</span><br><span class="line"></span><br><span class="line"><span class="comment">//对数据库中的一条数据进行更新：</span></span><br><span class="line">ChatSession cs = chats.get(<span class="number">0</span>);</span><br><span class="line">Log.d(<span class="string">"body"</span>,cs.getBody());</span><br><span class="line">cs.setBody(cs.getBody() + <span class="string">"new"</span>);</span><br><span class="line">daoSession.getChatSessionDao().update(cs);</span><br><span class="line"></span><br><span class="line"><span class="comment">//第二次查询</span></span><br><span class="line">List chats = daoSession.getChatSessionDao()</span><br><span class="line">	.queryBuilder()</span><br><span class="line">	.orderDesc(ChatSessionDao.Properties.Updatetime)</span><br><span class="line">	.list();</span><br><span class="line">	</span><br><span class="line">Log.d(<span class="string">"body"</span>,chats.get(<span class="number">0</span>).getBody());</span><br></pre></td></tr></table></figure>
+<h3 id="场景重现"><a href="#场景重现" class="headerlink" title="场景重现"></a>场景重现</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//第一次查询</span></div><div class="line">List chats = daoSession.getChatSessionDao()</div><div class="line">	.queryBuilder()</div><div class="line">	.orderDesc(ChatSessionDao.Properties.Updatetime)</div><div class="line">	.list();</div><div class="line"></div><div class="line"><span class="comment">//对数据库中的一条数据进行更新：</span></div><div class="line">ChatSession cs = chats.get(<span class="number">0</span>);</div><div class="line">Log.d(<span class="string">"body"</span>,cs.getBody());</div><div class="line">cs.setBody(cs.getBody() + <span class="string">"new"</span>);</div><div class="line">daoSession.getChatSessionDao().update(cs);</div><div class="line"></div><div class="line"><span class="comment">//第二次查询</span></div><div class="line">List chats = daoSession.getChatSessionDao()</div><div class="line">	.queryBuilder()</div><div class="line">	.orderDesc(ChatSessionDao.Properties.Updatetime)</div><div class="line">	.list();</div><div class="line">	</div><div class="line">Log.d(<span class="string">"body"</span>,chats.get(<span class="number">0</span>).getBody());</div></pre></td></tr></table></figure>
 <p>结果发现两次的<code>body</code>的值是一样的，使用工具查看Sqlite数据库，发现<code>body</code>的值已经变化了，也就是说，我们第二次查询并没有真正执行，返回的是第一次查询的结果。如果要解决缓存问题，这里就要用到<code>DaoSession</code>的一个方法：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DaoSession.clear();</span><br></pre></td></tr></table></figure>
-<p>在示例代码中应该写在第二次查询前面<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">daoSession.clear();</span><br><span class="line"><span class="comment">//第二次查询</span></span><br><span class="line">......</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">DaoSession.clear();</div></pre></td></tr></table></figure>
+<p>在示例代码中应该写在第二次查询前面<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">daoSession.clear();</div><div class="line"><span class="comment">//第二次查询</span></div><div class="line">......</div></pre></td></tr></table></figure></p>
 <p>PS:这个清理缓存的方法，会清除所有表的缓存，目前没有发现可以清除单个表或者某个查询的缓存的方法。</p>
 <h3 id="GreenDao配置与使用"><a href="#GreenDao配置与使用" class="headerlink" title="GreenDao配置与使用"></a>GreenDao配置与使用</h3><p>GreenDao详细的配置和Demo可以参考：</p>
 <blockquote>
@@ -450,7 +443,7 @@ CSDN版
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">40</span>
+              <span class="site-state-item-count">41</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

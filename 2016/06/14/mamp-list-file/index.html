@@ -85,11 +85,13 @@
 
 
 <meta name="description" content="背景MAMP是Mac下的一个PHP+Nginx+MySQL的集成环境，支持多站点，不同版本PHP。今天有人请教MAMP如何显示文件列表的问题，这里记录一下。">
+<meta name="keywords" content="PHP,MAMP">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MAMP显示文件列表">
 <meta property="og:url" content="http://likfe.com/2016/06/14/mamp-list-file/index.html">
 <meta property="og:site_name" content="Cafeting">
 <meta property="og:description" content="背景MAMP是Mac下的一个PHP+Nginx+MySQL的集成环境，支持多站点，不同版本PHP。今天有人请教MAMP如何显示文件列表的问题，这里记录一下。">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://img.blog.csdn.net/20160614185258257">
 <meta property="og:updated_time" content="2016-07-29T10:47:36.000Z">
 <meta name="twitter:card" content="summary">
@@ -314,7 +316,7 @@
         <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>MAMP是Mac下的一个PHP+Nginx+MySQL的集成环境，支持多站点，不同版本PHP。<br>今天有人请教MAMP如何显示文件列表的问题，这里记录一下。</p>
 <a id="more"></a>
 <h3 id="知识补充"><a href="#知识补充" class="headerlink" title="知识补充"></a>知识补充</h3><p>一个网站为了安全考虑，默认是禁止访问目录下的文件列表的。<br>当你请求一个目录时：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">st=&gt;start: 开始</span><br><span class="line">e=&gt;end: 结束</span><br><span class="line"></span><br><span class="line">cond1=&gt;condition: 是否存在index文件列表里的文件？</span><br><span class="line">cond2=&gt;condition: 是否允许显示文件列表？</span><br><span class="line">cond3=&gt;condition: 是否指定了404页面？</span><br><span class="line"></span><br><span class="line">op1=&gt;operation: 显示默认的文件</span><br><span class="line">op2=&gt;operation: 显示文件列表</span><br><span class="line">op3=&gt;operation: 显示指定的404页面</span><br><span class="line">op4=&gt;operation: 显示服务器级的404错误</span><br><span class="line"></span><br><span class="line">st-&gt;cond1-&gt;e</span><br><span class="line">cond1(yes)-&gt;op1-&gt;e</span><br><span class="line">cond1(no)-&gt;cond2(bottom)</span><br><span class="line"></span><br><span class="line">cond2(yes)-&gt;op2-&gt;e</span><br><span class="line">cond2(no)-&gt;cond3(right)</span><br><span class="line"></span><br><span class="line">cond3(yes)-&gt;op3-&gt;e</span><br><span class="line">cond3(no)-&gt;op4-&gt;e</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">st=&gt;start: 开始</div><div class="line">e=&gt;end: 结束</div><div class="line"></div><div class="line">cond1=&gt;condition: 是否存在index文件列表里的文件？</div><div class="line">cond2=&gt;condition: 是否允许显示文件列表？</div><div class="line">cond3=&gt;condition: 是否指定了404页面？</div><div class="line"></div><div class="line">op1=&gt;operation: 显示默认的文件</div><div class="line">op2=&gt;operation: 显示文件列表</div><div class="line">op3=&gt;operation: 显示指定的404页面</div><div class="line">op4=&gt;operation: 显示服务器级的404错误</div><div class="line"></div><div class="line">st-&gt;cond1-&gt;e</div><div class="line">cond1(yes)-&gt;op1-&gt;e</div><div class="line">cond1(no)-&gt;cond2(bottom)</div><div class="line"></div><div class="line">cond2(yes)-&gt;op2-&gt;e</div><div class="line">cond2(no)-&gt;cond3(right)</div><div class="line"></div><div class="line">cond3(yes)-&gt;op3-&gt;e</div><div class="line">cond3(no)-&gt;op4-&gt;e</div></pre></td></tr></table></figure>
 <ul>
 <li>默认的index文件列表（一般是index.html,index.htm,index.php）</li>
 <li>网站配置里404相关说明，可以指定404时访问的文件<h2 id="配置MAMP"><a href="#配置MAMP" class="headerlink" title="配置MAMP"></a>配置MAMP</h2>如图所示：<br><img src="http://img.blog.csdn.net/20160614185258257" alt="这里写图片描述"></li>
@@ -442,7 +444,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">40</span>
+              <span class="site-state-item-count">41</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

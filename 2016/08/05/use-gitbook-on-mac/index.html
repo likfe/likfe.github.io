@@ -85,11 +85,13 @@
 
 
 <meta name="description" content="剪不断的情缘之前写了一篇 在自己的服务器上安装GitBook ,发布于 2015-04-20，当时的安装环境是 CentOS 6.X_64Bit，今天想再研究一下这个 GitBook ，发现在基于 Linux 内核的机器上安装基础功能很简单，但是牵涉到生成 pdf/epub/mobi 格式的书籍时，安装calibre的代价非常大（因为要安装 N 多前置库），对于不是非常非常熟练使用 Linux 的">
+<meta name="keywords" content="Mac,GitBook,OSX">
 <meta property="og:type" content="article">
 <meta property="og:title" content="在自己的电脑上安装 GitBook For Mac">
 <meta property="og:url" content="http://likfe.com/2016/08/05/use-gitbook-on-mac/index.html">
 <meta property="og:site_name" content="Cafeting">
 <meta property="og:description" content="剪不断的情缘之前写了一篇 在自己的服务器上安装GitBook ,发布于 2015-04-20，当时的安装环境是 CentOS 6.X_64Bit，今天想再研究一下这个 GitBook ，发现在基于 Linux 内核的机器上安装基础功能很简单，但是牵涉到生成 pdf/epub/mobi 格式的书籍时，安装calibre的代价非常大（因为要安装 N 多前置库），对于不是非常非常熟练使用 Linux 的">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2016-08-04T18:04:48.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="在自己的电脑上安装 GitBook For Mac">
@@ -321,9 +323,9 @@
 <li>执行生成命令：生成指定格式的文件。</li>
 </ol>
 <h3 id="画重点啦-´−｀-ﾝｰ-咳咳，看黑板"><a href="#画重点啦-´−｀-ﾝｰ-咳咳，看黑板" class="headerlink" title="画重点啦 (´−｀) ﾝｰ 咳咳，看黑板"></a>画重点啦 (´−｀) ﾝｰ 咳咳，看黑板</h3><p>1.下载对应的 <code>Calibre</code> 文件，<a href="http://www.calibre-ebook.com/download" target="_blank" rel="external">下载地址在此</a> ，Mac 用户自然是下载 <code>OS X</code> 版本的了；<br>2.下载安装 <code>Calibre</code> ，然后<strong>务必打开运行一次 <code>Calibre</code></strong> ，否则就嘿嘿嘿了；<br>3.在终端里执行</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo ln <span class="_">-s</span> /Applications/calibre.app/Contents/MacOS/ebook-convert /usr/<span class="built_in">local</span>/bin</span><br><span class="line"></span><br><span class="line">//官方的文档里是如下命令：会引起权限和命令无效等问题</span><br><span class="line">sudo ln <span class="_">-s</span> ~/Applications/calibre.app/Contents/MacOS/ebook-convert /usr/bin</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">sudo ln -s /Applications/calibre.app/Contents/MacOS/ebook-convert /usr/<span class="built_in">local</span>/bin</div><div class="line"></div><div class="line">//官方的文档里是如下命令：会引起权限和命令无效等问题</div><div class="line">sudo ln -s ~/Applications/calibre.app/Contents/MacOS/ebook-convert /usr/bin</div></pre></td></tr></table></figure>
 <p>4.转换格式，参考官方文档</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Generate a PDF file</span></span><br><span class="line">$ gitbook pdf ./ ./mybook.pdf</span><br><span class="line"></span><br><span class="line"><span class="comment"># Generate an ePub file</span></span><br><span class="line">$ gitbook epub ./ ./mybook.epub</span><br><span class="line"></span><br><span class="line"><span class="comment"># Generate a Mobi file</span></span><br><span class="line">$ gitbook mobi ./ ./mybook.mobi</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Generate a PDF file</span></div><div class="line">$ gitbook pdf ./ ./mybook.pdf</div><div class="line"></div><div class="line"><span class="comment"># Generate an ePub file</span></div><div class="line">$ gitbook epub ./ ./mybook.epub</div><div class="line"></div><div class="line"><span class="comment"># Generate a Mobi file</span></div><div class="line">$ gitbook mobi ./ ./mybook.mobi</div></pre></td></tr></table></figure>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>不管怎么说，终于还是实现了 <code>GitBook</code> 在 Mac 上的完美运行。在有生成 <code>pdf/epub/mobi</code> 格式的文件的需求时，就不心虚了。</p>
 <p>最近在阅读的比较火的一个项目 <a href="https://github.com/GeniusVJR/LearningNotes" target="_blank" rel="external">LearningNotes</a> ，是一个 Android 知识点笔记和面试题的一个总结，我用 <code>GitBook</code> 生成了一份 HTML 版，<a href="http://doc.inkcode.cc/ALN/index.html" target="_blank" rel="external">点击这里访问</a>，我还打算和作者联系一下，帮他生成 <code>pdf/epub/mobi</code> 格式，方便本地阅读。</p>
 <p>PS:</p>
@@ -443,7 +445,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">40</span>
+              <span class="site-state-item-count">41</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
