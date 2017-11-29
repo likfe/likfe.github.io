@@ -18,6 +18,7 @@
 <li><strong>没有</strong>在 Mac 上更改过 root 用户账户密码</li>
 </ul>
 <p>这里有个比较简单的解决方法，可以防止这个安全 Bug 成为一个大问题。简单来说就是：<strong>在受影响的 Mac 上设置 root 用户的密码。</strong></p>
+<a id="more"></a>
 <h2 id="为-root-账户设置密码"><a href="#为-root-账户设置密码" class="headerlink" title="为 root 账户设置密码"></a>为 root 账户设置密码</h2><p>有两个方法来为 root 账户设置密码：</p>
 <ol>
 <li>使用「目录实用工具」（Directory Utility）</li>
