@@ -20,13 +20,11 @@
 <p>所以无论命令正确与否，都会提示 <code>Unknown package</code> ：</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ service call clipboard 2 s16 <span class="string">"abc"</span></div><div class="line">Result: Parcel(</div><div class="line">  0x00000000: fffffffd 00000013 006e0055 006e006b <span class="string">'........U.n.k.n.'</span></div><div class="line">  0x00000010: 0077006f 0020006e 00610070 006b0063 <span class="string">'o.w.n. .p.a.c.k.'</span></div><div class="line">  0x00000020: 00670061 00200065 00620061 00000063 <span class="string">'a.g.e. .a.b.c...'</span>)</div></pre></td></tr></table></figure>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>就 Android 目前的各版本系统市场占有率而言，<strong>使用 ADB 操作 Clipboard 是一个不可行的方案了</strong>。</p>
-<blockquote>
 <p>参考：</p>
+<blockquote>
 <ul>
-<li><p><a href="https://stackoverflow.com/questions/7283446/pasting-text-into-android-emulator-clipboard-using-adb-shell" target="_blank" rel="external">Pasting text into Android emulator clipboard using adb shell</a></p>
-</li>
-<li><p><a href="https://stackoverflow.com/questions/14243427/set-clipboard-text-via-adb-shell-as-of-api-level-11" target="_blank" rel="external">Set clipboard text via adb shell as of API level 11</a></p>
-</li>
+<li><a href="https://stackoverflow.com/questions/7283446/pasting-text-into-android-emulator-clipboard-using-adb-shell" target="_blank" rel="external">Pasting text into Android emulator clipboard using adb shell</a></li>
+<li><a href="https://stackoverflow.com/questions/14243427/set-clipboard-text-via-adb-shell-as-of-api-level-11" target="_blank" rel="external">Set clipboard text via adb shell as of API level 11</a></li>
 </ul>
 </blockquote>
 <p>有什么建议或者问题可以随时联系我，共同探讨学习：</p>
