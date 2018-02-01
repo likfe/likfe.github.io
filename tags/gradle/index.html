@@ -105,7 +105,7 @@
 <meta name="description" content="我的代码空间">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Cafeting">
-<meta property="og:url" content="http://likfe.com/tags/gradle/index.html">
+<meta property="og:url" content="http://likfe.com/tags/Gradle/index.html">
 <meta property="og:site_name" content="Cafeting">
 <meta property="og:description" content="我的代码空间">
 <meta property="og:locale" content="zh-Hans">
@@ -140,13 +140,13 @@
 
 
 
-  <link rel="canonical" href="http://likfe.com/tags/gradle/"/>
+  <link rel="canonical" href="http://likfe.com/tags/Gradle/"/>
 
 
 
+<meta name="google-site-verification" content="-zFk0OkcB5n-RkT8CtLiAsBamNelO-hiAdzRMcPB5N0" />
 
-
-  <title>标签: gradle | Cafeting</title>
+  <title>标签: Gradle | Cafeting</title>
   
 
 
@@ -296,7 +296,7 @@
 
     <div id="posts" class="posts-collapse">
       <div class="collection-title">
-        <h2>gradle<small>标签</small>
+        <h2>Gradle<small>标签</small>
         </h2>
       </div>
 
@@ -308,9 +308,9 @@
 
       <h3 class="post-title">
         
-            <a class="post-title-link" href="/2016/12/28/android-code-framework/" itemprop="url">
+            <a class="post-title-link" href="/2017/03/15/android-studio-exploded-aar/" itemprop="url">
               
-                <span itemprop="name">Android 必知必会- 解决在 Android Studio 中 framework 等 jar 包无法被引用的问题</span>
+                <span itemprop="name">Android 必知必会 - Android Studio 2.3 找回 exploded-aar 目录【官方已更新】</span>
               
             </a>
         
@@ -318,9 +318,37 @@
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
-              datetime="2016-12-28T16:01:13+08:00"
-              content="2016-12-28" >
-          12-28
+              datetime="2017-03-15T18:45:35+08:00"
+              content="2017-03-15" >
+          03-15
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+      
+        
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h3 class="post-title">
+        
+            <a class="post-title-link" href="/2017/03/13/android-update-gradle/" itemprop="url">
+              
+                <span itemprop="name">Android Studio 升级 gradle 报错</span>
+              
+            </a>
+        
+      </h3>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2017-03-13T11:22:25+08:00"
+              content="2017-03-13" >
+          03-13
         </time>
       </div>
 
@@ -1001,44 +1029,6 @@
               success: function(newcounter) {
                 var $element = $(document.getElementById(url));
                 $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
-              },
-              error: function(newcounter, error) {
-                console.log('Failed to create');
-              }
-            });
-          }
-        },
-        error: function(error) {
-          console.log('Error:' + error.code + " " + error.message);
-        }
-      });
-    }
-
-    $(function() {
-      var Counter = AV.Object.extend("Counter");
-      if ($('.leancloud_visitors').length == 1) {
-        addCount(Counter);
-      } else if ($('.post-title-link').length > 1) {
-        showTime(Counter);
-      }
-    });
-  </script>
-
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-</body>
-</html>
-       $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
               },
               error: function(newcounter, error) {
                 console.log('Failed to create');
