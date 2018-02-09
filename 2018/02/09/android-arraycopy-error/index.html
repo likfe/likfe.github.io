@@ -86,7 +86,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Cafeting, likfe" />
+  <meta name="keywords" content="Android," />
 
 
 
@@ -102,17 +102,18 @@
 
 
 
-<meta name="description" content="我的代码空间">
+<meta name="description" content="关键字：NoSuchMethodError、System.arraycopy、Native Method 0x00：奇怪的异常应用新版本上线后观察错误日志，发现一个奇怪的 Crash 异常信息： 1lang.java.NoSuchMethodError: (java.lang.System.arraycopy) 异常集中发生在 Android 4.4.2 和 Android 5.1 上面，Syst">
+<meta name="keywords" content="Android">
 <meta property="og:type" content="article">
-<meta property="og:title" content="android library version">
-<meta property="og:url" content="http://likfe.com/2016/11/11/android-library-version/index.html">
+<meta property="og:title" content="Android 项目开发填坑记 - NoSuchMethodError:(java.lang.System.arraycopy)">
+<meta property="og:url" content="http://likfe.com/2018/02/09/android-arraycopy-error/index.html">
 <meta property="og:site_name" content="Cafeting">
-<meta property="og:description" content="我的代码空间">
+<meta property="og:description" content="关键字：NoSuchMethodError、System.arraycopy、Native Method 0x00：奇怪的异常应用新版本上线后观察错误日志，发现一个奇怪的 Crash 异常信息： 1lang.java.NoSuchMethodError: (java.lang.System.arraycopy) 异常集中发生在 Android 4.4.2 和 Android 5.1 上面，Syst">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2016-11-11T05:44:57.000Z">
+<meta property="og:updated_time" content="2018-02-09T08:39:36.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="android library version">
-<meta name="twitter:description" content="我的代码空间">
+<meta name="twitter:title" content="Android 项目开发填坑记 - NoSuchMethodError:(java.lang.System.arraycopy)">
+<meta name="twitter:description" content="关键字：NoSuchMethodError、System.arraycopy、Native Method 0x00：奇怪的异常应用新版本上线后观察错误日志，发现一个奇怪的 Crash 异常信息： 1lang.java.NoSuchMethodError: (java.lang.System.arraycopy) 异常集中发生在 Android 4.4.2 和 Android 5.1 上面，Syst">
 
 
 
@@ -141,13 +142,13 @@
 
 
 
-  <link rel="canonical" href="http://likfe.com/2016/11/11/android-library-version/"/>
+  <link rel="canonical" href="http://likfe.com/2018/02/09/android-arraycopy-error/"/>
 
 
 
 <meta name="google-site-verification" content="-zFk0OkcB5n-RkT8CtLiAsBamNelO-hiAdzRMcPB5N0" />
 
-  <title>android library version | Cafeting</title>
+  <title>Android 项目开发填坑记 - NoSuchMethodError:(java.lang.System.arraycopy) | Cafeting</title>
   
 
 
@@ -304,7 +305,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://likfe.com/2016/11/11/android-library-version/">
+    <link itemprop="mainEntityOfPage" href="http://likfe.com/2018/02/09/android-arraycopy-error/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Cafeting">
@@ -321,7 +322,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">android library version</h2>
+          <h2 class="post-title" itemprop="name headline">Android 项目开发填坑记 - NoSuchMethodError:(java.lang.System.arraycopy)</h2>
         
 
         <div class="post-meta">
@@ -333,8 +334,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-11-11T13:44:57+08:00">
-                2016-11-11
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-09T16:23:29+08:00">
+                2018-02-09
               </time>
             
 
@@ -349,8 +350,8 @@
               
                 <span class="post-meta-item-text">更新于</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2016-11-11T13:44:57+08:00">
-                2016-11-11
+              <time title="更新于" itemprop="dateModified" datetime="2018-02-09T16:39:36+08:00">
+                2018-02-09
               </time>
             
           </span>
@@ -363,7 +364,7 @@
 
           
           
-             <span id="/2016/11/11/android-library-version/" class="leancloud_visitors" data-flag-title="android library version">
+             <span id="/2018/02/09/android-arraycopy-error/" class="leancloud_visitors" data-flag-title="Android 项目开发填坑记 - NoSuchMethodError:(java.lang.System.arraycopy)">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -394,7 +395,34 @@
       
 
       
-        
+        <p>关键字：<code>NoSuchMethodError</code>、<code>System.arraycopy</code>、<code>Native Method</code></p>
+<h3 id="0x00：奇怪的异常"><a href="#0x00：奇怪的异常" class="headerlink" title="0x00：奇怪的异常"></a>0x00：奇怪的异常</h3><p>应用新版本上线后观察错误日志，发现一个奇怪的 Crash 异常信息：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">lang.java.NoSuchMethodError: (java.lang.System.arraycopy)</div></pre></td></tr></table></figure>
+<p>异常集中发生在 Android 4.4.2 和 Android 5.1 上面，<code>System.arraycopy()</code> 是一个系统函数，要说没这个方法倒是不会，但异常发生了，说明应用在找这个方法时发生了错误。</p>
+<a id="more"></a>
+<h3 id="0x01：探究原因"><a href="#0x01：探究原因" class="headerlink" title="0x01：探究原因"></a>0x01：探究原因</h3><p>根据异常日志，追踪到 <code>System.arraycopy()</code> 是 <a href="http://iharder.sourceforge.net/current/java/base64/" target="_blank" rel="external">Base64.java</a> 的 <code>public static byte[] decode(byte[] source, int off, int len, int options)</code>  方法里调用的。</p>
+<p>经过查找 Android API 19~21 的系统源码，发现发生此问题的原因是 Android&gt;=21 时，<code>java.lang.System.arraycopy()</code> 多了几个重载。</p>
+<p>在 Android &lt;=20 上：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//java.lang.System 只有一个 arraycopy 方法</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">native</span> <span class="keyword">void</span> <span class="title">arraycopy</span><span class="params">(Object src, <span class="keyword">int</span> srcPos,Object dst, <span class="keyword">int</span> dstPos, <span class="keyword">int</span> length)</span></span>;</div></pre></td></tr></table></figure>
+<p>在 Android &gt;=21 上：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//java.lang.System</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">native</span> <span class="keyword">void</span> <span class="title">arraycopy</span><span class="params">(Object src, <span class="keyword">int</span> srcPos,Object dst, <span class="keyword">int</span> dstPos, <span class="keyword">int</span> length)</span></span>;</div><div class="line"><span class="comment">/**</span></div><div class="line"><span class="comment"> * The byte[] specialized version of arraycopy().</span></div><div class="line"><span class="comment"> *</span></div><div class="line"><span class="comment"> * <span class="doctag">@hide</span> internal use only</span></div><div class="line"><span class="comment"> */</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">arraycopy</span><span class="params">(<span class="keyword">byte</span>[] src, <span class="keyword">int</span> srcPos, <span class="keyword">byte</span>[] dst, <span class="keyword">int</span> dstPos, <span class="keyword">int</span> length)</span></span>&#123;&#125;</div></pre></td></tr></table></figure>
+<p><strong>Base64.java</strong> 应该使用的是 <code>native void arraycopy(Object src...</code> ，但是会在  <code>compileSdkVersion&gt;=21</code> 时使用重载的 <code>arraycopy(byte[] src …</code> ，那么运行在  Android &lt;=20 的手机上时就会报  <code>java.lang.NoSuchMethodError</code>  的异常了。</p>
+<p>总结下来就是：如果你在 Android 上使用了此 <a href="http://iharder.sourceforge.net/current/java/base64/" target="_blank" rel="external">Base64</a> 工具类，并且编译时使用的 Android 版本&gt;=21，那么在低版本上你<strong>可能</strong>会遇到 <code>java.lang.NoSuchMethodError: java.lang.System.arraycopy</code> 的异常。之所以说是可能，是因为出现此异常时在开发平常的应用时不会发生，一般是使用修改后的系统 Jar 包调用系统隐藏方法时才容易出现。</p>
+<h3 id="0x02：解决方案"><a href="#0x02：解决方案" class="headerlink" title="0x02：解决方案"></a>0x02：解决方案</h3><p>如何解决呢？有两个方法：</p>
+<p>1.指定使用 arraycopy 使用的重载方法，避免编译器用错</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">System.arraycopy(outBuff, <span class="number">0</span>, out, <span class="number">0</span>, outBuffPosn);</div><div class="line"><span class="comment">//替换成</span></div><div class="line">System.arraycopy((Object) outBuff, <span class="number">0</span>, (Object) out, <span class="number">0</span>, outBuffPosn);</div></pre></td></tr></table></figure>
+<p>2.使用 <code>Arrays.copyOf ()</code> 来替代 <code>System.arraycopy()</code></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">System.arraycopy(outBuff, <span class="number">0</span>, out, <span class="number">0</span>, outBuffPosn);</div><div class="line"><span class="comment">//替换成</span></div><div class="line">out = Arrays.copyOf(outBuff, outBuffPosn);</div></pre></td></tr></table></figure>
+<p>虽然 <code>Arrays.copyOf()</code> 的方法实现最后还是调用的 <code>System.arraycopy()</code> ，但是不会调用到错误的重载方法。</p>
+<p><strong>PS</strong>：你可以通过下面的方式和我联系</p>
+<blockquote>
+<ul>
+<li>微博：<a href="http://weibo.com/zyansen" target="_blank" rel="external">cafeting</a></li>
+<li>Github： <a href="https://github.com/likfe" target="_blank" rel="external">likfe</a></li>
+<li>CSDN：<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="external">他叫自己Mr.张</a> </li>
+</ul>
+</blockquote>
+
       
     </div>
     
@@ -414,7 +442,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://likfe.com/2016/11/11/android-library-version/" title="android library version">http://likfe.com/2016/11/11/android-library-version/</a>
+    <a href="http://likfe.com/2018/02/09/android-arraycopy-error/" title="Android 项目开发填坑记 - NoSuchMethodError:(java.lang.System.arraycopy)">http://likfe.com/2018/02/09/android-arraycopy-error/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -427,6 +455,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/Android/" rel="tag"># Android</a>
+          
+        </div>
+      
 
       
       
@@ -436,8 +470,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/10/27/dialog-fragment/" rel="next" title="Android 必知必会 - DialogFragment 使用总结">
-                <i class="fa fa-chevron-left"></i> Android 必知必会 - DialogFragment 使用总结
+              <a href="/2018/01/17/android-adb-set-clipboard/" rel="next" title="Android 必知必会 - 使用 ADB 操作 Clipboard">
+                <i class="fa fa-chevron-left"></i> Android 必知必会 - 使用 ADB 操作 Clipboard
               </a>
             
           </div>
@@ -445,10 +479,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/12/28/android-code-framework/" rel="prev" title="Android 必知必会- 解决在 Android Studio 中 framework 等 jar 包无法被引用的问题">
-                Android 必知必会- 解决在 Android Studio 中 framework 等 jar 包无法被引用的问题 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -500,8 +530,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="http://7d9l9j.com1.z0.glb.clouddn.com/avatar.jpeg"
@@ -578,6 +617,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#0x00：奇怪的异常"><span class="nav-text">0x00：奇怪的异常</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#0x01：探究原因"><span class="nav-text">0x01：探究原因</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#0x02：解决方案"><span class="nav-text">0x02：解决方案</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
