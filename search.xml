@@ -4,7 +4,7 @@
     
     <entry>
       <title><![CDATA[Android 项目开发填坑记 - NoSuchMethodError:(java.lang.System.arraycopy)]]></title>
-      <url>/2018/02/09/android-arraycopy-error/</url>
+      <url>https://likfe.com/2018/02/09/android-arraycopy-error/</url>
       <content type="html"><![CDATA[<p>关键字：<code>NoSuchMethodError</code>、<code>System.arraycopy</code>、<code>Native Method</code></p>
 <h3 id="0x00：奇怪的异常"><a href="#0x00：奇怪的异常" class="headerlink" title="0x00：奇怪的异常"></a>0x00：奇怪的异常</h3><p>应用新版本上线后观察错误日志，发现一个奇怪的 Crash 异常信息：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">lang.java.NoSuchMethodError: (java.lang.System.arraycopy)</div></pre></td></tr></table></figure>
@@ -45,7 +45,7 @@
     
     <entry>
       <title><![CDATA[Android 必知必会 - 使用 ADB 操作 Clipboard]]></title>
-      <url>/2018/01/17/android-adb-set-clipboard/</url>
+      <url>https://likfe.com/2018/01/17/android-adb-set-clipboard/</url>
       <content type="html"><![CDATA[<p>关键词：<code>service call</code> 、<code>clipboard</code> 、<code>Unknown package</code></p>
 <p>手里一个项目需要执行个骚操作，其中有一个步骤是使用 ADB 来操作 Clipboard（粘贴板），搜索许久发现<strong>直接操作并不可行</strong>，确切的说是在 Android API &gt;=11 时是不可行的。</p>
 <a id="more"></a>
@@ -93,7 +93,7 @@
     
     <entry>
       <title><![CDATA[简单修复MacOS High Sierra 允许 Root 用户无密码登录的安全 Bug]]></title>
-      <url>/2017/11/29/mac10-13-root-bug/</url>
+      <url>https://likfe.com/2017/11/29/mac10-13-root-bug/</url>
       <content type="html"><![CDATA[<p>macOS High Sierra 最近爆出一个严重的安全漏洞，允许任何人在没有密码的情况下以完全管理功能的 root 用户登录到 Mac。据说已经有安全补丁，但是很多人未收到推送。</p>
 <p>受影响的系统版本：</p>
 <ul>
@@ -139,7 +139,7 @@
     
     <entry>
       <title><![CDATA[Android 必知必会 - 获取手机系统的构建模式]]></title>
-      <url>/2017/10/09/android-usermode/</url>
+      <url>https://likfe.com/2017/10/09/android-usermode/</url>
       <content type="html"><![CDATA[<p>关键词：<code>Android</code> 、<code>Make</code> 、<code>user mode</code> 、<code>user</code> 、<code>userdebug</code> 、<code>eng</code></p>
 <hr>
 <p>判定手机系统的构建模式、用户模式</p>
@@ -234,7 +234,7 @@
     
     <entry>
       <title><![CDATA[Android 必知必会 - 使用 Intent 打开第三方应用及验证可用性]]></title>
-      <url>/2017/08/30/android-is-intent-available/</url>
+      <url>https://likfe.com/2017/08/30/android-is-intent-available/</url>
       <content type="html"><![CDATA[<p>本文主要记录：</p>
 <ul>
 <li>使用 Intent 打开第三方应用或指定 Activity 的三种方式</li>
@@ -321,7 +321,7 @@
     
     <entry>
       <title><![CDATA[Android 必知必会 - EmptyView]]></title>
-      <url>/2017/07/07/android-empty-view/</url>
+      <url>https://likfe.com/2017/07/07/android-empty-view/</url>
       <content type="html"><![CDATA[<p>关键词：GridView ListView EmptyView SwipeRefreshLayout</p>
 <p>在使用 GridView、ListView 时经常需要处理无数据的情况，给用户一些必要的提示。而 GridView 和 ListView 可以使用 <code>setEmptyView()</code> 方法来设置无数据时展示的  View 。</p>
 <p>本文讲一下 EmptyView 的基本用法以及如何配合 SwipeRefreshLayout 使用。</p>
@@ -392,7 +392,7 @@
     
     <entry>
       <title><![CDATA[Android 必知必会 - DialogFragment 实现类似 PopupWindow 效果]]></title>
-      <url>/2017/06/01/android-dialogfragment-as-pop/</url>
+      <url>https://likfe.com/2017/06/01/android-dialogfragment-as-pop/</url>
       <content type="html"><![CDATA[<p>近期有网友根据 <a href="http://blog.csdn.net/ys743276112/article/details/52962046" target="_blank" rel="external">Android 必知必会 - DialogFragment 使用总结</a> 做一些业务，但是目标却是用 DialogFragment 实现类似 PopupWindow 效果：</p>
 <ul>
 <li>只拦截自身所占空间部分的事件，其余空间的点击事件不处理</li>
@@ -478,7 +478,7 @@
     
     <entry>
       <title><![CDATA[Android 项目开发填坑记 - 获取系统语言(兼容7.0)]]></title>
-      <url>/2017/05/10/android-sys-language/</url>
+      <url>https://likfe.com/2017/05/10/android-sys-language/</url>
       <content type="html"><![CDATA[<p>关键词：<code>Android7.0</code> 、<code>系统语言</code> 、<code>顺序不一致</code></p>
 <p>获取系统当前语言是一个比较常用的功能，在 Android 7.0 系统上旧函数获取到的当前系统语言并不正确，或者说从 Android 7.0 起，Android 系统语言的规则变了。</p>
 <a id="more"></a>
@@ -533,7 +533,7 @@
     
     <entry>
       <title><![CDATA[ThinkPHP 转换数据库查询出的数据到对应类型]]></title>
-      <url>/2017/03/25/tp3-x-all-string/</url>
+      <url>https://likfe.com/2017/03/25/tp3-x-all-string/</url>
       <content type="html"><![CDATA[<p>最近使用 ThinkPHP3.2.3 进行 API 开发，发现 ThinkPHP3.x 查询数据库返回所有字段值类型都是 String。以前开发 web 的时候没怎么注意这个，现在发现用到 API 开发很难办，数据类型不对，不能每个字段都让客户端自己强制转换一下。</p>
 <p>查资料后发现 ThinkPHP3.x 的 Model.class.php，提供了 <code>_parseType</code> 方法，在查询完以后进行类型转换，但需要我们手工调一下。</p>
 <a id="more"></a>
@@ -562,7 +562,7 @@
     
     <entry>
       <title><![CDATA[Android 必知必会 - Android Studio 2.3 找回 exploded-aar 目录【官方已更新】]]></title>
-      <url>/2017/03/15/android-studio-exploded-aar/</url>
+      <url>https://likfe.com/2017/03/15/android-studio-exploded-aar/</url>
       <content type="html"><![CDATA[<p>今天收到邮件提示 <code>exploded-aar</code> 目录问题在 <code>gradle plugin 2.5</code> 版本修复好了。</p>
 <blockquote>
 <p>Marked as Fixed</p>
@@ -602,7 +602,7 @@
     
     <entry>
       <title><![CDATA[Android Studio 升级 gradle 报错]]></title>
-      <url>/2017/03/13/android-update-gradle/</url>
+      <url>https://likfe.com/2017/03/13/android-update-gradle/</url>
       <content type="html"><![CDATA[<p>错误提示如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Gradle sync failed: Cause: error in opening zip file</div><div class="line">Consult IDE log for more details (Help | Show Log)</div></pre></td></tr></table></figure>
 <p>今天升级 2.2 到 2.3 后打开一个项目提示升级 gradle，就同意了，结果报了上面的错误。</p>
@@ -630,7 +630,7 @@
     
     <entry>
       <title><![CDATA[解决 Mac 下 Android Studio 不打印日志]]></title>
-      <url>/2017/03/02/mac-android-no-log/</url>
+      <url>https://likfe.com/2017/03/02/mac-android-no-log/</url>
       <content type="html"><![CDATA[<p>在 Mac 下使用 Android Studio 时常会遇到 Android Monitor 突然不打印日志的情况，目前知道的有三个方法：</p>
 <ol>
 <li><p>重启 Android Studio</p>
@@ -658,7 +658,7 @@
     
     <entry>
       <title><![CDATA[Android 必知必会 - 根据包名判断 App 运行状态]]></title>
-      <url>/2017/02/07/android-is-app-running/</url>
+      <url>https://likfe.com/2017/02/07/android-is-app-running/</url>
       <content type="html"><![CDATA[<p>获取指定包名的 APP 是否还在后台运行，判断 APP 是否存活。</p>
 <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>可以根据 App 是否有 <code>Service</code> 分两类情况处理：</p>
 <ul>
@@ -695,7 +695,7 @@
     
     <entry>
       <title><![CDATA[【译】在 Jelly Bean 中使用应用加密]]></title>
-      <url>/2017/01/05/android-app-encrypt/</url>
+      <url>https://likfe.com/2017/01/05/android-app-encrypt/</url>
       <content type="html"><![CDATA[<p>翻译自：<a href="http://nelenkov.blogspot.jp/2012/07/using-app-encryption-in-jelly-bean.html" target="_blank" rel="external">Using app encryption in Jelly Bean</a></p>
 <p>关键词 : <code>adb install -l</code></p>
 <hr>
@@ -759,7 +759,7 @@
     
     <entry>
       <title><![CDATA[Android 必知必会- 解决在 Android Studio 中 framework 等 jar 包无法被引用的问题]]></title>
-      <url>/2016/12/28/android-code-framework/</url>
+      <url>https://likfe.com/2016/12/28/android-code-framework/</url>
       <content type="html"><![CDATA[<blockquote>
 <p>在编译原生 Contacts 应用时需用到非公开的 API，需要引入 framework 等 jar 包，但在 Android Studio 中 SDK 带的 jar 包的优先级最高，导致引入的 framework 等 jar 包无法被引用，请问如何将 framework 等 jar 包的优先级调成最高？</p>
 <p>—— 知乎 <a href="https://www.zhihu.com/question/35628837" target="_blank" rel="external">在 Android Studio 中如何将依赖的 jar 包放在 SDK 的 android.jar 前？</a></p>
@@ -798,7 +798,7 @@
     
     <entry>
       <title><![CDATA[android library version]]></title>
-      <url>/2016/11/11/android-library-version/</url>
+      <url>https://likfe.com/2016/11/11/android-library-version/</url>
       <content type="html"></content>
       
         
@@ -806,7 +806,7 @@
     
     <entry>
       <title><![CDATA[Android 必知必会 - DialogFragment 使用总结]]></title>
-      <url>/2016/10/27/dialog-fragment/</url>
+      <url>https://likfe.com/2016/10/27/dialog-fragment/</url>
       <content type="html"><![CDATA[<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>Android 官方推荐使用 <code>DialogFragment</code> 来代替 <code>Dialog</code> ，可以让它具有更高的可复用性（降低耦合）和更好的便利性（很好的处理屏幕翻转的情况）。</p>
 <p>而创建 <code>DialogFragment</code> 有两种方式：</p>
 <ol>
@@ -885,7 +885,7 @@
     
     <entry>
       <title><![CDATA[Android 必知必会 - RadioGroup 和 ViewPager 联动]]></title>
-      <url>/2016/09/20/androd-radioGroup-and-viewPager/</url>
+      <url>https://likfe.com/2016/09/20/androd-radioGroup-and-viewPager/</url>
       <content type="html"><![CDATA[<p>使用 RadioGroup 和 ViewPager 实现更加可定制的效果。</p>
 <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>昨天设计图刚出一点，写了<a href="http://blog.csdn.net/ys743276112/article/details/52587509" target="_blank" rel="external">《Android 必知必会 - 动态切换着色模式和全屏模式》</a>，记录了动态修改页面显示模式的方式。今天又有新图，不过设计师只考虑 iOS 平台的设计，拿到设计图发现 <code>TabLayout + ViewPager</code> 的套路实现起来很麻烦，考虑了下，为了方便，决定使用 <code>RadioGroup + ViewPager</code> 来实现，之所以使用 <code>RadioGroup</code> ，是因为它内部多个 <code>RadioButton</code> 的状态是互斥的，也就是只有一个是选中状态，不需要我们进行多余的处理。总体来说比较简单，就是细节略多了点。</p>
 <p>主要知识点：</p>
@@ -963,7 +963,7 @@
     
     <entry>
       <title><![CDATA[Android 必知必会 - 动态切换着色模式和全屏模式]]></title>
-      <url>/2016/09/19/android-dynamic-set-statusBar/</url>
+      <url>https://likfe.com/2016/09/19/android-dynamic-set-statusBar/</url>
       <content type="html"><![CDATA[<p>通过代码动态切换页面的<strong>着色模式</strong>和<strong>全屏模式</strong>，兼容 <code>Android 4.4 +</code> 。</p>
 <p>本文假设读者已经了解着色模式和全屏模式（沉浸模式）。</p>
 <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>公司的 APP 设计图仅有 iOS 版的，对于 Android 平台，它整体算是着色模式，但是在个人页面是全屏模式（沉浸模式），实现设计图时，我使用的是一个 <code>Activity</code> + 四个 <code>Fragment</code> 实现的。</p>
@@ -1045,7 +1045,7 @@
     
     <entry>
       <title><![CDATA[Android 必知必会 - Glide 加载圆形和圆角图片的两种方法]]></title>
-      <url>/2016/08/31/android-glide-roundedBitmapTransformation/</url>
+      <url>https://likfe.com/2016/08/31/android-glide-roundedBitmapTransformation/</url>
       <content type="html"><![CDATA[<p>两种使用 <code>BitmapTransformation</code> 来实现<code>Glide</code> 加载圆形图片和圆角图片的方法。</p>
 <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p><code>Glide</code> 并不能直接支持 <code>Round Pictures</code> ，需要使用 <code>BitmapTransformation</code> 来进行处理。</p>
 <blockquote>
@@ -1082,7 +1082,7 @@
     
     <entry>
       <title><![CDATA[Android 必知必会 - 极简版 Leancloud 短信验证码功能]]></title>
-      <url>/2016/08/29/android-simple-leancloud-sms/</url>
+      <url>https://likfe.com/2016/08/29/android-simple-leancloud-sms/</url>
       <content type="html"><![CDATA[<p>使用 LeanCloud 的 REST API 来自定义短信验证码相关功能，不再需要臃肿的 SDK 。</p>
 <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>公司的项目仅仅使用了 Leancloud 短信功能来发送验证码，刚开始 Leancloud 的短信 SDK 还会和项目中的 <code>okhttp</code> 、<code>fastjson</code> 产生冲突，后来使用了独立的命名空间解决了冲突，但这样处理会导致项目中产生大量的冗余库。在仅仅使用短信验证码功能 SDK 的情况下会有下列文件被引入到项目中：</p>
 <ul>
@@ -1132,7 +1132,7 @@
     
     <entry>
       <title><![CDATA[Android 必知必会-使用 supportV4 的 RoundedBitmapDrawable 实现圆角]]></title>
-      <url>/2016/08/25/use-supportv4-RoundedBitmapDrawable/</url>
+      <url>https://likfe.com/2016/08/25/use-supportv4-RoundedBitmapDrawable/</url>
       <content type="html"><![CDATA[<p><code>RoundedBitmapDrawable</code> 是 <code>supportV4</code> 下的一个类，有了它，显示圆角和圆形图片的情况下就不需要额外的第三方类库了，还能和各种图片加载库配合使用。</p>
 <a id="more"></a>
 <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>今天无意间看到一段实现圆形头像的代码：</p>
@@ -1200,7 +1200,7 @@
     
     <entry>
       <title><![CDATA[Android 项目开发填坑记 - 使用 MultiDex 解决 64K 限制]]></title>
-      <url>/2016/08/17/android-multiDex/</url>
+      <url>https://likfe.com/2016/08/17/android-multiDex/</url>
       <content type="html"><![CDATA[<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>Android 的 <code>classLoader</code> 在加载 APK 的时候限制了<code>class.dex</code> 包含的 Java 方法数，其总数不能超过65535（64K，<strong>不要再说成 65K</strong> 了，1K = 2^10 = 1024 , 64 * 1024 = 65535），Google 官方给出的解决方案是使用  <a href="https://developer.android.com/studio/build/multidex.html" target="_blank" rel="external">Multidex</a> 。</p>
 <h2 id="启用-Multidex"><a href="#启用-Multidex" class="headerlink" title="启用 Multidex"></a>启用 Multidex</h2><p>基本要求：</p>
 <ul>
@@ -1267,7 +1267,7 @@
     
     <entry>
       <title><![CDATA[Android 必知必会 - Android Splash 页秒开之细节处理]]></title>
-      <url>/2016/08/16/create-splash-activity/</url>
+      <url>https://likfe.com/2016/08/16/create-splash-activity/</url>
       <content type="html"><![CDATA[<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>今天阅读了两篇 Android Splash 页秒开的文章，就上手试了试，效果确实不错，不过在使用过程中发现个小的问题，应用是发现在 Android 6.0 系统下 APP 启动的时候有个默认的动画，如果按照文章介绍的直接启动下一个加载数据的页面会出现页面闪动，有点美中不足的感觉。</p>
 <a id="more"></a>
 <h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>解决方法很简单，我这里做出了两处修改：<strong>延迟启动</strong>和<strong>添加淡出的过场动画</strong></p>
@@ -1311,7 +1311,7 @@
     
     <entry>
       <title><![CDATA[在自己的电脑上安装 GitBook For Mac]]></title>
-      <url>/2016/08/05/use-gitbook-on-mac/</url>
+      <url>https://likfe.com/2016/08/05/use-gitbook-on-mac/</url>
       <content type="html"><![CDATA[<h2 id="剪不断的情缘"><a href="#剪不断的情缘" class="headerlink" title="剪不断的情缘"></a>剪不断的情缘</h2><p>之前写了一篇 <a href="http://blog.csdn.net/ys743276112/article/details/45130831" target="_blank" rel="external">在自己的服务器上安装GitBook</a> ,发布于 2015-04-20，当时的安装环境是 <code>CentOS 6.X_64Bit</code>，今天想再研究一下这个 <code>GitBook</code> ，发现在基于 <code>Linux</code> 内核的机器上<strong>安装基础功能很简单</strong>，但是牵涉到生成 <code>pdf/epub/mobi</code> 格式的书籍时，<strong>安装calibre的代价非常大</strong>（因为要安装 N 多前置库），对于不是非常非常熟练使用 <code>Linux</code> 的用户，几乎是一种灾难。</p>
 <p>然而，对于 <code>OS X</code> 和 <code>Windows</code> 用户，则相对容易很多（Windows环境未测试），安装相应的 <code>calibre</code> 的客户端即可解决格式转换的问题。</p>
 <a id="more"></a>
@@ -1350,7 +1350,7 @@
     
     <entry>
       <title><![CDATA[Sublime Text 3 安装 Emmet]]></title>
-      <url>/2016/08/01/sublime-text-3-install-emmet-for-mac/</url>
+      <url>https://likfe.com/2016/08/01/sublime-text-3-install-emmet-for-mac/</url>
       <content type="html"><![CDATA[<p>前几天重写了2014年发布的 <a href="http://blog.csdn.net/ys743276112/article/details/52063396" target="_blank" rel="external">超高速前端开发工具——Emmet</a> ，主要是优化了代码段的格式，更加易读。今天在 MacBook 上安装了 Sublime Text 3 ，在安装一系列的插件时被网络问题影响到，这里介绍下安装过程，包含本地安装的情况。</p>
 <h2 id="1-安装-Package-Control"><a href="#1-安装-Package-Control" class="headerlink" title="1. 安装 Package Control"></a>1. 安装 <code>Package Control</code></h2><p>这里我们访问 <a href="https://packagecontrol.io/installation" target="_blank" rel="external">Package Control 官网</a> ，按照步骤即可：</p>
 <h3 id="1-打开命令行"><a href="#1-打开命令行" class="headerlink" title="1. 打开命令行"></a>1. 打开命令行</h3><p>使用快捷键 <strong>ctrl+` </strong> 或者在菜单中点击 <strong>View &gt; Show Console</strong> 。</p>
@@ -1395,7 +1395,7 @@
     
     <entry>
       <title><![CDATA[Android必知必会-App 常用图标尺寸规范汇总]]></title>
-      <url>/2016/07/26/android-size-set/</url>
+      <url>https://likfe.com/2016/07/26/android-size-set/</url>
       <content type="html"><![CDATA[<p><strong>内容持续更新中，更新日期：2016-08-11</strong></p>
 <h2 id="1-程序启动图标（icon-launcher）"><a href="#1-程序启动图标（icon-launcher）" class="headerlink" title="1. 程序启动图标（icon launcher）"></a>1. 程序启动图标（icon launcher）</h2><p>放在<code>mipmap-*dpi</code>下，文件名为<code>ic_launcher.png</code></p>
 <ul>
@@ -1598,7 +1598,7 @@
     
     <entry>
       <title><![CDATA[Android必知必会-发布开源Android项目注意事项]]></title>
-      <url>/2016/07/17/android-postOpenProjectNote/</url>
+      <url>https://likfe.com/2016/07/17/android-postOpenProjectNote/</url>
       <content type="html"><![CDATA[<h2 id="1-合理配置-gitignore-文件"><a href="#1-合理配置-gitignore-文件" class="headerlink" title="1. 合理配置 .gitignore 文件"></a>1. 合理配置 <code>.gitignore</code> 文件</h2><p>配置 <code>.gitignore</code> 可以排除一些非必要文件和保护保密信息，下面是在项目根目录下 <code>.gitignore</code> 的配置：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">.gradle</div><div class="line">/local.properties</div><div class="line">/gradle.properties</div><div class="line">/build</div><div class="line">*.log</div><div class="line">*.apk</div><div class="line">*.ap_</div><div class="line">/*/build/</div></pre></td></tr></table></figure>
 <p>这里介绍下一些参数的意义：</p>
@@ -1672,7 +1672,7 @@
     
     <entry>
       <title><![CDATA[Android必知必会-长按返回健退出]]></title>
-      <url>/2016/07/06/android-longpress-back/</url>
+      <url>https://likfe.com/2016/07/06/android-longpress-back/</url>
       <content type="html"><![CDATA[<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>平常比较常见的都是一定时间间隔内按两次返回键来退出应用，并且第一次点击会有相应的提示，网上资料比较多，这里写一下，长按返回键退出。</p>
 <h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><p>实现的方案常用的有两个：</p>
 <ul>
@@ -1721,7 +1721,7 @@
     
     <entry>
       <title><![CDATA[Android必知必会-Android Studio下配置和使用Lambda]]></title>
-      <url>/2016/07/06/android-setting-lamdba/</url>
+      <url>https://likfe.com/2016/07/06/android-setting-lamdba/</url>
       <content type="html"><![CDATA[<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>和朋友讨论 <code>JAVA8</code> 的新特性，聊到<code>Lambda</code>，正好在掘金上看到一篇相关的文章，结合资料，作一个总结，特别是记录下实际使用中遇到的问题。</p>
 <h3 id="什么是Lambda表达式"><a href="#什么是Lambda表达式" class="headerlink" title="什么是Lambda表达式"></a>什么是Lambda表达式</h3><blockquote>
 <p>lambda表达式，它将允许我们将行为传到函数里。在Java 8之前，如果想将行为传入函数，仅有的选择就是匿名类，需要6行代码。而定义行为最重要的那行代码，却混在中间不够突出。Lambda表达式取代了匿名类，取消了模板，允许用函数式风格编写代码。这样有时可读性更好，表达更清晰。</p>
@@ -1804,7 +1804,7 @@
     
     <entry>
       <title><![CDATA[Android 开发指南-0]]></title>
-      <url>/2016/06/28/androidTutorials-0/</url>
+      <url>https://likfe.com/2016/06/28/androidTutorials-0/</url>
       <content type="html"><![CDATA[<p>无意间发现一个网站，主打IOS方面的教程，然而作为一个Android开发者，我就找了下网站里有没有Android的教程，还真有，这里就翻译一下。</p>
 <blockquote>
 <p>翻译目标教程：<a href="https://www.raywenderlich.com/category/android" target="_blank" rel="external">https://www.raywenderlich.com/category/android</a></p>
@@ -1888,7 +1888,7 @@
     
     <entry>
       <title><![CDATA[Android必知必会-Android Studio修改包名]]></title>
-      <url>/2016/06/15/android-studio-rename-package/</url>
+      <url>https://likfe.com/2016/06/15/android-studio-rename-package/</url>
       <content type="html"><![CDATA[<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>公司做相似产品较多，一般都是以某个产品为基础修改，逐步替换设计图的切图。这个就会导致需要经常为Copy的项目修改包名。<br>这里是参考一些网上的说法，结合自身实战经验加以完善，特此分享给同行们，避免不必要的弯路。</p>
 <a id="more"></a>
 <h2 id="Android-Studio修改包名"><a href="#Android-Studio修改包名" class="headerlink" title="Android Studio修改包名"></a>Android Studio修改包名</h2><h3 id="1-修改包显示方式"><a href="#1-修改包显示方式" class="headerlink" title="1.修改包显示方式"></a>1.修改包显示方式</h3><p>如下图所示：<br><img src="http://img.blog.csdn.net/20160615174836929" alt="这里写图片描述"></p>
@@ -1927,7 +1927,7 @@
     
     <entry>
       <title><![CDATA[MAMP显示文件列表]]></title>
-      <url>/2016/06/14/mamp-list-file/</url>
+      <url>https://likfe.com/2016/06/14/mamp-list-file/</url>
       <content type="html"><![CDATA[<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>MAMP是Mac下的一个PHP+Nginx+MySQL的集成环境，支持多站点，不同版本PHP。<br>今天有人请教MAMP如何显示文件列表的问题，这里记录一下。</p>
 <a id="more"></a>
 <h3 id="知识补充"><a href="#知识补充" class="headerlink" title="知识补充"></a>知识补充</h3><p>一个网站为了安全考虑，默认是禁止访问目录下的文件列表的。<br>当你请求一个目录时：</p>
@@ -1963,7 +1963,7 @@
     
     <entry>
       <title><![CDATA[AMH 5.X下安装 Flarum]]></title>
-      <url>/2016/06/12/amh-install-flarum/</url>
+      <url>https://likfe.com/2016/06/12/amh-install-flarum/</url>
       <content type="html"><![CDATA[<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>最近无意间发现几个开源软件的<code>Bug反馈系统</code>使用的是<strong>Flarum</strong>，Flarum是一款优雅简洁论坛软件，看起来还是相当不错的，一时抑制不住想要尝试一下。</p>
 <p>由于服务器使用的是AMH集成环境，它相对于通常的直接安装环境有很多的区别，这导致安装过程中产生里不少问题。这里做个总结。</p>
 <h3 id="Flarum"><a href="#Flarum" class="headerlink" title="Flarum"></a>Flarum</h3><p>Flarum 是一款优雅简洁论坛软件，让在线交流变得更加轻松愉快。</p>
@@ -2088,7 +2088,7 @@
     
     <entry>
       <title><![CDATA[Android必知必会-带列表的地图POI周边搜索]]></title>
-      <url>/2016/05/30/mapPoiSearch/</url>
+      <url>https://likfe.com/2016/05/30/mapPoiSearch/</url>
       <content type="html"><![CDATA[<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>先看效果图：（以公司附近的国贸为中心点）</p>
 <p><img src="http://mmmedia.qiniudn.com/2016-05-30_007D8133A7BD3AF58D7994F64FDDB8D9.gif" alt="2016-05-30_007D8133A7BD3AF58D7994F64FDDB8D9.gif"></p>
 <p>上面是地图，下面是地理位置列表，有的只有地理位置列表（QQ动态的位置），这是个很常见的功能。它有个专门的叫法：<strong>POI周边搜索</strong>。</p>
@@ -2130,7 +2130,7 @@
     
     <entry>
       <title><![CDATA[Android必知必会-自定义Scrollbar样式]]></title>
-      <url>/2016/05/16/diyScrollbar/</url>
+      <url>https://likfe.com/2016/05/16/diyScrollbar/</url>
       <content type="html"><![CDATA[<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>设计师给的设计图完全依照 IOS 的标准来的，导致很多细节的控件都得自己重写，最近的设计图中有显示滚动条，Android 默认的滚动条样式（带描边）和设计图格格不入，无奈，只好研究下自定义 Scrollbar 样式。这里稍微整理下。<br><a id="more"></a></p>
 <h2 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h2><p>在<code>ListView</code>/<code>ScrollView</code>/<code>RecyclerView</code>中添加属性：</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 情况A ：垂直滚动条--&gt;</span></div><div class="line">android:scrollbars="vertical"</div><div class="line">android:scrollbarTrackVertical="@drawable/xxx_vertical_track"</div><div class="line">android:scrollbarThumbVertical="@drawable/xxx_vertical_thumb"</div><div class="line"><span class="comment">&lt;!-- 情况B ：水平滚动条--&gt;</span></div><div class="line">android:scrollbars="horizontal"</div><div class="line">android:scrollbarTrackHorizontal="@drawable/xxx_horizontal_track"</div><div class="line">android:scrollbarThumbHorizontal="@drawable/xxx_horizontal_thumb"</div><div class="line"></div><div class="line"><span class="comment">&lt;!-- 其他通用的属性 --&gt;</span></div><div class="line"><span class="comment">&lt;!-- 1.定义滚动条的样式和位置 --&gt;</span></div><div class="line">android:scrollbarStyle="outsideInset"</div><div class="line"><span class="comment">&lt;!-- 2.定义滚动条的大小，垂直时指宽度，水平时指高度 --&gt;</span></div><div class="line">android:scrollbarSize="4dp"</div></pre></td></tr></table></figure>
@@ -2237,7 +2237,7 @@
     
     <entry>
       <title><![CDATA[Android必知必会-获取View坐标和长宽的时机]]></title>
-      <url>/2016/05/13/theTimeGetViewInfo/</url>
+      <url>https://likfe.com/2016/05/13/theTimeGetViewInfo/</url>
       <content type="html"><![CDATA[<h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>最近要实现一个功能，用到了一些属性动画，需要获取一些View的坐标信息，设计图如下：<br><a id="more"></a><br><img src="http://img.blog.csdn.net/20160513160842549" alt="design"></p>
 <p>这里我使用的是<code>DialogFragment</code>来实现的，可以复用。</p>
 <p>先贴一下获取View坐标的一些资料：</p>
@@ -2269,7 +2269,7 @@
     
     <entry>
       <title><![CDATA[Android项目开发填坑记-9patchPng报错]]></title>
-      <url>/2016/04/28/9patchAttention/</url>
+      <url>https://likfe.com/2016/04/28/9patchAttention/</url>
       <content type="html"><![CDATA[<h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>之前写了一篇文章<a href="http://blog.csdn.net/ys743276112/article/details/45794809" target="_blank" rel="external">Android必知必会–NinePatch图片制作</a>详细介绍了Android 9Patch图片的制作和一些Demo展示，这次说明一下9Patch图片的制作的注意事项和遇到相关报错的解决方案。</p>
 <h3 id="一、注意事项"><a href="#一、注意事项" class="headerlink" title="一、注意事项"></a>一、注意事项</h3><p>9Patch图片的<strong>左边框</strong>和<strong>上边框</strong>至少<strong>有一个描点</strong>，<strong>右边框</strong>和<strong>下边框</strong>则<strong>有且只有一段描点</strong>。</p>
 <a id="more"></a>
@@ -2326,7 +2326,7 @@
     
     <entry>
       <title><![CDATA[Android必知必会--GreenDao缓存]]></title>
-      <url>/2016/04/22/greenDao-session/</url>
+      <url>https://likfe.com/2016/04/22/greenDao-session/</url>
       <content type="html"><![CDATA[<ul>
 <li><a href="http://likfe.github.io/2016/04/22/greenDao-session/" target="_blank" rel="external">Github版</a></li>
 <li><a href="http://blog.csdn.net/ys743276112/article/details/50479917" target="_blank" rel="external">CSDN版</a></li>
@@ -2363,7 +2363,7 @@
     
     <entry>
       <title><![CDATA[Android项目开发填坑记-Fragmen的onBackPressed]]></title>
-      <url>/2016/04/20/fragmen-onBackPressed/</url>
+      <url>https://likfe.com/2016/04/20/fragmen-onBackPressed/</url>
       <content type="html"><![CDATA[<h2 id="知识背景"><a href="#知识背景" class="headerlink" title="知识背景"></a>知识背景</h2><p><code>Fragment</code>在当前的Android开发中，有两种引用方式，一个是 Android 3.0 时加入的，一个是supportV4包中的。这里简称为<code>Fragment3.0</code>和<code>FragmentV4</code>。</p>
 <h2 id="Fragment中的返回"><a href="#Fragment中的返回" class="headerlink" title="Fragment中的返回"></a>Fragment中的返回</h2><p>在Fragment中经常用到自定义标题栏，而<strong>返回按钮</strong>的点击事件一般设置为：<code>getActivity().onBackPressed();</code>，这样可以使得点击返回按钮和点击手机上的返回键的效果一致，即调用所在Activity的<code>onBackPressed();</code>。</p>
 <a id="more"></a>
@@ -2420,7 +2420,7 @@
     
     <entry>
       <title><![CDATA[Android项目开发填坑记-Fragmen的onAttach方法]]></title>
-      <url>/2016/04/20/fragmen-onAttach/</url>
+      <url>https://likfe.com/2016/04/20/fragmen-onAttach/</url>
       <content type="html"><![CDATA[<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>现在Android开发多使用一个Activity管理多个Fragment进行开发，不免需要两者相互传递数据，一般是给Fragment添加回调接口，让Activity继承并实现。</p>
 <p>回调接口一般都写在Fragment的<code>onAttach()</code>方法中，Fragment 3.0 的<code>onAttach()</code>方法有2个重载，其中一个被废弃，所以通常是：</p>
 <a id="more"></a>
@@ -2456,7 +2456,7 @@
     
     <entry>
       <title><![CDATA[Android必知必会-Fragment监听返回键事件]]></title>
-      <url>/2016/04/14/fragment-backpress/</url>
+      <url>https://likfe.com/2016/04/14/fragment-backpress/</url>
       <content type="html"><![CDATA[<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>项目要求用户注册成功后进入修改个人资料的页面，且不允许返回到上一个页面，资料修改完成后结束当前页面，进入APP主页。</p>
 <p>由于是使用多个Fragment完成注册流程，就需要Fragment监听用户点击手机上的返回按钮，查了一些资料，加上自己使用过程中发现的问题，特此记录，帮助更多有此需求的朋友</p>
 <a id="more"></a>
@@ -2491,7 +2491,7 @@
     
     <entry>
       <title><![CDATA[Android反编译 -- 错误代码还原]]></title>
-      <url>/2016/04/09/My-New-Post/</url>
+      <url>https://likfe.com/2016/04/09/My-New-Post/</url>
       <content type="html"><![CDATA[<h3 id="1-setColor-16777216"><a href="#1-setColor-16777216" class="headerlink" title="1. setColor(-16777216)"></a>1. <code>setColor(-16777216)</code></h3><p>反编译的代码中会有很多<code>setColor(int)</code>的情况，比如<code>setColor(-16777216)</code>，这个值比较特别，能轻易的查到Android文档中对这个整数的定义：</p>
 <blockquote>
 <p>public static final int BLACK.<br>Added in API level 1<br>Constant Value: -16777216 ( 0xff000000). </p>
@@ -2560,7 +2560,7 @@
     
     <entry>
       <title><![CDATA[Hello World]]></title>
-      <url>/2016/04/09/hello-world/</url>
+      <url>https://likfe.com/2016/04/09/hello-world/</url>
       <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
