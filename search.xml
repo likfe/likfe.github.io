@@ -3,7 +3,7 @@
   
     
     <entry>
-      <title><![CDATA[自定义 OkHttp 、OkIo 的包名]]></title>
+      <title><![CDATA[Android 必知必会 - 自定义 OkHttp 、OkIo 的包名]]></title>
       <url>/2018/05/31/change-package-name-of-okhttp/</url>
       <content type="html"><![CDATA[<p>在某些特殊的情况下，需要对项目中使用的 okhttp 的包名进行修改，避免冲突或者版本不一致导致找不到类的问题。</p>
 <p>环境：</p>
