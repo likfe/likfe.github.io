@@ -3,6 +3,26 @@
   
     
     <entry>
+      <title><![CDATA[自定义 OkHttp 、OkIo 的包名]]></title>
+      <url>/2018/05/31/change-package-name-of-okhttp/</url>
+      <content type="html"></content>
+      
+        
+        <tags>
+            
+            <tag> Android </tag>
+            
+            <tag> IDEA </tag>
+            
+            <tag> Android Studio </tag>
+            
+            <tag> OkHttp </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[GitHub Pages 对自定义域名支持 HTTPS]]></title>
       <url>/2018/05/03/github-pages-custom-domains-support-https/</url>
       <content type="html"><![CDATA[<p>GitHub Pages Blog 原文：<a href="https://blog.github.com/2018-05-01-github-pages-custom-domains-https/" target="_blank" rel="external">Custom domains on GitHub Pages gain support for HTTPS</a></p>
