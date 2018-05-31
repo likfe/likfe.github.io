@@ -145,4 +145,12 @@ $(document).ready(function () {
           NexT.utils.displaySidebar();
       }) : NexT.utils.displaySidebar();
   }
+
+
+});
+
+$(document).ready(function () {
+  if(window.location.host.search("www") != -1){
+    $("div#coding").html('&nbsp; &nbsp;&nbsp; &nbsp;|&nbsp;&nbsp; &nbsp;&nbsp;Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a>');
+  }
 });
