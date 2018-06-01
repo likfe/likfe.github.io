@@ -959,14 +959,6 @@
     </entry>
     
     <entry>
-      <title><![CDATA[android library version]]></title>
-      <url>/2016/11/11/android-library-version/</url>
-      <content type="html"></content>
-      
-        
-    </entry>
-    
-    <entry>
       <title><![CDATA[Android 必知必会 - DialogFragment 使用总结]]></title>
       <url>/2016/10/27/dialog-fragment/</url>
       <content type="html"><![CDATA[<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>Android 官方推荐使用 <code>DialogFragment</code> 来代替 <code>Dialog</code> ，可以让它具有更高的可复用性（降低耦合）和更好的便利性（很好的处理屏幕翻转的情况）。</p>
