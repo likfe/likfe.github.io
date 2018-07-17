@@ -352,7 +352,7 @@
               
                 <span class="post-meta-item-text">更新于</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-07-17T16:40:11+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2018-07-17T16:41:45+08:00">
                 2018-07-17
               </time>
             
@@ -398,8 +398,7 @@
 
       
         
-          
-            <p>近段时间发现使用的服务器商免费支持了 IPv6，于是尝试开通了，下面记录下网络测试相关的笔记。</p>
+          <p>近段时间发现使用的服务器商免费支持了 IPv6，于是尝试开通了，下面记录下网络测试相关的笔记。</p>
 <h2 id="0x00-测试环境"><a href="#0x00-测试环境" class="headerlink" title="0x00 测试环境"></a>0x00 测试环境</h2><p>测试环境：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Distributor ID:		Debian</div><div class="line">Description:		Debian GNU/Linux 8.10 (jessie)</div><div class="line">Release:			8.10</div><div class="line">Codename:			jessie</div><div class="line">Linux version:		4.10.15-041015-generic (kernel@gomeisa)</div></pre></td></tr></table></figure>
 <h2 id="0x01-IPv6-相关"><a href="#0x01-IPv6-相关" class="headerlink" title="0x01 IPv6 相关"></a>0x01 IPv6 相关</h2><ol>
@@ -409,26 +408,13 @@
 <li>查看 IPv6 的路由表：<code>ip -6 route</code>，其中 <code>default via</code> 后面非 <code>fe80</code> 开头的为公网网关地址。</li>
 </ol>
 <p>可通过 <code>ping6 网关地址</code>  来测试网关是否正常。</p>
-<p>直接测试：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ping6 ipv6.google.com</div><div class="line">traceroute6 ipv6.google.com</div></pre></td></tr></table></figure>
-<p>在线测试：<a href="https://test-ipv6.com" target="_blank" rel="external">https://test-ipv6.com</a></p>
-<h2 id="0x02-查看系统信息"><a href="#0x02-查看系统信息" class="headerlink" title="0x02 查看系统信息"></a>0x02 查看系统信息</h2><ol>
-<li><code># uname －a</code>   （查看版本当前操作系统内核信息）</li>
-<li><code># cat /etc/issue</code>  或 <code>cat /etc/redhat-release</code>（查看版本当前操作系统发行版信息）</li>
-<li><code># getconf LONG_BIT</code>  （查看当前CPU运行模式：32bit or 64bit）</li>
-<li><code># lsb_release -a</code> 查看详细发行信息</li>
-</ol>
-<p>参考：<a href="https://www.digitalocean.com/community/tutorials/how-to-configure-tools-to-use-ipv6-on-a-linux-vps" target="_blank" rel="external">How To Configure Tools to Use IPv6 on a Linux VPS</a></p>
-<p><strong>PS</strong>：你可以通过下面的方式和我联系</p>
-<blockquote>
-<ul>
-<li>微博：<a href="http://weibo.com/zyansen" target="_blank" rel="external">cafeting</a></li>
-<li>Github： <a href="https://github.com/likfe" target="_blank" rel="external">likfe</a></li>
-<li>CSDN：<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="external">他叫自己Mr.张</a> </li>
-</ul>
-</blockquote>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/07/17/linux-ipv6-check/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
