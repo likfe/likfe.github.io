@@ -1,0 +1,1239 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+<meta name="google-site-verification" content="-zFk0OkcB5n-RkT8CtLiAsBamNelO-hiAdzRMcPB5N0" />
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="ReactNative," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="一般是焦点问题，解决方法：即在 ScrollView 标签内，根据情况设置其 keyboardShouldPersistTaps 属性值为 always 或者 handled 。详细解决过程如下： 0x00 描述收到测试人员提交的 Bug：帐号密码输入完毕按返回键关闭键盘后，点击登录没反应，再点一次才执行登录操作。网上类似的情况还有 “当点击 TouchableOpacity 时，要点击两下才会触">
+<meta name="keywords" content="ReactNative">
+<meta property="og:type" content="article">
+<meta property="og:title" content="React Native 小记 - TouchableOpacity 单次点击无效">
+<meta property="og:url" content="https://likfe.com/2018/10/23/RN-keyboardShouldPersistTaps/index.html">
+<meta property="og:site_name" content="Cafeting">
+<meta property="og:description" content="一般是焦点问题，解决方法：即在 ScrollView 标签内，根据情况设置其 keyboardShouldPersistTaps 属性值为 always 或者 handled 。详细解决过程如下： 0x00 描述收到测试人员提交的 Bug：帐号密码输入完毕按返回键关闭键盘后，点击登录没反应，再点一次才执行登录操作。网上类似的情况还有 “当点击 TouchableOpacity 时，要点击两下才会触">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-10-23T07:58:34.809Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="React Native 小记 - TouchableOpacity 单次点击无效">
+<meta name="twitter:description" content="一般是焦点问题，解决方法：即在 ScrollView 标签内，根据情况设置其 keyboardShouldPersistTaps 属性值为 always 或者 handled 。详细解决过程如下： 0x00 描述收到测试人员提交的 Bug：帐号密码输入完毕按返回键关闭键盘后，点击登录没反应，再点一次才执行登录操作。网上类似的情况还有 “当点击 TouchableOpacity 时，要点击两下才会触">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://likfe.com/2018/10/23/RN-keyboardShouldPersistTaps/"/>
+
+
+
+<meta name="google-site-verification" content="-zFk0OkcB5n-RkT8CtLiAsBamNelO-hiAdzRMcPB5N0" />
+
+  <title>React Native 小记 - TouchableOpacity 单次点击无效 | Cafeting</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Cafeting</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">一个人的行走范围，就是他的世界。</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://likfe.com/2018/10/23/RN-keyboardShouldPersistTaps/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Cafeting">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cafeting">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">React Native 小记 - TouchableOpacity 单次点击无效</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-23T15:54:10+08:00">
+                2018-10-23
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2018-10-23T15:58:34+08:00">
+                2018-10-23
+              </time>
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/10/23/RN-keyboardShouldPersistTaps/" class="leancloud_visitors" data-flag-title="React Native 小记 - TouchableOpacity 单次点击无效">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>一般是焦点问题，解决方法：即在 ScrollView 标签内，根据情况设置其 <code>keyboardShouldPersistTaps</code> 属性值为 <code>always</code> 或者 <code>handled</code> 。详细解决过程如下：</p>
+<h2 id="0x00-描述"><a href="#0x00-描述" class="headerlink" title="0x00 描述"></a>0x00 描述</h2><p>收到测试人员提交的 Bug：帐号密码输入完毕按返回键关闭键盘后，点击登录没反应，再点一次才执行登录操作。网上类似的情况还有 “当点击 TouchableOpacity 时，要点击两下才会触发 onPress() ”、“在 ScrollView 中 TouchableOpacity 需要在 TextInput 失去焦点后才能点击”等。</p>
+<a id="more"></a>
+<h2 id="0x01-问题查找"><a href="#0x01-问题查找" class="headerlink" title="0x01 问题查找"></a>0x01 问题查找</h2><p>作为一个 Android 开发者，看到情况描述，联想到是焦点问题。类似于 Android 原生开发的『ListView 的 Item 中 包含 EditText Button 时：EditText 与 Button 如何获取焦点、无法点击、ListView 不能滑动等』。</p>
+<p>由于我遇到的是 ScrollView 使用时出现的问题，查看下 <a href="https://facebook.github.io/react-native/docs/scrollview.html#keyboardshouldpersisttaps" target="_blank" rel="external">scrollview 的官方文档</a> 发现有个 <code>keyboardShouldPersistTaps</code> 的属性，用于处理此类情况。</p>
+<p>此外，在 <a href="https://stackoverflow.com/questions/34290787/touchableopacity-as-item-in-listview-only-reacts-after-textinput-has-lost-focus" target="_blank" rel="external">stackoverflow</a> 上也搜索到相关的回答，说是 ListView 也有此属性，<strong>但我本地 react-native-0.57.2 ListView 源码中并没有此属性。</strong></p>
+<h2 id="0x02-解决方案"><a href="#0x02-解决方案" class="headerlink" title="0x02 解决方案"></a>0x02 解决方案</h2><p>再次看文档：（ <a href="https://facebook.github.io/react-native/docs/scrollview.html#keyboardshouldpersisttaps" target="_blank" rel="external">官方文档</a> | <a href="https://reactnative.cn/docs/scrollview/#keyboardshouldpersisttaps" target="_blank" rel="external">中文文档</a> ）</p>
+<p>scrollview @  <code>keyboardShouldPersistTaps</code></p>
+<p>如果当前界面有软键盘，那么点击 ScrollView 后是否收起键盘，取决于本属性的设置。</p>
+<ul>
+<li><code>&#39;never&#39;</code> （默认值），点击 TextInput 以外的子组件会使当前的软键盘收起。此时子元素不会收到点击事件。</li>
+<li><code>&#39;always&#39;</code>，键盘不会自动收起，ScrollView 也不会捕捉点击事件，但子组件可以捕获。</li>
+<li><code>&#39;handled&#39;</code>，当点击事件被子组件捕获时，键盘不会自动收起。这样切换 TextInput 时键盘可以保持状态。多数带有TextInput 的情况下你应该选择此项。</li>
+<li><code>false</code>，已过时，请使用 <code>&#39;never&#39;</code>代替。</li>
+<li><code>true</code>，已过时，请使用 <code>&#39;always&#39;</code> 代替。</li>
+</ul>
+<p>经测试，使用 <code>always</code> 或者 <code>handled</code> 均可解决发生的问题，由于我这里是 ScrollView 内部存在多个 TextInput，故选择 <code>handled</code> 值。</p>
+<p>示例代码：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">ScrollView</span></span></div><div class="line"><span class="tag">	<span class="attr">style</span>=<span class="string">&#123;styles.mScrollView&#125;</span></span></div><div class="line"><span class="tag">	<span class="attr">keyboardShouldPersistTaps</span>=<span class="string">&#123;</span>'<span class="attr">handled</span>'&#125;</span></div><div class="line"><span class="tag">	&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">View</span> <span class="attr">style</span>=<span class="string">&#123;styles.root&#125;</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">View</span> <span class="attr">style</span>=<span class="string">&#123;styles.userRoot&#125;</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="name">Text</span> <span class="attr">style</span>=<span class="string">&#123;styles.userRootV1&#125;</span>&gt;</span>用户名：<span class="tag">&lt;/<span class="name">Text</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="name">View</span> <span class="attr">style</span>=<span class="string">&#123;&#123;</span></span></div><div class="line"><span class="tag">                            <span class="attr">flex:</span> <span class="attr">1</span>,</span></div><div class="line"><span class="tag">                            <span class="attr">borderBottomColor:</span> '#<span class="attr">f0f0f0</span>',</span></div><div class="line"><span class="tag">                            <span class="attr">borderBottomWidth:</span> <span class="attr">1</span></span></div><div class="line"><span class="tag">                        &#125;&#125;&gt;</span></div><div class="line">                            <span class="tag">&lt;<span class="name">LessBorderTextInput</span></span></div><div class="line"><span class="tag">                                <span class="attr">style</span>=<span class="string">&#123;styles.userRootV2&#125;</span></span></div><div class="line"><span class="tag">                                <span class="attr">multiline</span>=<span class="string">&#123;false&#125;</span></span></div><div class="line"><span class="tag">                                <span class="attr">placeholder</span>=<span class="string">&#123;</span>'请输入用户名'&#125;</span></div><div class="line"><span class="tag">                                <span class="attr">placeholderTextColor</span>=<span class="string">&#123;</span>'#<span class="attr">ccc</span>'&#125;</span></div><div class="line"><span class="tag">                                <span class="attr">autoFocus</span>=<span class="string">&#123;false&#125;</span></span></div><div class="line"><span class="tag">                                <span class="attr">onChangeText</span>=<span class="string">&#123;(newText)</span> =&gt;</span> this.updateUser(newText)&#125;</div><div class="line">                                returnKeyType=&#123;'next'&#125;</div><div class="line">                                onSubmitEditing=&#123;() =&gt; &#123;</div><div class="line">                                    this._input.focus();</div><div class="line">                                &#125;&#125;</div><div class="line">                            /&gt;</div><div class="line">                        <span class="tag">&lt;/<span class="name">View</span>&gt;</span></div><div class="line">                    <span class="tag">&lt;/<span class="name">View</span>&gt;</span></div><div class="line">                    <span class="tag">&lt;<span class="name">View</span> <span class="attr">style</span>=<span class="string">&#123;styles.userPwdRoot&#125;</span>&gt;</span></div><div class="line">                        <span class="tag">&lt;<span class="name">Text</span> <span class="attr">style</span>=<span class="string">&#123;styles.userPwdRootV1&#125;</span>&gt;</span>密码：<span class="tag">&lt;/<span class="name">Text</span>&gt;</span></div><div class="line">                        <span class="tag">&lt;<span class="name">View</span> <span class="attr">style</span>=<span class="string">&#123;&#123;</span></span></div><div class="line"><span class="tag">                            <span class="attr">flexDirection:</span> '<span class="attr">row</span>',</span></div><div class="line"><span class="tag">                            <span class="attr">flex:</span> <span class="attr">1</span>,</span></div><div class="line"><span class="tag">                            <span class="attr">borderBottomColor:</span> '#<span class="attr">f0f0f0</span>',</span></div><div class="line"><span class="tag">                            <span class="attr">borderBottomWidth:</span> <span class="attr">1</span>,</span></div><div class="line"><span class="tag">                            <span class="attr">alignItems:</span> '<span class="attr">center</span>',</span></div><div class="line"><span class="tag">                        &#125;&#125;&gt;</span></div><div class="line">                            <span class="tag">&lt;<span class="name">LessBorderTextInput</span></span></div><div class="line"><span class="tag">                                <span class="attr">style</span>=<span class="string">&#123;styles.userPwdRootV2&#125;</span></span></div><div class="line"><span class="tag">                                <span class="attr">placeholder</span>=<span class="string">&#123;</span>'请输入密码'&#125;</span></div><div class="line"><span class="tag">                                <span class="attr">multiline</span>=<span class="string">&#123;false&#125;</span></span></div><div class="line"><span class="tag">                                <span class="attr">placeholderTextColor</span>=<span class="string">&#123;</span>'#<span class="attr">ccc</span>'&#125;</span></div><div class="line"><span class="tag">                                <span class="attr">secureTextEntry</span>=<span class="string">&#123;!this.state.showPwd&#125;</span></span></div><div class="line"><span class="tag">                                <span class="attr">onChangeText</span>=<span class="string">&#123;(newText)</span> =&gt;</span> this.updatePwd(newText)&#125;</div><div class="line">                                returnKeyType=&#123;'done'&#125;</div><div class="line">                                ref=&#123;(c) =&gt; this._input = c&#125;</div><div class="line">                            /&gt;</div><div class="line">                            <span class="tag">&lt;<span class="name">TouchableOpacity</span></span></div><div class="line"><span class="tag">                                <span class="attr">onPress</span>=<span class="string">&#123;()</span> =&gt;</span> this._showPwd(!this.state.showPwd)&#125;&gt;</div><div class="line">                                <span class="tag">&lt;<span class="name">Image</span></span></div><div class="line"><span class="tag">                                    <span class="attr">source</span>=<span class="string">&#123;pwd_icon&#125;</span></span></div><div class="line"><span class="tag">                                    <span class="attr">style</span>=<span class="string">&#123;styles.userPwdRootV3&#125;</span></span></div><div class="line"><span class="tag">                                /&gt;</span></div><div class="line">                            <span class="tag">&lt;/<span class="name">TouchableOpacity</span>&gt;</span></div><div class="line">                        <span class="tag">&lt;/<span class="name">View</span>&gt;</span></div><div class="line">                    <span class="tag">&lt;/<span class="name">View</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">TouchableOpacity</span></span></div><div class="line"><span class="tag">		<span class="attr">onPress</span>=<span class="string">&#123;()</span> =&gt;</span> _login()&#125;&gt;</div><div class="line">		<span class="tag">&lt;<span class="name">Text</span> <span class="attr">style</span>=<span class="string">&#123;styles.userSignIn&#125;</span>&gt;</span>登录<span class="tag">&lt;/<span class="name">Text</span>&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">TouchableOpacity</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">ScrollView</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>其中 <code>LessBorderTextInput</code> 是我参考官方文档封装后无边框（方便实现各种 UI 设计要求）的 <code>TextInput</code> ，并且<strong>增加了支持 <code>ref</code> 属性的功能</strong>，可用于多处需要填写内容时直接在键盘上点击下一项即自动进入下一项的输入。参见博客的相关文章。</p>
+<h2 id="0x03-总结"><a href="#0x03-总结" class="headerlink" title="0x03 总结"></a>0x03 总结</h2><p>发现问题，借助搜索工具能很快得到解决方案，我这里也特地把解决方法直接写到了文章的开头，至于如何解决问题，是给想了解原因的人准备的一个思路和说明。如果你有更好的见解，欢迎和我一起讨论。</p>
+<p>如果有什么建议或者问题可以随时联系我，共同探讨学习：</p>
+<blockquote>
+<ul>
+<li>Github： <a href="https://github.com/likfe" target="_blank" rel="external">likfe</a></li>
+<li>CSDN：<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="external">他叫自己Mr.张</a> </li>
+<li>掘金：<a href="https://juejin.im/user/56042f4b60b2f3a91f58461d" target="_blank" rel="external">cafeting</a></li>
+<li>微博：<a href="http://weibo.com/zyansen" target="_blank" rel="external">cafeting</a></li>
+</ul>
+</blockquote>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    Cafeting
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://likfe.com/2018/10/23/RN-keyboardShouldPersistTaps/" title="React Native 小记 - TouchableOpacity 单次点击无效">https://likfe.com/2018/10/23/RN-keyboardShouldPersistTaps/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/deed.zh" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/ReactNative/" rel="tag"># ReactNative</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/05/03/github-pages-custom-domains-support-https/" rel="next" title="GitHub Pages 对自定义域名支持 HTTPS">
+                <i class="fa fa-chevron-left"></i> GitHub Pages 对自定义域名支持 HTTPS
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="Cafeting" />
+          <p class="site-author-name" itemprop="name">Cafeting</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+           
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">46</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">32</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/likfe" target="_blank" title="Github">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      Github
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://weibo.com/zyansen" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Weibo
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#0x00-描述"><span class="nav-text">0x00 描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x01-问题查找"><span class="nav-text">0x01 问题查找</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x02-解决方案"><span class="nav-text">0x02 解决方案</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x03-总结"><span class="nav-text">0x03 总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Cafeting</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+<div id="coding" class="theme-info">
+</div>
+
+
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("2nXIpjWLUKkYRIXj2zESyxbJ-gzGzoHsz", "GhYJy4g50Rt6nwyP6MslqpnX");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
