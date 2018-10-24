@@ -3,6 +3,34 @@
   
     
     <entry>
+      <title><![CDATA[React Native 小记 - LessBorderTextInput 无边框的 TextInput]]></title>
+      <url>/2018/10/24/RN-LessBorderTextInput/</url>
+      <content type="html"><![CDATA[<p>由于 TextInput 在 Android 和 iOS 平台默认表现不一致，为了统一样式，这里参照官方文档（ <a href="http://facebook.github.io/react-native/docs/textinput.html" target="_blank" rel="external">英文文档</a> | <a href="https://reactnative.cn/docs/0.48/textinput.html" target="_blank" rel="external">中文文档</a> ）进行了封装，并添加了对 <code>ref</code> 的支持。<code>ref</code> 用于获取组件，实现自动切换输入框的焦点等场景。</p>
+<a id="more"></a>
+<h2 id="代码展示"><a href="#代码展示" class="headerlink" title="代码展示"></a>代码展示</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line">import React from &apos;react&apos;;</div><div class="line">import &#123;Platform, TextInput,&#125; from &apos;react-native&apos;;</div><div class="line"></div><div class="line">//没有底部下划线的输入框</div><div class="line">export default class LessBorderTextInput extends React.Component &#123;</div><div class="line"></div><div class="line">    componentDidMount() &#123;</div><div class="line">        if (this.props.onRef != null) &#123;</div><div class="line">            this.props.onRef(this)</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    focus() &#123;</div><div class="line">        this.textInput.focus()</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    render() &#123;</div><div class="line">        let mView;</div><div class="line">        if (Platform.OS === &apos;android&apos;) &#123;</div><div class="line">            mView =</div><div class="line">                &lt;TextInput</div><div class="line">                    &#123;...this.props&#125;</div><div class="line">                    ref=&#123;input =&gt; this.textInput = input&#125;</div><div class="line">                    underlineColorAndroid=&#123;&quot;transparent&quot;&#125;</div><div class="line">                /&gt;;</div><div class="line">        &#125; else &#123;</div><div class="line">            mView =</div><div class="line">                &lt;TextInput</div><div class="line">                    &#123;...this.props&#125;</div><div class="line">                    ref=&#123;input =&gt; this.textInput = input&#125;</div><div class="line">                /&gt;;</div><div class="line">        &#125;</div><div class="line">        return mView;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>基本实现思路是根据平台的不同，调用平台特有的属性来统一显示效果，再在使用的时候，外层嵌套 View 来实现统一样式的底部边框，还能添加类似密码点击可见等效果。</p>
+<p>今天10.24 程序员节了，祝各位节日快乐。</p>
+<p>如果有什么建议或者问题可以随时联系我，共同探讨学习：</p>
+<blockquote>
+<ul>
+<li>Github： <a href="https://github.com/likfe" target="_blank" rel="external">likfe</a></li>
+<li>CSDN：<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="external">他叫自己Mr.张</a> </li>
+<li>掘金：<a href="https://juejin.im/user/56042f4b60b2f3a91f58461d" target="_blank" rel="external">cafeting</a></li>
+<li>微博：<a href="http://weibo.com/zyansen" target="_blank" rel="external">cafeting</a></li>
+</ul>
+</blockquote>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> ReactNative </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[React Native 小记 - TouchableOpacity 单次点击无效]]></title>
       <url>/2018/10/23/RN-keyboardShouldPersistTaps/</url>
       <content type="html"><![CDATA[<p>一般是焦点问题，解决方法：即在 ScrollView 标签内，根据情况设置其 <code>keyboardShouldPersistTaps</code> 属性值为 <code>always</code> 或者 <code>handled</code> 。详细解决过程如下：</p>
