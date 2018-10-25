@@ -3,6 +3,38 @@
   
     
     <entry>
+      <title><![CDATA[Android Studio Error:String index out of range:-1]]></title>
+      <url>/2018/10/25/as-err-string-range-1/</url>
+      <content type="html"><![CDATA[<p>博主遇到此问题的原因是 NDK 版本过高（&gt;=18），或者说 Android Studio 版本过低（&lt;3.x），导致不匹配造成的。解决方法是降低 NDK 版本到 17.x 及以下，或者升级 Android Studio 版本到 3.x。</p>
+<h2 id="0x00-异常"><a href="#0x00-异常" class="headerlink" title="0x00 异常"></a>0x00 异常</h2><p>最近接手同事的一个项目，在我电脑上使用 Android Studio 死活是无法正常加载，同步项目的过程一直报 <code>String index out of range: -1</code> 的异常，且没有任何有用的 Log 打印出来。</p>
+<a id="more"></a>
+<p>基础环境：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">macOS 10.13.6</div><div class="line">Android Studio 2.3.3</div><div class="line">JDK 1.8</div></pre></td></tr></table></figure>
+<p>使用多个搜索引擎搜索 <code>Android Studio String index out of range: -1</code> 发现无一例此种情况，大多是 <code>String index out of range: -xx</code> ，xx 都小于 <code>-1</code> 。</p>
+<h2 id="0x01-解决"><a href="#0x01-解决" class="headerlink" title="0x01 解决"></a>0x01 解决</h2><p>既然没有已有的解决方案，就只能下笨方法来处理了。我对比了 Android SDK 里面所有的库版本，逐一排除，锁定到 NDK 版本上，没问题的版本都是17及以下的，我的最近升级到 18.x 了，索性直接移除 NDK 试了下，发现项目能正常打开了。</p>
+<p>由于公司项目使用的环境版本比较低，且无法支持高版本的 gradle 环境，遂选择使用降级 NDK 的方案。使用官网下载 NDK 17.x 版本后，项目也是正常运行。</p>
+<h2 id="0x02-总结"><a href="#0x02-总结" class="headerlink" title="0x02 总结"></a>0x02 总结</h2><p>此类情况发生的几率比较小，但日常开发中还是需要多关注下开发环境，避免不必要的麻烦。</p>
+<p>如果有什么建议或者问题可以随时联系我，共同探讨学习：</p>
+<blockquote>
+<ul>
+<li>Github： <a href="http://likfe.github.io/" target="_blank" rel="external">likfe</a></li>
+<li>CSDN：<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="external">他叫自己Mr.张</a> </li>
+<li>掘金：<a href="https://juejin.im/user/56042f4b60b2f3a91f58461d" target="_blank" rel="external">cafeting</a></li>
+<li>微博：<a href="http://weibo.com/zyansen" target="_blank" rel="external">cafeting</a></li>
+</ul>
+</blockquote>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> AndroidStudio </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[React Native 小记 - LessBorderTextInput 无边框的 TextInput]]></title>
       <url>/2018/10/24/RN-LessBorderTextInput/</url>
       <content type="html"><![CDATA[<p>由于 TextInput 在 Android 和 iOS 平台默认表现不一致，为了统一样式，这里参照官方文档（ <a href="http://facebook.github.io/react-native/docs/textinput.html" target="_blank" rel="external">英文文档</a> | <a href="https://reactnative.cn/docs/0.48/textinput.html" target="_blank" rel="external">中文文档</a> ）进行了封装，并添加了对 <code>ref</code> 的支持。<code>ref</code> 用于获取组件，实现自动切换输入框的焦点等场景。</p>
