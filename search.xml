@@ -4,6 +4,29 @@
   
     
     <entry>
+      <title>侧滑返回：透明（Translucent） Activity弹出 PopWindow 后侧滑时背景变黑色</title>
+      <link href="/2019/02/17/TranslucentActivityPopWindowBlackBackground/"/>
+      <url>/2019/02/17/TranslucentActivityPopWindowBlackBackground/</url>
+      
+        <content type="html"><![CDATA[<p>Android 模仿 iOS 的侧滑返回一般分2大类：透明方案和非透明方案。</p><p>其中透明方案有很多隐藏的意料之外的情况需要处理。本文记录透明方案弹出 PopWindow 后导致透明背景失效变黑色的情况。</p><h2 id="0x00-问题"><a href="#0x00-问题" class="headerlink" title="0x00 问题"></a>0x00 问题</h2><p>todo</p><p>Translucent,PopWindow,SwipeBack</p><a id="more"></a><h2 id="0x01-解决方法"><a href="#0x01-解决方法" class="headerlink" title="0x01 解决方法"></a>0x01 解决方法</h2><p> todo</p><h2 id="0x02-总结"><a href="#0x02-总结" class="headerlink" title="0x02 总结"></a>0x02 总结</h2><p>todo</p><p>如果有什么建议或者问题可以随时联系我，共同探讨学习：</p><blockquote><ul><li>Github： <a href="http://likfe.github.io/" target="_blank" rel="noopener">likfe</a></li><li>CSDN：<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="noopener">他叫自己Mr.张</a> </li><li>掘金：<a href="https://juejin.im/user/56042f4b60b2f3a91f58461d" target="_blank" rel="noopener">cafeting</a></li><li>微博：<a href="http://weibo.com/zyansen" target="_blank" rel="noopener">cafeting</a></li></ul></blockquote>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Translucent </tag>
+            
+            <tag> SwipeBack </tag>
+            
+            <tag> PopWindow </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>遍历 AccessibilityNodeInfo 报 StackOverflowError</title>
       <link href="/2019/02/17/StackOverflowErrorInAccessibilityNodeInfo/"/>
       <url>/2019/02/17/StackOverflowErrorInAccessibilityNodeInfo/</url>
