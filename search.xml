@@ -4,6 +4,27 @@
   
     
     <entry>
+      <title>遍历 AccessibilityNodeInfo 报 StackOverflowError</title>
+      <link href="/2019/02/17/StackOverflowErrorInAccessibilityNodeInfo/"/>
+      <url>/2019/02/17/StackOverflowErrorInAccessibilityNodeInfo/</url>
+      
+        <content type="html"><![CDATA[<p>在使用 AccessibilityService 遍历包含 WebView 的 AccessibilityNodeInfo 时会在某些情况下必现 <code>StackOverflowError</code> 的错误，导致应用崩溃。</p><h2 id="0x00-异常"><a href="#0x00-异常" class="headerlink" title="0x00 异常"></a>0x00 异常</h2><p>最近使用 Android 的 AccessibilityService 做一些自动化操作时发现，在部分机器上遍历包含 WebView 页面的 AccessibilityNodeInfo 时，某些页面必定会引起 <code>StackOverflowError</code> 错误，经过一番查证，定位到主要与系统所使用的 Android System WebView 版本有关，属于 WebView 的 Bug。</p><p>相关说明可以参考 <a href="https://bugs.chromium.org/p/chromium/issues/detail?id=805014" target="_blank" rel="noopener">Android: Infinite loop of FrameLayouts in accessibility tree</a> 的讨论。</p><p><strong>查看 Android System WebView 版本</strong>（以下2种方法任一均可）：</p><ol><li>应用程序<ol><li>菜单：显示系统应用程序</li><li>点击列表中的：Android System WebView</li><li>详情页内包含版本</li></ol></li><li>开发者选项<ol><li>开启「开发者选项」</li><li>开发者选项 -&gt; WebView 实现</li></ol></li></ol><a id="more"></a><h2 id="0x01-解决"><a href="#0x01-解决" class="headerlink" title="0x01 解决"></a>0x01 解决</h2><p>方法有2种：</p><ol><li>一个是尝试在 Google Play Store 中升级 Android System WebView 到最新版；</li><li>一个是使用递归遍历 AccessibilityNodeInfo 时限制遍历的最大深度，这个深度根据情况大致在 40~70之间即可，既要基本保证能遍历完正常的 NodeTree 内的 Node，又要不引起  <code>StackOverflowError</code> 导致应用崩溃。</li></ol><p>当然，方法2更具有可控性和兼容性，某些情况下我们并不能左右用户手机上 Android System WebView 的版本。</p><h2 id="0x02-总结"><a href="#0x02-总结" class="headerlink" title="0x02 总结"></a>0x02 总结</h2><p>此类情况发生在特定的 Android System WebView 和 Android 版本上，建议使用了相关功能的应用加上 Bug 上报的功能。</p><p>如果有什么建议或者问题可以随时联系我，共同探讨学习：</p><blockquote><ul><li>Github： <a href="http://likfe.github.io/" target="_blank" rel="noopener">likfe</a></li><li>CSDN：<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="noopener">他叫自己Mr.张</a> </li><li>掘金：<a href="https://juejin.im/user/56042f4b60b2f3a91f58461d" target="_blank" rel="noopener">cafeting</a></li><li>微博：<a href="http://weibo.com/zyansen" target="_blank" rel="noopener">cafeting</a></li></ul></blockquote>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> AccessibilityNodeInfo </tag>
+            
+            <tag> StackOverflow </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Android Studio Error:String index out of range:-1</title>
       <link href="/2018/10/25/as-err-string-range-1/"/>
       <url>/2018/10/25/as-err-string-range-1/</url>
