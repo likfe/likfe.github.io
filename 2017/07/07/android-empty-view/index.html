@@ -6,12 +6,12 @@
 
 
 <html class="theme-next mist use-motion" lang="zh-Hans">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="theme-color" content="#222">
-<meta name="google-site-verification" content="-zFk0OkcB5n-RkT8CtLiAsBamNelO-hiAdzRMcPB5N0" />
+<meta name="google-site-verification" content="-zFk0OkcB5n-RkT8CtLiAsBamNelO-hiAdzRMcPB5N0">
 
 
 
@@ -28,8 +28,8 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -47,7 +47,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
 
 
 
@@ -81,21 +81,21 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
 
-<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="Android," />
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css">
 
 
+  <meta name="keywords" content="Android,">
 
 
 
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2">
 
 
 
@@ -142,11 +142,11 @@
 
 
 
-  <link rel="canonical" href="https://likfe.com/2017/07/07/android-empty-view/"/>
+  <link rel="canonical" href="https://likfe.com/2017/07/07/android-empty-view/">
 
 
 
-<meta name="google-site-verification" content="-zFk0OkcB5n-RkT8CtLiAsBamNelO-hiAdzRMcPB5N0" />
+<meta name="google-site-verification" content="-zFk0OkcB5n-RkT8CtLiAsBamNelO-hiAdzRMcPB5N0">
 
   <title>Android 必知必会 - EmptyView | Cafeting</title>
   
@@ -182,7 +182,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">Cafeting</span>
         <span class="logo-line-after"><i></i></span>
@@ -266,9 +266,7 @@
       <i class="fa fa-times-circle"></i>
     </span>
     <div class="local-search-input-wrapper">
-      <input autocomplete="off"
-             placeholder="搜索..." spellcheck="false"
-             type="text" id="local-search-input">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
     </div>
   </div>
   <div id="local-search-result"></div>
@@ -309,7 +307,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Cafeting">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -366,8 +364,7 @@
                   <i class="fa fa-comment-o"></i>
                 </span>
                 <a href="/2017/07/07/android-empty-view/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/07/07/android-empty-view/" itemprop="commentCount"></span>
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/07/07/android-empty-view/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -414,7 +411,7 @@
 <p>嗯，就像喷漆，后面喷的总是覆盖在之前喷的上面。</p>
 <h3 id="setEmptyView-都做了什么？"><a href="#setEmptyView-都做了什么？" class="headerlink" title="setEmptyView() 都做了什么？"></a><code>setEmptyView()</code> 都做了什么？</h3><p><code>setEmptyView(View emptyView)</code> 是 <code>AdapterView</code> 的一个方法，ListView、GridView、Spinner 和 Gallery 都是 <code>AdapterView</code> 的子类，那么理论上来说，本文讲解的针对 ListView、GridView 设置 EmptyView 的方法对于 Spinner、Gallery 应该同样适用。</p>
 <p>下面简单看下这个方法的源码：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setEmptyView</span><span class="params">(View emptyView)</span> </span>&#123;</div><div class="line">        mEmptyView = emptyView;</div><div class="line"></div><div class="line">        <span class="comment">// If not explicitly specified this view is important for accessibility.</span></div><div class="line">        <span class="keyword">if</span> (emptyView != <span class="keyword">null</span></div><div class="line">                &amp;&amp; emptyView.getImportantForAccessibility() == IMPORTANT_FOR_ACCESSIBILITY_AUTO) &#123;</div><div class="line">            emptyView.setImportantForAccessibility(IMPORTANT_FOR_ACCESSIBILITY_YES);</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="keyword">final</span> T adapter = getAdapter();</div><div class="line">        <span class="keyword">final</span> <span class="keyword">boolean</span> empty = ((adapter == <span class="keyword">null</span>) || adapter.isEmpty());</div><div class="line">        updateEmptyStatus(empty);</div><div class="line">    &#125;</div><div class="line">    </div><div class="line"><span class="comment">/**</span></div><div class="line"><span class="comment">     * Update the status of the list based on the empty parameter.  If empty is true and</span></div><div class="line"><span class="comment">     * we have an empty view, display it.  In all the other cases, make sure that the listview</span></div><div class="line"><span class="comment">     * is VISIBLE and that the empty view is GONE (if it's not null).</span></div><div class="line"><span class="comment">     */</span></div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">updateEmptyStatus</span><span class="params">(<span class="keyword">boolean</span> empty)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span> (isInFilterMode()) &#123;</div><div class="line">            empty = <span class="keyword">false</span>;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="keyword">if</span> (empty) &#123;</div><div class="line">            <span class="keyword">if</span> (mEmptyView != <span class="keyword">null</span>) &#123;</div><div class="line">                mEmptyView.setVisibility(View.VISIBLE);</div><div class="line">                setVisibility(View.GONE);</div><div class="line">            &#125; <span class="keyword">else</span> &#123;</div><div class="line">                <span class="comment">// If the caller just removed our empty view, make sure the list view is visible</span></div><div class="line">                setVisibility(View.VISIBLE);</div><div class="line">            &#125;</div><div class="line"></div><div class="line">            <span class="comment">// We are now GONE, so pending layouts will not be dispatched.</span></div><div class="line">            <span class="comment">// Force one here to make sure that the state of the list matches</span></div><div class="line">            <span class="comment">// the state of the adapter.</span></div><div class="line">            <span class="keyword">if</span> (mDataChanged) &#123;           </div><div class="line">                <span class="keyword">this</span>.onLayout(<span class="keyword">false</span>, mLeft, mTop, mRight, mBottom); </div><div class="line">            &#125;</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            <span class="keyword">if</span> (mEmptyView != <span class="keyword">null</span>) mEmptyView.setVisibility(View.GONE);</div><div class="line">            setVisibility(View.VISIBLE);</div><div class="line">        &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setEmptyView</span><span class="params">(View emptyView)</span> </span>&#123;</span><br><span class="line">        mEmptyView = emptyView;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// If not explicitly specified this view is important for accessibility.</span></span><br><span class="line">        <span class="keyword">if</span> (emptyView != <span class="keyword">null</span></span><br><span class="line">                &amp;&amp; emptyView.getImportantForAccessibility() == IMPORTANT_FOR_ACCESSIBILITY_AUTO) &#123;</span><br><span class="line">            emptyView.setImportantForAccessibility(IMPORTANT_FOR_ACCESSIBILITY_YES);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">final</span> T adapter = getAdapter();</span><br><span class="line">        <span class="keyword">final</span> <span class="keyword">boolean</span> empty = ((adapter == <span class="keyword">null</span>) || adapter.isEmpty());</span><br><span class="line">        updateEmptyStatus(empty);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Update the status of the list based on the empty parameter.  If empty is true and</span></span><br><span class="line"><span class="comment">     * we have an empty view, display it.  In all the other cases, make sure that the listview</span></span><br><span class="line"><span class="comment">     * is VISIBLE and that the empty view is GONE (if it's not null).</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">updateEmptyStatus</span><span class="params">(<span class="keyword">boolean</span> empty)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (isInFilterMode()) &#123;</span><br><span class="line">            empty = <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (empty) &#123;</span><br><span class="line">            <span class="keyword">if</span> (mEmptyView != <span class="keyword">null</span>) &#123;</span><br><span class="line">                mEmptyView.setVisibility(View.VISIBLE);</span><br><span class="line">                setVisibility(View.GONE);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="comment">// If the caller just removed our empty view, make sure the list view is visible</span></span><br><span class="line">                setVisibility(View.VISIBLE);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="comment">// We are now GONE, so pending layouts will not be dispatched.</span></span><br><span class="line">            <span class="comment">// Force one here to make sure that the state of the list matches</span></span><br><span class="line">            <span class="comment">// the state of the adapter.</span></span><br><span class="line">            <span class="keyword">if</span> (mDataChanged) &#123;           </span><br><span class="line">                <span class="keyword">this</span>.onLayout(<span class="keyword">false</span>, mLeft, mTop, mRight, mBottom); </span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> (mEmptyView != <span class="keyword">null</span>) mEmptyView.setVisibility(View.GONE);</span><br><span class="line">            setVisibility(View.VISIBLE);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 <p>基本就是：</p>
 <ul>
 <li>数据为空<ul>
@@ -439,7 +436,7 @@
 </li>
 </ul>
 <p><strong>关键代码：</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Override</span></div><div class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">	<span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line">	setContentView(R.layout.xxx);</div><div class="line">	mDataView = (GridView|ListView) findViewById(R.id.dataView);</div><div class="line">	adapter = xxxx;</div><div class="line">	mDataView.setAdapter(adapter);</div><div class="line">	mDataView.setEmptyView(findViewById(R.id.mEmptyView));</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">super</span>.onCreate(savedInstanceState);</span><br><span class="line">	setContentView(R.layout.xxx);</span><br><span class="line">	mDataView = (GridView|ListView) findViewById(R.id.dataView);</span><br><span class="line">	adapter = xxxx;</span><br><span class="line">	mDataView.setAdapter(adapter);</span><br><span class="line">	mDataView.setEmptyView(findViewById(R.id.mEmptyView));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>PS：务必在 <code>setAdapter()</code> 之后调用 <code>setEmptyView()</code> 。</p>
 <h3 id="配合-SwipeRefreshLayout-使用"><a href="#配合-SwipeRefreshLayout-使用" class="headerlink" title="配合 SwipeRefreshLayout 使用"></a>配合 SwipeRefreshLayout 使用</h3><p>配合 SwipeRefreshLayout 使用和基础用法类似，唯一需要注意的是布局的嵌套关系。</p>
 <p><strong>布局：</strong></p>
@@ -458,9 +455,9 @@
 <p>有什么建议或者问题可以随时联系我，共同探讨学习：</p>
 <blockquote>
 <ul>
-<li>微博：<a href="http://weibo.com/zyansen" target="_blank" rel="external">cafeting</a></li>
-<li>Github： <a href="https://github.com/likfe" target="_blank" rel="external">likfe</a></li>
-<li>CSDN：<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="external">他叫自己Mr.张</a> </li>
+<li>微博：<a href="http://weibo.com/zyansen" target="_blank" rel="noopener">cafeting</a></li>
+<li>Github： <a href="https://github.com/likfe" target="_blank" rel="noopener">likfe</a></li>
+<li>CSDN：<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="noopener">他叫自己Mr.张</a> </li>
 </ul>
 </blockquote>
 
@@ -583,7 +580,7 @@
 
       
         <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
             文章目录
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
@@ -594,9 +591,7 @@
 
       <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/images/avatar.gif"
-               alt="Cafeting" />
+          <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="Cafeting">
           <p class="site-author-name" itemprop="name">Cafeting</p>
            
               <p class="site-description motion-element" itemprop="description"></p>
@@ -699,10 +694,10 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
+        <div class="copyright">
   
   &copy;  2015 - 
-  <span itemprop="copyrightYear">2018</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

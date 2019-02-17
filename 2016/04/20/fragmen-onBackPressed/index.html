@@ -6,12 +6,12 @@
 
 
 <html class="theme-next mist use-motion" lang="zh-Hans">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="theme-color" content="#222">
-<meta name="google-site-verification" content="-zFk0OkcB5n-RkT8CtLiAsBamNelO-hiAdzRMcPB5N0" />
+<meta name="google-site-verification" content="-zFk0OkcB5n-RkT8CtLiAsBamNelO-hiAdzRMcPB5N0">
 
 
 
@@ -28,8 +28,8 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -47,7 +47,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
 
 
 
@@ -81,21 +81,21 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
 
-<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="Android,Fragment," />
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css">
 
 
+  <meta name="keywords" content="Android,Fragment,">
 
 
 
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2">
 
 
 
@@ -142,11 +142,11 @@
 
 
 
-  <link rel="canonical" href="https://likfe.com/2016/04/20/fragmen-onBackPressed/"/>
+  <link rel="canonical" href="https://likfe.com/2016/04/20/fragmen-onBackPressed/">
 
 
 
-<meta name="google-site-verification" content="-zFk0OkcB5n-RkT8CtLiAsBamNelO-hiAdzRMcPB5N0" />
+<meta name="google-site-verification" content="-zFk0OkcB5n-RkT8CtLiAsBamNelO-hiAdzRMcPB5N0">
 
   <title>Android项目开发填坑记-Fragmen的onBackPressed | Cafeting</title>
   
@@ -182,7 +182,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">Cafeting</span>
         <span class="logo-line-after"><i></i></span>
@@ -266,9 +266,7 @@
       <i class="fa fa-times-circle"></i>
     </span>
     <div class="local-search-input-wrapper">
-      <input autocomplete="off"
-             placeholder="搜索..." spellcheck="false"
-             type="text" id="local-search-input">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
     </div>
   </div>
   <div id="local-search-result"></div>
@@ -309,7 +307,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Cafeting">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -366,8 +364,7 @@
                   <i class="fa fa-comment-o"></i>
                 </span>
                 <a href="/2016/04/20/fragmen-onBackPressed/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2016/04/20/fragmen-onBackPressed/" itemprop="commentCount"></span>
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/04/20/fragmen-onBackPressed/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -416,36 +413,36 @@
 <h3 id="Fragment-3-0的getActivity-onBackPressed"><a href="#Fragment-3-0的getActivity-onBackPressed" class="headerlink" title="Fragment 3.0的getActivity().onBackPressed()"></a><strong>Fragment 3.0</strong>的<code>getActivity().onBackPressed()</code></h3><blockquote>
 <p>Activity类</p>
 </blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onBackPressed</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span> (mActionBar != <span class="keyword">null</span> &amp;&amp; mActionBar.collapseActionView()) &#123;</div><div class="line">            <span class="keyword">return</span>;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="keyword">if</span> (!mFragments.getFragmentManager().popBackStackImmediate()) &#123;</div><div class="line">            finishAfterTransition();</div><div class="line">        &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onBackPressed</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (mActionBar != <span class="keyword">null</span> &amp;&amp; mActionBar.collapseActionView()) &#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (!mFragments.getFragmentManager().popBackStackImmediate()) &#123;</span><br><span class="line">            finishAfterTransition();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 <h3 id="Fragment-V4的getActivity-onBackPressed"><a href="#Fragment-V4的getActivity-onBackPressed" class="headerlink" title="Fragment V4的getActivity().onBackPressed()"></a><strong>Fragment V4</strong>的<code>getActivity().onBackPressed()</code></h3><blockquote>
 <p>FragmentActivity</p>
 </blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onBackPressed</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span> (!mFragments.getSupportFragmentManager().popBackStackImmediate()) &#123;</div><div class="line">            supportFinishAfterTransition();</div><div class="line">        &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onBackPressed</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (!mFragments.getSupportFragmentManager().popBackStackImmediate()) &#123;</span><br><span class="line">            supportFinishAfterTransition();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 <h3 id="真相"><a href="#真相" class="headerlink" title="真相"></a>真相</h3><p>从对代码调用的追踪，发现了真相。<code>Fragment3.0</code>和<code>FragmentV4</code></p>
 <ol>
 <li><code>Fragment3.0</code>的<code>getActivity().onBackPressed()</code>默认调用了<code>Activity</code>的<code>onBackPressed()</code>方法，方法里面使用的<code>getFragmentManager()</code>获取<code>FragmentManager</code>对象弹出栈内的<code>Fragment3.0</code>版的Fragment</li>
 <li><code>FragmentV4</code>的<code>getActivity().onBackPressed()</code>默认调用了<code>FragmentActivity</code>的<code>onBackPressed()</code>方法，方法里面使用的<code>getSupportFragmentManager()</code>获取<code>FragmentManager</code>对象进行弹出栈内的<code>FragmentV4</code>版的Fragment</li>
 </ol>
 <p>简单说就是<code>Fragment3.0</code>要放在继承了<code>Activity</code>的Activity中使用：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">XXX_Activity</span> <span class="keyword">extends</span> <span class="title">Activity</span></span>&#123;</div><div class="line">...</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">XXX_Activity</span> <span class="keyword">extends</span> <span class="title">Activity</span></span>&#123;</span><br><span class="line">...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><code>FragmentV4</code>要放在继承了<code>FragmentActivity</code>的Activity中使用：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">XXX_Activity</span> <span class="keyword">extends</span> <span class="title">FragmentActivity</span></span>&#123;</div><div class="line">...</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//或者系统默认的 FragmentActivity 的子类 AppCompatActivity</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">XXX_Activity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span></span>&#123;</div><div class="line">...</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">XXX_Activity</span> <span class="keyword">extends</span> <span class="title">FragmentActivity</span></span>&#123;</span><br><span class="line">...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//或者系统默认的 FragmentActivity 的子类 AppCompatActivity</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">XXX_Activity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span></span>&#123;</span><br><span class="line">...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="Fragment和Activity版本不匹配时"><a href="#Fragment和Activity版本不匹配时" class="headerlink" title="Fragment和Activity版本不匹配时"></a>Fragment和Activity版本不匹配时</h2><p>开发的时候，或许并不能达到Fragment版本和对应的Activity相匹配的理想状态，那么就有了下面的一个比较完善的解决方案：</p>
 <h3 id="解决方案："><a href="#解决方案：" class="headerlink" title="解决方案："></a>解决方案：</h3><p>使用其匹配的Activity类的<code>onBackPressed()</code>方法的代码重写所在的<code>Activity</code>的<code>onBackPressed()</code>方法：</p>
 <p><code>FragmentV4</code>配合继承了<code>Activity</code>的Activity中时：</p>
 <blockquote>
 <p>XXX_Activity extends Activity</p>
 </blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//使用FragmentActivity的onBackPressed()的代码覆盖</span></div><div class="line"><span class="meta">@Override</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onBackPressed</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span> (!mFragments.getSupportFragmentManager().popBackStackImmediate()) &#123;</div><div class="line">            supportFinishAfterTransition();</div><div class="line">        &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//使用FragmentActivity的onBackPressed()的代码覆盖</span></span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onBackPressed</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (!mFragments.getSupportFragmentManager().popBackStackImmediate()) &#123;</span><br><span class="line">            supportFinishAfterTransition();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 <p><code>Fragment3.0</code>配合继承了<code>FragmentActivity</code>的Activity中时：</p>
 <blockquote>
 <p>XXX_Activity extends FragmentActivity（或者AppCompatActivity）</p>
 </blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//使用Activity的onBackPressed()的代码覆盖</span></div><div class="line"><span class="meta">@Override</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onBackPressed</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span> (mActionBar != <span class="keyword">null</span> &amp;&amp; mActionBar.collapseActionView()) &#123;</div><div class="line">            <span class="keyword">return</span>;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="keyword">if</span> (!mFragments.getFragmentManager().popBackStackImmediate()) &#123;</div><div class="line">            finishAfterTransition();</div><div class="line">        &#125;</div><div class="line">	&#125;</div></pre></td></tr></table></figure>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>由于当前 Android Studio 默认新建的 Activity 继承于 <code>AppCompatActivity</code>,所以建议大家使用<code>FragmentV4</code>进行开发，这样能省下不少麻烦，本系列还有一篇文章介绍<code>Fragment3.0</code>使用<code>onAttach</code>时的Bug，而这个对于<code>FragmentV4</code>则没有。<br>传送门：<a href="">Android项目开发填坑记-Fragmen的onAttach方法</a></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//使用Activity的onBackPressed()的代码覆盖</span></span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onBackPressed</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (mActionBar != <span class="keyword">null</span> &amp;&amp; mActionBar.collapseActionView()) &#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (!mFragments.getFragmentManager().popBackStackImmediate()) &#123;</span><br><span class="line">            finishAfterTransition();</span><br><span class="line">        &#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>由于当前 Android Studio 默认新建的 Activity 继承于 <code>AppCompatActivity</code>,所以建议大家使用<code>FragmentV4</code>进行开发，这样能省下不少麻烦，本系列还有一篇文章介绍<code>Fragment3.0</code>使用<code>onAttach</code>时的Bug，而这个对于<code>FragmentV4</code>则没有。<br>传送门：<a href>Android项目开发填坑记-Fragmen的onAttach方法</a></p>
 <p>PS:</p>
 <blockquote>
-<p>你可以关注的我 <a href="https://github.com/likfe" target="_blank" rel="external">Github</a>、<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="external">CSDN</a> 和 <a href="http://weibo.com/zyansen" target="_blank" rel="external">微博</a></p>
+<p>你可以关注的我 <a href="https://github.com/likfe" target="_blank" rel="noopener">Github</a>、<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="noopener">CSDN</a> 和 <a href="http://weibo.com/zyansen" target="_blank" rel="noopener">微博</a></p>
 </blockquote>
 
       
@@ -569,7 +566,7 @@
 
       
         <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
             文章目录
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
@@ -580,9 +577,7 @@
 
       <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/images/avatar.gif"
-               alt="Cafeting" />
+          <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="Cafeting">
           <p class="site-author-name" itemprop="name">Cafeting</p>
            
               <p class="site-description motion-element" itemprop="description"></p>
@@ -685,10 +680,10 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
+        <div class="copyright">
   
   &copy;  2015 - 
-  <span itemprop="copyrightYear">2018</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

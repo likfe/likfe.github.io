@@ -6,12 +6,12 @@
 
 
 <html class="theme-next mist use-motion" lang="zh-Hans">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="theme-color" content="#222">
-<meta name="google-site-verification" content="-zFk0OkcB5n-RkT8CtLiAsBamNelO-hiAdzRMcPB5N0" />
+<meta name="google-site-verification" content="-zFk0OkcB5n-RkT8CtLiAsBamNelO-hiAdzRMcPB5N0">
 
 
 
@@ -28,8 +28,8 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -47,7 +47,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
 
 
 
@@ -81,21 +81,21 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
 
-<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="Android," />
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css">
 
 
+  <meta name="keywords" content="Android,">
 
 
 
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2">
 
 
 
@@ -145,11 +145,11 @@
 
 
 
-  <link rel="canonical" href="https://likfe.com/2016/05/13/theTimeGetViewInfo/"/>
+  <link rel="canonical" href="https://likfe.com/2016/05/13/theTimeGetViewInfo/">
 
 
 
-<meta name="google-site-verification" content="-zFk0OkcB5n-RkT8CtLiAsBamNelO-hiAdzRMcPB5N0" />
+<meta name="google-site-verification" content="-zFk0OkcB5n-RkT8CtLiAsBamNelO-hiAdzRMcPB5N0">
 
   <title>Android必知必会-获取View坐标和长宽的时机 | Cafeting</title>
   
@@ -185,7 +185,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">Cafeting</span>
         <span class="logo-line-after"><i></i></span>
@@ -269,9 +269,7 @@
       <i class="fa fa-times-circle"></i>
     </span>
     <div class="local-search-input-wrapper">
-      <input autocomplete="off"
-             placeholder="搜索..." spellcheck="false"
-             type="text" id="local-search-input">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
     </div>
   </div>
   <div id="local-search-result"></div>
@@ -312,7 +310,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Cafeting">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -369,8 +367,7 @@
                   <i class="fa fa-comment-o"></i>
                 </span>
                 <a href="/2016/05/13/theTimeGetViewInfo/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2016/05/13/theTimeGetViewInfo/" itemprop="commentCount"></span>
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/05/13/theTimeGetViewInfo/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -413,19 +410,19 @@
 <p>这里我使用的是<code>DialogFragment</code>来实现的，可以复用。</p>
 <p>先贴一下获取View坐标的一些资料：</p>
 <blockquote>
-<p><a href="http://www.cnblogs.com/mengdd/p/3273284.html" target="_blank" rel="external">Android View各种尺寸位置相关的方法探究</a></p>
-<p><a href="http://blog.csdn.net/ys743276112/article/details/51396319" target="_blank" rel="external"> Android获得控件在屏幕中的绝对坐标</a></p>
+<p><a href="http://www.cnblogs.com/mengdd/p/3273284.html" target="_blank" rel="noopener">Android View各种尺寸位置相关的方法探究</a></p>
+<p><a href="http://blog.csdn.net/ys743276112/article/details/51396319" target="_blank" rel="noopener"> Android获得控件在屏幕中的绝对坐标</a></p>
 </blockquote>
 <h3 id="合适的时机"><a href="#合适的时机" class="headerlink" title="合适的时机"></a>合适的时机</h3><p>要想获得View的坐标和长宽，必须要等到View绘制完毕，在平常写代码的生命周期函数内一般是获取不到的：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//Activity</span></div><div class="line">onCreate();</div><div class="line">onResume();</div><div class="line"><span class="comment">//Fragmen</span></div><div class="line">onCreate();</div><div class="line">onCreateView();</div><div class="line">onResume();</div><div class="line">onShow();</div><div class="line">setUserVisibleHint();</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Activity</span></span><br><span class="line">onCreate();</span><br><span class="line">onResume();</span><br><span class="line"><span class="comment">//Fragmen</span></span><br><span class="line">onCreate();</span><br><span class="line">onCreateView();</span><br><span class="line">onResume();</span><br><span class="line">onShow();</span><br><span class="line">setUserVisibleHint();</span><br></pre></td></tr></table></figure>
 <p>以上这些时机都是不行的。</p>
 <p>目前经过测试可用的方法是：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*</span></div><div class="line"><span class="comment"> * 对于：Activity</span></div><div class="line"><span class="comment"> * 覆写 onWindowFocusChanged(boolean hasFocus)方法</span></div><div class="line"><span class="comment"> */</span></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onWindowFocusChanged</span><span class="params">(<span class="keyword">boolean</span> hasFocus)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onWindowFocusChanged(hasFocus);</div><div class="line">        <span class="keyword">int</span>[] location1 = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">2</span>] ;</div><div class="line">        view.getLocationInWindow(location1); <span class="comment">//获取在当前窗口内的绝对坐标</span></div><div class="line">        <span class="keyword">int</span>[] location2 = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">2</span>] ;</div><div class="line">        view.getLocationOnScreen(location2);<span class="comment">//获取在整个屏幕内的绝对坐标</span></div><div class="line">        <span class="comment">//do something</span></div><div class="line">    &#125;</div><div class="line"></div><div class="line"><span class="comment">/*</span></div><div class="line"><span class="comment"> * 对于：Fragmen</span></div><div class="line"><span class="comment"> * 在 onCreateView()中为View添加addOnGlobalLayoutListener</span></div><div class="line"><span class="comment"> */</span></div><div class="line">	<span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> View <span class="title">onCreateView</span><span class="params">(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">        View view = inflater.inflate(R.layout.xxx, container, <span class="keyword">false</span>);</div><div class="line">        ViewTreeObserver vto = view.getViewTreeObserver();</div><div class="line">        vto.addOnGlobalLayoutListener(<span class="keyword">new</span>  ViewTreeObserver.OnGlobalLayoutListener() &#123;</div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onGlobalLayout</span><span class="params">()</span> </span>&#123;</div><div class="line">                <span class="comment">//在这里获取View及其子控件的坐标和长宽信息</span></div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">      <span class="comment">//do something</span></div><div class="line">        <span class="keyword">return</span> view;</div><div class="line">    &#125;</div><div class="line"><span class="comment">/*</span></div><div class="line"><span class="comment"> * 对于：DialogFragment</span></div><div class="line"><span class="comment"> * 在 onCreateDialog()中为View添加addOnGlobalLayoutListener</span></div><div class="line"><span class="comment"> * PS: start-end之间的是重点，其他可以不看</span></div><div class="line"><span class="comment"> */</span></div><div class="line">	<span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> Dialog <span class="title">onCreateDialog</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">        LayoutInflater inflater = getActivity().getLayoutInflater();</div><div class="line">        View view = inflater.inflate(R.layout.xxxx, <span class="keyword">null</span>);</div><div class="line">      <span class="comment">//-----获取View及其子控件的坐标和长宽信息 start----</span></div><div class="line">      	ViewTreeObserver vto = view.getViewTreeObserver();</div><div class="line">        vto.addOnGlobalLayoutListener(<span class="keyword">new</span> ViewTreeObserver.OnGlobalLayoutListener() &#123;</div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onGlobalLayout</span><span class="params">()</span> </span>&#123;</div><div class="line">                <span class="comment">//在这里获取View及其子控件的坐标和长宽信息</span></div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">      <span class="comment">//-----获取View及其子控件的坐标和长宽信息 end----</span></div><div class="line">      </div><div class="line">        Dialog dialog = <span class="keyword">new</span> Dialog(getActivity(), R.style.CustomCityPickerDialog);</div><div class="line">        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);</div><div class="line">        dialog.setContentView(view);</div><div class="line">        dialog.setCanceledOnTouchOutside(<span class="keyword">true</span>);</div><div class="line">        ButterKnife.bind(<span class="keyword">this</span>, view);</div><div class="line">        <span class="comment">// 设置宽度为屏宽、靠近屏幕底部。</span></div><div class="line">        Window window = dialog.getWindow();</div><div class="line">        window.setBackgroundDrawableResource(R.color.transparent);</div><div class="line">        WindowManager.LayoutParams wlp = window.getAttributes();</div><div class="line">        wlp.gravity = Gravity.BOTTOM;</div><div class="line">        wlp.width = WindowManager.LayoutParams.MATCH_PARENT;</div><div class="line">        window.setAttributes(wlp);</div><div class="line">        <span class="keyword">return</span> dialog;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * 对于：Activity</span></span><br><span class="line"><span class="comment"> * 覆写 onWindowFocusChanged(boolean hasFocus)方法</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onWindowFocusChanged</span><span class="params">(<span class="keyword">boolean</span> hasFocus)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.onWindowFocusChanged(hasFocus);</span><br><span class="line">        <span class="keyword">int</span>[] location1 = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">2</span>] ;</span><br><span class="line">        view.getLocationInWindow(location1); <span class="comment">//获取在当前窗口内的绝对坐标</span></span><br><span class="line">        <span class="keyword">int</span>[] location2 = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">2</span>] ;</span><br><span class="line">        view.getLocationOnScreen(location2);<span class="comment">//获取在整个屏幕内的绝对坐标</span></span><br><span class="line">        <span class="comment">//do something</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * 对于：Fragmen</span></span><br><span class="line"><span class="comment"> * 在 onCreateView()中为View添加addOnGlobalLayoutListener</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> View <span class="title">onCreateView</span><span class="params">(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState)</span> </span>&#123;</span><br><span class="line">        View view = inflater.inflate(R.layout.xxx, container, <span class="keyword">false</span>);</span><br><span class="line">        ViewTreeObserver vto = view.getViewTreeObserver();</span><br><span class="line">        vto.addOnGlobalLayoutListener(<span class="keyword">new</span>  ViewTreeObserver.OnGlobalLayoutListener() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onGlobalLayout</span><span class="params">()</span> </span>&#123;</span><br><span class="line">                <span class="comment">//在这里获取View及其子控件的坐标和长宽信息</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">      <span class="comment">//do something</span></span><br><span class="line">        <span class="keyword">return</span> view;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * 对于：DialogFragment</span></span><br><span class="line"><span class="comment"> * 在 onCreateDialog()中为View添加addOnGlobalLayoutListener</span></span><br><span class="line"><span class="comment"> * PS: start-end之间的是重点，其他可以不看</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Dialog <span class="title">onCreateDialog</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</span><br><span class="line">        LayoutInflater inflater = getActivity().getLayoutInflater();</span><br><span class="line">        View view = inflater.inflate(R.layout.xxxx, <span class="keyword">null</span>);</span><br><span class="line">      <span class="comment">//-----获取View及其子控件的坐标和长宽信息 start----</span></span><br><span class="line">      	ViewTreeObserver vto = view.getViewTreeObserver();</span><br><span class="line">        vto.addOnGlobalLayoutListener(<span class="keyword">new</span> ViewTreeObserver.OnGlobalLayoutListener() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onGlobalLayout</span><span class="params">()</span> </span>&#123;</span><br><span class="line">                <span class="comment">//在这里获取View及其子控件的坐标和长宽信息</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">      <span class="comment">//-----获取View及其子控件的坐标和长宽信息 end----</span></span><br><span class="line">      </span><br><span class="line">        Dialog dialog = <span class="keyword">new</span> Dialog(getActivity(), R.style.CustomCityPickerDialog);</span><br><span class="line">        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);</span><br><span class="line">        dialog.setContentView(view);</span><br><span class="line">        dialog.setCanceledOnTouchOutside(<span class="keyword">true</span>);</span><br><span class="line">        ButterKnife.bind(<span class="keyword">this</span>, view);</span><br><span class="line">        <span class="comment">// 设置宽度为屏宽、靠近屏幕底部。</span></span><br><span class="line">        Window window = dialog.getWindow();</span><br><span class="line">        window.setBackgroundDrawableResource(R.color.transparent);</span><br><span class="line">        WindowManager.LayoutParams wlp = window.getAttributes();</span><br><span class="line">        wlp.gravity = Gravity.BOTTOM;</span><br><span class="line">        wlp.width = WindowManager.LayoutParams.MATCH_PARENT;</span><br><span class="line">        window.setAttributes(wlp);</span><br><span class="line">        <span class="keyword">return</span> dialog;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 <h3 id="后话"><a href="#后话" class="headerlink" title="后话"></a>后话</h3><p>这是最后的成果：<br><img src="http://o73yhoopc.bkt.clouddn.com/5EAA53013EB5AD8401EBF68B86F60F98.gif" alt="成果"></p>
 <p>下一篇文章将简单总结一下最近学习的属性动画，和如何实现上图中效果。</p>
 <p>PS:</p>
 <blockquote>
-<p>你可以关注的我 <a href="https://github.com/likfe" target="_blank" rel="external">Github</a>、<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="external">CSDN</a> 和 <a href="http://weibo.com/zyansen" target="_blank" rel="external">微博</a></p>
+<p>你可以关注的我 <a href="https://github.com/likfe" target="_blank" rel="noopener">Github</a>、<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="noopener">CSDN</a> 和 <a href="http://weibo.com/zyansen" target="_blank" rel="noopener">微博</a></p>
 </blockquote>
 
       
@@ -547,7 +544,7 @@
 
       
         <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
             文章目录
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
@@ -558,9 +555,7 @@
 
       <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/images/avatar.gif"
-               alt="Cafeting" />
+          <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="Cafeting">
           <p class="site-author-name" itemprop="name">Cafeting</p>
            
               <p class="site-description motion-element" itemprop="description"></p>
@@ -663,10 +658,10 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
+        <div class="copyright">
   
   &copy;  2015 - 
-  <span itemprop="copyrightYear">2018</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

@@ -6,12 +6,12 @@
 
 
 <html class="theme-next mist use-motion" lang="zh-Hans">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="theme-color" content="#222">
-<meta name="google-site-verification" content="-zFk0OkcB5n-RkT8CtLiAsBamNelO-hiAdzRMcPB5N0" />
+<meta name="google-site-verification" content="-zFk0OkcB5n-RkT8CtLiAsBamNelO-hiAdzRMcPB5N0">
 
 
 
@@ -28,8 +28,8 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -47,7 +47,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
 
 
 
@@ -81,21 +81,21 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
 
-<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="Android,Fragment," />
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css">
 
 
+  <meta name="keywords" content="Android,Fragment,">
 
 
 
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2">
 
 
 
@@ -142,11 +142,11 @@
 
 
 
-  <link rel="canonical" href="https://likfe.com/2016/04/14/fragment-backpress/"/>
+  <link rel="canonical" href="https://likfe.com/2016/04/14/fragment-backpress/">
 
 
 
-<meta name="google-site-verification" content="-zFk0OkcB5n-RkT8CtLiAsBamNelO-hiAdzRMcPB5N0" />
+<meta name="google-site-verification" content="-zFk0OkcB5n-RkT8CtLiAsBamNelO-hiAdzRMcPB5N0">
 
   <title>Android必知必会-Fragment监听返回键事件 | Cafeting</title>
   
@@ -182,7 +182,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">Cafeting</span>
         <span class="logo-line-after"><i></i></span>
@@ -266,9 +266,7 @@
       <i class="fa fa-times-circle"></i>
     </span>
     <div class="local-search-input-wrapper">
-      <input autocomplete="off"
-             placeholder="搜索..." spellcheck="false"
-             type="text" id="local-search-input">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
     </div>
   </div>
   <div id="local-search-result"></div>
@@ -309,7 +307,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Cafeting">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -366,8 +364,7 @@
                   <i class="fa fa-comment-o"></i>
                 </span>
                 <a href="/2016/04/14/fragment-backpress/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2016/04/14/fragment-backpress/" itemprop="commentCount"></span>
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/04/14/fragment-backpress/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -412,18 +409,20 @@
 <h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><blockquote>
 <p>XXX_Fragment</p>
 </blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Override</span></div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onResume</span><span class="params">()</span> </span>&#123;</div><div class="line">       <span class="keyword">super</span>.onResume();</div><div class="line">       getFocus();</div><div class="line">   &#125;</div><div class="line">   </div><div class="line"><span class="comment">//主界面获取焦点</span></div><div class="line">   <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">getFocus</span><span class="params">()</span> </span>&#123;</div><div class="line">       getView().setFocusableInTouchMode(<span class="keyword">true</span>);</div><div class="line">       getView().requestFocus();</div><div class="line">       getView().setOnKeyListener(<span class="keyword">new</span> View.OnKeyListener() &#123;</div><div class="line">           <span class="meta">@Override</span></div><div class="line">           <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">onKey</span><span class="params">(View v, <span class="keyword">int</span> keyCode, KeyEvent event)</span> </span>&#123;</div><div class="line">               <span class="keyword">if</span> (event.getAction() == KeyEvent.ACTION_UP &amp;&amp; keyCode == KeyEvent.KEYCODE_BACK) &#123;</div><div class="line">                   <span class="comment">// 监听到返回按钮点击事件</span></div><div class="line">                   ......</div><div class="line">                  <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">               &#125;</div><div class="line">               <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">           &#125;</div><div class="line">       &#125;);</div><div class="line">   &#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onResume</span><span class="params">()</span> </span>&#123;</span><br><span class="line">       <span class="keyword">super</span>.onResume();</span><br><span class="line">       getFocus();</span><br><span class="line">   &#125;</span><br><span class="line">   </span><br><span class="line"><span class="comment">//主界面获取焦点</span></span><br><span class="line">   <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">getFocus</span><span class="params">()</span> </span>&#123;</span><br><span class="line">       getView().setFocusableInTouchMode(<span class="keyword">true</span>);</span><br><span class="line">       getView().requestFocus();</span><br><span class="line">       getView().setOnKeyListener(<span class="keyword">new</span> View.OnKeyListener() &#123;</span><br><span class="line">           <span class="meta">@Override</span></span><br><span class="line">           <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">onKey</span><span class="params">(View v, <span class="keyword">int</span> keyCode, KeyEvent event)</span> </span>&#123;</span><br><span class="line">               <span class="keyword">if</span> (event.getAction() == KeyEvent.ACTION_UP &amp;&amp; keyCode == KeyEvent.KEYCODE_BACK) &#123;</span><br><span class="line">                   <span class="comment">// 监听到返回按钮点击事件</span></span><br><span class="line">                   ......</span><br><span class="line">                  <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">               &#125;</span><br><span class="line">               <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;);</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
 <p>以上代码是<code>stackoverflow.com</code>中找到的一个解决方案，但是在使用时，由于Fragment页面里可能有其他能获取焦点的View（例如EditText），会导致监听失效，点击返回键会返回到上个页面。</p>
 <h3 id="更完善的解决方案："><a href="#更完善的解决方案：" class="headerlink" title="更完善的解决方案："></a>更完善的解决方案：</h3><p>除了上面的代码，我们需要对可以获取焦点的View的<code>setOnKeyListener</code>进行处理，这里以一个EditText为例：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//private EditText nickname;</span></div><div class="line"></div><div class="line">nickname.setOnKeyListener(<span class="keyword">new</span> View.OnKeyListener() &#123;</div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">onKey</span><span class="params">(View v, <span class="keyword">int</span> keyCode, KeyEvent event)</span> </span>&#123;</div><div class="line">                <span class="keyword">if</span> (keyCode == KeyEvent.KEYCODE_BACK</div><div class="line">                        &amp;&amp; event.getAction() == KeyEvent.ACTION_UP) &#123;</div><div class="line">                    <span class="comment">//关闭软键盘</span></div><div class="line">                    InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);</div><div class="line">                    imm.hideSoftInputFromWindow(nickname.getWindowToken(), <span class="number">0</span>);</div><div class="line">                    <span class="comment">//使得根View重新获取焦点，以监听返回键</span></div><div class="line">                    getFocus();</div><div class="line">                &#125;</div><div class="line">                <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">            &#125;</div><div class="line">        &#125;);</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//private EditText nickname;</span></span><br><span class="line"></span><br><span class="line">nickname.setOnKeyListener(<span class="keyword">new</span> View.OnKeyListener() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">onKey</span><span class="params">(View v, <span class="keyword">int</span> keyCode, KeyEvent event)</span> </span>&#123;</span><br><span class="line">                <span class="keyword">if</span> (keyCode == KeyEvent.KEYCODE_BACK</span><br><span class="line">                        &amp;&amp; event.getAction() == KeyEvent.ACTION_UP) &#123;</span><br><span class="line">                    <span class="comment">//关闭软键盘</span></span><br><span class="line">                    InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);</span><br><span class="line">                    imm.hideSoftInputFromWindow(nickname.getWindowToken(), <span class="number">0</span>);</span><br><span class="line">                    <span class="comment">//使得根View重新获取焦点，以监听返回键</span></span><br><span class="line">                    getFocus();</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br></pre></td></tr></table></figure>
 <p>使用到的资料：</p>
 <blockquote>
-<p><a href="http://blog.csdn.net/ccpat/article/details/45176665" target="_blank" rel="external">http://blog.csdn.net/ccpat/article/details/45176665</a></p>
-<p><a href="http://stackoverflow.com/questions/22552958/handling-back-press-when-using-fragments-in-android" target="_blank" rel="external">http://stackoverflow.com/questions/22552958/handling-back-press-when-using-fragments-in-android</a></p>
+<p><a href="http://blog.csdn.net/ccpat/article/details/45176665" target="_blank" rel="noopener">http://blog.csdn.net/ccpat/article/details/45176665</a></p>
+</blockquote>
+<blockquote>
+<p><a href="http://stackoverflow.com/questions/22552958/handling-back-press-when-using-fragments-in-android" target="_blank" rel="noopener">http://stackoverflow.com/questions/22552958/handling-back-press-when-using-fragments-in-android</a></p>
 </blockquote>
 <p>PS:</p>
 <blockquote>
-<p>你可以关注的我 <a href="https://github.com/likfe" target="_blank" rel="external">Github</a>、<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="external">CSDN</a> 和 <a href="http://weibo.com/zyansen" target="_blank" rel="external">微博</a></p>
+<p>你可以关注的我 <a href="https://github.com/likfe" target="_blank" rel="noopener">Github</a>、<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="noopener">CSDN</a> 和 <a href="http://weibo.com/zyansen" target="_blank" rel="noopener">微博</a></p>
 </blockquote>
 
       
@@ -547,7 +546,7 @@
 
       
         <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
             文章目录
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
@@ -558,9 +557,7 @@
 
       <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/images/avatar.gif"
-               alt="Cafeting" />
+          <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="Cafeting">
           <p class="site-author-name" itemprop="name">Cafeting</p>
            
               <p class="site-description motion-element" itemprop="description"></p>
@@ -663,10 +660,10 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
+        <div class="copyright">
   
   &copy;  2015 - 
-  <span itemprop="copyrightYear">2018</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

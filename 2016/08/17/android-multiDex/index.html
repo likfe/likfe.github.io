@@ -6,12 +6,12 @@
 
 
 <html class="theme-next mist use-motion" lang="zh-Hans">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="theme-color" content="#222">
-<meta name="google-site-verification" content="-zFk0OkcB5n-RkT8CtLiAsBamNelO-hiAdzRMcPB5N0" />
+<meta name="google-site-verification" content="-zFk0OkcB5n-RkT8CtLiAsBamNelO-hiAdzRMcPB5N0">
 
 
 
@@ -28,8 +28,8 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -47,7 +47,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
 
 
 
@@ -81,21 +81,21 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
 
-<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="Android," />
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css">
 
 
+  <meta name="keywords" content="Android,">
 
 
 
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2">
 
 
 
@@ -142,11 +142,11 @@
 
 
 
-  <link rel="canonical" href="https://likfe.com/2016/08/17/android-multiDex/"/>
+  <link rel="canonical" href="https://likfe.com/2016/08/17/android-multiDex/">
 
 
 
-<meta name="google-site-verification" content="-zFk0OkcB5n-RkT8CtLiAsBamNelO-hiAdzRMcPB5N0" />
+<meta name="google-site-verification" content="-zFk0OkcB5n-RkT8CtLiAsBamNelO-hiAdzRMcPB5N0">
 
   <title>Android 项目开发填坑记 - 使用 MultiDex 解决 64K 限制 | Cafeting</title>
   
@@ -182,7 +182,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">Cafeting</span>
         <span class="logo-line-after"><i></i></span>
@@ -266,9 +266,7 @@
       <i class="fa fa-times-circle"></i>
     </span>
     <div class="local-search-input-wrapper">
-      <input autocomplete="off"
-             placeholder="搜索..." spellcheck="false"
-             type="text" id="local-search-input">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
     </div>
   </div>
   <div id="local-search-result"></div>
@@ -309,7 +307,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Cafeting">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -366,8 +364,7 @@
                   <i class="fa fa-comment-o"></i>
                 </span>
                 <a href="/2016/08/17/android-multiDex/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2016/08/17/android-multiDex/" itemprop="commentCount"></span>
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/08/17/android-multiDex/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -406,7 +403,7 @@
       
 
       
-        <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>Android 的 <code>classLoader</code> 在加载 APK 的时候限制了<code>class.dex</code> 包含的 Java 方法数，其总数不能超过65535（64K，<strong>不要再说成 65K</strong> 了，1K = 2^10 = 1024 , 64 * 1024 = 65535），Google 官方给出的解决方案是使用  <a href="https://developer.android.com/studio/build/multidex.html" target="_blank" rel="external">Multidex</a> 。</p>
+        <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>Android 的 <code>classLoader</code> 在加载 APK 的时候限制了<code>class.dex</code> 包含的 Java 方法数，其总数不能超过65535（64K，<strong>不要再说成 65K</strong> 了，1K = 2^10 = 1024 , 64 * 1024 = 65535），Google 官方给出的解决方案是使用  <a href="https://developer.android.com/studio/build/multidex.html" target="_blank" rel="noopener">Multidex</a> 。</p>
 <h2 id="启用-Multidex"><a href="#启用-Multidex" class="headerlink" title="启用 Multidex"></a>启用 Multidex</h2><p>基本要求：</p>
 <ul>
 <li>使用 Android Studio 开发工具</li>
@@ -420,16 +417,16 @@
 </ol>
 <a id="more"></a>
 <p>修改 <code>module</code> 下的 <code>build.gradle</code> 文件，添加支持库并开启 multidex：</p>
-<figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">android &#123;</div><div class="line">    compileSdkVersion <span class="number">21</span></div><div class="line">    buildToolsVersion <span class="string">"21.1.0"</span></div><div class="line"></div><div class="line">    defaultConfig &#123;</div><div class="line">        ...</div><div class="line">        minSdkVersion <span class="number">14</span></div><div class="line">        targetSdkVersion <span class="number">21</span></div><div class="line">        ...</div><div class="line"></div><div class="line">        <span class="comment">// Enabling multidex support.</span></div><div class="line">        multiDexEnabled <span class="literal">true</span></div><div class="line">    &#125;</div><div class="line">    ...</div><div class="line">&#125;</div><div class="line"></div><div class="line">dependencies &#123;</div><div class="line">  compile <span class="string">'com.android.support:multidex:1.0.0'</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">android &#123;</span><br><span class="line">    compileSdkVersion <span class="number">21</span></span><br><span class="line">    buildToolsVersion <span class="string">"21.1.0"</span></span><br><span class="line"></span><br><span class="line">    defaultConfig &#123;</span><br><span class="line">        ...</span><br><span class="line">        minSdkVersion <span class="number">14</span></span><br><span class="line">        targetSdkVersion <span class="number">21</span></span><br><span class="line">        ...</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Enabling multidex support.</span></span><br><span class="line">        multiDexEnabled <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">dependencies &#123;</span><br><span class="line">  compile <span class="string">'com.android.support:multidex:1.0.0'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>PS： compileSdkVersion、buildToolsVersion 根据实际项目配置，但是版本不能低于上述版本。</p>
 <p>在 <code>AndroidManifest.xml</code> 中给 <code>application</code> 节点添加对 <code>MultiDexApplication</code> 类的引用：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;</div><div class="line"><span class="tag">&lt;<span class="name">manifest</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span></div><div class="line"><span class="tag">    <span class="attr">package</span>=<span class="string">"xxx"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">application</span></span></div><div class="line"><span class="tag">        <span class="attr">...</span></span></div><div class="line"><span class="tag">        <span class="attr">android:name</span>=<span class="string">"android.support.multidex.MultiDexApplication"</span>&gt;</span></div><div class="line">        ...</div><div class="line">    <span class="tag">&lt;/<span class="name">application</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">manifest</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">manifest</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">package</span>=<span class="string">"xxx"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">application</span></span></span><br><span class="line"><span class="tag">        <span class="attr">...</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:name</span>=<span class="string">"android.support.multidex.MultiDexApplication"</span>&gt;</span></span><br><span class="line">        ...</span><br><span class="line">    <span class="tag">&lt;/<span class="name">application</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">manifest</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>PS： <code>manifest</code> 节点的 <code>package</code> 属性值根据实际项目有所不同。</p>
 <p><strong>注意</strong>：如果你的 APP 使用了继承 <code>Application</code> 的类，你需要重写<code>attachBaseContext()</code>方法并调用 <code>MultiDex.install(this)</code> 来启用 multidex 。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">XXX</span> <span class="keyword">extends</span> <span class="title">Application</span></span>&#123;</div><div class="line">	<span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">attachBaseContext</span><span class="params">(Context base)</span> </span>&#123;</div><div class="line">		<span class="keyword">super</span>.attachBaseContext(base);</div><div class="line">		MultiDex.install(<span class="keyword">this</span>);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">XXX</span> <span class="keyword">extends</span> <span class="title">Application</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">attachBaseContext</span><span class="params">(Context base)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">super</span>.attachBaseContext(base);</span><br><span class="line">		MultiDex.install(<span class="keyword">this</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>网上搜到还有一个方法：不继承 <code>Application</code> ，而是直接继承 <code>MultiDexApplication</code> 即可，这样就不需要重写<code>attachBaseContext()</code>方法了。</p>
 <blockquote>
-<p>参考资料：<a href="https://developer.android.com/studio/build/multidex.html" target="_blank" rel="external">Configure Apps with Over 64K Methods</a></p>
+<p>参考资料：<a href="https://developer.android.com/studio/build/multidex.html" target="_blank" rel="noopener">Configure Apps with Over 64K Methods</a></p>
 </blockquote>
 <h2 id="可能遇到的问题"><a href="#可能遇到的问题" class="headerlink" title="可能遇到的问题"></a>可能遇到的问题</h2><h3 id="NoClassDefFoundError"><a href="#NoClassDefFoundError" class="headerlink" title="NoClassDefFoundError"></a>NoClassDefFoundError</h3><blockquote>
 <p>Android SDK Build Tools 21.1 或者更高版本中的 Gradle  Android 插件有对 multidex 的支持。这个插件使用 Proguard 来分析你的项目并在 <code>[buildDir]/intermediates/multi-dex/[buildType]/maindexlist.txt</code> 文件中生成一个 app 启动 classes 的列表。但是这个列表并不是100%准确，可能会丢失一些app启动所需的 classes 。</p>
@@ -438,25 +435,25 @@
 <p>解决方法：在 <code>module</code> 下创建 <code>multidex.keep</code> 文件，并在其中罗列出那些 class，以便让编译器知道在 main dex 文件中要保持哪些 class。</p>
 <p>生成 <code>multidex.keep</code> 文件中的内容有多种：</p>
 <p><strong>方法一</strong>：修改 <code>module</code> 下的 <code>build.gradle</code> 文件</p>
-<figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">apply <span class="string">plugin:</span> <span class="string">'com.android.application'</span></div><div class="line">android &#123;</div><div class="line">  ...</div><div class="line">&#125;</div><div class="line">dependencies &#123;</div><div class="line">  ...</div><div class="line">&#125;</div><div class="line">android.applicationVariants.all &#123; variant -&gt;</div><div class="line">    task <span class="string">"fix$&#123;variant.name.capitalize()&#125;MainDexClassList"</span> &lt;&lt; &#123;</div><div class="line">        logger.info <span class="string">"Fixing main dex keep file for $variant.name"</span></div><div class="line">        File keepFile = <span class="keyword">new</span> File(<span class="string">"$buildDir/intermediates/multi-dex/$variant.buildType.name/maindexlist.txt"</span>)</div><div class="line">        keepFile.withWriterAppend &#123; w -&gt;</div><div class="line">            <span class="comment">// Get a reader for the input file</span></div><div class="line">            w.append(<span class="string">'\n'</span>)</div><div class="line">            <span class="keyword">new</span> File(<span class="string">"$&#123;projectDir&#125;/multidex.keep"</span>).withReader &#123; r -&gt;</div><div class="line">                <span class="comment">// And write data from the input into the output</span></div><div class="line">                w &lt;&lt; r &lt;&lt; <span class="string">'\n'</span></div><div class="line">            &#125;</div><div class="line">            logger.info <span class="string">"Updated main dex keep file for $&#123;keepFile.getAbsolutePath()&#125;\n$keepFile.text"</span></div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">tasks.whenTaskAdded &#123; task -&gt;</div><div class="line">    android.applicationVariants.all &#123; variant -&gt;</div><div class="line">        <span class="keyword">if</span> (task.name == <span class="string">"create$&#123;variant.name.capitalize()&#125;MainDexClassList"</span>) &#123;</div><div class="line">            task.finalizedBy <span class="string">"fix$&#123;variant.name.capitalize()&#125;MainDexClassList"</span></div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">apply <span class="string">plugin:</span> <span class="string">'com.android.application'</span></span><br><span class="line">android &#123;</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br><span class="line">dependencies &#123;</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br><span class="line">android.applicationVariants.all &#123; variant -&gt;</span><br><span class="line">    task <span class="string">"fix$&#123;variant.name.capitalize()&#125;MainDexClassList"</span> &lt;&lt; &#123;</span><br><span class="line">        logger.info <span class="string">"Fixing main dex keep file for $variant.name"</span></span><br><span class="line">        File keepFile = <span class="keyword">new</span> File(<span class="string">"$buildDir/intermediates/multi-dex/$variant.buildType.name/maindexlist.txt"</span>)</span><br><span class="line">        keepFile.withWriterAppend &#123; w -&gt;</span><br><span class="line">            <span class="comment">// Get a reader for the input file</span></span><br><span class="line">            w.append(<span class="string">'\n'</span>)</span><br><span class="line">            <span class="keyword">new</span> File(<span class="string">"$&#123;projectDir&#125;/multidex.keep"</span>).withReader &#123; r -&gt;</span><br><span class="line">                <span class="comment">// And write data from the input into the output</span></span><br><span class="line">                w &lt;&lt; r &lt;&lt; <span class="string">'\n'</span></span><br><span class="line">            &#125;</span><br><span class="line">            logger.info <span class="string">"Updated main dex keep file for $&#123;keepFile.getAbsolutePath()&#125;\n$keepFile.text"</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">tasks.whenTaskAdded &#123; task -&gt;</span><br><span class="line">    android.applicationVariants.all &#123; variant -&gt;</span><br><span class="line">        <span class="keyword">if</span> (task.name == <span class="string">"create$&#123;variant.name.capitalize()&#125;MainDexClassList"</span>) &#123;</span><br><span class="line">            task.finalizedBy <span class="string">"fix$&#123;variant.name.capitalize()&#125;MainDexClassList"</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><strong>方法二</strong>：修改 <code>module</code> 下的 <code>build.gradle</code> 文件</p>
-<figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">apply <span class="string">plugin:</span> <span class="string">'com.android.application'</span></div><div class="line">android &#123;</div><div class="line">  ...</div><div class="line">  afterEvaluate &#123;</div><div class="line">        tasks.matching &#123;</div><div class="line">            it.name.startsWith(<span class="string">'dex'</span>)</div><div class="line">        &#125;.each &#123; dx -&gt;</div><div class="line">            <span class="keyword">if</span> (dx.additionalParameters == <span class="literal">null</span>) &#123;</div><div class="line">                dx.additionalParameters = []</div><div class="line">            &#125;</div><div class="line">            dx.additionalParameters += <span class="string">'--multi-dex'</span> <span class="comment">// enable multidex</span></div><div class="line"></div><div class="line">            <span class="comment">// optional</span></div><div class="line">            dx.additionalParameters += <span class="string">"--main-dex-list=$projectDir/class-list.txt"</span>.toString() <span class="comment">// enable the main-dex-list</span></div><div class="line">            dx.additionalParameters += <span class="string">'--minimal-main-dex'</span></div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">dependencies &#123;</div><div class="line">  ...</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">apply <span class="string">plugin:</span> <span class="string">'com.android.application'</span></span><br><span class="line">android &#123;</span><br><span class="line">  ...</span><br><span class="line">  afterEvaluate &#123;</span><br><span class="line">        tasks.matching &#123;</span><br><span class="line">            it.name.startsWith(<span class="string">'dex'</span>)</span><br><span class="line">        &#125;.each &#123; dx -&gt;</span><br><span class="line">            <span class="keyword">if</span> (dx.additionalParameters == <span class="literal">null</span>) &#123;</span><br><span class="line">                dx.additionalParameters = []</span><br><span class="line">            &#125;</span><br><span class="line">            dx.additionalParameters += <span class="string">'--multi-dex'</span> <span class="comment">// enable multidex</span></span><br><span class="line"></span><br><span class="line">            <span class="comment">// optional</span></span><br><span class="line">            dx.additionalParameters += <span class="string">"--main-dex-list=$projectDir/class-list.txt"</span>.toString() <span class="comment">// enable the main-dex-list</span></span><br><span class="line">            dx.additionalParameters += <span class="string">'--minimal-main-dex'</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">dependencies &#123;</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>使用上述任意方式配置完成后，<code>clean</code> 然后 <code>rebuild</code> 项目，完成之后在 <code>module</code> 下的<code>build/intermediates/multi-dex/xxx</code>里找到 <code>maindexlist.txt</code> 文件（如果找不到相关目录，可能需要你同步后 <code>rebuild</code> 项目才能生成），复制里面的内容到 <code>module</code> 根目录下 <code>multidex.keep</code> 文件中（没有则先创建此文件）。</p>
 <p>然后，比较重要的一步就是：通过友盟、测试记录、Bug记录等获取到 <code>NoClassDefFoundError</code> 错误对应的类，按照 <code>maindexlist.txt</code> 文件的方式添加这些类到 <code>multidex.keep</code> 文件中就可解决了。</p>
-<h3 id="其他错误和问题"><a href="#其他错误和问题" class="headerlink" title="其他错误和问题"></a>其他错误和问题</h3><p>比如<strong>首次安装启动时黑屏没有响应／ANR</strong>、<strong>安装时异常</strong>等，你可以参考文末的一些文章，此外你还可以参考 <a href="http://blog.csdn.net/ys743276112/article/details/52223272" target="_blank" rel="external">Android 必知必会-Android Splash 页秒开之细节处理</a> 来优化启动体验。</p>
+<h3 id="其他错误和问题"><a href="#其他错误和问题" class="headerlink" title="其他错误和问题"></a>其他错误和问题</h3><p>比如<strong>首次安装启动时黑屏没有响应／ANR</strong>、<strong>安装时异常</strong>等，你可以参考文末的一些文章，此外你还可以参考 <a href="http://blog.csdn.net/ys743276112/article/details/52223272" target="_blank" rel="noopener">Android 必知必会-Android Splash 页秒开之细节处理</a> 来优化启动体验。</p>
 <p>参考资料和推荐阅读：</p>
 <ul>
-<li><a href="http://blog.csdn.net/wangbaochu/article/details/51178881" target="_blank" rel="external">Android Multidex 遇到的问题</a> （推荐此文）</li>
-<li><a href="http://www.jcodecraeer.com/a/anzhuokaifa/androidkaifa/2015/1223/3796.html" target="_blank" rel="external">Android的multidex带来的性能问题－减慢app启动速度</a></li>
-<li><a href="https://github.com/casidiablo/multidex/issues/7" target="_blank" rel="external">ClassNotFoundException</a></li>
+<li><a href="http://blog.csdn.net/wangbaochu/article/details/51178881" target="_blank" rel="noopener">Android Multidex 遇到的问题</a> （推荐此文）</li>
+<li><a href="http://www.jcodecraeer.com/a/anzhuokaifa/androidkaifa/2015/1223/3796.html" target="_blank" rel="noopener">Android的multidex带来的性能问题－减慢app启动速度</a></li>
+<li><a href="https://github.com/casidiablo/multidex/issues/7" target="_blank" rel="noopener">ClassNotFoundException</a></li>
 </ul>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>这是一篇早就准备写的文章，但当时搜集的资料未及时保存或者丢失，就拖到了现在。因为一个比较旧的 APP 也遇到了相关的问题，所以重新搜集了下资料整理发布出来了，希望能帮到遇到相关问题的朋友们。</p>
 <p><strong>PS</strong>：你可以通过下面的方式和我联系</p>
 <blockquote>
 <ul>
-<li>微博：<a href="http://weibo.com/zyansen" target="_blank" rel="external">cafeting</a></li>
-<li>Github： <a href="https://github.com/likfe" target="_blank" rel="external">likfe</a></li>
-<li>CSDN：<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="external">他叫自己Mr.张</a> </li>
+<li>微博：<a href="http://weibo.com/zyansen" target="_blank" rel="noopener">cafeting</a></li>
+<li>Github： <a href="https://github.com/likfe" target="_blank" rel="noopener">likfe</a></li>
+<li>CSDN：<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="noopener">他叫自己Mr.张</a> </li>
 </ul>
 </blockquote>
 
@@ -579,7 +576,7 @@
 
       
         <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
             文章目录
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
@@ -590,9 +587,7 @@
 
       <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/images/avatar.gif"
-               alt="Cafeting" />
+          <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="Cafeting">
           <p class="site-author-name" itemprop="name">Cafeting</p>
            
               <p class="site-description motion-element" itemprop="description"></p>
@@ -695,10 +690,10 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
+        <div class="copyright">
   
   &copy;  2015 - 
-  <span itemprop="copyrightYear">2018</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

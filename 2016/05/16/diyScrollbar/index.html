@@ -6,12 +6,12 @@
 
 
 <html class="theme-next mist use-motion" lang="zh-Hans">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="theme-color" content="#222">
-<meta name="google-site-verification" content="-zFk0OkcB5n-RkT8CtLiAsBamNelO-hiAdzRMcPB5N0" />
+<meta name="google-site-verification" content="-zFk0OkcB5n-RkT8CtLiAsBamNelO-hiAdzRMcPB5N0">
 
 
 
@@ -28,8 +28,8 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -47,7 +47,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
 
 
 
@@ -81,21 +81,21 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
 
-<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="Android,Scrollbar," />
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css">
 
 
+  <meta name="keywords" content="Android,Scrollbar,">
 
 
 
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2">
 
 
 
@@ -146,11 +146,11 @@
 
 
 
-  <link rel="canonical" href="https://likfe.com/2016/05/16/diyScrollbar/"/>
+  <link rel="canonical" href="https://likfe.com/2016/05/16/diyScrollbar/">
 
 
 
-<meta name="google-site-verification" content="-zFk0OkcB5n-RkT8CtLiAsBamNelO-hiAdzRMcPB5N0" />
+<meta name="google-site-verification" content="-zFk0OkcB5n-RkT8CtLiAsBamNelO-hiAdzRMcPB5N0">
 
   <title>Android必知必会-自定义Scrollbar样式 | Cafeting</title>
   
@@ -186,7 +186,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">Cafeting</span>
         <span class="logo-line-after"><i></i></span>
@@ -270,9 +270,7 @@
       <i class="fa fa-times-circle"></i>
     </span>
     <div class="local-search-input-wrapper">
-      <input autocomplete="off"
-             placeholder="搜索..." spellcheck="false"
-             type="text" id="local-search-input">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
     </div>
   </div>
   <div id="local-search-result"></div>
@@ -313,7 +311,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Cafeting">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -370,8 +368,7 @@
                   <i class="fa fa-comment-o"></i>
                 </span>
                 <a href="/2016/05/16/diyScrollbar/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2016/05/16/diyScrollbar/" itemprop="commentCount"></span>
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/05/16/diyScrollbar/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -412,7 +409,7 @@
       
         <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>设计师给的设计图完全依照 IOS 的标准来的，导致很多细节的控件都得自己重写，最近的设计图中有显示滚动条，Android 默认的滚动条样式（带描边）和设计图格格不入，无奈，只好研究下自定义 Scrollbar 样式。这里稍微整理下。<br><a id="more"></a></p>
 <h2 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h2><p>在<code>ListView</code>/<code>ScrollView</code>/<code>RecyclerView</code>中添加属性：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 情况A ：垂直滚动条--&gt;</span></div><div class="line">android:scrollbars="vertical"</div><div class="line">android:scrollbarTrackVertical="@drawable/xxx_vertical_track"</div><div class="line">android:scrollbarThumbVertical="@drawable/xxx_vertical_thumb"</div><div class="line"><span class="comment">&lt;!-- 情况B ：水平滚动条--&gt;</span></div><div class="line">android:scrollbars="horizontal"</div><div class="line">android:scrollbarTrackHorizontal="@drawable/xxx_horizontal_track"</div><div class="line">android:scrollbarThumbHorizontal="@drawable/xxx_horizontal_thumb"</div><div class="line"></div><div class="line"><span class="comment">&lt;!-- 其他通用的属性 --&gt;</span></div><div class="line"><span class="comment">&lt;!-- 1.定义滚动条的样式和位置 --&gt;</span></div><div class="line">android:scrollbarStyle="outsideInset"</div><div class="line"><span class="comment">&lt;!-- 2.定义滚动条的大小，垂直时指宽度，水平时指高度 --&gt;</span></div><div class="line">android:scrollbarSize="4dp"</div></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 情况A ：垂直滚动条--&gt;</span></span><br><span class="line">android:scrollbars="vertical"</span><br><span class="line">android:scrollbarTrackVertical="@drawable/xxx_vertical_track"</span><br><span class="line">android:scrollbarThumbVertical="@drawable/xxx_vertical_thumb"</span><br><span class="line"><span class="comment">&lt;!-- 情况B ：水平滚动条--&gt;</span></span><br><span class="line">android:scrollbars="horizontal"</span><br><span class="line">android:scrollbarTrackHorizontal="@drawable/xxx_horizontal_track"</span><br><span class="line">android:scrollbarThumbHorizontal="@drawable/xxx_horizontal_thumb"</span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 其他通用的属性 --&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 1.定义滚动条的样式和位置 --&gt;</span></span><br><span class="line">android:scrollbarStyle="outsideInset"</span><br><span class="line"><span class="comment">&lt;!-- 2.定义滚动条的大小，垂直时指宽度，水平时指高度 --&gt;</span></span><br><span class="line">android:scrollbarSize="4dp"</span><br></pre></td></tr></table></figure>
 <table>
 <thead>
 <tr>
@@ -470,12 +467,12 @@
 </table>
 <h2 id="Demo"><a href="#Demo" class="headerlink" title="Demo"></a>Demo</h2><p>下面是两个Demo：</p>
 <p>color:</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">color</span> <span class="attr">name</span>=<span class="string">"red_square"</span>&gt;</span>#CCFF6464<span class="tag">&lt;/<span class="name">color</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">color</span> <span class="attr">name</span>=<span class="string">"transparent"</span>&gt;</span>#00000000<span class="tag">&lt;/<span class="name">color</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">color</span> <span class="attr">name</span>=<span class="string">"red_square"</span>&gt;</span>#CCFF6464<span class="tag">&lt;/<span class="name">color</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">color</span> <span class="attr">name</span>=<span class="string">"transparent"</span>&gt;</span>#00000000<span class="tag">&lt;/<span class="name">color</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>drawable:scrollbar_vertical_thumb</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;</div><div class="line"><span class="tag">&lt;<span class="name">shape</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span>&gt;</span></div><div class="line">	<span class="comment">&lt;!-- 填充 --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">solid</span> <span class="attr">android:color</span>=<span class="string">"#66000000"</span>/&gt;</span></div><div class="line">	<span class="comment">&lt;!-- 圆角 --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">corners</span> <span class="attr">android:radius</span>=<span class="string">"1dp"</span> /&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">shape</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">shape</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span>&gt;</span></span><br><span class="line">	<span class="comment">&lt;!-- 填充 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">solid</span> <span class="attr">android:color</span>=<span class="string">"#66000000"</span>/&gt;</span></span><br><span class="line">	<span class="comment">&lt;!-- 圆角 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">corners</span> <span class="attr">android:radius</span>=<span class="string">"1dp"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">shape</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h3 id="Demo-1"><a href="#Demo-1" class="headerlink" title="Demo 1"></a>Demo 1</h3><p><strong>layout：</strong></p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">android:scrollbarStyle="outsideOverlay"</div><div class="line">android:scrollbarThumbVertical="@drawable/scrollbar_vertical_thumb"</div><div class="line"><span class="comment">&lt;!-- </span></div><div class="line"><span class="comment">scrollbarTrackVertical设为透明或者直接不设置即可</span></div><div class="line"><span class="comment">android:scrollbarTrackVertical="@color/transparent"</span></div><div class="line"><span class="comment">再次强调：scrollbarThumbVertical、scrollbarTrackVertical 不可以直接设置为颜色值,但可以使用@color的方式使用颜色值</span></div><div class="line"><span class="comment">--&gt;</span></div><div class="line">android:scrollbarSize="3dp"</div><div class="line">android:scrollbars="vertical"</div></pre></td></tr></table></figure>
-<h3 id="Demo-2"><a href="#Demo-2" class="headerlink" title="Demo 2"></a>Demo 2</h3><p><strong>layout：</strong><br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">android:scrollbarStyle="outsideOverlay"</div><div class="line">android:scrollbarThumbVertical="@color/red_square"</div><div class="line">android:scrollbarSize="3dp"</div><div class="line">android:scrollbars="vertical"</div></pre></td></tr></table></figure></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">android:scrollbarStyle="outsideOverlay"</span><br><span class="line">android:scrollbarThumbVertical="@drawable/scrollbar_vertical_thumb"</span><br><span class="line"><span class="comment">&lt;!-- </span></span><br><span class="line"><span class="comment">scrollbarTrackVertical设为透明或者直接不设置即可</span></span><br><span class="line"><span class="comment">android:scrollbarTrackVertical="@color/transparent"</span></span><br><span class="line"><span class="comment">再次强调：scrollbarThumbVertical、scrollbarTrackVertical 不可以直接设置为颜色值,但可以使用@color的方式使用颜色值</span></span><br><span class="line"><span class="comment">--&gt;</span></span><br><span class="line">android:scrollbarSize="3dp"</span><br><span class="line">android:scrollbars="vertical"</span><br></pre></td></tr></table></figure>
+<h3 id="Demo-2"><a href="#Demo-2" class="headerlink" title="Demo 2"></a>Demo 2</h3><p><strong>layout：</strong><br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">android:scrollbarStyle="outsideOverlay"</span><br><span class="line">android:scrollbarThumbVertical="@color/red_square"</span><br><span class="line">android:scrollbarSize="3dp"</span><br><span class="line">android:scrollbars="vertical"</span><br></pre></td></tr></table></figure></p>
 <h3 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h3><table>
 <thead>
 <tr>
@@ -496,9 +493,9 @@
 <blockquote>
 <p><strong>PS</strong>：你可以通过下面的方式和我联系</p>
 <ul>
-<li>微博：<a href="http://weibo.com/zyansen" target="_blank" rel="external">cafeting</a></li>
-<li>Github： <a href="https://github.com/likfe" target="_blank" rel="external">likfe</a></li>
-<li>CSDN：<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="external">他叫自己Mr.张</a> </li>
+<li>微博：<a href="http://weibo.com/zyansen" target="_blank" rel="noopener">cafeting</a></li>
+<li>Github： <a href="https://github.com/likfe" target="_blank" rel="noopener">likfe</a></li>
+<li>CSDN：<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="noopener">他叫自己Mr.张</a> </li>
 </ul>
 </blockquote>
 
@@ -623,7 +620,7 @@
 
       
         <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
             文章目录
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
@@ -634,9 +631,7 @@
 
       <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/images/avatar.gif"
-               alt="Cafeting" />
+          <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="Cafeting">
           <p class="site-author-name" itemprop="name">Cafeting</p>
            
               <p class="site-description motion-element" itemprop="description"></p>
@@ -739,10 +734,10 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
+        <div class="copyright">
   
   &copy;  2015 - 
-  <span itemprop="copyrightYear">2018</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

@@ -6,12 +6,12 @@
 
 
 <html class="theme-next mist use-motion" lang="zh-Hans">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="theme-color" content="#222">
-<meta name="google-site-verification" content="-zFk0OkcB5n-RkT8CtLiAsBamNelO-hiAdzRMcPB5N0" />
+<meta name="google-site-verification" content="-zFk0OkcB5n-RkT8CtLiAsBamNelO-hiAdzRMcPB5N0">
 
 
 
@@ -28,8 +28,8 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -47,7 +47,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
 
 
 
@@ -81,21 +81,21 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
 
-<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="Android,Lambda," />
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css">
 
 
+  <meta name="keywords" content="Android,Lambda,">
 
 
 
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2">
 
 
 
@@ -142,11 +142,11 @@
 
 
 
-  <link rel="canonical" href="https://likfe.com/2016/07/06/android-setting-lamdba/"/>
+  <link rel="canonical" href="https://likfe.com/2016/07/06/android-setting-lamdba/">
 
 
 
-<meta name="google-site-verification" content="-zFk0OkcB5n-RkT8CtLiAsBamNelO-hiAdzRMcPB5N0" />
+<meta name="google-site-verification" content="-zFk0OkcB5n-RkT8CtLiAsBamNelO-hiAdzRMcPB5N0">
 
   <title>Android必知必会-Android Studio下配置和使用Lambda | Cafeting</title>
   
@@ -182,7 +182,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">Cafeting</span>
         <span class="logo-line-after"><i></i></span>
@@ -266,9 +266,7 @@
       <i class="fa fa-times-circle"></i>
     </span>
     <div class="local-search-input-wrapper">
-      <input autocomplete="off"
-             placeholder="搜索..." spellcheck="false"
-             type="text" id="local-search-input">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
     </div>
   </div>
   <div id="local-search-result"></div>
@@ -309,7 +307,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Cafeting">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -366,8 +364,7 @@
                   <i class="fa fa-comment-o"></i>
                 </span>
                 <a href="/2016/07/06/android-setting-lamdba/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2016/07/06/android-setting-lamdba/" itemprop="commentCount"></span>
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/07/06/android-setting-lamdba/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -414,16 +411,16 @@
 <a id="more"></a>
 <p>阅读完上面的文字估计也不是特别明白，对于我们日常开发Android，就是简化了匿名函数的使用，可以简单通过下面的示例来感受一下，如果你有更深的兴趣，文末有更多搜集的资料供你阅读。</p>
 <h3 id="Lamdba示例"><a href="#Lamdba示例" class="headerlink" title="Lamdba示例"></a>Lamdba示例</h3><h4 id="用lambda表达式实现Runnable"><a href="#用lambda表达式实现Runnable" class="headerlink" title="用lambda表达式实现Runnable"></a>用lambda表达式实现Runnable</h4><p>使用lambda表达式可以替换匿名类，而实现<code>Runnable</code>接口是匿名类的最好示例。Java 8之前的<code>runnable</code>实现方法，需要4行代码，而使用<code>lambda</code>表达式只需要一行代码。只需要用<code>() -&gt; {}</code>代码块替代整个匿名类。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// Java 8之前：</span></div><div class="line"><span class="keyword">new</span> Thread(<span class="keyword">new</span> Runnable() &#123;</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</div><div class="line">    	System.out.println(<span class="string">"在Java8之前, 需要写很多代码"</span>);</div><div class="line">    &#125;</div><div class="line">&#125;).start();</div><div class="line"></div><div class="line"><span class="comment">//Java 8方式：</span></div><div class="line"><span class="keyword">new</span> Thread( () -&gt; System.out.println(<span class="string">"使用Java8, Lambda表达式一目了然"</span>) ).start();</div></pre></td></tr></table></figure>
-<p>输出：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">在Java8之前, 需要写很多代码</div><div class="line">使用Java8, Lambda表达式一目了然</div></pre></td></tr></table></figure></p>
-<p>这个例子展示了Java 8 lambda表达式的语法，可以使用<code>lambda</code>写出如下代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">(params) -&gt; expression</div><div class="line">(params) -&gt; statement</div><div class="line">(params) -&gt; &#123; statements &#125;</div></pre></td></tr></table></figure></p>
-<p>例如，如果你的方法不对参数进行修改、重写，只是在控制台打印点东西的话，那么可以这样写：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">() -&gt; System.out.println(<span class="string">"Hello World"</span>);</div></pre></td></tr></table></figure></p>
-<p>如果你的方法接收两个参数，那么可以写成如下这样：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">(int a, int b) -&gt; a + b</div></pre></td></tr></table></figure></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Java 8之前：</span></span><br><span class="line"><span class="keyword">new</span> Thread(<span class="keyword">new</span> Runnable() &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    	System.out.println(<span class="string">"在Java8之前, 需要写很多代码"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;).start();</span><br><span class="line"></span><br><span class="line"><span class="comment">//Java 8方式：</span></span><br><span class="line"><span class="keyword">new</span> Thread( () -&gt; System.out.println(<span class="string">"使用Java8, Lambda表达式一目了然"</span>) ).start();</span><br></pre></td></tr></table></figure>
+<p>输出：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">在Java8之前, 需要写很多代码</span><br><span class="line">使用Java8, Lambda表达式一目了然</span><br></pre></td></tr></table></figure></p>
+<p>这个例子展示了Java 8 lambda表达式的语法，可以使用<code>lambda</code>写出如下代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(params) -&gt; expression</span><br><span class="line">(params) -&gt; statement</span><br><span class="line">(params) -&gt; &#123; statements &#125;</span><br></pre></td></tr></table></figure></p>
+<p>例如，如果你的方法不对参数进行修改、重写，只是在控制台打印点东西的话，那么可以这样写：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">() -&gt; System.out.println(<span class="string">"Hello World"</span>);</span><br></pre></td></tr></table></figure></p>
+<p>如果你的方法接收两个参数，那么可以写成如下这样：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(int a, int b) -&gt; a + b</span><br></pre></td></tr></table></figure></p>
 <h4 id="使用lambda表达式进行事件处理"><a href="#使用lambda表达式进行事件处理" class="headerlink" title="使用lambda表达式进行事件处理"></a>使用lambda表达式进行事件处理</h4><p>在Android日常开发中，我们常常会设置各种事件，比如<code>setOnClickListener</code>、<code>setOnItemClickListener</code>等等，下面对比下前后的写法变化：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//之前</span></div><div class="line">viewA.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">            	<span class="comment">//Do something</span></div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line"><span class="comment">//使用lambda</span></div><div class="line">viewA.setOnClickListener(v -&gt; &#123;</div><div class="line">  <span class="comment">//Do something</span></div><div class="line">&#125;);</div><div class="line"><span class="comment">//或者</span></div><div class="line">viewA.setOnClickListener(View v -&gt; &#123;</div><div class="line">  <span class="comment">//Do something</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//之前</span></span><br><span class="line">viewA.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</span><br><span class="line">            	<span class="comment">//Do something</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line"><span class="comment">//使用lambda</span></span><br><span class="line">viewA.setOnClickListener(v -&gt; &#123;</span><br><span class="line">  <span class="comment">//Do something</span></span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">//或者</span></span><br><span class="line">viewA.setOnClickListener(View v -&gt; &#123;</span><br><span class="line">  <span class="comment">//Do something</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <p>这样一对比是不是简洁很多？那么对于多个参数的<code>setOnItemClickListener</code>怎么写呢？</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//之前</span></div><div class="line">xxxListView.setOnItemClickListener(<span class="keyword">new</span> AdapterView.OnItemClickListener() &#123;</div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onItemClick</span><span class="params">(AdapterView&lt;?&gt; parent, View view, <span class="keyword">int</span> position, <span class="keyword">long</span> id)</span> </span>&#123;</div><div class="line">                <span class="comment">//Do something</span></div><div class="line">            &#125;</div><div class="line">&#125;);</div><div class="line"><span class="comment">//使用lambda后</span></div><div class="line">xxxListView.setOnItemClickListener((parent,view,position,id)-&gt;&#123;</div><div class="line">	<span class="comment">//Do something</span></div><div class="line">&#125;);</div><div class="line"><span class="comment">//或者</span></div><div class="line">xxxListView.setOnItemClickListener((AdapterView&lt;?&gt; parent, View view, <span class="keyword">int</span> position, <span class="keyword">long</span> id)-&gt;&#123;</div><div class="line">	<span class="comment">//Do something</span></div><div class="line">&#125;);</div><div class="line"><span class="comment">//甚至</span></div><div class="line">xxxListView.setOnItemClickListener((a,b,c,d)-&gt;&#123;</div><div class="line">	<span class="comment">//Do something</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<p>以上两种例子大概是日常Android开发中最为常用的，更多示例请访问 ：<a href="http://www.importnew.com/16436.html" target="_blank" rel="external">Java8 lambda表达式10个示例</a></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//之前</span></span><br><span class="line">xxxListView.setOnItemClickListener(<span class="keyword">new</span> AdapterView.OnItemClickListener() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onItemClick</span><span class="params">(AdapterView&lt;?&gt; parent, View view, <span class="keyword">int</span> position, <span class="keyword">long</span> id)</span> </span>&#123;</span><br><span class="line">                <span class="comment">//Do something</span></span><br><span class="line">            &#125;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">//使用lambda后</span></span><br><span class="line">xxxListView.setOnItemClickListener((parent,view,position,id)-&gt;&#123;</span><br><span class="line">	<span class="comment">//Do something</span></span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">//或者</span></span><br><span class="line">xxxListView.setOnItemClickListener((AdapterView&lt;?&gt; parent, View view, <span class="keyword">int</span> position, <span class="keyword">long</span> id)-&gt;&#123;</span><br><span class="line">	<span class="comment">//Do something</span></span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">//甚至</span></span><br><span class="line">xxxListView.setOnItemClickListener((a,b,c,d)-&gt;&#123;</span><br><span class="line">	<span class="comment">//Do something</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>以上两种例子大概是日常Android开发中最为常用的，更多示例请访问 ：<a href="http://www.importnew.com/16436.html" target="_blank" rel="noopener">Java8 lambda表达式10个示例</a></p>
 <h2 id="启用Lambda"><a href="#启用Lambda" class="headerlink" title="启用Lambda"></a>启用Lambda</h2><p>启用<code>Lamdba</code>目前有两种方式，一个是使用Google官方的，一个是使用第三方Java8兼容插件，<strong>推荐使用第三方兼容插件</strong> 。</p>
 <p>基本要求如下：</p>
 <ul>
@@ -434,43 +431,43 @@
 <p>要使用新的 Java 8 语言功能，还需使用新的 Jack 工具链。新的 Android 工具链将 Java 源语言编译成 Android 可读取的 Dalvik 可执行文件字节码，且有其自己的 .jack 库格式，在一个工具中提供了大多数工具链功能：重新打包、压缩、模糊化以及 Dalvik 可执行文件分包。</p>
 </blockquote>
 <p>以下是构建 Android Dalvik 可执行文件可用的两种工具链的对比：</p>
-<p>旧版 javac 工具链：<br><code>javac (.java --&gt; .class) --&gt; dx (.class --&gt; .dex)</code><br>新版 Jack 工具链：<br><code>Jack (.java --&gt; .jack --&gt; .dex)</code><br><strong>配置 Gradle</strong><br>如需为您的项目启用 Java 8 语言功能和 Jack，请在模块层级的 build.gradle 文件中输入以下内容：<br><figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">android &#123;</div><div class="line">  ...</div><div class="line">  defaultConfig &#123;</div><div class="line">    ...</div><div class="line">    jackOptions &#123;</div><div class="line">      enabled <span class="literal">true</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  compileOptions &#123;</div><div class="line">    sourceCompatibility JavaVersion.VERSION_1_8</div><div class="line">    targetCompatibility JavaVersion.VERSION_1_8</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>旧版 javac 工具链：<br><code>javac (.java --&gt; .class) --&gt; dx (.class --&gt; .dex)</code><br>新版 Jack 工具链：<br><code>Jack (.java --&gt; .jack --&gt; .dex)</code><br><strong>配置 Gradle</strong><br>如需为您的项目启用 Java 8 语言功能和 Jack，请在模块层级的 build.gradle 文件中输入以下内容：<br><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">android &#123;</span><br><span class="line">  ...</span><br><span class="line">  defaultConfig &#123;</span><br><span class="line">    ...</span><br><span class="line">    jackOptions &#123;</span><br><span class="line">      enabled <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  compileOptions &#123;</span><br><span class="line">    sourceCompatibility JavaVersion.VERSION_1_8</span><br><span class="line">    targetCompatibility JavaVersion.VERSION_1_8</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p><strong>已知问题</strong><br>Instant Run 目前不能用于 Jack，在使用新的工具链时将被禁用。</p>
 <blockquote>
-<p><a href="https://developer.android.com/preview/j8-jack.html#configuration" target="_blank" rel="external">Java 8 语言功能</a></p>
+<p><a href="https://developer.android.com/preview/j8-jack.html#configuration" target="_blank" rel="noopener">Java 8 语言功能</a></p>
 </blockquote>
 <h3 id="方式二：使用第三方Java8兼容插件"><a href="#方式二：使用第三方Java8兼容插件" class="headerlink" title="方式二：使用第三方Java8兼容插件"></a>方式二：使用第三方Java8兼容插件</h3><p>下面是插件的<code>ReadMe</code>的配置：添加下面的内容到项目的<code>build.gradle</code>文件中</p>
-<figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">buildscript &#123;</div><div class="line">  repositories &#123;</div><div class="line">     mavenCentral()</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  dependencies &#123;</div><div class="line">     classpath <span class="string">'me.tatarka:gradle-retrolambda:3.2.5'</span></div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// Required because retrolambda is on maven central</span></div><div class="line">repositories &#123;</div><div class="line">  mavenCentral()</div><div class="line">&#125;</div><div class="line"></div><div class="line">apply <span class="string">plugin:</span> <span class="string">'com.android.application'</span> <span class="comment">//or apply plugin: 'java'</span></div><div class="line">apply <span class="string">plugin:</span> <span class="string">'me.tatarka.retrolambda'</span></div></pre></td></tr></table></figure>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">buildscript &#123;</span><br><span class="line">  repositories &#123;</span><br><span class="line">     mavenCentral()</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  dependencies &#123;</span><br><span class="line">     classpath <span class="string">'me.tatarka:gradle-retrolambda:3.2.5'</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Required because retrolambda is on maven central</span></span><br><span class="line">repositories &#123;</span><br><span class="line">  mavenCentral()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">apply <span class="string">plugin:</span> <span class="string">'com.android.application'</span> <span class="comment">//or apply plugin: 'java'</span></span><br><span class="line">apply <span class="string">plugin:</span> <span class="string">'me.tatarka.retrolambda'</span></span><br></pre></td></tr></table></figure>
 <p>在本人的项目中，是如下配置，可以避免很多不必要的错误：</p>
 <p><code>build.gradle</code>文件在项目根目录有一个，在Module下也有一个：</p>
 <blockquote>
 <p>/build.gradle</p>
 </blockquote>
-<figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">buildscript &#123;</div><div class="line">    repositories &#123;</div><div class="line">    	jcenter()</div><div class="line">        mavenCentral()</div><div class="line">    &#125;</div><div class="line">    dependencies &#123;</div><div class="line">        classpath <span class="string">'com.android.tools.build:gradle:2.1.2'</span></div><div class="line">        classpath <span class="string">'me.tatarka:gradle-retrolambda:3.2.5'</span></div><div class="line">        classpath <span class="string">'me.tatarka.retrolambda.projectlombok:lombok.ast:0.2.3.a2'</span></div><div class="line">    &#125;</div><div class="line">    configurations.classpath.exclude <span class="string">group:</span> <span class="string">'com.android.tools.external.lombok'</span></div><div class="line">&#125;</div><div class="line"></div><div class="line">allprojects &#123;</div><div class="line">    repositories &#123;</div><div class="line">        jcenter()</div><div class="line">        mavenCentral()</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">buildscript &#123;</span><br><span class="line">    repositories &#123;</span><br><span class="line">    	jcenter()</span><br><span class="line">        mavenCentral()</span><br><span class="line">    &#125;</span><br><span class="line">    dependencies &#123;</span><br><span class="line">        classpath <span class="string">'com.android.tools.build:gradle:2.1.2'</span></span><br><span class="line">        classpath <span class="string">'me.tatarka:gradle-retrolambda:3.2.5'</span></span><br><span class="line">        classpath <span class="string">'me.tatarka.retrolambda.projectlombok:lombok.ast:0.2.3.a2'</span></span><br><span class="line">    &#125;</span><br><span class="line">    configurations.classpath.exclude <span class="string">group:</span> <span class="string">'com.android.tools.external.lombok'</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">allprojects &#123;</span><br><span class="line">    repositories &#123;</span><br><span class="line">        jcenter()</span><br><span class="line">        mavenCentral()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>/app/build.gradle</p>
 </blockquote>
-<figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">apply <span class="string">plugin:</span> <span class="string">'com.android.application'</span></div><div class="line">apply <span class="string">plugin:</span> <span class="string">'me.tatarka.retrolambda'</span></div><div class="line"></div><div class="line">android &#123;</div><div class="line">	...</div><div class="line">	compileOptions &#123;</div><div class="line">        sourceCompatibility JavaVersion.VERSION_1_8</div><div class="line">        targetCompatibility JavaVersion.VERSION_1_8</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>可以看到我在使用中多了<a href="https://github.com/evant/android-retrolambda-lombok" target="_blank" rel="external">几个配置</a>，不过都是在这个插件的<code>issue</code>里查到的。建议仔细阅读下<a href="https://github.com/evant/gradle-retrolambda" target="_blank" rel="external">配置说明</a> ，可以适应一些实际项目中的一些特别需求。</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">apply <span class="string">plugin:</span> <span class="string">'com.android.application'</span></span><br><span class="line">apply <span class="string">plugin:</span> <span class="string">'me.tatarka.retrolambda'</span></span><br><span class="line"></span><br><span class="line">android &#123;</span><br><span class="line">	...</span><br><span class="line">	compileOptions &#123;</span><br><span class="line">        sourceCompatibility JavaVersion.VERSION_1_8</span><br><span class="line">        targetCompatibility JavaVersion.VERSION_1_8</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>可以看到我在使用中多了<a href="https://github.com/evant/android-retrolambda-lombok" target="_blank" rel="noopener">几个配置</a>，不过都是在这个插件的<code>issue</code>里查到的。建议仔细阅读下<a href="https://github.com/evant/gradle-retrolambda" target="_blank" rel="noopener">配置说明</a> ，可以适应一些实际项目中的一些特别需求。</p>
 <h2 id="常见Error及解决方式"><a href="#常见Error及解决方式" class="headerlink" title="常见Error及解决方式"></a>常见Error及解决方式</h2><h3 id="Couldnot-find-property-‘options’-on-task-‘-app-compileDebugJavaWithJack’"><a href="#Couldnot-find-property-‘options’-on-task-‘-app-compileDebugJavaWithJack’" class="headerlink" title="Couldnot find property ‘options’ on task ‘:app:compileDebugJavaWithJack’."></a>Couldnot find property ‘options’ on task ‘:app:compileDebugJavaWithJack’.</h3><p><strong>原因</strong>：使用Google官方的方式有一定的兼容性，使用Jack时不能同时使用APT，如果使用butterknife、Dagger等使用了APT的注解框架就不行了</p>
 <p><strong>解决方案</strong>：使用retrolambda的兼容插件的方式启用lambda</p>
-<h3 id="Doesn’t-seem-to-correctly-use-modified-lombok-version"><a href="#Doesn’t-seem-to-correctly-use-modified-lombok-version" class="headerlink" title="Doesn’t seem to correctly use modified lombok version"></a>Doesn’t seem to correctly use modified lombok version</h3><p><strong>原因</strong>：<a href="https://github.com/evant/android-retrolambda-lombok/issues/4" target="_blank" rel="external">参见这里</a></p>
+<h3 id="Doesn’t-seem-to-correctly-use-modified-lombok-version"><a href="#Doesn’t-seem-to-correctly-use-modified-lombok-version" class="headerlink" title="Doesn’t seem to correctly use modified lombok version"></a>Doesn’t seem to correctly use modified lombok version</h3><p><strong>原因</strong>：<a href="https://github.com/evant/android-retrolambda-lombok/issues/4" target="_blank" rel="noopener">参见这里</a></p>
 <p><strong>解决方案</strong>：按照我上面写的就不会出现这个问题了。</p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>对于想尝鲜的的开发者，启用Lamdba是个不错的选择，毕竟这个东西会慢慢普及的。下面是一些为想了解更多Lamdba使用方法的朋友搜集的资料以及本文参考的文章：</p>
 <ul>
-<li><a href="http://www.jianshu.com/p/5fc2b3362702" target="_blank" rel="external">jdk1.8新特性之lambda表达式及在Android Studio中的使用</a></li>
-<li><a href="http://www.importnew.com/16436.html" target="_blank" rel="external">Java8 lambda表达式10个示例</a></li>
-<li><a href="http://www.importnew.com/10360.html" target="_blank" rel="external">Java 8简明教程</a></li>
-<li><a href="http://blog.csdn.net/yuhanghate/article/details/51544201" target="_blank" rel="external">Error:Could not find property ‘options’ on task ‘:app:compileDebugJavaWithJack’.</a></li>
-<li><a href="https://github.com/evant/android-retrolambda-lombok/issues/4" target="_blank" rel="external">Doesn’t seem to correctly use modified lombok version</a></li>
-<li><a href="https://github.com/evant/gradle-retrolambda" target="_blank" rel="external">retrolambda插件</a></li>
+<li><a href="http://www.jianshu.com/p/5fc2b3362702" target="_blank" rel="noopener">jdk1.8新特性之lambda表达式及在Android Studio中的使用</a></li>
+<li><a href="http://www.importnew.com/16436.html" target="_blank" rel="noopener">Java8 lambda表达式10个示例</a></li>
+<li><a href="http://www.importnew.com/10360.html" target="_blank" rel="noopener">Java 8简明教程</a></li>
+<li><a href="http://blog.csdn.net/yuhanghate/article/details/51544201" target="_blank" rel="noopener">Error:Could not find property ‘options’ on task ‘:app:compileDebugJavaWithJack’.</a></li>
+<li><a href="https://github.com/evant/android-retrolambda-lombok/issues/4" target="_blank" rel="noopener">Doesn’t seem to correctly use modified lombok version</a></li>
+<li><a href="https://github.com/evant/gradle-retrolambda" target="_blank" rel="noopener">retrolambda插件</a></li>
 </ul>
 <blockquote>
 <p><strong>PS</strong>：你可以通过下面的方式和我联系</p>
 <ul>
-<li>微博：<a href="http://weibo.com/zyansen" target="_blank" rel="external">cafeting</a></li>
-<li>Github： <a href="https://github.com/likfe" target="_blank" rel="external">likfe</a></li>
-<li>CSDN：<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="external">他叫自己Mr.张</a> </li>
+<li>微博：<a href="http://weibo.com/zyansen" target="_blank" rel="noopener">cafeting</a></li>
+<li>Github： <a href="https://github.com/likfe" target="_blank" rel="noopener">likfe</a></li>
+<li>CSDN：<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="noopener">他叫自己Mr.张</a> </li>
 </ul>
 </blockquote>
 
@@ -595,7 +592,7 @@
 
       
         <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
             文章目录
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
@@ -606,9 +603,7 @@
 
       <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/images/avatar.gif"
-               alt="Cafeting" />
+          <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="Cafeting">
           <p class="site-author-name" itemprop="name">Cafeting</p>
            
               <p class="site-description motion-element" itemprop="description"></p>
@@ -711,10 +706,10 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
+        <div class="copyright">
   
   &copy;  2015 - 
-  <span itemprop="copyrightYear">2018</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

@@ -6,12 +6,12 @@
 
 
 <html class="theme-next mist use-motion" lang="zh-Hans">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="theme-color" content="#222">
-<meta name="google-site-verification" content="-zFk0OkcB5n-RkT8CtLiAsBamNelO-hiAdzRMcPB5N0" />
+<meta name="google-site-verification" content="-zFk0OkcB5n-RkT8CtLiAsBamNelO-hiAdzRMcPB5N0">
 
 
 
@@ -28,8 +28,8 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -47,7 +47,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
 
 
 
@@ -81,21 +81,21 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
 
-<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="Android,ADB,Clipboard," />
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css">
 
 
+  <meta name="keywords" content="Android,ADB,Clipboard,">
 
 
 
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2">
 
 
 
@@ -142,11 +142,11 @@
 
 
 
-  <link rel="canonical" href="https://likfe.com/2018/01/17/android-adb-set-clipboard/"/>
+  <link rel="canonical" href="https://likfe.com/2018/01/17/android-adb-set-clipboard/">
 
 
 
-<meta name="google-site-verification" content="-zFk0OkcB5n-RkT8CtLiAsBamNelO-hiAdzRMcPB5N0" />
+<meta name="google-site-verification" content="-zFk0OkcB5n-RkT8CtLiAsBamNelO-hiAdzRMcPB5N0">
 
   <title>Android 必知必会 - 使用 ADB 操作 Clipboard | Cafeting</title>
   
@@ -182,7 +182,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">Cafeting</span>
         <span class="logo-line-after"><i></i></span>
@@ -266,9 +266,7 @@
       <i class="fa fa-times-circle"></i>
     </span>
     <div class="local-search-input-wrapper">
-      <input autocomplete="off"
-             placeholder="搜索..." spellcheck="false"
-             type="text" id="local-search-input">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
     </div>
   </div>
   <div id="local-search-result"></div>
@@ -309,7 +307,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Cafeting">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -366,8 +364,7 @@
                   <i class="fa fa-comment-o"></i>
                 </span>
                 <a href="/2018/01/17/android-adb-set-clipboard/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/01/17/android-adb-set-clipboard/" itemprop="commentCount"></span>
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/01/17/android-adb-set-clipboard/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -413,27 +410,27 @@
 <p>操作环境：macOS Sierra 10.12.6 + iTerm2，一些命令可能会因系统等不同而略有不同，请自行测试。</p>
 </blockquote>
 <h2 id="前置知识点"><a href="#前置知识点" class="headerlink" title="前置知识点"></a>前置知识点</h2><p>首先了解下 ADB Shell 中的 <code>service</code> ，在命令行里执行能看到如下信息：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">$ adb shell</div><div class="line">$ service</div><div class="line">Usage: service [-h|-?]</div><div class="line">       service list</div><div class="line">       service check SERVICE</div><div class="line">       service call SERVICE CODE [i32 N | i64 N | f N | d N | s16 STR ] ...</div><div class="line">Options:</div><div class="line">   i32: Write the 32-bit <span class="built_in">integer</span> N into the send parcel.</div><div class="line">   i64: Write the 64-bit <span class="built_in">integer</span> N into the send parcel.</div><div class="line">   f:   Write the 32-bit single-precision number N into the send parcel.</div><div class="line">   d:   Write the 64-bit double-precision number N into the send parcel.</div><div class="line">   s16: Write the UTF-16 string STR into the send parcel.</div><div class="line">$ service list | grep clipboard</div><div class="line"><span class="comment"># If use windows system, use findstr: </span></div><div class="line"><span class="comment"># service list | findstr "clipboard"</span></div><div class="line">63	clipboard: [android.content.IClipboard]</div></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">$ adb shell</span><br><span class="line">$ service</span><br><span class="line">Usage: service [-h|-?]</span><br><span class="line">       service list</span><br><span class="line">       service check SERVICE</span><br><span class="line">       service call SERVICE CODE [i32 N | i64 N | f N | d N | s16 STR ] ...</span><br><span class="line">Options:</span><br><span class="line">   i32: Write the 32-bit <span class="built_in">integer</span> N into the send parcel.</span><br><span class="line">   i64: Write the 64-bit <span class="built_in">integer</span> N into the send parcel.</span><br><span class="line">   f:   Write the 32-bit single-precision number N into the send parcel.</span><br><span class="line">   d:   Write the 64-bit double-precision number N into the send parcel.</span><br><span class="line">   s16: Write the UTF-16 string STR into the send parcel.</span><br><span class="line">$ service list | grep clipboard</span><br><span class="line"><span class="comment"># If use windows system, use findstr: </span></span><br><span class="line"><span class="comment"># service list | findstr "clipboard"</span></span><br><span class="line">63	clipboard: [android.content.IClipboard]</span><br></pre></td></tr></table></figure>
 <p>下面找 CODE ，查看 Clipboard 的源码：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// API &lt; 11</span></div><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> TRANSACTION_getClipboardText <span class="number">1</span></div><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> TRANSACTION_hasClipboardText <span class="number">3</span></div><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> TRANSACTION_setClipboardText <span class="number">2</span></div><div class="line"><span class="comment">// API &gt;= 11</span></div><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> TRANSACTION_setPrimaryClip = <span class="number">1</span></div><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> TRANSACTION_getPrimaryClip = <span class="number">2</span></div><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> TRANSACTION_getPrimaryClipDescription = <span class="number">3</span></div><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> TRANSACTION_hasPrimaryClip = <span class="number">4</span></div><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> TRANSACTION_addPrimaryClipChangedListener = <span class="number">5</span></div><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> TRANSACTION_removePrimaryClipChangedListener = <span class="number">6</span></div><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> TRANSACTION_hasClipboardText = <span class="number">7</span></div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// API &lt; 11</span></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> TRANSACTION_getClipboardText <span class="number">1</span></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> TRANSACTION_hasClipboardText <span class="number">3</span></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> TRANSACTION_setClipboardText <span class="number">2</span></span><br><span class="line"><span class="comment">// API &gt;= 11</span></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> TRANSACTION_setPrimaryClip = <span class="number">1</span></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> TRANSACTION_getPrimaryClip = <span class="number">2</span></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> TRANSACTION_getPrimaryClipDescription = <span class="number">3</span></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> TRANSACTION_hasPrimaryClip = <span class="number">4</span></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> TRANSACTION_addPrimaryClipChangedListener = <span class="number">5</span></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> TRANSACTION_removePrimaryClipChangedListener = <span class="number">6</span></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> TRANSACTION_hasClipboardText = <span class="number">7</span></span><br></pre></td></tr></table></figure>
 <h2 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h2><p>Clipboard 源码指出这些事务需要什么参数。TRANSACTION_setPrimaryClip 需要一个 ClipData，它不是一个 i32 或 s16，因此与服务调用不兼容。 更重要的是，这些事务需要调用包名称作为参数，剪贴板服务验证指定的包名称与调用的 uid 相匹配。 当使用adb shell 时，调用的 uid 是 UID_ROOT 或者 UID_SHELL，它们都不拥有任何包，所以没有办法通过这个检查。 简而言之，新的剪贴板服务不能以这种方式使用。</p>
 <p>所以在 API &gt;= 11 的系统上使用 <code>service call clipboard [1 | 2 | 3] [i32 N | i64 N | f N | d N | s16 STR ]</code> 已经不可行了。</p>
 <p>所以无论命令正确与否，都会提示 <code>Unknown package</code> ：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ service call clipboard 2 s16 <span class="string">"abc"</span></div><div class="line">Result: Parcel(</div><div class="line">  0x00000000: fffffffd 00000013 006e0055 006e006b <span class="string">'........U.n.k.n.'</span></div><div class="line">  0x00000010: 0077006f 0020006e 00610070 006b0063 <span class="string">'o.w.n. .p.a.c.k.'</span></div><div class="line">  0x00000020: 00670061 00200065 00620061 00000063 <span class="string">'a.g.e. .a.b.c...'</span>)</div></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ service call clipboard 2 s16 <span class="string">"abc"</span></span><br><span class="line">Result: Parcel(</span><br><span class="line">  0x00000000: fffffffd 00000013 006e0055 006e006b <span class="string">'........U.n.k.n.'</span></span><br><span class="line">  0x00000010: 0077006f 0020006e 00610070 006b0063 <span class="string">'o.w.n. .p.a.c.k.'</span></span><br><span class="line">  0x00000020: 00670061 00200065 00620061 00000063 <span class="string">'a.g.e. .a.b.c...'</span>)</span><br></pre></td></tr></table></figure>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>就 Android 目前的各版本系统市场占有率而言，<strong>使用 ADB 操作 Clipboard 是一个不可行的方案了</strong>。</p>
 <p>参考：</p>
 <blockquote>
 <ul>
-<li><a href="https://stackoverflow.com/questions/7283446/pasting-text-into-android-emulator-clipboard-using-adb-shell" target="_blank" rel="external">Pasting text into Android emulator clipboard using adb shell</a></li>
-<li><a href="https://stackoverflow.com/questions/14243427/set-clipboard-text-via-adb-shell-as-of-api-level-11" target="_blank" rel="external">Set clipboard text via adb shell as of API level 11</a></li>
+<li><a href="https://stackoverflow.com/questions/7283446/pasting-text-into-android-emulator-clipboard-using-adb-shell" target="_blank" rel="noopener">Pasting text into Android emulator clipboard using adb shell</a></li>
+<li><a href="https://stackoverflow.com/questions/14243427/set-clipboard-text-via-adb-shell-as-of-api-level-11" target="_blank" rel="noopener">Set clipboard text via adb shell as of API level 11</a></li>
 </ul>
 </blockquote>
 <p>有什么建议或者问题可以随时联系我，共同探讨学习：</p>
 <blockquote>
 <ul>
-<li>微博：<a href="http://weibo.com/zyansen" target="_blank" rel="external">cafeting</a></li>
-<li>Github： <a href="https://github.com/likfe" target="_blank" rel="external">likfe</a></li>
-<li>CSDN：<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="external">他叫自己Mr.张</a> </li>
+<li>微博：<a href="http://weibo.com/zyansen" target="_blank" rel="noopener">cafeting</a></li>
+<li>Github： <a href="https://github.com/likfe" target="_blank" rel="noopener">likfe</a></li>
+<li>CSDN：<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="noopener">他叫自己Mr.张</a> </li>
 </ul>
 </blockquote>
 
@@ -560,7 +557,7 @@
 
       
         <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
             文章目录
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
@@ -571,9 +568,7 @@
 
       <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/images/avatar.gif"
-               alt="Cafeting" />
+          <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="Cafeting">
           <p class="site-author-name" itemprop="name">Cafeting</p>
            
               <p class="site-description motion-element" itemprop="description"></p>
@@ -676,10 +671,10 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
+        <div class="copyright">
   
   &copy;  2015 - 
-  <span itemprop="copyrightYear">2018</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
