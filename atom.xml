@@ -1,0 +1,506 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Cafeting</title>
+  
+  <subtitle>一个人的行走范围，就是他的世界。</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://likfe.com/"/>
+  <updated>2019-02-17T14:30:44.055Z</updated>
+  <id>https://likfe.com/</id>
+  
+  <author>
+    <name>Cafeting</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>侧滑返回：透明（Translucent） Activity弹出 PopWindow 后侧滑时背景变黑色</title>
+    <link href="https://likfe.com/2019/02/17/TranslucentActivityPopWindowBlackBackground/"/>
+    <id>https://likfe.com/2019/02/17/TranslucentActivityPopWindowBlackBackground/</id>
+    <published>2019-02-17T14:23:27.000Z</published>
+    <updated>2019-02-17T14:30:44.055Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Android 模仿 iOS 的侧滑返回一般分2大类：透明方案和非透明方案。&lt;/p&gt;
+&lt;p&gt;其中透明方案有很多隐藏的意料之外的情况需要处理。本文记录透明方案弹出 PopWindow 后导致透明背景失效变黑色的情况。&lt;/p&gt;
+&lt;h2 id=&quot;0x00-问题&quot;&gt;&lt;a href=&quot;#0x00-问题&quot; class=&quot;headerlink&quot; title=&quot;0x00 问题&quot;&gt;&lt;/a&gt;0x00 问题&lt;/h2&gt;&lt;p&gt;todo&lt;/p&gt;
+&lt;p&gt;Translucent,PopWindow,SwipeBack&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Translucent" scheme="https://likfe.com/tags/Translucent/"/>
+    
+      <category term="SwipeBack" scheme="https://likfe.com/tags/SwipeBack/"/>
+    
+      <category term="PopWindow" scheme="https://likfe.com/tags/PopWindow/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>遍历 AccessibilityNodeInfo 报 StackOverflowError</title>
+    <link href="https://likfe.com/2019/02/17/StackOverflowErrorInAccessibilityNodeInfo/"/>
+    <id>https://likfe.com/2019/02/17/StackOverflowErrorInAccessibilityNodeInfo/</id>
+    <published>2019-02-17T13:06:40.000Z</published>
+    <updated>2019-02-17T13:54:28.095Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在使用 AccessibilityService 遍历包含 WebView 的 AccessibilityNodeInfo 时会在某些情况下必现 &lt;code&gt;StackOverflowError&lt;/code&gt; 的错误，导致应用崩溃。&lt;/p&gt;
+&lt;h2 id=&quot;0x00-异常&quot;&gt;&lt;a href=&quot;#0x00-异常&quot; class=&quot;headerlink&quot; title=&quot;0x00 异常&quot;&gt;&lt;/a&gt;0x00 异常&lt;/h2&gt;&lt;p&gt;最近使用 Android 的 AccessibilityService 做一些自动化操作时发现，在部分机器上遍历包含 WebView 页面的 AccessibilityNodeInfo 时，某些页面必定会引起 &lt;code&gt;StackOverflowError&lt;/code&gt; 错误，经过一番查证，定位到主要与系统所使用的 Android System WebView 版本有关，属于 WebView 的 Bug。&lt;/p&gt;
+&lt;p&gt;相关说明可以参考 &lt;a href=&quot;https://bugs.chromium.org/p/chromium/issues/detail?id=805014&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Android: Infinite loop of FrameLayouts in accessibility tree&lt;/a&gt; 的讨论。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;查看 Android System WebView 版本&lt;/strong&gt;（以下2种方法任一均可）：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;应用程序&lt;ol&gt;
+&lt;li&gt;菜单：显示系统应用程序&lt;/li&gt;
+&lt;li&gt;点击列表中的：Android System WebView&lt;/li&gt;
+&lt;li&gt;详情页内包含版本&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;开发者选项&lt;ol&gt;
+&lt;li&gt;开启「开发者选项」&lt;/li&gt;
+&lt;li&gt;开发者选项 -&amp;gt; WebView 实现&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+    
+    </summary>
+    
+    
+      <category term="AccessibilityNodeInfo" scheme="https://likfe.com/tags/AccessibilityNodeInfo/"/>
+    
+      <category term="StackOverflow" scheme="https://likfe.com/tags/StackOverflow/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Android Studio Error:String index out of range:-1</title>
+    <link href="https://likfe.com/2018/10/25/as-err-string-range-1/"/>
+    <id>https://likfe.com/2018/10/25/as-err-string-range-1/</id>
+    <published>2018-10-25T07:25:57.000Z</published>
+    <updated>2018-10-25T07:40:38.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;博主遇到此问题的原因是 NDK 版本过高（&amp;gt;=18），或者说 Android Studio 版本过低（&amp;lt;3.x），导致不匹配造成的。解决方法是降低 NDK 版本到 17.x 及以下，或者升级 Android Studio 版本到 3.x。&lt;/p&gt;
+&lt;h2 id=&quot;0x00-异常&quot;&gt;&lt;a href=&quot;#0x00-异常&quot; class=&quot;headerlink&quot; title=&quot;0x00 异常&quot;&gt;&lt;/a&gt;0x00 异常&lt;/h2&gt;&lt;p&gt;最近接手同事的一个项目，在我电脑上使用 Android Studio 死活是无法正常加载，同步项目的过程一直报 &lt;code&gt;String index out of range: -1&lt;/code&gt; 的异常，且没有任何有用的 Log 打印出来。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="AndroidStudio" scheme="https://likfe.com/tags/AndroidStudio/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>React Native 小记 - LessBorderTextInput 无边框的 TextInput</title>
+    <link href="https://likfe.com/2018/10/24/RN-LessBorderTextInput/"/>
+    <id>https://likfe.com/2018/10/24/RN-LessBorderTextInput/</id>
+    <published>2018-10-24T02:24:00.000Z</published>
+    <updated>2018-10-24T03:31:43.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;由于 TextInput 在 Android 和 iOS 平台默认表现不一致，为了统一样式，这里参照官方文档（ &lt;a href=&quot;http://facebook.github.io/react-native/docs/textinput.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;英文文档&lt;/a&gt; | &lt;a href=&quot;https://reactnative.cn/docs/0.48/textinput.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;中文文档&lt;/a&gt; ）进行了封装，并添加了对 &lt;code&gt;ref&lt;/code&gt; 的支持。&lt;code&gt;ref&lt;/code&gt; 用于获取组件，实现自动切换输入框的焦点等场景。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="ReactNative" scheme="https://likfe.com/tags/ReactNative/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>React Native 小记 - TouchableOpacity 单次点击无效</title>
+    <link href="https://likfe.com/2018/10/23/RN-keyboardShouldPersistTaps/"/>
+    <id>https://likfe.com/2018/10/23/RN-keyboardShouldPersistTaps/</id>
+    <published>2018-10-23T07:54:10.000Z</published>
+    <updated>2018-10-25T07:24:57.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;一般是焦点问题，解决方法：即在 ScrollView 标签内，根据情况设置其 &lt;code&gt;keyboardShouldPersistTaps&lt;/code&gt; 属性值为 &lt;code&gt;always&lt;/code&gt; 或者 &lt;code&gt;handled&lt;/code&gt; 。详细解决过程如下：&lt;/p&gt;
+&lt;h2 id=&quot;0x00-描述&quot;&gt;&lt;a href=&quot;#0x00-描述&quot; class=&quot;headerlink&quot; title=&quot;0x00 描述&quot;&gt;&lt;/a&gt;0x00 描述&lt;/h2&gt;&lt;p&gt;收到测试人员提交的 Bug：帐号密码输入完毕按返回键关闭键盘后，点击登录没反应，再点一次才执行登录操作。网上类似的情况还有 “当点击 TouchableOpacity 时，要点击两下才会触发 onPress() ”、“在 ScrollView 中 TouchableOpacity 需要在 TextInput 失去焦点后才能点击”等。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="ReactNative" scheme="https://likfe.com/tags/ReactNative/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>GitHub Pages 对自定义域名支持 HTTPS</title>
+    <link href="https://likfe.com/2018/05/03/github-pages-custom-domains-support-https/"/>
+    <id>https://likfe.com/2018/05/03/github-pages-custom-domains-support-https/</id>
+    <published>2018-05-03T03:24:40.000Z</published>
+    <updated>2018-10-16T03:54:13.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;GitHub Pages Blog 原文：&lt;a href=&quot;https://blog.github.com/2018-05-01-github-pages-custom-domains-https/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Custom domains on GitHub Pages gain support for HTTPS&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;在 2018-05-01，GitHub Pages 官方发布了上面的一篇 Blog，告知我们 GitHub Pages 对自定义域名支持 了 HTTPS ，下面针对此新特性来做个简单的说明并提供详细的开启操作流程。&lt;/p&gt;
+&lt;h2 id=&quot;0x00-好处&quot;&gt;&lt;a href=&quot;#0x00-好处&quot; class=&quot;headerlink&quot; title=&quot;0x00 好处&quot;&gt;&lt;/a&gt;0x00 好处&lt;/h2&gt;&lt;p&gt;简单来说，除了 HTTPS 自身带来的加密、防劫持等特性外，Github 官方基于 HTTPS 配合 CND，使得网站的加载速度更快，还能提供额外的防御 DDoS 攻击的保护。&lt;/p&gt;
+&lt;h2 id=&quot;0x01-操作流程&quot;&gt;&lt;a href=&quot;#0x01-操作流程&quot; class=&quot;headerlink&quot; title=&quot;0x01 操作流程&quot;&gt;&lt;/a&gt;0x01 操作流程&lt;/h2&gt;&lt;p&gt;关于如何在 Github Pages 上搭建一个博客，这里不再赘述，网上的教程比较多，此次仅对开启自定义域名支持 HTTPS 这一特性来进行说明。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Github" scheme="https://likfe.com/tags/Github/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Android 项目开发填坑记 - NoSuchMethodError:(java.lang.System.arraycopy)</title>
+    <link href="https://likfe.com/2018/02/09/android-arraycopy-error/"/>
+    <id>https://likfe.com/2018/02/09/android-arraycopy-error/</id>
+    <published>2018-02-09T08:23:29.000Z</published>
+    <updated>2018-10-16T03:54:13.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;关键字：&lt;code&gt;NoSuchMethodError&lt;/code&gt;、&lt;code&gt;System.arraycopy&lt;/code&gt;、&lt;code&gt;Native Method&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&quot;0x00：奇怪的异常&quot;&gt;&lt;a href=&quot;#0x00：奇怪的异常&quot; class=&quot;headerlink&quot; title=&quot;0x00：奇怪的异常&quot;&gt;&lt;/a&gt;0x00：奇怪的异常&lt;/h3&gt;&lt;p&gt;应用新版本上线后观察错误日志，发现一个奇怪的 Crash 异常信息：&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;lang.java.NoSuchMethodError: (java.lang.System.arraycopy)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;异常集中发生在 Android 4.4.2 和 Android 5.1 上面，&lt;code&gt;System.arraycopy()&lt;/code&gt; 是一个系统函数，要说没这个方法倒是不会，但异常发生了，说明应用在找这个方法时发生了错误。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Android" scheme="https://likfe.com/tags/Android/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Android 必知必会 - 使用 ADB 操作 Clipboard</title>
+    <link href="https://likfe.com/2018/01/17/android-adb-set-clipboard/"/>
+    <id>https://likfe.com/2018/01/17/android-adb-set-clipboard/</id>
+    <published>2018-01-17T02:52:38.000Z</published>
+    <updated>2018-01-17T04:13:51.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;关键词：&lt;code&gt;service call&lt;/code&gt; 、&lt;code&gt;clipboard&lt;/code&gt; 、&lt;code&gt;Unknown package&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;手里一个项目需要执行个骚操作，其中有一个步骤是使用 ADB 来操作 Clipboard（粘贴板），搜索许久发现&lt;strong&gt;直接操作并不可行&lt;/strong&gt;，确切的说是在 Android API &amp;gt;=11 时是不可行的。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Android" scheme="https://likfe.com/tags/Android/"/>
+    
+      <category term="ADB" scheme="https://likfe.com/tags/ADB/"/>
+    
+      <category term="Clipboard" scheme="https://likfe.com/tags/Clipboard/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>简单修复MacOS High Sierra 允许 Root 用户无密码登录的安全 Bug</title>
+    <link href="https://likfe.com/2017/11/29/mac10-13-root-bug/"/>
+    <id>https://likfe.com/2017/11/29/mac10-13-root-bug/</id>
+    <published>2017-11-29T07:44:47.000Z</published>
+    <updated>2017-11-29T08:38:35.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;macOS High Sierra 最近爆出一个严重的安全漏洞，允许任何人在没有密码的情况下以完全管理功能的 root 用户登录到 Mac。据说已经有安全补丁，但是很多人未收到推送。&lt;/p&gt;
+&lt;p&gt;受影响的系统版本：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;macOS High Sierra 10.13&lt;/li&gt;
+&lt;li&gt;macOS High Sierra 10.13.1&lt;/li&gt;
+&lt;li&gt;macOS High Sierra 10.13.2 beta&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;同时，这些系统下还需符合以下&lt;strong&gt;条件之一&lt;/strong&gt;时才会受到安全漏洞的影响：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;以前&lt;strong&gt;没有&lt;/strong&gt;启用 root 账户&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;没有&lt;/strong&gt;在 Mac 上更改过 root 用户账户密码&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;这里有个比较简单的解决方法，可以防止这个安全 Bug 成为一个大问题。简单来说就是：&lt;strong&gt;在受影响的 Mac 上设置 root 用户的密码。&lt;/strong&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Mac" scheme="https://likfe.com/tags/Mac/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Android 必知必会 - 获取手机系统的构建模式</title>
+    <link href="https://likfe.com/2017/10/09/android-usermode/"/>
+    <id>https://likfe.com/2017/10/09/android-usermode/</id>
+    <published>2017-10-09T10:38:58.000Z</published>
+    <updated>2017-10-10T04:16:46.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;关键词：&lt;code&gt;Android&lt;/code&gt; 、&lt;code&gt;Make&lt;/code&gt; 、&lt;code&gt;user mode&lt;/code&gt; 、&lt;code&gt;user&lt;/code&gt; 、&lt;code&gt;userdebug&lt;/code&gt; 、&lt;code&gt;eng&lt;/code&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;判定手机系统的构建模式、用户模式&lt;/p&gt;
+&lt;p&gt;编译 Rom 时，需要指定目标构建模式，构建模式有三种：用户模式 user、用户调试模式 userdebug 和工程模式 eng&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Android" scheme="https://likfe.com/tags/Android/"/>
+    
+      <category term="Make" scheme="https://likfe.com/tags/Make/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Android 必知必会 - 使用 Intent 打开第三方应用及验证可用性</title>
+    <link href="https://likfe.com/2017/08/30/android-is-intent-available/"/>
+    <id>https://likfe.com/2017/08/30/android-is-intent-available/</id>
+    <published>2017-08-30T08:54:23.000Z</published>
+    <updated>2017-09-01T10:12:15.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本文主要记录：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;使用 Intent 打开第三方应用或指定 Activity 的三种方式&lt;/li&gt;
+&lt;li&gt;使用上面三种方式时分别如何判断该 Intent 能否被解析&lt;/li&gt;
+&lt;li&gt;判断该 Intent 能否被解析中可能出现的遗漏&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+    
+      <category term="Android" scheme="https://likfe.com/tags/Android/"/>
+    
+      <category term="Intent" scheme="https://likfe.com/tags/Intent/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Android 必知必会 - EmptyView</title>
+    <link href="https://likfe.com/2017/07/07/android-empty-view/"/>
+    <id>https://likfe.com/2017/07/07/android-empty-view/</id>
+    <published>2017-07-07T08:18:35.000Z</published>
+    <updated>2017-07-07T10:31:46.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;关键词：GridView ListView EmptyView SwipeRefreshLayout&lt;/p&gt;
+&lt;p&gt;在使用 GridView、ListView 时经常需要处理无数据的情况，给用户一些必要的提示。而 GridView 和 ListView 可以使用 &lt;code&gt;setEmptyView()&lt;/code&gt; 方法来设置无数据时展示的  View 。&lt;/p&gt;
+&lt;p&gt;本文讲一下 EmptyView 的基本用法以及如何配合 SwipeRefreshLayout 使用。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Android" scheme="https://likfe.com/tags/Android/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Android 必知必会 - DialogFragment 实现类似 PopupWindow 效果</title>
+    <link href="https://likfe.com/2017/06/01/android-dialogfragment-as-pop/"/>
+    <id>https://likfe.com/2017/06/01/android-dialogfragment-as-pop/</id>
+    <published>2017-06-01T02:56:29.000Z</published>
+    <updated>2017-07-07T10:10:23.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;近期有网友根据 &lt;a href=&quot;http://blog.csdn.net/ys743276112/article/details/52962046&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Android 必知必会 - DialogFragment 使用总结&lt;/a&gt; 做一些业务，但是目标却是用 DialogFragment 实现类似 PopupWindow 效果：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;只拦截自身所占空间部分的事件，其余空间的点击事件不处理&lt;/li&gt;
+&lt;li&gt;可以根据某个 View 定位自身位置&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;虽然在功能上 PopupWindow 更符合需要，但是使用 DialogFragment 代码更简洁、更方便封装功能模块。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Android" scheme="https://likfe.com/tags/Android/"/>
+    
+      <category term="DialogFragment" scheme="https://likfe.com/tags/DialogFragment/"/>
+    
+      <category term="PopupWindow" scheme="https://likfe.com/tags/PopupWindow/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Android 项目开发填坑记 - 获取系统语言(兼容7.0)</title>
+    <link href="https://likfe.com/2017/05/10/android-sys-language/"/>
+    <id>https://likfe.com/2017/05/10/android-sys-language/</id>
+    <published>2017-05-10T03:07:26.000Z</published>
+    <updated>2017-05-10T09:07:53.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;关键词：&lt;code&gt;Android7.0&lt;/code&gt; 、&lt;code&gt;系统语言&lt;/code&gt; 、&lt;code&gt;顺序不一致&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;获取系统当前语言是一个比较常用的功能，在 Android 7.0 系统上旧函数获取到的当前系统语言并不正确，或者说从 Android 7.0 起，Android 系统语言的规则变了。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Android" scheme="https://likfe.com/tags/Android/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ThinkPHP 转换数据库查询出的数据到对应类型</title>
+    <link href="https://likfe.com/2017/03/25/tp3-x-all-string/"/>
+    <id>https://likfe.com/2017/03/25/tp3-x-all-string/</id>
+    <published>2017-03-25T14:20:22.000Z</published>
+    <updated>2017-05-08T08:07:43.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最近使用 ThinkPHP3.2.3 进行 API 开发，发现 ThinkPHP3.x 查询数据库返回所有字段值类型都是 String。以前开发 web 的时候没怎么注意这个，现在发现用到 API 开发很难办，数据类型不对，不能每个字段都让客户端自己强制转换一下。&lt;/p&gt;
+&lt;p&gt;查资料后发现 ThinkPHP3.x 的 Model.class.php，提供了 &lt;code&gt;_parseType&lt;/code&gt; 方法，在查询完以后进行类型转换，但需要我们手工调一下。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="PHP" scheme="https://likfe.com/tags/PHP/"/>
+    
+      <category term="ThinkPHP" scheme="https://likfe.com/tags/ThinkPHP/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Android 必知必会 - Android Studio 2.3 找回 exploded-aar 目录【官方已更新】</title>
+    <link href="https://likfe.com/2017/03/15/android-studio-exploded-aar/"/>
+    <id>https://likfe.com/2017/03/15/android-studio-exploded-aar/</id>
+    <published>2017-03-15T10:45:35.000Z</published>
+    <updated>2017-05-11T04:04:28.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;今天收到邮件提示 &lt;code&gt;exploded-aar&lt;/code&gt; 目录问题在 &lt;code&gt;gradle plugin 2.5&lt;/code&gt; 版本修复好了。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Marked as Fixed&lt;/p&gt;
+&lt;p&gt;in 2.3/2.4 you can look in the build cache entries and look in the input file that indicate the source of the cache entry (maven coordinate).&lt;br&gt;in 2.5+ we switched to Gradle’s own cache so you’ll have to look in the gradle folder.&lt;br&gt;If all you need is manually get the aar content you could also manually download the aar and unzip it yourself.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;查看 Issue 详情（需要梯子）：&lt;a href=&quot;https://issuetracker.google.com/issues/37127616&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Issue 页&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;— 更新于 2017-05-11&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;升级到 Android Studio 2.3 后，Gradle Plugin 也升级到 2.3.0，对应推荐使用的 Gradle 版本是 3.3。&lt;/p&gt;
+&lt;p&gt;这时候会发现项目目录下 &lt;code&gt;{module name}/build/intermediates/exploded-aar/&lt;/code&gt; 目录没了，经过一番查找，发现这并不是一个 Bug，是官方刻意为之，它会在 &lt;code&gt;{user name}/.android/build-cache&lt;/code&gt; 下生成一部分缓存文件，来代替 &lt;code&gt;exploded-aar&lt;/code&gt; ，如果需要生成它，可以配置项目目录下的 &lt;code&gt;gradle.properties&lt;/code&gt; ，添加一行内容：&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;android.enableBuildCache=false&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+    
+      <category term="Android" scheme="https://likfe.com/tags/Android/"/>
+    
+      <category term="AndroidStudio" scheme="https://likfe.com/tags/AndroidStudio/"/>
+    
+      <category term="Gradle" scheme="https://likfe.com/tags/Gradle/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Android Studio 升级 gradle 报错</title>
+    <link href="https://likfe.com/2017/03/13/android-update-gradle/"/>
+    <id>https://likfe.com/2017/03/13/android-update-gradle/</id>
+    <published>2017-03-13T03:22:25.000Z</published>
+    <updated>2017-03-13T03:23:42.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;错误提示如下：&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Android" scheme="https://likfe.com/tags/Android/"/>
+    
+      <category term="AndroidStudio" scheme="https://likfe.com/tags/AndroidStudio/"/>
+    
+      <category term="Gradle" scheme="https://likfe.com/tags/Gradle/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>解决 Mac 下 Android Studio 不打印日志</title>
+    <link href="https://likfe.com/2017/03/02/mac-android-no-log/"/>
+    <id>https://likfe.com/2017/03/02/mac-android-no-log/</id>
+    <published>2017-03-02T06:44:54.000Z</published>
+    <updated>2017-03-02T06:46:30.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;在 Mac 下使用 Android Studio 时常会遇到 Android Monitor 突然不打印日志的情况，目前知道的有三个方法：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;重启 Android Studio&lt;/p&gt;
+&lt;p&gt;这个不需要多说，点击 Android Studio
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Android" scheme="https://likfe.com/tags/Android/"/>
+    
+      <category term="Mac" scheme="https://likfe.com/tags/Mac/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Android 必知必会 - 根据包名判断 App 运行状态</title>
+    <link href="https://likfe.com/2017/02/07/android-is-app-running/"/>
+    <id>https://likfe.com/2017/02/07/android-is-app-running/</id>
+    <published>2017-02-07T09:07:14.000Z</published>
+    <updated>2017-02-07T09:11:00.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;获取指定包名的 APP 是否还在后台运行，判断 APP 是否存活。&lt;/p&gt;
+&lt;h2 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h2&gt;&lt;p&gt;可以根据 App 是否有 &lt;code&gt;Service&lt;/code&gt; 分两类情况处理：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;没有 &lt;code&gt;Service&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;有 &lt;code&gt;Service&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;对于没有 &lt;code&gt;Service&lt;/code&gt; 的 App，程序一旦切换到后台，可能很快就被回收了，这里使用 &lt;code&gt;ActivityManager.getRunningTasks(int maxNum)&lt;/code&gt; 方法来获取当前正在运行的任务，注意：此方法并不被系统推荐，且是一个 &lt;code&gt;Deprecated&lt;/code&gt; 的方法。&lt;/p&gt;
+&lt;p&gt;对于有 &lt;code&gt;Service&lt;/code&gt; 的 App，大多会有多个 &lt;code&gt;Service&lt;/code&gt; ，且有可能都是 &lt;code&gt;:remote&lt;/code&gt; 类型的，这样在判断上需要进行一定的处理，这里根据 App 的 &lt;code&gt;uid&lt;/code&gt; 来判断，避免在一些特殊的情况下判断存活不准确的问题。我们使用 &lt;code&gt;ActivityManager.getRunningServices(int maxNum)&lt;/code&gt; 方法获取当前运行中的 &lt;code&gt;Service&lt;/code&gt; 列表。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;注意：&lt;/strong&gt;App 的 &lt;code&gt;uid&lt;/code&gt;  对于系统内置 App 而言不是唯一的，Android 内置的应用会有共用 &lt;code&gt;uid&lt;/code&gt; 的情况。如果你是开发系统内置应用或者类似的东西，务必要自行进行特殊方式检查。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Android" scheme="https://likfe.com/tags/Android/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【译】在 Jelly Bean 中使用应用加密</title>
+    <link href="https://likfe.com/2017/01/05/android-app-encrypt/"/>
+    <id>https://likfe.com/2017/01/05/android-app-encrypt/</id>
+    <published>2017-01-05T11:56:25.000Z</published>
+    <updated>2017-01-09T05:36:00.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;翻译自：&lt;a href=&quot;http://nelenkov.blogspot.jp/2012/07/using-app-encryption-in-jelly-bean.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Using app encryption in Jelly Bean&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;关键词 : &lt;code&gt;adb install -l&lt;/code&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;最新的 Android 4.1（Jelly Bean）版本在上周的 Google I / O 大会上发布了，它有一大堆新功能和改进。 其中一个有趣的功能是&lt;strong&gt;应用程序加密&lt;/strong&gt;，除了简短的说明还没有任何细节：“从 Jelly Bean 版本起，Google Play 中的付费应用程序在分发和存储之前，会使用设备特定的密钥加密”。缺乏细节当然会引起猜测，有些人甚至担心，当他们使用一个新的设备时必须回购他们的付费应用程序。 在本文中，我们将介绍如何在操作系统中实施应用加密，展示如何在不通过 Google Play 的情况下安装加密的应用，并了解 Google Play 如何提供加密的应用。&lt;/p&gt;
+&lt;h2 id=&quot;操作系统对加密应用程序的支持&quot;&gt;&lt;a href=&quot;#操作系统对加密应用程序的支持&quot; class=&quot;headerlink&quot; title=&quot;操作系统对加密应用程序的支持&quot;&gt;&lt;/a&gt;操作系统对加密应用程序的支持&lt;/h2&gt;&lt;p&gt;本文之前的版本是基于 Eclipse 框架和二进制的系统镜像，并且缺少一部分。由于 Jelly Bean 已经开源，下面的讨论已经修改，现在是基于 AOSP 代码（4.1.1_r1）。如果你回来重读本文，重点放在第二部分。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Android" scheme="https://likfe.com/tags/Android/"/>
+    
+      <category term="ADB" scheme="https://likfe.com/tags/ADB/"/>
+    
+  </entry>
+  
+</feed>
