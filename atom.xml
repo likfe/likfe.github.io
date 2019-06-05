@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://likfe.com/"/>
-  <updated>2019-06-05T11:44:09.605Z</updated>
+  <updated>2019-06-05T12:32:12.428Z</updated>
   <id>https://likfe.com/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>为 Android Studio 或者 Android 项目设置代理</title>
+    <link href="https://likfe.com/2019/06/05/SetProxyForAndroidStudio/"/>
+    <id>https://likfe.com/2019/06/05/SetProxyForAndroidStudio/</id>
+    <published>2019-06-05T11:54:26.000Z</published>
+    <updated>2019-06-05T12:32:12.428Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本文记录给 Android Studio 设置代理，并添加白名单。适用于 Jenkins 等 CI/CD 环境。有修改配置文件和命令行2种方式。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Proxy" scheme="https://likfe.com/tags/Proxy/"/>
+    
+      <category term="AndroidStudio" scheme="https://likfe.com/tags/AndroidStudio/"/>
+    
+  </entry>
   
   <entry>
     <title>最新支持备案域名后缀列表</title>
@@ -472,32 +492,6 @@
       <category term="Android" scheme="https://likfe.com/tags/Android/"/>
     
       <category term="Mac" scheme="https://likfe.com/tags/Mac/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Android 必知必会 - 根据包名判断 App 运行状态</title>
-    <link href="https://likfe.com/2017/02/07/android-is-app-running/"/>
-    <id>https://likfe.com/2017/02/07/android-is-app-running/</id>
-    <published>2017-02-07T09:07:14.000Z</published>
-    <updated>2017-02-07T09:11:00.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;获取指定包名的 APP 是否还在后台运行，判断 APP 是否存活。&lt;/p&gt;
-&lt;h2 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h2&gt;&lt;p&gt;可以根据 App 是否有 &lt;code&gt;Service&lt;/code&gt; 分两类情况处理：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;没有 &lt;code&gt;Service&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;有 &lt;code&gt;Service&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;对于没有 &lt;code&gt;Service&lt;/code&gt; 的 App，程序一旦切换到后台，可能很快就被回收了，这里使用 &lt;code&gt;ActivityManager.getRunningTasks(int maxNum)&lt;/code&gt; 方法来获取当前正在运行的任务，注意：此方法并不被系统推荐，且是一个 &lt;code&gt;Deprecated&lt;/code&gt; 的方法。&lt;/p&gt;
-&lt;p&gt;对于有 &lt;code&gt;Service&lt;/code&gt; 的 App，大多会有多个 &lt;code&gt;Service&lt;/code&gt; ，且有可能都是 &lt;code&gt;:remote&lt;/code&gt; 类型的，这样在判断上需要进行一定的处理，这里根据 App 的 &lt;code&gt;uid&lt;/code&gt; 来判断，避免在一些特殊的情况下判断存活不准确的问题。我们使用 &lt;code&gt;ActivityManager.getRunningServices(int maxNum)&lt;/code&gt; 方法获取当前运行中的 &lt;code&gt;Service&lt;/code&gt; 列表。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;注意：&lt;/strong&gt;App 的 &lt;code&gt;uid&lt;/code&gt;  对于系统内置 App 而言不是唯一的，Android 内置的应用会有共用 &lt;code&gt;uid&lt;/code&gt; 的情况。如果你是开发系统内置应用或者类似的东西，务必要自行进行特殊方式检查。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="Android" scheme="https://likfe.com/tags/Android/"/>
     
   </entry>
   
