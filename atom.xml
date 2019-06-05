@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://likfe.com/"/>
-  <updated>2019-02-17T14:30:44.055Z</updated>
+  <updated>2019-06-05T11:44:09.605Z</updated>
   <id>https://likfe.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>最新支持备案域名后缀列表</title>
+    <link href="https://likfe.com/2019/06/05/domainRecordSuffix/"/>
+    <id>https://likfe.com/2019/06/05/domainRecordSuffix/</id>
+    <published>2019-06-05T11:40:46.000Z</published>
+    <updated>2019-06-05T11:44:09.605Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;官网地址：&lt;a href=&quot;http://xn--eqrt2g.xn--vuq861b/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://域名.信息&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;最新审核时间：2019-05-10&lt;/p&gt;
+&lt;p&gt;本文对中文域名未做识别处理。这里只列出英文域名。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="备案" scheme="https://likfe.com/tags/%E5%A4%87%E6%A1%88/"/>
+    
+      <category term="域名" scheme="https://likfe.com/tags/%E5%9F%9F%E5%90%8D/"/>
+    
+  </entry>
   
   <entry>
     <title>侧滑返回：透明（Translucent） Activity弹出 PopWindow 后侧滑时背景变黑色</title>
@@ -476,30 +498,6 @@
     
     
       <category term="Android" scheme="https://likfe.com/tags/Android/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【译】在 Jelly Bean 中使用应用加密</title>
-    <link href="https://likfe.com/2017/01/05/android-app-encrypt/"/>
-    <id>https://likfe.com/2017/01/05/android-app-encrypt/</id>
-    <published>2017-01-05T11:56:25.000Z</published>
-    <updated>2017-01-09T05:36:00.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;翻译自：&lt;a href=&quot;http://nelenkov.blogspot.jp/2012/07/using-app-encryption-in-jelly-bean.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Using app encryption in Jelly Bean&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;关键词 : &lt;code&gt;adb install -l&lt;/code&gt;&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;最新的 Android 4.1（Jelly Bean）版本在上周的 Google I / O 大会上发布了，它有一大堆新功能和改进。 其中一个有趣的功能是&lt;strong&gt;应用程序加密&lt;/strong&gt;，除了简短的说明还没有任何细节：“从 Jelly Bean 版本起，Google Play 中的付费应用程序在分发和存储之前，会使用设备特定的密钥加密”。缺乏细节当然会引起猜测，有些人甚至担心，当他们使用一个新的设备时必须回购他们的付费应用程序。 在本文中，我们将介绍如何在操作系统中实施应用加密，展示如何在不通过 Google Play 的情况下安装加密的应用，并了解 Google Play 如何提供加密的应用。&lt;/p&gt;
-&lt;h2 id=&quot;操作系统对加密应用程序的支持&quot;&gt;&lt;a href=&quot;#操作系统对加密应用程序的支持&quot; class=&quot;headerlink&quot; title=&quot;操作系统对加密应用程序的支持&quot;&gt;&lt;/a&gt;操作系统对加密应用程序的支持&lt;/h2&gt;&lt;p&gt;本文之前的版本是基于 Eclipse 框架和二进制的系统镜像，并且缺少一部分。由于 Jelly Bean 已经开源，下面的讨论已经修改，现在是基于 AOSP 代码（4.1.1_r1）。如果你回来重读本文，重点放在第二部分。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="Android" scheme="https://likfe.com/tags/Android/"/>
-    
-      <category term="ADB" scheme="https://likfe.com/tags/ADB/"/>
     
   </entry>
   
