@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://likfe.com/"/>
-  <updated>2019-12-04T11:41:58.731Z</updated>
+  <updated>2020-04-10T15:11:08.124Z</updated>
   <id>https://likfe.com/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Android 下 RGBA 转 ARGB</title>
+    <link href="https://likfe.com/2020/04/10/androd-rgba-to-argb/"/>
+    <id>https://likfe.com/2020/04/10/androd-rgba-to-argb/</id>
+    <published>2020-04-10T15:00:12.000Z</published>
+    <updated>2020-04-10T15:11:08.124Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h2&gt;&lt;p&gt;服务端下发的颜色值字符串由于一开始依据 iOS 端的 RGBA 格式，Android 端（Android 使用 ARGB 方式）需要进行兼容，需要对此字符串转换。&lt;br&gt;举例：RGBA &lt;code&gt;#ABCDEF99&lt;/code&gt; =&amp;gt; ARGB &lt;code&gt;#99ABCDEF&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;扩展：ARGB &lt;code&gt;#99ABCDEF&lt;/code&gt; =&amp;gt; RGBA &lt;code&gt;#ABCDEF99&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;即 RGBA 和 ARGB 互转。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Android" scheme="https://likfe.com/tags/Android/"/>
+    
+  </entry>
   
   <entry>
     <title>Confluence 移动应用无法连接 Can&#39;t get a secure connection error</title>
@@ -445,38 +465,6 @@
       <category term="PHP" scheme="https://likfe.com/tags/PHP/"/>
     
       <category term="ThinkPHP" scheme="https://likfe.com/tags/ThinkPHP/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Android 必知必会 - Android Studio 2.3 找回 exploded-aar 目录【官方已更新】</title>
-    <link href="https://likfe.com/2017/03/15/android-studio-exploded-aar/"/>
-    <id>https://likfe.com/2017/03/15/android-studio-exploded-aar/</id>
-    <published>2017-03-15T10:45:35.000Z</published>
-    <updated>2017-05-11T04:04:28.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;今天收到邮件提示 &lt;code&gt;exploded-aar&lt;/code&gt; 目录问题在 &lt;code&gt;gradle plugin 2.5&lt;/code&gt; 版本修复好了。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Marked as Fixed&lt;/p&gt;
-&lt;p&gt;in 2.3/2.4 you can look in the build cache entries and look in the input file that indicate the source of the cache entry (maven coordinate).&lt;br&gt;in 2.5+ we switched to Gradle’s own cache so you’ll have to look in the gradle folder.&lt;br&gt;If all you need is manually get the aar content you could also manually download the aar and unzip it yourself.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;查看 Issue 详情（需要梯子）：&lt;a href=&quot;https://issuetracker.google.com/issues/37127616&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Issue 页&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;— 更新于 2017-05-11&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;升级到 Android Studio 2.3 后，Gradle Plugin 也升级到 2.3.0，对应推荐使用的 Gradle 版本是 3.3。&lt;/p&gt;
-&lt;p&gt;这时候会发现项目目录下 &lt;code&gt;{module name}/build/intermediates/exploded-aar/&lt;/code&gt; 目录没了，经过一番查找，发现这并不是一个 Bug，是官方刻意为之，它会在 &lt;code&gt;{user name}/.android/build-cache&lt;/code&gt; 下生成一部分缓存文件，来代替 &lt;code&gt;exploded-aar&lt;/code&gt; ，如果需要生成它，可以配置项目目录下的 &lt;code&gt;gradle.properties&lt;/code&gt; ，添加一行内容：&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;android.enableBuildCache=false&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-    
-    </summary>
-    
-    
-      <category term="Android" scheme="https://likfe.com/tags/Android/"/>
-    
-      <category term="AndroidStudio" scheme="https://likfe.com/tags/AndroidStudio/"/>
-    
-      <category term="Gradle" scheme="https://likfe.com/tags/Gradle/"/>
     
   </entry>
   
