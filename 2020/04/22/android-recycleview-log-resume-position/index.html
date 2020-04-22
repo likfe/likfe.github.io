@@ -86,7 +86,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css">
 
 
-  <meta name="keywords" content="Android,DialogFragment,PopupWindow,">
+  <meta name="keywords" content="Android,RecyclerView,">
 
 
 
@@ -104,22 +104,18 @@
 
 
 
-<meta name="description" content="近期有网友根据 Android 必知必会 - DialogFragment 使用总结 做一些业务，但是目标却是用 DialogFragment 实现类似 PopupWindow 效果：  只拦截自身所占空间部分的事件，其余空间的点击事件不处理 可以根据某个 View 定位自身位置  虽然在功能上 PopupWindow 更符合需要，但是使用 DialogFragment 代码更简洁、更方便封装功能">
-<meta name="keywords" content="Android,DialogFragment,PopupWindow">
+<meta name="description" content="记录 RecyclerView 滚动位置并恢复是一个很常见的需求，通常需要精准恢复到上次的位置。 预计会用到 RecyclerView 相关的三个知识点：  监听 RecyclerView 滚动状态 监听 RecyclerView 完成绘制 滚动 RecyclerView 到指定的位置  思路：  在「RecyclerView 完成绘制」时，记录首个元素的偏移量作为基础偏移量；此步非必须流程，根据">
+<meta name="keywords" content="Android,RecyclerView">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Android 必知必会 - DialogFragment 实现类似 PopupWindow 效果">
-<meta property="og:url" content="https://likfe.com/2017/06/01/android-dialogfragment-as-pop/index.html">
+<meta property="og:title" content="Android必知必会 - RecyclerView 恢复上次滚动位置">
+<meta property="og:url" content="https://likfe.com/2020/04/22/android-recycleview-log-resume-position/index.html">
 <meta property="og:site_name" content="Cafeting">
-<meta property="og:description" content="近期有网友根据 Android 必知必会 - DialogFragment 使用总结 做一些业务，但是目标却是用 DialogFragment 实现类似 PopupWindow 效果：  只拦截自身所占空间部分的事件，其余空间的点击事件不处理 可以根据某个 View 定位自身位置  虽然在功能上 PopupWindow 更符合需要，但是使用 DialogFragment 代码更简洁、更方便封装功能">
+<meta property="og:description" content="记录 RecyclerView 滚动位置并恢复是一个很常见的需求，通常需要精准恢复到上次的位置。 预计会用到 RecyclerView 相关的三个知识点：  监听 RecyclerView 滚动状态 监听 RecyclerView 完成绘制 滚动 RecyclerView 到指定的位置  思路：  在「RecyclerView 完成绘制」时，记录首个元素的偏移量作为基础偏移量；此步非必须流程，根据">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://img.blog.csdn.net/20170601183835306?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQveXM3NDMyNzYxMTI=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:image" content="http://img.blog.csdn.net/20170601183850744?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQveXM3NDMyNzYxMTI=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:image" content="http://img.blog.csdn.net/20170601183904651?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQveXM3NDMyNzYxMTI=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:updated_time" content="2017-07-07T10:10:23.000Z">
+<meta property="og:updated_time" content="2020-04-22T14:03:08.246Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Android 必知必会 - DialogFragment 实现类似 PopupWindow 效果">
-<meta name="twitter:description" content="近期有网友根据 Android 必知必会 - DialogFragment 使用总结 做一些业务，但是目标却是用 DialogFragment 实现类似 PopupWindow 效果：  只拦截自身所占空间部分的事件，其余空间的点击事件不处理 可以根据某个 View 定位自身位置  虽然在功能上 PopupWindow 更符合需要，但是使用 DialogFragment 代码更简洁、更方便封装功能">
-<meta name="twitter:image" content="http://img.blog.csdn.net/20170601183835306?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQveXM3NDMyNzYxMTI=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta name="twitter:title" content="Android必知必会 - RecyclerView 恢复上次滚动位置">
+<meta name="twitter:description" content="记录 RecyclerView 滚动位置并恢复是一个很常见的需求，通常需要精准恢复到上次的位置。 预计会用到 RecyclerView 相关的三个知识点：  监听 RecyclerView 滚动状态 监听 RecyclerView 完成绘制 滚动 RecyclerView 到指定的位置  思路：  在「RecyclerView 完成绘制」时，记录首个元素的偏移量作为基础偏移量；此步非必须流程，根据">
 
 
 
@@ -148,13 +144,13 @@
 
 
 
-  <link rel="canonical" href="https://likfe.com/2017/06/01/android-dialogfragment-as-pop/">
+  <link rel="canonical" href="https://likfe.com/2020/04/22/android-recycleview-log-resume-position/">
 
 
 
 <meta name="google-site-verification" content="-zFk0OkcB5n-RkT8CtLiAsBamNelO-hiAdzRMcPB5N0">
 
-  <title>Android 必知必会 - DialogFragment 实现类似 PopupWindow 效果 | Cafeting</title>
+  <title>Android必知必会 - RecyclerView 恢复上次滚动位置 | Cafeting</title>
   
 
 
@@ -309,7 +305,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://likfe.com/2017/06/01/android-dialogfragment-as-pop/">
+    <link itemprop="mainEntityOfPage" href="https://likfe.com/2020/04/22/android-recycleview-log-resume-position/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Cafeting">
@@ -326,7 +322,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">Android 必知必会 - DialogFragment 实现类似 PopupWindow 效果</h2>
+          <h2 class="post-title" itemprop="name headline">Android必知必会 - RecyclerView 恢复上次滚动位置</h2>
         
 
         <div class="post-meta">
@@ -338,8 +334,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-01T10:56:29+08:00">
-                2017-06-01
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-22T20:34:19+08:00">
+                2020-04-22
               </time>
             
 
@@ -354,8 +350,8 @@
               
                 <span class="post-meta-item-text">更新于</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2017-07-07T18:10:23+08:00">
-                2017-07-07
+              <time title="更新于" itemprop="dateModified" datetime="2020-04-22T22:03:08+08:00">
+                2020-04-22
               </time>
             
           </span>
@@ -369,8 +365,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/06/01/android-dialogfragment-as-pop/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/06/01/android-dialogfragment-as-pop/" itemprop="commentCount"></span>
+                <a href="/2020/04/22/android-recycleview-log-resume-position/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/04/22/android-recycleview-log-resume-position/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -378,7 +374,7 @@
 
           
           
-             <span id="/2017/06/01/android-dialogfragment-as-pop/" class="leancloud_visitors" data-flag-title="Android 必知必会 - DialogFragment 实现类似 PopupWindow 效果">
+             <span id="/2020/04/22/android-recycleview-log-resume-position/" class="leancloud_visitors" data-flag-title="Android必知必会 - RecyclerView 恢复上次滚动位置">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -409,72 +405,53 @@
       
 
       
-        <p>近期有网友根据 <a href="http://blog.csdn.net/ys743276112/article/details/52962046" target="_blank" rel="noopener">Android 必知必会 - DialogFragment 使用总结</a> 做一些业务，但是目标却是用 DialogFragment 实现类似 PopupWindow 效果：</p>
+        <p>记录 RecyclerView 滚动位置并恢复是一个很常见的需求，通常需要精准恢复到上次的位置。</p>
+<p>预计会用到 RecyclerView 相关的三个知识点：</p>
+<ol>
+<li>监听 RecyclerView 滚动状态</li>
+<li>监听 RecyclerView 完成绘制</li>
+<li>滚动 RecyclerView 到指定的位置</li>
+</ol>
+<p>思路：</p>
 <ul>
-<li>只拦截自身所占空间部分的事件，其余空间的点击事件不处理</li>
-<li>可以根据某个 View 定位自身位置</li>
+<li>在「RecyclerView 完成绘制」时，记录首个元素的偏移量作为基础偏移量；此步非必须流程，根据自己实际情况看是否需要，有些情况此基础偏移量为0，即不存在基础偏移量的问题；</li>
+<li>在「监听 RecyclerView 滚动状态」里，滚动结束时，记录最左侧的元素坐标和偏移量；</li>
+<li>再次打开当前页面时，检查是否存在偏移量信息的记录，有则进行位置恢复，即「滚动 RecyclerView 到指定的位置」。</li>
 </ul>
-<p>虽然在功能上 PopupWindow 更符合需要，但是使用 DialogFragment 代码更简洁、更方便封装功能模块。</p>
 <a id="more"></a>
-<h2 id="基础知识点"><a href="#基础知识点" class="headerlink" title="基础知识点"></a>基础知识点</h2><h3 id="WindowManager-LayoutParams-flags"><a href="#WindowManager-LayoutParams-flags" class="headerlink" title="WindowManager.LayoutParams.flags"></a>WindowManager.LayoutParams.flags</h3><p><code>WindowManager.LayoutParams.flags</code> 修改 Window 的表现行为</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"> /**</span><br><span class="line">* Various behavioral options/flags.  Default is none.</span><br><span class="line">*</span><br><span class="line">* @see #FLAG_ALLOW_LOCK_WHILE_SCREEN_ON</span><br><span class="line">* @see #FLAG_DIM_BEHIND</span><br><span class="line">* @see #FLAG_NOT_FOCUSABLE</span><br><span class="line">* @see #FLAG_NOT_TOUCHABLE</span><br><span class="line">* @see #FLAG_NOT_TOUCH_MODAL</span><br><span class="line">* @see #FLAG_TOUCHABLE_WHEN_WAKING</span><br><span class="line">* @see #FLAG_KEEP_SCREEN_ON</span><br><span class="line">* @see #FLAG_LAYOUT_IN_SCREEN</span><br><span class="line">* @see #FLAG_LAYOUT_NO_LIMITS</span><br><span class="line">* @see #FLAG_FULLSCREEN</span><br><span class="line">* @see #FLAG_FORCE_NOT_FULLSCREEN</span><br><span class="line">* @see #FLAG_SECURE</span><br><span class="line">* @see #FLAG_SCALED</span><br><span class="line">* @see #FLAG_IGNORE_CHEEK_PRESSES</span><br><span class="line">* @see #FLAG_LAYOUT_INSET_DECOR</span><br><span class="line">* @see #FLAG_ALT_FOCUSABLE_IM</span><br><span class="line">* @see #FLAG_WATCH_OUTSIDE_TOUCH</span><br><span class="line">* @see #FLAG_SHOW_WHEN_LOCKED</span><br><span class="line">* @see #FLAG_SHOW_WALLPAPER</span><br><span class="line">* @see #FLAG_TURN_SCREEN_ON</span><br><span class="line">* @see #FLAG_DISMISS_KEYGUARD</span><br><span class="line">* @see #FLAG_SPLIT_TOUCH</span><br><span class="line">* @see #FLAG_HARDWARE_ACCELERATED</span><br><span class="line">* @see #FLAG_LOCAL_FOCUS_MODE</span><br><span class="line">* @see #FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS</span><br><span class="line">*/</span><br></pre></td></tr></table></figure>
-<p>以上可以看到它有很多可选项，加上可以多个相互组合，能满足很多需求，这里重点关注三个属性值：</p>
+<p>条件：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">LinearLayoutManager linearLayoutManager = <span class="keyword">new</span> LinearLayoutManager(mContext);</span><br><span class="line">linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL); <span class="comment">// 水平，本文以此为例</span></span><br><span class="line">linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL); <span class="comment">//或 垂直</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//以下3个变量的值需要持久化存储到 SharedPreferences 类似的地方</span></span><br><span class="line"><span class="keyword">int</span> rvBaseOffset; <span class="comment">//初始状态时position=0元素的的基础偏移量 Offset</span></span><br><span class="line"><span class="keyword">int</span> rvPosition; <span class="comment">//最左边首个可见元素的 position</span></span><br><span class="line"><span class="keyword">int</span> rvOffset; <span class="comment">//最左边首个可见元素的偏移量 Offset</span></span><br></pre></td></tr></table></figure>
+<h2 id="1-前置知识"><a href="#1-前置知识" class="headerlink" title="1. 前置知识"></a>1. 前置知识</h2><h3 id="监听-RecyclerView-滚动状态"><a href="#监听-RecyclerView-滚动状态" class="headerlink" title="监听 RecyclerView 滚动状态"></a>监听 RecyclerView 滚动状态</h3><p>调用 <code>recyclerView.addOnScrollListener(onScrollListener);</code> 来设置 RecyclerView 的滚动监听器。</p>
+<p>自定义一个类来继承 <code>RecyclerView.OnScrollListener</code> 并覆写 <code>onScrollStateChanged()</code> 方法，在其中处理关键状态的监听。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="class"><span class="keyword">class</span> <span class="title">MOnScrollListener</span> <span class="keyword">extends</span> <span class="title">RecyclerView</span>.<span class="title">OnScrollListener</span> </span>&#123;</span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onScrollStateChanged</span><span class="params">(@NonNull RecyclerView recyclerView, <span class="keyword">int</span> newState)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">super</span>.onScrollStateChanged(recyclerView, newState);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">boolean</span> hasStarted = newState == RecyclerView.SCROLL_STATE_DRAGGING; <span class="comment">//此时，RecyclerView 滚动开始</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">boolean</span> hasEnded = newState == RecyclerView.SCROLL_STATE_IDLE; <span class="comment">//此时，RecyclerView 滚动结束</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (hasEnded &amp;&amp; linearLayoutManager != <span class="keyword">null</span>) &#123;</span><br><span class="line">      View leftView = linearLayoutManager.getChildAt(<span class="number">0</span>); <span class="comment">//获取可视的第一个view</span></span><br><span class="line">      <span class="keyword">if</span> (leftView == <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      </span><br><span class="line">      rvOffset = leftView.getLeft(); <span class="comment">//获取该view的左边的偏移量，垂直布局时获取 getTop()</span></span><br><span class="line">      rvPosition = linearLayoutManager.getPosition(leftView);</span><br><span class="line">      SPManager.getInstance().setRvOffset(rvOffset);</span><br><span class="line">      SPManager.getInstance().setRvPosition(rvPosition);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="监听-RecyclerView-完成绘制"><a href="#监听-RecyclerView-完成绘制" class="headerlink" title="监听 RecyclerView 完成绘制"></a>监听 RecyclerView 完成绘制</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">recyclerView.getViewTreeObserver()</span><br><span class="line">                    .addOnGlobalLayoutListener(<span class="keyword">new</span> ViewTreeObserver.OnGlobalLayoutListener() &#123;</span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onGlobalLayout</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		View leftView = linearLayoutManager.getChildAt(<span class="number">0</span>); <span class="comment">//获取可视的第一个view</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (leftView == <span class="keyword">null</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    rvBaseOffset = leftView.getLeft();</span><br><span class="line">    <span class="keyword">int</span> lastPosition = linearLayoutManager.getPosition(leftView);</span><br><span class="line">    <span class="keyword">if</span> (lastPosition == <span class="number">0</span>) &#123;</span><br><span class="line">      SPManager.getInstance().setRvBaseOffset(rvBaseOffset);</span><br><span class="line">    &#125;</span><br><span class="line">    recyclerView.getViewTreeObserver().removeOnGlobalLayoutListener(<span class="keyword">this</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="滚动-RecyclerView-到指定的位置"><a href="#滚动-RecyclerView-到指定的位置" class="headerlink" title="滚动 RecyclerView 到指定的位置"></a>滚动 RecyclerView 到指定的位置</h3><p>具有类似功能的 API 有：</p>
 <ul>
-<li><p>FLAG_NOT_TOUCH_MODAL</p>
-<blockquote>
-<p>Window flag: even when this window is focusable (its <code>FLAG_NOT_FOCUSABLE</code> is not set), allow any pointer events outside of the window to be sent to the windows behind it.</p>
-<p> (API level 1)</p>
-</blockquote>
-</li>
-<li><p>FLAG_TRANSLUCENT_NAVIGATION</p>
-<blockquote>
-<p>Window flag: request a translucent navigation bar with minimal system-provided background protection.</p>
-<p> (API level 19)</p>
-</blockquote>
-</li>
-<li><p>FLAG_TRANSLUCENT_STATUS</p>
-<blockquote>
-<p>Window flag: request a translucent status bar with minimal system-provided background protection.</p>
-<p> (API level 19)</p>
-</blockquote>
-</li>
+<li><code>RecyclerView.scrollToPosition(int position)</code></li>
+<li><code>RecyclerView.smoothScrollToPosition(int position)</code></li>
+<li><code>RecyclerView.scrollBy(int x, int y)</code></li>
+<li><code>LinearLayoutManager.scrollToPositionWithOffset(int position, int offset)</code></li>
 </ul>
-<p>更详细的介绍请点击 <a href="https://developer.android.google.cn/reference/android/view/WindowManager.LayoutParams.html" target="_blank" rel="noopener">文档</a></p>
-<p>其中 <code>FLAG_NOT_TOUCH_MODAL</code> 可达到『只拦截自身所占空间部分的事件，其余空间的点击事件不处理』的需求，而 <code>FLAG_TRANSLUCENT_NAVIGATION</code> 和 <code>FLAG_TRANSLUCENT_STATUS</code> 主要是用来调整使用<strong>沉浸式状态栏</strong>时显示自身位置不正确的问题。</p>
-<h3 id="获取-View-位置的时机"><a href="#获取-View-位置的时机" class="headerlink" title="获取 View 位置的时机"></a>获取 View 位置的时机</h3><p>如果需要让 DialogFragment 在 <code>onCreate()</code> 等生命周期函数内直接调用显示到某个 View 的位置处，可能无法正确获取到该 View 的坐标，具体参考 <a href="http://blog.csdn.net/ys743276112/article/details/51396838" target="_blank" rel="noopener">Android必知必会-获取View坐标和长宽的时机</a> 一文。</p>
-<p>但是，如果在界面显示给用户后，DialogFragment 的显示交给用户触发的话，就不需要在意这个问题了。</p>
-<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><blockquote>
-<p>TopFragment.java</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TopFragment</span> <span class="keyword">extends</span> <span class="title">DialogFragment</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String EXT_Y = <span class="string">"y value"</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String EXT_BAR = <span class="string">"isTranslucentDecor"</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> y;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">boolean</span> isTranslucentDecor;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> TopFragment <span class="title">getInstant</span><span class="params">(<span class="keyword">int</span> y)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> getInstant(y, <span class="keyword">false</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> TopFragment <span class="title">getInstant</span><span class="params">(<span class="keyword">int</span> y, <span class="keyword">boolean</span> isTranslucentDecor)</span> </span>&#123;</span><br><span class="line">        TopFragment fragment = <span class="keyword">new</span> TopFragment();</span><br><span class="line">        Bundle ext = <span class="keyword">new</span> Bundle();</span><br><span class="line">        ext.putInt(EXT_Y, y);</span><br><span class="line">        ext.putBoolean(EXT_BAR, isTranslucentDecor);</span><br><span class="line">        fragment.setArguments(ext);</span><br><span class="line">        <span class="keyword">return</span> fragment;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(@Nullable Bundle savedInstanceState)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</span><br><span class="line">        setStyle(DialogFragment.STYLE_NO_TITLE, R.style.dialogFrag);</span><br><span class="line">        Bundle args = getArguments();</span><br><span class="line">        <span class="keyword">if</span> (args != <span class="keyword">null</span>) &#123;</span><br><span class="line">            y = args.getInt(EXT_Y, <span class="number">0</span>);</span><br><span class="line">            isTranslucentDecor = args.getBoolean(EXT_BAR, <span class="keyword">false</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            y = <span class="number">0</span>;</span><br><span class="line">            isTranslucentDecor = <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> View <span class="title">onCreateView</span><span class="params">(LayoutInflater inflater, ViewGroup container,</span></span></span><br><span class="line"><span class="function"><span class="params">                             Bundle savedInstanceState)</span> </span>&#123;</span><br><span class="line">        getDialog().setCanceledOnTouchOutside(<span class="keyword">false</span>);</span><br><span class="line">        View rootView = inflater.inflate(R.layout.fragment_top, container, <span class="keyword">false</span>);</span><br><span class="line">        <span class="comment">//Do something</span></span><br><span class="line">        <span class="keyword">final</span> Window window = getDialog().getWindow();</span><br><span class="line">        window.setBackgroundDrawableResource(android.R.color.transparent);</span><br><span class="line">        window.getDecorView().setPadding(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">        WindowManager.LayoutParams wlp = window.getAttributes();</span><br><span class="line">        wlp.width = WindowManager.LayoutParams.MATCH_PARENT;</span><br><span class="line">        wlp.height = WindowManager.LayoutParams.WRAP_CONTENT;</span><br><span class="line">        wlp.flags = WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL;</span><br><span class="line">        <span class="keyword">if</span> (isTranslucentDecor) &#123;</span><br><span class="line">            wlp.flags |= WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION;</span><br><span class="line">        &#125;</span><br><span class="line">        wlp.gravity = Gravity.TOP;<span class="comment">//必须为 TOP，否则定位不准确</span></span><br><span class="line">        wlp.y = y;<span class="comment">//配合 Gravity.TOP 才能准确定位</span></span><br><span class="line">        window.setAttributes(wlp);</span><br><span class="line">      	<span class="comment">//Debug info</span></span><br><span class="line">        rootView.findViewById(R.id.vvv).setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</span><br><span class="line">                Toast.makeText(getActivity(), <span class="string">"dialogFragment 响应了点击事件"</span>, Toast.LENGTH_SHORT).show();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        <span class="keyword">return</span> rootView;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>MainActivity.java</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">super</span>.onCreate(savedInstanceState);</span><br><span class="line">	setContentView(R.layout.activity_main);</span><br><span class="line">  	findViewById(R.id.bt_menu).setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</span><br><span class="line">    	<span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</span><br><span class="line">			TextView title = (TextView) findViewById(R.id.tv_title);</span><br><span class="line">			TopFragment.getInstant(title.getBottom()).show(getSupportFragmentManager(), <span class="string">"tags"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>注意：如果当前 Activity 使用了<strong>沉浸式状态栏</strong>，需要使用 <code>TopFragment.getInstant(int y, boolean isTranslucentDecor)</code> 方法，并且 <code>isTranslucentDecor</code> 传值为 <code>true</code> 。</p>
-<h3 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h3><table>
-<thead>
-<tr>
-<th style="text-align:left">未使用沉浸式状态栏、 <code>isTranslucentDecor</code> 传值为 <code>false</code> ，位置正确</th>
-<th style="text-align:left">使用沉浸式状态栏、 <code>isTranslucentDecor</code> 传值为 <code>false</code> ，位置定位差个状态栏高度</th>
-<th style="text-align:left">使用沉浸式状态栏、 <code>isTranslucentDecor</code> 传值为 <code>true</code> ，位置正确</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left"><img src="http://img.blog.csdn.net/20170601183835306?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQveXM3NDMyNzYxMTI=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="s1"></td>
-<td style="text-align:left"><img src="http://img.blog.csdn.net/20170601183850744?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQveXM3NDMyNzYxMTI=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="s2"></td>
-<td style="text-align:left"><img src="http://img.blog.csdn.net/20170601183904651?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQveXM3NDMyNzYxMTI=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="s3"></td>
-</tr>
-</tbody>
-</table>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>总的来说，这里基本完成了要求的效果，但是定位只能指定其顶部开始的位置，不方便底部定位到某个 View 的上面，因为高度自适应的话，在页面渲染完成前是不能知道它的高度的。当然，你可以使用固定高度布局的方式来实现随意定位。</p>
-<p>有什么建议或者问题可以随时联系我，共同探讨学习：</p>
+<p>注意不同 API 是不同的类的方法，另外还有使用有滚动动画的区别等。</p>
+<p>这里使用 <code>LinearLayoutManager.scrollToPositionWithOffset(int position, int offset)</code> ，它可以精准的定位到上次的位置，也不需要展示滚动动画。</p>
+<h2 id="2-代码实现"><a href="#2-代码实现" class="headerlink" title="2. 代码实现"></a>2. 代码实现</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">LinearLayoutManager linearLayoutManager = <span class="keyword">new</span> LinearLayoutManager(getContext());</span><br><span class="line">linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);</span><br><span class="line"></span><br><span class="line">recyclerView.setLayoutManager(linearLayoutManager);</span><br><span class="line"></span><br><span class="line">onScrollListener = <span class="keyword">new</span> MOnScrollListener();</span><br><span class="line">recyclerView.addOnScrollListener(onScrollListener);</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> lastPositionHistory = SPManager.getInstance().getRvPosition();</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (lastPositionHistory == -<span class="number">1</span>) &#123; <span class="comment">//从未设置过偏移位置时获取一次基础偏移量</span></span><br><span class="line">  recyclerView.getViewTreeObserver()</span><br><span class="line">                    .addOnGlobalLayoutListener(<span class="keyword">new</span> ViewTreeObserver.OnGlobalLayoutListener() &#123;</span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onGlobalLayout</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		View leftView = linearLayoutManager.getChildAt(<span class="number">0</span>); <span class="comment">//获取可视的第一个view</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (leftView == <span class="keyword">null</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    rvBaseOffset = leftView.getLeft();</span><br><span class="line">    <span class="keyword">int</span> lastPosition = linearLayoutManager.getPosition(leftView);</span><br><span class="line">    <span class="keyword">if</span> (lastPosition == <span class="number">0</span>) &#123;</span><br><span class="line">      SPManager.getInstance().setRvBaseOffset(rvBaseOffset);</span><br><span class="line">    &#125;</span><br><span class="line">    recyclerView.getViewTreeObserver().removeOnGlobalLayoutListener(<span class="keyword">this</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//在合适的时机，比如 onResume() 或者获取完数据后进行位置恢复</span></span><br><span class="line"><span class="keyword">if</span> (linearLayoutManager != <span class="keyword">null</span> &amp;&amp; recyclerView != <span class="keyword">null</span>) &#123;</span><br><span class="line">  <span class="keyword">int</span> lastPosition = SPManager.getInstance().getRvPositiont();</span><br><span class="line">  <span class="keyword">if</span> (lastPosition &gt;= <span class="number">0</span> &amp;&amp; linearLayoutManager != <span class="keyword">null</span>) &#123;</span><br><span class="line">    <span class="keyword">int</span> lastOffset = SPManager.getInstance().getRvOffset();</span><br><span class="line">    <span class="keyword">int</span> baseOffset = SPManager.getInstance().getRvBaseOffset();</span><br><span class="line">    linearLayoutManager.scrollToPositionWithOffset(lastPosition, lastOffset - baseOffset);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="3-回顾总结"><a href="#3-回顾总结" class="headerlink" title="3. 回顾总结"></a>3. 回顾总结</h2><p>本次记录的是实际使用中的情况，基础偏移量的值不为 0 可能不是普遍现象，没看到过相关记录，特记录下来，避免后人踩坑吧。</p>
+<p>参考链接：</p>
 <blockquote>
 <ul>
-<li>微博：<a href="http://weibo.com/zyansen" target="_blank" rel="noopener">cafeting</a></li>
+<li><a href="https://stackoverflow.com/questions/34271773/how-to-scrollto-an-offset-inside-recyclerview" target="_blank" rel="noopener">How to scrollto an offset inside recyclerview?</a></li>
+<li><a href="https://stackoverflow.com/questions/27507715/android-how-to-get-the-current-x-offset-of-recyclerview" target="_blank" rel="noopener">Android: How to get the current X offset of RecyclerView?</a></li>
+<li><a href="https://stackoverflow.com/questions/34271773/how-to-scrollto-an-offset-inside-recyclerview" target="_blank" rel="noopener">How to scrollto an offset inside recyclerview?</a></li>
+<li><a href="https://stackoverflow.com/questions/30397460/how-to-know-when-the-recyclerview-has-finished-laying-down-the-items" target="_blank" rel="noopener">How to know when the RecyclerView has finished laying down the items?</a></li>
+</ul>
+</blockquote>
+<p>如果有什么建议或者问题可以随时联系我，共同探讨学习：</p>
+<blockquote>
+<ul>
 <li>Github： <a href="https://github.com/likfe" target="_blank" rel="noopener">likfe</a></li>
-<li>CSDN：<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="noopener">他叫自己Mr.张</a> </li>
+<li>CSDN：<a href="https://micro.blog.csdn.net/" target="_blank" rel="noopener">他叫自己Mr.张</a></li>
+<li>掘金：<a href="https://juejin.im/user/56042f4b60b2f3a91f58461d" target="_blank" rel="noopener">cafeting</a></li>
+<li>微博：<a href="http://weibo.com/zyansen" target="_blank" rel="noopener">cafeting</a></li>
 </ul>
 </blockquote>
 
@@ -497,7 +474,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://likfe.com/2017/06/01/android-dialogfragment-as-pop/" title="Android 必知必会 - DialogFragment 实现类似 PopupWindow 效果">https://likfe.com/2017/06/01/android-dialogfragment-as-pop/</a>
+    <a href="https://likfe.com/2020/04/22/android-recycleview-log-resume-position/" title="Android必知必会 - RecyclerView 恢复上次滚动位置">https://likfe.com/2020/04/22/android-recycleview-log-resume-position/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -514,9 +491,7 @@
           
             <a href="/tags/Android/" rel="tag"># Android</a>
           
-            <a href="/tags/DialogFragment/" rel="tag"># DialogFragment</a>
-          
-            <a href="/tags/PopupWindow/" rel="tag"># PopupWindow</a>
+            <a href="/tags/RecyclerView/" rel="tag"># RecyclerView</a>
           
         </div>
       
@@ -529,8 +504,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/05/10/android-sys-language/" rel="next" title="Android 项目开发填坑记 - 获取系统语言(兼容7.0)">
-                <i class="fa fa-chevron-left"></i> Android 项目开发填坑记 - 获取系统语言(兼容7.0)
+              <a href="/2020/04/10/androd-rgba-to-argb/" rel="next" title="Android 下 RGBA 转 ARGB">
+                <i class="fa fa-chevron-left"></i> Android 下 RGBA 转 ARGB
               </a>
             
           </div>
@@ -538,10 +513,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/07/07/android-empty-view/" rel="prev" title="Android 必知必会 - EmptyView">
-                Android 必知必会 - EmptyView <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -702,7 +673,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基础知识点"><span class="nav-text">基础知识点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#WindowManager-LayoutParams-flags"><span class="nav-text">WindowManager.LayoutParams.flags</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#获取-View-位置的时机"><span class="nav-text">获取 View 位置的时机</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码实现"><span class="nav-text">代码实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#效果图"><span class="nav-text">效果图</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-text">总结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-前置知识"><span class="nav-text">1. 前置知识</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#监听-RecyclerView-滚动状态"><span class="nav-text">监听 RecyclerView 滚动状态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#监听-RecyclerView-完成绘制"><span class="nav-text">监听 RecyclerView 完成绘制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#滚动-RecyclerView-到指定的位置"><span class="nav-text">滚动 RecyclerView 到指定的位置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-代码实现"><span class="nav-text">2. 代码实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-回顾总结"><span class="nav-text">3. 回顾总结</span></a></li></ol></div>
             
 
           </div>
@@ -850,9 +821,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'https://likfe.com/2017/06/01/android-dialogfragment-as-pop/';
-          this.page.identifier = '2017/06/01/android-dialogfragment-as-pop/';
-          this.page.title = 'Android 必知必会 - DialogFragment 实现类似 PopupWindow 效果';
+          this.page.url = 'https://likfe.com/2020/04/22/android-recycleview-log-resume-position/';
+          this.page.identifier = '2020/04/22/android-recycleview-log-resume-position/';
+          this.page.title = 'Android必知必会 - RecyclerView 恢复上次滚动位置';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://cafeting.disqus.com/embed.js';

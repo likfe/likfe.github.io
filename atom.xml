@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://likfe.com/"/>
-  <updated>2020-04-10T15:11:08.124Z</updated>
+  <updated>2020-04-22T14:03:08.246Z</updated>
   <id>https://likfe.com/</id>
   
   <author>
@@ -15,6 +15,38 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Android必知必会 - RecyclerView 恢复上次滚动位置</title>
+    <link href="https://likfe.com/2020/04/22/android-recycleview-log-resume-position/"/>
+    <id>https://likfe.com/2020/04/22/android-recycleview-log-resume-position/</id>
+    <published>2020-04-22T12:34:19.000Z</published>
+    <updated>2020-04-22T14:03:08.246Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;记录 RecyclerView 滚动位置并恢复是一个很常见的需求，通常需要精准恢复到上次的位置。&lt;/p&gt;
+&lt;p&gt;预计会用到 RecyclerView 相关的三个知识点：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;监听 RecyclerView 滚动状态&lt;/li&gt;
+&lt;li&gt;监听 RecyclerView 完成绘制&lt;/li&gt;
+&lt;li&gt;滚动 RecyclerView 到指定的位置&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;思路：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;在「RecyclerView 完成绘制」时，记录首个元素的偏移量作为基础偏移量；此步非必须流程，根据自己实际情况看是否需要，有些情况此基础偏移量为0，即不存在基础偏移量的问题；&lt;/li&gt;
+&lt;li&gt;在「监听 RecyclerView 滚动状态」里，滚动结束时，记录最左侧的元素坐标和偏移量；&lt;/li&gt;
+&lt;li&gt;再次打开当前页面时，检查是否存在偏移量信息的记录，有则进行位置恢复，即「滚动 RecyclerView 到指定的位置」。&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+    
+      <category term="Android" scheme="https://likfe.com/tags/Android/"/>
+    
+      <category term="RecyclerView" scheme="https://likfe.com/tags/RecyclerView/"/>
+    
+  </entry>
   
   <entry>
     <title>Android 下 RGBA 转 ARGB</title>
@@ -444,27 +476,6 @@
     
     
       <category term="Android" scheme="https://likfe.com/tags/Android/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ThinkPHP 转换数据库查询出的数据到对应类型</title>
-    <link href="https://likfe.com/2017/03/25/tp3-x-all-string/"/>
-    <id>https://likfe.com/2017/03/25/tp3-x-all-string/</id>
-    <published>2017-03-25T14:20:22.000Z</published>
-    <updated>2017-05-08T08:07:43.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;最近使用 ThinkPHP3.2.3 进行 API 开发，发现 ThinkPHP3.x 查询数据库返回所有字段值类型都是 String。以前开发 web 的时候没怎么注意这个，现在发现用到 API 开发很难办，数据类型不对，不能每个字段都让客户端自己强制转换一下。&lt;/p&gt;
-&lt;p&gt;查资料后发现 ThinkPHP3.x 的 Model.class.php，提供了 &lt;code&gt;_parseType&lt;/code&gt; 方法，在查询完以后进行类型转换，但需要我们手工调一下。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="PHP" scheme="https://likfe.com/tags/PHP/"/>
-    
-      <category term="ThinkPHP" scheme="https://likfe.com/tags/ThinkPHP/"/>
     
   </entry>
   
