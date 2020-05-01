@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://likfe.com/"/>
-  <updated>2020-04-22T14:03:08.246Z</updated>
+  <updated>2020-05-01T12:14:56.672Z</updated>
   <id>https://likfe.com/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>友盟 SDK 分享到 Messenger 无法发送消息</title>
+    <link href="https://likfe.com/2020/05/01/android-umeng-messenger/"/>
+    <id>https://likfe.com/2020/05/01/android-umeng-messenger/</id>
+    <published>2020-05-01T11:51:51.000Z</published>
+    <updated>2020-05-01T12:14:56.672Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;友盟 Messenger 无法发送消息&lt;br&gt;umeng  Messenger 无法发送消息&lt;br&gt;umeng Facebook Messenger 无法发送消息&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;由于项目的登录和分享基于友盟进行的设计，接入 Facebook Messenger
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Android" scheme="https://likfe.com/tags/Android/"/>
+    
+      <category term="Messenger" scheme="https://likfe.com/tags/Messenger/"/>
+    
+  </entry>
   
   <entry>
     <title>Android必知必会 - RecyclerView 恢复上次滚动位置</title>
@@ -457,25 +485,6 @@
       <category term="DialogFragment" scheme="https://likfe.com/tags/DialogFragment/"/>
     
       <category term="PopupWindow" scheme="https://likfe.com/tags/PopupWindow/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Android 项目开发填坑记 - 获取系统语言(兼容7.0)</title>
-    <link href="https://likfe.com/2017/05/10/android-sys-language/"/>
-    <id>https://likfe.com/2017/05/10/android-sys-language/</id>
-    <published>2017-05-10T03:07:26.000Z</published>
-    <updated>2017-05-10T09:07:53.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;关键词：&lt;code&gt;Android7.0&lt;/code&gt; 、&lt;code&gt;系统语言&lt;/code&gt; 、&lt;code&gt;顺序不一致&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;获取系统当前语言是一个比较常用的功能，在 Android 7.0 系统上旧函数获取到的当前系统语言并不正确，或者说从 Android 7.0 起，Android 系统语言的规则变了。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="Android" scheme="https://likfe.com/tags/Android/"/>
     
   </entry>
   
