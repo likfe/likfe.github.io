@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://likfe.com/"/>
-  <updated>2020-05-03T10:31:23.452Z</updated>
+  <updated>2020-05-03T10:34:13.134Z</updated>
   <id>https://likfe.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://likfe.com/2020/05/01/android-umeng-messenger/"/>
     <id>https://likfe.com/2020/05/01/android-umeng-messenger/</id>
     <published>2020-05-01T11:51:51.000Z</published>
-    <updated>2020-05-03T10:31:23.452Z</updated>
+    <updated>2020-05-03T10:34:13.134Z</updated>
     
     <summary type="html">
     
@@ -30,7 +30,7 @@
 &lt;p&gt;由于项目的登录和分享基于友盟进行的设计，接入 Facebook Messenger 分享，发出去的消息总是提示【无法发送消息 轻触了解详情】&lt;/p&gt;
 &lt;p&gt;可能的原因有2点：&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;Messenger 平台从 2019 年 6 月 10 日开始，&lt;strong&gt;新应用&lt;/strong&gt;将不再支持将应用中的链接和媒体分享至 Messenger 的功能，详见 &lt;a href=&quot;https://developers.facebook.com/docs/messenger-platform/changelog/#20190610&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;官方公告&lt;/a&gt; ；&lt;/li&gt;
+&lt;li&gt;Messenger 平台从 2019 年 6 月 10 日开始，&lt;strong&gt;新应用&lt;/strong&gt;将不再支持将应用中的链接和媒体分享至 Messenger 的功能，详见 &lt;a href=&quot;https://developers.facebook.com/docs/messenger-platform/changelog/#20190610&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;官方公告&lt;/a&gt; ；(此条不成立，文章底部有更新)&lt;/li&gt;
 &lt;li&gt;友盟分享 SDK 处理 Messenger 的相关代码比较老旧，新应用使用的话不再被官方接受了，也就不能发送成功。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;既然官方都发公告说不支持将应用中的链接和媒体分享至 Messenger 的功能了，那就真的没办法了吗? 经过测试，虽然有些限制，但还是可以直接将应用中的&lt;strong&gt;链接&lt;/strong&gt;分享至 Messenger 的，至于媒体，没有进行单独测试，理论上可行。&lt;/p&gt;
