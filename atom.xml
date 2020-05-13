@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://likfe.com/"/>
-  <updated>2020-05-03T10:34:13.134Z</updated>
+  <updated>2020-05-13T04:11:50.759Z</updated>
   <id>https://likfe.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【友情曝光】源动力餐饮集团虚假宣传，选址老师不负责任，租店铺被坑，损失惨重</title>
+    <link href="https://likfe.com/2020/05/13/yuandongli-pianzi/"/>
+    <id>https://likfe.com/2020/05/13/yuandongli-pianzi/</id>
+    <published>2020-05-13T04:02:35.000Z</published>
+    <updated>2020-05-13T04:11:50.759Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;源动力餐饮集团、乔东家排骨大包、北京源动力、北京源动力餐饮集团、源动力餐饮加盟可靠吗？源动力餐饮靠谱么?乔东家排骨大包靠谱么?&lt;/p&gt;
+&lt;p&gt;一位北京的朋友今年加盟了【源动力餐饮集团】的【乔东家排骨大包】项目。&lt;br&gt;【源动力餐饮集团】承诺店铺选址会做市场调研、数据分析等等
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>友盟 SDK 分享到 Messenger 无法发送消息</title>
@@ -458,33 +481,6 @@
     
     
       <category term="Android" scheme="https://likfe.com/tags/Android/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Android 必知必会 - DialogFragment 实现类似 PopupWindow 效果</title>
-    <link href="https://likfe.com/2017/06/01/android-dialogfragment-as-pop/"/>
-    <id>https://likfe.com/2017/06/01/android-dialogfragment-as-pop/</id>
-    <published>2017-06-01T02:56:29.000Z</published>
-    <updated>2017-07-07T10:10:23.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;近期有网友根据 &lt;a href=&quot;http://blog.csdn.net/ys743276112/article/details/52962046&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Android 必知必会 - DialogFragment 使用总结&lt;/a&gt; 做一些业务，但是目标却是用 DialogFragment 实现类似 PopupWindow 效果：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;只拦截自身所占空间部分的事件，其余空间的点击事件不处理&lt;/li&gt;
-&lt;li&gt;可以根据某个 View 定位自身位置&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;虽然在功能上 PopupWindow 更符合需要，但是使用 DialogFragment 代码更简洁、更方便封装功能模块。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="Android" scheme="https://likfe.com/tags/Android/"/>
-    
-      <category term="DialogFragment" scheme="https://likfe.com/tags/DialogFragment/"/>
-    
-      <category term="PopupWindow" scheme="https://likfe.com/tags/PopupWindow/"/>
     
   </entry>
   
