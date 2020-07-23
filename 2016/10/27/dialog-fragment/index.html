@@ -1,0 +1,1316 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+<meta name="google-site-verification" content="-zFk0OkcB5n-RkT8CtLiAsBamNelO-hiAdzRMcPB5N0">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="Android,DialogFragment,Fragment,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Cafeting" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2">
+
+
+
+
+
+
+<meta name="description" content="背景Android 官方推荐使用 DialogFragment 来代替 Dialog ，可以让它具有更高的可复用性（降低耦合）和更好的便利性（很好的处理屏幕翻转的情况）。 而创建 DialogFragment 有两种方式：  覆写其 onCreateDialog 方法 — ① 覆写其 onCreateView 方法 — ②  虽然这两种方式都能实现相同的效果，但是它们各有自己适合的应用场景：  方">
+<meta name="keywords" content="Android,DialogFragment,Fragment">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android 必知必会 - DialogFragment 使用总结">
+<meta property="og:url" content="https://likfe.com/2016/10/27/dialog-fragment/index.html">
+<meta property="og:site_name" content="Cafeting">
+<meta property="og:description" content="背景Android 官方推荐使用 DialogFragment 来代替 Dialog ，可以让它具有更高的可复用性（降低耦合）和更好的便利性（很好的处理屏幕翻转的情况）。 而创建 DialogFragment 有两种方式：  覆写其 onCreateDialog 方法 — ① 覆写其 onCreateView 方法 — ②  虽然这两种方式都能实现相同的效果，但是它们各有自己适合的应用场景：  方">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2020-07-23T07:45:37.655Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android 必知必会 - DialogFragment 使用总结">
+<meta name="twitter:description" content="背景Android 官方推荐使用 DialogFragment 来代替 Dialog ，可以让它具有更高的可复用性（降低耦合）和更好的便利性（很好的处理屏幕翻转的情况）。 而创建 DialogFragment 有两种方式：  覆写其 onCreateDialog 方法 — ① 覆写其 onCreateView 方法 — ②  虽然这两种方式都能实现相同的效果，但是它们各有自己适合的应用场景：  方">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://likfe.com/2016/10/27/dialog-fragment/">
+
+
+
+<meta name="google-site-verification" content="-zFk0OkcB5n-RkT8CtLiAsBamNelO-hiAdzRMcPB5N0">
+
+  <title>Android 必知必会 - DialogFragment 使用总结 | Cafeting</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Cafeting</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">一个人的行走范围，就是他的世界。</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://likfe.com/2016/10/27/dialog-fragment/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Cafeting">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cafeting">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">Android 必知必会 - DialogFragment 使用总结</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-10-27T23:30:48+08:00">
+                2016-10-27
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2020-07-23T15:45:37+08:00">
+                2020-07-23
+              </time>
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2016/10/27/dialog-fragment/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/10/27/dialog-fragment/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2016/10/27/dialog-fragment/" class="leancloud_visitors" data-flag-title="Android 必知必会 - DialogFragment 使用总结">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>Android 官方推荐使用 <code>DialogFragment</code> 来代替 <code>Dialog</code> ，可以让它具有更高的可复用性（降低耦合）和更好的便利性（很好的处理屏幕翻转的情况）。</p>
+<p>而创建 <code>DialogFragment</code> 有两种方式：</p>
+<ol>
+<li>覆写其 <code>onCreateDialog</code> 方法 — ①</li>
+<li>覆写其 <code>onCreateView</code> 方法 — ②</li>
+</ol>
+<p>虽然这两种方式都能实现相同的效果，但是它们各有自己适合的应用场景：</p>
+<ol>
+<li>方法 ①，一般用于创建替代传统的 <code>Dialog</code> 对话框的场景，UI 简单，功能单一。</li>
+<li>方法 ②，一般用于创建复杂内容弹窗或全屏展示效果的场景，UI 复杂，功能复杂，一般有网络请求等异步操作。</li>
+</ol>
+<a id="more"></a>
+<h2 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h2><h3 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h3><p><strong>对于方法 ①</strong>，创建一个 <code>Dialog</code> 并返回它即可：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> Dialog <span class="title">onCreateDialog</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</span><br><span class="line">  	<span class="comment">//为了样式统一和兼容性，可以使用 V7 包下的 AlertDialog.Builder</span></span><br><span class="line">    AlertDialog.Builder builder = <span class="keyword">new</span> AlertDialog.Builder(getActivity());</span><br><span class="line">  	<span class="comment">// 设置主题的构造方法</span></span><br><span class="line">	<span class="comment">// AlertDialog.Builder builder = new AlertDialog.Builder(getActivity(), R.style.CustomDialog);</span></span><br><span class="line">    builder.setTitle(<span class="string">"注意："</span>)</span><br><span class="line">           .setMessage(<span class="string">"是否退出应用？"</span>)</span><br><span class="line">           .setPositiveButton(<span class="string">"确定"</span>, <span class="keyword">null</span>)</span><br><span class="line">           .setNegativeButton(<span class="string">"取消"</span>, <span class="keyword">null</span>)</span><br><span class="line">           .setCancelable(<span class="keyword">false</span>);</span><br><span class="line">           <span class="comment">//builder.show(); // 不能在这里使用 show() 方法</span></span><br><span class="line">    <span class="keyword">return</span> builder.create();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>当然，你也可以使用自定义 <code>View</code> 来创建：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> Dialog <span class="title">onCreateDialog</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</span><br><span class="line">	AlertDialog.Builder builder = <span class="keyword">new</span> AlertDialog.Builder(getActivity());</span><br><span class="line">  	<span class="comment">// 设置主题的构造方法</span></span><br><span class="line">		<span class="comment">// AlertDialog.Builder builder = new AlertDialog.Builder(getActivity(), R.style.CustomDialog);</span></span><br><span class="line">	LayoutInflater inflater = getActivity().getLayoutInflater();  </span><br><span class="line">    View view = inflater.inflate(R.layout.fragment_dialog, <span class="keyword">null</span>);  </span><br><span class="line">    builder.setView(view) </span><br><span class="line"> 		<span class="comment">// Do Someting,eg: TextView tv = view.findViewById(R.id.tv);</span></span><br><span class="line">    <span class="keyword">return</span> builder.create();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>PS：创建 <code>Dialog</code> 的方式有多种，比如下面这种，使用时略有差异，需要自己注意：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> Dialog <span class="title">onCreateDialog</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</span><br><span class="line">	LayoutInflater inflater = getActivity().getLayoutInflater();</span><br><span class="line">    View view = inflater.inflate(R.layout.fragment_dialog, <span class="keyword">null</span>);</span><br><span class="line">	Dialog dialog = <span class="keyword">new</span> Dialog(getActivity());</span><br><span class="line">    <span class="comment">// 设置主题的构造方法</span></span><br><span class="line">  	<span class="comment">// Dialog dialog = new Dialog(getActivity(), R.style.CustomDialog);</span></span><br><span class="line">    dialog.setContentView(view);</span><br><span class="line">  	<span class="comment">// Do Someting</span></span><br><span class="line">	<span class="keyword">return</span> dialog;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>对于方法 ②</strong>，和普通的 <code>Fragment</code> 用法基本一致：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> View <span class="title">onCreateView</span><span class="params">(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)</span> </span>&#123;</span><br><span class="line">	View rootView = inflater.inflate(R.layout.fragment_dialog, container, <span class="keyword">false</span>);</span><br><span class="line">	<span class="comment">// Do Someting</span></span><br><span class="line">	<span class="keyword">return</span> rootView;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 设置主题需要在 onCreate() 方法中调用 setStyle() 方法</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(@Nullable Bundle savedInstanceState)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">super</span>.onCreate(savedInstanceState);</span><br><span class="line">	setStyle(DialogFragment.STYLE_NO_TITLE, R.style.CustomDialog);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="处理屏幕翻转"><a href="#处理屏幕翻转" class="headerlink" title="处理屏幕翻转"></a>处理屏幕翻转</h3><p>如果使用传统的 <code>Dialog</code> ，需要我们手动处理屏幕翻转的情况，但使用 <code>DialogFragment</code> 的话，则不需要我们进行任何处理，<code>FragmentManager</code> 会自动管理 <code>DialogFragment</code> 的生命周期。</p>
+<p>扩展阅读：<a href="http://likfe.com">Dialog 在屏幕翻转时的处理</a></p>
+<h3 id="无标题栏-全屏"><a href="#无标题栏-全屏" class="headerlink" title="无标题栏/全屏"></a>无标题栏/全屏</h3><p>在基本用法里代码注释有设置主题的地方，下面详细说下两种方法下设置无标题栏和实现全屏的方式：</p>
+<h4 id="无标题栏"><a href="#无标题栏" class="headerlink" title="无标题栏"></a>无标题栏</h4><p>对于方法 ① ：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> Dialog <span class="title">onCreateDialog</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</span><br><span class="line">	LayoutInflater inflater = getActivity().getLayoutInflater();</span><br><span class="line">	View view = inflater.inflate(R.layout.fragment_dialog, <span class="keyword">null</span>);</span><br><span class="line">	Dialog dialog = <span class="keyword">new</span> Dialog(getActivity(), R.style.CustomDialog);</span><br><span class="line">  	<span class="comment">// 关闭标题栏，setContentView() 之前调用</span></span><br><span class="line">	dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);</span><br><span class="line">	dialog.setContentView(view);</span><br><span class="line">	dialog.setCanceledOnTouchOutside(<span class="keyword">true</span>);</span><br><span class="line">	<span class="keyword">return</span> dialog;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>对于方法 ②：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(@Nullable Bundle savedInstanceState)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">super</span>.onCreate(savedInstanceState);</span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * setStyle() 的第一个参数有四个可选值：</span></span><br><span class="line"><span class="comment">	 * STYLE_NORMAL|STYLE_NO_TITLE|STYLE_NO_FRAME|STYLE_NO_INPUT</span></span><br><span class="line"><span class="comment">	 * 其中 STYLE_NO_TITLE 和 STYLE_NO_FRAME 可以关闭标题栏</span></span><br><span class="line"><span class="comment">	 * 每一个参数的详细用途可以直接看 Android 源码的说明</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	setStyle(DialogFragment.STYLE_NO_TITLE, R.style.CustomDialog);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="实现全屏（宽-高度全屏）"><a href="#实现全屏（宽-高度全屏）" class="headerlink" title="实现全屏（宽/高度全屏）"></a>实现全屏（宽/高度全屏）</h4><p>常用的形式大多是宽度上和屏幕一样宽，高度自适应，下面直接看代码：</p>
+<p><strong>方法 ① ：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> Dialog <span class="title">onCreateDialog</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</span><br><span class="line">	LayoutInflater inflater = getActivity().getLayoutInflater();</span><br><span class="line">	View view = inflater.inflate(R.layout.fragment_dialog, <span class="keyword">null</span>);</span><br><span class="line">	Dialog dialog = <span class="keyword">new</span> Dialog(getActivity(), R.style.CustomDialog);</span><br><span class="line">	dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);</span><br><span class="line">	dialog.setContentView(view);</span><br><span class="line">	dialog.setCanceledOnTouchOutside(<span class="keyword">true</span>);</span><br><span class="line">	<span class="comment">//Do something</span></span><br><span class="line">    <span class="comment">// 设置宽度为屏宽、位置靠近屏幕底部</span></span><br><span class="line">	Window window = dialog.getWindow();</span><br><span class="line">	window.setBackgroundDrawableResource(R.color.transparent);</span><br><span class="line">	WindowManager.LayoutParams wlp = window.getAttributes();</span><br><span class="line">	wlp.gravity = Gravity.BOTTOM;</span><br><span class="line">	wlp.width = WindowManager.LayoutParams.MATCH_PARENT;</span><br><span class="line">  	wlp.height = WindowManager.LayoutParams.WRAP_CONTENT;</span><br><span class="line">	window.setAttributes(wlp);</span><br><span class="line">	<span class="keyword">return</span> dialog;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>代码 <code>12</code> 行设置了窗口的背景色为透明，这一步是必须的；</p>
+<p>代码 <code>15</code> 行设置窗口的宽度为 <code>MATCH_PARENT</code>,效果是和屏幕宽度一样大，同样你也可以设置高度的值。设置宽度和高度除了 <code>MATCH_PARENT</code> 和 <code>WRAP_CONTENT</code> ，也可以直接设置成具体的数值。</p>
+<p><strong>方法 ②：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(@Nullable Bundle savedInstanceState)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">super</span>.onCreate(savedInstanceState);</span><br><span class="line">	setStyle(DialogFragment.STYLE_NO_TITLE, R.style.CustomDialog);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> View <span class="title">onCreateView</span><span class="params">(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)</span> </span>&#123;</span><br><span class="line">        getDialog().setCanceledOnTouchOutside(<span class="keyword">true</span>);</span><br><span class="line">        View rootView = inflater.inflate(R.layout.fragment_dialog, container, <span class="keyword">false</span>);</span><br><span class="line">        <span class="comment">//Do something</span></span><br><span class="line">        <span class="comment">// 设置宽度为屏宽、靠近屏幕底部。</span></span><br><span class="line">        <span class="keyword">final</span> Window window = getDialog().getWindow();</span><br><span class="line">        window.setBackgroundDrawableResource(R.color.transparent);</span><br><span class="line">        window.getDecorView().setPadding(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">        WindowManager.LayoutParams wlp = window.getAttributes();</span><br><span class="line">        wlp.gravity = Gravity.BOTTOM;</span><br><span class="line">        wlp.width = WindowManager.LayoutParams.MATCH_PARENT;</span><br><span class="line">        wlp.height = WindowManager.LayoutParams.WRAP_CONTENT;</span><br><span class="line">        window.setAttributes(wlp);</span><br><span class="line">        <span class="keyword">return</span> rootView;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>代码 <code>14</code> 行设置了窗口的背景色为透明，这一步是必须的；</p>
+<p>代码 <code>15</code> 行设置了窗口的 Pading 值全部为0，这一步也是必须的，内容不能填充全部宽度和高度。</p>
+<p>其他的和 ① 中的类似。</p>
+<h3 id="应用场景区别"><a href="#应用场景区别" class="headerlink" title="应用场景区别"></a>应用场景区别</h3><p>文章一开始简单总结了方法 ① 和方法 ② 的应用场景，这里说明下：</p>
+<ul>
+<li>从基本的用法中可以看到方法 ① 为简单的替代 <code>Dialog</code> 提供了非常方便的创建方式，比方法 ② 有优势</li>
+<li>方法 ① 在使用了多线程（例如网络请求）的情况下，不能正确的获取当前 Fragment 的状态，会产生空指针异常。方法 ② 则没有此问题，而且，其创建方式默认使用了自定义 View，更便于应对复杂 UI 的场景。</li>
+</ul>
+<p>这里举例说明：方法 ① 和方法 ② 的<code>//Do something</code> 代码处，我们进行一些异步操作：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">TextView title = rootView.findViewById(R.id.dialoag_tv);</span><br><span class="line">title.setText(<span class="string">"Value A"</span>);</span><br><span class="line"><span class="keyword">new</span> SomeTask().execute(url);</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span> <span class="class"><span class="keyword">class</span> <span class="title">SomeTask</span> <span class="keyword">extends</span> <span class="title">AsyncTask</span>&lt;<span class="title">String</span>, <span class="title">Void</span>, <span class="title">Boolean</span>&gt; </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">protected</span> Boolean <span class="title">doInBackground</span><span class="params">(String... params)</span> </span>&#123;</span><br><span class="line">            <span class="comment">// 一些网络请求</span></span><br><span class="line">          	<span class="comment">// 成功时 return true;</span></span><br><span class="line">            <span class="comment">// 异常时 return false;</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onPostExecute</span><span class="params">(Boolean aBoolean)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">super</span>.onPostExecute(aBoolean);</span><br><span class="line">            <span class="comment">// if (!isVisible()) return;</span></span><br><span class="line">            <span class="keyword">if</span> (aBoolean) &#123;</span><br><span class="line">                title.setText(<span class="string">"Value B"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p> 如果在网络请求未结束或者刚结束时关闭了当前 <code>DialogFragment</code> ，代码 <code>19</code> 行就会报空指针异常了，代码 <code>17</code> 的作用就是判断 <code>DialogFragment</code> 当前的状态是否为可用态，但是 <code>isVisible()</code> 以及 <code>isHide()</code> 对于方法 ① 无法正确返回其状态，方法 ② 则正常。方法 ① 和方法 ② 创建 <code>DialogFragment</code> 的一些状态并不是完全一致。</p>
+<p>PS：你也可以使用静态 <code>Handler</code> 结合弱引用等来处理异步操作，那样对 <code>DialogFragment</code> 状态的获取就不重要了。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>以上是个人在实际开发过程中的一点总结和看法，希望你能抱着存疑的态度进行尝试，如果有新的观点或者文章中有不正确的地方，欢迎和我联系。</p>
+<p>扩展阅读：</p>
+<ul>
+<li><a href="http://www.cnblogs.com/tianzhijiexian/p/4161811.html" target="_blank" rel="noopener">详细解读 DialogFragment</a></li>
+<li><a href="http://blog.csdn.net/angcyo/article/details/50613084" target="_blank" rel="noopener">Android–&gt;Dialog/DialogFragment宽度高度修改/全屏,自定义样式</a> </li>
+<li><a href="http://stackoverflow.com/questions/7189948/full-screen-dialogfragment-in-android" target="_blank" rel="noopener">Full Screen DialogFragment in Android</a></li>
+</ul>
+<p><strong>PS</strong>：你可以通过下面的方式和我联系</p>
+<blockquote>
+<ul>
+<li>微博：<a href="http://weibo.com/zyansen" target="_blank" rel="noopener">cafeting</a></li>
+<li>Github： <a href="https://github.com/likfe" target="_blank" rel="noopener">likfe</a></li>
+<li>CSDN：<a href="http://blog.csdn.net/ys743276112" target="_blank" rel="noopener">他叫自己Mr.张</a> </li>
+</ul>
+</blockquote>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    Cafeting
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://likfe.com/2016/10/27/dialog-fragment/" title="Android 必知必会 - DialogFragment 使用总结">https://likfe.com/2016/10/27/dialog-fragment/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/deed.zh" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Android/" rel="tag"># Android</a>
+          
+            <a href="/tags/DialogFragment/" rel="tag"># DialogFragment</a>
+          
+            <a href="/tags/Fragment/" rel="tag"># Fragment</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/09/20/androd-radioGroup-and-viewPager/" rel="next" title="Android 必知必会 - RadioGroup 和 ViewPager 联动">
+                <i class="fa fa-chevron-left"></i> Android 必知必会 - RadioGroup 和 ViewPager 联动
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/11/11/android-library-version/" rel="prev" title="android library version">
+                android library version <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="Cafeting">
+          <p class="site-author-name" itemprop="name">Cafeting</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+           
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">57</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">44</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/likfe" target="_blank" title="Github">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      Github
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://weibo.com/zyansen" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Weibo
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#背景"><span class="nav-text">背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#应用"><span class="nav-text">应用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本用法"><span class="nav-text">基本用法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#处理屏幕翻转"><span class="nav-text">处理屏幕翻转</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#无标题栏-全屏"><span class="nav-text">无标题栏/全屏</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#无标题栏"><span class="nav-text">无标题栏</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实现全屏（宽-高度全屏）"><span class="nav-text">实现全屏（宽/高度全屏）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#应用场景区别"><span class="nav-text">应用场景区别</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-text">总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Cafeting</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+<div id="coding" class="theme-info">
+</div>
+
+
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://cafeting.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://likfe.com/2016/10/27/dialog-fragment/';
+          this.page.identifier = '2016/10/27/dialog-fragment/';
+          this.page.title = 'Android 必知必会 - DialogFragment 使用总结';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://cafeting.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("2nXIpjWLUKkYRIXj2zESyxbJ-gzGzoHsz", "GhYJy4g50Rt6nwyP6MslqpnX");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
