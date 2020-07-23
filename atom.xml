@@ -3,7 +3,7 @@
   <title>Cafeting</title>
   
   <subtitle>一个人的行走范围，就是他的世界。</subtitle>
-  <link href="./atom.xml" rel="self"/>
+  <link href="/atom.xml" rel="self"/>
   
   <link href="https://likfe.com/"/>
   <updated>2020-05-13T04:22:36.679Z</updated>
