@@ -4,6 +4,27 @@
   
     
     <entry>
+      <title>Android 项目开发填坑记 - No Activity found to handle Intent</title>
+      <link href="/2021/03/09/android-forms-gle/"/>
+      <url>/2021/03/09/android-forms-gle/</url>
+      
+        <content type="html"><![CDATA[<p>关键词：forms.gle、No Activity found to handle Intent</p><p>前端同学说在 APP 内的 Webview 内不能跳转到 Google 表单的页面，但是在 iOS 里可以。</p><p>日志是一个比较奇怪的报错：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">android.content.ActivityNotFoundException: No Activity found to handle Intent &#123; act=android.intent.action.VIEW dat=intent://forms.gle/xxx</span><br></pre></td></tr></table></figure><a id="more"></a><p>要跳转的是 <code>https://forms.gle/xxxxxx</code> 这种链接，尝试在 PC 浏览器中打开，发现会最终跳转到 <code>https://docs.google.com/forms/xxxxxxxx</code> 的地方，可以正常打开。</p><p>最后多次测试排查，发现是 <code>https://forms.gle/xxxxxx</code> 这个链接，在 Android 的浏览器中打开，会显示如下错误：</p><p><img src="https://raw.githubusercontent.com/likfe/imagerepo/dev/img/20210309210242.jpg" alt></p><p>最终定位到此链接在 Android 系统下的浏览器内会有特殊的逻辑，故<strong>让前端同学直接使用最终的跳转链接  <code>https://docs.google.com/forms/xxxxxxxx</code> 来进行跳转</strong>，就能正常打开了，特此记录。</p><p>如果有什么建议或者问题可以随时联系我，共同探讨学习：</p><blockquote><ul><li>Github： <a href="https://github.com/likfe" target="_blank" rel="noopener">likfe</a></li><li>CSDN：<a href="https://micro.blog.csdn.net/" target="_blank" rel="noopener">他叫自己Mr.张</a></li><li>掘金：<a href="https://juejin.im/user/56042f4b60b2f3a91f58461d" target="_blank" rel="noopener">cafeting</a></li><li>微博：<a href="http://weibo.com/zyansen" target="_blank" rel="noopener">cafeting</a></li></ul></blockquote>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Android </tag>
+            
+            <tag> Google </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>【友情曝光】源动力餐饮集团虚假宣传，选址老师不负责任，租店铺被坑，损失惨重</title>
       <link href="/2020/05/13/yuandongli-pianzi/"/>
       <url>/2020/05/13/yuandongli-pianzi/</url>

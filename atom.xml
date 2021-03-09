@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://likfe.com/"/>
-  <updated>2020-05-13T04:22:36.679Z</updated>
+  <updated>2021-03-09T13:10:25.399Z</updated>
   <id>https://likfe.com/</id>
   
   <author>
@@ -17,11 +17,34 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Android 项目开发填坑记 - No Activity found to handle Intent</title>
+    <link href="https://likfe.com/2021/03/09/android-forms-gle/"/>
+    <id>https://likfe.com/2021/03/09/android-forms-gle/</id>
+    <published>2021-03-09T12:36:40.000Z</published>
+    <updated>2021-03-09T13:10:25.399Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;关键词：forms.gle、No Activity found to handle Intent&lt;/p&gt;
+&lt;p&gt;前端同学说在 APP 内的 Webview 内不能跳转到 Google 表单的页面，但是在 iOS 里可以。&lt;/p&gt;
+&lt;p&gt;日志是一个比较奇怪的报错：&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;android.content.ActivityNotFoundException: No Activity found to handle Intent &amp;#123; act=android.intent.action.VIEW dat=intent://forms.gle/xxx&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+    
+      <category term="Android" scheme="https://likfe.com/tags/Android/"/>
+    
+      <category term="Google" scheme="https://likfe.com/tags/Google/"/>
+    
+  </entry>
+  
+  <entry>
     <title>【友情曝光】源动力餐饮集团虚假宣传，选址老师不负责任，租店铺被坑，损失惨重</title>
     <link href="https://likfe.com/2020/05/13/yuandongli-pianzi/"/>
     <id>https://likfe.com/2020/05/13/yuandongli-pianzi/</id>
     <published>2020-05-13T04:02:35.000Z</published>
-    <updated>2020-05-13T04:22:36.679Z</updated>
+    <updated>2020-05-13T04:22:36.000Z</updated>
     
     <summary type="html">
     
@@ -39,7 +62,7 @@
     <link href="https://likfe.com/2020/05/01/android-umeng-messenger/"/>
     <id>https://likfe.com/2020/05/01/android-umeng-messenger/</id>
     <published>2020-05-01T11:51:51.000Z</published>
-    <updated>2020-05-03T10:34:13.134Z</updated>
+    <updated>2020-05-03T10:34:13.000Z</updated>
     
     <summary type="html">
     
@@ -67,7 +90,7 @@
     <link href="https://likfe.com/2020/04/22/android-recycleview-log-resume-position/"/>
     <id>https://likfe.com/2020/04/22/android-recycleview-log-resume-position/</id>
     <published>2020-04-22T12:34:19.000Z</published>
-    <updated>2020-04-22T14:03:08.246Z</updated>
+    <updated>2020-04-22T14:03:08.000Z</updated>
     
     <summary type="html">
     
@@ -99,7 +122,7 @@
     <link href="https://likfe.com/2020/04/10/androd-rgba-to-argb/"/>
     <id>https://likfe.com/2020/04/10/androd-rgba-to-argb/</id>
     <published>2020-04-10T15:00:12.000Z</published>
-    <updated>2020-04-10T15:11:08.124Z</updated>
+    <updated>2020-04-10T15:11:08.000Z</updated>
     
     <summary type="html">
     
@@ -119,7 +142,7 @@
     <link href="https://likfe.com/2019/12/04/Confluence-Can-t-get-a-secure-connection-error/"/>
     <id>https://likfe.com/2019/12/04/Confluence-Can-t-get-a-secure-connection-error/</id>
     <published>2019-12-04T11:22:52.000Z</published>
-    <updated>2019-12-04T11:41:58.731Z</updated>
+    <updated>2019-12-04T11:41:58.000Z</updated>
     
     <summary type="html">
     
@@ -143,7 +166,7 @@
     <link href="https://likfe.com/2019/07/13/Flurry-Analytics-API/"/>
     <id>https://likfe.com/2019/07/13/Flurry-Analytics-API/</id>
     <published>2019-07-13T09:19:30.000Z</published>
-    <updated>2019-07-13T09:29:37.157Z</updated>
+    <updated>2019-07-13T09:29:37.000Z</updated>
     
     <summary type="html">
     
@@ -162,7 +185,7 @@
     <link href="https://likfe.com/2019/06/05/SetProxyForAndroidStudio/"/>
     <id>https://likfe.com/2019/06/05/SetProxyForAndroidStudio/</id>
     <published>2019-06-05T11:54:26.000Z</published>
-    <updated>2019-06-05T12:35:16.095Z</updated>
+    <updated>2019-06-05T12:35:16.000Z</updated>
     
     <summary type="html">
     
@@ -182,7 +205,7 @@
     <link href="https://likfe.com/2019/06/05/domainRecordSuffix/"/>
     <id>https://likfe.com/2019/06/05/domainRecordSuffix/</id>
     <published>2019-06-05T11:40:46.000Z</published>
-    <updated>2019-06-05T11:44:09.605Z</updated>
+    <updated>2019-06-05T11:44:09.000Z</updated>
     
     <summary type="html">
     
@@ -204,7 +227,7 @@
     <link href="https://likfe.com/2019/02/17/TranslucentActivityPopWindowBlackBackground/"/>
     <id>https://likfe.com/2019/02/17/TranslucentActivityPopWindowBlackBackground/</id>
     <published>2019-02-17T14:23:27.000Z</published>
-    <updated>2019-02-17T14:30:44.055Z</updated>
+    <updated>2019-02-17T14:30:44.000Z</updated>
     
     <summary type="html">
     
@@ -229,7 +252,7 @@
     <link href="https://likfe.com/2019/02/17/StackOverflowErrorInAccessibilityNodeInfo/"/>
     <id>https://likfe.com/2019/02/17/StackOverflowErrorInAccessibilityNodeInfo/</id>
     <published>2019-02-17T13:06:40.000Z</published>
-    <updated>2019-02-17T13:54:28.095Z</updated>
+    <updated>2019-02-17T13:54:28.000Z</updated>
     
     <summary type="html">
     
@@ -456,26 +479,6 @@
       <category term="Android" scheme="https://likfe.com/tags/Android/"/>
     
       <category term="Intent" scheme="https://likfe.com/tags/Intent/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Android 必知必会 - EmptyView</title>
-    <link href="https://likfe.com/2017/07/07/android-empty-view/"/>
-    <id>https://likfe.com/2017/07/07/android-empty-view/</id>
-    <published>2017-07-07T08:18:35.000Z</published>
-    <updated>2017-07-07T10:31:46.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;关键词：GridView ListView EmptyView SwipeRefreshLayout&lt;/p&gt;
-&lt;p&gt;在使用 GridView、ListView 时经常需要处理无数据的情况，给用户一些必要的提示。而 GridView 和 ListView 可以使用 &lt;code&gt;setEmptyView()&lt;/code&gt; 方法来设置无数据时展示的  View 。&lt;/p&gt;
-&lt;p&gt;本文讲一下 EmptyView 的基本用法以及如何配合 SwipeRefreshLayout 使用。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="Android" scheme="https://likfe.com/tags/Android/"/>
     
   </entry>
   
