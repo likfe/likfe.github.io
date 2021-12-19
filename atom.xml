@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://likfe.com/"/>
-  <updated>2021-12-19T14:40:43.909Z</updated>
+  <updated>2021-12-19T14:43:07.759Z</updated>
   <id>https://likfe.com/</id>
   
   <author>
@@ -21,11 +21,11 @@
     <link href="https://likfe.com/2021/12/19/raspberry-pi-hdmi/"/>
     <id>https://likfe.com/2021/12/19/raspberry-pi-hdmi/</id>
     <published>2021-12-19T10:56:39.000Z</published>
-    <updated>2021-12-19T14:40:43.909Z</updated>
+    <updated>2021-12-19T14:43:07.759Z</updated>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;树莓派配置文件-config-txt-HDMI-热插拔&quot;&gt;&lt;a href=&quot;#树莓派配置文件-config-txt-HDMI-热插拔&quot; class=&quot;headerlink&quot; title=&quot;树莓派配置文件 config.txt - HDMI 热插拔&quot;&gt;&lt;/a&gt;树莓派配置文件 config.txt - HDMI 热插拔&lt;/h1&gt;&lt;p&gt;[toc]&lt;/p&gt;
+      &lt;p&gt;[toc]&lt;/p&gt;
 &lt;p&gt;快速预览：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;code&gt;config.txt&lt;/code&gt; 的路径通常是 &lt;code&gt;/boot/config.txt&lt;/code&gt;，如果找不到，可能是 &lt;code&gt;/boot/firmware/config.txt&lt;/code&gt;。再找不到，参考文章内【找到 config.txt】的思路去找。&lt;/li&gt;
