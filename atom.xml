@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://likfe.com/"/>
-  <updated>2021-12-19T15:01:30.664Z</updated>
+  <updated>2022-03-23T15:08:11.783Z</updated>
   <id>https://likfe.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>自定义 View 可以知道 onPause/onResume 被调用了吗？</title>
+    <link href="https://likfe.com/2022/03/23/custom-view-know-on-pause-called/"/>
+    <id>https://likfe.com/2022/03/23/custom-view-know-on-pause-called/</id>
+    <published>2022-03-23T15:04:35.000Z</published>
+    <updated>2022-03-23T15:08:11.783Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;关键词：自定义View、custom View、Lifecycle、onPause、onResume &lt;/p&gt;
+&lt;p&gt;先说结论，可以。&lt;/p&gt;
+&lt;p&gt;在自定义 View 的类中，根据手机系统版本，重写&lt;code&gt;onVisibilityChanged()&lt;/code&gt;或者&lt;code&gt;onVisibilityAggregated()&lt;/code&gt;方法即可。详细判断条件见下文。 &lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Android" scheme="https://likfe.com/tags/Android/"/>
+    
+      <category term="View" scheme="https://likfe.com/tags/View/"/>
+    
+  </entry>
   
   <entry>
     <title>树莓派配置文件 config.txt - HDMI 热插拔</title>
@@ -456,29 +478,6 @@
     
     
       <category term="Mac" scheme="https://likfe.com/tags/Mac/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Android 必知必会 - 获取手机系统的构建模式</title>
-    <link href="https://likfe.com/2017/10/09/android-usermode/"/>
-    <id>https://likfe.com/2017/10/09/android-usermode/</id>
-    <published>2017-10-09T10:38:58.000Z</published>
-    <updated>2017-10-10T04:16:46.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;关键词：&lt;code&gt;Android&lt;/code&gt; 、&lt;code&gt;Make&lt;/code&gt; 、&lt;code&gt;user mode&lt;/code&gt; 、&lt;code&gt;user&lt;/code&gt; 、&lt;code&gt;userdebug&lt;/code&gt; 、&lt;code&gt;eng&lt;/code&gt;&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;判定手机系统的构建模式、用户模式&lt;/p&gt;
-&lt;p&gt;编译 Rom 时，需要指定目标构建模式，构建模式有三种：用户模式 user、用户调试模式 userdebug 和工程模式 eng&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="Android" scheme="https://likfe.com/tags/Android/"/>
-    
-      <category term="Make" scheme="https://likfe.com/tags/Make/"/>
     
   </entry>
   

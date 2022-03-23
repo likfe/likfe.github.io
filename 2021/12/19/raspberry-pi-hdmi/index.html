@@ -424,7 +424,7 @@
 <li>直接在树莓派内部运行中的系统当中进行修改</li>
 </ol>
 <p>下面说下方法2：</p>
-<p>通常 <code>config.txt</code> 的路径是 <code>/boot/config.txt</code>，但是<strong>如果找不到</strong>，需要查看下磁盘分区，找到<strong>启动分区</strong>所在的目录。<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> fdisk -l</span><br><span class="line">Device         Boot  Start       End   Sectors  Size Id Type</span><br><span class="line">/dev/mmcblk0p1 *      2048    526335    524288  256M  c W95 FAT32 (LBA)</span><br><span class="line">/dev/mmcblk0p2      526336 124735454 124209119 59.2G 83 Linux</span><br><span class="line"></span><br><span class="line">看到2个分区：</span><br><span class="line">- /dev/mmcblk0p1 (启动分区)</span><br><span class="line">- /dev/mmcblk0p2</span><br><span class="line"></span><br><span class="line"><span class="meta">$</span> df</span><br><span class="line">Filesystem     1K-blocks     Used Available Use% Mounted on</span><br><span class="line">/dev/mmcblk0p1    258095   113997    144099  45% /boot/firmware</span><br><span class="line">/dev/mmcblk0p2  61862116 11804636  47472868  20% /</span><br><span class="line"></span><br><span class="line">可见</span><br><span class="line">- /dev/mmcblk0p2 挂载到 / 目录下，</span><br><span class="line">- /dev/mmcblk0p1 挂载到 /boot/firmware 目录下</span><br><span class="line"></span><br><span class="line">那么，config.txt 没在 /boot/下，应该就在 /boot/firmware 下了，即 /boot/firmware/config.txt</span><br></pre></td></tr></table></figure></p>
+<p>通常 <code>config.txt</code> 的路径是 <code>/boot/config.txt</code>，但是<strong>如果找不到</strong>，需要查看下磁盘分区，找到<strong>启动分区</strong>所在的目录。<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> fdisk -l</span></span><br><span class="line">Device         Boot  Start       End   Sectors  Size Id Type</span><br><span class="line">/dev/mmcblk0p1 *      2048    526335    524288  256M  c W95 FAT32 (LBA)</span><br><span class="line">/dev/mmcblk0p2      526336 124735454 124209119 59.2G 83 Linux</span><br><span class="line"></span><br><span class="line">看到2个分区：</span><br><span class="line">- /dev/mmcblk0p1 (启动分区)</span><br><span class="line">- /dev/mmcblk0p2</span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> df</span></span><br><span class="line">Filesystem     1K-blocks     Used Available Use% Mounted on</span><br><span class="line">/dev/mmcblk0p1    258095   113997    144099  45% /boot/firmware</span><br><span class="line">/dev/mmcblk0p2  61862116 11804636  47472868  20% /</span><br><span class="line"></span><br><span class="line">可见</span><br><span class="line">- /dev/mmcblk0p2 挂载到 / 目录下，</span><br><span class="line">- /dev/mmcblk0p1 挂载到 /boot/firmware 目录下</span><br><span class="line"></span><br><span class="line">那么，config.txt 没在 /boot/下，应该就在 /boot/firmware 下了，即 /boot/firmware/config.txt</span><br></pre></td></tr></table></figure></p>
 <h2 id="0x02：修改-config-txt"><a href="#0x02：修改-config-txt" class="headerlink" title="0x02：修改 config.txt"></a>0x02：修改 config.txt</h2><p>添加如下2行到 <code>config.txt</code> 然后重启树莓派即可<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hdmi_force_hotplug=1</span><br><span class="line">hdmi_drive=2</span><br></pre></td></tr></table></figure></p>
 <ul>
 <li><code>hdmi_force_hotplug=1</code> 设置树莓派使用 HDMI 热插拔模式，即使没有检测到 HDMI 显示器。 </li>
@@ -496,6 +496,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2022/03/23/custom-view-know-on-pause-called/" rel="prev" title="自定义 View 可以知道 onPause/onResume 被调用了吗？">
+                自定义 View 可以知道 onPause/onResume 被调用了吗？ <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -577,7 +581,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">59</span>
+                <span class="site-state-item-count">60</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -590,7 +594,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">47</span>
+                <span class="site-state-item-count">48</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
