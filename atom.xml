@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://likfe.com/"/>
-  <updated>2022-03-23T15:08:11.783Z</updated>
+  <updated>2022-03-23T15:19:57.441Z</updated>
   <id>https://likfe.com/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>自定义 View 可以知道 onPause/onResume 被调用了吗？</title>
+    <title>Android 必知必会：自定义 View 可以知道 onPause/onResume 被调用了吗？</title>
     <link href="https://likfe.com/2022/03/23/custom-view-know-on-pause-called/"/>
     <id>https://likfe.com/2022/03/23/custom-view-know-on-pause-called/</id>
     <published>2022-03-23T15:04:35.000Z</published>
-    <updated>2022-03-23T15:08:11.783Z</updated>
+    <updated>2022-03-23T15:19:57.441Z</updated>
     
     <summary type="html">
     
