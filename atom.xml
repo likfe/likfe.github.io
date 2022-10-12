@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://likfe.com/"/>
-  <updated>2022-03-23T15:35:37.463Z</updated>
+  <updated>2022-10-12T07:22:31.739Z</updated>
   <id>https://likfe.com/</id>
   
   <author>
@@ -17,11 +17,32 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Android 项目开发填坑记 - 谷歌商店上架被拒 Apps On Device</title>
+    <link href="https://likfe.com/2022/10/12/google-play-rejected-by-apps-on-device/"/>
+    <id>https://likfe.com/2022/10/12/google-play-rejected-by-apps-on-device/</id>
+    <published>2022-10-12T06:29:12.000Z</published>
+    <updated>2022-10-12T07:22:31.739Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;关键词：谷歌商店被拒、数据安全表单、已安装应用、Policy Declaration、Data Safety Section、App Activity Data Type、Apps On Device&lt;/p&gt;
+&lt;h2 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h2&gt;&lt;p&gt;应用在谷歌商店上架，更新商店包之后，收到审核被拒的邮件，邮箱的原因描述如下：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/likfe/imagerepo/dev/img/202210121415582.png&quot; alt&gt;&lt;/p&gt;
+&lt;p&gt;邮件的意思是违反的谷歌用户数据政策的【数据安全表单】-【应用活动】-【已安装应用】这一项。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="GooglePlay" scheme="https://likfe.com/tags/GooglePlay/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Android 必知必会：自定义 View 可以知道 onPause/onResume 被调用了吗？</title>
     <link href="https://likfe.com/2022/03/23/custom-view-know-on-pause-called/"/>
     <id>https://likfe.com/2022/03/23/custom-view-know-on-pause-called/</id>
     <published>2022-03-23T15:04:35.000Z</published>
-    <updated>2022-03-23T15:35:37.463Z</updated>
+    <updated>2022-10-12T07:06:37.965Z</updated>
     
     <summary type="html">
     
@@ -448,36 +469,6 @@
       <category term="ADB" scheme="https://likfe.com/tags/ADB/"/>
     
       <category term="Clipboard" scheme="https://likfe.com/tags/Clipboard/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>简单修复MacOS High Sierra 允许 Root 用户无密码登录的安全 Bug</title>
-    <link href="https://likfe.com/2017/11/29/mac10-13-root-bug/"/>
-    <id>https://likfe.com/2017/11/29/mac10-13-root-bug/</id>
-    <published>2017-11-29T07:44:47.000Z</published>
-    <updated>2017-11-29T08:38:35.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;macOS High Sierra 最近爆出一个严重的安全漏洞，允许任何人在没有密码的情况下以完全管理功能的 root 用户登录到 Mac。据说已经有安全补丁，但是很多人未收到推送。&lt;/p&gt;
-&lt;p&gt;受影响的系统版本：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;macOS High Sierra 10.13&lt;/li&gt;
-&lt;li&gt;macOS High Sierra 10.13.1&lt;/li&gt;
-&lt;li&gt;macOS High Sierra 10.13.2 beta&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;同时，这些系统下还需符合以下&lt;strong&gt;条件之一&lt;/strong&gt;时才会受到安全漏洞的影响：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;以前&lt;strong&gt;没有&lt;/strong&gt;启用 root 账户&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;没有&lt;/strong&gt;在 Mac 上更改过 root 用户账户密码&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;这里有个比较简单的解决方法，可以防止这个安全 Bug 成为一个大问题。简单来说就是：&lt;strong&gt;在受影响的 Mac 上设置 root 用户的密码。&lt;/strong&gt;&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="Mac" scheme="https://likfe.com/tags/Mac/"/>
     
   </entry>
   

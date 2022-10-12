@@ -2,9 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://likfe.com/2022/10/12/google-play-rejected-by-apps-on-device/</loc>
+    
+    <lastmod>2022-10-12</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://likfe.com/2022/03/23/custom-view-know-on-pause-called/</loc>
     
-    <lastmod>2022-03-23</lastmod>
+    <lastmod>2022-10-12</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -571,7 +580,7 @@
 
   <url>
     <loc>https://likfe.com/</loc>
-    <lastmod>2022-09-22</lastmod>
+    <lastmod>2022-10-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -579,336 +588,343 @@
   
   <url>
     <loc>https://likfe.com/tags/Android/</loc>
-    <lastmod>2022-09-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://likfe.com/tags/Confluence/</loc>
-    <lastmod>2022-09-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://likfe.com/tags/Flurry/</loc>
-    <lastmod>2022-09-22</lastmod>
+    <lastmod>2022-10-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://likfe.com/tags/%E5%8F%8D%E7%BC%96%E8%AF%91/</loc>
-    <lastmod>2022-09-22</lastmod>
+    <lastmod>2022-10-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://likfe.com/tags/Confluence/</loc>
+    <lastmod>2022-10-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://likfe.com/tags/Flurry/</loc>
+    <lastmod>2022-10-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://likfe.com/tags/ReactNative/</loc>
-    <lastmod>2022-09-22</lastmod>
+    <lastmod>2022-10-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://likfe.com/tags/Proxy/</loc>
-    <lastmod>2022-09-22</lastmod>
+    <lastmod>2022-10-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://likfe.com/tags/AndroidStudio/</loc>
-    <lastmod>2022-09-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://likfe.com/tags/AMH/</loc>
-    <lastmod>2022-09-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://likfe.com/tags/Flarum/</loc>
-    <lastmod>2022-09-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://likfe.com/tags/PHP/</loc>
-    <lastmod>2022-09-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://likfe.com/tags/Composer/</loc>
-    <lastmod>2022-09-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://likfe.com/tags/ADB/</loc>
-    <lastmod>2022-09-22</lastmod>
+    <lastmod>2022-10-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://likfe.com/tags/AccessibilityNodeInfo/</loc>
-    <lastmod>2022-09-22</lastmod>
+    <lastmod>2022-10-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://likfe.com/tags/StackOverflow/</loc>
-    <lastmod>2022-09-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://likfe.com/tags/Clipboard/</loc>
-    <lastmod>2022-09-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://likfe.com/tags/ViewPager/</loc>
-    <lastmod>2022-09-22</lastmod>
+    <lastmod>2022-10-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://likfe.com/tags/Translucent/</loc>
-    <lastmod>2022-09-22</lastmod>
+    <lastmod>2022-10-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://likfe.com/tags/SwipeBack/</loc>
-    <lastmod>2022-09-22</lastmod>
+    <lastmod>2022-10-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://likfe.com/tags/PopWindow/</loc>
-    <lastmod>2022-09-22</lastmod>
+    <lastmod>2022-10-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://likfe.com/tags/framework/</loc>
-    <lastmod>2022-09-22</lastmod>
+    <loc>https://likfe.com/tags/ADB/</loc>
+    <lastmod>2022-10-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://likfe.com/tags/gradle/</loc>
-    <lastmod>2022-09-22</lastmod>
+    <loc>https://likfe.com/tags/Clipboard/</loc>
+    <lastmod>2022-10-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://likfe.com/tags/ViewPager/</loc>
+    <lastmod>2022-10-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://likfe.com/tags/AMH/</loc>
+    <lastmod>2022-10-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://likfe.com/tags/Flarum/</loc>
+    <lastmod>2022-10-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://likfe.com/tags/PHP/</loc>
+    <lastmod>2022-10-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://likfe.com/tags/Composer/</loc>
+    <lastmod>2022-10-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://likfe.com/tags/DialogFragment/</loc>
-    <lastmod>2022-09-22</lastmod>
+    <lastmod>2022-10-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://likfe.com/tags/PopupWindow/</loc>
-    <lastmod>2022-09-22</lastmod>
+    <lastmod>2022-10-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://likfe.com/tags/Glide/</loc>
-    <lastmod>2022-09-22</lastmod>
+    <lastmod>2022-10-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://likfe.com/tags/framework/</loc>
+    <lastmod>2022-10-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://likfe.com/tags/gradle/</loc>
+    <lastmod>2022-10-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://likfe.com/tags/Intent/</loc>
-    <lastmod>2022-09-22</lastmod>
+    <lastmod>2022-10-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://likfe.com/tags/RecyclerView/</loc>
-    <lastmod>2022-09-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://likfe.com/tags/Google/</loc>
-    <lastmod>2022-09-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://likfe.com/tags/Leancloud/</loc>
-    <lastmod>2022-09-22</lastmod>
+    <lastmod>2022-10-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://likfe.com/tags/Lambda/</loc>
-    <lastmod>2022-09-22</lastmod>
+    <lastmod>2022-10-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://likfe.com/tags/Leancloud/</loc>
+    <lastmod>2022-10-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://likfe.com/tags/Gradle/</loc>
-    <lastmod>2022-09-22</lastmod>
+    <lastmod>2022-10-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://likfe.com/tags/Google/</loc>
+    <lastmod>2022-10-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://likfe.com/tags/Messenger/</loc>
-    <lastmod>2022-09-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://likfe.com/tags/Fragment/</loc>
-    <lastmod>2022-09-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://likfe.com/tags/Make/</loc>
-    <lastmod>2022-09-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://likfe.com/tags/%E5%A4%87%E6%A1%88/</loc>
-    <lastmod>2022-09-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://likfe.com/tags/%E5%9F%9F%E5%90%8D/</loc>
-    <lastmod>2022-09-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://likfe.com/tags/Scrollbar/</loc>
-    <lastmod>2022-09-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://likfe.com/tags/GreenDao/</loc>
-    <lastmod>2022-09-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://likfe.com/tags/Mac/</loc>
-    <lastmod>2022-09-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://likfe.com/tags/MAMP/</loc>
-    <lastmod>2022-09-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://likfe.com/tags/Github/</loc>
-    <lastmod>2022-09-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://likfe.com/tags/ThinkPHP/</loc>
-    <lastmod>2022-09-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://likfe.com/tags/Sublime-Text/</loc>
-    <lastmod>2022-09-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://likfe.com/tags/Emmet/</loc>
-    <lastmod>2022-09-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://likfe.com/tags/GitBook/</loc>
-    <lastmod>2022-09-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://likfe.com/tags/OSX/</loc>
-    <lastmod>2022-09-22</lastmod>
+    <lastmod>2022-10-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://likfe.com/tags/View/</loc>
-    <lastmod>2022-09-22</lastmod>
+    <lastmod>2022-10-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://likfe.com/tags/Make/</loc>
+    <lastmod>2022-10-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://likfe.com/tags/Fragment/</loc>
+    <lastmod>2022-10-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://likfe.com/tags/Scrollbar/</loc>
+    <lastmod>2022-10-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://likfe.com/tags/%E5%A4%87%E6%A1%88/</loc>
+    <lastmod>2022-10-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://likfe.com/tags/%E5%9F%9F%E5%90%8D/</loc>
+    <lastmod>2022-10-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://likfe.com/tags/GooglePlay/</loc>
+    <lastmod>2022-10-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://likfe.com/tags/Github/</loc>
+    <lastmod>2022-10-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://likfe.com/tags/GreenDao/</loc>
+    <lastmod>2022-10-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://likfe.com/tags/Mac/</loc>
+    <lastmod>2022-10-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://likfe.com/tags/MAMP/</loc>
+    <lastmod>2022-10-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://likfe.com/tags/Sublime-Text/</loc>
+    <lastmod>2022-10-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://likfe.com/tags/Emmet/</loc>
+    <lastmod>2022-10-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://likfe.com/tags/GitBook/</loc>
+    <lastmod>2022-10-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://likfe.com/tags/OSX/</loc>
+    <lastmod>2022-10-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://likfe.com/tags/ThinkPHP/</loc>
+    <lastmod>2022-10-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://likfe.com/tags/Linux/</loc>
-    <lastmod>2022-09-22</lastmod>
+    <lastmod>2022-10-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://likfe.com/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/</loc>
-    <lastmod>2022-09-22</lastmod>
+    <lastmod>2022-10-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
