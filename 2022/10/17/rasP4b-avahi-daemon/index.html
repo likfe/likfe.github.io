@@ -86,7 +86,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css">
 
 
-  <meta name="keywords" content="Android,View,">
+  <meta name="keywords" content="Linux,树莓派,">
 
 
 
@@ -104,18 +104,18 @@
 
 
 
-<meta name="description" content="关键词：自定义View、custom View、Lifecycle、onPause、onResume  先说结论，可以。 在自定义 View 的类中，根据手机系统版本，重写onVisibilityChanged()或者onVisibilityAggregated()方法即可。详细判断条件见下文。">
-<meta name="keywords" content="Android,View">
+<meta name="description" content="关键词：树莓派、Linux、avahi、avahi-daemon、CPU 背景在树莓派4B上安装了官方的 Ubuntu 系统，运行 top 指令，发现 avahi-daemon 占用 CPU 高，且对 CPU 的消耗波动比较大。 查资料发现：  Avahi 允许程序在不需要进行手动网络配置的情况 下，在一个本地网络中发布和获知各种服务和主机。例如，当某用户把他的计算机接入到某个局域网时，如果他的机">
+<meta name="keywords" content="Linux,树莓派">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Android 必知必会：自定义 View 可以知道 onPause&#x2F;onResume 被调用了吗？">
-<meta property="og:url" content="https://likfe.com/2022/03/23/custom-view-know-on-pause-called/index.html">
+<meta property="og:title" content="禁用和卸载树莓派 4B 上 avahi-daemon">
+<meta property="og:url" content="https://likfe.com/2022/10/17/rasP4b-avahi-daemon/index.html">
 <meta property="og:site_name" content="Cafeting">
-<meta property="og:description" content="关键词：自定义View、custom View、Lifecycle、onPause、onResume  先说结论，可以。 在自定义 View 的类中，根据手机系统版本，重写onVisibilityChanged()或者onVisibilityAggregated()方法即可。详细判断条件见下文。">
+<meta property="og:description" content="关键词：树莓派、Linux、avahi、avahi-daemon、CPU 背景在树莓派4B上安装了官方的 Ubuntu 系统，运行 top 指令，发现 avahi-daemon 占用 CPU 高，且对 CPU 的消耗波动比较大。 查资料发现：  Avahi 允许程序在不需要进行手动网络配置的情况 下，在一个本地网络中发布和获知各种服务和主机。例如，当某用户把他的计算机接入到某个局域网时，如果他的机">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2022-10-12T07:06:37.965Z">
+<meta property="og:updated_time" content="2022-10-17T11:08:28.947Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Android 必知必会：自定义 View 可以知道 onPause&#x2F;onResume 被调用了吗？">
-<meta name="twitter:description" content="关键词：自定义View、custom View、Lifecycle、onPause、onResume  先说结论，可以。 在自定义 View 的类中，根据手机系统版本，重写onVisibilityChanged()或者onVisibilityAggregated()方法即可。详细判断条件见下文。">
+<meta name="twitter:title" content="禁用和卸载树莓派 4B 上 avahi-daemon">
+<meta name="twitter:description" content="关键词：树莓派、Linux、avahi、avahi-daemon、CPU 背景在树莓派4B上安装了官方的 Ubuntu 系统，运行 top 指令，发现 avahi-daemon 占用 CPU 高，且对 CPU 的消耗波动比较大。 查资料发现：  Avahi 允许程序在不需要进行手动网络配置的情况 下，在一个本地网络中发布和获知各种服务和主机。例如，当某用户把他的计算机接入到某个局域网时，如果他的机">
 
 
 
@@ -144,13 +144,13 @@
 
 
 
-  <link rel="canonical" href="https://likfe.com/2022/03/23/custom-view-know-on-pause-called/">
+  <link rel="canonical" href="https://likfe.com/2022/10/17/rasP4b-avahi-daemon/">
 
 
 
 <meta name="google-site-verification" content="-zFk0OkcB5n-RkT8CtLiAsBamNelO-hiAdzRMcPB5N0">
 
-  <title>Android 必知必会：自定义 View 可以知道 onPause/onResume 被调用了吗？ | Cafeting</title>
+  <title>禁用和卸载树莓派 4B 上 avahi-daemon | Cafeting</title>
   
 
 
@@ -305,7 +305,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://likfe.com/2022/03/23/custom-view-know-on-pause-called/">
+    <link itemprop="mainEntityOfPage" href="https://likfe.com/2022/10/17/rasP4b-avahi-daemon/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Cafeting">
@@ -322,7 +322,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">Android 必知必会：自定义 View 可以知道 onPause/onResume 被调用了吗？</h2>
+          <h2 class="post-title" itemprop="name headline">禁用和卸载树莓派 4B 上 avahi-daemon</h2>
         
 
         <div class="post-meta">
@@ -334,8 +334,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-03-23T23:04:35+08:00">
-                2022-03-23
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-10-17T18:38:52+08:00">
+                2022-10-17
               </time>
             
 
@@ -350,8 +350,8 @@
               
                 <span class="post-meta-item-text">更新于</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2022-10-12T15:06:37+08:00">
-                2022-10-12
+              <time title="更新于" itemprop="dateModified" datetime="2022-10-17T19:08:28+08:00">
+                2022-10-17
               </time>
             
           </span>
@@ -365,8 +365,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2022/03/23/custom-view-know-on-pause-called/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/03/23/custom-view-know-on-pause-called/" itemprop="commentCount"></span>
+                <a href="/2022/10/17/rasP4b-avahi-daemon/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/10/17/rasP4b-avahi-daemon/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -374,7 +374,7 @@
 
           
           
-             <span id="/2022/03/23/custom-view-know-on-pause-called/" class="leancloud_visitors" data-flag-title="Android 必知必会：自定义 View 可以知道 onPause/onResume 被调用了吗？">
+             <span id="/2022/10/17/rasP4b-avahi-daemon/" class="leancloud_visitors" data-flag-title="禁用和卸载树莓派 4B 上 avahi-daemon">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -405,16 +405,33 @@
       
 
       
-        <p>关键词：自定义View、custom View、Lifecycle、onPause、onResume </p>
-<p>先说结论，可以。</p>
-<p>在自定义 View 的类中，根据手机系统版本，重写<code>onVisibilityChanged()</code>或者<code>onVisibilityAggregated()</code>方法即可。详细判断条件见下文。 </p>
+        <p>关键词：树莓派、Linux、avahi、avahi-daemon、CPU</p>
+<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>在树莓派4B上安装了官方的 Ubuntu 系统，运行 <code>top</code> 指令，发现 <code>avahi-daemon</code> 占用 CPU 高，且对 CPU 的消耗波动比较大。</p>
+<p>查资料发现：</p>
+<blockquote>
+<p>Avahi 允许程序在不需要进行手动网络配置的情况 下，在一个本地网络中发布和获知各种服务和主机。例如，当某用户把他的计算机接入到某个局域网时，如果他的机器运行有Avahi服务，则Avahi程式自动广播，从而发现网络中可用的打印机、共享文件和可相互聊天的其他用户。这有点象他正在接收局域网中的各种网络广告一样。</p>
+<p><strong>除非你有兼容的设备或使用 zeroconf 协议的服务，否则应该关闭它。</strong></p>
+</blockquote>
+<p>我不需要 <strong>zeroconf</strong> 的相关功能，遂尝试禁用或者卸载  <code>avahi-daemon</code>。</p>
 <a id="more"></a>
-<p>如果 <code>Build.VERSION.SDK_INT &lt; Build.VERSION_CODES.N</code> （手机系统低于 Android 7.0）</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onVisibilityChanged</span><span class="params">(@NonNull View changedView, <span class="keyword">int</span> visibility)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">super</span>.onVisibilityChanged(changedView, visibility);</span><br><span class="line">    <span class="keyword">if</span> (visibility == View.VISIBLE) &#123; <span class="comment">//onResume() 被调用</span></span><br><span class="line">    	<span class="comment">//处理动画播放、线程启动、开启定时任务等操作</span></span><br><span class="line">    &#125; <span class="keyword">else</span> &#123; <span class="comment">// onPause() 被调用</span></span><br><span class="line">      <span class="comment">//处理动画的暂停、取消或者线程的暂停、取消、定时任务的暂停、取消等</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>然后 <code>Build.VERSION.SDK_INT &gt;= Build.VERSION_CODES.N</code> （手机系统 Android 7.0 及以上）</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onVisibilityAggregated</span><span class="params">(<span class="keyword">boolean</span> isVisible)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">super</span>.onVisibilityAggregated(isVisible);</span><br><span class="line">    <span class="keyword">if</span> (isVisible) &#123; <span class="comment">//onResume() 被调用</span></span><br><span class="line">    	<span class="comment">//处理动画播放、线程启动、开启定时任务等操作</span></span><br><span class="line">    &#125; <span class="keyword">else</span> &#123; <span class="comment">// onPause() 被调用</span></span><br><span class="line">      <span class="comment">//处理动画的暂停、取消或者线程的暂停、取消、定时任务的暂停、取消等</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>上述方案是我翻 Android 源码找到的最简单的方式，灵感来自 <a href="https://android.googlesource.com/platform/frameworks/base/+/master/core/java/android/widget/ProgressBar.java" target="_blank" rel="noopener">ProgressBar</a> 。不需要监听所在 Fragment 或者 Activity 的生命周期。</p>
-<p>其他方案参见：<a href="https://stackoverflow.com/questions/22368720/can-a-custom-view-know-that-onpause-has-been-called" target="_blank" rel="noopener">Can a custom View know that onPause has been called?</a></p>
+<h2 id="处理过程"><a href="#处理过程" class="headerlink" title="处理过程"></a>处理过程</h2><p>基本环境：</p>
+<ul>
+<li>硬件：树莓派4B</li>
+<li>系统：Ubuntu 21.10 (GNU/Linux 5.13.0-1031-raspi aarch64) </li>
+<li>权限：root 用户权限</li>
+</ul>
+<h3 id="方式一：停止和禁用服务"><a href="#方式一：停止和禁用服务" class="headerlink" title="方式一：停止和禁用服务"></a>方式一：停止和禁用服务</h3><p>首先尝试禁用  <code>avahi-daemon</code> ：（root 权限）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 尝试停止并禁用 avahi-daemon</span></span><br><span class="line"><span class="comment">## 查看 avahi-daemon 当前状态</span></span><br><span class="line">systemctl status avahi-daemon.service</span><br><span class="line"><span class="comment">## 停止 avahi-daemon</span></span><br><span class="line">systemctl stop avahi-daemon.service</span><br><span class="line"><span class="comment">## 再次查看 avahi-daemon 当前状态</span></span><br><span class="line">systemctl status avahi-daemon.service</span><br><span class="line"><span class="comment">## 禁用 avahi-daemon</span></span><br><span class="line">systemctl <span class="built_in">disable</span> avahi-daemon.service</span><br></pre></td></tr></table></figure>
+<p>执行停止  <code>avahi-daemon</code>  的时候，返回一个提示：avahi-daemon.socket 可能会重启 avahi-daemon。出现这种情况时，说明 avahi-daemon 是由 avahi-daemon.socket 启动的，我们单独停止和禁用 avahi-daemon 是不行的，它还会自动启动。</p>
+<p>需要先停止 avahi-daemon.socket，再停止 avahi-daemon：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 停止和禁用 avahi-daemon.socket</span></span><br><span class="line"><span class="comment">## 查看 avahi-daemon.socket 当前状态</span></span><br><span class="line">systemctl status avahi-daemon.socket</span><br><span class="line"><span class="comment">## 停止 avahi-daemon</span></span><br><span class="line">systemctl stop avahi-daemon.socket</span><br><span class="line"><span class="comment">## 再次查看 avahi-daemon 当前状态</span></span><br><span class="line">systemctl status avahi-daemon.socket</span><br><span class="line"><span class="comment">## 禁用 avahi-daemon</span></span><br><span class="line">systemctl <span class="built_in">disable</span> avahi-daemon.socket</span><br><span class="line"></span><br><span class="line"><span class="comment"># 停止和禁用 avahi-daemon</span></span><br><span class="line"><span class="comment">## 查看 avahi-daemon 当前状态</span></span><br><span class="line">systemctl status avahi-daemon.service</span><br><span class="line"><span class="comment">## 停止 avahi-daemon</span></span><br><span class="line">systemctl stop avahi-daemon.service</span><br><span class="line"><span class="comment">## 再次查看 avahi-daemon 当前状态</span></span><br><span class="line">systemctl status avahi-daemon.service</span><br><span class="line"><span class="comment">## 禁用 avahi-daemon</span></span><br><span class="line">systemctl <span class="built_in">disable</span> avahi-daemon.service</span><br></pre></td></tr></table></figure>
+<p>由于本人遇到了重启后这2个服务还会自动重启的情况，所以最终通过卸载的方式来解决的。你可以根据自己的实际情况，决定是否使用卸载的方案。</p>
+<h3 id="方式二：卸载-avahi-daemon-相关的所有服务"><a href="#方式二：卸载-avahi-daemon-相关的所有服务" class="headerlink" title="方式二：卸载 avahi-daemon 相关的所有服务"></a>方式二：卸载 avahi-daemon 相关的所有服务</h3><p>由于单纯的卸载 avahi-daemon 可能引起依赖它的软件无法正常运行，此操作需要慎重考虑和检测：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 卸载方式一：卸载并清理配置文件</span></span><br><span class="line">apt-get purge avahi-daemon</span><br><span class="line"><span class="comment"># 卸载方式而：卸载并保留配置文件</span></span><br><span class="line">apt-get remove avahi-daemon</span><br><span class="line"><span class="comment">#注意：卸载时可能会提示下列软件包将被【卸载】，即卸载 avahi-daemon 会同时卸载依赖它的软件</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 最后，你可以清理下不需要的自动安装的软件：</span></span><br><span class="line">apt autoremove</span><br></pre></td></tr></table></figure>
+<p>资料：</p>
+<ul>
+<li><a href="https://superuser.com/questions/316715/removing-the-avahi-daemon-on-ubuntu" target="_blank" rel="noopener">Removing the avahi-daemon on Ubuntu</a></li>
+</ul>
 <p>如果有什么建议或者问题可以随时联系我，共同探讨学习：</p>
 <blockquote>
 <ul>
@@ -444,7 +461,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://likfe.com/2022/03/23/custom-view-know-on-pause-called/" title="Android 必知必会：自定义 View 可以知道 onPause/onResume 被调用了吗？">https://likfe.com/2022/03/23/custom-view-know-on-pause-called/</a>
+    <a href="https://likfe.com/2022/10/17/rasP4b-avahi-daemon/" title="禁用和卸载树莓派 4B 上 avahi-daemon">https://likfe.com/2022/10/17/rasP4b-avahi-daemon/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -459,9 +476,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Android/" rel="tag"># Android</a>
+            <a href="/tags/Linux/" rel="tag"># Linux</a>
           
-            <a href="/tags/View/" rel="tag"># View</a>
+            <a href="/tags/树莓派/" rel="tag"># 树莓派</a>
           
         </div>
       
@@ -474,8 +491,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2021/12/19/raspberry-pi-hdmi/" rel="next" title="树莓派配置文件 config.txt - HDMI 热插拔">
-                <i class="fa fa-chevron-left"></i> 树莓派配置文件 config.txt - HDMI 热插拔
+              <a href="/2022/10/12/google-play-rejected-by-apps-on-device/" rel="next" title="Android 项目开发填坑记 - 谷歌商店上架被拒 Apps On Device">
+                <i class="fa fa-chevron-left"></i> Android 项目开发填坑记 - 谷歌商店上架被拒 Apps On Device
               </a>
             
           </div>
@@ -483,10 +500,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2022/10/12/google-play-rejected-by-apps-on-device/" rel="prev" title="Android 项目开发填坑记 - 谷歌商店上架被拒 Apps On Device">
-                Android 项目开发填坑记 - 谷歌商店上架被拒 Apps On Device <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -545,8 +558,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="Cafeting">
           <p class="site-author-name" itemprop="name">Cafeting</p>
@@ -628,6 +650,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#背景"><span class="nav-text">背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#处理过程"><span class="nav-text">处理过程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#方式一：停止和禁用服务"><span class="nav-text">方式一：停止和禁用服务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方式二：卸载-avahi-daemon-相关的所有服务"><span class="nav-text">方式二：卸载 avahi-daemon 相关的所有服务</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -770,9 +808,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'https://likfe.com/2022/03/23/custom-view-know-on-pause-called/';
-          this.page.identifier = '2022/03/23/custom-view-know-on-pause-called/';
-          this.page.title = 'Android 必知必会：自定义 View 可以知道 onPause/onResume 被调用了吗？';
+          this.page.url = 'https://likfe.com/2022/10/17/rasP4b-avahi-daemon/';
+          this.page.identifier = '2022/10/17/rasP4b-avahi-daemon/';
+          this.page.title = '禁用和卸载树莓派 4B 上 avahi-daemon';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://cafeting.disqus.com/embed.js';

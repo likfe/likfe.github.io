@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://likfe.com/"/>
-  <updated>2022-10-12T07:25:28.626Z</updated>
+  <updated>2022-10-17T11:08:28.947Z</updated>
   <id>https://likfe.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>禁用和卸载树莓派 4B 上 avahi-daemon</title>
+    <link href="https://likfe.com/2022/10/17/rasP4b-avahi-daemon/"/>
+    <id>https://likfe.com/2022/10/17/rasP4b-avahi-daemon/</id>
+    <published>2022-10-17T10:38:52.000Z</published>
+    <updated>2022-10-17T11:08:28.947Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;关键词：树莓派、Linux、avahi、avahi-daemon、CPU&lt;/p&gt;
+&lt;h2 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h2&gt;&lt;p&gt;在树莓派4B上安装了官方的 Ubuntu 系统，运行 &lt;code&gt;top&lt;/code&gt; 指令，发现 &lt;code&gt;avahi-daemon&lt;/code&gt; 占用 CPU 高，且对 CPU 的消耗波动比较大。&lt;/p&gt;
+&lt;p&gt;查资料发现：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Avahi 允许程序在不需要进行手动网络配置的情况 下，在一个本地网络中发布和获知各种服务和主机。例如，当某用户把他的计算机接入到某个局域网时，如果他的机器运行有Avahi服务，则Avahi程式自动广播，从而发现网络中可用的打印机、共享文件和可相互聊天的其他用户。这有点象他正在接收局域网中的各种网络广告一样。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;除非你有兼容的设备或使用 zeroconf 协议的服务，否则应该关闭它。&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;我不需要 &lt;strong&gt;zeroconf&lt;/strong&gt; 的相关功能，遂尝试禁用或者卸载  &lt;code&gt;avahi-daemon&lt;/code&gt;。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Linux" scheme="https://likfe.com/tags/Linux/"/>
+    
+      <category term="树莓派" scheme="https://likfe.com/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/"/>
+    
+  </entry>
   
   <entry>
     <title>Android 项目开发填坑记 - 谷歌商店上架被拒 Apps On Device</title>
@@ -64,7 +91,7 @@
     <link href="https://likfe.com/2021/12/19/raspberry-pi-hdmi/"/>
     <id>https://likfe.com/2021/12/19/raspberry-pi-hdmi/</id>
     <published>2021-12-19T10:56:39.000Z</published>
-    <updated>2021-12-19T15:01:30.664Z</updated>
+    <updated>2022-10-17T11:05:13.241Z</updated>
     
     <summary type="html">
     
@@ -446,29 +473,6 @@
     
     
       <category term="Android" scheme="https://likfe.com/tags/Android/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Android 必知必会 - 使用 ADB 操作 Clipboard</title>
-    <link href="https://likfe.com/2018/01/17/android-adb-set-clipboard/"/>
-    <id>https://likfe.com/2018/01/17/android-adb-set-clipboard/</id>
-    <published>2018-01-17T02:52:38.000Z</published>
-    <updated>2018-01-17T04:13:51.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;关键词：&lt;code&gt;service call&lt;/code&gt; 、&lt;code&gt;clipboard&lt;/code&gt; 、&lt;code&gt;Unknown package&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;手里一个项目需要执行个骚操作，其中有一个步骤是使用 ADB 来操作 Clipboard（粘贴板），搜索许久发现&lt;strong&gt;直接操作并不可行&lt;/strong&gt;，确切的说是在 Android API &amp;gt;=11 时是不可行的。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="Android" scheme="https://likfe.com/tags/Android/"/>
-    
-      <category term="ADB" scheme="https://likfe.com/tags/ADB/"/>
-    
-      <category term="Clipboard" scheme="https://likfe.com/tags/Clipboard/"/>
     
   </entry>
   
