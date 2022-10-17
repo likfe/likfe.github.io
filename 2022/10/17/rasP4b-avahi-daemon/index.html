@@ -112,7 +112,7 @@
 <meta property="og:site_name" content="Cafeting">
 <meta property="og:description" content="关键词：树莓派、Linux、avahi、avahi-daemon、CPU 背景在树莓派4B上安装了官方的 Ubuntu 系统，运行 top 指令，发现 avahi-daemon 占用 CPU 高，且对 CPU 的消耗波动比较大。 查资料发现：  Avahi 允许程序在不需要进行手动网络配置的情况 下，在一个本地网络中发布和获知各种服务和主机。例如，当某用户把他的计算机接入到某个局域网时，如果他的机">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2022-10-17T11:08:28.947Z">
+<meta property="og:updated_time" content="2022-10-17T11:14:10.450Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="禁用和卸载树莓派 4B 上 avahi-daemon">
 <meta name="twitter:description" content="关键词：树莓派、Linux、avahi、avahi-daemon、CPU 背景在树莓派4B上安装了官方的 Ubuntu 系统，运行 top 指令，发现 avahi-daemon 占用 CPU 高，且对 CPU 的消耗波动比较大。 查资料发现：  Avahi 允许程序在不需要进行手动网络配置的情况 下，在一个本地网络中发布和获知各种服务和主机。例如，当某用户把他的计算机接入到某个局域网时，如果他的机">
@@ -350,7 +350,7 @@
               
                 <span class="post-meta-item-text">更新于</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2022-10-17T19:08:28+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2022-10-17T19:14:10+08:00">
                 2022-10-17
               </time>
             
@@ -422,8 +422,8 @@
 </ul>
 <h3 id="方式一：停止和禁用服务"><a href="#方式一：停止和禁用服务" class="headerlink" title="方式一：停止和禁用服务"></a>方式一：停止和禁用服务</h3><p>首先尝试禁用  <code>avahi-daemon</code> ：（root 权限）</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 尝试停止并禁用 avahi-daemon</span></span><br><span class="line"><span class="comment">## 查看 avahi-daemon 当前状态</span></span><br><span class="line">systemctl status avahi-daemon.service</span><br><span class="line"><span class="comment">## 停止 avahi-daemon</span></span><br><span class="line">systemctl stop avahi-daemon.service</span><br><span class="line"><span class="comment">## 再次查看 avahi-daemon 当前状态</span></span><br><span class="line">systemctl status avahi-daemon.service</span><br><span class="line"><span class="comment">## 禁用 avahi-daemon</span></span><br><span class="line">systemctl <span class="built_in">disable</span> avahi-daemon.service</span><br></pre></td></tr></table></figure>
-<p>执行停止  <code>avahi-daemon</code>  的时候，返回一个提示：avahi-daemon.socket 可能会重启 avahi-daemon。出现这种情况时，说明 avahi-daemon 是由 avahi-daemon.socket 启动的，我们单独停止和禁用 avahi-daemon 是不行的，它还会自动启动。</p>
-<p>需要先停止 avahi-daemon.socket，再停止 avahi-daemon：</p>
+<p>执行停止  <code>avahi-daemon</code>  的时候，返回一个提示：<code>avahi-daemon.socket</code> 可能会重启 <code>avahi-daemon</code>。出现这种情况时，说明 <code>avahi-daemon</code> 是由 <code>avahi-daemon.socket</code> 启动的，我们单独停止和禁用 <code>avahi-daemon</code> 是不行的，它还会自动启动。</p>
+<p>需要先停止 <code>avahi-daemon.socket</code>，再停止 <code>avahi-daemon</code>：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 停止和禁用 avahi-daemon.socket</span></span><br><span class="line"><span class="comment">## 查看 avahi-daemon.socket 当前状态</span></span><br><span class="line">systemctl status avahi-daemon.socket</span><br><span class="line"><span class="comment">## 停止 avahi-daemon</span></span><br><span class="line">systemctl stop avahi-daemon.socket</span><br><span class="line"><span class="comment">## 再次查看 avahi-daemon 当前状态</span></span><br><span class="line">systemctl status avahi-daemon.socket</span><br><span class="line"><span class="comment">## 禁用 avahi-daemon</span></span><br><span class="line">systemctl <span class="built_in">disable</span> avahi-daemon.socket</span><br><span class="line"></span><br><span class="line"><span class="comment"># 停止和禁用 avahi-daemon</span></span><br><span class="line"><span class="comment">## 查看 avahi-daemon 当前状态</span></span><br><span class="line">systemctl status avahi-daemon.service</span><br><span class="line"><span class="comment">## 停止 avahi-daemon</span></span><br><span class="line">systemctl stop avahi-daemon.service</span><br><span class="line"><span class="comment">## 再次查看 avahi-daemon 当前状态</span></span><br><span class="line">systemctl status avahi-daemon.service</span><br><span class="line"><span class="comment">## 禁用 avahi-daemon</span></span><br><span class="line">systemctl <span class="built_in">disable</span> avahi-daemon.service</span><br></pre></td></tr></table></figure>
 <p>由于本人遇到了重启后这2个服务还会自动重启的情况，所以最终通过卸载的方式来解决的。你可以根据自己的实际情况，决定是否使用卸载的方案。</p>
 <h3 id="方式二：卸载-avahi-daemon-相关的所有服务"><a href="#方式二：卸载-avahi-daemon-相关的所有服务" class="headerlink" title="方式二：卸载 avahi-daemon 相关的所有服务"></a>方式二：卸载 avahi-daemon 相关的所有服务</h3><p>由于单纯的卸载 avahi-daemon 可能引起依赖它的软件无法正常运行，此操作需要慎重考虑和检测：</p>
