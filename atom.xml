@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://likfe.com/"/>
-  <updated>2022-10-17T11:14:10.450Z</updated>
+  <updated>2022-10-20T07:47:29.944Z</updated>
   <id>https://likfe.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Ubuntu 换源后仍然报错：404、没有 Release 文件</title>
+    <link href="https://likfe.com/2022/10/20/ubuntu-change-sources/"/>
+    <id>https://likfe.com/2022/10/20/ubuntu-change-sources/</id>
+    <published>2022-10-20T03:29:45.000Z</published>
+    <updated>2022-10-20T07:47:29.944Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;关键词：Ubuntu 21.10、换源、404  Not Found、没有 Release 文件&lt;/p&gt;
+&lt;p&gt;Ubuntu 执行 &lt;code&gt;apt-get&lt;/code&gt; 命令后会报错，如果简单得更换为国内的源地址也无法解决，那可能和 Ubuntu 的系统版本有关，需要根据具体情况处理。&lt;/p&gt;
+&lt;h2 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;问题&lt;/h2&gt;&lt;p&gt;Ubuntu 21.10 执行 &lt;code&gt;apt-get update&lt;/code&gt; 后会报错：&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;xx Release 404  Not Found [IP: xxx]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;E: 仓库 &lt;span class=&quot;string&quot;&gt;&quot;xx Release&quot;&lt;/span&gt; 没有 Release 文件。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;N: 无法安全地用该源进行更新，所以默认禁用该源。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;N: 参见 apt-secure(8) 手册以了解仓库创建和用户配置方面的细节。&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;尝试更换源（&lt;code&gt;/etc/apt/sources.list&lt;/code&gt;）之后，还是一样的错误。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Linux" scheme="https://likfe.com/tags/Linux/"/>
+    
+  </entry>
   
   <entry>
     <title>禁用和卸载树莓派 4B 上 avahi-daemon</title>
@@ -452,27 +474,6 @@
     
     
       <category term="Github" scheme="https://likfe.com/tags/Github/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Android 项目开发填坑记 - NoSuchMethodError:(java.lang.System.arraycopy)</title>
-    <link href="https://likfe.com/2018/02/09/android-arraycopy-error/"/>
-    <id>https://likfe.com/2018/02/09/android-arraycopy-error/</id>
-    <published>2018-02-09T08:23:29.000Z</published>
-    <updated>2018-10-16T03:54:13.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;关键字：&lt;code&gt;NoSuchMethodError&lt;/code&gt;、&lt;code&gt;System.arraycopy&lt;/code&gt;、&lt;code&gt;Native Method&lt;/code&gt;&lt;/p&gt;
-&lt;h3 id=&quot;0x00：奇怪的异常&quot;&gt;&lt;a href=&quot;#0x00：奇怪的异常&quot; class=&quot;headerlink&quot; title=&quot;0x00：奇怪的异常&quot;&gt;&lt;/a&gt;0x00：奇怪的异常&lt;/h3&gt;&lt;p&gt;应用新版本上线后观察错误日志，发现一个奇怪的 Crash 异常信息：&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;lang.java.NoSuchMethodError: (java.lang.System.arraycopy)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;异常集中发生在 Android 4.4.2 和 Android 5.1 上面，&lt;code&gt;System.arraycopy()&lt;/code&gt; 是一个系统函数，要说没这个方法倒是不会，但异常发生了，说明应用在找这个方法时发生了错误。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="Android" scheme="https://likfe.com/tags/Android/"/>
     
   </entry>
   
