@@ -86,7 +86,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css">
 
 
-  <meta name="keywords" content="Cafeting, likfe">
+  <meta name="keywords" content="Mac,">
 
 
 
@@ -104,16 +104,18 @@
 
 
 
-<meta name="description" content="我的代码空间">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Cafeting">
-<meta property="og:url" content="https://likfe.com/archives/page/7/index.html">
+<meta name="description" content="关键词：macOS Ventura、Ventura、SSH、git、Permission denied 问题描述升级到 macOS Ventura 后，无法使用 SSH 命令登入服务器，开启日志后，可能会看到 no matching host key type found 的报错信息。如果是使用了基于 SSH 协议的相关指令，也会发生错误。比如使用 git clone 、git pull 等去同步">
+<meta name="keywords" content="Mac">
+<meta property="og:type" content="article">
+<meta property="og:title" content="解决 macOS Ventura 使用 ssh&#x2F;git 等无法正常使用的问题">
+<meta property="og:url" content="https://likfe.com/2022/10/25/ventura-ssh-error/index.html">
 <meta property="og:site_name" content="Cafeting">
-<meta property="og:description" content="我的代码空间">
+<meta property="og:description" content="关键词：macOS Ventura、Ventura、SSH、git、Permission denied 问题描述升级到 macOS Ventura 后，无法使用 SSH 命令登入服务器，开启日志后，可能会看到 no matching host key type found 的报错信息。如果是使用了基于 SSH 协议的相关指令，也会发生错误。比如使用 git clone 、git pull 等去同步">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2022-10-25T03:16:04.512Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Cafeting">
-<meta name="twitter:description" content="我的代码空间">
+<meta name="twitter:title" content="解决 macOS Ventura 使用 ssh&#x2F;git 等无法正常使用的问题">
+<meta name="twitter:description" content="关键词：macOS Ventura、Ventura、SSH、git、Permission denied 问题描述升级到 macOS Ventura 后，无法使用 SSH 命令登入服务器，开启日志后，可能会看到 no matching host key type found 的报错信息。如果是使用了基于 SSH 协议的相关指令，也会发生错误。比如使用 git clone 、git pull 等去同步">
 
 
 
@@ -142,13 +144,13 @@
 
 
 
-  <link rel="canonical" href="https://likfe.com/archives/page/7/">
+  <link rel="canonical" href="https://likfe.com/2022/10/25/ventura-ssh-error/">
 
 
 
 <meta name="google-site-verification" content="-zFk0OkcB5n-RkT8CtLiAsBamNelO-hiAdzRMcPB5N0">
 
-  <title>归档 | Cafeting</title>
+  <title>解决 macOS Ventura 使用 ssh/git 等无法正常使用的问题 | Cafeting</title>
   
 
 
@@ -173,7 +175,7 @@
     
   
 
-  <div class="container sidebar-position-left  page-archive  ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -289,180 +291,227 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://likfe.com/2022/10/25/ventura-ssh-error/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Cafeting">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cafeting">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
-         
+          <h2 class="post-title" itemprop="name headline">解决 macOS Ventura 使用 ssh/git 等无法正常使用的问题</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-10-25T11:11:02+08:00">
+                2022-10-25
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2022-10-25T11:16:04+08:00">
+                2022-10-25
+              </time>
+            
+          </span>
+
           
-        好! 目前共计 64 篇日志。 继续努力。
-      </span>
 
-      
-
-        
-        
-        
-
-        
           
-          <div class="collection-title">
-            <h2 class="archive-year motion-element" id="archive-year-2016">2016</h2>
-          </div>
-        
-        
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2022/10/25/ventura-ssh-error/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/10/25/ventura-ssh-error/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
 
-        
+          
+          
+             <span id="/2022/10/25/ventura-ssh-error/" class="leancloud_visitors" data-flag-title="解决 macOS Ventura 使用 ssh/git 等无法正常使用的问题">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+          
 
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2016/04/20/fragmen-onBackPressed/" itemprop="url">
-              
-                <span itemprop="name">Android项目开发填坑记-Fragmen的onBackPressed</span>
-              
-            </a>
-        
-      </h3>
+          
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2016-04-20T23:38:42+08:00" content="2016-04-20">
-          04-20
-        </time>
-      </div>
+          
 
-    </header>
-  </article>
+        </div>
+      </header>
+    
 
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2016/04/20/fragmen-onAttach/" itemprop="url">
-              
-                <span itemprop="name">Android项目开发填坑记-Fragmen的onAttach方法</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2016-04-20T23:34:09+08:00" content="2016-04-20">
-          04-20
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2016/04/14/fragment-backpress/" itemprop="url">
-              
-                <span itemprop="name">Android必知必会-Fragment监听返回键事件</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2016-04-14T19:11:37+08:00" content="2016-04-14">
-          04-14
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2016/04/09/My-New-Post/" itemprop="url">
-              
-                <span itemprop="name">Android反编译 -- 错误代码还原</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2016-04-09T00:42:54+08:00" content="2016-04-09">
-          04-09
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+      
+        <p>关键词：macOS Ventura、Ventura、SSH、git、Permission denied</p>
+<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>升级到 macOS Ventura 后，无法使用 SSH 命令登入服务器，开启日志后，可能会看到 <code>no matching host key type found</code> 的报错信息。<br>如果是使用了基于 SSH 协议的相关指令，也会发生错误。比如使用 <code>git clone</code> 、<code>git pull</code> 等去同步基于 SSH 地址的 git 仓库代码时，会提示 <code>Permission denied (publickey)</code>。</p>
+<h2 id="定位问题"><a href="#定位问题" class="headerlink" title="定位问题"></a>定位问题</h2><p>经过查证，macOS Ventura 内置使用了 OpenSSH_9.0p1，根据 <a href="https://www.openssh.com/releasenotes.html" target="_blank" rel="noopener">OpenSSH 发行说明</a> 可以得知，从 OpenSSH 8.8/8.8p1 版本开始，就默认关闭了 ssh-rsa 算法。那么 macOS Ventura 内置使用的 OpenSSH_9.0p1 也是默认关闭了 ssh-rsa 算法。</p>
+<a id="more"></a>
+<p>原文内容如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">OpenSSH 8.8/8.8p1 (2021-09-26)</span><br><span class="line">Incompatibility is more likely when connecting to older SSH</span><br><span class="line">implementations that have not been upgraded or have not closely tracked</span><br><span class="line">improvements in the SSH protocol. For these cases, it may be necessary</span><br><span class="line">to selectively re-enable RSA/SHA1 to allow connection and/or user</span><br><span class="line">authentication via the HostkeyAlgorithms and PubkeyAcceptedAlgorithms</span><br><span class="line">options. For example, the following stanza in ~/.ssh/config will enable</span><br><span class="line">RSA/SHA1 for host and user authentication for a single destination host:</span><br><span class="line"></span><br><span class="line">    Host old-host</span><br><span class="line">        HostkeyAlgorithms +ssh-rsa</span><br><span class="line">        PubkeyAcceptedAlgorithms +ssh-rsa</span><br><span class="line"></span><br><span class="line">We recommend enabling RSA/SHA1 only as a stopgap measure until legacy</span><br><span class="line">implementations can be upgraded or reconfigured with another key type</span><br><span class="line">(such as ECDSA or Ed25519).</span><br><span class="line"></span><br><span class="line">OpenSSH 8.7/8.7p1 (2021-08-20)</span><br><span class="line">OpenSSH will disable the ssh-rsa signature scheme by default in the</span><br><span class="line">next release.</span><br></pre></td></tr></table></figure></p>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>解决方案有 2 个：</p>
+<ol>
+<li>基于更安全的 ed25519 哈希算法生成新的密钥，并配置到对应的服务器上、Github|Gitlab 的后台等</li>
+<li>本地重新启用 ssh 对 ssh-rsa 算法的支持</li>
+</ol>
+<h3 id="方案一：重新生成-ed25519-算法的密钥"><a href="#方案一：重新生成-ed25519-算法的密钥" class="headerlink" title="方案一：重新生成 ed25519 算法的密钥"></a>方案一：重新生成 ed25519 算法的密钥</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t ed25519</span><br></pre></td></tr></table></figure>
+<p>执行上述命令后，按照提示输入信息，并记录好生成的密钥文件名信息（密码，可选）。<br><strong>后续操作</strong>：</p>
+<ol>
+<li>如果是用于登录服务器，替换或者新增密钥的公钥信息到服务器上</li>
+<li>如果是 Github|Gitlab，添加新的公钥信息到账号的SSH-Key里</li>
+</ol>
+<h3 id="方案二：重新启用-RSA-SHA1"><a href="#方案二：重新启用-RSA-SHA1" class="headerlink" title="方案二：重新启用 RSA/SHA1"></a>方案二：重新启用 RSA/SHA1</h3><p>如果替换新的密钥成本比较大，可以考虑重新启用 RSA/SHA1 以允许连接或者进行用户认证。<br>具体的配置，参考 OpenSSH 8.8/8.8p1 的 Release Notes 可知，可以选择仅启用单个密钥的 RSA/SHA1 支持，也可无差别全部启用。</p>
+<p>都是针对 <code>~/.ssh/config</code> 文件（不存在的话则新增此文件）进行操作：</p>
+<p><strong>启用单个主机或者地址</strong>：（如果不懂 Host xxx-host 的含义，建议使用启用全部场景）<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 在 ~/.ssh/config 文件的对应主机配置里新增2行：</span></span><br><span class="line">Host xxx-host</span><br><span class="line">    HostkeyAlgorithms +ssh-rsa</span><br><span class="line">    PubkeyAcceptedAlgorithms +ssh-rsa</span><br></pre></td></tr></table></figure></p>
+<p><strong>默认全部场景都启用</strong>：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 在 ~/.ssh/config 文件的顶部插入或者尾部新增2行：</span></span><br><span class="line">HostkeyAlgorithms +ssh-rsa</span><br><span class="line">PubkeyAcceptedAlgorithms +ssh-rsa</span><br><span class="line"></span><br><span class="line"><span class="comment"># 或者</span></span><br><span class="line">Host *</span><br><span class="line">    HostkeyAlgorithms +ssh-rsa</span><br><span class="line">    PubkeyAcceptedAlgorithms +ssh-rsa</span><br></pre></td></tr></table></figure></p>
+<p>PS：如果 Windows 11 或者 Linux 遇到类似的情况，解决思路也是如此。</p>
+<p>如果有什么建议或者问题可以随时联系我，共同探讨学习：</p>
+<blockquote>
+<ul>
+<li>Github： <a href="https://github.com/likfe" target="_blank" rel="noopener">likfe</a></li>
+<li>CSDN：<a href="https://micro.blog.csdn.net/" target="_blank" rel="noopener">他叫自己Mr.张</a></li>
+<li>掘金：<a href="https://juejin.im/user/56042f4b60b2f3a91f58461d" target="_blank" rel="noopener">cafeting</a></li>
+<li>微博：<a href="http://weibo.com/zyansen" target="_blank" rel="noopener">cafeting</a></li>
+</ul>
+</blockquote>
 
       
-
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    Cafeting
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://likfe.com/2022/10/25/ventura-ssh-error/" title="解决 macOS Ventura 使用 ssh/git 等无法正常使用的问题">https://likfe.com/2022/10/25/ventura-ssh-error/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/deed.zh" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Mac/" rel="tag"># Mac</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2022/10/20/ubuntu-change-sources/" rel="next" title="Ubuntu 换源后仍然报错：404、没有 Release 文件">
+                <i class="fa fa-chevron-left"></i> Ubuntu 换源后仍然报错：404、没有 Release 文件
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/archives/page/6/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/6/">6</a><span class="page-number current">7</span>
-  </nav>
+  </article>
 
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -470,6 +519,17 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -490,8 +550,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="Cafeting">
           <p class="site-author-name" itemprop="name">Cafeting</p>
@@ -573,6 +642,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#问题描述"><span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#定位问题"><span class="nav-text">定位问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决方案"><span class="nav-text">解决方案</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#方案一：重新生成-ed25519-算法的密钥"><span class="nav-text">方案一：重新生成 ed25519 算法的密钥</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方案二：重新启用-RSA-SHA1"><span class="nav-text">方案二：重新启用 RSA/SHA1</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -691,11 +776,9 @@
   
 
   
-  
-    <script type="text/javascript" id="motion.page.archive">
-      $('.archive-year').velocity('transition.slideLeftIn');
-    </script>
-  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
 
 
   
@@ -714,6 +797,18 @@
       <script id="dsq-count-scr" src="https://cafeting.disqus.com/count.js" async></script>
     
 
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://likfe.com/2022/10/25/ventura-ssh-error/';
+          this.page.identifier = '2022/10/25/ventura-ssh-error/';
+          this.page.title = '解决 macOS Ventura 使用 ssh/git 等无法正常使用的问题';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://cafeting.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
     
 
   

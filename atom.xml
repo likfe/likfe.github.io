@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://likfe.com/"/>
-  <updated>2022-10-20T07:47:29.944Z</updated>
+  <updated>2022-10-25T03:16:04.512Z</updated>
   <id>https://likfe.com/</id>
   
   <author>
@@ -17,11 +17,31 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>解决 macOS Ventura 使用 ssh/git 等无法正常使用的问题</title>
+    <link href="https://likfe.com/2022/10/25/ventura-ssh-error/"/>
+    <id>https://likfe.com/2022/10/25/ventura-ssh-error/</id>
+    <published>2022-10-25T03:11:02.000Z</published>
+    <updated>2022-10-25T03:16:04.512Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;关键词：macOS Ventura、Ventura、SSH、git、Permission denied&lt;/p&gt;
+&lt;h2 id=&quot;问题描述&quot;&gt;&lt;a href=&quot;#问题描述&quot; class=&quot;headerlink&quot; title=&quot;问题描述&quot;&gt;&lt;/a&gt;问题描述&lt;/h2&gt;&lt;p&gt;升级到 macOS Ventura 后，无法使用 SSH 命令登入服务器，开启日志后，可能会看到 &lt;code&gt;no matching host key type found&lt;/code&gt; 的报错信息。&lt;br&gt;如果是使用了基于 SSH 协议的相关指令，也会发生错误。比如使用 &lt;code&gt;git clone&lt;/code&gt; 、&lt;code&gt;git pull&lt;/code&gt; 等去同步基于 SSH 地址的 git 仓库代码时，会提示 &lt;code&gt;Permission denied (publickey)&lt;/code&gt;。&lt;/p&gt;
+&lt;h2 id=&quot;定位问题&quot;&gt;&lt;a href=&quot;#定位问题&quot; class=&quot;headerlink&quot; title=&quot;定位问题&quot;&gt;&lt;/a&gt;定位问题&lt;/h2&gt;&lt;p&gt;经过查证，macOS Ventura 内置使用了 OpenSSH_9.0p1，根据 &lt;a href=&quot;https://www.openssh.com/releasenotes.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;OpenSSH 发行说明&lt;/a&gt; 可以得知，从 OpenSSH 8.8/8.8p1 版本开始，就默认关闭了 ssh-rsa 算法。那么 macOS Ventura 内置使用的 OpenSSH_9.0p1 也是默认关闭了 ssh-rsa 算法。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Mac" scheme="https://likfe.com/tags/Mac/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Ubuntu 换源后仍然报错：404、没有 Release 文件</title>
     <link href="https://likfe.com/2022/10/20/ubuntu-change-sources/"/>
     <id>https://likfe.com/2022/10/20/ubuntu-change-sources/</id>
     <published>2022-10-20T03:29:45.000Z</published>
-    <updated>2022-10-20T07:47:29.944Z</updated>
+    <updated>2022-10-20T16:49:00.113Z</updated>
     
     <summary type="html">
     
@@ -453,27 +473,6 @@
     
     
       <category term="ReactNative" scheme="https://likfe.com/tags/ReactNative/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>GitHub Pages 对自定义域名支持 HTTPS</title>
-    <link href="https://likfe.com/2018/05/03/github-pages-custom-domains-support-https/"/>
-    <id>https://likfe.com/2018/05/03/github-pages-custom-domains-support-https/</id>
-    <published>2018-05-03T03:24:40.000Z</published>
-    <updated>2018-10-16T03:54:13.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;GitHub Pages Blog 原文：&lt;a href=&quot;https://blog.github.com/2018-05-01-github-pages-custom-domains-https/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Custom domains on GitHub Pages gain support for HTTPS&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;在 2018-05-01，GitHub Pages 官方发布了上面的一篇 Blog，告知我们 GitHub Pages 对自定义域名支持 了 HTTPS ，下面针对此新特性来做个简单的说明并提供详细的开启操作流程。&lt;/p&gt;
-&lt;h2 id=&quot;0x00-好处&quot;&gt;&lt;a href=&quot;#0x00-好处&quot; class=&quot;headerlink&quot; title=&quot;0x00 好处&quot;&gt;&lt;/a&gt;0x00 好处&lt;/h2&gt;&lt;p&gt;简单来说，除了 HTTPS 自身带来的加密、防劫持等特性外，Github 官方基于 HTTPS 配合 CND，使得网站的加载速度更快，还能提供额外的防御 DDoS 攻击的保护。&lt;/p&gt;
-&lt;h2 id=&quot;0x01-操作流程&quot;&gt;&lt;a href=&quot;#0x01-操作流程&quot; class=&quot;headerlink&quot; title=&quot;0x01 操作流程&quot;&gt;&lt;/a&gt;0x01 操作流程&lt;/h2&gt;&lt;p&gt;关于如何在 Github Pages 上搭建一个博客，这里不再赘述，网上的教程比较多，此次仅对开启自定义域名支持 HTTPS 这一特性来进行说明。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="Github" scheme="https://likfe.com/tags/Github/"/>
     
   </entry>
   
