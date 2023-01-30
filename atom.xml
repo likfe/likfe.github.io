@@ -55,7 +55,7 @@
     <category term="OSX" />
     <entry>
         <id>https://likfe.com/2022/10/25/ventura-ssh-error/</id>
-        <title>解决 macOS Ventura 使用 ssh/git 等无法正常使用的问题</title>
+        <title>解决 macOS Ventura 使用 ssh、git 等无法正常使用的问题</title>
         <link rel="alternate" href="https://likfe.com/2022/10/25/ventura-ssh-error/"/>
         <content type="html">&lt;p&gt;关键词：macOS Ventura、Ventura、SSH、git、Permission denied&lt;/p&gt;
 &lt;h2 id=&#34;问题描述&#34;&gt;&lt;a href=&#34;#问题描述&#34; class=&#34;headerlink&#34; title=&#34;问题描述&#34;&gt;&lt;/a&gt;问题描述&lt;/h2&gt;&lt;p&gt;升级到 macOS Ventura 后，无法使用 SSH 命令登入服务器，开启日志后，可能会看到 &lt;code&gt;no matching host key type found&lt;/code&gt; 的报错信息。&lt;br&gt;如果是使用了基于 SSH 协议的相关指令，也会发生错误。比如使用 &lt;code&gt;git clone&lt;/code&gt; 、&lt;code&gt;git pull&lt;/code&gt; 等去同步基于 SSH 地址的 git 仓库代码时，会提示 &lt;code&gt;Permission denied (publickey) &lt;/code&gt;。&lt;/p&gt;
@@ -252,7 +252,7 @@
     </entry>
     <entry>
         <id>https://likfe.com/2022/03/23/custom-view-know-on-pause-called/</id>
-        <title>Android 必知必会：自定义 View 可以知道 onPause/onResume 被调用了吗？</title>
+        <title>Android 必知必会：自定义 View 可以知道 onPause、onResume 被调用了吗？</title>
         <link rel="alternate" href="https://likfe.com/2022/03/23/custom-view-know-on-pause-called/"/>
         <content type="html">&lt;p&gt;关键词：自定义View、custom View、Lifecycle、onPause、onResume &lt;/p&gt;
 &lt;p&gt;先说结论，可以。&lt;/p&gt;
