@@ -192,7 +192,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-01-30 19:38:05" itemprop="dateModified" datetime="2023-01-30T19:38:05+08:00">2023-01-30</time>
+      <time title="修改时间：2023-02-16 15:52:02" itemprop="dateModified" datetime="2023-02-16T15:52:02+08:00">2023-02-16</time>
     </span>
 
   
@@ -225,6 +225,10 @@
 
 <p>上述方案是我翻 Android 源码找到的最简单的方式，灵感来自 <a target="_blank" rel="noopener" href="https://android.googlesource.com/platform/frameworks/base/+/master/core/java/android/widget/ProgressBar.java">ProgressBar</a> 。不需要监听所在 Fragment 或者 Activity 的生命周期。</p>
 <p>其他方案参见：<a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/22368720/can-a-custom-view-know-that-onpause-has-been-called">Can a custom View know that onPause has been called?</a></p>
+<hr>
+<p>更新：2023-02-16</p>
+<p>使用 Lifecycle 的方案中，除了直接通过 <code>addObserver()</code> 来主动接收回调外，也可以直接使用 <code>Lifecycle.getCurrentState().isAtLeast(RESUMED)</code> 方法判断当前的状态。</p>
+<p>其中 Lifecycle 可以通过 Activity|Fragment 的 <code>getLifecycle()</code> 方法获取，在 View 视角，Lifecycle 具备通用性，可以进行一定抽象。</p>
 <p>如果有什么建议或者问题可以随时联系我，共同探讨学习：</p>
 <blockquote>
 <ul>
