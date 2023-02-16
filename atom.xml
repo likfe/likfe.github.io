@@ -269,7 +269,7 @@
 &lt;p&gt;其他方案参见：&lt;a href=&#34;https://stackoverflow.com/questions/22368720/can-a-custom-view-know-that-onpause-has-been-called&#34;&gt;Can a custom View know that onPause has been called?&lt;/a&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;更新：2023-02-16&lt;/p&gt;
-&lt;p&gt;使用 Lifecycle 的方案中，除了直接通过 &lt;code&gt;addObserver()&lt;/code&gt; 来主动接收回调外，也可以直接使用 &lt;code&gt;Lifecycle.getCurrentState().isAtLeast(RESUMED)&lt;/code&gt; 方法判断当前的状态。&lt;/p&gt;
+&lt;p&gt;使用 Lifecycle 的方案中，除了直接通过 &lt;code&gt;addObserver()&lt;/code&gt; 来被动接收回调外，也可以在需要的地方使用 &lt;code&gt;Lifecycle.getCurrentState().isAtLeast(RESUMED)&lt;/code&gt; 方法来主动判断当前 Activity|Fragment 的状态。&lt;/p&gt;
 &lt;p&gt;其中 Lifecycle 可以通过 Activity|Fragment 的 &lt;code&gt;getLifecycle()&lt;/code&gt; 方法获取，在 View 视角，Lifecycle 具备通用性，可以进行一定抽象。&lt;/p&gt;
 &lt;p&gt;如果有什么建议或者问题可以随时联系我，共同探讨学习：&lt;/p&gt;
 &lt;blockquote&gt;
