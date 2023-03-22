@@ -222,7 +222,7 @@ body {
   box-sizing: border-box;
   color: var(--text-color);
   font-family: Lato, 'PingFang SC', 'Microsoft YaHei', sans-serif;
-  font-size: 0.9em;
+  font-size: 1em;
   line-height: 2;
   min-height: 100%;
   position: relative;
@@ -1375,7 +1375,7 @@ pre code {
   white-space: nowrap;
 }
 .post-toc .nav .nav-child {
-  display: none;
+  display: block;
 }
 .post-toc .nav .active > .nav-child {
   display: block;
@@ -2528,7 +2528,7 @@ hr {
   vertical-align: middle;
 }
 .links-of-author a::before {
-  background: #8cd4d2;
+  background: #ed45e4;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
@@ -2584,4 +2584,117 @@ li code {
   border: none;
   padding: 0.2em 0.4em;
   color: #f9256c;
+}
+/** 首页-列表页 **/
+@media (min-width: 1600px) {
+  .index.main-inner {
+    width: 1200px;
+  }
+}
+.index .post-body {
+  margin-top: 30px;
+}
+.index .post-block:not(:first-of-type) {
+  margin-top: 80px;
+}
+.index .post-title {
+  font-weight: bold;
+  font-size: 1.8em;
+}
+.index .post-body p {
+  margin-top: 0;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+.index .post-body h2,
+.index .post-body h3,
+.index .post-body h4 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 1.2em;
+}
+.index .post-header h2:before,
+.index .post-body h2:before,
+.index .post-body h3:before,
+.index .post-body h4:before {
+  margin-left: -3.5ch;
+  color: rgba(170,170,170,0.533);
+  font-size: 0.6em;
+  vertical-align: middle;
+  font-weight: bold;
+  padding: 0;
+  border: 0;
+}
+.index .post-header h2:before {
+/*     content: "H1"; */
+  margin-left: -3ch;
+}
+.index ul,
+.index ol {
+  margin-top: -5px;
+  line-height: 1.8;
+}
+/** post **/
+@media (min-width: 1600px) {
+  .post.main-inner {
+    width: 1200px;
+  }
+}
+.post .post-title {
+  font-weight: bold;
+  font-size: 2em;
+}
+.post .post-body p {
+  margin-top: 0;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+.post .post-body h2,
+.post .post-body h3,
+.post .post-body h4 {
+  margin-bottom: 10px;
+}
+.post .post-body h2 {
+  font-size: 1.6em;
+  margin-top: 45px;
+}
+.post .post-body h3 {
+  font-size: 1.2em;
+  margin-top: 30px;
+}
+.post .post-body h4 {
+  font-size: 1em;
+  margin-top: 30px;
+}
+.post .post-body h2:before,
+.post .post-body h3:before,
+.post .post-body h4:before {
+  font-size: 0.6em;
+  margin-left: -3.5ch;
+  color: #aaa;
+  vertical-align: middle;
+  font-weight: bold;
+  font-variant: 'small-caps';
+  line-height: 2;
+  padding: 0;
+  border: 0;
+}
+.post .post-body h2:before {
+  content: "H2\00A0\00A0";
+}
+.post .post-body h3:before {
+  content: "H3\00A0\00A0";
+}
+.post .post-body h4:before {
+  content: "H4\00A0\00A0";
+}
+.post ul,
+.post ol {
+  margin-top: -5px;
+  line-height: 1.8;
+}
+.main-inner p code,
+.main-inner li code {
+  color: #4598ff;
+  background: #2f3b43;
 }

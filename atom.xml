@@ -5,15 +5,21 @@
     <link href="https://likfe.com" />
     <updated>2023-03-22T15:11:42.000Z</updated>
     <category term="Android" />
+    <category term="Confluence" />
+    <category term="Flurry" />
     <category term="反编译" />
     <category term="ReactNative" />
     <category term="Proxy" />
     <category term="AndroidStudio" />
-    <category term="AccessibilityNodeInfo" />
-    <category term="StackOverflow" />
     <category term="Translucent" />
     <category term="SwipeBack" />
     <category term="PopWindow" />
+    <category term="AMH" />
+    <category term="Flarum" />
+    <category term="PHP" />
+    <category term="Composer" />
+    <category term="AccessibilityNodeInfo" />
+    <category term="StackOverflow" />
     <category term="ViewPager" />
     <category term="ADB" />
     <category term="Clipboard" />
@@ -26,9 +32,9 @@
     <category term="Intent" />
     <category term="RecyclerView" />
     <category term="Lambda" />
+    <category term="Gradle" />
     <category term="Leancloud" />
     <category term="Messenger" />
-    <category term="Gradle" />
     <category term="Make" />
     <category term="View" />
     <category term="Fragment" />
@@ -36,25 +42,19 @@
     <category term="备案" />
     <category term="域名" />
     <category term="Github" />
+    <category term="GooglePlay" />
     <category term="GreenDao" />
+    <category term="Docker" />
+    <category term="Jenkins" />
     <category term="Mac" />
     <category term="MAMP" />
-    <category term="PHP" />
+    <category term="Linux" />
+    <category term="树莓派" />
     <category term="Sublime Text" />
     <category term="Emmet" />
     <category term="ThinkPHP" />
-    <category term="Flurry" />
-    <category term="AMH" />
-    <category term="Flarum" />
-    <category term="Composer" />
-    <category term="Confluence" />
-    <category term="GooglePlay" />
-    <category term="Linux" />
-    <category term="树莓派" />
     <category term="GitBook" />
     <category term="OSX" />
-    <category term="Docker" />
-    <category term="Jenkins" />
     <entry>
         <id>https://likfe.com/2023/03/22/jenkins-Unable-to-produce-a-script-file/</id>
         <title>Jenkins 运行任务时遇到 FATAL:Unable to produce a script file 报错（已解决）</title>
