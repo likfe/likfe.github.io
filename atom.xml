@@ -32,8 +32,8 @@
     <category term="Intent" />
     <category term="RecyclerView" />
     <category term="Leancloud" />
-    <category term="Lambda" />
     <category term="Gradle" />
+    <category term="Lambda" />
     <category term="Messenger" />
     <category term="Make" />
     <category term="View" />
