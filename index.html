@@ -114,13 +114,13 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">65</span>
+          <span class="site-state-item-count">66</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">51</span>
+        <span class="site-state-item-count">52</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -145,6 +145,140 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://likfe.com/2023/11/21/cmdlineToolsWithJdk/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Cafeting">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cafeting">
+      <meta itemprop="description" content="我的代码空间">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Cafeting">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/11/21/cmdlineToolsWithJdk/" class="post-title-link" itemprop="url">一文了解：Android cmdline-tools 版本与其最小JDK关系</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2023-11-21 14:05:47 / 修改时间：14:10:02" itemprop="dateCreated datePublished" datetime="2023-11-21T14:05:47+08:00">2023-11-21</time>
+    </span>
+
+  
+    <span id="/2023/11/21/cmdlineToolsWithJdk/" class="post-meta-item leancloud_visitors" data-flag-title="一文了解：Android cmdline-tools 版本与其最小JDK关系" title="阅读次数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span class="leancloud-visitors-count"></span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>关键词：Android cmdline-tools 历史版本、Android cmdline-tools 最小JDK版本、JDK 对应 major version、JDK LTS 信息</p>
+<p>由于 JDK8 是一个常用的、较低的版本，因此只需要关注 JDK8 及以上版本的运行情况。</p>
+<h2 id="cmdline-tools-版本和最低-JDK"><a href="#cmdline-tools-版本和最低-JDK" class="headerlink" title="cmdline-tools 版本和最低 JDK"></a>cmdline-tools 版本和最低 JDK</h2><p>最终结论：（在 Mac 上，基于 JDK8 测试的结果）</p>
+<table>
+<thead>
+<tr>
+<th>cmdline-tools 版本</th>
+<th>SdkManagerCliSettings</th>
+<th>AndroidLocationsProvider</th>
+<th>最低 JDK</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>11.0</td>
+<td>61 (JDK 17)</td>
+<td>55 (JDK 11)</td>
+<td>17</td>
+</tr>
+<tr>
+<td>10.0</td>
+<td>52 (JDK 8)</td>
+<td>55 (JDK 11)</td>
+<td>11</td>
+</tr>
+<tr>
+<td>9.0</td>
+<td>52 (JDK 8)</td>
+<td>55 (JDK 11)</td>
+<td>11</td>
+</tr>
+<tr>
+<td>8.0</td>
+<td>52 (JDK 8)</td>
+<td>52 (JDK 8)</td>
+<td>8</td>
+</tr>
+<tr>
+<td>7.0</td>
+<td>52 (JDK 8)</td>
+<td>52 (JDK 8)</td>
+<td>8</td>
+</tr>
+<tr>
+<td>6.0</td>
+<td>52 (JDK 8)</td>
+<td>52 (JDK 8)</td>
+<td>8</td>
+</tr>
+</tbody></table>
+<p>通过上表可以看出，在 cmdline-tools 内部，各个 Jar 的编译目标 JDK 版本存在不一致的情况。因此，在实际运行时，需要将所有 Jar 文件的编译目标 JDK 版本的最大值作为 cmdline-tools 运行时的最小的 JDK 版本。</p>
+<p>Android 官网的 cmdline-tools 提供的最新版本是11.0（截止2023年10月24日），也就是说，其 Runtime 的 JDK 版本必须是 JDK17 及以上。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2023/11/21/cmdlineToolsWithJdk/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -190,7 +324,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-03-25 00:12:18" itemprop="dateModified" datetime="2023-03-25T00:12:18+08:00">2023-03-25</time>
+      <time title="修改时间：2023-11-21 14:11:11" itemprop="dateModified" datetime="2023-11-21T14:11:11+08:00">2023-11-21</time>
     </span>
 
   
@@ -213,7 +347,6 @@
           <p>关键词：Jenkins、Unable to produce a script file、UnmappableCharacterException、IOException: Failed to create a temp file on</p>
 <h2 id="0x00-问题描述"><a href="#0x00-问题描述" class="headerlink" title="0x00 问题描述"></a>0x00 问题描述</h2><p>由于使用的 Jenkins 存在安全漏洞（详见 <a target="_blank" rel="noopener" href="https://www.jenkins.io/security/advisory/2023-03-08/">Jenkins Security Advisory 2023-03-08</a>），需要升级到已解决安全漏洞的新版本，更新后运行任务时出现了报错：<code>FATAL: Unable to produce a script file</code></p>
 <p>详细的报错日志如下：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 拉取代码的 Commit 信息</span></span><br><span class="line">16:21:35 Commit message: <span class="string">&quot;feat: ????&quot;</span></span><br><span class="line"><span class="comment"># 堆栈信息</span></span><br><span class="line">16:21:35 FATAL: Unable to produce a script file</span><br><span class="line">16:21:35 java.nio.charset.UnmappableCharacterException: Input length = 1</span><br><span class="line">16:21:35 	at java.base/java.nio.charset.CoderResult.throwException(CoderResult.java:275)</span><br><span class="line">16:21:35 	at java.base/sun.nio.cs.StreamEncoder.implWrite(StreamEncoder.java:306)</span><br><span class="line">16:21:35 	at java.base/sun.nio.cs.StreamEncoder.implWrite(StreamEncoder.java:281)</span><br><span class="line">16:21:35 	at java.base/sun.nio.cs.StreamEncoder.write(StreamEncoder.java:125)</span><br><span class="line">16:21:35 	at java.base/java.io.OutputStreamWriter.write(OutputStreamWriter.java:208)</span><br><span class="line">16:21:35 	at java.base/java.io.BufferedWriter.flushBuffer(BufferedWriter.java:120)</span><br><span class="line">16:21:35 	at java.base/java.io.BufferedWriter.close(BufferedWriter.java:268)</span><br><span class="line">16:21:35 	at hudson.FilePath<span class="variable">$CreateTextTempFile</span>.invoke(FilePath.java:1658)</span><br><span class="line">16:21:35 	at hudson.FilePath<span class="variable">$CreateTextTempFile</span>.invoke(FilePath.java:1628)</span><br><span class="line">16:21:35 	at hudson.FilePath.act(FilePath.java:1198)</span><br><span class="line">16:21:35 	at hudson.FilePath.act(FilePath.java:1181)</span><br><span class="line">16:21:35 	at hudson.FilePath.createTextTempFile(FilePath.java:1622)</span><br><span class="line">16:21:35 Caused: java.io.IOException: Failed to create a temp file on /var/jenkins_home/workspace/xxx</span><br><span class="line">16:21:35 	at hudson.FilePath.createTextTempFile(FilePath.java:1624)</span><br><span class="line">16:21:35 	at hudson.tasks.CommandInterpreter.createScriptFile(CommandInterpreter.java:202)</span><br><span class="line">16:21:35 	at hudson.tasks.CommandInterpreter.perform(CommandInterpreter.java:120)</span><br><span class="line">16:21:35 	at hudson.tasks.CommandInterpreter.perform(CommandInterpreter.java:92)</span><br><span class="line">16:21:35 	at hudson.tasks.BuildStepMonitor<span class="variable">$1</span>.perform(BuildStepMonitor.java:20)</span><br><span class="line">16:21:35 	at hudson.model.AbstractBuild<span class="variable">$AbstractBuildExecution</span>.perform(AbstractBuild.java:818)</span><br><span class="line">16:21:35 	at hudson.model.Build<span class="variable">$BuildExecution</span>.build(Build.java:199)</span><br><span class="line">16:21:35 	at hudson.model.Build<span class="variable">$BuildExecution</span>.doRun(Build.java:164)</span><br><span class="line">16:21:35 	at hudson.model.AbstractBuild<span class="variable">$AbstractBuildExecution</span>.run(AbstractBuild.java:526)</span><br><span class="line">16:21:35 	at hudson.model.Run.execute(Run.java:1900)</span><br><span class="line">16:21:35 	at hudson.model.FreeStyleBuild.run(FreeStyleBuild.java:44)</span><br><span class="line">16:21:35 	at hudson.model.ResourceController.execute(ResourceController.java:101)</span><br><span class="line">16:21:35 	at hudson.model.Executor.run(Executor.java:442)</span><br><span class="line">16:21:35 Build step <span class="string">&#x27;Execute shell&#x27;</span> marked build as failure</span><br></pre></td></tr></table></figure>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2023/03/22/jenkins-unable-to-produce-a-script-file/#more" rel="contents">
@@ -941,104 +1074,6 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2020/05/13/yuandongli-pianzi/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://likfe.com/2020/05/01/android-umeng-messenger/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Cafeting">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Cafeting">
-      <meta itemprop="description" content="我的代码空间">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Cafeting">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2020/05/01/android-umeng-messenger/" class="post-title-link" itemprop="url">友盟 SDK 分享到 Messenger 无法发送消息</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2020-05-01 19:51:51" itemprop="dateCreated datePublished" datetime="2020-05-01T19:51:51+08:00">2020-05-01</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2020-05-03 18:34:13" itemprop="dateModified" datetime="2020-05-03T18:34:13+08:00">2020-05-03</time>
-    </span>
-
-  
-    <span id="/2020/05/01/android-umeng-messenger/" class="post-meta-item leancloud_visitors" data-flag-title="友盟 SDK 分享到 Messenger 无法发送消息" title="阅读次数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-eye"></i>
-      </span>
-      <span class="post-meta-item-text">阅读次数：</span>
-      <span class="leancloud-visitors-count"></span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>友盟 Messenger 无法发送消息<br>umeng  Messenger 无法发送消息<br>umeng Facebook Messenger 无法发送消息</p>
-<hr>
-<p>由于项目的登录和分享基于友盟进行的设计，接入 Facebook Messenger 分享，发出去的消息总是提示【无法发送消息 轻触了解详情】</p>
-<p>可能的原因有2点：</p>
-<ol>
-<li>Messenger 平台从 2019 年 6 月 10 日开始，<strong>新应用</strong>将不再支持将应用中的链接和媒体分享至 Messenger 的功能，详见 <a target="_blank" rel="noopener" href="https://developers.facebook.com/docs/messenger-platform/changelog/#20190610">官方公告</a> ；(此条不成立，文章底部有更新)</li>
-<li>友盟分享 SDK 处理 Messenger 的相关代码比较老旧，新应用使用的话不再被官方接受了，也就不能发送成功。</li>
-</ol>
-<p>既然官方都发公告说不支持将应用中的链接和媒体分享至 Messenger 的功能了，那就真的没办法了吗? 经过测试，虽然有些限制，但还是可以直接将应用中的<strong>链接</strong>分享至 Messenger 的，至于媒体，没有进行单独测试，理论上可行。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/05/01/android-umeng-messenger/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
