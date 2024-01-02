@@ -73,6 +73,12 @@
 &lt;/tr&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;12.0&lt;/td&gt;
+&lt;td&gt;61 (JDK 17)&lt;/td&gt;
+&lt;td&gt;55 (JDK 11)&lt;/td&gt;
+&lt;td&gt;17&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
 &lt;td&gt;11.0&lt;/td&gt;
 &lt;td&gt;61 (JDK 17)&lt;/td&gt;
 &lt;td&gt;55 (JDK 11)&lt;/td&gt;
@@ -139,7 +145,14 @@
 &lt;/tr&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;&lt;tr&gt;
-&lt;td&gt;11.0（latest）&lt;/td&gt;
+&lt;td&gt;12.0（latest）&lt;/td&gt;
+&lt;td&gt;17&lt;/td&gt;
+&lt;td&gt;commandlinetools-mac-11076708_latest.zip&lt;/td&gt;
+&lt;td&gt;commandlinetools-linux-11076708_latest.zip&lt;/td&gt;
+&lt;td&gt;commandlinetools-win-11076708_latest.zip&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;11.0&lt;/td&gt;
 &lt;td&gt;17&lt;/td&gt;
 &lt;td&gt;commandlinetools-mac-10406996_latest.zip&lt;/td&gt;
 &lt;td&gt;commandlinetools-linux-10406996_latest.zip&lt;/td&gt;
