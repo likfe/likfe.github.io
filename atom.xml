@@ -5,14 +5,14 @@
     <link href="https://likfe.com" />
     <updated>2024-08-26T08:22:57.000Z</updated>
     <category term="Android" />
-    <category term="Confluence" />
     <category term="Flurry" />
-    <category term="ReactNative" />
+    <category term="Confluence" />
     <category term="反编译" />
-    <category term="Proxy" />
-    <category term="AndroidStudio" />
+    <category term="ReactNative" />
     <category term="AccessibilityNodeInfo" />
     <category term="StackOverflow" />
+    <category term="Proxy" />
+    <category term="AndroidStudio" />
     <category term="Translucent" />
     <category term="SwipeBack" />
     <category term="PopWindow" />
@@ -36,28 +36,28 @@
     <category term="Gradle" />
     <category term="Messenger" />
     <category term="Make" />
-    <category term="View" />
+    <category term="Mac" />
+    <category term="Linux" />
+    <category term="JDK" />
     <category term="Fragment" />
+    <category term="View" />
+    <category term="Scrollbar" />
     <category term="备案" />
     <category term="域名" />
-    <category term="Scrollbar" />
     <category term="Github" />
-    <category term="GooglePlay" />
     <category term="GreenDao" />
-    <category term="Mac" />
+    <category term="Rust" />
+    <category term="IDEA" />
+    <category term="GooglePlay" />
     <category term="Docker" />
     <category term="Jenkins" />
     <category term="MAMP" />
-    <category term="Linux" />
     <category term="树莓派" />
     <category term="Sublime Text" />
     <category term="Emmet" />
     <category term="ThinkPHP" />
     <category term="GitBook" />
     <category term="OSX" />
-    <category term="JDK" />
-    <category term="Rust" />
-    <category term="IDEA" />
     <entry>
         <id>https://likfe.com/2024/08/26/jcenter-down/</id>
         <title>Android 必知必会：ModuleVersionNotFoundException： Could not find xx</title>
@@ -1521,4 +1521,9 @@
         <category term="PopWindow" />
         <updated>2019-02-17T14:23:27.000Z</updated>
     </entry>
+
+    <follow_challenge>
+        <feedId>73986782175755264</feedId>
+        <userId>72100854660436992</userId>
+    </follow_challenge>
 </feed>

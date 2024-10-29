@@ -1,0 +1,299 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://likfe.com</id>
+    <title>Cafeting • Posts by &#34;jdk&#34; tag</title>
+    <link href="https://likfe.com" />
+    <updated>2023-11-21T06:05:47.000Z</updated>
+    <category term="Android" />
+    <category term="Flurry" />
+    <category term="Confluence" />
+    <category term="反编译" />
+    <category term="ReactNative" />
+    <category term="AccessibilityNodeInfo" />
+    <category term="StackOverflow" />
+    <category term="Proxy" />
+    <category term="AndroidStudio" />
+    <category term="Translucent" />
+    <category term="SwipeBack" />
+    <category term="PopWindow" />
+    <category term="AMH" />
+    <category term="Flarum" />
+    <category term="PHP" />
+    <category term="Composer" />
+    <category term="ViewPager" />
+    <category term="ADB" />
+    <category term="Clipboard" />
+    <category term="framework" />
+    <category term="gradle" />
+    <category term="DialogFragment" />
+    <category term="PopupWindow" />
+    <category term="Google" />
+    <category term="Glide" />
+    <category term="Intent" />
+    <category term="RecyclerView" />
+    <category term="Lambda" />
+    <category term="Leancloud" />
+    <category term="Gradle" />
+    <category term="Messenger" />
+    <category term="Make" />
+    <category term="Mac" />
+    <category term="Linux" />
+    <category term="JDK" />
+    <category term="Fragment" />
+    <category term="View" />
+    <category term="Scrollbar" />
+    <category term="备案" />
+    <category term="域名" />
+    <category term="Github" />
+    <category term="GreenDao" />
+    <category term="Rust" />
+    <category term="IDEA" />
+    <category term="GooglePlay" />
+    <category term="Docker" />
+    <category term="Jenkins" />
+    <category term="MAMP" />
+    <category term="树莓派" />
+    <category term="Sublime Text" />
+    <category term="Emmet" />
+    <category term="ThinkPHP" />
+    <category term="GitBook" />
+    <category term="OSX" />
+    <entry>
+        <id>https://likfe.com/2023/11/21/cmdlineToolsWithJdk/</id>
+        <title>一文了解：Android cmdline-tools 版本与其最小JDK关系</title>
+        <link rel="alternate" href="https://likfe.com/2023/11/21/cmdlineToolsWithJdk/"/>
+        <content type="html">&lt;p&gt;关键词：Android cmdline-tools 历史版本、Android cmdline-tools 最小JDK版本、JDK 对应 major version、JDK LTS 信息&lt;/p&gt;
+&lt;p&gt;由于 JDK8 是一个常用的、较低的版本，因此只需关注 JDK8 及以上版本的运行情况。&lt;/p&gt;
+&lt;h2 id=&#34;cmdline-tools-版本和最低-JDK&#34;&gt;&lt;a href=&#34;#cmdline-tools-版本和最低-JDK&#34; class=&#34;headerlink&#34; title=&#34;cmdline-tools 版本和最低 JDK&#34;&gt;&lt;/a&gt;cmdline-tools 版本和最低 JDK&lt;/h2&gt;&lt;p&gt;最终结论：（在 Mac 上，基于 JDK8 测试的结果）&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;cmdline-tools 版本&lt;/th&gt;
+&lt;th&gt;最低 JDK&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;16.0&lt;/td&gt;
+&lt;td&gt;17&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;13.0&lt;/td&gt;
+&lt;td&gt;17&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;12.0&lt;/td&gt;
+&lt;td&gt;17&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;11.0&lt;/td&gt;
+&lt;td&gt;17&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;10.0&lt;/td&gt;
+&lt;td&gt;11&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;9.0&lt;/td&gt;
+&lt;td&gt;11&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;8.0&lt;/td&gt;
+&lt;td&gt;8&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;7.0&lt;/td&gt;
+&lt;td&gt;8&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;6.0&lt;/td&gt;
+&lt;td&gt;8&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;p&gt;Android 官网的 cmdline-tools 提供的最新版本是16.0（截止2024年09月05日），也就是说，其 Runtime 的 JDK 版本必须是 JDK17 及以上。&lt;/p&gt;
+&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
+
+&lt;h3 id=&#34;检查流程&#34;&gt;&lt;a href=&#34;#检查流程&#34; class=&#34;headerlink&#34; title=&#34;检查流程&#34;&gt;&lt;/a&gt;检查流程&lt;/h3&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;cmdline-tools 版本&lt;/th&gt;
+&lt;th&gt;SdkManagerCliSettings&lt;/th&gt;
+&lt;th&gt;AndroidLocationsProvider&lt;/th&gt;
+&lt;th&gt;最低 JDK&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;13.0&lt;/td&gt;
+&lt;td&gt;61 (JDK 17)&lt;/td&gt;
+&lt;td&gt;55 (JDK 11)&lt;/td&gt;
+&lt;td&gt;17&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;12.0&lt;/td&gt;
+&lt;td&gt;61 (JDK 17)&lt;/td&gt;
+&lt;td&gt;55 (JDK 11)&lt;/td&gt;
+&lt;td&gt;17&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;11.0&lt;/td&gt;
+&lt;td&gt;61 (JDK 17)&lt;/td&gt;
+&lt;td&gt;55 (JDK 11)&lt;/td&gt;
+&lt;td&gt;17&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;10.0&lt;/td&gt;
+&lt;td&gt;52 (JDK 8)&lt;/td&gt;
+&lt;td&gt;55 (JDK 11)&lt;/td&gt;
+&lt;td&gt;11&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;9.0&lt;/td&gt;
+&lt;td&gt;52 (JDK 8)&lt;/td&gt;
+&lt;td&gt;55 (JDK 11)&lt;/td&gt;
+&lt;td&gt;11&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;8.0&lt;/td&gt;
+&lt;td&gt;52 (JDK 8)&lt;/td&gt;
+&lt;td&gt;52 (JDK 8)&lt;/td&gt;
+&lt;td&gt;8&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;7.0&lt;/td&gt;
+&lt;td&gt;52 (JDK 8)&lt;/td&gt;
+&lt;td&gt;52 (JDK 8)&lt;/td&gt;
+&lt;td&gt;8&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;6.0&lt;/td&gt;
+&lt;td&gt;52 (JDK 8)&lt;/td&gt;
+&lt;td&gt;52 (JDK 8)&lt;/td&gt;
+&lt;td&gt;8&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;p&gt;通过上表可以看出，在 cmdline-tools 内部，各个 Jar 的编译目标 JDK 版本存在不一致的情况。因此，在实际运行时，需要将所有 Jar 文件的编译目标 JDK 版本的最大值作为 cmdline-tools 运行时的最小的 JDK 版本。&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;$ java -version&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;java version &lt;span class=&#34;string&#34;&gt;&amp;quot;1.8.0_351&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;$ &lt;span class=&#34;built_in&#34;&gt;cd&lt;/span&gt; path/cmdline-tools/9.0/bin&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;$ ./sdkmanager --list&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Error: A JNI error has occurred, please check your installation and try again&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Exception &lt;span class=&#34;keyword&#34;&gt;in&lt;/span&gt; thread &lt;span class=&#34;string&#34;&gt;&amp;quot;main&amp;quot;&lt;/span&gt; java.lang.UnsupportedClassVersionError: com/android/prefs/AndroidLocationsProvider has been compiled by a more recent version of the Java Runtime (class file version 55.0), this version of the Java Runtime only recognizes class file versions up to 52.0&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;由上述报错信息可知，&lt;code&gt;com/android/prefs/AndroidLocationsProvider&lt;/code&gt; 要求最低使用 version 55.0（JDK 11）。&lt;/p&gt;
+&lt;p&gt;但是其他 class （比如 &lt;code&gt;lib/sdklib/libsdkmanager_lib.jar&lt;/code&gt; 内的 &lt;code&gt;com.android.sdklib.tool.sdkmanager.SdkManagerCliSettings&lt;/code&gt;）仍旧是 version 52.0 （JDK 8）。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;这里的思路是：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;直接切换到cmdline-tools对应版本，然后基于 runtime JDK &amp;#x3D; 8 的环境，执行 &lt;code&gt;./sdkmanager --version&lt;/code&gt; 检查是否报错，如报错，查看要求的最低 version 为多少。（低于JDK8的不再验证）&lt;/p&gt;
+&lt;p&gt;验证的脚本：&lt;code&gt;majorVersion.sh&lt;/code&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;使用方法：.&amp;#x2F;majorVersion.sh path&amp;#x2F;cmdline-tools&amp;#x2F;11.0&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;28&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;meta&#34;&gt;#!/bin/bash&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;variable&#34;&gt;$1&lt;/span&gt;/bin/sdkmanager --version&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;variable&#34;&gt;$1&lt;/span&gt;/bin/sdkmanager --version 2&amp;gt;&amp;amp;1 | grep &lt;span class=&#34;string&#34;&gt;&amp;quot;class file&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;jar_file=/lib/sdklib/libsdkmanager_lib.jar&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;&amp;quot;-&amp;gt; &lt;span class=&#34;variable&#34;&gt;$jar_file&lt;/span&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;# 使用 javap 命令解析 JAR 文件内指定的 class&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;output=$(javap -verbose -classpath &lt;span class=&#34;string&#34;&gt;&amp;quot;$1&lt;span class=&#34;variable&#34;&gt;$&amp;#123;jar_file&amp;#125;&lt;/span&gt;&amp;quot;&lt;/span&gt; com.android.sdklib.tool.sdkmanager.SdkManagerCliSettings 2&amp;gt;&amp;amp;1)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;#echo &amp;quot;$output&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;# 查找主要版本号&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;major_version=$(&lt;span class=&#34;built_in&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;&amp;quot;&lt;span class=&#34;variable&#34;&gt;$output&lt;/span&gt;&amp;quot;&lt;/span&gt; | grep  &lt;span class=&#34;string&#34;&gt;&amp;#x27;major version&amp;#x27;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;# 打印主要版本号&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;&amp;quot;--&amp;gt; &lt;span class=&#34;variable&#34;&gt;$major_version&lt;/span&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;##---&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;jar_file=/lib/common/tools.common.jar&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;echo&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;&amp;quot;-&amp;gt; &lt;span class=&#34;variable&#34;&gt;$jar_file&lt;/span&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;# 使用 javap 命令解析 JAR 文件内指定的 class&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;output=$(javap -verbose -classpath &lt;span class=&#34;string&#34;&gt;&amp;quot;$1&lt;span class=&#34;variable&#34;&gt;$&amp;#123;jar_file&amp;#125;&lt;/span&gt;&amp;quot;&lt;/span&gt; com.android.prefs.AndroidLocationsProvider 2&amp;gt;&amp;amp;1)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;# 查找主要版本号&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;major_version=$(&lt;span class=&#34;built_in&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;&amp;quot;&lt;span class=&#34;variable&#34;&gt;$output&lt;/span&gt;&amp;quot;&lt;/span&gt; | grep  &lt;span class=&#34;string&#34;&gt;&amp;#x27;major version&amp;#x27;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;# # 打印主要版本号&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;&amp;quot;--&amp;gt; &lt;span class=&#34;variable&#34;&gt;$major_version&lt;/span&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;验证结果：&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;29&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;# 11.0&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Exception &lt;span class=&#34;keyword&#34;&gt;in&lt;/span&gt; thread &lt;span class=&#34;string&#34;&gt;&amp;quot;main&amp;quot;&lt;/span&gt; java.lang.UnsupportedClassVersionError: com/android/sdklib/tool/sdkmanager/SdkManagerCli has been compiled by a more recent version of the Java Runtime (class file version 61.0), this version of the Java Runtime only recognizes class file versions up to 52.0&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;-&amp;gt; /lib/sdklib/libsdkmanager_lib.jar&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;major version: 61&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;-&amp;gt; /lib/common/tools.common.jar&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;major version: 55&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;# 10.0&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Exception &lt;span class=&#34;keyword&#34;&gt;in&lt;/span&gt; thread &lt;span class=&#34;string&#34;&gt;&amp;quot;main&amp;quot;&lt;/span&gt; java.lang.UnsupportedClassVersionError: com/android/prefs/AndroidLocationsProvider has been compiled by a more recent version of the Java Runtime (class file version 55.0), this version of the Java Runtime only recognizes class file versions up to 52.0&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;-&amp;gt; /lib/sdklib/libsdkmanager_lib.jar&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;major version: 52&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;-&amp;gt; /lib/common/tools.common.jar&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;major version: 55&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;# 9.0&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Exception &lt;span class=&#34;keyword&#34;&gt;in&lt;/span&gt; thread &lt;span class=&#34;string&#34;&gt;&amp;quot;main&amp;quot;&lt;/span&gt; java.lang.UnsupportedClassVersionError: com/android/prefs/AndroidLocationsProvider has been compiled by a more recent version of the Java Runtime (class file version 55.0), this version of the Java Runtime only recognizes class file versions up to 52.0&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;-&amp;gt; /lib/sdklib/libsdkmanager_lib.jar&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;major version: 52&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;-&amp;gt; /lib/common/tools.common.jar&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;major version: 55&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;# 8.0&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;-&amp;gt; /lib/sdklib/libsdkmanager_lib.jar&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;major version: 52&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;-&amp;gt; /lib/common/tools.common.jar&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;major version: 52&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+
+&lt;h2 id=&#34;扩展资料&#34;&gt;&lt;a href=&#34;#扩展资料&#34; class=&#34;headerlink&#34; title=&#34;扩展资料&#34;&gt;&lt;/a&gt;扩展资料&lt;/h2&gt;&lt;h3 id=&#34;cmdline-tools-历史版本下载&#34;&gt;&lt;a href=&#34;#cmdline-tools-历史版本下载&#34; class=&#34;headerlink&#34; title=&#34;cmdline-tools 历史版本下载&#34;&gt;&lt;/a&gt;cmdline-tools 历史版本下载&lt;/h3&gt;&lt;p&gt;官网地址：&lt;a href=&#34;https://developer.android.com/studio&#34;&gt;https://developer.android.com/studio&lt;/a&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;cmdline-tools 版本&lt;/th&gt;
+&lt;th&gt;最低 JDK&lt;/th&gt;
+&lt;th&gt;Mac&lt;/th&gt;
+&lt;th&gt;Linux&lt;/th&gt;
+&lt;th&gt;Windows&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;16.0(latest)&lt;/td&gt;
+&lt;td&gt;17&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://dl.google.com/android/repository/commandlinetools-mac-12266719_latest.zip&#34;&gt;commandlinetools-mac-12266719_latest.zip&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://dl.google.com/android/repository/commandlinetools-linux-12266719_latest.zip&#34;&gt;commandlinetools-linux-12266719_latest.zip&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://dl.google.com/android/repository/commandlinetools-win-12266719_latest.zip&#34;&gt;commandlinetools-win-12266719_latest.zip&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;13.0&lt;/td&gt;
+&lt;td&gt;17&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://dl.google.com/android/repository/commandlinetools-mac-11479570_latest.zip&#34;&gt;commandlinetools-mac-11479570_latest.zip&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://dl.google.com/android/repository/commandlinetools-linux-11479570_latest.zip&#34;&gt;commandlinetools-linux-11479570_latest.zip&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://dl.google.com/android/repository/commandlinetools-win-11479570_latest.zip&#34;&gt;commandlinetools-win-11479570_latest.zip&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;12.0&lt;/td&gt;
+&lt;td&gt;17&lt;/td&gt;
+&lt;td&gt;commandlinetools-mac-11076708_latest.zip&lt;/td&gt;
+&lt;td&gt;commandlinetools-linux-11076708_latest.zip&lt;/td&gt;
+&lt;td&gt;commandlinetools-win-11076708_latest.zip&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;11.0&lt;/td&gt;
+&lt;td&gt;17&lt;/td&gt;
+&lt;td&gt;commandlinetools-mac-10406996_latest.zip&lt;/td&gt;
+&lt;td&gt;commandlinetools-linux-10406996_latest.zip&lt;/td&gt;
+&lt;td&gt;commandlinetools-win-10406996_latest.zip&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;10.0&lt;/td&gt;
+&lt;td&gt;11&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://dl.google.com/android/repository/commandlinetools-mac-9862592_latest.zip&#34;&gt;commandlinetools-mac-9862592_latest.zip&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://dl.google.com/android/repository/commandlinetools-linux-9862592_latest.zip&#34;&gt;commandlinetools-linux-9862592_latest.zip&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://dl.google.com/android/repository/commandlinetools-win-9862592_latest.zip&#34;&gt;commandlinetools-win-9862592_latest.zip&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;9.0&lt;/td&gt;
+&lt;td&gt;11&lt;/td&gt;
+&lt;td&gt;commandlinetools-mac-9477386_latest.zip&lt;/td&gt;
+&lt;td&gt;commandlinetools-linux-9477386_latest.zip&lt;/td&gt;
+&lt;td&gt;commandlinetools-win-9477386_latest.zip&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;8.0&lt;/td&gt;
+&lt;td&gt;8&lt;/td&gt;
+&lt;td&gt;commandlinetools-mac-9123335_latest.zip&lt;/td&gt;
+&lt;td&gt;commandlinetools-linux-9123335_latest.zip&lt;/td&gt;
+&lt;td&gt;commandlinetools-win-9123335_latest.zip&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;p&gt;下载地址的生成规则：&lt;code&gt;https://dl.google.com/android/repository/文件名&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;JDK-对应-major-version&#34;&gt;&lt;a href=&#34;#JDK-对应-major-version&#34; class=&#34;headerlink&#34; title=&#34;JDK 对应 major version&#34;&gt;&lt;/a&gt;JDK 对应 major version&lt;/h3&gt;&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;21&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;Java SE 21 = 65 (0x41 hex),&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Java SE 20 = 64 (0x40 hex),&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Java SE 19 = 63 (0x3F hex),&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Java SE 18 = 62 (0x3E hex),&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;(LTS) Java SE 17 = 61 (0x3D hex),&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Java SE 16 = 60 (0x3C hex),&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Java SE 15 = 59 (0x3B hex),&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Java SE 14 = 58 (0x3A hex),&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Java SE 13 = 57 (0x39 hex),&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Java SE 12 = 56 (0x38 hex),&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;(LTS) Java SE 11 = 55 (0x37 hex),&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Java SE 10 = 54 (0x36 hex),[4]&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Java SE 9 = 53 (0x35 hex),[5]&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;(LTS) Java SE 8 = 52 (0x34 hex),&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Java SE 7 = 51 (0x33 hex),&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Java SE 6.0 = 50 (0x32 hex),&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Java SE 5.0 = 49 (0x31 hex),&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;JDK 1.4 = 48 (0x30 hex),&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;JDK 1.3 = 47 (0x2F hex),&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;JDK 1.2 = 46 (0x2E hex),&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;JDK 1.1 = 45 (0x2D hex).&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;资料来源：&lt;a href=&#34;https://en.wikipedia.org/wiki/Java_class_file#General_layout&#34;&gt;Java class file&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;JDK-LTS-信息&#34;&gt;&lt;a href=&#34;#JDK-LTS-信息&#34; class=&#34;headerlink&#34; title=&#34;JDK LTS 信息&#34;&gt;&lt;/a&gt;JDK LTS 信息&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;JDK 17(LTS)&lt;ul&gt;
+&lt;li&gt;major version &amp;#x3D; 61&lt;/li&gt;
+&lt;li&gt;积极支持：2026年9月30日&lt;/li&gt;
+&lt;li&gt;安全支持：2029年9月30日&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;JDK 11(LTS)&lt;ul&gt;
+&lt;li&gt;major version &amp;#x3D; 55&lt;/li&gt;
+&lt;li&gt;积极支持：2023年9月30日&lt;/li&gt;
+&lt;li&gt;安全支持：2026年9月30日&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;JDK 8(LTS)&lt;ul&gt;
+&lt;li&gt;major version &amp;#x3D; 52&lt;/li&gt;
+&lt;li&gt;积极支持：2022年3月31日&lt;/li&gt;
+&lt;li&gt;安全支持：2030年12月31日&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;资料来源：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://endoflife.date/java&#34;&gt;https://endoflife.date/java&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.oracle.com/java/technologies/java-se-glance.html&#34;&gt;https://www.oracle.com/java/technologies/java-se-glance.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;如果有什么建议或者问题可以随时联系我，共同探讨学习：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;Github： &lt;a href=&#34;https://github.com/likfe&#34;&gt;likfe&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;CSDN：&lt;a href=&#34;https://micro.blog.csdn.net/&#34;&gt;他叫自己Mr.张&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;掘金：&lt;a href=&#34;https://juejin.im/user/56042f4b60b2f3a91f58461d&#34;&gt;cafeting&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;微博：&lt;a href=&#34;http://weibo.com/zyansen&#34;&gt;cafeting&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+</content>
+        <category term="Android" />
+        <category term="Mac" />
+        <category term="Linux" />
+        <category term="JDK" />
+        <updated>2023-11-21T06:05:47.000Z</updated>
+    </entry>
+
+    <follow_challenge>
+        <feedId>73986782175755264</feedId>
+        <userId>72100854660436992</userId>
+    </follow_challenge>
+</feed>

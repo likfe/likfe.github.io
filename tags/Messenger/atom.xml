@@ -1,0 +1,115 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://likfe.com</id>
+    <title>Cafeting • Posts by &#34;messenger&#34; tag</title>
+    <link href="https://likfe.com" />
+    <updated>2020-05-01T11:51:51.000Z</updated>
+    <category term="Android" />
+    <category term="Flurry" />
+    <category term="Confluence" />
+    <category term="反编译" />
+    <category term="ReactNative" />
+    <category term="AccessibilityNodeInfo" />
+    <category term="StackOverflow" />
+    <category term="Proxy" />
+    <category term="AndroidStudio" />
+    <category term="Translucent" />
+    <category term="SwipeBack" />
+    <category term="PopWindow" />
+    <category term="AMH" />
+    <category term="Flarum" />
+    <category term="PHP" />
+    <category term="Composer" />
+    <category term="ViewPager" />
+    <category term="ADB" />
+    <category term="Clipboard" />
+    <category term="framework" />
+    <category term="gradle" />
+    <category term="DialogFragment" />
+    <category term="PopupWindow" />
+    <category term="Google" />
+    <category term="Glide" />
+    <category term="Intent" />
+    <category term="RecyclerView" />
+    <category term="Lambda" />
+    <category term="Leancloud" />
+    <category term="Gradle" />
+    <category term="Messenger" />
+    <category term="Make" />
+    <category term="Mac" />
+    <category term="Linux" />
+    <category term="JDK" />
+    <category term="Fragment" />
+    <category term="View" />
+    <category term="Scrollbar" />
+    <category term="备案" />
+    <category term="域名" />
+    <category term="Github" />
+    <category term="GreenDao" />
+    <category term="Rust" />
+    <category term="IDEA" />
+    <category term="GooglePlay" />
+    <category term="Docker" />
+    <category term="Jenkins" />
+    <category term="MAMP" />
+    <category term="树莓派" />
+    <category term="Sublime Text" />
+    <category term="Emmet" />
+    <category term="ThinkPHP" />
+    <category term="GitBook" />
+    <category term="OSX" />
+    <entry>
+        <id>https://likfe.com/2020/05/01/android-umeng-messenger/</id>
+        <title>友盟 SDK 分享到 Messenger 无法发送消息</title>
+        <link rel="alternate" href="https://likfe.com/2020/05/01/android-umeng-messenger/"/>
+        <content type="html">&lt;p&gt;友盟 Messenger 无法发送消息&lt;br&gt;umeng  Messenger 无法发送消息&lt;br&gt;umeng Facebook Messenger 无法发送消息&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;由于项目的登录和分享基于友盟进行的设计，接入 Facebook Messenger 分享，发出去的消息总是提示【无法发送消息 轻触了解详情】&lt;/p&gt;
+&lt;p&gt;可能的原因有2点：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Messenger 平台从 2019 年 6 月 10 日开始，&lt;strong&gt;新应用&lt;/strong&gt;将不再支持将应用中的链接和媒体分享至 Messenger 的功能，详见 &lt;a href=&#34;https://developers.facebook.com/docs/messenger-platform/changelog/#20190610&#34;&gt;官方公告&lt;/a&gt; ；(此条不成立，文章底部有更新)&lt;/li&gt;
+&lt;li&gt;友盟分享 SDK 处理 Messenger 的相关代码比较老旧，新应用使用的话不再被官方接受了，也就不能发送成功。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;既然官方都发公告说不支持将应用中的链接和媒体分享至 Messenger 的功能了，那就真的没办法了吗? 经过测试，虽然有些限制，但还是可以直接将应用中的&lt;strong&gt;链接&lt;/strong&gt;分享至 Messenger 的，至于媒体，没有进行单独测试，理论上可行。&lt;/p&gt;
+&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
+
+&lt;h2 id=&#34;解决方案&#34;&gt;&lt;a href=&#34;#解决方案&#34; class=&#34;headerlink&#34; title=&#34;解决方案&#34;&gt;&lt;/a&gt;解决方案&lt;/h2&gt;&lt;p&gt;简单点来说就是&lt;strong&gt;调用 Facebook 官方最新 SDK 里的方法进行分享&lt;/strong&gt;。&lt;br&gt;代码如下：&lt;/p&gt;
+&lt;figure class=&#34;highlight java&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;28&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;import&lt;/span&gt; com.facebook.share.model.ShareLinkContent;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;import&lt;/span&gt; com.facebook.share.widget.MessageDialog;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;//限制就是不能设置标题、描述等字段了&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;type&#34;&gt;ShareLinkContent&lt;/span&gt; &lt;span class=&#34;variable&#34;&gt;content&lt;/span&gt; &lt;span class=&#34;operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;keyword&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;title class_&#34;&gt;ShareLinkContent&lt;/span&gt;.Builder()&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;                        .setContentUrl(Uri.parse(&lt;span class=&#34;string&#34;&gt;&amp;quot;https://xxx.xxx/xxx&amp;quot;&lt;/span&gt;))&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;                        .build();&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;//不需要回调&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;MessageDialog.show(context, content);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;//需要回调&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;type&#34;&gt;MessageDialog&lt;/span&gt; &lt;span class=&#34;variable&#34;&gt;messageDialog&lt;/span&gt; &lt;span class=&#34;operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;keyword&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;title class_&#34;&gt;MessageDialog&lt;/span&gt;(context);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;messageDialog.registerCallback(CallbackManager.Factory.create(), &lt;span class=&#34;keyword&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;title class_&#34;&gt;com&lt;/span&gt;.facebook.FacebookCallback&amp;lt;com.facebook.share.Sharer.Result&amp;gt;() &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;meta&#34;&gt;@Override&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;keyword&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;title function_&#34;&gt;onSuccess&lt;/span&gt;&lt;span class=&#34;params&#34;&gt;(com.facebook.share.Sharer.Result result)&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;meta&#34;&gt;@Override&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;keyword&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;title function_&#34;&gt;onCancel&lt;/span&gt;&lt;span class=&#34;params&#34;&gt;()&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;meta&#34;&gt;@Override&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;keyword&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;title function_&#34;&gt;onError&lt;/span&gt;&lt;span class=&#34;params&#34;&gt;(com.facebook.FacebookException error)&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;messageDialog.show(content);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;那么问题来了，怎么和友盟的 SDK 进行结合呢？毕竟如果项目的整个分享模块都是基于友盟来设计的话，必须要在它这个体系内才行。&lt;/p&gt;
+&lt;p&gt;另外，通过粗略的阅读友盟分享 SDK 的相关逻辑，好像并没有提供自定义分享渠道的逻辑，分享渠道的处理类  &lt;code&gt;UMxxHandler&lt;/code&gt;  (xx 指分享渠道，比如 &lt;code&gt;UMLineHandler&lt;/code&gt; 是 Line 分享渠道的处理类) 又很多是写死在源码里的，是否能调用到 &lt;code&gt;onActivityResult&lt;/code&gt; 也是预先写死的，这就很难受了。&lt;/p&gt;
+&lt;p&gt;我这里提供一个简单的思路：重写某个用不到的分享渠道的 &lt;code&gt;UMxxHandler&lt;/code&gt; 来实现。&lt;/p&gt;
+&lt;p&gt;如果也需要调用到 &lt;code&gt;onActivityResult&lt;/code&gt;  来进行分享结果的回调处理，那需要把所有的分享渠道的代码看一下，看看哪些有覆写了 &lt;code&gt;getRequestCode()&lt;/code&gt; 和 &lt;code&gt;onActivityResult()&lt;/code&gt;方法，即有分享结果回调处理逻辑，挑一个用不到的分享渠道，然后去覆写它的 &lt;code&gt;share()&lt;/code&gt; 方法来进行具体的分享操作。&lt;/p&gt;
+&lt;p&gt;博主选了 &lt;code&gt;UMFlickrHandler&lt;/code&gt; 进行了重写，它没有处理回调的情况。Messenger 本身分享出去也是无法区分成功和取消，博主便稍微偷个懒，选个不需要处理回调的。&lt;/p&gt;
+&lt;h2 id=&#34;总结&#34;&gt;&lt;a href=&#34;#总结&#34; class=&#34;headerlink&#34; title=&#34;总结&#34;&gt;&lt;/a&gt;总结&lt;/h2&gt;&lt;p&gt;友盟的 SDK 吧，一言难尽，鉴于项目过于依赖它（登录、分享、Push模块），暂时只能选择继续用着。这里趁机也提示一下，它的 Line 分享功能也是有 Bug 的，有空再写吧。&lt;/p&gt;
+&lt;p&gt;今天五一了，祝大家代码日日精进。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;更新于 20200503 &lt;a href=&#34;https://developers.facebook.com/docs/messenger-platform/changelog/&#34;&gt;Messenger 平台更新日志&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;通读了一下更新日志，发现 2020 年 3 月 4 日 Messenger 平台又重新支持将应用中的链接和媒体分享至 Messenger 的功能了，详细内容如下：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2020 年 3 月 4 日&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Messenger 平台公告&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://developers.facebook.com/docs/messenger-platform/webhook/versioning&#34;&gt;推出 Messenger Webhook Versioning&lt;/a&gt;&lt;/strong&gt; - 允许提供一个窗口，让开发者能够选择加入影响 Webhook 的平台更改。可以实时完成版本更改，并在需要时回滚到之前版本，促成顺畅迁移。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://developers.facebook.com/docs/sharing/messenger/&#34;&gt;分享到 Messenger SDK 的最新情况&lt;/a&gt;&lt;/strong&gt; - 去年六月，我们宣布了不再支持分享到 Messenger SDK 的计划。我们很高兴与大家分享，我们将继续支持分享到 Messenger SDK 的修改版本，该版本将允许用户将您应用程序中的链接和照片分享到 Messenger。我们将在未来几周内逐步推出适用于 iOS 版 Messenger 应用链接和图像&amp;#x2F;视频分享的支持。我们将不再支持分享常规和多媒体素材的模板。如果您的应用中仍包含此 SDK，则无需采取任何操作。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;如果有什么建议或者问题可以随时联系我，共同探讨学习：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;Github： &lt;a href=&#34;https://github.com/likfe&#34;&gt;likfe&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;CSDN：&lt;a href=&#34;https://micro.blog.csdn.net/&#34;&gt;他叫自己Mr.张&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;掘金：&lt;a href=&#34;https://juejin.im/user/56042f4b60b2f3a91f58461d&#34;&gt;cafeting&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;微博：&lt;a href=&#34;http://weibo.com/zyansen&#34;&gt;cafeting&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+</content>
+        <category term="Android" />
+        <category term="Messenger" />
+        <updated>2020-05-01T11:51:51.000Z</updated>
+    </entry>
+
+    <follow_challenge>
+        <feedId>73986782175755264</feedId>
+        <userId>72100854660436992</userId>
+    </follow_challenge>
+</feed>

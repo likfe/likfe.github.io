@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://likfe.com</id>
+    <title>Cafeting • Posts by &#34;swipeback&#34; tag</title>
+    <link href="https://likfe.com" />
+    <updated>2019-02-17T14:23:27.000Z</updated>
+    <category term="Android" />
+    <category term="Flurry" />
+    <category term="Confluence" />
+    <category term="反编译" />
+    <category term="ReactNative" />
+    <category term="AccessibilityNodeInfo" />
+    <category term="StackOverflow" />
+    <category term="Proxy" />
+    <category term="AndroidStudio" />
+    <category term="Translucent" />
+    <category term="SwipeBack" />
+    <category term="PopWindow" />
+    <category term="AMH" />
+    <category term="Flarum" />
+    <category term="PHP" />
+    <category term="Composer" />
+    <category term="ViewPager" />
+    <category term="ADB" />
+    <category term="Clipboard" />
+    <category term="framework" />
+    <category term="gradle" />
+    <category term="DialogFragment" />
+    <category term="PopupWindow" />
+    <category term="Google" />
+    <category term="Glide" />
+    <category term="Intent" />
+    <category term="RecyclerView" />
+    <category term="Lambda" />
+    <category term="Leancloud" />
+    <category term="Gradle" />
+    <category term="Messenger" />
+    <category term="Make" />
+    <category term="Mac" />
+    <category term="Linux" />
+    <category term="JDK" />
+    <category term="Fragment" />
+    <category term="View" />
+    <category term="Scrollbar" />
+    <category term="备案" />
+    <category term="域名" />
+    <category term="Github" />
+    <category term="GreenDao" />
+    <category term="Rust" />
+    <category term="IDEA" />
+    <category term="GooglePlay" />
+    <category term="Docker" />
+    <category term="Jenkins" />
+    <category term="MAMP" />
+    <category term="树莓派" />
+    <category term="Sublime Text" />
+    <category term="Emmet" />
+    <category term="ThinkPHP" />
+    <category term="GitBook" />
+    <category term="OSX" />
+    <entry>
+        <id>https://likfe.com/2019/02/17/TranslucentActivityPopWindowBlackBackground/</id>
+        <title>侧滑返回：透明（Translucent） Activity弹出 PopWindow 后侧滑时背景变黑色</title>
+        <link rel="alternate" href="https://likfe.com/2019/02/17/TranslucentActivityPopWindowBlackBackground/"/>
+        <content type="html">&lt;p&gt;Android 模仿 iOS 的侧滑返回一般分2大类：透明方案和非透明方案。&lt;/p&gt;
+&lt;p&gt;其中透明方案有很多隐藏的意料之外的情况需要处理。本文记录透明方案弹出 PopWindow 后导致透明背景失效变黑色的情况。&lt;/p&gt;
+&lt;h2 id=&#34;0x00-问题&#34;&gt;&lt;a href=&#34;#0x00-问题&#34; class=&#34;headerlink&#34; title=&#34;0x00 问题&#34;&gt;&lt;/a&gt;0x00 问题&lt;/h2&gt;&lt;p&gt;todo&lt;/p&gt;
+&lt;p&gt;Translucent,PopWindow,SwipeBack&lt;/p&gt;
+&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
+
+&lt;h2 id=&#34;0x01-解决方法&#34;&gt;&lt;a href=&#34;#0x01-解决方法&#34; class=&#34;headerlink&#34; title=&#34;0x01 解决方法&#34;&gt;&lt;/a&gt;0x01 解决方法&lt;/h2&gt;&lt;p&gt; todo&lt;/p&gt;
+&lt;h2 id=&#34;0x02-总结&#34;&gt;&lt;a href=&#34;#0x02-总结&#34; class=&#34;headerlink&#34; title=&#34;0x02 总结&#34;&gt;&lt;/a&gt;0x02 总结&lt;/h2&gt;&lt;p&gt;todo&lt;/p&gt;
+&lt;p&gt;如果有什么建议或者问题可以随时联系我，共同探讨学习：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;Github： &lt;a href=&#34;http://likfe.github.io/&#34;&gt;likfe&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;CSDN：&lt;a href=&#34;http://blog.csdn.net/ys743276112&#34;&gt;他叫自己Mr.张&lt;/a&gt; &lt;/li&gt;
+&lt;li&gt;掘金：&lt;a href=&#34;https://juejin.im/user/56042f4b60b2f3a91f58461d&#34;&gt;cafeting&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;微博：&lt;a href=&#34;http://weibo.com/zyansen&#34;&gt;cafeting&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+</content>
+        <category term="Translucent" />
+        <category term="SwipeBack" />
+        <category term="PopWindow" />
+        <updated>2019-02-17T14:23:27.000Z</updated>
+    </entry>
+
+    <follow_challenge>
+        <feedId>73986782175755264</feedId>
+        <userId>72100854660436992</userId>
+    </follow_challenge>
+</feed>

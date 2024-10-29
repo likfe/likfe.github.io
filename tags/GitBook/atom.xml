@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://likfe.com</id>
+    <title>Cafeting • Posts by &#34;gitbook&#34; tag</title>
+    <link href="https://likfe.com" />
+    <updated>2016-08-04T17:43:19.000Z</updated>
+    <category term="Android" />
+    <category term="Flurry" />
+    <category term="Confluence" />
+    <category term="反编译" />
+    <category term="ReactNative" />
+    <category term="AccessibilityNodeInfo" />
+    <category term="StackOverflow" />
+    <category term="Proxy" />
+    <category term="AndroidStudio" />
+    <category term="Translucent" />
+    <category term="SwipeBack" />
+    <category term="PopWindow" />
+    <category term="AMH" />
+    <category term="Flarum" />
+    <category term="PHP" />
+    <category term="Composer" />
+    <category term="ViewPager" />
+    <category term="ADB" />
+    <category term="Clipboard" />
+    <category term="framework" />
+    <category term="gradle" />
+    <category term="DialogFragment" />
+    <category term="PopupWindow" />
+    <category term="Google" />
+    <category term="Glide" />
+    <category term="Intent" />
+    <category term="RecyclerView" />
+    <category term="Lambda" />
+    <category term="Leancloud" />
+    <category term="Gradle" />
+    <category term="Messenger" />
+    <category term="Make" />
+    <category term="Mac" />
+    <category term="Linux" />
+    <category term="JDK" />
+    <category term="Fragment" />
+    <category term="View" />
+    <category term="Scrollbar" />
+    <category term="备案" />
+    <category term="域名" />
+    <category term="Github" />
+    <category term="GreenDao" />
+    <category term="Rust" />
+    <category term="IDEA" />
+    <category term="GooglePlay" />
+    <category term="Docker" />
+    <category term="Jenkins" />
+    <category term="MAMP" />
+    <category term="树莓派" />
+    <category term="Sublime Text" />
+    <category term="Emmet" />
+    <category term="ThinkPHP" />
+    <category term="GitBook" />
+    <category term="OSX" />
+    <entry>
+        <id>https://likfe.com/2016/08/05/use-gitbook-on-mac/</id>
+        <title>在自己的电脑上安装 GitBook For Mac</title>
+        <link rel="alternate" href="https://likfe.com/2016/08/05/use-gitbook-on-mac/"/>
+        <content type="html">&lt;h2 id=&#34;剪不断的情缘&#34;&gt;&lt;a href=&#34;#剪不断的情缘&#34; class=&#34;headerlink&#34; title=&#34;剪不断的情缘&#34;&gt;&lt;/a&gt;剪不断的情缘&lt;/h2&gt;&lt;p&gt;之前写了一篇 &lt;a href=&#34;http://blog.csdn.net/ys743276112/article/details/45130831&#34;&gt;在自己的服务器上安装GitBook&lt;/a&gt; ,发布于 2015-04-20，当时的安装环境是 &lt;code&gt;CentOS 6.X_64Bit&lt;/code&gt;，今天想再研究一下这个 &lt;code&gt;GitBook&lt;/code&gt; ，发现在基于 &lt;code&gt;Linux&lt;/code&gt; 内核的机器上&lt;strong&gt;安装基础功能很简单&lt;/strong&gt;，但是牵涉到生成 &lt;code&gt;pdf/epub/mobi&lt;/code&gt; 格式的书籍时，&lt;strong&gt;安装calibre的代价非常大&lt;/strong&gt;（因为要安装 N 多前置库），对于不是非常非常熟练使用 &lt;code&gt;Linux&lt;/code&gt; 的用户，几乎是一种灾难。&lt;/p&gt;
+&lt;p&gt;然而，对于 &lt;code&gt;OS X&lt;/code&gt; 和 &lt;code&gt;Windows&lt;/code&gt; 用户，则相对容易很多（Windows环境未测试），安装相应的 &lt;code&gt;calibre&lt;/code&gt; 的客户端即可解决格式转换的问题。&lt;/p&gt;
+&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
+
+&lt;h2 id=&#34;只讲重点-゜-゜&#34;&gt;&lt;a href=&#34;#只讲重点-゜-゜&#34; class=&#34;headerlink&#34; title=&#34;只讲重点  (゜-゜)&#34;&gt;&lt;/a&gt;只讲重点  (゜-゜)&lt;/h2&gt;&lt;p&gt;前提条件这里一笔带过（在 Mac 上进行）：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;安装 &lt;code&gt;nvm&lt;/code&gt; ；&lt;/li&gt;
+&lt;li&gt;使用 &lt;code&gt;nvm&lt;/code&gt; 安装 &lt;code&gt;Node.js&lt;/code&gt; ，我安装了 &lt;code&gt;v5.0.0&lt;/code&gt; 版本的；&lt;/li&gt;
+&lt;li&gt;使用 &lt;code&gt;npm&lt;/code&gt; 安装 &lt;code&gt;gitbook&lt;/code&gt; ，不会的看 &lt;a href=&#34;http://toolchain.gitbook.com/setup.html&#34;&gt;这里&lt;/a&gt;；&lt;/li&gt;
+&lt;li&gt;安装 &lt;code&gt;calibre&lt;/code&gt; 的客户端&amp;#x3D;&amp;#x3D;&amp;gt;重点在此步；&lt;/li&gt;
+&lt;li&gt;执行生成命令：生成指定格式的文件。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;画重点啦-´−｀-ﾝｰ-咳咳，看黑板&#34;&gt;&lt;a href=&#34;#画重点啦-´−｀-ﾝｰ-咳咳，看黑板&#34; class=&#34;headerlink&#34; title=&#34;画重点啦 (´−｀) ﾝｰ 咳咳，看黑板&#34;&gt;&lt;/a&gt;画重点啦 (´−｀) ﾝｰ 咳咳，看黑板&lt;/h3&gt;&lt;p&gt;1.下载对应的 &lt;code&gt;Calibre&lt;/code&gt; 文件，&lt;a href=&#34;http://www.calibre-ebook.com/download&#34;&gt;下载地址在此&lt;/a&gt; ，Mac 用户自然是下载 &lt;code&gt;OS X&lt;/code&gt; 版本的了；&lt;br&gt;2.下载安装 &lt;code&gt;Calibre&lt;/code&gt; ，然后&lt;strong&gt;务必打开运行一次 &lt;code&gt;Calibre&lt;/code&gt;&lt;/strong&gt; ，否则就嘿嘿嘿了；&lt;br&gt;3.在终端里执行&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;sudo &lt;span class=&#34;built_in&#34;&gt;ln&lt;/span&gt; -s /Applications/calibre.app/Contents/MacOS/ebook-convert /usr/local/bin&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;//官方的文档里是如下命令：会引起权限和命令无效等问题&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;sudo &lt;span class=&#34;built_in&#34;&gt;ln&lt;/span&gt; -s ~/Applications/calibre.app/Contents/MacOS/ebook-convert /usr/bin&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;4.转换格式，参考官方文档&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;# Generate a PDF file&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;$ gitbook pdf ./ ./mybook.pdf&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;# Generate an ePub file&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;$ gitbook epub ./ ./mybook.epub&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;# Generate a Mobi file&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;$ gitbook mobi ./ ./mybook.mobi&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;h2 id=&#34;总结&#34;&gt;&lt;a href=&#34;#总结&#34; class=&#34;headerlink&#34; title=&#34;总结&#34;&gt;&lt;/a&gt;总结&lt;/h2&gt;&lt;p&gt;不管怎么说，终于还是实现了 &lt;code&gt;GitBook&lt;/code&gt; 在 Mac 上的完美运行。在有生成 &lt;code&gt;pdf/epub/mobi&lt;/code&gt; 格式的文件的需求时，就不心虚了。&lt;/p&gt;
+&lt;p&gt;最近在阅读的比较火的一个项目 &lt;a href=&#34;https://github.com/GeniusVJR/LearningNotes&#34;&gt;LearningNotes&lt;/a&gt; ，是一个 Android 知识点笔记和面试题的一个总结，我用 &lt;code&gt;GitBook&lt;/code&gt; 生成了一份 HTML 版，&lt;a href=&#34;http://doc.inkcode.cc/ALN/index.html&#34;&gt;点击这里访问&lt;/a&gt;，我还打算和作者联系一下，帮他生成 &lt;code&gt;pdf/epub/mobi&lt;/code&gt; 格式，方便本地阅读。&lt;/p&gt;
+&lt;p&gt;PS:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;你可以通过 &lt;a href=&#34;https://github.com/likfe&#34;&gt;Github&lt;/a&gt;、&lt;a href=&#34;http://blog.csdn.net/ys743276112&#34;&gt;CSDN&lt;/a&gt; 和 &lt;a href=&#34;http://weibo.com/zyansen&#34;&gt;微博&lt;/a&gt; 与我联系&lt;/p&gt;
+&lt;/blockquote&gt;
+</content>
+        <category term="Mac" />
+        <category term="GitBook" />
+        <category term="OSX" />
+        <updated>2016-08-04T17:43:19.000Z</updated>
+    </entry>
+
+    <follow_challenge>
+        <feedId>73986782175755264</feedId>
+        <userId>72100854660436992</userId>
+    </follow_challenge>
+</feed>

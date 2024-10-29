@@ -1,0 +1,242 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://likfe.com</id>
+    <title>Cafeting • Posts by &#34;php&#34; tag</title>
+    <link href="https://likfe.com" />
+    <updated>2017-03-25T14:20:22.000Z</updated>
+    <category term="Android" />
+    <category term="Flurry" />
+    <category term="Confluence" />
+    <category term="反编译" />
+    <category term="ReactNative" />
+    <category term="AccessibilityNodeInfo" />
+    <category term="StackOverflow" />
+    <category term="Proxy" />
+    <category term="AndroidStudio" />
+    <category term="Translucent" />
+    <category term="SwipeBack" />
+    <category term="PopWindow" />
+    <category term="AMH" />
+    <category term="Flarum" />
+    <category term="PHP" />
+    <category term="Composer" />
+    <category term="ViewPager" />
+    <category term="ADB" />
+    <category term="Clipboard" />
+    <category term="framework" />
+    <category term="gradle" />
+    <category term="DialogFragment" />
+    <category term="PopupWindow" />
+    <category term="Google" />
+    <category term="Glide" />
+    <category term="Intent" />
+    <category term="RecyclerView" />
+    <category term="Lambda" />
+    <category term="Leancloud" />
+    <category term="Gradle" />
+    <category term="Messenger" />
+    <category term="Make" />
+    <category term="Mac" />
+    <category term="Linux" />
+    <category term="JDK" />
+    <category term="Fragment" />
+    <category term="View" />
+    <category term="Scrollbar" />
+    <category term="备案" />
+    <category term="域名" />
+    <category term="Github" />
+    <category term="GreenDao" />
+    <category term="Rust" />
+    <category term="IDEA" />
+    <category term="GooglePlay" />
+    <category term="Docker" />
+    <category term="Jenkins" />
+    <category term="MAMP" />
+    <category term="树莓派" />
+    <category term="Sublime Text" />
+    <category term="Emmet" />
+    <category term="ThinkPHP" />
+    <category term="GitBook" />
+    <category term="OSX" />
+    <entry>
+        <id>https://likfe.com/2017/03/25/tp3-x-all-string/</id>
+        <title>ThinkPHP 转换数据库查询出的数据到对应类型</title>
+        <link rel="alternate" href="https://likfe.com/2017/03/25/tp3-x-all-string/"/>
+        <content type="html">&lt;p&gt;最近使用 ThinkPHP3.2.3 进行 API 开发，发现 ThinkPHP3.x 查询数据库返回所有字段值类型都是 String。以前开发 web 的时候没怎么注意这个，现在发现用到 API 开发很难办，数据类型不对，不能每个字段都让客户端自己强制转换一下。&lt;/p&gt;
+&lt;p&gt;查资料后发现 ThinkPHP3.x 的 Model.class.php，提供了 &lt;code&gt;_parseType&lt;/code&gt; 方法，在查询完以后进行类型转换，但需要我们手工调一下。&lt;/p&gt;
+&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
+
+&lt;p&gt;需要自己写一个 Model 基类:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;MBaseModel.class.php&lt;/code&gt; 继承自 &lt;code&gt;Model&lt;/code&gt;&lt;/p&gt;
+&lt;figure class=&#34;highlight php&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;20&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;use&lt;/span&gt; &lt;span class=&#34;title&#34;&gt;Think&lt;/span&gt;\&lt;span class=&#34;title&#34;&gt;Model&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;class&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;title&#34;&gt;BaseModel&lt;/span&gt; &lt;span class=&#34;keyword&#34;&gt;extends&lt;/span&gt; &lt;span class=&#34;title&#34;&gt;Model&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;class&#34;&gt;&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;protected&lt;/span&gt; &lt;span class=&#34;function&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;title&#34;&gt;_after_select&lt;/span&gt;(&lt;span class=&#34;params&#34;&gt;&amp;amp;&lt;span class=&#34;variable&#34;&gt;$resultSet&lt;/span&gt;, &lt;span class=&#34;variable&#34;&gt;$options&lt;/span&gt;&lt;/span&gt;)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;function&#34;&gt;    &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &lt;span class=&#34;built_in&#34;&gt;parent&lt;/span&gt;::&lt;span class=&#34;title function_ invoke__&#34;&gt;_after_select&lt;/span&gt;(&lt;span class=&#34;variable&#34;&gt;$resultSet&lt;/span&gt;,&lt;span class=&#34;variable&#34;&gt;$options&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &lt;span class=&#34;keyword&#34;&gt;foreach&lt;/span&gt; (&lt;span class=&#34;variable&#34;&gt;$resultSet&lt;/span&gt; &lt;span class=&#34;keyword&#34;&gt;as&lt;/span&gt; &amp;amp;&lt;span class=&#34;variable&#34;&gt;$result&lt;/span&gt;) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            &lt;span class=&#34;variable language_&#34;&gt;$this&lt;/span&gt;-&amp;gt;&lt;span class=&#34;title function_ invoke__&#34;&gt;_after_find&lt;/span&gt;(&lt;span class=&#34;variable&#34;&gt;$result&lt;/span&gt;, &lt;span class=&#34;variable&#34;&gt;$options&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;protected&lt;/span&gt; &lt;span class=&#34;function&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;title&#34;&gt;_after_find&lt;/span&gt;(&lt;span class=&#34;params&#34;&gt;&amp;amp;&lt;span class=&#34;variable&#34;&gt;$result&lt;/span&gt;, &lt;span class=&#34;variable&#34;&gt;$options&lt;/span&gt;&lt;/span&gt;)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;function&#34;&gt;    &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &lt;span class=&#34;built_in&#34;&gt;parent&lt;/span&gt;::&lt;span class=&#34;title function_ invoke__&#34;&gt;_after_find&lt;/span&gt;(&lt;span class=&#34;variable&#34;&gt;$result&lt;/span&gt;,&lt;span class=&#34;variable&#34;&gt;$options&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &lt;span class=&#34;keyword&#34;&gt;foreach&lt;/span&gt; (&lt;span class=&#34;variable&#34;&gt;$result&lt;/span&gt; &lt;span class=&#34;keyword&#34;&gt;as&lt;/span&gt; &lt;span class=&#34;variable&#34;&gt;$field&lt;/span&gt; =&amp;gt; &lt;span class=&#34;variable&#34;&gt;$value&lt;/span&gt;) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            &lt;span class=&#34;variable language_&#34;&gt;$this&lt;/span&gt;-&amp;gt;&lt;span class=&#34;title function_ invoke__&#34;&gt;_parseType&lt;/span&gt;(&lt;span class=&#34;variable&#34;&gt;$result&lt;/span&gt;, &lt;span class=&#34;variable&#34;&gt;$field&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;然后所有自己写的 Model 类都继承自 MBaseModel.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;注意：&lt;/strong&gt;必须把上面两个方法写到 &lt;code&gt;Model&lt;/code&gt; 的子类中。&lt;/p&gt;
+&lt;p&gt;本来，这样已经搞定了，但发现 Model.class.php 的 &lt;code&gt;_parseType&lt;/code&gt; 方法里有个低级 bug：&lt;/p&gt;
+&lt;figure class=&#34;highlight php&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;24&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;comment&#34;&gt;/**&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;     * 数据类型检测&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;     * &lt;span class=&#34;doctag&#34;&gt;@access&lt;/span&gt; protected&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;     * &lt;span class=&#34;doctag&#34;&gt;@param&lt;/span&gt; mixed $data 数据&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;     * &lt;span class=&#34;doctag&#34;&gt;@param&lt;/span&gt; string $key 字段名&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;     * &lt;span class=&#34;doctag&#34;&gt;@return&lt;/span&gt; void&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;     */&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;protected&lt;/span&gt; &lt;span class=&#34;function&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;title&#34;&gt;_parseType&lt;/span&gt;(&lt;span class=&#34;params&#34;&gt;&amp;amp;&lt;span class=&#34;variable&#34;&gt;$data&lt;/span&gt;,&lt;span class=&#34;variable&#34;&gt;$key&lt;/span&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &lt;span class=&#34;keyword&#34;&gt;if&lt;/span&gt;(!&lt;span class=&#34;keyword&#34;&gt;isset&lt;/span&gt;(&lt;span class=&#34;variable language_&#34;&gt;$this&lt;/span&gt;-&amp;gt;options[&lt;span class=&#34;string&#34;&gt;&amp;#x27;bind&amp;#x27;&lt;/span&gt;][&lt;span class=&#34;string&#34;&gt;&amp;#x27;:&amp;#x27;&lt;/span&gt;.&lt;span class=&#34;variable&#34;&gt;$key&lt;/span&gt;]) &amp;amp;&amp;amp; &lt;span class=&#34;keyword&#34;&gt;isset&lt;/span&gt;(&lt;span class=&#34;variable language_&#34;&gt;$this&lt;/span&gt;-&amp;gt;fields[&lt;span class=&#34;string&#34;&gt;&amp;#x27;_type&amp;#x27;&lt;/span&gt;][&lt;span class=&#34;variable&#34;&gt;$key&lt;/span&gt;]))&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            &lt;span class=&#34;variable&#34;&gt;$fieldType&lt;/span&gt; = &lt;span class=&#34;title function_ invoke__&#34;&gt;strtolower&lt;/span&gt;(&lt;span class=&#34;variable&#34;&gt;$this&lt;/span&gt;-&amp;gt;fields[&lt;span class=&#34;string&#34;&gt;&amp;#x27;_type&amp;#x27;&lt;/span&gt;][&lt;span class=&#34;variable&#34;&gt;$key&lt;/span&gt;]);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            &lt;span class=&#34;keyword&#34;&gt;if&lt;/span&gt;(&lt;span class=&#34;literal&#34;&gt;false&lt;/span&gt; !== &lt;span class=&#34;title function_ invoke__&#34;&gt;strpos&lt;/span&gt;(&lt;span class=&#34;variable&#34;&gt;$fieldType&lt;/span&gt;,&lt;span class=&#34;string&#34;&gt;&amp;#x27;enum&amp;#x27;&lt;/span&gt;))&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;                &lt;span class=&#34;comment&#34;&gt;// 支持ENUM类型优先检测&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            &amp;#125;&lt;span class=&#34;keyword&#34;&gt;elseif&lt;/span&gt;(&lt;span class=&#34;literal&#34;&gt;false&lt;/span&gt; === &lt;span class=&#34;title function_ invoke__&#34;&gt;strpos&lt;/span&gt;(&lt;span class=&#34;variable&#34;&gt;$fieldType&lt;/span&gt;,&lt;span class=&#34;string&#34;&gt;&amp;#x27;bigint&amp;#x27;&lt;/span&gt;) &amp;amp;&amp;amp; &lt;span class=&#34;literal&#34;&gt;false&lt;/span&gt; !== &lt;span class=&#34;title function_ invoke__&#34;&gt;strpos&lt;/span&gt;(&lt;span class=&#34;variable&#34;&gt;$fieldType&lt;/span&gt;,&lt;span class=&#34;string&#34;&gt;&amp;#x27;int&amp;#x27;&lt;/span&gt;)) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;                &lt;span class=&#34;variable&#34;&gt;$data&lt;/span&gt;[&lt;span class=&#34;variable&#34;&gt;$key&lt;/span&gt;]   =  &lt;span class=&#34;title function_ invoke__&#34;&gt;intval&lt;/span&gt;(&lt;span class=&#34;variable&#34;&gt;$data&lt;/span&gt;[&lt;span class=&#34;variable&#34;&gt;$key&lt;/span&gt;]);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            &amp;#125;&lt;span class=&#34;keyword&#34;&gt;elseif&lt;/span&gt;(&lt;span class=&#34;literal&#34;&gt;false&lt;/span&gt; !== &lt;span class=&#34;title function_ invoke__&#34;&gt;strpos&lt;/span&gt;(&lt;span class=&#34;variable&#34;&gt;$fieldType&lt;/span&gt;,&lt;span class=&#34;string&#34;&gt;&amp;#x27;float&amp;#x27;&lt;/span&gt;) || &lt;span class=&#34;literal&#34;&gt;false&lt;/span&gt; !== &lt;span class=&#34;title function_ invoke__&#34;&gt;strpos&lt;/span&gt;(&lt;span class=&#34;variable&#34;&gt;$fieldType&lt;/span&gt;,&lt;span class=&#34;string&#34;&gt;&amp;#x27;double&amp;#x27;&lt;/span&gt;))&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;                &lt;span class=&#34;variable&#34;&gt;$data&lt;/span&gt;[&lt;span class=&#34;variable&#34;&gt;$key&lt;/span&gt;]   =  &lt;span class=&#34;title function_ invoke__&#34;&gt;floatval&lt;/span&gt;(&lt;span class=&#34;variable&#34;&gt;$data&lt;/span&gt;[&lt;span class=&#34;variable&#34;&gt;$key&lt;/span&gt;]);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            &amp;#125;&lt;span class=&#34;keyword&#34;&gt;elseif&lt;/span&gt;(&lt;span class=&#34;literal&#34;&gt;false&lt;/span&gt; !== &lt;span class=&#34;title function_ invoke__&#34;&gt;strpos&lt;/span&gt;(&lt;span class=&#34;variable&#34;&gt;$fieldType&lt;/span&gt;,&lt;span class=&#34;string&#34;&gt;&amp;#x27;bool&amp;#x27;&lt;/span&gt;))&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;                &lt;span class=&#34;variable&#34;&gt;$data&lt;/span&gt;[&lt;span class=&#34;variable&#34;&gt;$key&lt;/span&gt;]   =  (&lt;span class=&#34;keyword&#34;&gt;bool&lt;/span&gt;)&lt;span class=&#34;variable&#34;&gt;$data&lt;/span&gt;[&lt;span class=&#34;variable&#34;&gt;$key&lt;/span&gt;];&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;// 上面第13行修改为&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            &amp;#125;&lt;span class=&#34;keyword&#34;&gt;elseif&lt;/span&gt;(&lt;span class=&#34;literal&#34;&gt;false&lt;/span&gt; !== &lt;span class=&#34;title function_ invoke__&#34;&gt;strpos&lt;/span&gt;(&lt;span class=&#34;variable&#34;&gt;$fieldType&lt;/span&gt;,&lt;span class=&#34;string&#34;&gt;&amp;#x27;bigint&amp;#x27;&lt;/span&gt;) || &lt;span class=&#34;literal&#34;&gt;false&lt;/span&gt; !== &lt;span class=&#34;title function_ invoke__&#34;&gt;strpos&lt;/span&gt;(&lt;span class=&#34;variable&#34;&gt;$fieldType&lt;/span&gt;,&lt;span class=&#34;string&#34;&gt;&amp;#x27;int&amp;#x27;&lt;/span&gt;) || &lt;span class=&#34;literal&#34;&gt;false&lt;/span&gt; !== &lt;span class=&#34;title function_ invoke__&#34;&gt;strpos&lt;/span&gt;(&lt;span class=&#34;variable&#34;&gt;$fieldType&lt;/span&gt;,&lt;span class=&#34;string&#34;&gt;&amp;#x27;tinyint&amp;#x27;&lt;/span&gt;)) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+
+
+&lt;blockquote&gt;
+&lt;p&gt;原文链接：&lt;a href=&#34;https://www.pocketdigi.com/20160411/1469.html?utm_source=tuicool&amp;utm_medium=referral&#34;&gt;https://www.pocketdigi.com/20160411/1469.html?utm_source=tuicool&amp;amp;utm_medium=referral&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+</content>
+        <category term="PHP" />
+        <category term="ThinkPHP" />
+        <updated>2017-03-25T14:20:22.000Z</updated>
+    </entry>
+    <entry>
+        <id>https://likfe.com/2016/06/14/mamp-list-file/</id>
+        <title>MAMP显示文件列表</title>
+        <link rel="alternate" href="https://likfe.com/2016/06/14/mamp-list-file/"/>
+        <content type="html">&lt;h2 id=&#34;背景&#34;&gt;&lt;a href=&#34;#背景&#34; class=&#34;headerlink&#34; title=&#34;背景&#34;&gt;&lt;/a&gt;背景&lt;/h2&gt;&lt;p&gt;MAMP是Mac下的一个PHP+Nginx+MySQL的集成环境，支持多站点，不同版本PHP。&lt;br&gt;今天有人请教MAMP如何显示文件列表的问题，这里记录一下。&lt;/p&gt;
+&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
+
+&lt;h3 id=&#34;知识补充&#34;&gt;&lt;a href=&#34;#知识补充&#34; class=&#34;headerlink&#34; title=&#34;知识补充&#34;&gt;&lt;/a&gt;知识补充&lt;/h3&gt;&lt;p&gt;一个网站为了安全考虑，默认是禁止访问目录下的文件列表的。&lt;br&gt;当你请求一个目录时：&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;21&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;st=&amp;gt;start: 开始&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;e=&amp;gt;end: 结束&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;cond1=&amp;gt;condition: 是否存在index文件列表里的文件？&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;cond2=&amp;gt;condition: 是否允许显示文件列表？&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;cond3=&amp;gt;condition: 是否指定了404页面？&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;op1=&amp;gt;operation: 显示默认的文件&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;op2=&amp;gt;operation: 显示文件列表&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;op3=&amp;gt;operation: 显示指定的404页面&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;op4=&amp;gt;operation: 显示服务器级的404错误&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;st-&amp;gt;cond1-&amp;gt;e&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;cond1(yes)-&amp;gt;op1-&amp;gt;e&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;cond1(no)-&amp;gt;cond2(bottom)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;cond2(yes)-&amp;gt;op2-&amp;gt;e&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;cond2(no)-&amp;gt;cond3(right)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;cond3(yes)-&amp;gt;op3-&amp;gt;e&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;cond3(no)-&amp;gt;op4-&amp;gt;e&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;默认的index文件列表（一般是index.html,index.htm,index.php）&lt;/li&gt;
+&lt;li&gt;网站配置里404相关说明，可以指定404时访问的文件&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;配置MAMP&#34;&gt;&lt;a href=&#34;#配置MAMP&#34; class=&#34;headerlink&#34; title=&#34;配置MAMP&#34;&gt;&lt;/a&gt;配置MAMP&lt;/h2&gt;&lt;p&gt;如图所示：&lt;br&gt;&lt;img src=&#34;http://img.blog.csdn.net/20160614185258257&#34; alt=&#34;这里写图片描述&#34;&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;勾选 Indexs&lt;/li&gt;
+&lt;li&gt;设置Directory index的值为&lt;code&gt;*&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;这里有配置Nginx的配置文件开启访问文件列表的方式：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;http://blog.csdn.net/testcs_dn/article/details/39644147&#34;&gt;http://blog.csdn.net/testcs_dn/article/details/39644147&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;PS:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;你可以关注的我 &lt;a href=&#34;https://github.com/likfe&#34;&gt;Github&lt;/a&gt;、&lt;a href=&#34;http://blog.csdn.net/ys743276112&#34;&gt;CSDN&lt;/a&gt; 和 &lt;a href=&#34;http://weibo.com/zyansen&#34;&gt;微博&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+</content>
+        <category term="PHP" />
+        <category term="MAMP" />
+        <updated>2016-06-14T11:06:53.000Z</updated>
+    </entry>
+    <entry>
+        <id>https://likfe.com/2016/06/12/amh-install-flarum/</id>
+        <title>AMH 5.X下安装 Flarum</title>
+        <link rel="alternate" href="https://likfe.com/2016/06/12/amh-install-flarum/"/>
+        <content type="html">&lt;h2 id=&#34;背景&#34;&gt;&lt;a href=&#34;#背景&#34; class=&#34;headerlink&#34; title=&#34;背景&#34;&gt;&lt;/a&gt;背景&lt;/h2&gt;&lt;p&gt;最近无意间发现几个开源软件的&lt;code&gt;Bug反馈系统&lt;/code&gt;使用的是&lt;strong&gt;Flarum&lt;/strong&gt;，Flarum是一款优雅简洁论坛软件，看起来还是相当不错的，一时抑制不住想要尝试一下。&lt;/p&gt;
+&lt;p&gt;由于服务器使用的是AMH集成环境，它相对于通常的直接安装环境有很多的区别，这导致安装过程中产生里不少问题。这里做个总结。&lt;/p&gt;
+&lt;h3 id=&#34;Flarum&#34;&gt;&lt;a href=&#34;#Flarum&#34; class=&#34;headerlink&#34; title=&#34;Flarum&#34;&gt;&lt;/a&gt;Flarum&lt;/h3&gt;&lt;p&gt;Flarum 是一款优雅简洁论坛软件，让在线交流变得更加轻松愉快。&lt;/p&gt;
+&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://discuss.flarum.org/&#34;&gt;官网&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.flarum.org.cn/&#34;&gt;中文站&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;AMH&#34;&gt;&lt;a href=&#34;#AMH&#34; class=&#34;headerlink&#34; title=&#34;AMH&#34;&gt;&lt;/a&gt;AMH&lt;/h3&gt;&lt;p&gt;&lt;a href=&#34;https://amh.sh/&#34;&gt;AMH&lt;/a&gt; 是国内首个开源的主机面板，AMH 支持用户自由弹性组建运行环境与切换环境，您可以下载安装不同版本的WEB服务器、数据库、脚本软件自由组合创建您需要的运行环境。&lt;/p&gt;
+&lt;p&gt;我使用的是&lt;code&gt;AMH5.X&lt;/code&gt;的付费版本，&lt;code&gt;4.X&lt;/code&gt;的免费版本也可以参考本教程。&lt;/p&gt;
+&lt;p&gt;目前服务器环境是LNMP：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;CentOS-6.6 64位&lt;/p&gt;
+&lt;p&gt;lnmp-2.5&lt;/p&gt;
+&lt;p&gt;mysql-generic-5.5.40&lt;/p&gt;
+&lt;p&gt;nginx-generic-1.6.0&lt;/p&gt;
+&lt;p&gt;php-7.0&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;Composer&#34;&gt;&lt;a href=&#34;#Composer&#34; class=&#34;headerlink&#34; title=&#34;Composer&#34;&gt;&lt;/a&gt;Composer&lt;/h3&gt;&lt;p&gt;Composer是 PHP 用来管理依赖（dependency）关系的工具。你可以在自己的项目中声明所依赖的外部工具库（libraries），Composer 会帮你安装这些依赖的库文件。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://getcomposer.org/&#34;&gt;官网&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.phpcomposer.com/&#34;&gt;中文站&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Composer是安装Flarum的必要工具。&lt;/p&gt;
+&lt;h2 id=&#34;安装PHP扩展&#34;&gt;&lt;a href=&#34;#安装PHP扩展&#34; class=&#34;headerlink&#34; title=&#34;安装PHP扩展&#34;&gt;&lt;/a&gt;安装PHP扩展&lt;/h2&gt;&lt;p&gt;这里需要安装Flarum所需要的必要的PHP扩展，先看下系统需求：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Flarum 系统需求&lt;/p&gt;
+&lt;p&gt;服务器： Apache (需要支持 mod_rewrite)、Nginx、Lighttpd&lt;br&gt;PHP 5.5+，需要开启的扩展：mbstring, pdo_mysql, openssl, json, gd, dom, fileinfo&lt;br&gt;MySQL 5.5+&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;特别注意：&lt;/strong&gt;PHP是5.5+、MySQL 5.5+，如果版本过低可以使用AMH安装更高版本，AMH支持多版本PHP和MySQL。&lt;/p&gt;
+&lt;h3 id=&#34;流程：&#34;&gt;&lt;a href=&#34;#流程：&#34; class=&#34;headerlink&#34; title=&#34;流程：&#34;&gt;&lt;/a&gt;流程：&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;登录到AMH的管理面板&lt;/li&gt;
+&lt;li&gt;软件下载 &amp;gt; fileinfo-1.0 &amp;gt; 下载并安装到对应的环境&lt;/li&gt;
+&lt;li&gt;软件下载 &amp;gt; mcrypt-1.0 &amp;gt; 下载并安装到对应的环境&lt;/li&gt;
+&lt;li&gt;软件下载 &amp;gt; pdo_mysql-1.0 &amp;gt; 下载并安装到对应的环境&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;安装Composer&#34;&gt;&lt;a href=&#34;#安装Composer&#34; class=&#34;headerlink&#34; title=&#34;安装Composer&#34;&gt;&lt;/a&gt;安装Composer&lt;/h2&gt;&lt;p&gt;Flarum官网的文档要求使用Composer命令行的方式进行安装，所以需要先安装Composer：&lt;/p&gt;
+&lt;p&gt;使用SSH方式登录服务器之后：执行&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;curl -sS https://getcomposer.org/installer | php&lt;/code&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;注意： 如果上述方法由于某些原因失败了，你还可以通过 php &amp;gt;下载安装器：&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;code&gt;php -r &amp;quot;readfile(&amp;#39;https://getcomposer.org/installer&amp;#39;);&amp;quot; | php&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;这里你可能会遇到 &lt;code&gt;-bash php command not found&lt;/code&gt;的错误提示，请参考下文的&lt;strong&gt;问题集锦&lt;/strong&gt; 。&lt;/p&gt;
+&lt;p&gt;PS：&lt;a href=&#34;http://docs.phpcomposer.com/00-intro.html&#34;&gt;安装Composer文档&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;安装Flarum&#34;&gt;&lt;a href=&#34;#安装Flarum&#34; class=&#34;headerlink&#34; title=&#34;安装Flarum&#34;&gt;&lt;/a&gt;安装Flarum&lt;/h2&gt;&lt;p&gt;环境搭建好了，这里讲解安装Flarum的过程&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;http://flarum.org/docs/installation/&#34;&gt;官方安装文档&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;在AMH控制面板下创建好一个站点（这里指定为&lt;code&gt;A站点&lt;/code&gt;），并做好域名解析，确认可以正常访问&lt;/li&gt;
+&lt;li&gt;删除&lt;code&gt;A站点&lt;/code&gt;下的所有文件&lt;/li&gt;
+&lt;li&gt;创建好一个Flarum使用的MySQL数据库和对应的用户&lt;/li&gt;
+&lt;li&gt;SSH下进入&lt;code&gt;A站点&lt;/code&gt;根目录（&lt;code&gt;cd /home/wwwroot/环境/domain/主域名/web/&lt;/code&gt;）&lt;/li&gt;
+&lt;li&gt;执行安装命令：&lt;code&gt;composer create-project flarum/flarum . --stability=beta&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;配置&lt;code&gt;A站点的Nginx&lt;/code&gt;配置文件（&lt;code&gt;/home/wwwroot/环境/vhost/主域名.conf&lt;/code&gt;）：参见&lt;a href=&#34;http://flarum.org/docs/installation/&#34;&gt;官方安装文档&lt;/a&gt;。特别注意：&lt;code&gt; location ~* \.php$&lt;/code&gt;下的参数以自动生成的为准，还需要删除自动生成的ErrorPage的配置信息。&lt;/li&gt;
+&lt;li&gt;重载Nginx并访问&lt;code&gt;A站点&lt;/code&gt;，填写相关安装信息。（遇到文件读写权限问题，查看下文问题集锦）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;安装Flarum中文语言包&#34;&gt;&lt;a href=&#34;#安装Flarum中文语言包&#34; class=&#34;headerlink&#34; title=&#34;安装Flarum中文语言包&#34;&gt;&lt;/a&gt;安装Flarum中文语言包&lt;/h3&gt;&lt;p&gt;为了便于操作，我们安装中文语言包来进行默认语言的切换。&lt;/p&gt;
+&lt;p&gt;尝试了几种安装方式，这里推荐使用命令行安装：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;SSH下进入&lt;code&gt;A站点&lt;/code&gt;根目录&lt;/li&gt;
+&lt;li&gt;执行&lt;code&gt;composer require jsthon/flarum-ext-simplified-chinese&lt;/code&gt;即可&lt;/li&gt;
+&lt;li&gt;访问&lt;code&gt;A站点&lt;/code&gt;，进入后台修改勾选中文扩展，并修改默认语言。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;其他语言和扩展：&lt;a href=&#34;https://discuss.flarum.org/d/1534-extension-list&#34;&gt;https://discuss.flarum.org/d/1534-extension-list&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;问题集锦&#34;&gt;&lt;a href=&#34;#问题集锦&#34; class=&#34;headerlink&#34; title=&#34;问题集锦&#34;&gt;&lt;/a&gt;问题集锦&lt;/h2&gt;&lt;p&gt;可能遇到的问题：&lt;/p&gt;
+&lt;h3 id=&#34;bash-php-command-not-found&#34;&gt;&lt;a href=&#34;#bash-php-command-not-found&#34; class=&#34;headerlink&#34; title=&#34;-bash php command not found&#34;&gt;&lt;/a&gt;-bash php command not found&lt;/h3&gt;&lt;p&gt;Composer的安装和使用是使用的php-cli的方式，AMH支持多版本的PHP，环境变量里并未指定php-cli的版本，这里需要我们把指定版本的&lt;a href=&#34;http://blog.csdn.net/ys743276112/article/details/51648243&#34;&gt;PHP加入到环境变量&lt;/a&gt;里。&lt;/p&gt;
+&lt;p&gt;在&lt;code&gt;~/.bash_profile&lt;/code&gt;里加入：&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;PATH=&lt;span class=&#34;variable&#34;&gt;$PATH&lt;/span&gt;:/usr/local/php-版本/bin&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;export&lt;/span&gt; PATH&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;保存修改后执行&lt;code&gt;source ~/.bash_profile &lt;/code&gt;使得修改生效。&lt;/p&gt;
+&lt;p&gt;PS：如果你使用的是其他发行版的Linux，请自行搜索如何设置&lt;code&gt;PHP加入到环境变量&lt;/code&gt; 。&lt;/p&gt;
+&lt;h3 id=&#34;requires-ext-fileinfo-或者-request-for-intervention-x2F-image&#34;&gt;&lt;a href=&#34;#requires-ext-fileinfo-或者-request-for-intervention-x2F-image&#34; class=&#34;headerlink&#34; title=&#34;requires ext-fileinfo * 或者 request for intervention&amp;#x2F;image&#34;&gt;&lt;/a&gt;requires ext-fileinfo * 或者 request for intervention&amp;#x2F;image&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;参见：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://stackoverflow.com/questions/24850136/i-have-ext-fileinfo-but-composer-says-it-is-missing&#34;&gt;http://stackoverflow.com/questions/24850136/i-have-ext-fileinfo-but-composer-says-it-is-missing&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://amh.sh/bbs/post-6149-1-1.htm&#34;&gt;http://amh.sh/bbs/post-6149-1-1.htm&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;简单来说，就是咱们在AMH里安装的PHP扩展并没有影响到&lt;code&gt;php-cli&lt;/code&gt;方式运行PHP的配置，需要我们手动同步一下配置：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;cp /home/wwwroot/环境/etc/amh-php.ini /usr/local/php-版本/etc/php.ini&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;重载Nginx即可生效。&lt;/p&gt;
+&lt;h3 id=&#34;Please-chmod-this-directory-to-0775&#34;&gt;&lt;a href=&#34;#Please-chmod-this-directory-to-0775&#34; class=&#34;headerlink&#34; title=&#34;Please chmod this directory to 0775&#34;&gt;&lt;/a&gt;Please chmod this directory to 0775&lt;/h3&gt;&lt;p&gt;当你访问通过composer安装好的&lt;code&gt;A站点&lt;/code&gt;时，遇到里类似的权限读写问题，对于AMH环境，我们需要执行：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sudo chown www:www -R  /home/wwwroot/环境/domain/主域名/web&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;这里有一些讨论：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://discuss.flarum.org/d/823-directorys-are-not-writable/46&#34;&gt;https://discuss.flarum.org/d/823-directorys-are-not-writable/46&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://discuss.flarum.org/d/2209-directory-not-writable/3&#34;&gt;https://discuss.flarum.org/d/2209-directory-not-writable/3&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;上面的讨论使用的用户组和AMH的不一样，AMH网站的用户组是&lt;code&gt;www&lt;/code&gt;，结合实际情况才能真正解决问题。&lt;/p&gt;
+&lt;h2 id=&#34;其他&#34;&gt;&lt;a href=&#34;#其他&#34; class=&#34;headerlink&#34; title=&#34;其他&#34;&gt;&lt;/a&gt;其他&lt;/h2&gt;&lt;p&gt;查看我们的成果：&lt;a href=&#34;http://forum.inkcode.cc/&#34;&gt;Cafeting的论坛&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;http://flarum.org/docs/&#34;&gt;官方文档&lt;/a&gt; 适应最新版的Flarum，推荐&lt;br&gt;&lt;a href=&#34;https://www.gitbook.com/book/justjavac/flarum&#34;&gt;中文文档&lt;/a&gt; 较旧，有一定参考意义&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;AMH集成环境相对于通常的直接安装环境有很多的区别，使用的时候务必要考虑到。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;PS&lt;/strong&gt;：你可以通过下面的方式和我联系&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;微博：&lt;a href=&#34;http://weibo.com/zyansen&#34;&gt;cafeting&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Github： &lt;a href=&#34;https://github.com/likfe&#34;&gt;likfe&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;CSDN：&lt;a href=&#34;http://blog.csdn.net/ys743276112&#34;&gt;他叫自己Mr.张&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+</content>
+        <category term="AMH" />
+        <category term="Flarum" />
+        <category term="PHP" />
+        <category term="Composer" />
+        <updated>2016-06-12T08:16:00.000Z</updated>
+    </entry>
+
+    <follow_challenge>
+        <feedId>73986782175755264</feedId>
+        <userId>72100854660436992</userId>
+    </follow_challenge>
+</feed>

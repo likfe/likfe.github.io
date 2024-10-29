@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://likfe.com</id>
+    <title>Cafeting • Posts by &#34;rust&#34; tag</title>
+    <link href="https://likfe.com" />
+    <updated>2024-08-23T09:54:15.000Z</updated>
+    <category term="Android" />
+    <category term="Flurry" />
+    <category term="Confluence" />
+    <category term="反编译" />
+    <category term="ReactNative" />
+    <category term="AccessibilityNodeInfo" />
+    <category term="StackOverflow" />
+    <category term="Proxy" />
+    <category term="AndroidStudio" />
+    <category term="Translucent" />
+    <category term="SwipeBack" />
+    <category term="PopWindow" />
+    <category term="AMH" />
+    <category term="Flarum" />
+    <category term="PHP" />
+    <category term="Composer" />
+    <category term="ViewPager" />
+    <category term="ADB" />
+    <category term="Clipboard" />
+    <category term="framework" />
+    <category term="gradle" />
+    <category term="DialogFragment" />
+    <category term="PopupWindow" />
+    <category term="Google" />
+    <category term="Glide" />
+    <category term="Intent" />
+    <category term="RecyclerView" />
+    <category term="Lambda" />
+    <category term="Leancloud" />
+    <category term="Gradle" />
+    <category term="Messenger" />
+    <category term="Make" />
+    <category term="Mac" />
+    <category term="Linux" />
+    <category term="JDK" />
+    <category term="Fragment" />
+    <category term="View" />
+    <category term="Scrollbar" />
+    <category term="备案" />
+    <category term="域名" />
+    <category term="Github" />
+    <category term="GreenDao" />
+    <category term="Rust" />
+    <category term="IDEA" />
+    <category term="GooglePlay" />
+    <category term="Docker" />
+    <category term="Jenkins" />
+    <category term="MAMP" />
+    <category term="树莓派" />
+    <category term="Sublime Text" />
+    <category term="Emmet" />
+    <category term="ThinkPHP" />
+    <category term="GitBook" />
+    <category term="OSX" />
+    <entry>
+        <id>https://likfe.com/2024/08/23/idea-rust-not-display-types/</id>
+        <title>Rustrover、IDEA 的 Rust 类型不显示（已解决）</title>
+        <link rel="alternate" href="https://likfe.com/2024/08/23/idea-rust-not-display-types/"/>
+        <content type="html">&lt;p&gt;关键词：rustrover 类型不显示，rustrover 不显示类型，IntelliJ IDEA Rust 类型不显示，IntelliJ IDEA Rust 不显示类型&lt;/p&gt;
+&lt;h2 id=&#34;背景&#34;&gt;&lt;a href=&#34;#背景&#34; class=&#34;headerlink&#34; title=&#34;背景&#34;&gt;&lt;/a&gt;背景&lt;/h2&gt;&lt;p&gt;博主手欠，使用 IntelliJ IDEA 时，不小心在编辑器自动推倒显示的类型上，点击鼠标右键弹出 &lt;code&gt;Disable &amp;#39;Types&amp;#39; hints type&lt;/code&gt; 后点了一下，就禁用了类型显示。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/likfe/imagerepo/dev/img/202408231815258.jpg&#34;&gt;&lt;/p&gt;
+&lt;p&gt;禁用类型现实之后是这样的：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/likfe/imagerepo/dev/img/202408231815662.jpg&#34;&gt;&lt;/p&gt;
+&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
+
+&lt;p&gt;这对于一个 Rust 开发来说变量或者方法的返回值类型非常重要，它决定了写代码时，如何处理这个变量，非常影响写代码的过程。&lt;/p&gt;
+&lt;p&gt;如果不恢复显示类型，每次看类型都需要把鼠标放到变量名上面，等待 IDEA 自动展示变量的自动文档说明（如下图所示），这样太影响开发效率。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/likfe/imagerepo/dev/img/202408231816152.jpg&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;恢复显示变量和方法的类型&#34;&gt;&lt;a href=&#34;#恢复显示变量和方法的类型&#34; class=&#34;headerlink&#34; title=&#34;恢复显示变量和方法的类型&#34;&gt;&lt;/a&gt;恢复显示变量和方法的类型&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;恢复流程：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Preferences&lt;/code&gt; &amp;#x3D;&amp;gt; &lt;code&gt;Editor&lt;/code&gt; &amp;#x3D;&amp;gt; &lt;code&gt;Inlay Hints&lt;/code&gt; &amp;#x3D;&amp;gt; &lt;code&gt;Types&lt;/code&gt; &amp;#x3D;&amp;gt; &lt;code&gt;Rust&lt;/code&gt;  全部勾选并保存&lt;/p&gt;
+&lt;p&gt;如下图所示：&lt;br&gt;&lt;img src=&#34;https://raw.githubusercontent.com/likfe/imagerepo/dev/img/202408231816552.png&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;总结&#34;&gt;&lt;a href=&#34;#总结&#34; class=&#34;headerlink&#34; title=&#34;总结&#34;&gt;&lt;/a&gt;总结&lt;/h2&gt;&lt;p&gt;目前来说，rustrover 或者 IDEA+Rust 插件的方式开发 Rust 项目，还是不够成熟，博主就遇到过:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;在 IDEA 里写的代码没有任何错误提示，但是无法通过编译的情况，大家使用时务必要多注意。&lt;/li&gt;
+&lt;li&gt;目前还无法 Debug &lt;code&gt;Android + Rust&lt;/code&gt; 的工程里的 Rust 代码，还是需要 VsCode + LLDB 插件才行。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;如果有什么建议或者问题可以随时联系我，共同探讨学习：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;Github： &lt;a href=&#34;https://github.com/likfe&#34;&gt;likfe&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;CSDN：&lt;a href=&#34;https://micro.blog.csdn.net/&#34;&gt;他叫自己Mr.张&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;掘金：&lt;a href=&#34;https://juejin.im/user/56042f4b60b2f3a91f58461d&#34;&gt;cafeting&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;微博：&lt;a href=&#34;http://weibo.com/zyansen&#34;&gt;cafeting&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+</content>
+        <category term="Android" />
+        <category term="Rust" />
+        <category term="IDEA" />
+        <updated>2024-08-23T09:54:15.000Z</updated>
+    </entry>
+
+    <follow_challenge>
+        <feedId>73986782175755264</feedId>
+        <userId>72100854660436992</userId>
+    </follow_challenge>
+</feed>

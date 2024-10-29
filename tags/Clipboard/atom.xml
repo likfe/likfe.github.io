@@ -1,0 +1,110 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://likfe.com</id>
+    <title>Cafeting • Posts by &#34;clipboard&#34; tag</title>
+    <link href="https://likfe.com" />
+    <updated>2018-01-17T02:52:38.000Z</updated>
+    <category term="Android" />
+    <category term="Flurry" />
+    <category term="Confluence" />
+    <category term="反编译" />
+    <category term="ReactNative" />
+    <category term="AccessibilityNodeInfo" />
+    <category term="StackOverflow" />
+    <category term="Proxy" />
+    <category term="AndroidStudio" />
+    <category term="Translucent" />
+    <category term="SwipeBack" />
+    <category term="PopWindow" />
+    <category term="AMH" />
+    <category term="Flarum" />
+    <category term="PHP" />
+    <category term="Composer" />
+    <category term="ViewPager" />
+    <category term="ADB" />
+    <category term="Clipboard" />
+    <category term="framework" />
+    <category term="gradle" />
+    <category term="DialogFragment" />
+    <category term="PopupWindow" />
+    <category term="Google" />
+    <category term="Glide" />
+    <category term="Intent" />
+    <category term="RecyclerView" />
+    <category term="Lambda" />
+    <category term="Leancloud" />
+    <category term="Gradle" />
+    <category term="Messenger" />
+    <category term="Make" />
+    <category term="Mac" />
+    <category term="Linux" />
+    <category term="JDK" />
+    <category term="Fragment" />
+    <category term="View" />
+    <category term="Scrollbar" />
+    <category term="备案" />
+    <category term="域名" />
+    <category term="Github" />
+    <category term="GreenDao" />
+    <category term="Rust" />
+    <category term="IDEA" />
+    <category term="GooglePlay" />
+    <category term="Docker" />
+    <category term="Jenkins" />
+    <category term="MAMP" />
+    <category term="树莓派" />
+    <category term="Sublime Text" />
+    <category term="Emmet" />
+    <category term="ThinkPHP" />
+    <category term="GitBook" />
+    <category term="OSX" />
+    <entry>
+        <id>https://likfe.com/2018/01/17/android-adb-set-clipboard/</id>
+        <title>Android 必知必会 - 使用 ADB 操作 Clipboard</title>
+        <link rel="alternate" href="https://likfe.com/2018/01/17/android-adb-set-clipboard/"/>
+        <content type="html">&lt;p&gt;关键词：&lt;code&gt;service call&lt;/code&gt; 、&lt;code&gt;clipboard&lt;/code&gt; 、&lt;code&gt;Unknown package&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;手里一个项目需要执行个骚操作，其中有一个步骤是使用 ADB 来操作 Clipboard（粘贴板），搜索许久发现&lt;strong&gt;直接操作并不可行&lt;/strong&gt;，确切的说是在 Android API &amp;gt;&amp;#x3D;11 时是不可行的。&lt;/p&gt;
+&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;操作环境：macOS Sierra 10.12.6 + iTerm2，一些命令可能会因系统等不同而略有不同，请自行测试。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;前置知识点&#34;&gt;&lt;a href=&#34;#前置知识点&#34; class=&#34;headerlink&#34; title=&#34;前置知识点&#34;&gt;&lt;/a&gt;前置知识点&lt;/h2&gt;&lt;p&gt;首先了解下 ADB Shell 中的 &lt;code&gt;service&lt;/code&gt; ，在命令行里执行能看到如下信息：&lt;/p&gt;
+&lt;figure class=&#34;highlight sh&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;$ adb shell&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;$ service&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Usage: service [-h|-?]&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;       service list&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;       service check SERVICE&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;       service call SERVICE CODE [i32 N | i64 N | f N | d N | s16 STR ] ...&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Options:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;   i32: Write the 32-bit &lt;span class=&#34;built_in&#34;&gt;integer&lt;/span&gt; N into the send parcel.&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;   i64: Write the 64-bit &lt;span class=&#34;built_in&#34;&gt;integer&lt;/span&gt; N into the send parcel.&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;   f:   Write the 32-bit single-precision number N into the send parcel.&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;   d:   Write the 64-bit double-precision number N into the send parcel.&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;   s16: Write the UTF-16 string STR into the send parcel.&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;$ service list | grep clipboard&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;# If use windows system, use findstr: &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;# service list | findstr &amp;quot;clipboard&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;63	clipboard: [android.content.IClipboard]&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;下面找 CODE ，查看 Clipboard 的源码：&lt;/p&gt;
+&lt;figure class=&#34;highlight java&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;// API &amp;lt; 11&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;static&lt;/span&gt; &lt;span class=&#34;keyword&#34;&gt;final&lt;/span&gt; &lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; TRANSACTION_getClipboardText &lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;static&lt;/span&gt; &lt;span class=&#34;keyword&#34;&gt;final&lt;/span&gt; &lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; TRANSACTION_hasClipboardText &lt;span class=&#34;number&#34;&gt;3&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;static&lt;/span&gt; &lt;span class=&#34;keyword&#34;&gt;final&lt;/span&gt; &lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; TRANSACTION_setClipboardText &lt;span class=&#34;number&#34;&gt;2&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;// API &amp;gt;= 11&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;static&lt;/span&gt; &lt;span class=&#34;keyword&#34;&gt;final&lt;/span&gt; &lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;variable&#34;&gt;TRANSACTION_setPrimaryClip&lt;/span&gt; &lt;span class=&#34;operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;static&lt;/span&gt; &lt;span class=&#34;keyword&#34;&gt;final&lt;/span&gt; &lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;variable&#34;&gt;TRANSACTION_getPrimaryClip&lt;/span&gt; &lt;span class=&#34;operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;number&#34;&gt;2&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;static&lt;/span&gt; &lt;span class=&#34;keyword&#34;&gt;final&lt;/span&gt; &lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;variable&#34;&gt;TRANSACTION_getPrimaryClipDescription&lt;/span&gt; &lt;span class=&#34;operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;number&#34;&gt;3&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;static&lt;/span&gt; &lt;span class=&#34;keyword&#34;&gt;final&lt;/span&gt; &lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;variable&#34;&gt;TRANSACTION_hasPrimaryClip&lt;/span&gt; &lt;span class=&#34;operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;number&#34;&gt;4&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;static&lt;/span&gt; &lt;span class=&#34;keyword&#34;&gt;final&lt;/span&gt; &lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;variable&#34;&gt;TRANSACTION_addPrimaryClipChangedListener&lt;/span&gt; &lt;span class=&#34;operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;number&#34;&gt;5&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;static&lt;/span&gt; &lt;span class=&#34;keyword&#34;&gt;final&lt;/span&gt; &lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;variable&#34;&gt;TRANSACTION_removePrimaryClipChangedListener&lt;/span&gt; &lt;span class=&#34;operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;number&#34;&gt;6&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;static&lt;/span&gt; &lt;span class=&#34;keyword&#34;&gt;final&lt;/span&gt; &lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;variable&#34;&gt;TRANSACTION_hasClipboardText&lt;/span&gt; &lt;span class=&#34;operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;number&#34;&gt;7&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;h2 id=&#34;分析&#34;&gt;&lt;a href=&#34;#分析&#34; class=&#34;headerlink&#34; title=&#34;分析&#34;&gt;&lt;/a&gt;分析&lt;/h2&gt;&lt;p&gt;Clipboard 源码指出这些事务需要什么参数。TRANSACTION_setPrimaryClip 需要一个 ClipData，它不是一个 i32 或 s16，因此与服务调用不兼容。 更重要的是，这些事务需要调用包名称作为参数，剪贴板服务验证指定的包名称与调用的 uid 相匹配。 当使用adb shell 时，调用的 uid 是 UID_ROOT 或者 UID_SHELL，它们都不拥有任何包，所以没有办法通过这个检查。 简而言之，新的剪贴板服务不能以这种方式使用。&lt;/p&gt;
+&lt;p&gt;所以在 API &amp;gt;&amp;#x3D; 11 的系统上使用 &lt;code&gt;service call clipboard [1 | 2 | 3] [i32 N | i64 N | f N | d N | s16 STR ]&lt;/code&gt; 已经不可行了。&lt;/p&gt;
+&lt;p&gt;所以无论命令正确与否，都会提示 &lt;code&gt;Unknown package&lt;/code&gt; ：&lt;/p&gt;
+&lt;figure class=&#34;highlight sh&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;$ service call clipboard 2 s16 &lt;span class=&#34;string&#34;&gt;&amp;quot;abc&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Result: Parcel(&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  0x00000000: fffffffd 00000013 006e0055 006e006b &lt;span class=&#34;string&#34;&gt;&amp;#x27;........U.n.k.n.&amp;#x27;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  0x00000010: 0077006f 0020006e 00610070 006b0063 &lt;span class=&#34;string&#34;&gt;&amp;#x27;o.w.n. .p.a.c.k.&amp;#x27;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  0x00000020: 00670061 00200065 00620061 00000063 &lt;span class=&#34;string&#34;&gt;&amp;#x27;a.g.e. .a.b.c...&amp;#x27;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;h2 id=&#34;总结&#34;&gt;&lt;a href=&#34;#总结&#34; class=&#34;headerlink&#34; title=&#34;总结&#34;&gt;&lt;/a&gt;总结&lt;/h2&gt;&lt;p&gt;就 Android 目前的各版本系统市场占有率而言，&lt;strong&gt;使用 ADB 操作 Clipboard 是一个不可行的方案了&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;参考：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://stackoverflow.com/questions/7283446/pasting-text-into-android-emulator-clipboard-using-adb-shell&#34;&gt;Pasting text into Android emulator clipboard using adb shell&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://stackoverflow.com/questions/14243427/set-clipboard-text-via-adb-shell-as-of-api-level-11&#34;&gt;Set clipboard text via adb shell as of API level 11&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;有什么建议或者问题可以随时联系我，共同探讨学习：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;微博：&lt;a href=&#34;http://weibo.com/zyansen&#34;&gt;cafeting&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Github： &lt;a href=&#34;https://github.com/likfe&#34;&gt;likfe&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;CSDN：&lt;a href=&#34;http://blog.csdn.net/ys743276112&#34;&gt;他叫自己Mr.张&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+</content>
+        <category term="Android" />
+        <category term="ADB" />
+        <category term="Clipboard" />
+        <updated>2018-01-17T02:52:38.000Z</updated>
+    </entry>
+
+    <follow_challenge>
+        <feedId>73986782175755264</feedId>
+        <userId>72100854660436992</userId>
+    </follow_challenge>
+</feed>
