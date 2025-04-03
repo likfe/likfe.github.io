@@ -3,7 +3,7 @@
     <id>https://likfe.com</id>
     <title>Cafeting</title>
     <link href="https://likfe.com" />
-    <updated>2024-08-26T08:22:57.000Z</updated>
+    <updated>2025-04-03T12:56:25.000Z</updated>
     <category term="Android" />
     <category term="Flurry" />
     <category term="Confluence" />
@@ -58,6 +58,116 @@
     <category term="ThinkPHP" />
     <category term="GitBook" />
     <category term="OSX" />
+    <entry>
+        <id>https://likfe.com/2025/04/03/as-error-redirect-txt/</id>
+        <title>Android 必知必会：升级 Android Studio 后报错 Error loading build artifacts from redirect.txt【已解决】</title>
+        <link rel="alternate" href="https://likfe.com/2025/04/03/as-error-redirect-txt/"/>
+        <content type="html">&lt;p&gt;关键词：升级Android Studio、Error loading build artifacts from、app\build\intermediates\apk_ide_redirect_file\debug\redirect.txt&lt;/p&gt;
+&lt;h2 id=&#34;背景&#34;&gt;&lt;a href=&#34;#背景&#34; class=&#34;headerlink&#34; title=&#34;背景&#34;&gt;&lt;/a&gt;背景&lt;/h2&gt;&lt;p&gt;博主今天升级了 Mac 上的 Android Studio 到 &lt;code&gt;Android Studio Meerkat | 2024.3.1 Patch 1&lt;/code&gt; 版本，结果项目编译报错：&lt;code&gt;Error loading build artifacts from: /xx/app/build/intermediates/apk_ide_redirect_file/debug/redirect.txt&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Windows 系统的话，信息应该是 &lt;code&gt;Error loading build artifacts from: \xx\app\build\intermediates\apk_ide_redirect_file\debug\redirect.txt&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;原因&#34;&gt;&lt;a href=&#34;#原因&#34; class=&#34;headerlink&#34; title=&#34;原因&#34;&gt;&lt;/a&gt;原因&lt;/h2&gt;&lt;p&gt;原因是 Android Studio 升级后，新版本的一些配置信息和工程的编译信息和旧版本有一些差异，但是工程的配置信息还在，和新版本的冲突。&lt;br&gt;&lt;strong&gt;Android Studio 的工程配置信息保存在当前工程的 &lt;code&gt;.idea&lt;/code&gt; 目录下面。&lt;/strong&gt;&lt;br&gt;&lt;code&gt;.idea&lt;/code&gt; 目录是 Android Studio 项目的核心配置中心，涵盖了模块、依赖、编码风格、运行配置等关键信息。&lt;/p&gt;
+&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
+
+&lt;p&gt;以下是 &lt;code&gt;.idea&lt;/code&gt; 目录内常见文件和子目录的详细介绍：&lt;/p&gt;
+&lt;h3 id=&#34;关键文件和子目录&#34;&gt;&lt;a href=&#34;#关键文件和子目录&#34; class=&#34;headerlink&#34; title=&#34;关键文件和子目录&#34;&gt;&lt;/a&gt;&lt;strong&gt;关键文件和子目录&lt;/strong&gt;&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;&lt;code&gt;modules.xml&lt;/code&gt;&lt;/strong&gt;  &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;作用：记录项目模块（Module）的配置信息，如模块的路径和依赖关系。  &lt;/li&gt;
+&lt;li&gt;内容示例：定义哪些模块属于当前项目（例如主模块、库模块等）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;&lt;code&gt;workspace.xml&lt;/code&gt;&lt;/strong&gt;  &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;作用：保存用户特定的工作区设置（如窗口布局、打开的编辑器标签、代码折叠状态等）。  &lt;/li&gt;
+&lt;li&gt;注意：此文件通常不建议提交到版本控制（如 Git），因为包含个人偏好设置。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;&lt;code&gt;gradle.xml&lt;/code&gt;&lt;/strong&gt;  &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;作用：存储 Gradle 相关的配置，例如 Gradle 的 JVM 参数、离线模式设置等。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;&lt;code&gt;vcs.xml&lt;/code&gt;&lt;/strong&gt;  &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;作用：版本控制系统的配置，例如指定项目使用的 VCS 类型（Git、Subversion 等）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;&lt;code&gt;encodings.xml&lt;/code&gt;&lt;/strong&gt;  &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;作用：定义项目中文件的编码格式（如 UTF-8、GBK 等）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;&lt;code&gt;misc.xml&lt;/code&gt;&lt;/strong&gt;  &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;作用：保存杂项配置，例如项目级的 SDK 路径、语言级别设置等。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;&lt;code&gt;runConfigurations/&lt;/code&gt;&lt;/strong&gt;  &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;作用：存储自定义的运行&amp;#x2F;调试配置（如 &lt;code&gt;Android App&lt;/code&gt;、&lt;code&gt;JUnit&lt;/code&gt; 等）。  &lt;/li&gt;
+&lt;li&gt;文件示例：&lt;code&gt;MainActivity.xml&lt;/code&gt; 可能对应某个 Activity 的启动配置。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;&lt;code&gt;codeStyles/&lt;/code&gt;&lt;/strong&gt;  &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;作用：保存项目的代码风格配置（如缩进、空格、换行等规则）。  &lt;/li&gt;
+&lt;li&gt;文件示例：&lt;code&gt;codeStyleConfig.xml&lt;/code&gt; 定义代码风格方案。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;&lt;code&gt;libraries/&lt;/code&gt;&lt;/strong&gt;  &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;作用：记录项目依赖的库（如第三方 JAR&amp;#x2F;AAR 文件、Android SDK 库等）。  &lt;/li&gt;
+&lt;li&gt;文件示例：&lt;code&gt;androidx_room_runtime.xml&lt;/code&gt; 对应 Room 库的配置。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;&lt;code&gt;inspectionProfiles/&lt;/code&gt;&lt;/strong&gt;  &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;作用：保存代码检查（Inspection）的配置，例如自定义的 Lint 规则或检查级别。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;&lt;code&gt;artifacts/&lt;/code&gt;&lt;/strong&gt;  &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;作用：定义项目的构建产物（如 APK、AAR 等）的配置（较少用于 Android 项目）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;&lt;code&gt;compiler.xml&lt;/code&gt;&lt;/strong&gt;  &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;作用：配置编译选项，例如注解处理器（Annotation Processors）的设置。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;&lt;code&gt;jarRepositories.xml&lt;/code&gt;&lt;/strong&gt;  &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;作用：定义项目依赖的远程仓库（如 Maven Central、Google Maven 等）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;&lt;code&gt;copyright/&lt;/code&gt;&lt;/strong&gt;  &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;作用：保存版权声明模板，用于自动生成文件头部注释。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;&lt;code&gt;shelf/&lt;/code&gt;&lt;/strong&gt;  &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;作用：存储暂存（Shelve）的代码变更（类似 Git 的 Stash 功能）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;解决方案&#34;&gt;&lt;a href=&#34;#解决方案&#34; class=&#34;headerlink&#34; title=&#34;解决方案&#34;&gt;&lt;/a&gt;解决方案&lt;/h2&gt;&lt;h3 id=&#34;1、-一把梭方案：&#34;&gt;&lt;a href=&#34;#1、-一把梭方案：&#34; class=&#34;headerlink&#34; title=&#34;1、 一把梭方案：&#34;&gt;&lt;/a&gt;1、 一把梭方案：&lt;/h3&gt;&lt;p&gt;删除工程下的  &lt;code&gt;.idea&lt;/code&gt; 目录，然后关闭 Android Studio 重新打开项目即可。&lt;/p&gt;
+&lt;h3 id=&#34;2、精准方案：&#34;&gt;&lt;a href=&#34;#2、精准方案：&#34; class=&#34;headerlink&#34; title=&#34;2、精准方案：&#34;&gt;&lt;/a&gt;2、精准方案：&lt;/h3&gt;&lt;p&gt;删除  &lt;code&gt;.idea&lt;/code&gt; 目录下的 &lt;code&gt;workspace.xml&lt;/code&gt; 并关闭 Android Studio 重新打开项目即可。&lt;/p&gt;
+&lt;p&gt;本方案可保留一些其他的配置信息，影响范围更小。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;如果有什么建议或者问题可以随时联系我，共同探讨学习：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;Github： &lt;a href=&#34;https://github.com/likfe&#34;&gt;likfe&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;CSDN：&lt;a href=&#34;https://micro.blog.csdn.net/&#34;&gt;他叫自己Mr.张&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;掘金：&lt;a href=&#34;https://juejin.im/user/56042f4b60b2f3a91f58461d&#34;&gt;cafeting&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;微博：&lt;a href=&#34;http://weibo.com/zyansen&#34;&gt;cafeting&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+</content>
+        <category term="AndroidStudio" />
+        <updated>2025-04-03T12:56:25.000Z</updated>
+    </entry>
     <entry>
         <id>https://likfe.com/2024/08/26/jcenter-down/</id>
         <title>Android 必知必会：ModuleVersionNotFoundException： Could not find xx</title>
@@ -1494,36 +1604,4 @@
         <category term="域名" />
         <updated>2019-06-05T11:40:46.000Z</updated>
     </entry>
-    <entry>
-        <id>https://likfe.com/2019/02/17/TranslucentActivityPopWindowBlackBackground/</id>
-        <title>侧滑返回：透明（Translucent） Activity弹出 PopWindow 后侧滑时背景变黑色</title>
-        <link rel="alternate" href="https://likfe.com/2019/02/17/TranslucentActivityPopWindowBlackBackground/"/>
-        <content type="html">&lt;p&gt;Android 模仿 iOS 的侧滑返回一般分2大类：透明方案和非透明方案。&lt;/p&gt;
-&lt;p&gt;其中透明方案有很多隐藏的意料之外的情况需要处理。本文记录透明方案弹出 PopWindow 后导致透明背景失效变黑色的情况。&lt;/p&gt;
-&lt;h2 id=&#34;0x00-问题&#34;&gt;&lt;a href=&#34;#0x00-问题&#34; class=&#34;headerlink&#34; title=&#34;0x00 问题&#34;&gt;&lt;/a&gt;0x00 问题&lt;/h2&gt;&lt;p&gt;todo&lt;/p&gt;
-&lt;p&gt;Translucent,PopWindow,SwipeBack&lt;/p&gt;
-&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
-
-&lt;h2 id=&#34;0x01-解决方法&#34;&gt;&lt;a href=&#34;#0x01-解决方法&#34; class=&#34;headerlink&#34; title=&#34;0x01 解决方法&#34;&gt;&lt;/a&gt;0x01 解决方法&lt;/h2&gt;&lt;p&gt; todo&lt;/p&gt;
-&lt;h2 id=&#34;0x02-总结&#34;&gt;&lt;a href=&#34;#0x02-总结&#34; class=&#34;headerlink&#34; title=&#34;0x02 总结&#34;&gt;&lt;/a&gt;0x02 总结&lt;/h2&gt;&lt;p&gt;todo&lt;/p&gt;
-&lt;p&gt;如果有什么建议或者问题可以随时联系我，共同探讨学习：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;Github： &lt;a href=&#34;http://likfe.github.io/&#34;&gt;likfe&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;CSDN：&lt;a href=&#34;http://blog.csdn.net/ys743276112&#34;&gt;他叫自己Mr.张&lt;/a&gt; &lt;/li&gt;
-&lt;li&gt;掘金：&lt;a href=&#34;https://juejin.im/user/56042f4b60b2f3a91f58461d&#34;&gt;cafeting&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;微博：&lt;a href=&#34;http://weibo.com/zyansen&#34;&gt;cafeting&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/blockquote&gt;
-</content>
-        <category term="Translucent" />
-        <category term="SwipeBack" />
-        <category term="PopWindow" />
-        <updated>2019-02-17T14:23:27.000Z</updated>
-    </entry>
-
-    <follow_challenge>
-        <feedId>73986782175755264</feedId>
-        <userId>72100854660436992</userId>
-    </follow_challenge>
 </feed>
