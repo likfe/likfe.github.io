@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://likfe.com/2023/11/21/cmdlineToolsWithJdk/</loc>
+    
+    <lastmod>2025-04-14</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://likfe.com/2025/04/14/agpVersion/</loc>
     
     <lastmod>2025-04-14</lastmod>
@@ -23,15 +32,6 @@
     <loc>https://likfe.com/about/index.html</loc>
     
     <lastmod>2024-10-15</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://likfe.com/2023/11/21/cmdlineToolsWithJdk/</loc>
-    
-    <lastmod>2024-09-05</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
