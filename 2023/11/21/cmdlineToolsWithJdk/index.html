@@ -103,7 +103,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#cmdline-tools-%E7%89%88%E6%9C%AC%E5%92%8C%E6%9C%80%E4%BD%8E-JDK"><span class="nav-number">1.</span> <span class="nav-text">cmdline-tools 版本和最低 JDK</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A3%80%E6%9F%A5%E6%B5%81%E7%A8%8B"><span class="nav-number">1.1.</span> <span class="nav-text">检查流程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%89%A9%E5%B1%95%E8%B5%84%E6%96%99"><span class="nav-number">2.</span> <span class="nav-text">扩展资料</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#cmdline-tools-%E5%8E%86%E5%8F%B2%E7%89%88%E6%9C%AC%E4%B8%8B%E8%BD%BD"><span class="nav-number">2.1.</span> <span class="nav-text">cmdline-tools 历史版本下载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JDK-%E5%AF%B9%E5%BA%94-major-version"><span class="nav-number">2.2.</span> <span class="nav-text">JDK 对应 major version</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JDK-LTS-%E4%BF%A1%E6%81%AF"><span class="nav-number">2.3.</span> <span class="nav-text">JDK LTS 信息</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#cmdline-tools-%E7%89%88%E6%9C%AC%E5%92%8C%E6%9C%80%E4%BD%8E-JDK"><span class="nav-number">1.</span> <span class="nav-text">cmdline-tools 版本和最低 JDK</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%89%A9%E5%B1%95%E8%B5%84%E6%96%99"><span class="nav-number">2.</span> <span class="nav-text">扩展资料</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#cmdline-tools-%E5%8E%86%E5%8F%B2%E7%89%88%E6%9C%AC%E4%B8%8B%E8%BD%BD"><span class="nav-number">2.1.</span> <span class="nav-text">cmdline-tools 历史版本下载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JDK-%E5%AF%B9%E5%BA%94-major-version%E3%80%81JDK-LTS-%E4%BF%A1%E6%81%AF"><span class="nav-number">2.2.</span> <span class="nav-text">JDK 对应 major version、JDK LTS 信息</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A3%80%E6%9F%A5%E6%B5%81%E7%A8%8B"><span class="nav-number">3.</span> <span class="nav-text">检查流程</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -193,7 +193,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-04-14 15:11:21" itemprop="dateModified" datetime="2025-04-14T15:11:21+08:00">2025-04-14</time>
+      <time title="修改时间：2025-06-03 17:55:50" itemprop="dateModified" datetime="2025-06-03T17:55:50+08:00">2025-06-03</time>
     </span>
 
   
@@ -214,6 +214,10 @@
     
     <div class="post-body" itemprop="articleBody"><p>关键词：Android cmdline-tools 历史版本、Android cmdline-tools 最小JDK版本、JDK 对应 major version、JDK LTS 信息</p>
 <p>由于 JDK8 是一个常用的、较低的版本，因此只需关注 JDK8 及以上版本的运行情况。</p>
+<p>Android 官网的 cmdline-tools 提供的最新版本是 19.0，也就是说，其 Runtime 的 JDK 版本必须是 JDK17 及以上。</p>
+<blockquote>
+<p>更新日期：2025年05月23日</p>
+</blockquote>
 <h2 id="cmdline-tools-版本和最低-JDK"><a href="#cmdline-tools-版本和最低-JDK" class="headerlink" title="cmdline-tools 版本和最低 JDK"></a>cmdline-tools 版本和最低 JDK</h2><p>最终结论：（在 Mac 上，基于 JDK8 测试的结果）</p>
 <table>
 <thead>
@@ -235,81 +239,7 @@
 <td>8</td>
 </tr>
 </tbody></table>
-<p>Android 官网的 cmdline-tools 提供的最新版本是16.0（截止2024年09月05日），也就是说，其 Runtime 的 JDK 版本必须是 JDK17 及以上。</p>
 <span id="more"></span>
-
-<h3 id="检查流程"><a href="#检查流程" class="headerlink" title="检查流程"></a>检查流程</h3><table>
-<thead>
-<tr>
-<th>cmdline-tools 版本</th>
-<th>SdkManagerCliSettings</th>
-<th>AndroidLocationsProvider</th>
-<th>最低 JDK</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>13.0</td>
-<td>61 (JDK 17)</td>
-<td>55 (JDK 11)</td>
-<td>17</td>
-</tr>
-<tr>
-<td>12.0</td>
-<td>61 (JDK 17)</td>
-<td>55 (JDK 11)</td>
-<td>17</td>
-</tr>
-<tr>
-<td>11.0</td>
-<td>61 (JDK 17)</td>
-<td>55 (JDK 11)</td>
-<td>17</td>
-</tr>
-<tr>
-<td>10.0</td>
-<td>52 (JDK 8)</td>
-<td>55 (JDK 11)</td>
-<td>11</td>
-</tr>
-<tr>
-<td>9.0</td>
-<td>52 (JDK 8)</td>
-<td>55 (JDK 11)</td>
-<td>11</td>
-</tr>
-<tr>
-<td>8.0</td>
-<td>52 (JDK 8)</td>
-<td>52 (JDK 8)</td>
-<td>8</td>
-</tr>
-<tr>
-<td>7.0</td>
-<td>52 (JDK 8)</td>
-<td>52 (JDK 8)</td>
-<td>8</td>
-</tr>
-<tr>
-<td>6.0</td>
-<td>52 (JDK 8)</td>
-<td>52 (JDK 8)</td>
-<td>8</td>
-</tr>
-</tbody></table>
-<p>通过上表可以看出，在 cmdline-tools 内部，各个 Jar 的编译目标 JDK 版本存在不一致的情况。因此，在实际运行时，需要将所有 Jar 文件的编译目标 JDK 版本的最大值作为 cmdline-tools 运行时的最小的 JDK 版本。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ java -version</span><br><span class="line">java version <span class="string">&quot;1.8.0_351&quot;</span></span><br><span class="line"></span><br><span class="line">$ <span class="built_in">cd</span> path/cmdline-tools/9.0/bin</span><br><span class="line">$ ./sdkmanager --list</span><br><span class="line">Error: A JNI error has occurred, please check your installation and try again</span><br><span class="line">Exception <span class="keyword">in</span> thread <span class="string">&quot;main&quot;</span> java.lang.UnsupportedClassVersionError: com/android/prefs/AndroidLocationsProvider has been compiled by a more recent version of the Java Runtime (class file version 55.0), this version of the Java Runtime only recognizes class file versions up to 52.0</span><br></pre></td></tr></table></figure>
-<p>由上述报错信息可知，<code>com/android/prefs/AndroidLocationsProvider</code> 要求最低使用 version 55.0（JDK 11）。</p>
-<p>但是其他 class （比如 <code>lib/sdklib/libsdkmanager_lib.jar</code> 内的 <code>com.android.sdklib.tool.sdkmanager.SdkManagerCliSettings</code>）仍旧是 version 52.0 （JDK 8）。</p>
-<p><strong>这里的思路是：</strong></p>
-<p>直接切换到cmdline-tools对应版本，然后基于 runtime JDK &#x3D; 8 的环境，执行 <code>./sdkmanager --version</code> 检查是否报错，如报错，查看要求的最低 version 为多少。（低于JDK8的不再验证）</p>
-<p>验证的脚本：<code>majorVersion.sh</code></p>
-<blockquote>
-<p>使用方法：.&#x2F;majorVersion.sh path&#x2F;cmdline-tools&#x2F;11.0</p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line"><span class="variable">$1</span>/bin/sdkmanager --version</span><br><span class="line"><span class="variable">$1</span>/bin/sdkmanager --version 2&gt;&amp;1 | grep <span class="string">&quot;class file&quot;</span></span><br><span class="line"></span><br><span class="line">jar_file=/lib/sdklib/libsdkmanager_lib.jar</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;-&gt; <span class="variable">$jar_file</span>&quot;</span></span><br><span class="line"><span class="comment"># 使用 javap 命令解析 JAR 文件内指定的 class</span></span><br><span class="line">output=$(javap -verbose -classpath <span class="string">&quot;$1<span class="variable">$&#123;jar_file&#125;</span>&quot;</span> com.android.sdklib.tool.sdkmanager.SdkManagerCliSettings 2&gt;&amp;1)</span><br><span class="line"></span><br><span class="line"><span class="comment">#echo &quot;$output&quot;</span></span><br><span class="line"><span class="comment"># 查找主要版本号</span></span><br><span class="line">major_version=$(<span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$output</span>&quot;</span> | grep  <span class="string">&#x27;major version&#x27;</span>)</span><br><span class="line"><span class="comment"># 打印主要版本号</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;--&gt; <span class="variable">$major_version</span>&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">##---</span></span><br><span class="line">jar_file=/lib/common/tools.common.jar</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;-&gt; <span class="variable">$jar_file</span>&quot;</span></span><br><span class="line"><span class="comment"># 使用 javap 命令解析 JAR 文件内指定的 class</span></span><br><span class="line">output=$(javap -verbose -classpath <span class="string">&quot;$1<span class="variable">$&#123;jar_file&#125;</span>&quot;</span> com.android.prefs.AndroidLocationsProvider 2&gt;&amp;1)</span><br><span class="line"><span class="comment"># 查找主要版本号</span></span><br><span class="line">major_version=$(<span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$output</span>&quot;</span> | grep  <span class="string">&#x27;major version&#x27;</span>)</span><br><span class="line"><span class="comment"># # 打印主要版本号</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;--&gt; <span class="variable">$major_version</span>&quot;</span></span><br></pre></td></tr></table></figure>
-<p>验证结果：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 11.0</span></span><br><span class="line">Exception <span class="keyword">in</span> thread <span class="string">&quot;main&quot;</span> java.lang.UnsupportedClassVersionError: com/android/sdklib/tool/sdkmanager/SdkManagerCli has been compiled by a more recent version of the Java Runtime (class file version 61.0), this version of the Java Runtime only recognizes class file versions up to 52.0</span><br><span class="line"></span><br><span class="line">-&gt; /lib/sdklib/libsdkmanager_lib.jar</span><br><span class="line">major version: 61</span><br><span class="line">-&gt; /lib/common/tools.common.jar</span><br><span class="line">major version: 55</span><br><span class="line"></span><br><span class="line"><span class="comment"># 10.0</span></span><br><span class="line">Exception <span class="keyword">in</span> thread <span class="string">&quot;main&quot;</span> java.lang.UnsupportedClassVersionError: com/android/prefs/AndroidLocationsProvider has been compiled by a more recent version of the Java Runtime (class file version 55.0), this version of the Java Runtime only recognizes class file versions up to 52.0</span><br><span class="line"></span><br><span class="line">-&gt; /lib/sdklib/libsdkmanager_lib.jar</span><br><span class="line">major version: 52</span><br><span class="line">-&gt; /lib/common/tools.common.jar</span><br><span class="line">major version: 55</span><br><span class="line"></span><br><span class="line"><span class="comment"># 9.0</span></span><br><span class="line">Exception <span class="keyword">in</span> thread <span class="string">&quot;main&quot;</span> java.lang.UnsupportedClassVersionError: com/android/prefs/AndroidLocationsProvider has been compiled by a more recent version of the Java Runtime (class file version 55.0), this version of the Java Runtime only recognizes class file versions up to 52.0</span><br><span class="line"></span><br><span class="line">-&gt; /lib/sdklib/libsdkmanager_lib.jar</span><br><span class="line">major version: 52</span><br><span class="line">-&gt; /lib/common/tools.common.jar</span><br><span class="line">major version: 55</span><br><span class="line"></span><br><span class="line"><span class="comment"># 8.0</span></span><br><span class="line">-&gt; /lib/sdklib/libsdkmanager_lib.jar</span><br><span class="line">major version: 52</span><br><span class="line">-&gt; /lib/common/tools.common.jar</span><br><span class="line">major version: 52</span><br></pre></td></tr></table></figure>
-
 
 <h2 id="扩展资料"><a href="#扩展资料" class="headerlink" title="扩展资料"></a>扩展资料</h2><h3 id="cmdline-tools-历史版本下载"><a href="#cmdline-tools-历史版本下载" class="headerlink" title="cmdline-tools 历史版本下载"></a>cmdline-tools 历史版本下载</h3><p>官网地址：<a target="_blank" rel="noopener" href="https://developer.android.com/studio">https://developer.android.com/studio</a></p>
 <table>
@@ -387,33 +317,271 @@
 </tr>
 </tbody></table>
 <p>下载地址的生成规则：<code>https://dl.google.com/android/repository/文件名</code></p>
-<h3 id="JDK-对应-major-version"><a href="#JDK-对应-major-version" class="headerlink" title="JDK 对应 major version"></a>JDK 对应 major version</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">Java SE 21 = 65 (0x41 hex),</span><br><span class="line">Java SE 20 = 64 (0x40 hex),</span><br><span class="line">Java SE 19 = 63 (0x3F hex),</span><br><span class="line">Java SE 18 = 62 (0x3E hex),</span><br><span class="line">(LTS) Java SE 17 = 61 (0x3D hex),</span><br><span class="line">Java SE 16 = 60 (0x3C hex),</span><br><span class="line">Java SE 15 = 59 (0x3B hex),</span><br><span class="line">Java SE 14 = 58 (0x3A hex),</span><br><span class="line">Java SE 13 = 57 (0x39 hex),</span><br><span class="line">Java SE 12 = 56 (0x38 hex),</span><br><span class="line">(LTS) Java SE 11 = 55 (0x37 hex),</span><br><span class="line">Java SE 10 = 54 (0x36 hex),[4]</span><br><span class="line">Java SE 9 = 53 (0x35 hex),[5]</span><br><span class="line">(LTS) Java SE 8 = 52 (0x34 hex),</span><br><span class="line">Java SE 7 = 51 (0x33 hex),</span><br><span class="line">Java SE 6.0 = 50 (0x32 hex),</span><br><span class="line">Java SE 5.0 = 49 (0x31 hex),</span><br><span class="line">JDK 1.4 = 48 (0x30 hex),</span><br><span class="line">JDK 1.3 = 47 (0x2F hex),</span><br><span class="line">JDK 1.2 = 46 (0x2E hex),</span><br><span class="line">JDK 1.1 = 45 (0x2D hex).</span><br></pre></td></tr></table></figure>
-<p>资料来源：<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Java_class_file#General_layout">Java class file</a></p>
-<h3 id="JDK-LTS-信息"><a href="#JDK-LTS-信息" class="headerlink" title="JDK LTS 信息"></a>JDK LTS 信息</h3><ul>
-<li>JDK 17(LTS)<ul>
-<li>major version &#x3D; 61</li>
-<li>积极支持：2026年9月30日</li>
-<li>安全支持：2029年9月30日</li>
-</ul>
-</li>
-<li>JDK 11(LTS)<ul>
-<li>major version &#x3D; 55</li>
-<li>积极支持：2023年9月30日</li>
-<li>安全支持：2026年9月30日</li>
-</ul>
-</li>
-<li>JDK 8(LTS)<ul>
-<li>major version &#x3D; 52</li>
-<li>积极支持：2022年3月31日</li>
-<li>安全支持：2030年12月31日</li>
-</ul>
-</li>
-</ul>
+<h3 id="JDK-对应-major-version、JDK-LTS-信息"><a href="#JDK-对应-major-version、JDK-LTS-信息" class="headerlink" title="JDK 对应 major version、JDK LTS 信息"></a>JDK 对应 major version、JDK LTS 信息</h3><table>
+<thead>
+<tr>
+<th>版本</th>
+<th>周期</th>
+<th>major version</th>
+<th>积极支持</th>
+<th>安全支持</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Java SE 25</td>
+<td><strong>LTS</strong></td>
+<td>69 (0x45 hex)</td>
+<td>2030年9月30日</td>
+<td>2033年9月30日</td>
+</tr>
+<tr>
+<td>Java SE 24</td>
+<td></td>
+<td>68 (0x44 hex)</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Java SE 23</td>
+<td></td>
+<td>67 (0x43 hex)</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Java SE 22</td>
+<td></td>
+<td>66 (0x42 hex)</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Java SE 21</td>
+<td><strong>LST</strong></td>
+<td>65 (0x41 hex)</td>
+<td>2028年9月30日</td>
+<td>2031年9月30日</td>
+</tr>
+<tr>
+<td>Java SE 20</td>
+<td></td>
+<td>64 (0x40 hex)</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Java SE 19</td>
+<td></td>
+<td>63 (0x3F hex)</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Java SE 18</td>
+<td></td>
+<td>62 (0x3E hex)</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Java SE 17</td>
+<td><strong>LST</strong></td>
+<td>61 (0x3D hex)</td>
+<td>2026年9月30日</td>
+<td>2029年9月30日</td>
+</tr>
+<tr>
+<td>Java SE 16</td>
+<td></td>
+<td>60 (0x3C hex)</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Java SE 15</td>
+<td></td>
+<td>59 (0x3B hex)</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Java SE 14</td>
+<td></td>
+<td>58 (0x3A hex)</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Java SE 13</td>
+<td></td>
+<td>57 (0x39 hex)</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Java SE 12</td>
+<td></td>
+<td>56 (0x38 hex)</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Java SE 11</td>
+<td><strong>LST</strong></td>
+<td>55 (0x37 hex)</td>
+<td>2023年9月30日</td>
+<td>2026年9月30日</td>
+</tr>
+<tr>
+<td>Java SE 10</td>
+<td></td>
+<td>54 (0x36 hex)</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Java SE 9</td>
+<td></td>
+<td>53 (0x35 hex)</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Java SE 8</td>
+<td><strong>LST</strong></td>
+<td>52 (0x34 hex)</td>
+<td>2022年3月31日</td>
+<td>2030年12月31日</td>
+</tr>
+<tr>
+<td>Java SE 7</td>
+<td></td>
+<td>51 (0x33 hex)</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Java SE 6</td>
+<td></td>
+<td>50 (0x32 hex)</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Java SE 5</td>
+<td></td>
+<td>49 (0x31 hex)</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>JDK 1.4</td>
+<td></td>
+<td>48 (0x30 hex)</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>JDK 1.3</td>
+<td></td>
+<td>47 (0x2F hex)</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>JDK 1.2</td>
+<td></td>
+<td>46 (0x2E hex)</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>JDK 1.1</td>
+<td></td>
+<td>45 (0x2D hex)</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
 <p>资料来源：</p>
 <ul>
+<li><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Java_class_file#General_layout">Java class file</a></li>
 <li><a target="_blank" rel="noopener" href="https://endoflife.date/java">https://endoflife.date/java</a></li>
 <li><a target="_blank" rel="noopener" href="https://www.oracle.com/java/technologies/java-se-glance.html">https://www.oracle.com/java/technologies/java-se-glance.html</a></li>
 </ul>
+<h2 id="检查流程"><a href="#检查流程" class="headerlink" title="检查流程"></a>检查流程</h2><table>
+<thead>
+<tr>
+<th>cmdline-tools 版本</th>
+<th>SdkManagerCliSettings</th>
+<th>AndroidLocationsProvider</th>
+<th>最低 JDK</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>13.0</td>
+<td>61 (JDK 17)</td>
+<td>55 (JDK 11)</td>
+<td>17</td>
+</tr>
+<tr>
+<td>12.0</td>
+<td>61 (JDK 17)</td>
+<td>55 (JDK 11)</td>
+<td>17</td>
+</tr>
+<tr>
+<td>11.0</td>
+<td>61 (JDK 17)</td>
+<td>55 (JDK 11)</td>
+<td>17</td>
+</tr>
+<tr>
+<td>10.0</td>
+<td>52 (JDK 8)</td>
+<td>55 (JDK 11)</td>
+<td>11</td>
+</tr>
+<tr>
+<td>9.0</td>
+<td>52 (JDK 8)</td>
+<td>55 (JDK 11)</td>
+<td>11</td>
+</tr>
+<tr>
+<td>8.0</td>
+<td>52 (JDK 8)</td>
+<td>52 (JDK 8)</td>
+<td>8</td>
+</tr>
+<tr>
+<td>7.0</td>
+<td>52 (JDK 8)</td>
+<td>52 (JDK 8)</td>
+<td>8</td>
+</tr>
+<tr>
+<td>6.0</td>
+<td>52 (JDK 8)</td>
+<td>52 (JDK 8)</td>
+<td>8</td>
+</tr>
+</tbody></table>
+<p>通过上表可以看出，在 cmdline-tools 内部，各个 Jar 的编译目标 JDK 版本存在不一致的情况。因此，在实际运行时，需要将所有 Jar 文件的编译目标 JDK 版本的最大值作为 cmdline-tools 运行时的最小的 JDK 版本。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ java -version</span><br><span class="line">java version <span class="string">&quot;1.8.0_351&quot;</span></span><br><span class="line"></span><br><span class="line">$ <span class="built_in">cd</span> path/cmdline-tools/9.0/bin</span><br><span class="line">$ ./sdkmanager --list</span><br><span class="line">Error: A JNI error has occurred, please check your installation and try again</span><br><span class="line">Exception <span class="keyword">in</span> thread <span class="string">&quot;main&quot;</span> java.lang.UnsupportedClassVersionError: com/android/prefs/AndroidLocationsProvider has been compiled by a more recent version of the Java Runtime (class file version 55.0), this version of the Java Runtime only recognizes class file versions up to 52.0</span><br></pre></td></tr></table></figure>
+<p>由上述报错信息可知，<code>com/android/prefs/AndroidLocationsProvider</code> 要求最低使用 version 55.0（JDK 11）。</p>
+<p>但是其他 class （比如 <code>lib/sdklib/libsdkmanager_lib.jar</code> 内的 <code>com.android.sdklib.tool.sdkmanager.SdkManagerCliSettings</code>）仍旧是 version 52.0 （JDK 8）。</p>
+<p><strong>这里的思路是：</strong></p>
+<p>直接切换到cmdline-tools对应版本，然后基于 runtime JDK &#x3D; 8 的环境，执行 <code>./sdkmanager --version</code> 检查是否报错，如报错，查看要求的最低 version 为多少。（低于JDK8的不再验证）</p>
+<p>验证的脚本：<code>majorVersion.sh</code></p>
+<blockquote>
+<p>使用方法：.&#x2F;majorVersion.sh path&#x2F;cmdline-tools&#x2F;11.0</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line"><span class="variable">$1</span>/bin/sdkmanager --version</span><br><span class="line"><span class="variable">$1</span>/bin/sdkmanager --version 2&gt;&amp;1 | grep <span class="string">&quot;class file&quot;</span></span><br><span class="line"></span><br><span class="line">jar_file=/lib/sdklib/libsdkmanager_lib.jar</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;-&gt; <span class="variable">$jar_file</span>&quot;</span></span><br><span class="line"><span class="comment"># 使用 javap 命令解析 JAR 文件内指定的 class</span></span><br><span class="line">output=$(javap -verbose -classpath <span class="string">&quot;$1<span class="variable">$&#123;jar_file&#125;</span>&quot;</span> com.android.sdklib.tool.sdkmanager.SdkManagerCliSettings 2&gt;&amp;1)</span><br><span class="line"></span><br><span class="line"><span class="comment">#echo &quot;$output&quot;</span></span><br><span class="line"><span class="comment"># 查找主要版本号</span></span><br><span class="line">major_version=$(<span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$output</span>&quot;</span> | grep  <span class="string">&#x27;major version&#x27;</span>)</span><br><span class="line"><span class="comment"># 打印主要版本号</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;--&gt; <span class="variable">$major_version</span>&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">##---</span></span><br><span class="line">jar_file=/lib/common/tools.common.jar</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;-&gt; <span class="variable">$jar_file</span>&quot;</span></span><br><span class="line"><span class="comment"># 使用 javap 命令解析 JAR 文件内指定的 class</span></span><br><span class="line">output=$(javap -verbose -classpath <span class="string">&quot;$1<span class="variable">$&#123;jar_file&#125;</span>&quot;</span> com.android.prefs.AndroidLocationsProvider 2&gt;&amp;1)</span><br><span class="line"><span class="comment"># 查找主要版本号</span></span><br><span class="line">major_version=$(<span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$output</span>&quot;</span> | grep  <span class="string">&#x27;major version&#x27;</span>)</span><br><span class="line"><span class="comment"># # 打印主要版本号</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;--&gt; <span class="variable">$major_version</span>&quot;</span></span><br></pre></td></tr></table></figure>
+<p>验证结果：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 11.0</span></span><br><span class="line">Exception <span class="keyword">in</span> thread <span class="string">&quot;main&quot;</span> java.lang.UnsupportedClassVersionError: com/android/sdklib/tool/sdkmanager/SdkManagerCli has been compiled by a more recent version of the Java Runtime (class file version 61.0), this version of the Java Runtime only recognizes class file versions up to 52.0</span><br><span class="line"></span><br><span class="line">-&gt; /lib/sdklib/libsdkmanager_lib.jar</span><br><span class="line">major version: 61</span><br><span class="line">-&gt; /lib/common/tools.common.jar</span><br><span class="line">major version: 55</span><br><span class="line"></span><br><span class="line"><span class="comment"># 10.0</span></span><br><span class="line">Exception <span class="keyword">in</span> thread <span class="string">&quot;main&quot;</span> java.lang.UnsupportedClassVersionError: com/android/prefs/AndroidLocationsProvider has been compiled by a more recent version of the Java Runtime (class file version 55.0), this version of the Java Runtime only recognizes class file versions up to 52.0</span><br><span class="line"></span><br><span class="line">-&gt; /lib/sdklib/libsdkmanager_lib.jar</span><br><span class="line">major version: 52</span><br><span class="line">-&gt; /lib/common/tools.common.jar</span><br><span class="line">major version: 55</span><br><span class="line"></span><br><span class="line"><span class="comment"># 9.0</span></span><br><span class="line">Exception <span class="keyword">in</span> thread <span class="string">&quot;main&quot;</span> java.lang.UnsupportedClassVersionError: com/android/prefs/AndroidLocationsProvider has been compiled by a more recent version of the Java Runtime (class file version 55.0), this version of the Java Runtime only recognizes class file versions up to 52.0</span><br><span class="line"></span><br><span class="line">-&gt; /lib/sdklib/libsdkmanager_lib.jar</span><br><span class="line">major version: 52</span><br><span class="line">-&gt; /lib/common/tools.common.jar</span><br><span class="line">major version: 55</span><br><span class="line"></span><br><span class="line"><span class="comment"># 8.0</span></span><br><span class="line">-&gt; /lib/sdklib/libsdkmanager_lib.jar</span><br><span class="line">major version: 52</span><br><span class="line">-&gt; /lib/common/tools.common.jar</span><br><span class="line">major version: 52</span><br></pre></td></tr></table></figure>
+
+
 <hr>
 <p>如果有什么建议或者问题可以随时联系我，共同探讨学习：</p>
 <blockquote>
